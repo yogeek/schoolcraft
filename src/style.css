@@ -1101,3 +1101,50 @@ img.block.mini {
   font-weight: 700;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
 }
+
+/* ---------- touch: the whole block is a target ---------- */
+body {
+  -webkit-touch-callout: none;
+}
+/* the button itself receives the touch, never the picture or letter inside it */
+button img,
+button svg,
+button span,
+.px.zone::after {
+  pointer-events: none;
+}
+/* inside games, a slightly moving finger must not turn into a scroll */
+.choice,
+.pile-block,
+.px,
+.swatch,
+.slot,
+.cell,
+.speaker,
+.slot-box {
+  touch-action: none;
+}
+/* grow the touch area over the 3D shadow and half of the gap around each block */
+.choice::before,
+.pile-block::before,
+.slot::before,
+.swatch::before {
+  content: '';
+  position: absolute;
+  inset: -6px -6px -14px -6px;
+}
+.swatch {
+  position: relative;
+}
+.choice.pressed,
+.tile.pressed,
+.btn.pressed,
+.hero-card.pressed {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 var(--ink);
+}
+.pile-block.pressed,
+.slot.pressed,
+.swatch.pressed {
+  transform: scale(0.94);
+}

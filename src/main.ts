@@ -2,7 +2,7 @@ import './style.css';
 import { say, sfx, stopSpeech } from './audio';
 import { foxSVG } from './pixel';
 import { currentLevel } from './levels';
-import { blockImg, h, counter } from './ui';
+import { blockImg, h, counter, installTapFix } from './ui';
 import { soundsScreen } from './screens/sounds';
 import { countScreen } from './screens/count';
 import { buildScreen } from './screens/build';
@@ -98,6 +98,7 @@ function homeScreen(): void {
   );
 }
 
+installTapFix();
 go('home');
 
 if ('serviceWorker' in navigator && import.meta.env.PROD) {

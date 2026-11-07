@@ -132,3 +132,74 @@ export const HOUSE_SVG =
   '<svg viewBox="0 0 8 8" width="32" height="32" shape-rendering="crispEdges"><path fill="#7a4b2a" d="M1 4h6v4H1z"/><path fill="#c0392b" d="M0 4h8V3H7V2H6V1H5V0H3v1H2v1H1v1H0z"/><path fill="#3b2412" d="M3 5h2v3H3z"/></svg>';
 export const SPEAKER_SVG =
   '<svg viewBox="0 0 10 10" width="40" height="40" shape-rendering="crispEdges"><path fill="#2b2b2b" d="M1 3h2V2h1V1h1v8H4V8H3V7H1z"/><path fill="#2b2b2b" d="M6 3h1v4H6zM8 2h1v6H8z"/></svg>';
+
+// ---------- reliable taps for small fingers ----------
+// Browsers drop the `click` when a finger moves a little, presses for long (image callout / context
+// menu) or lands on the 3D shadow under a block. Young children do all of this. So we activate a
+// button ourselves on `pointerup` when the finger is still on (or near) the element it pressed,
+// and swallow the browser's own click if it comes too, so nothing fires twice.
+const TAPPABLE = 'button:not(:disabled), .px.zone';
+const SLOP = 28; // px of tolerance around the element
+
+export function installTapFix(): void {
+  let downEl: HTMLElement | null = null;
+  let downId = -1;
+  let synthEl: HTMLElement | null = null;
+  let synthAt = 0;
+
+  const clear = () => {
+    downEl?.classList.remove('pressed');
+    downEl = null;
+    downId = -1;
+  };
+
+  document.addEventListener(
+    'pointerdown',
+    (e) => {
+      if (e.button > 0) return;
+      const el = (e.target as Element | null)?.closest<HTMLElement>(TAPPABLE);
+      if (!el) return;
+      downEl = el;
+      downId = e.pointerId;
+      el.classList.add('pressed');
+    },
+    true,
+  );
+
+  document.addEventListener(
+    'pointerup',
+    (e) => {
+      if (!downEl || e.pointerId !== downId) return;
+      const el = downEl;
+      clear();
+      const r = el.getBoundingClientRect();
+      const inside = e.clientX >= r.left - SLOP && e.clientX <= r.right + SLOP && e.clientY >= r.top - SLOP && e.clientY <= r.bottom + SLOP;
+      if (!inside || !el.isConnected) return;
+      synthEl = el;
+      synthAt = performance.now();
+      el.click();
+    },
+    true,
+  );
+
+  // the page started scrolling: this was not a tap
+  document.addEventListener('pointercancel', clear, true);
+
+  document.addEventListener(
+    'click',
+    (e) => {
+      // the browser's own click right after ours → ignore it (keyboard clicks still go through)
+      if (e.isTrusted && synthEl && performance.now() - synthAt < 800 && synthEl.contains(e.target as Node)) {
+        e.stopPropagation();
+        e.preventDefault();
+        synthEl = null;
+      }
+    },
+    true,
+  );
+
+  // no "save image" / context menu on long press
+  document.addEventListener('contextmenu', (e) => {
+    if ((e.target as Element | null)?.closest('#app, .overlay')) e.preventDefault();
+  });
+}
