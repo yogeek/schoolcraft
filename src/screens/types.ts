@@ -1,4 +1,4 @@
-export type ScreenName = 'home' | 'vowels' | 'count' | 'build';
+export type ScreenName = 'home' | 'sounds' | 'count' | 'build';
 
 export interface Ctx {
   go(name: ScreenName): void;

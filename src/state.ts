@@ -13,8 +13,18 @@ export interface ItemStat {
   ko: number;
 }
 
+export type ActivityId = 'sounds' | 'count';
+
+export interface LevelState {
+  /** level being played */
+  current: number;
+  /** highest level reached */
+  unlocked: number;
+}
+
 export interface GameState {
   version: 1;
+  levels: Record<ActivityId, LevelState>;
   inventory: Record<BlockType, number>;
   /** world[row][col], row 0 = top. null = air. */
   world: (BlockType | null)[][];
@@ -34,6 +44,7 @@ function emptyWorld(): (BlockType | null)[][] {
 function fresh(): GameState {
   return {
     version: 1,
+    levels: { sounds: { current: 1, unlocked: 1 }, count: { current: 1, unlocked: 1 } },
     inventory: { grass: 2, dirt: 0, wood: 2, stone: 0, glass: 0, gold: 0 },
     world: emptyWorld(),
     stats: {},
@@ -48,6 +59,7 @@ function load(): GameState {
     if (s.version !== 1 || !s.inventory || !Array.isArray(s.world)) return fresh();
     // tolerate new block types added later
     for (const t of BLOCK_TYPES) s.inventory[t] ??= 0;
+    s.levels ??= { sounds: { current: 1, unlocked: 1 }, count: { current: 1, unlocked: 1 } };
     return s;
   } catch {
     return fresh();

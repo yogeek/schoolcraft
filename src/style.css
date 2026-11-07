@@ -534,3 +534,171 @@ img.block.mini {
     animation: none !important;
   }
 }
+
+/* ---------- levels ---------- */
+.glyph.len2 {
+  font-size: calc(var(--size, 110px) * 0.46);
+}
+.glyph.len3 {
+  font-size: calc(var(--size, 110px) * 0.36);
+}
+.choices.words .choice {
+  width: calc(var(--size) * 1.7);
+  height: calc(var(--size) * 0.8);
+}
+.choices.words .glyph {
+  font-size: calc(var(--size) * 0.3);
+}
+.choices.words {
+  --size: clamp(96px, 24vw, 150px);
+  max-width: 640px;
+}
+
+.tile-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+.tile-level {
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 2px 10px;
+}
+@media (max-width: 520px) {
+  .tile-text {
+    align-items: flex-start;
+  }
+}
+
+.level-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  text-shadow: 2px 2px 0 var(--shadow);
+}
+.level-btn .chev {
+  font-size: 0.9rem;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.45);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+.panel {
+  background: var(--paper);
+  border: 4px solid var(--ink);
+  box-shadow: 0 6px 0 var(--ink);
+  padding: 16px;
+  width: min(420px, 100%);
+  max-height: 90dvh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.panel h2 {
+  margin: 0;
+  text-align: center;
+}
+.level-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.level-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: left;
+  border: 3px solid var(--ink);
+  background: #fff;
+}
+.level-item.current {
+  background: var(--gold);
+}
+.level-item.locked {
+  opacity: 0.45;
+  cursor: default;
+}
+.level-no {
+  width: 36px;
+  height: 36px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  background: var(--ink);
+  color: #fff;
+}
+.panel .btn {
+  align-self: center;
+  font-size: 1.2rem;
+}
+
+/* counting: dice layout, hidden blocks, additions */
+.pile.dice {
+  display: grid;
+  grid-template-columns: repeat(3, var(--pile));
+  gap: 8px;
+}
+.pile.covered .pile-block {
+  background: #5b5b5b;
+}
+.pile.covered .pile-block img {
+  visibility: hidden;
+}
+.pile.covered .pile-block::after {
+  content: '?';
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: calc(var(--pile) * 0.5);
+}
+.pile.sum {
+  --pile: clamp(44px, 12vw, 72px);
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.pile.sum .group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  max-width: calc(var(--pile) * 5 + 30px);
+}
+.pile.sum .plus {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px 0 var(--ink);
+  line-height: 1;
+}
+
+.stars {
+  display: flex;
+  gap: 6px;
+  font-size: 2.2rem;
+  color: rgba(255, 255, 255, 0.55);
+  text-shadow: 2px 2px 0 var(--shadow);
+}
+.stars .on {
+  color: var(--gold);
+}

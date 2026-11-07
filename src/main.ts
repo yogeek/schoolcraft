@@ -1,9 +1,10 @@
 import './style.css';
 import { say, sfx, stopSpeech } from './audio';
 import { foxSVG } from './pixel';
+import { currentLevel } from './levels';
 import { resetAll } from './state';
 import { blockImg, h, counter } from './ui';
-import { vowelsScreen } from './screens/vowels';
+import { soundsScreen } from './screens/sounds';
 import { countScreen } from './screens/count';
 import { buildScreen } from './screens/build';
 import type { ScreenName } from './screens/types';
@@ -18,16 +19,14 @@ function go(name: ScreenName): void {
   switch (name) {
     case 'home':
       return homeScreen();
-    case 'vowels':
-      return vowelsScreen(ctx);
+    case 'sounds':
+      return soundsScreen(ctx);
     case 'count':
       return countScreen(ctx);
     case 'build':
       return buildScreen(ctx);
   }
 }
-
-let greeted = false;
 
 function homeScreen(): void {
   const fox = h('button', { class: 'fox-btn', 'aria-label': 'Pixel le renard', html: foxSVG(140) });
@@ -38,12 +37,13 @@ function homeScreen(): void {
     void say("Coucou ! Je suis Pixel. Choisis un jeu : les sons, compter, ou construire !");
   };
 
-  const tile = (label: string, speech: string, icon: Node, cls: string, target: ScreenName) => {
-    const b = h('button', { class: `tile ${cls}` }, icon, h('span', { class: 'tile-label' }, label));
+  const tile = (label: string, speech: string, icon: Node, cls: string, target: ScreenName, level?: number) => {
+    const text = h('span', { class: 'tile-text' }, h('span', { class: 'tile-label' }, label));
+    if (level) text.append(h('span', { class: 'tile-level' }, `Niveau ${level}`));
+    const b = h('button', { class: `tile ${cls}` }, icon, text);
     b.onclick = () => {
       sfx.unlock();
       sfx.tap();
-      if (!greeted) greeted = true;
       void say(speech);
       go(target);
     };
@@ -74,8 +74,8 @@ function homeScreen(): void {
       h(
         'div',
         { class: 'tiles' },
-        tile('Les sons', 'Les sons !', letterIcon, 't-sounds', 'vowels'),
-        tile('Compter', 'Compter !', numberIcon, 't-count', 'count'),
+        tile('Les sons', 'Les sons !', letterIcon, 't-sounds', 'sounds', currentLevel('sounds')),
+        tile('Compter', 'Compter !', numberIcon, 't-count', 'count', currentLevel('count')),
         tile('Construire', 'Construire !', buildIcon, 't-build', 'build'),
       ),
       h('div', { class: 'ground' }),

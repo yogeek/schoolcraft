@@ -1,6 +1,7 @@
 // Small DOM helpers shared by every screen.
 import { blockTexture, BLOCK_NAMES } from './pixel';
-import { BLOCK_TYPES, save, state, totalBlocks, type BlockType } from './state';
+import { setLevel, unlockedLevel } from './levels';
+import { BLOCK_TYPES, save, state, totalBlocks, type ActivityId, type BlockType } from './state';
 
 export function h<K extends keyof HTMLElementTagNameMap>(
   tag: K,
@@ -83,10 +84,43 @@ export function rewardType(streak: number): BlockType {
   return rand(BLOCK_TYPES.filter((t) => t !== 'gold'));
 }
 
-export function topBar(onHome: () => void, title?: string): HTMLElement {
+export function topBar(onHome: () => void, title?: string | Node): HTMLElement {
   const home = h('button', { class: 'btn-icon', 'aria-label': 'Accueil' }, h('span', { html: HOUSE_SVG }));
   home.onclick = onHome;
   return h('header', { class: 'topbar' }, home, h('div', { class: 'title' }, title ?? ''), counter());
+}
+
+/** "Niveau N" button in the top bar; opens a picker with the levels already reached. */
+export function levelButton(activity: ActivityId, level: number, max: number, names: string[], restart: () => void): HTMLElement {
+  const b = h('button', { class: 'level-btn' }, `Niveau ${level}`, h('span', { class: 'chev' }, '▾'));
+  b.onclick = () => {
+    const unlocked = unlockedLevel(activity);
+    const close = () => overlay.remove();
+    const list = h('div', { class: 'level-list' });
+    for (let n = 1; n <= max; n++) {
+      const open = n <= unlocked;
+      const item = h(
+        'button',
+        { class: `level-item${n === level ? ' current' : ''}${open ? '' : ' locked'}` },
+        h('span', { class: 'level-no' }, open ? String(n) : '🔒'),
+        h('span', {}, names[n - 1]),
+      );
+      if (open) {
+        item.onclick = () => {
+          close();
+          setLevel(activity, n);
+          restart();
+        };
+      } else item.disabled = true;
+      list.append(item);
+    }
+    const shut = h('button', { class: 'btn' }, 'Fermer');
+    shut.onclick = close;
+    const overlay = h('div', { class: 'overlay' }, h('div', { class: 'panel' }, h('h2', {}, 'Choisis ton niveau'), list, shut));
+    overlay.onclick = (e) => e.target === overlay && close();
+    document.body.append(overlay);
+  };
+  return b;
 }
 
 export const HOUSE_SVG =

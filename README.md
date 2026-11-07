@@ -9,10 +9,13 @@ Plan détaillé : [docs/PLAN.md](docs/PLAN.md)
 
 ## Prototype (v0.1)
 
-- **Les sons** — Pixel le renard dit un son (« a », « i », « o », « u », « eu », « é ») ;
-  l'enfant touche le bon bloc. Les sons ratés reviennent plus souvent.
-- **Compter** — l'enfant touche chaque bloc pour le compter (la voix dit « un, deux… »),
-  puis choisit le bon chiffre (1 à 6).
+- **Les sons** — Pixel le renard dit un son ; l'enfant touche le bon bloc. Les sons ratés reviennent plus souvent.
+  6 niveaux : voyelles → majuscules/minuscules → syllabes (m, l, r, s) → autres consonnes
+  → syllabes jumelles (b/d, m/n…) → lire des mots.
+- **Compter** — 6 niveaux : compter jusqu'à 4, 6, 10 (on touche chaque bloc, la voix compte)
+  → coup d'œil (les blocs se cachent après 2 s) → additions jusqu'à 6, puis 10.
+- **Niveaux** — une partie réussie à 80 % du premier coup débloque le niveau suivant.
+  Le bouton « Niveau N » permet de revenir à un niveau déjà atteint.
 - **Construire** — chaque bonne réponse rapporte un bloc (3 réussites d'affilée = bloc d'or) ;
   on les pose sur une grille pour bâtir sa maison. Toucher un bloc posé le récupère.
 - Tout est guidé à la voix (synthèse vocale du navigateur, en français).
@@ -36,4 +39,4 @@ Le workflow `.github/workflows/deploy.yml` publie le site sur GitHub Pages à ch
 
 - La voix dépend du navigateur/appareil (meilleure sur Chrome/Android et Safari/iOS récents).
   À terme : enregistrer les sons pour une prononciation parfaite des sons isolés.
-- Pas encore de syllabes : c'est l'étape suivante (fusion « m + a = ma »).
+- Pas encore d'exercice de fusion où l'on assemble soi-même « m + a = ma ».
