@@ -50,6 +50,11 @@ function refreshCounter(): void {
   counterEl?.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.35)' }, { transform: 'scale(1)' }], { duration: 300 });
 }
 
+/** Refresh the top-bar counter after blocks were spent elsewhere. */
+export function bumpCounter(): void {
+  refreshCounter();
+}
+
 /** Give a block to the child, with a flying animation from `from` to the counter. */
 export function giveBlock(type: BlockType, from?: Element): void {
   state.inventory[type]++;

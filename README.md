@@ -19,7 +19,12 @@ Plan détaillé : [docs/PLAN.md](docs/PLAN.md)
   → coup d'œil (les blocs se cachent après 2 s) → additions jusqu'à 6, puis 10.
 - **Niveaux** — une partie réussie à 80 % du premier coup débloque le niveau suivant.
   Le bouton « Niveau N » permet de revenir à un niveau déjà atteint.
-- **Construire** — chaque bonne réponse rapporte un bloc (3 réussites d'affilée = bloc d'or) ;
+- **Mes héros** (récompense principale) — chaque bonne réponse rapporte un bloc. Les blocs servent à
+  colorier des héros en pixel-art (coloriage magique : une couleur = un chiffre, chaque couleur coûte un bloc).
+  Un héros terminé se réveille : il s'anime, dit sa phrase, lance son effet (étoiles, bulles, éclairs…),
+  puis rejoint la collection. 9 héros originaux (ninja, pirate, kung-fu, magicienne, créatures des éléments, robot),
+  dessinés dans `src/content/heroes.ts` — on peut facilement en dessiner de nouveaux.
+- **Ma maison** — chaque bonne réponse rapporte un bloc (3 réussites d'affilée = bloc d'or) ;
   on les pose sur une grille pour bâtir sa maison. Toucher un bloc posé le récupère.
 - Tout est guidé à la voix (synthèse vocale du navigateur, en français).
 - Sauvegarde sur l'appareil uniquement (localStorage).

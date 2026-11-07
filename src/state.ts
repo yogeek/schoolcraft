@@ -29,6 +29,8 @@ export interface GameState {
   /** world[row][col], row 0 = top. null = air. */
   world: (BlockType | null)[][];
   stats: Record<string, ItemStat>;
+  /** heroes: colour zones already filled, per hero id; `done` = completed, in order */
+  heroes: { filled: Record<string, string[]>; done: string[] };
 }
 
 const KEY = 'schoolcraft:v1';
@@ -48,6 +50,7 @@ function fresh(): GameState {
     inventory: { grass: 2, dirt: 0, wood: 2, stone: 0, glass: 0, gold: 0 },
     world: emptyWorld(),
     stats: {},
+    heroes: { filled: {}, done: [] },
   };
 }
 
@@ -59,6 +62,7 @@ function load(): GameState {
     if (s.version !== 1 || !s.inventory || !Array.isArray(s.world)) return fresh();
     // tolerate new block types added later
     for (const t of BLOCK_TYPES) s.inventory[t] ??= 0;
+    s.heroes ??= { filled: {}, done: [] };
     s.levels ??= { sounds: { current: 1, unlocked: 1 }, count: { current: 1, unlocked: 1 } };
     return s;
   } catch {
@@ -106,6 +110,15 @@ export function pickWeighted<T extends string>(items: readonly T[], avoid?: T): 
     if (r <= 0) return items[k];
   }
   return items[items.length - 1];
+}
+
+/** Spend one block (the most plentiful kind first). Returns false when there is none left. */
+export function spendBlock(): boolean {
+  const t = [...BLOCK_TYPES].sort((a, b) => state.inventory[b] - state.inventory[a])[0];
+  if (state.inventory[t] <= 0) return false;
+  state.inventory[t]--;
+  save();
+  return true;
 }
 
 export function resetAll(): void {

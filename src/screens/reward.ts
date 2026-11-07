@@ -4,6 +4,7 @@ import { foxSVG } from '../pixel';
 import type { BlockType } from '../state';
 import { blockImg, h, topBar } from '../ui';
 import type { Ctx, ScreenName } from './types';
+import { currentHero } from './heroes';
 
 /** End-of-session screen: blocks won, level reached, then build / next level / replay. */
 export function rewardScreen(ctx: Ctx, won: BlockType[], replay: ScreenName, result: SessionResult): void {
@@ -36,8 +37,8 @@ export function rewardScreen(ctx: Ctx, won: BlockType[], replay: ScreenName, res
   const stars = h('div', { class: 'stars', 'aria-label': `${result.firstTry} sur ${result.rounds} du premier coup` });
   for (let i = 0; i < result.rounds; i++) stars.append(h('span', { class: i < result.firstTry ? 'on' : '' }, '★'));
 
-  const build = h('button', { class: 'btn big green' }, blockImg('wood', 'block mini'), 'Construire');
-  build.onclick = () => ctx.go('build');
+  const build = h('button', { class: 'btn big green' }, blockImg('wood', 'block mini'), 'Mes héros');
+  build.onclick = () => ctx.go(currentHero() ? 'color' : 'heroes');
   const again = h('button', { class: 'btn big' }, result.next ? 'Niveau suivant' : 'Rejouer');
   again.onclick = () => ctx.go(replay);
 
