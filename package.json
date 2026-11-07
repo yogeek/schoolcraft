@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
+    "check": "node --experimental-strip-types --no-warnings scripts/check-content.ts",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host"
   },

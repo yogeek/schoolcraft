@@ -1,5 +1,20 @@
 # SchoolCraft — Plan de conception
 
+## État actuel (novembre 2026)
+
+| Prévu | Où on en est |
+|---|---|
+| Tout à la voix, pas d'échec punitif, grosses cibles | ✅ Voix partout (Pixel répète la consigne), « Essaie encore ! » + indices, toucher tolérant (appui long, doigt qui glisse, ombre des blocs) |
+| Lecture : voyelles → syllabes → mots | ✅ 12 niveaux, jusqu'à la lecture sans aide (mot écrit → image) |
+| Maths : dénombrer, reconnaître, coup d'œil, additions | ✅ 6 niveaux (comparer des tas : pas encore) |
+| Révisions espacées, niveaux qui se débloquent | ✅ Leitner à 3 boîtes, niveau suivant à 80 % de réussite du premier coup |
+| Récompenses | ✅ Blocs → coloriage magique de 12 héros originaux qui s'animent (collection) + maison à construire |
+| Espace parents | ✅ Code (multiplication), choix du niveau, progrès par son/nombre, limite de temps avec pause |
+| PWA hors ligne, GitHub Pages | ✅ |
+| Sons enregistrés, mini-phrases, cursive, profils multiples | ⏳ Prochaines étapes (voir la feuille de route) |
+
+Ce qui suit est le plan initial ; la feuille de route (§ 7) est à jour.
+
 ## 1. Principe : « J'apprends → je gagne des blocs → je construis »
 
 La boucle de jeu tient en une phrase : chaque exercice réussi rapporte des
@@ -97,35 +112,29 @@ Pas de pub, pas d'achats intégrés, pas de traqueurs.
 
 ## 7. Feuille de route
 
-**Phase 0 — Prototype (1 week-end)**
-- Squelette PWA, écran d'accueil avec la mascotte, 1 exercice « trouve la
-  voyelle » avec audio, compteur de blocs.
-- Test avec l'enfant → observer ce qui l'amuse / le bloque.
+**Fait**
+- Prototype puis MVP : PWA installable et hors ligne, Pixel le renard, voix, blocs à gagner.
+- Lecture en 12 niveaux, calcul en 6 niveaux, répétition espacée, niveaux débloqués à 80 %.
+- Récompenses : coloriage de héros qui s'animent (collection), maison en blocs.
+- Espace parents : niveaux, progrès, limite de temps ; vérification automatique du contenu.
 
-**Phase 1 — MVP (3–4 week-ends)**
-- Biome Prairie (voyelles) + Village (compter jusqu'à 10).
-- Fusion de syllabes avec 4 consonnes (l, m, r, s).
-- Mode construction basique.
-- Sauvegarde locale + installation sur téléphone + déploiement GitHub Pages.
+**Prochaines étapes possibles**
+- Enregistrer les sons et les mots (voix d'un parent) pour une prononciation parfaite.
+- Lecture : mini-phrases (« le lama a un vélo »), lettres muettes, sons é/è/ai.
+- Calcul : comparer deux tas (« où y en a-t-il le plus ? »), compter jusqu'à 20.
+- Tracer les lettres au doigt (cursive), plusieurs profils d'enfants.
 
-**Phase 2**
-- Toutes les consonnes, mots, mini-phrases ; mine runner ; espace parents ;
-  révisions espacées.
-
-**Phase 3**
-- Ferme, cursive (tracer les lettres au doigt), plusieurs profils enfants,
-  synchro éventuelle.
-
-## 8. Structure de projet envisagée
+## 8. Structure du projet
 ```
 src/
-  core/        # moteur d'apprentissage, progression, sauvegarde
-  content/     # données : lettres, syllabes, mots, images, sons (JSON)
-  activities/  # exercices (TrouveLeSon, FusionSyllabe, Compter…)
-  minigames/   # construction, mine, ferme
-  ui/          # mascotte, boutons, transitions
-public/
-  audio/ sprites/ manifest.webmanifest
+  content/     # contenu modifiable sans programmer : lecture, calcul, héros
+  screens/     # écrans : lire, compter, héros/coloriage, maison, récompense, parents
+  state.ts     # sauvegarde sur l'appareil (avec réparation des anciennes sauvegardes)
+  levels.ts    # niveaux et progression · playtime.ts : limite de temps
+  nav.ts       # changement d'écran (la voix s'arrête quand on quitte un écran)
+  audio.ts     # voix et petits sons · ui.ts : boutons, bulles, toucher fiable
+scripts/check-content.ts   # vérifie le contenu (npm run check)
+public/      # icônes, manifeste, service worker (hors ligne)
 ```
 Le contenu (listes de syllabes, mots, images) est séparé du code : on peut
 ajouter des mots sans programmer.

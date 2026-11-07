@@ -1,14 +1,27 @@
-// Voice (browser speech synthesis, prototype only) + small synthesized sound effects.
+// Voice (browser speech synthesis) + small synthesized sound effects.
 // Later: replace speech for isolated sounds by recorded audio files.
 
 let frVoice: SpeechSynthesisVoice | null = null;
 
+function synth(): SpeechSynthesis | null {
+  try {
+    return 'speechSynthesis' in window ? window.speechSynthesis : null;
+  } catch {
+    return null;
+  }
+}
+
 function pickVoice(): void {
-  if (!('speechSynthesis' in window)) return;
-  const voices = speechSynthesis.getVoices().filter((v) => v.lang.toLowerCase().startsWith('fr'));
-  // prefer fr-FR, then "natural"/"google" voices which usually sound better
-  voices.sort((a, b) => score(b) - score(a));
-  frVoice = voices[0] ?? null;
+  const s = synth();
+  if (!s) return;
+  try {
+    const voices = s.getVoices().filter((v) => v.lang.toLowerCase().startsWith('fr'));
+    // prefer fr-FR, then "natural"/"google" voices which usually sound better
+    voices.sort((a, b) => score(b) - score(a));
+    frVoice = voices[0] ?? null;
+  } catch {
+    frVoice = null;
+  }
 }
 function score(v: SpeechSynthesisVoice): number {
   let s = 0;
@@ -17,38 +30,54 @@ function score(v: SpeechSynthesisVoice): number {
   if (v.localService) s += 1;
   return s;
 }
-if ('speechSynthesis' in window) {
-  pickVoice();
-  speechSynthesis.addEventListener?.('voiceschanged', pickVoice);
+{
+  const s = synth();
+  if (s) {
+    pickVoice();
+    s.addEventListener?.('voiceschanged', pickVoice);
+  }
 }
 
 export function speechAvailable(): boolean {
-  return 'speechSynthesis' in window;
+  return synth() !== null;
 }
 
-/** Speak a sentence. Resolves when finished (or after a timeout, some browsers never fire `end`). */
+/**
+ * Speak a sentence (cutting whatever was being said). Resolves when finished, or after a timeout
+ * because some browsers never fire `end`. Never rejects: the games keep working without a voice.
+ */
 export function say(text: string, opts: { rate?: number; pitch?: number } = {}): Promise<void> {
   return new Promise((resolve) => {
-    if (!speechAvailable()) return resolve();
-    speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = 'fr-FR';
-    if (frVoice) u.voice = frVoice;
-    u.rate = opts.rate ?? 0.85;
-    u.pitch = opts.pitch ?? 1.1;
+    const s = synth();
+    if (!s) return resolve();
+    let t = 0;
     const done = () => {
       clearTimeout(t);
       resolve();
     };
-    const t = setTimeout(done, 1500 + text.length * 120);
-    u.onend = done;
-    u.onerror = done;
-    speechSynthesis.speak(u);
+    try {
+      if (s.speaking || s.pending) s.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'fr-FR';
+      if (frVoice) u.voice = frVoice;
+      u.rate = opts.rate ?? 0.85;
+      u.pitch = opts.pitch ?? 1.1;
+      t = window.setTimeout(done, 1500 + text.length * 120);
+      u.onend = done;
+      u.onerror = done;
+      s.speak(u);
+    } catch {
+      done();
+    }
   });
 }
 
 export function stopSpeech(): void {
-  if (speechAvailable()) speechSynthesis.cancel();
+  try {
+    synth()?.cancel();
+  } catch {
+    /* ignore */
+  }
 }
 
 // ---------- sound effects (Web Audio, no files needed) ----------
@@ -56,7 +85,8 @@ let ctx: AudioContext | null = null;
 function ac(): AudioContext | null {
   try {
     ctx ??= new AudioContext();
-    if (ctx.state === 'suspended') void ctx.resume();
+    // iOS can leave the context "suspended" or "interrupted" (after a call, or when the app was in background)
+    if (ctx.state !== 'running') void ctx.resume().catch(() => {});
     return ctx;
   } catch {
     return null;
@@ -66,16 +96,20 @@ function ac(): AudioContext | null {
 function tone(freq: number, start: number, dur: number, type: OscillatorType = 'square', vol = 0.08): void {
   const c = ac();
   if (!c) return;
-  const o = c.createOscillator();
-  const g = c.createGain();
-  o.type = type;
-  o.frequency.value = freq;
-  const t0 = c.currentTime + start;
-  g.gain.setValueAtTime(vol, t0);
-  g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
-  o.connect(g).connect(c.destination);
-  o.start(t0);
-  o.stop(t0 + dur + 0.02);
+  try {
+    const o = c.createOscillator();
+    const g = c.createGain();
+    o.type = type;
+    o.frequency.value = freq;
+    const t0 = c.currentTime + start;
+    g.gain.setValueAtTime(vol, t0);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    o.connect(g).connect(c.destination);
+    o.start(t0);
+    o.stop(t0 + dur + 0.02);
+  } catch {
+    /* audio is a bonus */
+  }
 }
 
 export const sfx = {

@@ -76,7 +76,7 @@ function word(spec: string, pic?: string): Item {
 
 /** Mots simples (consonne + voyelle). */
 export const SIMPLE_WORDS: Item[] = [
-  'mo-to', 'la-ma', 'vé-lo', 'so-fa', 'ju-do', 'pa-pa', 'ma-mi', 'ra-di-o', 'do-mi-no', 'to-ma-te',
+  'mo-to', 'la-ma', 'vé-lo', 'so-fa', 'ju-do', 'pa-pa', 'do-do', 'ra-di-o', 'do-mi-no', 'to-ma-te',
   'sa-la-de', 'ba-na-ne', 'pi-ra-te', 'ca-na-pé', 'ca-fé', 'ki-wi', 'li-mo-na-de', 'bé-bé',
 ].map((w) => word(w));
 
@@ -158,8 +158,8 @@ export const READING_LEVELS: ReadingLevel[] = [
   { name: 'Sons à deux lettres', intro: 'Parfois, deux lettres font un seul son.', items: COMPLEX_SOUNDS, choices: 4, kind: 'sound' },
   { name: 'Syllabes à deux lettres', intro: 'Écoute bien la syllabe.', items: COMPLEX_SYLLABLES, choices: 4, similar: true, kind: 'sound' },
   { name: 'Écouter des mots difficiles', intro: 'Écoute le mot, et trouve-le.', items: COMPLEX_WORDS, choices: 4, similar: true, kind: 'word' },
-  { name: 'Lire tout seul', intro: 'Maintenant, tu lis tout seul ! Lis le mot, et touche la bonne image.', items: SIMPLE_PICTURE_WORDS, choices: 3, kind: 'read' },
-  { name: 'Grand lecteur', intro: 'Lis le mot en entier, et touche la bonne image.', items: COMPLEX_WORDS, choices: 4, similar: true, kind: 'read' },
+  { name: 'Lire sans aide', intro: "Maintenant, c'est toi qui lis ! Lis le mot, et touche la bonne image.", items: SIMPLE_PICTURE_WORDS, choices: 3, kind: 'read' },
+  { name: 'Lire des mots difficiles', intro: 'Lis le mot en entier, et touche la bonne image.', items: COMPLEX_WORDS, choices: 4, similar: true, kind: 'read' },
 ];
 
 /** Syllabes « pièges » pour le niveau Construire des mots. */

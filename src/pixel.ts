@@ -99,12 +99,15 @@ const FOX = [
   '...oo.oo.oo...',
 ];
 const FOX_COLORS: Record<string, string> = { o: '#f08a24', k: '#2b1a10', w: '#fff4e6' };
+// same fox, eyes closed (pause screen)
+const FOX_SLEEP = FOX.map((row, y) => (y === 5 ? 'oooooooooooooo' : y === 6 ? 'ookkoooooookko' : row));
 
-export function foxSVG(size = 120): string {
-  const w = FOX[0].length;
-  const h = FOX.length;
+export function foxSVG(size = 120, sleeping = false): string {
+  const rows = sleeping ? FOX_SLEEP : FOX;
+  const w = rows[0].length;
+  const h = rows.length;
   let rects = '';
-  FOX.forEach((row, y) =>
+  rows.forEach((row, y) =>
     [...row].forEach((ch, x) => {
       const col = FOX_COLORS[ch];
       if (col) rects += `<rect x="${x}" y="${y}" width="1.02" height="1.02" fill="${col}"/>`;
