@@ -42,3 +42,11 @@ export function endSession(a: ActivityId, firstTry: number, rounds: number, maxL
   }
   return { firstTry, rounds, passed, next, isNew };
 }
+
+/** Parents: jump straight to a level (unlocks it and every level below). */
+export function parentSetLevel(a: ActivityId, n: number): void {
+  const l = state.levels[a];
+  l.current = n;
+  l.unlocked = Math.max(l.unlocked, n);
+  save();
+}

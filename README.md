@@ -9,9 +9,12 @@ Plan détaillé : [docs/PLAN.md](docs/PLAN.md)
 
 ## Prototype (v0.1)
 
-- **Les sons** — Pixel le renard dit un son ; l'enfant touche le bon bloc. Les sons ratés reviennent plus souvent.
-  6 niveaux : voyelles → majuscules/minuscules → syllabes (m, l, r, s) → autres consonnes
-  → syllabes jumelles (b/d, m/n…) → lire des mots.
+- **Lire** — 12 niveaux, des voyelles jusqu'à la lecture autonome (contenu : `src/content/reading.ts`) :
+  1. Les voyelles · 2. Grandes et petites lettres · 3. Premières syllabes (m, l, r, s)
+  4. Nouvelles consonnes · 5. Syllabes jumelles (b/d, m/n…) · 6. Écouter des mots
+  7. Construire des mots (poser les syllabes dans l'ordre) · 8. Sons à deux lettres (ou, on, an, in, oi, ch, eu)
+  9. Syllabes à deux lettres · 10. Écouter des mots difficiles
+  11. Lire tout seul (le mot est écrit, on touche la bonne image) · 12. Grand lecteur (mots avec sons complexes)
 - **Compter** — 6 niveaux : compter jusqu'à 4, 6, 10 (on touche chaque bloc, la voix compte)
   → coup d'œil (les blocs se cachent après 2 s) → additions jusqu'à 6, puis 10.
 - **Niveaux** — une partie réussie à 80 % du premier coup débloque le niveau suivant.
@@ -19,7 +22,8 @@ Plan détaillé : [docs/PLAN.md](docs/PLAN.md)
 - **Construire** — chaque bonne réponse rapporte un bloc (3 réussites d'affilée = bloc d'or) ;
   on les pose sur une grille pour bâtir sa maison. Toucher un bloc posé le récupère.
 - Tout est guidé à la voix (synthèse vocale du navigateur, en français).
-- Sauvegarde sur l'appareil uniquement (localStorage). Bouton « Parents » (calcul) pour tout effacer.
+- Sauvegarde sur l'appareil uniquement (localStorage).
+- **Espace parents** (protégé par une multiplication) : choisir directement le niveau, voir ce qui est acquis / en cours / à revoir, tout effacer.
 - Installable sur téléphone (« Ajouter à l'écran d'accueil ») et utilisable hors-ligne.
 
 ## Lancer en local
@@ -39,4 +43,10 @@ Le workflow `.github/workflows/deploy.yml` publie le site sur GitHub Pages à ch
 
 - La voix dépend du navigateur/appareil (meilleure sur Chrome/Android et Safari/iOS récents).
   À terme : enregistrer les sons pour une prononciation parfaite des sons isolés.
-- Pas encore d'exercice de fusion où l'on assemble soi-même « m + a = ma ».
+- Les emojis des niveaux « lire tout seul » dépendent du téléphone (dessins Apple / Google).
+
+## Règle pour les phrases dites par la voix
+
+Ne jamais placer un son ou un mot qui commence par une voyelle après un mot qui fait une liaison
+(« dans », « les », « c'est », « des », « plus »…) : la voix dirait « dans-z-école ».
+On écrit « comme école », et les consignes mettent « : » avant l'élément (« Touche le mot : avion »).

@@ -1,5 +1,5 @@
 // Minimal offline support: network first, cache as fallback (so updates arrive as soon as online).
-const CACHE = 'schoolcraft-v2';
+const CACHE = 'schoolcraft-v3';
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['./', './manifest.webmanifest', './icon.svg'])));

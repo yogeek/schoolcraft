@@ -1,6 +1,6 @@
 // Mode construction : l'enfant pose les blocs gagnés sur une grille (vue de côté). Sauvegardé sur l'appareil.
 import { say, sfx } from '../audio';
-import { BLOCK_NAMES, blockTexture } from '../pixel';
+import { BLOCK_NAMES, blockTexture, ofBlock } from '../pixel';
 import { BLOCK_TYPES, save, state, WORLD_COLS, WORLD_ROWS, type BlockType } from '../state';
 import { blockImg, h, topBar } from '../ui';
 import type { Ctx } from './types';
@@ -40,7 +40,7 @@ export function buildScreen(ctx: Ctx): void {
     } else {
       if (!selected || state.inventory[selected] <= 0) {
         sfx.oops();
-        void say("Tu n'as plus de blocs. Joue aux sons ou à compter pour en gagner !");
+        void say("Tu n'as plus de blocs. Joue à lire ou à compter pour en gagner !");
         return;
       }
       state.world[r][c] = selected;
@@ -62,7 +62,7 @@ export function buildScreen(ctx: Ctx): void {
         b.onclick = () => {
           sfx.tap();
           if (n === 0) {
-            void say(`Tu n'as pas encore de blocs de ${BLOCK_NAMES[t]}.`);
+            void say(`Tu n'as pas encore de blocs ${ofBlock(t)}.`);
             return;
           }
           selected = t;

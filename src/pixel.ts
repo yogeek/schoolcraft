@@ -113,6 +113,12 @@ export function foxSVG(size = 120): string {
   return `<svg class="fox" viewBox="0 0 ${w} ${h}" width="${size}" height="${(size * h) / w}" shape-rendering="crispEdges" aria-hidden="true">${rects}</svg>`;
 }
 
+/** « de bois », « d'or », « d'herbe » */
+export function ofBlock(t: BlockType): string {
+  const n = BLOCK_NAMES[t];
+  return /^[aeiouéh]/.test(n) ? `d'${n}` : `de ${n}`;
+}
+
 export const BLOCK_NAMES: Record<BlockType, string> = {
   grass: 'herbe',
   dirt: 'terre',

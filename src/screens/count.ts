@@ -29,6 +29,7 @@ const LEVELS: Level[] = [
   { name: 'Additions grandes', mode: 'add', min: 4, max: 10, choices: 4 },
 ];
 export const COUNT_MAX_LEVEL = LEVELS.length;
+export const COUNT_LEVEL_NAMES = LEVELS.map((l) => l.name);
 
 /** dice layout on a 3×3 grid */
 const DICE: Record<number, number[]> = {
@@ -68,7 +69,7 @@ export function countScreen(ctx: Ctx): void {
     h(
       'main',
       { class: 'screen activity' },
-      topBar(() => ctx.go('home'), levelButton('count', levelNo, COUNT_MAX_LEVEL, LEVELS.map((l) => l.name), () => ctx.go('count'))),
+      topBar(() => ctx.go('home'), levelButton('count', levelNo, COUNT_MAX_LEVEL, COUNT_LEVEL_NAMES, () => ctx.go('count'))),
       progress,
       h('div', { class: 'hero small' }, h('div', { class: 'fox-btn', html: foxSVG(90) }), bubble, replay),
       pile,
@@ -80,7 +81,7 @@ export function countScreen(ctx: Ctx): void {
   function ask(): Promise<void> {
     if (level.mode === 'add') {
       bubble.textContent = `${a} + ${target - a} = ?`;
-      return say(`Combien font ${WORDS[a]} plus ${WORDS[target - a]} ?`);
+      return say(`Combien font : ${WORDS[a]}… plus… ${WORDS[target - a]} ?`);
     }
     bubble.textContent = 'Combien de blocs ?';
     if (level.mode === 'flash') return say('Combien y avait-il de blocs ?');
@@ -130,8 +131,9 @@ export function countScreen(ctx: Ctx): void {
     }
 
     const options = new Set<number>([target]);
-    const lo = Math.max(1, target - 3);
-    const hi = Math.min(10, target + 3);
+    // wrong answers stay within the level's range (no "7" when counting up to 4)
+    const hi = Math.min(level.max, target + 3);
+    const lo = Math.max(1, Math.min(target - 3, hi - level.choices + 1));
     while (options.size < level.choices) options.add(lo + Math.floor(Math.random() * (hi - lo + 1)));
     answers.replaceChildren(...shuffle([...options]).map(makeAnswer));
     void (level.mode === 'flash' ? flash() : ask());
@@ -172,7 +174,8 @@ export function countScreen(ctx: Ctx): void {
       round++;
       if (level.mode === 'add') {
         bubble.textContent = `${a} + ${target - a} = ${target}`;
-        await say(`Oui ! ${WORDS[a]} plus ${WORDS[target - a]}, ça fait ${WORDS[target]} !`);
+        await say('Oui !');
+        await say(`${WORDS[a]}… plus… ${WORDS[target - a]}… ça fait : ${WORDS[target]} !`);
       } else {
         bubble.textContent = `Oui, ${target} !`;
         await say(`Oui ! Il y a ${WORDS[target]} bloc${target > 1 ? 's' : ''} !`);
@@ -189,18 +192,18 @@ export function countScreen(ctx: Ctx): void {
       el.classList.add('shake');
       bubble.textContent = 'Essaie encore !';
       if (level.mode === 'flash') {
-        await say(`Ça, c'est ${WORDS[n]}. Regarde encore !`);
+        await say(`Ça, c'est le nombre ${WORDS[n]}. Regarde encore !`);
         await flash();
         return;
       }
       // help: reset the counting so the child can count again, one by one
       pile.querySelectorAll('.counted').forEach((b) => b.classList.remove('counted'));
       counted = 0;
-      await say(`Ça, c'est ${WORDS[n]}. Compte ${level.mode === 'add' ? 'tous ' : ''}les blocs avec ton doigt !`);
+      await say(`Ça, c'est le nombre ${WORDS[n]}. Compte ${level.mode === 'add' ? 'tous ' : ''}les blocs avec ton doigt !`);
     }
   }
 
-  void say(`Niveau ${levelNo} : ${level.name.toLowerCase()} !`)
+  void say(`Niveau ${levelNo}. ${level.name} !`)
     .then(() => wait(200))
     .then(nextRound);
 }
