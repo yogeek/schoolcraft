@@ -1,6 +1,6 @@
 // Play-time limit chosen by the parents. Only time with the app open and visible counts.
 // A break of 30 minutes or more starts a new sitting (the counter goes back to zero).
-import { save, state } from './state';
+import { logTime, save, state } from './state';
 
 export const BREAK_MS = 30 * 60 * 1000;
 const TICK_MS = 5000;
@@ -8,8 +8,17 @@ const TICK_MS = 5000;
 /** Add the time elapsed since the last tick (capped, so time spent closed or hidden is not counted). */
 export function tickPlayClock(now = Date.now()): void {
   const p = state.play;
+  // a hidden tab writes nothing: it must not overwrite what the child does in another tab
+  if (document.hidden) {
+    p.last = now;
+    return;
+  }
   if (!p.last || now - p.last >= BREAK_MS) p.ms = 0;
-  else if (!document.hidden) p.ms += Math.min(Math.max(0, now - p.last), TICK_MS * 2);
+  else {
+    const d = Math.min(Math.max(0, now - p.last), TICK_MS * 2);
+    p.ms += d;
+    logTime(d);
+  }
   p.last = now;
   save();
 }

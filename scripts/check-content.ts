@@ -1,8 +1,10 @@
 // Vérifie le contenu du jeu (héros dessinés, mots, niveaux) et explique les erreurs en français.
 // Lancer : npm run check   (Node 22.6+ : les types TypeScript sont simplement ignorés)
-import { COUNT_LEVELS, DICE, NUMBER_WORDS } from '../src/content/counting.ts';
+import { COUNT_CHAPTERS, COUNT_LEVELS, DICE, NUMBER_WORDS, THINGS } from '../src/content/counting.ts';
 import { HEROES, regions } from '../src/content/heroes.ts';
-import { DECOY_SYLLABLES, READING_LEVELS } from '../src/content/reading.ts';
+import { DECOY_SYLLABLES, graphemes, PIC_WORDS, READING_CHAPTERS, READING_LEVELS } from '../src/content/reading.ts';
+import { TIPS } from '../src/content/tips.ts';
+import { GLYPHS, LETTER_SPEECH, WRITING_CHAPTERS, WRITING_LEVELS } from '../src/content/writing.ts';
 
 const errors: string[] = [];
 const err = (m: string) => errors.push(m);
@@ -38,18 +40,50 @@ for (const h of HEROES) {
 // a word with a liaison just before a vowel makes the voice say « dans-z-école »
 const LIAISON = /\b(dans|les|des|mes|tes|ses|nos|vos|aux|c'est|plus|très|deux|trois|six|dix|un|mon|ton|son|en|on|nous|vous|ils|elles|tout|chez|quand)\s+[aeiouyéèêàâîôûœ]/i;
 
+const chapters = (name: string, levels: { chapter: number }[], titles: string[]) => {
+  levels.forEach((l, i) => {
+    if (l.chapter < 0 || l.chapter >= titles.length) err(`${name}, niveau ${i + 1} : chapitre ${l.chapter} inconnu`);
+    if (i > 0 && l.chapter < levels[i - 1].chapter) err(`${name}, niveau ${i + 1} : les chapitres doivent se suivre`);
+  });
+};
+chapters('Lire', READING_LEVELS, READING_CHAPTERS);
+chapters('Compter', COUNT_LEVELS, COUNT_CHAPTERS);
+chapters('Écrire', WRITING_LEVELS, WRITING_CHAPTERS);
+
 READING_LEVELS.forEach((l, i) => {
   const where = `Lire, niveau ${i + 1} (${l.name})`;
+  if (!l.intro.trim()) err(`${where} : consigne vide`);
+  if (l.kind === 'clap' || l.kind === 'rhyme' || l.kind === 'initial') {
+    if (l.words.length < 4) err(`${where} : trop peu d'images (${l.words.length})`);
+    for (const w of l.words) {
+      if (l.kind === 'clap' && (w.syl.length < 1 || w.syl.length > 4)) err(`${where} : « ${w.word} » doit avoir de 1 à 4 syllabes`);
+      if (l.kind === 'rhyme' && !w.rime) err(`${where} : « ${w.word} » n'a pas de rime`);
+      if (l.kind === 'initial' && !w.onset) err(`${where} : « ${w.word} » n'a pas de premier son`);
+    }
+    return;
+  }
+  if (l.kind === 'sentence') {
+    if (l.sentences.filter((x) => x.truth).length < 3 || l.sentences.filter((x) => !x.truth).length < 3) err(`${where} : il faut au moins 3 phrases vraies et 3 fausses`);
+    for (const x of l.sentences) if (!/[.!?]$/.test(x.text)) err(`${where} : « ${x.text} » doit finir par un point`);
+    return;
+  }
+  if (l.kind === 'riddle') {
+    for (const x of l.riddles) {
+      if (new Set([x.pic, ...x.wrong]).size !== 3) err(`${where} : la devinette « ${x.text} » a deux images identiques`);
+    }
+    return;
+  }
   const texts = l.items.map((it) => it.text);
   const dup = texts.filter((t, k) => texts.indexOf(t) !== k);
   if (dup.length) err(`${where} : en double : ${[...new Set(dup)].join(', ')}`);
-  if (l.kind !== 'build' && l.items.length < l.choices) err(`${where} : ${l.items.length} éléments pour ${l.choices} choix`);
-  if (l.kind !== 'build' && l.choices < 2) err(`${where} : il faut au moins 2 choix`);
-  if (!l.intro.trim()) err(`${where} : consigne vide`);
+  const free = l.kind === 'build' || l.kind === 'spell';
+  if (!free && l.items.length < l.choices) err(`${where} : ${l.items.length} éléments pour ${l.choices} choix`);
+  if (!free && l.choices < 2) err(`${where} : il faut au moins 2 choix`);
   for (const it of l.items) {
     if (!it.speak.trim()) err(`${where} : « ${it.text} » n'a rien à dire pour la voix`);
-    if (l.kind !== 'sound' && (!it.parts || it.parts.join('') !== it.text)) err(`${where} : « ${it.text} » doit être découpé en syllabes (ex. mo-to)`);
+    if (l.kind !== 'sound' && l.kind !== 'spell' && (!it.parts || it.parts.join('') !== it.text)) err(`${where} : « ${it.text} » doit être découpé en syllabes (ex. mo-to)`);
     if (l.kind === 'build' && it.parts && it.parts.length > 4) err(`${where} : « ${it.text} » a plus de 4 syllabes (trop large pour l'écran)`);
+    if (l.kind === 'spell' && graphemes(it.text).length > 6) err(`${where} : « ${it.text} » a trop de lettres pour l'écran`);
     if (l.kind === 'read' && !it.pic) err(`${where} : « ${it.text} » n'a pas d'image`);
     if (it.example && LIAISON.test(it.example)) err(`${where} : « ${it.example} » fait une liaison avant une voyelle (écrire « comme école », pas « comme dans école »)`);
   }
@@ -58,21 +92,68 @@ READING_LEVELS.forEach((l, i) => {
     if (new Set(pics).size !== pics.length) err(`${where} : deux mots ont la même image`);
   }
 });
+
+// banque d'images (syllabes, rimes, premier son)
+{
+  const words = PIC_WORDS.map((w) => w.word);
+  const dupW = words.filter((w, k) => words.indexOf(w) !== k);
+  if (dupW.length) err(`Images : mots en double : ${[...new Set(dupW)].join(', ')}`);
+  const pics = PIC_WORDS.map((w) => w.pic);
+  const dupP = pics.filter((p, k) => pics.indexOf(p) !== k);
+  if (dupP.length) err(`Images : la même image pour deux mots : ${[...new Set(dupP)].join(' ')}`);
+  for (const w of PIC_WORDS) if (!w.syl.every((x) => x.trim())) err(`Images : « ${w.word} » a une syllabe vide`);
+}
 if (new Set(DECOY_SYLLABLES).size !== DECOY_SYLLABLES.length) err('Syllabes pièges : en double');
 
 // ---------------------------------------------------------------- calcul
-if (NUMBER_WORDS.length < 11) err('Il manque des nombres en lettres (jusqu’à dix)');
+if (NUMBER_WORDS.length < 21) err('Il manque des nombres en lettres (jusqu’à vingt)');
 COUNT_LEVELS.forEach((l, i) => {
   const where = `Compter, niveau ${i + 1} (${l.name})`;
-  if (l.min < 1 || l.max > 10 || l.min >= l.max) err(`${where} : nombres de ${l.min} à ${l.max} (entre 1 et 10, min < max)`);
-  if (l.choices < 2 || l.choices > l.max) err(`${where} : ${l.choices} choix, impossible avec des nombres jusqu'à ${l.max}`);
+  if (l.min < 1 || l.max > 20 || l.min >= l.max) err(`${where} : nombres de ${l.min} à ${l.max} (entre 1 et 20, min < max)`);
+  const asks = ['count', 'flash', 'frame', 'hide', 'make10', 'add', 'problem', 'tens'].includes(l.mode);
+  if (asks && (l.choices < 2 || l.choices > 6)) err(`${where} : ${l.choices} choix (de 2 à 6)`);
   if (l.mode === 'flash' && l.max > Math.max(...Object.keys(DICE).map(Number))) err(`${where} : pas de dé pour ${l.max}`);
+  if ((l.mode === 'frame' || l.mode === 'make10') && l.max > 10) err(`${where} : le cadre de dix ne va pas au-delà de 10`);
+  if (l.mode === 'make10' && l.max > 9) err(`${where} : il doit manquer au moins un bloc pour faire dix`);
   if (l.mode === 'add' && l.min < 2) err(`${where} : une addition demande au moins 2 blocs`);
+  if (l.mode === 'hide' && l.min < 2) err(`${where} : il faut au moins 2 blocs pour en cacher`);
+  if (l.mode === 'tens' && (l.min < 11 || l.max > 20)) err(`${where} : de 11 à 20`);
+  if (l.mode === 'race' && (!l.die || l.die < 1 || l.die > 6 || l.die * 5 < l.max)) err(`${where} : dé de 1 à ${l.die}, impossible d'arriver en 5 tours`);
   if (!l.intro.trim()) err(`${where} : consigne vide`);
+});
+for (const t of THINGS) {
+  if (/^[aeiouyéèêh]/i.test(t.many)) err(`Problèmes : « ${t.many} » commence par une voyelle (liaison)`);
+  if (!t.gone.includes('{n}')) err(`Problèmes : « ${t.gone} » doit contenir {n}`);
+}
+
+// ---------------------------------------------------------------- écriture
+const isPath = /^M[\d\s.,MLHVCSQTAZmlhvcsqtaz-]+$/;
+for (const g of GLYPHS) {
+  const who = `Tracé « ${g.char} » (${g.script})`;
+  if (!g.strokes.length) err(`${who} : aucun trait`);
+  for (const d of g.strokes) {
+    if (!isPath.test(d)) err(`${who} : trait invalide « ${d} »`);
+    const nums = d.match(/-?\d+(\.\d+)?/g)?.map(Number) ?? [];
+    if (nums.some((n) => n < 0 || n > 100)) err(`${who} : un point sort de la boîte (0 à 100)`);
+  }
+  if (g.w < 30 || g.w > 100) err(`${who} : largeur ${g.w} (de 30 à 100)`);
+  if (g.script !== 'dig' && !LETTER_SPEECH[g.char.toLowerCase()]) err(`${who} : pas de nom pour la voix`);
+}
+WRITING_LEVELS.forEach((l, i) => {
+  const where = `Écrire, niveau ${i + 1} (${l.name})`;
+  if (!l.intro.trim()) err(`${where} : consigne vide`);
+  if (l.chars.length < 2) err(`${where} : au moins 2 lettres`);
+  for (const c of l.chars) if (!GLYPHS.some((g) => g.script === l.script && g.char === c)) err(`${where} : pas de tracé pour « ${c} »`);
+});
+
+// ---------------------------------------------------------------- idées pour les parents
+(['sounds', 'write', 'count'] as const).forEach((a) => {
+  const n = a === 'sounds' ? READING_CHAPTERS.length : a === 'write' ? WRITING_CHAPTERS.length : COUNT_CHAPTERS.length;
+  if (TIPS[a].length !== n) err(`Idées parents (${a}) : ${TIPS[a].length} listes pour ${n} chapitres`);
 });
 
 if (errors.length) {
   console.error(`✗ ${errors.length} problème(s) dans le contenu :\n - ${errors.join('\n - ')}`);
   process.exit(1);
 }
-console.log(`✓ Contenu valide : ${HEROES.length} héros, ${READING_LEVELS.length} niveaux de lecture, ${COUNT_LEVELS.length} niveaux de calcul.`);
+console.log(`✓ Contenu valide : ${HEROES.length} héros, ${READING_LEVELS.length} niveaux de lecture, ${WRITING_LEVELS.length} niveaux d'écriture, ${COUNT_LEVELS.length} niveaux de calcul, ${GLYPHS.length} tracés.`);

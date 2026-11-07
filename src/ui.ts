@@ -1,8 +1,7 @@
 // Small DOM helpers shared by every screen.
 import { sfx } from './audio';
-import { LEVEL_NAMES, MAX_LEVEL, setLevel, unlockedLevel } from './levels';
 import { blockTexture, BLOCK_NAMES, foxSVG } from './pixel';
-import { BLOCK_TYPES, save, state, totalBlocks, type ActivityId, type BlockType } from './state';
+import { COMMON_BLOCKS, save, state, totalBlocks, type BlockType } from './state';
 
 export function h<K extends keyof HTMLElementTagNameMap>(
   tag: K,
@@ -93,7 +92,7 @@ export function giveBlock(type: BlockType, from?: Element): void {
 /** A random "common" block; gold when on a streak of 3. */
 export function rewardType(streak: number): BlockType {
   if (streak > 0 && streak % 3 === 0) return 'gold';
-  return rand(BLOCK_TYPES.filter((t) => t !== 'gold'));
+  return rand(COMMON_BLOCKS);
 }
 
 export function topBar(onHome: () => void, title?: string | Node): HTMLElement {
@@ -130,31 +129,12 @@ export function setBubble(el: HTMLElement, text: string): void {
   el.textContent = fr(text);
 }
 
-/** "Niveau N" button in the top bar; opens a picker with the levels already reached. */
-export function levelButton(activity: ActivityId, level: number, restart: () => void): HTMLElement {
-  const b = h('button', { class: 'level-btn', 'aria-label': `Niveau ${level}, changer de niveau` }, `Niveau ${level}`, h('span', { class: 'chev' }, '▾'));
+/** "Niveau N" button in the top bar; opens the map of the activity. */
+export function levelButton(level: number, openMap: () => void): HTMLElement {
+  const b = h('button', { class: 'level-btn', 'aria-label': `Niveau ${level} : voir la carte` }, `Niveau ${level}`, h('span', { class: 'chev', 'aria-hidden': 'true' }, '▾'));
   b.onclick = () => {
     sfx.tap();
-    const unlocked = unlockedLevel(activity);
-    const list = h('div', { class: 'level-list' });
-    for (let n = 1; n <= MAX_LEVEL[activity]; n++) {
-      const open = n <= unlocked;
-      const item = h(
-        'button',
-        { class: `level-item${n === level ? ' current' : ''}${open ? '' : ' locked'}` },
-        h('span', { class: 'level-no' }, open ? String(n) : '🔒'),
-        h('span', {}, LEVEL_NAMES[activity][n - 1]),
-      );
-      if (open) {
-        item.onclick = () => {
-          dlg.close();
-          setLevel(activity, n);
-          restart();
-        };
-      } else item.disabled = true;
-      list.append(item);
-    }
-    const dlg = modal({ title: 'Choisis ton niveau', body: [list], actions: [{ label: 'Fermer' }] });
+    openMap();
   };
   return b;
 }

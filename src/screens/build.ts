@@ -2,7 +2,7 @@
 // au-dessus d'un sol décoratif. Toucher un bloc posé le reprend. Sauvegardé sur l'appareil.
 import { sfx } from '../audio';
 import { BLOCK_NAMES, blockTexture, ofBlock } from '../pixel';
-import { BLOCK_TYPES, save, state, WORLD_COLS, WORLD_ROWS, type BlockType } from '../state';
+import { BLOCK_TYPES, save, SPECIAL_BLOCKS, state, WORLD_COLS, WORLD_ROWS, type BlockType } from '../state';
 import { blockImg, bubble, setBubble, bumpCounter, h, mascot, modal, topBar } from '../ui';
 import type { Ctx } from './types';
 
@@ -68,8 +68,9 @@ export function buildScreen(ctx: Ctx): void {
   }
 
   function renderPalette(): void {
+    // special blocks (from the daily chest) appear once the child has some
     palette.replaceChildren(
-      ...BLOCK_TYPES.map((t) => {
+      ...BLOCK_TYPES.filter((t) => state.inventory[t] > 0 || !(SPECIAL_BLOCKS as readonly string[]).includes(t)).map((t) => {
         const n = state.inventory[t];
         const b = h('button', { class: `slot${t === selected ? ' selected' : ''}${n === 0 ? ' empty' : ''}`, 'aria-label': `${BLOCK_NAMES[t]} : ${n}` }, blockImg(t), h('span', { class: 'qty' }, String(n)));
         b.onclick = () => {

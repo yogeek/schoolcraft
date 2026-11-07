@@ -1,7 +1,11 @@
 // Game state, saved on the device only (localStorage). No account, no server.
 
-export const BLOCK_TYPES = ['grass', 'dirt', 'wood', 'stone', 'glass', 'gold'] as const;
+/** Blocks won by answering. The special ones only come from chests (the daily adventure). */
+export const COMMON_BLOCKS = ['grass', 'dirt', 'wood', 'stone', 'glass'] as const;
+export const SPECIAL_BLOCKS = ['brick', 'leaves', 'flower', 'crystal'] as const;
+export const BLOCK_TYPES = [...COMMON_BLOCKS, 'gold', ...SPECIAL_BLOCKS] as const;
 export type BlockType = (typeof BLOCK_TYPES)[number];
+export type SpecialBlock = (typeof SPECIAL_BLOCKS)[number];
 
 /** Build mode: buildable cells. The ground under them is a decoration (it cannot be picked up). */
 export const WORLD_COLS = 8;
@@ -14,7 +18,10 @@ export interface ItemStat {
   ko: number;
 }
 
-export type ActivityId = 'sounds' | 'count';
+export const ACTIVITIES = ['sounds', 'write', 'count'] as const;
+export type ActivityId = (typeof ACTIVITIES)[number];
+
+export type Grade = 'MS' | 'GS' | 'CP';
 
 export interface LevelState {
   /** level being played */
@@ -23,61 +30,189 @@ export interface LevelState {
   unlocked: number;
 }
 
+/** One day of play, for the parents' summary. */
+export interface DayLog {
+  ms: number;
+  /** questions answered right */
+  good: number;
+}
+
 export interface GameState {
-  version: 2;
+  version: 3;
   levels: Record<ActivityId, LevelState>;
+  /** best stars (0–3) per level, index = level − 1 */
+  stars: Record<ActivityId, number[]>;
   inventory: Record<BlockType, number>;
   /** world[row][col], row 0 = top. null = air. */
   world: (BlockType | null)[][];
   stats: Record<string, ItemStat>;
   /** heroes: colour zones already filled, per hero id; `done` = completed, in order */
   heroes: { filled: Record<string, string[]>; done: string[] };
+  /** daily adventure: one game of each activity; a chest when all three are done */
+  mission: { day: string; done: ActivityId[]; chest: boolean };
+  /** chests opened so far (one per completed adventure) */
+  chests: number;
+  /** play per day (YYYY-MM-DD), last 60 days */
+  history: Record<string, DayLog>;
   settings: {
     /** play-time limit in minutes, 0 = no limit */
     limitMin: number;
+    /** class of the child, chosen by the parents (null = not asked yet) */
+    grade: Grade | null;
   };
   /** time played in the current sitting (resets after a long break) */
   play: { ms: number; last: number };
 }
 
-const KEY = 'schoolcraft:v1'; // storage key kept across versions; `version` inside drives migrations
+// ---------------------------------------------------------------- children (profiles)
+// Each child has a separate save. The first child keeps the original key, so saves made before
+// profiles existed are the first child's. Switching child reloads the app on the other save.
+export interface Profile {
+  id: string;
+  /** typed by the parents (stays on the device) */
+  name: string;
+  /** index of the hero used as avatar */
+  avatar: number;
+}
+
+const PROFILES_KEY = 'schoolcraft:profiles';
+export const MAX_PROFILES = 4;
+
+function loadProfiles(): { current: string; list: Profile[] } {
+  const first: Profile = { id: 'p1', name: '', avatar: 0 };
+  try {
+    const raw = JSON.parse(localStorage.getItem(PROFILES_KEY) ?? 'null') as { current?: unknown; list?: unknown } | null;
+    const list = Array.isArray(raw?.list)
+      ? (raw.list as Partial<Profile>[])
+          .filter((p) => typeof p?.id === 'string' && /^p\d+$/.test(p.id))
+          .slice(0, MAX_PROFILES)
+          .map((p) => ({ id: p.id!, name: typeof p.name === 'string' ? p.name.slice(0, 20) : '', avatar: typeof p.avatar === 'number' ? Math.max(0, Math.floor(p.avatar)) : 0 }))
+      : [];
+    if (!list.some((p) => p.id === 'p1')) list.unshift(first);
+    const current = list.find((p) => p.id === raw?.current)?.id ?? 'p1';
+    return { current, list };
+  } catch {
+    return { current: 'p1', list: [first] };
+  }
+}
+
+export const profiles = loadProfiles();
+
+const keyOf = (id: string) => (id === 'p1' ? 'schoolcraft:v1' : `schoolcraft:v1:${id}`);
+/** storage key of the child playing; kept across versions, `version` inside drives migrations */
+const KEY = keyOf(profiles.current);
+
+export function saveProfiles(): void {
+  try {
+    localStorage.setItem(PROFILES_KEY, JSON.stringify(profiles));
+  } catch {
+    /* storage full */
+  }
+}
+
+export function currentProfile(): Profile {
+  return profiles.list.find((p) => p.id === profiles.current) ?? profiles.list[0];
+}
+
+export function profileName(p: Profile): string {
+  return p.name.trim() || `Enfant ${profiles.list.indexOf(p) + 1}`;
+}
+
+/** Play as another child: the app restarts on that child's save. */
+export function switchProfile(id: string): void {
+  if (id === profiles.current || !profiles.list.some((p) => p.id === id)) return;
+  save();
+  profiles.current = id;
+  saveProfiles();
+  location.reload();
+}
+
+export function addProfile(): Profile | null {
+  if (profiles.list.length >= MAX_PROFILES) return null;
+  let n = 2;
+  while (profiles.list.some((p) => p.id === `p${n}`)) n++;
+  const used = new Set(profiles.list.map((p) => p.avatar));
+  let avatar = 0;
+  while (used.has(avatar)) avatar++;
+  const p: Profile = { id: `p${n}`, name: '', avatar };
+  profiles.list.push(p);
+  saveProfiles();
+  return p;
+}
+
+/** Remove a child and their save (never the child playing now). */
+export function removeProfile(id: string): void {
+  if (id === profiles.current) return;
+  profiles.list = profiles.list.filter((p) => p.id !== id);
+  try {
+    localStorage.removeItem(keyOf(id));
+  } catch {
+    /* ignore */
+  }
+  saveProfiles();
+}
+
+/** Local date as YYYY-MM-DD. */
+export function today(d = new Date()): string {
+  const p = (n: number) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
+}
 
 function emptyWorld(): (BlockType | null)[][] {
   return Array.from({ length: WORLD_ROWS }, () => Array.from({ length: WORLD_COLS }, () => null));
 }
 
-function freshLevels(): Record<ActivityId, LevelState> {
-  return { sounds: { current: 1, unlocked: 1 }, count: { current: 1, unlocked: 1 } };
+function emptyInventory(): Record<BlockType, number> {
+  return Object.fromEntries(BLOCK_TYPES.map((t) => [t, 0])) as Record<BlockType, number>;
 }
 
 function fresh(): GameState {
+  const inventory = emptyInventory();
+  // a few blocks to start, so the child can try colouring and building right away
+  inventory.grass = 2;
+  inventory.wood = 2;
   return {
-    version: 2,
-    levels: freshLevels(),
-    // a few blocks to start, so the child can try colouring and building right away
-    inventory: { grass: 2, dirt: 0, wood: 2, stone: 0, glass: 0, gold: 0 },
+    version: 3,
+    levels: { sounds: { current: 1, unlocked: 1 }, write: { current: 1, unlocked: 1 }, count: { current: 1, unlocked: 1 } },
+    stars: { sounds: [], write: [], count: [] },
+    inventory,
     world: emptyWorld(),
     stats: {},
     heroes: { filled: {}, done: [] },
-    settings: { limitMin: 0 },
+    mission: { day: '', done: [], chest: false },
+    chests: 0,
+    history: {},
+    settings: { limitMin: 0, grade: null },
     play: { ms: 0, last: 0 },
   };
 }
 
 const isBlock = (v: unknown): v is BlockType => typeof v === 'string' && (BLOCK_TYPES as readonly string[]).includes(v);
+const isActivity = (v: unknown): v is ActivityId => typeof v === 'string' && (ACTIVITIES as readonly string[]).includes(v);
 const count = (v: unknown): number => (typeof v === 'number' && Number.isFinite(v) && v > 0 ? Math.floor(v) : 0);
+const isDay = (v: unknown): v is string => typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v);
+
+/**
+ * v2 → v3: new levels were inserted (phonology before the letters, new counting games), so a level
+ * number now means another level. Index = old level number, value = the same level in v3.
+ */
+const V3_LEVELS: Partial<Record<ActivityId, number[]>> = {
+  sounds: [0, 4, 5, 6, 7, 8, 10, 11, 14, 15, 16, 12, 17],
+  count: [0, 1, 2, 5, 4, 11, 13],
+};
 
 /** Repair anything missing or malformed, and upgrade old saves. Never throws. */
 function sanitize(raw: unknown): GameState {
   const base = fresh();
   if (!raw || typeof raw !== 'object') return base;
   const s = raw as Partial<GameState> & { version?: number; world?: unknown };
+  const version = s.version ?? 1;
 
   for (const t of BLOCK_TYPES) base.inventory[t] = count((s.inventory as Record<string, unknown> | undefined)?.[t]);
 
   // world
   let world = Array.isArray(s.world) ? (s.world as unknown[][]) : null;
-  if ((s.version ?? 1) < 2 && world && world.length === WORLD_ROWS) {
+  if (version < 2 && world && world.length === WORLD_ROWS) {
     // v1: the bottom row was a free grass floor that could be picked up (free blocks!). The floor is now a
     // decoration: drop that grass, give back any other block placed there, and move the house down one row
     // so it still stands on the ground.
@@ -89,11 +224,27 @@ function sanitize(raw: unknown): GameState {
     base.world = world.map((r) => r.map((b) => (isBlock(b) ? b : null)));
   }
 
-  // levels
-  for (const a of ['sounds', 'count'] as const) {
+  // levels (clamped to the levels that exist by levels.ts, which knows the content)
+  for (const a of ACTIVITIES) {
     const l = (s.levels as Record<string, Partial<LevelState>> | undefined)?.[a];
-    const unlocked = Math.max(1, count(l?.unlocked));
-    base.levels[a] = { unlocked, current: Math.min(Math.max(1, count(l?.current)), unlocked) };
+    let unlocked = Math.max(1, count(l?.unlocked));
+    let current = Math.min(Math.max(1, count(l?.current)), unlocked);
+    const map = V3_LEVELS[a];
+    if (version < 3 && map && l) {
+      const last = map.length - 1;
+      const to = (n: number) => map[Math.min(n, last)];
+      // every old level up to `unlocked` stays open in its new place
+      const opened = Array.from({ length: Math.min(unlocked, last) }, (_, i) => to(i + 1));
+      current = to(current);
+      unlocked = Math.max(...opened);
+    }
+    base.levels[a] = { unlocked: Math.max(unlocked, current), current };
+  }
+
+  // stars
+  for (const a of ACTIVITIES) {
+    const st = (s.stars as Record<string, unknown> | undefined)?.[a];
+    if (Array.isArray(st)) base.stars[a] = st.map((v) => Math.min(3, count(v)));
   }
 
   // stats: keep only well-formed, prefixed keys (v1 also stored unused keys like "3" or "a")
@@ -114,7 +265,23 @@ function sanitize(raw: unknown): GameState {
   }
   if (Array.isArray(h?.done)) base.heroes.done = [...new Set(h.done.filter((d): d is string => typeof d === 'string'))];
 
+  // daily adventure, chests, history
+  const m = s.mission as Partial<GameState['mission']> | undefined;
+  if (m && isDay(m.day)) {
+    base.mission = { day: m.day, done: Array.isArray(m.done) ? [...new Set(m.done.filter(isActivity))] : [], chest: m.chest === true };
+  }
+  base.chests = count(s.chests);
+  if (s.history && typeof s.history === 'object') {
+    const days = Object.keys(s.history).filter(isDay).sort().slice(-60);
+    for (const d of days) {
+      const v = (s.history as Record<string, Partial<DayLog>>)[d];
+      base.history[d] = { ms: count(v?.ms), good: count(v?.good) };
+    }
+  }
+
   base.settings.limitMin = [0, 10, 15, 20, 30, 45].includes(count(s.settings?.limitMin)) ? count(s.settings?.limitMin) : 0;
+  const g = s.settings?.grade;
+  base.settings.grade = g === 'MS' || g === 'GS' || g === 'CP' ? g : null;
   base.play = { ms: count(s.play?.ms), last: count(s.play?.last) };
   return base;
 }
@@ -129,6 +296,21 @@ function load(): GameState {
 }
 
 export const state: GameState = load();
+
+// the app open in two tabs (or the installed app and a browser tab): take the other tab's save,
+// so neither tab overwrites the other with old data
+try {
+  window.addEventListener('storage', (e) => {
+    if (e.key !== KEY || !e.newValue) return;
+    try {
+      Object.assign(state, sanitize(JSON.parse(e.newValue)));
+    } catch {
+      /* unreadable: keep ours */
+    }
+  });
+} catch {
+  /* no window (content checks under Node) */
+}
 
 export function save(): void {
   try {
@@ -181,6 +363,34 @@ export function spendBlock(): boolean {
   state.inventory[t]--;
   save();
   return true;
+}
+
+/** Today's adventure (reset when the day changed). */
+export function mission(): GameState['mission'] {
+  const d = today();
+  if (state.mission.day !== d) {
+    state.mission = { day: d, done: [], chest: false };
+    save();
+  }
+  return state.mission;
+}
+
+/** Note a finished game: daily adventure and the parents' history. */
+export function logGame(a: ActivityId, good: number): void {
+  const m = mission();
+  if (!m.done.includes(a)) m.done.push(a);
+  const day = (state.history[m.day] ??= { ms: 0, good: 0 });
+  day.good += good;
+  const days = Object.keys(state.history).sort();
+  for (const old of days.slice(0, Math.max(0, days.length - 60))) delete state.history[old];
+  save();
+}
+
+/** Add play time to today's log (called by the play clock). */
+export function logTime(ms: number): void {
+  if (ms <= 0) return;
+  const day = (state.history[today()] ??= { ms: 0, good: 0 });
+  day.ms += ms;
 }
 
 /** Erase everything except the parents' settings. */

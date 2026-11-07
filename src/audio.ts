@@ -1,7 +1,12 @@
 // Voice (browser speech synthesis) + small synthesized sound effects.
-// Later: replace speech for isolated sounds by recorded audio files.
+// The voice is the one of the device (Web Speech API): its quality depends on the phone or browser.
 
 let frVoice: SpeechSynthesisVoice | null = null;
+
+/** dev only: `?mute` replaces the voice by a log in `window.__said` (tests in a browser, no sound) */
+const MUTE = import.meta.env.DEV && /[?&]mute\b/.test(location.search);
+const said: string[] = [];
+if (MUTE) (window as unknown as { __said: string[] }).__said = said;
 
 function synth(): SpeechSynthesis | null {
   try {
@@ -11,23 +16,41 @@ function synth(): SpeechSynthesis | null {
   }
 }
 
-function pickVoice(): void {
-  const s = synth();
-  if (!s) return;
+/** the voice chosen by the parents on this device ('' = automatic); voices differ per device */
+const VOICE_KEY = 'schoolcraft:voice';
+function storedVoice(): string {
   try {
-    const voices = s.getVoices().filter((v) => v.lang.toLowerCase().startsWith('fr'));
-    // prefer fr-FR, then "natural"/"google" voices which usually sound better
-    voices.sort((a, b) => score(b) - score(a));
-    frVoice = voices[0] ?? null;
+    return localStorage.getItem(VOICE_KEY) ?? '';
   } catch {
-    frVoice = null;
+    return '';
   }
 }
+
+function frenchVoices(): SpeechSynthesisVoice[] {
+  try {
+    return synth()?.getVoices().filter((v) => v.lang.toLowerCase().replace('_', '-').startsWith('fr')) ?? [];
+  } catch {
+    return [];
+  }
+}
+
+function pickVoice(): void {
+  const voices = frenchVoices();
+  const chosen = storedVoice();
+  frVoice = (chosen && voices.find((v) => v.voiceURI === chosen)) || [...voices].sort((a, b) => score(b) - score(a))[0] || null;
+}
+/** novelty voices (Apple's Eloquence and joke voices) sound robotic or silly */
+const NOVELTY = /eddy|flo\b|grand|reed|rocko|sandy|shelley|jacques|albert|bahh|bells|boing|bubbles|cellos|wobble|zarvox|trinoids|whisper|organ|jester|superstar|news|junior|ralph|fred|kathy/i;
 function score(v: SpeechSynthesisVoice): number {
   let s = 0;
-  if (v.lang === 'fr-FR') s += 4;
-  if (/natural|google|amélie|thomas|audrey/i.test(v.name)) s += 2;
+  const lang = v.lang.replace('_', '-');
+  if (lang === 'fr-FR') s += 4;
+  if (/premium/i.test(v.name)) s += 5;
+  if (/enhanced|améliorée|natural|neural/i.test(v.name)) s += 4;
+  if (/google/i.test(v.name)) s += 2;
+  if (/amélie|audrey|thomas|marie|denise|eloise|vivienne|henri|rémi|remy/i.test(v.name)) s += 1;
   if (v.localService) s += 1;
+  if (NOVELTY.test(v.name)) s -= 10;
   return s;
 }
 {
@@ -42,11 +65,63 @@ export function speechAvailable(): boolean {
   return synth() !== null;
 }
 
+export interface VoiceInfo {
+  id: string;
+  label: string;
+  /** the browser sends the sentences to an online service to speak them */
+  online: boolean;
+}
+/** French voices of this device, the best ones first (parents area). */
+export function voiceList(): VoiceInfo[] {
+  return frenchVoices()
+    .sort((a, b) => score(b) - score(a))
+    .map((v) => ({ id: v.voiceURI, label: v.name, online: !v.localService }));
+}
+export function voiceChoice(): string {
+  return storedVoice();
+}
+export function currentVoice(): string {
+  return frVoice?.name ?? '';
+}
+export function setVoiceChoice(id: string): void {
+  try {
+    if (id) localStorage.setItem(VOICE_KEY, id);
+    else localStorage.removeItem(VOICE_KEY);
+  } catch {
+    /* private mode: the choice lasts until the page is closed */
+  }
+  pickVoice();
+  if (id) frVoice = frenchVoices().find((v) => v.voiceURI === id) ?? frVoice;
+}
+/** call `cb` when the browser has loaded (or changed) its voices */
+export function onVoices(cb: () => void): void {
+  synth()?.addEventListener?.('voiceschanged', cb, { once: true });
+}
+
+/**
+ * The voice says each sentence with its own tone: exclamations a little higher and livelier,
+ * questions slightly raised, instructions calm. Without this every sentence has the same flat
+ * melody. Ellipses (« pa… pi… yon ») and « : » stay inside a sentence.
+ */
+function sentences(text: string): string[] {
+  const parts = text.match(/[^.!?]+(?:[.!?]+|$)/g)?.map((p) => p.trim()).filter(Boolean);
+  return parts?.length ? parts : [text];
+}
+function prosody(sentence: string, rate: number, pitch: number): { rate: number; pitch: number } {
+  if (sentence.endsWith('!')) return { rate: rate + 0.07, pitch: pitch + 0.15 };
+  if (sentence.endsWith('?')) return { rate, pitch: pitch + 0.07 };
+  return { rate, pitch };
+}
+
 /**
  * Speak a sentence (cutting whatever was being said). Resolves when finished, or after a timeout
  * because some browsers never fire `end`. Never rejects: the games keep working without a voice.
  */
 export function say(text: string, opts: { rate?: number; pitch?: number } = {}): Promise<void> {
+  if (MUTE) {
+    said.push(text);
+    return new Promise((resolve) => setTimeout(resolve, 60));
+  }
   return new Promise((resolve) => {
     const s = synth();
     if (!s) return resolve();
@@ -57,15 +132,20 @@ export function say(text: string, opts: { rate?: number; pitch?: number } = {}):
     };
     try {
       if (s.speaking || s.pending) s.cancel();
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = 'fr-FR';
-      if (frVoice) u.voice = frVoice;
-      u.rate = opts.rate ?? 0.85;
-      u.pitch = opts.pitch ?? 1.1;
-      t = window.setTimeout(done, 1500 + text.length * 120);
-      u.onend = done;
-      u.onerror = done;
-      s.speak(u);
+      const parts = sentences(text);
+      t = window.setTimeout(done, 1500 + text.length * 120 + parts.length * 300);
+      parts.forEach((part, i) => {
+        const u = new SpeechSynthesisUtterance(part);
+        u.lang = 'fr-FR';
+        if (frVoice) u.voice = frVoice;
+        const p = prosody(part, opts.rate ?? 0.85, opts.pitch ?? 1.1);
+        u.rate = p.rate;
+        u.pitch = p.pitch;
+        // cut (cancel) or failed: stop waiting; otherwise the promise ends with the last sentence
+        u.onerror = done;
+        if (i === parts.length - 1) u.onend = done;
+        s.speak(u);
+      });
     } catch {
       done();
     }
@@ -131,6 +211,24 @@ export const sfx = {
   },
   place(): void {
     tone(180, 0, 0.08, 'triangle', 0.15);
+  },
+  /** the syllable drum */
+  drum(): void {
+    tone(110, 0, 0.14, 'triangle', 0.25);
+    tone(70, 0.01, 0.18, 'sine', 0.2);
+  },
+  /** a token hops one square forward */
+  hop(): void {
+    tone(520, 0, 0.05, 'square', 0.05);
+    tone(780, 0.05, 0.06, 'square', 0.05);
+  },
+  /** the die rolls */
+  roll(): void {
+    for (let i = 0; i < 6; i++) tone(300 + Math.random() * 400, i * 0.07, 0.04, 'square', 0.04);
+  },
+  /** a chest opens */
+  chest(): void {
+    [392, 523, 659, 784, 1047, 1319].forEach((f, i) => tone(f, i * 0.09, 0.3, 'triangle', 0.1));
   },
   fanfare(): void {
     [523, 659, 784, 1047, 784, 1047].forEach((f, i) => tone(f, i * 0.12, 0.2));

@@ -20,6 +20,10 @@ const BASE: Record<BlockType, RGB> = {
   stone: [128, 128, 128],
   glass: [190, 230, 245],
   gold: [250, 205, 60],
+  brick: [178, 72, 52],
+  leaves: [70, 150, 60],
+  flower: [95, 170, 60],
+  crystal: [120, 210, 230],
 };
 
 const cache = new Map<string, string>();
@@ -64,6 +68,30 @@ export function blockTexture(type: BlockType | 'plaque'): string {
         case 'plaque':
           px(x, y, shade([214, 206, 190], 0.93 + rand() * 0.1));
           break;
+        case 'brick': {
+          // staggered bricks with light mortar
+          const row = Math.floor(y / 4);
+          const mortar = y % 4 === 3 || (x + (row % 2) * 4) % 8 === 7;
+          px(x, y, mortar ? '#d9cbb8' : shade(BASE.brick, n));
+          break;
+        }
+        case 'leaves': {
+          const hole = rand() > 0.9;
+          px(x, y, hole ? shade([40, 100, 40], 0.9) : shade(BASE.leaves, n + (rand() > 0.7 ? 0.15 : 0)));
+          break;
+        }
+        case 'flower': {
+          // grass with little flowers
+          const petal = (x % 6 === 2 && y % 6 === 2) || (x % 6 === 4 && y % 6 === 5);
+          const heart = (x % 6 === 3 && y % 6 === 3) || (x % 6 === 5 && y % 6 === 0);
+          px(x, y, heart ? '#fff27a' : petal ? (x + y) % 4 < 2 ? '#ff7eb6' : '#ffffff' : shade(BASE.flower, n));
+          break;
+        }
+        case 'crystal': {
+          const facet = (x + y) % 8 < 2 || (x - y + 16) % 8 < 1;
+          px(x, y, facet ? '#f0fdff' : shade(BASE.crystal, 0.85 + ((x * 3 + y * 5) % 7) / 20));
+          break;
+        }
         default:
           px(x, y, shade(BASE[type], n));
       }
@@ -129,4 +157,47 @@ export const BLOCK_NAMES: Record<BlockType, string> = {
   stone: 'pierre',
   glass: 'verre',
   gold: 'or',
+  brick: 'brique',
+  leaves: 'feuilles',
+  flower: 'fleurs',
+  crystal: 'cristal',
 };
+
+// The daily adventure's chest. '.' = transparent.
+const CHEST = [
+  '..kkkkkkkkkkkk..',
+  '.kwwwwwwwwwwwwk.',
+  'kwbbbbbbbbbbbbwk',
+  'kwbbbbbbbbbbbbwk',
+  'kkkkkkkggkkkkkkk',
+  'kwbbbbbgybbbbbwk',
+  'kwbbbbbggbbbbbwk',
+  'kwbbbbbbbbbbbbwk',
+  'kwbbbbbbbbbbbbwk',
+  'kkkkkkkkkkkkkkkk',
+];
+const CHEST_OPEN = [
+  '..kkkkkkkkkkkk..',
+  '.kwwwwwwwwwwwwk.',
+  'kwbbbbbbbbbbbbwk',
+  'kkkkkkkkkkkkkkkk',
+  'kyyyyyyyyyyyyyyk',
+  'kwbbbbbggbbbbbwk',
+  'kwbbbbbgybbbbbwk',
+  'kwbbbbbbbbbbbbwk',
+  'kwbbbbbbbbbbbbwk',
+  'kkkkkkkkkkkkkkkk',
+];
+const CHEST_COLORS: Record<string, string> = { k: '#3b2412', w: '#a0662f', b: '#7a4b2a', g: '#f7c843', y: '#fff3a0' };
+
+export function chestSVG(size = 120, open = false): string {
+  const rows = open ? CHEST_OPEN : CHEST;
+  let rects = '';
+  rows.forEach((row, y) =>
+    [...row].forEach((ch, x) => {
+      const col = CHEST_COLORS[ch];
+      if (col) rects += `<rect x="${x}" y="${y}" width="1.02" height="1.02" fill="${col}"/>`;
+    }),
+  );
+  return `<svg class="chest" viewBox="0 0 16 10" width="${size}" height="${(size * 10) / 16}" shape-rendering="crispEdges" aria-hidden="true">${rects}</svg>`;
+}

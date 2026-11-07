@@ -1,17 +1,25 @@
 # SchoolCraft — Plan de conception
 
-## État actuel (novembre 2026)
+## État actuel (novembre 2026, v3)
+
+L'étude pédagogique qui fonde la v3 (recherche, programmes 2025, applications de référence) est dans
+[ETUDE.md](ETUDE.md).
 
 | Prévu | Où on en est |
 |---|---|
-| Tout à la voix, pas d'échec punitif, grosses cibles | ✅ Voix partout (Pixel répète la consigne), « Essaie encore ! » + indices, toucher tolérant (appui long, doigt qui glisse, ombre des blocs) |
-| Lecture : voyelles → syllabes → mots | ✅ 12 niveaux, jusqu'à la lecture sans aide (mot écrit → image) |
-| Maths : dénombrer, reconnaître, coup d'œil, additions | ✅ 6 niveaux (comparer des tas : pas encore) |
-| Révisions espacées, niveaux qui se débloquent | ✅ Leitner à 3 boîtes, niveau suivant à 80 % de réussite du premier coup |
-| Récompenses | ✅ Blocs → coloriage magique de 12 héros originaux qui s'animent (collection) + maison à construire |
-| Espace parents | ✅ Code (multiplication), choix du niveau, progrès par son/nombre, limite de temps avec pause |
+| Tout à la voix, pas d'échec punitif, grosses cibles | ✅ Voix partout, félicitations sur l'effort, toucher tolérant |
+| Conscience phonologique | ✅ Syllabes au tambour, rimes, premier son (images nommées par la voix) |
+| Lecture : sons → syllabes → mots → phrases | ✅ 19 niveaux en 5 chapitres, encodage (écrire avec des lettres), vrai ou faux, devinettes |
+| Écriture | ✅ Tracé au doigt : capitales, chiffres, cursive par familles de gestes, « sans modèle » |
+| Maths | ✅ 16 niveaux : compter, comparer, coup d'œil (dés, cadre de dix), course des nombres, grotte (décomposer), faire dix, additions, problèmes, 11 à 20 |
+| Révisions espacées, niveaux qui se débloquent | ✅ Leitner à 3 boîtes, une question de révision par partie, niveau suivant à 80 % |
+| Progression visible | ✅ Une carte par activité (chapitres, étoiles) |
+| Régularité sans pression | ✅ L'aventure du jour et son coffre de blocs spéciaux |
+| Récompenses | ✅ Coloriage de 12 héros originaux, maison en blocs, blocs spéciaux |
+| Espace parents | ✅ Classe (MS, GS, CP), semaine, progrès par compétence, idées à faire ensemble, méthode, limite de temps |
+| Profils multiples | ✅ Jusqu'à 4 enfants, avatar et progression séparés |
 | PWA hors ligne, GitHub Pages | ✅ |
-| Sons enregistrés, mini-phrases, cursive, profils multiples | ⏳ Prochaines étapes (voir la feuille de route) |
+| Sons enregistrés, mots en cursive attachée | ⏳ Prochaines étapes (voir la feuille de route) |
 
 Ce qui suit est le plan initial ; la feuille de route (§ 7) est à jour.
 
@@ -93,7 +101,7 @@ reste l'activité principale.
 ## 5. Espace parents (protégé par un petit calcul « 7 × 8 = ? »)
 - Progression par notion (lettres connues, syllabes, nombres).
 - Durée de séance max, pause obligatoire.
-- Choix de l'écriture (script / cursive), de la voix, du prénom de l'enfant.
+- Choix de la voix de l'appareil (avec un bouton pour l'écouter), prénom et avatar de chaque enfant.
 
 ## 6. Choix techniques
 
@@ -114,27 +122,31 @@ Pas de pub, pas d'achats intégrés, pas de traqueurs.
 
 **Fait**
 - Prototype puis MVP : PWA installable et hors ligne, Pixel le renard, voix, blocs à gagner.
-- Lecture en 12 niveaux, calcul en 6 niveaux, répétition espacée, niveaux débloqués à 80 %.
-- Récompenses : coloriage de héros qui s'animent (collection), maison en blocs.
-- Espace parents : niveaux, progrès, limite de temps ; vérification automatique du contenu.
+- v2 : lecture en 12 niveaux, calcul en 6 niveaux, répétition espacée, coloriage de héros, maison, espace parents.
+- v3 (étude dans `ETUDE.md`) : activité Écrire (tracé au doigt), phonologie, encodage, phrases et devinettes,
+  10 nouveaux niveaux de calcul (dont la course des nombres et la grotte), moteur de partie commun avec révision,
+  cartes par chapitres et étoiles, aventure du jour et coffre, profils, espace parents enrichi.
 
 **Prochaines étapes possibles**
-- Enregistrer les sons et les mots (voix d'un parent) pour une prononciation parfaite.
-- Lecture : mini-phrases (« le lama a un vélo »), lettres muettes, sons é/è/ai.
-- Calcul : comparer deux tas (« où y en a-t-il le plus ? »), compter jusqu'à 20.
-- Tracer les lettres au doigt (cursive), plusieurs profils d'enfants.
+- Enregistrer les sons et les mots (voix d'un parent ou d'un comédien) pour une prononciation parfaite des sons isolés.
+- Écrire des syllabes et des mots en cursive attachée (lettres reliées).
+- Lecture : lettres muettes, sons é/è/ai, petites histoires à lire avec questions de compréhension, fluence (lire vite et bien).
+- Calcul : nombres jusqu'à 100 (dizaines), soustractions par complément, doubles.
+- Mesurer avec des familles : un court test au début et après quelques semaines, pour vérifier l'effet.
 
 ## 8. Structure du projet
 ```
 src/
-  content/     # contenu modifiable sans programmer : lecture, calcul, héros
-  screens/     # écrans : lire, compter, héros/coloriage, maison, récompense, parents
-  state.ts     # sauvegarde sur l'appareil (avec réparation des anciennes sauvegardes)
-  levels.ts    # niveaux et progression · playtime.ts : limite de temps
+  content/     # contenu modifiable sans programmer : lecture, écriture (tracés), calcul, héros, idées parents
+  games/       # types de jeux : reading.ts, counting.ts, trace.ts (tracé au doigt)
+  screens/     # écrans : accueil, carte, activité, récompense, coffre, héros/coloriage, maison, parents, profils
+  game.ts      # moteur de partie commun (questions, blocs, félicitations, révision, fin de partie)
+  state.ts     # sauvegarde sur l'appareil (profils, réparation et migration des anciennes sauvegardes)
+  levels.ts    # niveaux, chapitres, étoiles, classe · playtime.ts : limite de temps
   nav.ts       # changement d'écran (la voix s'arrête quand on quitte un écran)
   audio.ts     # voix et petits sons · ui.ts : boutons, bulles, toucher fiable
 scripts/check-content.ts   # vérifie le contenu (npm run check)
-public/      # icônes, manifeste, service worker (hors ligne)
+public/      # icônes, manifeste
 ```
-Le contenu (listes de syllabes, mots, images) est séparé du code : on peut
-ajouter des mots sans programmer.
+Le contenu (listes de syllabes, mots, images, tracés) est séparé du code : on peut
+ajouter des mots ou des lettres sans programmer.
