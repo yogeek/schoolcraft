@@ -1,5 +1,5 @@
 import './style.css';
-import { sfx, stopSpeech } from './audio';
+import { prefetchVoice, sfx, stopSpeech } from './audio';
 import { HEROES } from './content/heroes';
 import { heroSVG } from './heroArt';
 import { applyGrade, currentLevel, GRADE_NAMES, parentSetLevel } from './levels';
@@ -176,5 +176,7 @@ startPlayClock(() => {
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js').catch(() => {});
+    // Pixel's voice, for offline play: once the app has settled
+    setTimeout(prefetchVoice, 8000);
   });
 }

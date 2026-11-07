@@ -5,6 +5,9 @@
 // - Pages and other files: network first so updates arrive, but after 3 s on a bad connection the cached
 //   copy is used instead of making the child wait.
 const CACHE = 'schoolcraft-__VERSION__';
+// Pixel's recorded voice (public/voice/): kept from one version to the next, filled in the background
+// by the page (prefetchVoice in src/audio.ts), which also removes the clips that are no longer used.
+const VOICE = 'schoolcraft-voice';
 const CORE = ['./', './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png', ...__ASSETS__.map((f) => './' + f)];
 
 self.addEventListener('install', (e) => {
@@ -16,15 +19,15 @@ self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches
       .keys()
-      .then((keys) => Promise.all(keys.filter((k) => k.startsWith('schoolcraft-') && k !== CACHE).map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(keys.filter((k) => k.startsWith('schoolcraft-') && k !== CACHE && k !== VOICE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim()),
   );
 });
 
-function store(req, res) {
+function store(req, res, name = CACHE) {
   if (res.ok || res.type === 'opaque') {
     const copy = res.clone();
-    caches.open(CACHE).then((c) => c.put(req, copy));
+    caches.open(name).then((c) => c.put(req, copy));
   }
   return res;
 }
@@ -66,6 +69,11 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(req.url);
   const sameOrigin = url.origin === self.location.origin;
   if (!sameOrigin && url.hostname !== 'fonts.googleapis.com' && url.hostname !== 'fonts.gstatic.com') return;
+  // clips never change: a new recording gets a new file name
+  if (sameOrigin && url.pathname.includes('/voice/')) {
+    e.respondWith(caches.match(req, MATCH).then((hit) => hit || fetch(req).then((res) => store(req, res, VOICE))));
+    return;
+  }
   if ((sameOrigin && url.pathname.includes('/assets/')) || url.hostname === 'fonts.gstatic.com') {
     e.respondWith(cacheFirst(req));
     return;

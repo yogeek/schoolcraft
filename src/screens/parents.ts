@@ -1,7 +1,7 @@
 // Espace parents (protégé par une multiplication) : classe, semaine, progrès par compétence,
 // idées à faire ensemble, méthode, voix, temps de jeu, remise à zéro.
 // Écran « Pause » quand le temps de jeu choisi est écoulé.
-import { currentVoice, onVoices, setVoiceChoice, sfx, speechAvailable, voiceChoice, voiceList } from '../audio';
+import { currentVoice, DEVICE_AUTO, onVoices, recordedCount, setVoiceChoice, sfx, speechAvailable, voiceChoice, voiceList } from '../audio';
 import { HEROES } from '../content/heroes';
 import { TIPS } from '../content/tips';
 import { ACTIVITY_NAMES, applyGrade, CHAPTERS, chapterOf, currentLevel, GRADE_NAMES, LEVEL_NAMES, MAX_LEVEL, parentSetLevel, unlockedLevel } from '../levels';
@@ -14,15 +14,22 @@ import type { Ctx } from './types';
 
 /** The voice is the device's own: the parents can pick another one and listen to it. */
 function voiceCard(ctx: Ctx): HTMLElement {
-  const sample = 'Bravo ! Tu as trouvé. Touche le mot : avion.';
+  // sentences that are recorded: the sample sounds like the game
+  const sample = 'Bravo ! Touche le mot : avion !';
   const pick = h('select', { 'aria-label': 'Voix' });
   const using = h('p', { class: 'muted', role: 'status' }, '');
   const fill = () => {
     const list = voiceList();
-    pick.replaceChildren(h('option', { value: '' }, 'Automatique (la meilleure trouvée)'));
+    pick.replaceChildren(h('option', { value: '' }, 'Pixel (voix enregistrée)'), h('option', { value: DEVICE_AUTO }, 'Voix de l’appareil (la meilleure trouvée)'));
     for (const v of list) pick.append(h('option', { value: v.id }, v.online ? `${v.label} · en ligne` : v.label));
-    pick.value = list.some((v) => v.id === voiceChoice()) ? voiceChoice() : '';
-    using.textContent = currentVoice() ? `Voix utilisée : ${currentVoice()}.` : speechAvailable() ? 'Aucune voix française trouvée sur cet appareil.' : 'Ce navigateur ne sait pas parler.';
+    const choice = voiceChoice();
+    pick.value = choice === DEVICE_AUTO || list.some((v) => v.id === choice) ? choice : '';
+    const device = currentVoice() ? `« ${currentVoice()} »` : 'aucune voix française sur cet appareil';
+    using.textContent = !speechAvailable()
+      ? 'Ce navigateur ne sait pas parler.'
+      : pick.value === ''
+        ? `Pixel parle avec sa voix enregistrée (${recordedCount()} phrases). Pour une phrase qui manque : ${device}.`
+        : `Voix utilisée : ${device}.`;
   };
   fill();
   onVoices(() => {
@@ -47,7 +54,12 @@ function voiceCard(ctx: Ctx): HTMLElement {
     h(
       'p',
       { class: 'muted' },
-      'Pixel parle avec la synthèse vocale de l’appareil : la voix change d’un téléphone ou d’un navigateur à l’autre. Pour une voix plus naturelle : sur iPhone ou iPad, Réglages › Accessibilité › Contenu énoncé › Voix › Français, puis téléchargez une voix « améliorée » ou « premium » ; sur Android, installez les voix françaises du moteur « Services vocaux Google » ; sur ordinateur, Chrome propose « Google français » et Edge des voix « Natural ».',
+      'La voix de Pixel est enregistrée : elle est la même sur tous les appareils et marche sans connexion (elle se télécharge en arrière-plan à la première visite). Elle a été créée avec ElevenLabs (voix « Adina »), à partir des seules phrases du jeu.',
+    ),
+    h(
+      'p',
+      { class: 'muted' },
+      'Les voix de l’appareil changent d’un téléphone ou d’un navigateur à l’autre. Pour une voix plus naturelle : sur iPhone ou iPad, Réglages › Accessibilité › Contenu énoncé › Voix › Français, puis téléchargez une voix « améliorée » ou « premium » ; sur Android, installez les voix françaises du moteur « Services vocaux Google » ; sur ordinateur, Chrome propose « Google français » et Edge des voix « Natural ».',
     ),
     h('p', { class: 'muted' }, 'Les voix marquées « en ligne » envoient les phrases de Pixel au service du navigateur pour les prononcer. Ce sont seulement les phrases du jeu, jamais le prénom de l’enfant.'),
   );

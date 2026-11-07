@@ -426,7 +426,7 @@ function hideGame(level: CountLevel): Game {
             cave.classList.add('open');
             blocks.forEach((b) => b.classList.remove('in-cave'));
             r.bubble(`${n - k} + ${k} = ${n}`);
-            await r.say(`${W[k]} cachés ! ${W[n - k]} et ${W[k]}, ça fait ${W[n]}.`);
+            await r.say(`${k === 1 ? 'Un caché' : `${W[k]} cachés`} ! ${W[n - k]} et ${W[k]}, ça fait ${W[n]}.`);
           });
         }
         r.miss(el);

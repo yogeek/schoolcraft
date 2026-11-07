@@ -126,9 +126,11 @@ Pas de pub, pas d'achats intégrés, pas de traqueurs.
 - v3 (étude dans `ETUDE.md`) : activité Écrire (tracé au doigt), phonologie, encodage, phrases et devinettes,
   10 nouveaux niveaux de calcul (dont la course des nombres et la grotte), moteur de partie commun avec révision,
   cartes par chapitres et étoiles, aventure du jour et coffre, profils, espace parents enrichi.
+- Voix enregistrée : toutes les phrases du jeu (environ 2 500) générées une fois avec ElevenLabs (modèle v4,
+  voix « Adina »), vérifiées par reconnaissance vocale, jouées hors ligne ; la voix de l'appareil reste en secours.
 
 **Prochaines étapes possibles**
-- Enregistrer les sons et les mots (voix d'un parent ou d'un comédien) pour une prononciation parfaite des sons isolés.
+- Faire écouter les sons isolés (« mmm », « sss ») et les syllabes par un adulte, et réenregistrer ceux qui sonnent faux.
 - Écrire des syllabes et des mots en cursive attachée (lettres reliées).
 - Lecture : lettres muettes, sons é/è/ai, petites histoires à lire avec questions de compréhension, fluence (lire vite et bien).
 - Calcul : nombres jusqu'à 100 (dizaines), soustractions par complément, doubles.

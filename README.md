@@ -77,7 +77,7 @@ GitHub Pages à chaque push sur `main`. À activer une fois : *Settings → Page
 
 ## Limites connues
 
-- La voix dépend du navigateur et de l'appareil (meilleure sur Chrome/Android et Safari/iOS récents).
+- La voix de Pixel est enregistrée (environ 2 500 phrases créées avec ElevenLabs, voix « Adina ») et marche hors ligne ; une phrase non enregistrée est dite par la voix de l'appareil. Après avoir changé une phrase : `scripts/voice/lines.ts` puis `scripts/voice/generate.mjs`.
   À terme : enregistrer les sons pour une prononciation parfaite des sons isolés.
 - Les images des niveaux « lire » sont des emojis : leur dessin varie selon le téléphone.
 - Le tracé au doigt entraîne le geste et la forme des lettres ; il ne remplace pas le crayon sur papier.

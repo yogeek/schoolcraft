@@ -5,6 +5,7 @@ import { HEROES, regions } from '../src/content/heroes.ts';
 import { DECOY_SYLLABLES, graphemes, PIC_WORDS, READING_CHAPTERS, READING_LEVELS } from '../src/content/reading.ts';
 import { TIPS } from '../src/content/tips.ts';
 import { GLYPHS, LETTER_SPEECH, WRITING_CHAPTERS, WRITING_LEVELS } from '../src/content/writing.ts';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 
 const errors: string[] = [];
 const err = (m: string) => errors.push(m);
@@ -152,8 +153,16 @@ WRITING_LEVELS.forEach((l, i) => {
   if (TIPS[a].length !== n) err(`Idées parents (${a}) : ${TIPS[a].length} listes pour ${n} chapitres`);
 });
 
+// ---------------------------------------------------------------- voix enregistrée
+const voiceDir = new URL('../public/voice/', import.meta.url);
+const clips: Record<string, string> = existsSync(new URL('../src/voice.json', import.meta.url)) ? JSON.parse(readFileSync(new URL('../src/voice.json', import.meta.url), 'utf8')) : {};
+const files = new Set(existsSync(voiceDir) ? readdirSync(voiceDir) : []);
+for (const [k, f] of Object.entries(clips)) if (!files.has(f)) err(`Voix : fichier manquant ${f} pour « ${k} »`);
+const used = new Set(Object.values(clips));
+for (const f of files) if (!used.has(f)) err(`Voix : public/voice/${f} n'est plus utilisé (relancer scripts/voice/generate.mjs)`);
+
 if (errors.length) {
   console.error(`✗ ${errors.length} problème(s) dans le contenu :\n - ${errors.join('\n - ')}`);
   process.exit(1);
 }
-console.log(`✓ Contenu valide : ${HEROES.length} héros, ${READING_LEVELS.length} niveaux de lecture, ${WRITING_LEVELS.length} niveaux d'écriture, ${COUNT_LEVELS.length} niveaux de calcul, ${GLYPHS.length} tracés.`);
+console.log(`✓ Contenu valide : ${HEROES.length} héros, ${READING_LEVELS.length} niveaux de lecture, ${WRITING_LEVELS.length} niveaux d'écriture, ${COUNT_LEVELS.length} niveaux de calcul, ${GLYPHS.length} tracés, ${Object.keys(clips).length} phrases enregistrées.`);

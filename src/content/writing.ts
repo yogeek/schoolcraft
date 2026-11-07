@@ -18,34 +18,38 @@ export interface Glyph {
   strokes: string[];
 }
 
-/** Nom de la lettre, écrit pour la voix, et un mot repère. */
+/**
+ * Nom de la lettre pour la voix, et un mot repère. Les consonnes sont écrites telles quelles : les
+ * voix connaissent le nom des lettres, alors qu'une graphie comme « èfe » est lue « è-feu ».
+ * Exceptions : e (« euh »), h, w et y (« ku » est lu « cou », « cu » est épelé « cé u »).
+ */
 export const LETTER_SPEECH: Record<string, { name: string; ex: string }> = {
   a: { name: 'a', ex: 'ananas' },
-  b: { name: 'bé', ex: 'ballon' },
-  c: { name: 'cé', ex: 'canard' },
-  d: { name: 'dé', ex: 'dauphin' },
+  b: { name: 'b', ex: 'ballon' },
+  c: { name: 'c', ex: 'canard' },
+  d: { name: 'd', ex: 'dauphin' },
   e: { name: 'euh', ex: 'cheval' },
-  f: { name: 'èfe', ex: 'fusée' },
-  g: { name: 'jé', ex: 'gâteau' },
+  f: { name: 'f', ex: 'fusée' },
+  g: { name: 'g', ex: 'gâteau' },
   h: { name: 'hache', ex: 'hibou' },
   i: { name: 'i', ex: 'souris' },
-  j: { name: 'ji', ex: 'judo' },
-  k: { name: 'ka', ex: 'kiwi' },
-  l: { name: 'èle', ex: 'lune' },
-  m: { name: 'ème', ex: 'moto' },
-  n: { name: 'ène', ex: 'nuage' },
+  j: { name: 'j', ex: 'judo' },
+  k: { name: 'k', ex: 'kiwi' },
+  l: { name: 'l', ex: 'lune' },
+  m: { name: 'm', ex: 'moto' },
+  n: { name: 'n', ex: 'nuage' },
   o: { name: 'o', ex: 'orange' },
-  p: { name: 'pé', ex: 'pomme' },
-  q: { name: 'cu', ex: 'quatre' },
-  r: { name: 'ère', ex: 'robot' },
-  s: { name: 'èsse', ex: 'soleil' },
-  t: { name: 'té', ex: 'tortue' },
+  p: { name: 'p', ex: 'pomme' },
+  q: { name: 'q', ex: 'quatre' },
+  r: { name: 'r', ex: 'robot' },
+  s: { name: 's', ex: 'soleil' },
+  t: { name: 't', ex: 'tortue' },
   u: { name: 'u', ex: 'lune' },
-  v: { name: 'vé', ex: 'vélo' },
+  v: { name: 'v', ex: 'vélo' },
   w: { name: 'double vé', ex: 'wagon' },
-  x: { name: 'iks', ex: 'taxi' },
+  x: { name: 'x', ex: 'taxi' },
   y: { name: 'i grec', ex: 'yoyo' },
-  z: { name: 'zède', ex: 'zèbre' },
+  z: { name: 'z', ex: 'zèbre' },
 };
 
 const g = (script: Script, char: string, w: number, ...strokes: string[]): Glyph => ({ char, script, w, strokes });
