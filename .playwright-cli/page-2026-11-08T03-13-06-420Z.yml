@@ -1,0 +1,35 @@
+- generic [ref=e1]:
+  - main [ref=e405]:
+    - generic [ref=e406]:
+      - button "Accueil" [ref=e407] [cursor=pointer]:
+        - generic:
+          - img
+      - status "23 blocs" [ref=e408]:
+        - img "herbe" [ref=e409]
+        - generic [ref=e410]: "23"
+    - generic [ref=e411]:
+      - 'button "Pixel le renard : réécouter" [ref=e412] [cursor=pointer]':
+        - img
+      - generic [ref=e413]: Niveau 6 débloqué !
+    - img "3 étoiles sur 3" [ref=e414]:
+      - generic [ref=e426]: ★
+      - generic [ref=e427]: ★
+      - generic [ref=e428]: ★
+    - generic "Tu as gagné 6 blocs !" [ref=e415]:
+      - img "verre" [ref=e416]
+      - img "herbe" [ref=e417]
+      - img "or" [ref=e418]
+      - img "bois" [ref=e419]
+      - img "herbe" [ref=e420]
+      - img "or" [ref=e421]
+    - generic [ref=e422]:
+      - button "Le coffre !" [active] [ref=e423] [cursor=pointer]
+      - button "Colorier" [ref=e424] [cursor=pointer]:
+        - generic:
+          - img
+        - text: Colorier
+      - button "Niveau suivant" [ref=e425] [cursor=pointer]
+  - dialog "Le coffre du jour" [ref=e430]:
+    - generic [ref=e431]: Le coffre du jour
+    - button "Ouvrir le coffre" [ref=e432] [cursor=pointer]:
+      - img

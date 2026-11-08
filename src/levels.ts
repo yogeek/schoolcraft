@@ -119,6 +119,8 @@ export interface SessionResult {
   next: number | null;
   /** true when `next` was never reached before */
   isNew: boolean;
+  /** this is the last level of the activity */
+  last: boolean;
 }
 
 export function endSession(a: ActivityId, levelNo: number, firstTry: number, rounds: number): SessionResult {
@@ -137,5 +139,5 @@ export function endSession(a: ActivityId, levelNo: number, firstTry: number, rou
   // fill holes (a level reached by the parents' choice has no stars yet): keep the array dense
   for (let i = 0; i < state.stars[a].length; i++) state.stars[a][i] ??= 0;
   save();
-  return { firstTry, rounds, passed, stars, next, isNew };
+  return { firstTry, rounds, passed, stars, next, isNew, last: levelNo >= MAX_LEVEL[a] };
 }

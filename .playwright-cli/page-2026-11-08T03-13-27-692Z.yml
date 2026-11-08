@@ -1,0 +1,62 @@
+- main [ref=e467]:
+  - generic [ref=e468]:
+    - button "Accueil" [ref=e469] [cursor=pointer]:
+      - generic:
+        - img
+    - generic [ref=e470]: Mes héros
+    - status "28 blocs" [ref=e471]:
+      - img "herbe" [ref=e472]
+      - generic [ref=e473]: "28"
+  - generic [ref=e474]:
+    - 'button "Pixel le renard : réécouter" [ref=e475] [cursor=pointer]':
+      - img
+    - generic [ref=e476]: Colorie ton premier héros !
+  - generic [ref=e477]:
+    - button "À colorier" [ref=e478] [cursor=pointer]:
+      - generic [ref=e479]:
+        - img
+      - generic: À colorier
+    - button "???" [ref=e480] [cursor=pointer]:
+      - generic [ref=e481]:
+        - img
+      - generic: "???"
+    - button "???" [ref=e482] [cursor=pointer]:
+      - generic [ref=e483]:
+        - img
+      - generic: "???"
+    - button "???" [ref=e484] [cursor=pointer]:
+      - generic [ref=e485]:
+        - img
+      - generic: "???"
+    - button "???" [ref=e486] [cursor=pointer]:
+      - generic [ref=e487]:
+        - img
+      - generic: "???"
+    - button "???" [ref=e488] [cursor=pointer]:
+      - generic [ref=e489]:
+        - img
+      - generic: "???"
+    - button "???" [ref=e490] [cursor=pointer]:
+      - generic [ref=e491]:
+        - img
+      - generic: "???"
+    - button "???" [ref=e492] [cursor=pointer]:
+      - generic [ref=e493]:
+        - img
+      - generic: "???"
+    - button "???" [ref=e494] [cursor=pointer]:
+      - generic [ref=e495]:
+        - img
+      - generic: "???"
+    - button "???" [ref=e496] [cursor=pointer]:
+      - generic [ref=e497]:
+        - img
+      - generic: "???"
+    - button "???" [ref=e498] [cursor=pointer]:
+      - generic [ref=e499]:
+        - img
+      - generic: "???"
+    - button "???" [ref=e500] [cursor=pointer]:
+      - generic [ref=e501]:
+        - img
+      - generic: "???"

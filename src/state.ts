@@ -376,11 +376,16 @@ export function mission(): GameState['mission'] {
 }
 
 /** Note a finished game: daily adventure and the parents' history. */
-export function logGame(a: ActivityId, good: number): void {
+/** A right answer, in today's log for the parents' week (counted at once: a game left before its end counts too). */
+export function logGood(): void {
+  const day = (state.history[today()] ??= { ms: 0, good: 0 });
+  day.good++;
+}
+
+/** A finished game: today's adventure moves on; old days are dropped from the log. */
+export function logGame(a: ActivityId): void {
   const m = mission();
   if (!m.done.includes(a)) m.done.push(a);
-  const day = (state.history[m.day] ??= { ms: 0, good: 0 });
-  day.good += good;
   const days = Object.keys(state.history).sort();
   for (const old of days.slice(0, Math.max(0, days.length - 60))) delete state.history[old];
   save();

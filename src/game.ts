@@ -11,7 +11,7 @@ import { sfx } from './audio';
 import { endSession } from './levels';
 import { rewardScreen } from './screens/reward';
 import type { Ctx } from './screens/types';
-import { logGame, record, type ActivityId, type BlockType } from './state';
+import { logGame, logGood, record, type ActivityId, type BlockType } from './state';
 import { bubble, giveBlock, h, levelButton, mascot, rand, reducedMotion, rewardType, setBubble, speakerButton, topBar } from './ui';
 
 export interface Round {
@@ -159,6 +159,7 @@ export function runSession(ctx: Ctx, spec: SessionSpec): void {
           if (!isReview) firstTry++;
         }
         good++;
+        logGood();
         streak++;
         sfx.good();
         react('cheer');
@@ -205,7 +206,7 @@ export function runSession(ctx: Ctx, spec: SessionSpec): void {
     if (index >= plan.length) {
       locked = true;
       const rounds = plan.filter((g) => g === game).length;
-      logGame(activity, good);
+      logGame(activity);
       return rewardScreen(ctx, won, activity, endSession(activity, levelNo, firstTry, rounds));
     }
     setupRound();

@@ -21,8 +21,8 @@ export function rewardScreen(prev: Ctx, won: BlockType[], replay: ActivityId, re
   const hero = currentHero();
   const next = nextInMission();
   const chest = chestReady();
-  // never "ton héros" / "tes héros" in speech: voices sometimes glue the words (« tes-z-héros »)
-  const invite = chest ? "Tu as fini l'aventure du jour : un coffre t'attend !" : next ? `On continue l'aventure ? Maintenant, on va ${VERB[next]} !` : hero ? 'Tu veux colorier un ami ?' : 'Tu peux construire ta maison !';
+  // no question the child cannot answer (« On continue ? »), and never "ton héros" / "tes héros" in speech: voices sometimes glue the words (« tes-z-héros »)
+  const invite = chest ? "Tu as fini l'aventure du jour : un coffre t'attend !" : next ? `Maintenant, on va ${VERB[next]} !` : hero ? 'Tu veux colorier un ami ?' : 'Tu peux construire ta maison !';
   let title = 'Bravo !';
   let speech: string;
   if (result.next && result.isNew) {
@@ -35,7 +35,7 @@ export function rewardScreen(prev: Ctx, won: BlockType[], replay: ActivityId, re
     speech = `Bravo ! ${blocks} Tu as réussi le dernier niveau ! ${invite}`;
   } else {
     title = 'Bien joué !';
-    speech = `Bien joué ! ${blocks} Encore un peu d'entraînement et tu passeras au niveau suivant ! ${invite}`;
+    speech = `Bien joué ! ${blocks} ${result.last ? "Encore un peu d'entraînement et tu réussiras ce niveau !" : "Encore un peu d'entraînement et tu passeras au niveau suivant !"} ${invite}`;
   }
   void ctx.say(speech);
 

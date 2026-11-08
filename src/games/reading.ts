@@ -35,6 +35,13 @@ export function picture(pic: string, label: string, cls = ''): HTMLButtonElement
 
 const slowly = { rate: 0.75 };
 
+/** after two mistakes, the right answer shines (help grows with each mistake, then the child finds it) */
+async function showAnswer(r: Round, el: Element | null | undefined): Promise<void> {
+  if (!el || !r.open()) return;
+  el.classList.add('hint');
+  await r.say('Regarde celui qui brille !');
+}
+
 export function readingGame(level: ReadingLevel): Game {
   switch (level.kind) {
     case 'sound':
@@ -83,6 +90,7 @@ const statKey = (it: Item) => `snd:${it.text}`;
 function choiceGame(level: Extract<ReadingLevel, { items: Item[] }>): Game {
   let target: Item = level.items[0];
   let prev: Item | undefined;
+  let answer: HTMLElement | null = null;
 
   function distractors(n: number): Item[] {
     const others = level.items.filter((i) => i.text !== target.text);
@@ -110,8 +118,12 @@ function choiceGame(level: Extract<ReadingLevel, { items: Item[] }>): Game {
     r.miss(el);
     if (level.kind === 'read') {
       await r.say(`Ça, c'est : ${it.speak}. Lis encore le mot !`);
-      // after two mistakes, help by reading the syllables slowly
-      if (r.misses >= 2 && target.parts && r.open()) await r.say(`Écoute : ${target.parts.join('… ')}.`, { rate: 0.7 });
+      // after two mistakes, help by reading the syllables slowly; after three, show the picture
+      if (r.misses === 2 && target.parts && r.open()) await r.say(`Écoute : ${target.parts.join('… ')}.`, { rate: 0.7 });
+      if (r.misses >= 3) await showAnswer(r, answer);
+    } else if (r.misses >= 2) {
+      await r.say(`Celui-là, c'est : ${it.speak}.`);
+      await showAnswer(r, answer);
     } else {
       await r.say(`Celui-là, c'est : ${it.speak}. Essaie encore !`);
       if (r.open()) await r.say(`Cherche : ${target.speak}.`);
@@ -130,6 +142,7 @@ function choiceGame(level: Extract<ReadingLevel, { items: Item[] }>): Game {
         r.choices.append(...shuffle([target, ...distractors(level.choices - 1)]).map((it) => {
           const b = picture(it.pic ?? '?', it.text);
           b.onclick = () => void pick(r, it, b);
+          if (it === target) answer = b;
           return b;
         }));
       } else {
@@ -139,6 +152,7 @@ function choiceGame(level: Extract<ReadingLevel, { items: Item[] }>): Game {
             const text = level.mixedCase && Math.random() < 0.5 ? it.text.toUpperCase() : it.text;
             const b = plaque(text);
             b.onclick = () => void pick(r, it, b);
+            if (it === target) answer = b;
             return b;
           }),
         );
@@ -193,6 +207,7 @@ function buildGame(items: Item[]): Game {
               box.replaceChildren(blockImg('plaque'), h('span', { class: `glyph len${Math.min(s.length, 4)}` }, s));
               box.classList.add('filled');
               built++;
+              r.choices.querySelectorAll('.hint').forEach((x) => x.classList.remove('hint'));
               if (built === parts.length) {
                 return r.win(box, async () => {
                   r.bubble(`« ${target.text} »`);
@@ -203,7 +218,11 @@ function buildGame(items: Item[]): Game {
             } else {
               r.miss(b);
               await r.say(`Celui-là, c'est : ${s}.`);
-              if (r.open()) await r.say(`Écoute : ${parts.join('… ')}.`, slowly);
+              if (r.misses >= 2) {
+                // the next syllable shines
+                const next = [...r.choices.querySelectorAll<HTMLElement>('.choice:not(.used)')].find((x) => x.getAttribute('aria-label') === parts[built]);
+                await showAnswer(r, next);
+              } else if (r.open()) await r.say(`Écoute : ${parts.join('… ')}.`, slowly);
             }
           };
           return b;
@@ -332,8 +351,8 @@ function clapGame(words: PicWord[]): Game {
         taps++;
         beats.append(h('span', { class: 'beat on' }));
         const my = ++tapSeq;
-        // the child stops tapping: count the taps
-        if (!(await r.wait(1500)) || my !== tapSeq || !r.open()) return;
+        // the child stops tapping (a young child thinks between two syllables): count the taps
+        if (!(await r.wait(2200)) || my !== tapSeq || !r.open()) return;
         if (taps === n) {
           return r.win(drum, async () => {
             r.bubble(`${n} syllabe${n > 1 ? 's' : ''}`);
@@ -413,7 +432,8 @@ function soundPicGame(words: PicWord[], kind: 'rhyme' | 'initial', choices: numb
           }
           r.miss(b);
           await r.say(`${model.word}… ${w.word}…`, slowly);
-          if (r.open()) await r.say(kind === 'rhyme' ? 'Ça ne finit pas pareil. Essaie encore !' : 'Ça ne commence pas pareil. Essaie encore !');
+          if (r.misses >= 2) await showAnswer(r, options.find((o) => o.w === answer)?.el);
+          else if (r.open()) await r.say(kind === 'rhyme' ? 'Ça ne finit pas pareil. Essaie encore !' : 'Ça ne commence pas pareil. Essaie encore !');
         };
         return { w, el: b };
       });
@@ -494,6 +514,11 @@ function riddleGame(riddles: Riddle[]): Game {
             sfx.unlock();
             if (pic === target.pic) return r.win(b, () => r.say(target.text));
             r.miss(b);
+            // the child must read: first a nudge, then the voice reads it
+            if (r.misses < 2) {
+              await r.say('Relis bien la devinette !');
+              return;
+            }
             await r.say('Écoute bien :');
             await r.say(target.text, slowly);
           };

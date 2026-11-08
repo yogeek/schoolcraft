@@ -163,6 +163,9 @@ function skillRows(activity: ActivityId): HTMLElement {
   return list;
 }
 
+/** « de Jade » when there are several children: each one has their own log and settings */
+const whose = () => (profiles.list.length > 1 ? ` de ${profileName(currentProfile())}` : '');
+
 function weekCard(): HTMLElement {
   const days: { label: string; min: number; good: number }[] = [];
   for (let i = 6; i >= 0; i--) {
@@ -184,7 +187,7 @@ function weekCard(): HTMLElement {
   return h(
     'section',
     { class: 'card' },
-    h('h2', {}, 'Cette semaine'),
+    h('h2', {}, `Cette semaine${whose()}`),
     h('p', {}, `${played} jour${played > 1 ? 's' : ''} de jeu, ${minutes} min, ${good} bonne${good > 1 ? 's' : ''} réponse${good > 1 ? 's' : ''}. Coffres ouverts en tout : ${state.chests}.`),
     chart,
     h('p', { class: 'muted' }, 'Le plus efficace : un peu chaque jour (10 à 15 minutes), plutôt qu’une longue séance.'),
@@ -214,7 +217,7 @@ export function parentsScreen(ctx: Ctx): void {
       'section',
       { class: 'card' },
       h('h2', {}, title),
-      h('label', { class: 'field' }, 'Niveau joué ', select, ' ', saved),
+      h('label', { class: 'field' }, 'Niveau en cours ', select, ' ', saved),
       infoEl,
       h('h3', {}, 'Ce qui a été travaillé'),
       skillRows(activity),
@@ -263,7 +266,7 @@ export function parentsScreen(ctx: Ctx): void {
   reset.onclick = () =>
     modal({
       title: 'Tout effacer ?',
-      body: [h('p', {}, 'Les blocs, la maison, les héros coloriés, les niveaux et l’historique seront effacés. Les réglages sont gardés.')],
+      body: [h('p', {}, `Les blocs, la maison, les héros coloriés, les niveaux et l’historique${whose()} seront effacés. Les réglages sont gardés.`)],
       actions: [
         { label: 'Annuler' },
         {
@@ -331,9 +334,13 @@ export function parentsScreen(ctx: Ctx): void {
         h(
           'section',
           { class: 'card' },
-          h('h2', {}, 'Temps de jeu'),
+          h('h2', {}, `Temps de jeu${whose()}`),
           h('label', { class: 'field' }, 'Pause au bout de ', limit, ' ', limitSaved),
-          h('p', { class: 'muted' }, 'Quand le temps est écoulé, Pixel propose une pause. Le compteur repart à zéro après 30 minutes sans jouer.'),
+          h(
+            'p',
+            { class: 'muted' },
+            `Quand le temps est écoulé, le jeu s’arrête sur un écran de pause : seul un adulte peut le relancer. Le compteur repart tout seul à zéro après 30 minutes sans jouer.${profiles.list.length > 1 ? ' Chaque enfant a son propre réglage.' : ''}`,
+          ),
           playInfo,
           restart,
         ),
@@ -344,7 +351,7 @@ export function parentsScreen(ctx: Ctx): void {
           h('p', { class: 'muted' }, `Efface les blocs, la maison, les héros, les niveaux et l’historique${profiles.list.length > 1 ? ` de ${profileName(currentProfile())}` : ''}.`),
           reset,
         ),
-        h('p', { class: 'muted center' }, 'Aucune donnée ne quitte cet appareil : pas de compte, pas de publicité, pas de micro.'),
+        h('p', { class: 'muted center' }, 'Aucune donnée de l’enfant ne quitte cet appareil : pas de compte, pas de publicité, pas de micro.'),
       ),
     ),
   );
@@ -359,11 +366,25 @@ export function pauseScreen(ctx: Ctx): void {
     void ctx.say(speech);
   };
   const parents = h('button', { class: 'btn' }, 'Parents');
+  // the adult chooses: more time now, or the parents' area (the clock is not reset behind their back)
   parents.onclick = () =>
-    parentGate(() => {
-      resetPlayClock();
-      ctx.go('home');
-    });
+    parentGate(() =>
+      modal({
+        title: 'Temps de jeu terminé',
+        body: [h('p', {}, `${playedMinutes()} min de jeu dans cette séance.`)],
+        actions: [
+          {
+            label: 'Laisser rejouer',
+            cls: 'green',
+            onClick: () => {
+              resetPlayClock();
+              ctx.go('home');
+            },
+          },
+          { label: 'Espace parents', onClick: () => ctx.go('parents') },
+        ],
+      }),
+    );
   ctx.root.append(
     h(
       'main',

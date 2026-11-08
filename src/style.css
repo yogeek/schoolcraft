@@ -354,6 +354,13 @@ img.block.mini {
 .numbers {
   margin-top: 4px;
 }
+/* four number answers on one row of a phone held upright (the fourth was cut off below) */
+@media (orientation: portrait) {
+  .choices.numbers:has(> :nth-child(4)) {
+    --size: clamp(72px, 20vw, 140px);
+    gap: 10px;
+  }
+}
 
 .pile {
   --pile: clamp(56px, 15vw, 88px);
@@ -717,21 +724,24 @@ img.block.mini {
   grid-template-columns: repeat(3, var(--pile));
   gap: 8px;
 }
-.pile.covered .pile-block {
-  background: #5b5b5b;
+/* the hidden dice is one grey board: one « ? » per block would give the answer away */
+.pile.dice.covered {
+  position: relative;
 }
-.pile.covered .pile-block img {
+.pile.dice.covered > * {
   visibility: hidden;
 }
-.pile.covered .pile-block::after {
+.pile.dice.covered::after {
   content: '?';
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
+  background: #5b5b5b;
+  border: 3px solid var(--ink);
   color: #fff;
   font-weight: 700;
-  font-size: calc(var(--pile) * 0.5);
+  font-size: calc(var(--pile) * 1.2);
 }
 .pile.sum {
   --pile: clamp(44px, 12vw, 72px);
@@ -1004,13 +1014,13 @@ img.block.mini {
 .paint-palette {
   display: flex;
   gap: 10px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* up to 6 colours on one row, even on a small phone */
   justify-content: center;
   padding: 12px 0 calc(16px + env(safe-area-inset-bottom));
 }
 .swatch {
-  width: clamp(52px, 14vw, 68px);
-  height: clamp(52px, 14vw, 68px);
+  width: clamp(44px, min(14vw, calc((100vw - 90px) / 6)), 68px);
+  height: clamp(44px, min(14vw, calc((100vw - 90px) / 6)), 68px);
   border: 4px solid var(--ink);
   box-shadow: 0 4px 0 var(--ink);
   display: grid;
@@ -2157,6 +2167,7 @@ button span,
   animation: drop 0.3s;
 }
 .frame-cell.glow,
+.thing.glow,
 .square.glow,
 .pile-block.glow {
   outline: 5px solid #fff;
@@ -2214,11 +2225,31 @@ button span,
 }
 .track.two-rows {
   flex-direction: column;
-  gap: 30px;
+  gap: 4px;
 }
 .track-row {
   display: flex;
   gap: 2px;
+}
+.track-row.back {
+  flex-direction: row-reverse;
+  margin-top: 26px;
+}
+.track-turn {
+  align-self: flex-end;
+  width: var(--sq);
+  height: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 0;
+  transform: translateY(16px);
+}
+/* narrow squares on a phone: taller, easier to touch */
+@media (orientation: portrait) {
+  .track .square:not(.ghost) {
+    height: max(var(--sq), 60px);
+  }
 }
 .square {
   position: relative;

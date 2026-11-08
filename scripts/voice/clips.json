@@ -782,16 +782,6 @@
   "stt": "Ouvre ton coffre",
   "score": 1
  },
- "on continue l'aventure du jour?": {
-  "file": "b17670d2-f69662.mp3",
-  "text": "On continue l'aventure du jour ?",
-  "sent": "On continue l'aventure du jour ?",
-  "dur": 1.68,
-  "cost": 13,
-  "sttCost": 0,
-  "stt": "On continue l'aventure du jour ?",
-  "score": 1
- },
  "tu peux colorier tes amis, ou construire ta maison!": {
   "file": "9062dd2c-bda55a.mp3",
   "text": "Tu peux colorier tes amis, ou construire ta maison !",
@@ -2147,16 +2137,6 @@
   "cost": 9,
   "sttCost": 0,
   "stt": "On passe au niveau dix-neuf",
-  "score": 1
- },
- "on continue l'aventure?": {
-  "file": "ebc64079-33c434.mp3",
-  "text": "On continue l'aventure ?",
-  "sent": "On continue l'aventure ?",
-  "dur": 1.28,
-  "cost": 10,
-  "sttCost": 0,
-  "stt": "On continue l'aventure ?",
   "score": 1
  },
  "maintenant, on va lire!": {
@@ -23360,16 +23340,6 @@
   "stt": "Compte les bonbons qui restent",
   "score": 1
  },
- "compte toutes les bonbons!": {
-  "file": "5092829f-da16ed.mp3",
-  "text": "Compte toutes les bonbons !",
-  "sent": "Compte toutes les bonbons !",
-  "dur": 1.52,
-  "cost": 11,
-  "sttCost": 0,
-  "stt": "Compte toutes les bonbons",
-  "score": 1
- },
  "pixel a un ballon.": {
   "file": "d22a5559-d4b185.mp3",
   "text": "Pixel a un ballon.",
@@ -23518,16 +23488,6 @@
   "cost": 13,
   "sttCost": 0,
   "stt": "Compte les ballons qui restent",
-  "score": 1
- },
- "compte toutes les ballons!": {
-  "file": "3f8b5fd1-0ff77c.mp3",
-  "text": "Compte toutes les ballons !",
-  "sent": "Compte toutes les ballons !",
-  "dur": 1.44,
-  "cost": 11,
-  "sttCost": 0,
-  "stt": "Compte toutes les ballons",
   "score": 1
  },
  "pixel a un poisson.": {
@@ -23679,16 +23639,6 @@
   "sttCost": 0,
   "stt": "Compte les poissons qui restent",
   "score": 1
- },
- "compte toutes les poissons!": {
-  "file": "1623aa74-b8f9da.mp3",
-  "text": "Compte toutes les poissons !",
-  "sent": "Compte toutes les poissons !",
-  "dur": 1.6,
-  "cost": 11,
-  "sttCost": 0,
-  "stt": "Compte tous les poissons",
-  "score": 0.91
  },
  "pixel a une fleur.": {
   "file": "a355ebce-9d894e.mp3",
@@ -24846,6 +24796,125 @@
   "cost": 10,
   "sttCost": 0,
   "stt": "Reviens jouer plus tard",
+  "score": 1
+ },
+ "relis bien la devinette!": {
+  "file": "e88b234a-6869ba.mp3",
+  "text": "Relis bien la devinette !",
+  "sent": "Relis bien la devinette !",
+  "dur": 1.68,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Relis bien la devinette",
+  "score": 1
+ },
+ "on compte ensemble!": {
+  "file": "f189021e-769aaa.mp3",
+  "text": "On compte ensemble !",
+  "sent": "On compte ensemble !",
+  "dur": 1.28,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "On compte ensemble",
+  "score": 1
+ },
+ "regarde celui qui brille!": {
+  "file": "6bfd5b3f-9402b6.mp3",
+  "text": "Regarde celui qui brille !",
+  "sent": "Regarde celui qui brille !",
+  "dur": 1.76,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Regarde celui qui brille",
+  "score": 1
+ },
+ "bien joué!": {
+  "file": "6c9cb1cc-abec95.mp3",
+  "text": "Bien joué !",
+  "sent": "Bien joué !",
+  "dur": 1.12,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche l'aventure du jour pour commencer!": {
+  "file": "c3e0de1f-dc9ab7.mp3",
+  "text": "Touche l'aventure du jour pour commencer !",
+  "sent": "Touche l'aventure du jour pour commencer !",
+  "dur": 2.16,
+  "cost": 17,
+  "sttCost": 1,
+  "stt": "Touche l'aventure du jour pour commencer",
+  "score": 1
+ },
+ "touche l'aventure du jour pour continuer!": {
+  "file": "5771d231-c31994.mp3",
+  "text": "Touche l'aventure du jour pour continuer !",
+  "sent": "Touche l'aventure du jour pour continuer !",
+  "dur": 2.24,
+  "cost": 17,
+  "sttCost": 1,
+  "stt": "Touche l'aventure du jour pour continuer",
+  "score": 1
+ },
+ "tu as réussi le dernier niveau!": {
+  "file": "385d84bf-81f48e.mp3",
+  "text": "Tu as réussi le dernier niveau !",
+  "sent": "Tu as réussi le dernier niveau !",
+  "dur": 2.32,
+  "cost": 13,
+  "sttCost": 1,
+  "stt": "Tu as réussi le dernier niveau",
+  "score": 1
+ },
+ "encore un peu d'entraînement et tu passeras au niveau suivant!": {
+  "file": "77b1ca50-05efdc.mp3",
+  "text": "Encore un peu d'entraînement et tu passeras au niveau suivant !",
+  "sent": "Encore un peu d'entraînement et tu passeras au niveau suivant !",
+  "dur": 2.96,
+  "cost": 25,
+  "sttCost": 1,
+  "stt": "Encore un peu d'entraînement et tu passeras au niveau suivant",
+  "score": 1
+ },
+ "encore un peu d'entraînement et tu réussiras ce niveau!": {
+  "file": "5f513dc8-7b0193.mp3",
+  "text": "Encore un peu d'entraînement et tu réussiras ce niveau !",
+  "sent": "Encore un peu d'entraînement et tu réussiras ce niveau !",
+  "dur": 2.88,
+  "cost": 22,
+  "sttCost": 1,
+  "stt": "Encore un peu d'entraînement et tu réussiras ce niveau",
+  "score": 1
+ },
+ "compte tous les bonbons!": {
+  "file": "bbce2d24-1e6e88.mp3",
+  "text": "Compte tous les bonbons !",
+  "sent": "Compte tous les bonbons !",
+  "dur": 1.36,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Compte tous les bonbons",
+  "score": 1
+ },
+ "compte tous les poissons!": {
+  "file": "bf162e91-024527.mp3",
+  "text": "Compte tous les poissons !",
+  "sent": "Compte tous les poissons !",
+  "dur": 1.44,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Compte tous les poissons",
+  "score": 1
+ },
+ "compte tous les ballons!": {
+  "file": "280d0c62-542889.mp3",
+  "text": "Compte tous les ballons !",
+  "sent": "Compte tous les ballons !",
+  "dur": 1.44,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Compte tous les ballons",
   "score": 1
  }
 }

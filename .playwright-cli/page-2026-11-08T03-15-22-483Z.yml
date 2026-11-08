@@ -1,0 +1,49 @@
+- main [ref=e3]:
+  - generic [ref=e4]:
+    - button "Parents" [ref=e6] [cursor=pointer]
+    - heading "SchoolCraft" [level=1] [ref=e7]
+    - status "0 blocs" [ref=e8]:
+      - img "herbe" [ref=e9]
+      - generic [ref=e10]: "0"
+  - generic [ref=e11]:
+    - 'button "Pixel le renard : réécouter" [ref=e12] [cursor=pointer]':
+      - img
+    - generic [ref=e13]: Coucou ! On joue ?
+  - button "L'aventure du jour" [ref=e14] [cursor=pointer]:
+    - generic: L'aventure du jour
+    - generic [ref=e15]:
+      - generic: ✔
+      - generic: ✔
+      - generic: ✔
+      - generic:
+        - img
+  - navigation "Jeux" [ref=e16]:
+    - button "a Lire Niveau 5" [ref=e17] [cursor=pointer]:
+      - generic [ref=e18]:
+        - generic: a
+      - generic:
+        - generic: Lire
+        - generic: Niveau 5
+    - button "✎ Écrire Niveau 5" [ref=e19] [cursor=pointer]:
+      - generic [ref=e20]:
+        - generic: ✎
+      - generic:
+        - generic: Écrire
+        - generic: Niveau 5
+    - button "3 Compter Niveau 6" [ref=e21] [cursor=pointer]:
+      - generic [ref=e22]:
+        - generic: "3"
+      - generic:
+        - generic: Compter
+        - generic: Niveau 6
+    - button "Mes héros" [ref=e23] [cursor=pointer]:
+      - generic [ref=e24]:
+        - img
+      - generic:
+        - generic: Mes héros
+    - button "bois herbe Ma maison" [ref=e25] [cursor=pointer]:
+      - generic [ref=e26]:
+        - img "bois"
+        - img "herbe"
+      - generic:
+        - generic: Ma maison

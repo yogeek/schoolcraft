@@ -107,6 +107,10 @@
   "tag": "praise"
  },
  {
+  "key": "on compte ensemble!",
+  "text": "On compte ensemble !"
+ },
+ {
   "key": "regarde bien!",
   "text": "Regarde bien !"
  },
@@ -267,6 +271,10 @@
   "tag": "praise"
  },
  {
+  "key": "regarde celui qui brille!",
+  "text": "Regarde celui qui brille !"
+ },
+ {
   "key": "lis le mot, et touche la bonne image.",
   "text": "Lis le mot, et touche la bonne image."
  },
@@ -327,6 +335,10 @@
   "text": "Est-ce que c’est vrai, ou faux ?"
  },
  {
+  "key": "relis bien la devinette!",
+  "text": "Relis bien la devinette !"
+ },
+ {
   "key": "lis la devinette, et touche la bonne image.",
   "text": "Lis la devinette, et touche la bonne image."
  },
@@ -350,6 +362,18 @@
   "text": "Dis-le avec moi !"
  },
  {
+  "key": "pose ton doigt sur le point vert.",
+  "text": "Pose ton doigt sur le point vert."
+ },
+ {
+  "key": "continue au point vert, et suis le chemin.",
+  "text": "Continue au point vert, et suis le chemin."
+ },
+ {
+  "key": "regarde bien comment on l'écrit.",
+  "text": "Regarde bien comment on l’écrit."
+ },
+ {
   "key": "oups!",
   "text": "Oups !"
  },
@@ -362,24 +386,12 @@
   "text": "Reste sur le chemin, et continue au point vert."
  },
  {
-  "key": "regarde bien comment on l'écrit.",
-  "text": "Regarde bien comment on l’écrit."
- },
- {
   "key": "écris-la de mémoire.",
   "text": "Écris-la de mémoire."
  },
  {
-  "key": "pose ton doigt sur le point vert.",
-  "text": "Pose ton doigt sur le point vert."
- },
- {
   "key": "pose ton doigt sur le point vert, et suis le chemin.",
   "text": "Pose ton doigt sur le point vert, et suis le chemin."
- },
- {
-  "key": "continue au point vert, et suis le chemin.",
-  "text": "Continue au point vert, et suis le chemin."
  },
  {
   "key": "tu as fini l'aventure du jour!",
@@ -418,8 +430,12 @@
   "text": "Ouvre ton coffre !"
  },
  {
-  "key": "on continue l'aventure du jour?",
-  "text": "On continue l'aventure du jour ?"
+  "key": "touche l'aventure du jour pour continuer!",
+  "text": "Touche l'aventure du jour pour continuer !"
+ },
+ {
+  "key": "touche l'aventure du jour pour commencer!",
+  "text": "Touche l'aventure du jour pour commencer !"
  },
  {
   "key": "tu peux colorier tes amis, ou construire ta maison!",
@@ -1030,10 +1046,6 @@
   "text": "On passe au niveau 19."
  },
  {
-  "key": "on continue l'aventure?",
-  "text": "On continue l'aventure ?"
- },
- {
   "key": "maintenant, on va lire!",
   "text": "Maintenant, on va lire !"
  },
@@ -1044,6 +1056,22 @@
  {
   "key": "maintenant, on va compter!",
   "text": "Maintenant, on va compter !"
+ },
+ {
+  "key": "bien joué!",
+  "text": "Bien joué !"
+ },
+ {
+  "key": "tu as réussi le dernier niveau!",
+  "text": "Tu as réussi le dernier niveau !"
+ },
+ {
+  "key": "encore un peu d'entraînement et tu passeras au niveau suivant!",
+  "text": "Encore un peu d'entraînement et tu passeras au niveau suivant !"
+ },
+ {
+  "key": "encore un peu d'entraînement et tu réussiras ce niveau!",
+  "text": "Encore un peu d'entraînement et tu réussiras ce niveau !"
  },
  {
   "key": "des blocs spéciaux pour ta maison: brique!",
@@ -9754,8 +9782,8 @@
   "text": "Compte les bonbons qui restent !"
  },
  {
-  "key": "compte toutes les bonbons!",
-  "text": "Compte toutes les bonbons !"
+  "key": "compte tous les bonbons!",
+  "text": "Compte tous les bonbons !"
  },
  {
   "key": "pixel a un ballon.",
@@ -9818,8 +9846,8 @@
   "text": "Compte les ballons qui restent !"
  },
  {
-  "key": "compte toutes les ballons!",
-  "text": "Compte toutes les ballons !"
+  "key": "compte tous les ballons!",
+  "text": "Compte tous les ballons !"
  },
  {
   "key": "pixel a un poisson.",
@@ -9882,8 +9910,8 @@
   "text": "Compte les poissons qui restent !"
  },
  {
-  "key": "compte toutes les poissons!",
-  "text": "Compte toutes les poissons !"
+  "key": "compte tous les poissons!",
+  "text": "Compte tous les poissons !"
  },
  {
   "key": "pixel a une fleur.",

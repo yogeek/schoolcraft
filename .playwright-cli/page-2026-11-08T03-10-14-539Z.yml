@@ -1,0 +1,21 @@
+- main [ref=e62]:
+  - generic [ref=e63]:
+    - button "Accueil" [ref=e64] [cursor=pointer]:
+      - generic:
+        - img
+    - 'button "Niveau 1 : voir la carte" [ref=e66] [cursor=pointer]':
+      - text: Niveau 1
+      - generic: ▾
+    - status "4 blocs" [ref=e67]:
+      - img "herbe" [ref=e68]
+      - generic [ref=e69]: "4"
+  - img "6 questions" [ref=e70]
+  - generic [ref=e77]:
+    - 'button "Pixel le renard : réécouter" [ref=e78] [cursor=pointer]':
+      - img
+    - generic [ref=e79]: Tape les syllabes !
+    - button "Réécouter" [ref=e80] [cursor=pointer]:
+      - img
+  - 'button "tomate : réécouter" [ref=e82] [cursor=pointer]':
+    - generic: 🍅
+  - 'button "Tambour : taper une syllabe" [ref=e84] [cursor=pointer]': 🥁

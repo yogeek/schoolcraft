@@ -1,0 +1,46 @@
+- main [ref=e299]:
+  - generic [ref=e300]:
+    - button "Accueil" [ref=e301] [cursor=pointer]:
+      - generic:
+        - img
+    - 'button "Niveau 5 : voir la carte" [ref=e303] [cursor=pointer]':
+      - text: Niveau 5
+      - generic: ▾
+    - status "17 blocs" [ref=e304]:
+      - img "herbe" [ref=e305]
+      - generic [ref=e306]: "17"
+  - img "6 questions" [ref=e307]
+  - generic [ref=e314]:
+    - 'button "Pixel le renard : réécouter" [ref=e315] [cursor=pointer]':
+      - img
+    - generic [ref=e316]: Combien de blocs ?
+    - button "Réécouter" [ref=e317] [cursor=pointer]:
+      - img
+  - generic [ref=e319]:
+    - button "bloc" [ref=e320] [cursor=pointer]:
+      - img "pierre"
+    - button "bloc" [ref=e321] [cursor=pointer]:
+      - img "pierre"
+    - button "bloc" [ref=e322] [cursor=pointer]:
+      - img "pierre"
+    - button "bloc" [ref=e323] [cursor=pointer]:
+      - img "pierre"
+    - button "bloc" [ref=e324] [cursor=pointer]:
+      - img "pierre"
+    - button "bloc" [ref=e325] [cursor=pointer]:
+      - img "pierre"
+    - button "bloc" [ref=e326] [cursor=pointer]:
+      - img "pierre"
+    - button "bloc" [ref=e327] [cursor=pointer]:
+      - img "pierre"
+    - button "bloc" [ref=e328] [cursor=pointer]:
+      - img "pierre"
+  - generic [ref=e329]:
+    - button "6" [ref=e330] [cursor=pointer]:
+      - generic: "6"
+    - button "8" [ref=e331] [cursor=pointer]:
+      - generic: "8"
+    - button "10" [ref=e332] [cursor=pointer]:
+      - generic: "10"
+    - button "9" [ref=e333] [cursor=pointer]:
+      - generic: "9"

@@ -1,0 +1,20 @@
+- main [ref=e153]:
+  - generic [ref=e154]:
+    - button "Accueil" [ref=e155] [cursor=pointer]:
+      - generic:
+        - img
+    - 'button "Niveau 1 : voir la carte" [ref=e157] [cursor=pointer]':
+      - text: Niveau 1
+      - generic: ▾
+    - status "10 blocs" [ref=e158]:
+      - img "herbe" [ref=e159]
+      - generic [ref=e160]: "10"
+  - img "5 questions" [ref=e161]
+  - generic [ref=e167]:
+    - 'button "Pixel le renard : réécouter" [ref=e168] [cursor=pointer]':
+      - img
+    - generic [ref=e169]: Regarde bien !
+    - button "Réécouter" [ref=e170] [cursor=pointer]:
+      - img
+  - 'img "Tracer : F" [ref=e172]':
+    - img [ref=e173]

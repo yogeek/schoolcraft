@@ -57,6 +57,18 @@ function numberChoices(r: Round, target: number, n: number, lo: number, hi: numb
   );
 }
 
+/** after two mistakes, Pixel counts with the child: each thing lights up as its number is said */
+async function countTogether(r: Round, els: Element[]): Promise<void> {
+  if (!r.open() || !els.length) return;
+  r.hold(true);
+  await r.say('On compte ensemble !');
+  for (let i = 0; i < els.length; i++) {
+    els[i].classList.add('glow');
+    await r.say(W[i + 1], { rate: 1 });
+  }
+  r.hold(false);
+}
+
 function shake(el: Element): void {
   el.classList.remove('shake');
   void (el as HTMLElement).offsetWidth;
@@ -132,6 +144,16 @@ function countGame(level: CountLevel): Game {
           });
         }
         r.miss(el);
+        if (r.misses >= 2) {
+          // the blocks stay in sight and Pixel counts them with the child
+          flashSeq++;
+          pile.classList.remove('covered');
+          pile.querySelectorAll('.counted').forEach((b) => b.classList.remove('counted'));
+          await r.say(`Ça, c'est le nombre ${W[k]}.`);
+          await countTogether(r, [...pile.querySelectorAll('.pile-block, .frame-cell.full')]);
+          if (r.open()) await r.say('Combien y a-t-il de blocs ?');
+          return;
+        }
         if (level.mode !== 'count') {
           await r.say(`Ça, c'est le nombre ${W[k]}. Regarde encore !`);
           if (r.open()) await flash(r);
@@ -255,10 +277,11 @@ function raceGame(level: CountLevel): Game {
         squares.push(sq);
       }
       if (end > 10) {
-        // two rows of ten, both left to right (like the number chart); the start sits before 1
+        // one path that turns back (11 right under 10): the numbers stay neighbours all along,
+        // which is what makes a linear board work; the start sits before 1
         const row1 = h('div', { class: 'track-row' }, start, ...squares.slice(1, 11));
-        const row2 = h('div', { class: 'track-row' }, h('div', { class: 'square ghost' }), ...squares.slice(11));
-        track.append(row1, row2);
+        const row2 = h('div', { class: 'track-row back' }, ...squares.slice(11), h('div', { class: 'square ghost' }));
+        track.append(row1, h('div', { class: 'track-turn', 'aria-hidden': 'true' }, '↓'), row2);
       } else track.append(...squares);
       const me = h('div', { class: 'token me', 'aria-hidden': 'true', html: lastHero ? heroSVG(lastHero, 'all', 30) : '' });
       if (!lastHero) me.append(blockImg('gold'), h('span', { class: 'token-star' }, '★'));
@@ -482,7 +505,10 @@ function make10Game(level: CountLevel): Game {
         }
         r.miss(el);
         empty.forEach((c) => c.classList.add('glow'));
-        await r.say('Compte les cases vides !');
+        if (r.misses >= 2) {
+          empty.forEach((c) => c.classList.remove('glow'));
+          await countTogether(r, empty);
+        } else await r.say('Compte les cases vides !');
       });
       return key(n);
     },
@@ -539,6 +565,11 @@ function addGame(level: CountLevel): Game {
         }
         r.miss(el);
         pile.querySelectorAll('.counted').forEach((b) => b.classList.remove('counted'));
+        if (r.misses >= 2) {
+          await r.say(`Ça, c'est le nombre ${W[k]}.`);
+          await countTogether(r, [...pile.querySelectorAll('.pile-block')]);
+          return;
+        }
         await r.say(`Ça, c'est le nombre ${W[k]}. Compte tous les blocs avec ton doigt !`);
       });
       return key(target);
@@ -595,7 +626,11 @@ function problemGame(level: CountLevel): Game {
           });
         }
         r.miss(el);
-        await r.say(sub ? `Compte les ${thing.many} qui restent !` : `Compte toutes les ${thing.many} !`);
+        if (r.misses >= 2) {
+          await countTogether(r, [...r.stage.querySelectorAll('.thing:not(.gone)')]);
+          return;
+        }
+        await r.say(sub ? `Compte les ${thing.many} qui restent !` : `Compte ${thing.fem ? 'toutes' : 'tous'} les ${thing.many} !`);
       });
       return `count:problem:${sub ? 'moins' : 'plus'}:${result()}`;
     },

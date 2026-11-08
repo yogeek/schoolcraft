@@ -77,7 +77,11 @@ for (const n of range(2, maxLevel)) {
   add(`Et tu passes au niveau ${n} !`);
   add(`On passe au niveau ${n}.`);
 }
-for (const v of ['lire', 'écrire', 'compter']) add(`On continue l'aventure ? Maintenant, on va ${v} !`);
+for (const v of ['lire', 'écrire', 'compter']) add(`Maintenant, on va ${v} !`);
+add('Bien joué !');
+add('Tu as réussi le dernier niveau !');
+add("Encore un peu d'entraînement et tu passeras au niveau suivant !");
+add("Encore un peu d'entraînement et tu réussiras ce niveau !");
 
 // ---------------------------------------------------------------- chest, build, heroes
 const specials = ['brick', 'leaves', 'flower', 'crystal'] as const;
@@ -224,7 +228,7 @@ for (const th of THINGS) {
     add(`Il en trouve ${one(b, th.fem)} de plus.`);
   }
   add(`Compte les ${th.many} qui restent !`);
-  add(`Compte toutes les ${th.many} !`);
+  add(`Compte ${th.fem ? 'toutes' : 'tous'} les ${th.many} !`);
 }
 for (const a of range(1, 10))
   for (const b of range(1, 4)) {

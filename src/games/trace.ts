@@ -60,8 +60,9 @@ export function writingGame(level: WritingLevel): Game {
       const gl = glyph(level.script, char);
       const words = speech(gl);
       let demoing = false;
-      let helped = false;
       let offs = 0;
+      let hinted = 0; // last time the voice said where to start (it does not repeat itself)
+      let stuck = 0; // since when the finger moves without the ink going forward
 
       // ---------- the board
       const view = svg('svg', { viewBox: `${(gl.w - 100) / 2} 0 100 100`, class: 'trace-svg', 'aria-hidden': 'true' });
@@ -234,9 +235,15 @@ export function writingGame(level: WritingLevel): Game {
         const p = toBox(e);
         if (dist(p, pts[stroke][at]) > tol(scale()).start) {
           nudge();
-          r.bubble(at === 0 ? 'Commence au point vert !' : 'Continue au point vert !');
+          r.bubble(at === 0 && stroke === 0 ? 'Commence au point vert !' : 'Continue au point vert !');
+          // a child who cannot read does not know the green dot matters: say it (not at every touch)
+          if (performance.now() - hinted > 4000) {
+            hinted = performance.now();
+            void r.say(at === 0 && stroke === 0 ? 'Pose ton doigt sur le point vert.' : 'Continue au point vert, et suis le chemin.');
+          }
           return;
         }
+        stuck = 0;
         pointer = e.pointerId;
         try {
           view.setPointerCapture(e.pointerId); // keep the finger even when it slips off the board
@@ -260,6 +267,14 @@ export function writingGame(level: WritingLevel): Game {
         // move forward along the path to the farthest checkpoint the finger covers (no skipping ahead)
         let best = at;
         for (let i = at + 1; i < Math.min(line.length, at + 9); i++) if (dist(p, line[i]) <= ADV) best = i;
+        // the finger moves but the ink waits (a little beside the path): show where the ink is
+        if (best > at) stuck = 0;
+        else if (!stuck) stuck = performance.now();
+        else if (performance.now() - stuck > 700) {
+          stuck = performance.now();
+          nudge();
+          r.bubble('Suis le chemin !');
+        }
         at = best;
         showInk(stroke, at);
         // still near the path around where the ink is?
@@ -285,17 +300,16 @@ export function writingGame(level: WritingLevel): Game {
           movePen(null);
           offs++;
           if (offs >= 2) r.miss(null); // the first slip is free: small fingers are not pencils
-          r.bubble('Reste sur le chemin !');
-          void r.say(offs === 1 ? 'Oups ! Reste sur le chemin.' : 'Reste sur le chemin, et continue au point vert.');
           nudge();
-          // after a few slips, Pixel shows again (and in memory mode, the path comes back)
-          if (offs === 3 && !helped) {
-            helped = true;
+          // every third slip, Pixel shows again, and says so (in memory mode, the path comes back)
+          if (offs % 3 === 0) {
             roads.forEach((road) => road.classList.remove('faint'));
             const s = stroke;
             const a = at;
             void (async () => {
               r.hold(true);
+              r.bubble('Regarde bien !');
+              await r.say('Regarde bien comment on l’écrit.');
               await demo();
               r.hold(false);
               stroke = s;
@@ -303,8 +317,14 @@ export function writingGame(level: WritingLevel): Game {
               for (let i = 0; i < stroke; i++) showInk(i, pts[i].length - 1);
               showInk(stroke, at);
               placeMarker();
+              if (!r.open()) return;
+              r.bubble('À toi !');
+              await r.say('Continue au point vert, et suis le chemin.');
             })();
+            return;
           }
+          r.bubble('Reste sur le chemin !');
+          void r.say(offs === 1 ? 'Oups ! Reste sur le chemin.' : 'Reste sur le chemin, et continue au point vert.');
         }
       });
 

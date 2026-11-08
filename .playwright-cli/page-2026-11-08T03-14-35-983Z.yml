@@ -1,0 +1,29 @@
+- generic [active] [ref=e1]:
+  - main [ref=e293]:
+    - generic [ref=e294]:
+      - button "Accueil" [ref=e295] [cursor=pointer]:
+        - generic:
+          - img
+      - 'button "Niveau 1 : voir la carte" [ref=e297] [cursor=pointer]':
+        - text: Niveau 1
+        - generic: ▾
+      - status "12 blocs" [ref=e298]:
+        - img "herbe" [ref=e299]
+        - generic [ref=e300]: "12"
+    - img "5 questions" [ref=e301]
+    - generic [ref=e307]:
+      - 'button "Pixel le renard : réécouter" [ref=e308] [cursor=pointer]':
+        - img
+      - generic [ref=e309]: Combien de blocs ?
+      - button "Réécouter" [ref=e310] [cursor=pointer]:
+        - img
+    - button "bloc" [ref=e321] [cursor=pointer]:
+      - img "herbe"
+    - generic [ref=e315]:
+      - button "1" [ref=e322] [cursor=pointer]:
+        - generic: "1"
+      - button "2" [ref=e323] [cursor=pointer]:
+        - generic: "2"
+      - button "4" [ref=e324] [cursor=pointer]:
+        - generic: "4"
+  - img "terre"

@@ -13,7 +13,7 @@ import { mapScreen } from './screens/map';
 import { askWhoOnce, whoButton } from './screens/profiles';
 import { parentGate, parentsScreen, pauseScreen } from './screens/parents';
 import type { Ctx, ScreenName } from './screens/types';
-import { save, state, type ActivityId, type Grade } from './state';
+import { mission, save, state, type ActivityId, type Grade } from './state';
 import { blockImg, bubble, counter, h, installTapFix, mascot, modal } from './ui';
 
 const app = document.getElementById('app')!;
@@ -46,6 +46,9 @@ function go(name: ScreenName, activity?: ActivityId): void {
       return pauseScreen(ctx);
   }
 }
+
+/** when home last spoke (see the end of homeScreen) */
+let homeSpoke = -1e9;
 
 function homeScreen(ctx: Ctx): void {
   const welcome =
@@ -118,9 +121,12 @@ function homeScreen(ctx: Ctx): void {
 
   if (state.settings.grade === null) askGrade(ctx);
   else askWhoOnce();
-  // back home after playing: Pixel says what comes next (speech needs a first touch on some devices)
-  if (navigator.userActivation?.hasBeenActive) {
-    void ctx.say(ready ? "Bravo, tu as fini l'aventure du jour ! Ouvre ton coffre !" : todo ? "On continue l'aventure du jour ?" : 'Tu peux colorier tes amis, ou construire ta maison !');
+  // back home after playing: Pixel says what comes next (speech needs a first touch on some devices).
+  // Home drawn again right away (class chosen, child picked) does not say it twice.
+  if (navigator.userActivation?.hasBeenActive && performance.now() - homeSpoke > 3000) {
+    homeSpoke = performance.now();
+    const started = mission().done.length > 0;
+    void ctx.say(ready ? "Bravo, tu as fini l'aventure du jour ! Ouvre ton coffre !" : todo ? (started ? "Touche l'aventure du jour pour continuer !" : "Touche l'aventure du jour pour commencer !") : 'Tu peux colorier tes amis, ou construire ta maison !');
   }
 }
 

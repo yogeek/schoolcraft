@@ -1,0 +1,38 @@
+- generic [active] [ref=e1]:
+  - main [ref=e299]:
+    - generic [ref=e300]:
+      - button "Accueil" [ref=e301] [cursor=pointer]:
+        - generic:
+          - img
+      - 'button "Niveau 5 : voir la carte" [ref=e303] [cursor=pointer]':
+        - text: Niveau 5
+        - generic: ▾
+      - status "17 blocs" [ref=e304]:
+        - img "herbe" [ref=e305]
+        - generic [ref=e306]: "17"
+    - img "6 questions" [ref=e307]
+    - generic [ref=e314]:
+      - 'button "Pixel le renard : réécouter" [ref=e315] [cursor=pointer]':
+        - img
+      - generic [ref=e316]: Combien de blocs ?
+      - button "Réécouter" [ref=e317] [cursor=pointer]:
+        - img
+    - generic [ref=e335]:
+      - button "bloc" [ref=e336] [cursor=pointer]:
+        - img "bois"
+      - button "bloc" [ref=e337] [cursor=pointer]:
+        - img "bois"
+      - button "bloc" [ref=e338] [cursor=pointer]:
+        - img "bois"
+      - button "bloc" [ref=e339] [cursor=pointer]:
+        - img "bois"
+    - generic [ref=e329]:
+      - button "7" [ref=e340] [cursor=pointer]:
+        - generic: "7"
+      - button "3" [ref=e341] [cursor=pointer]:
+        - generic: "3"
+      - button "2" [ref=e342] [cursor=pointer]:
+        - generic: "2"
+      - button "4" [ref=e343] [cursor=pointer]:
+        - generic: "4"
+  - img "verre"
