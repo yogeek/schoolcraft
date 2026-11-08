@@ -7,7 +7,7 @@
 //
 // Every question has its own number: speech and timers of an old question never talk over (or
 // act on) the next one, and nothing runs once the child left the screen.
-import { sfx } from './audio';
+import { sfx, type SayOpts } from './audio';
 import { endSession } from './levels';
 import { rewardScreen } from './screens/reward';
 import type { Ctx } from './screens/types';
@@ -21,7 +21,7 @@ export interface Round {
   readonly choices: HTMLElement;
   bubble(text: string): void;
   /** speak, only while this question is shown */
-  say(text: string, opts?: { rate?: number; pitch?: number }): Promise<void>;
+  say(text: string, opts?: SayOpts): Promise<void>;
   /** this question is shown and waits for an answer */
   open(): boolean;
   /** wait, then tell whether this question is still shown */

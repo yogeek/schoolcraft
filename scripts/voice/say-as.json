@@ -1,8 +1,19 @@
 {
- "écoute: oi… seau.": "Écoute : oua… so.",
- "oi… seau… oiseau!": "oua… so… oiseau !",
- "cha… meau… chameau!": "cha… mo… chameau !",
- "écoute: cha… meau.": "Écoute : cha… mo.",
- "écoute: fu… sée.": "Écoute : fu… zée.",
- "fu… sée… fusée!": "fu… zée… fusée !"
+ "ba… nane… ça fait: banane!": "ba… nane… ça fait : banane !",
+ "écoute: ba… nane.": "Écoute : ba… nane.",
+ "é… toile… ça fait: étoile!": "é… toile… ça fait : étoile !",
+ "écoute: é… toile.": "Écoute : é… toile.",
+ "écoute: o… mar.": {
+  "say": "Écoute : eau. marre.",
+  "marks": [
+   9,
+   14
+  ]
+ },
+ "hein, comme dans pain.": "[calmly] /ɛ̃/, comme dans le pain.",
+ "écoute bien: to.": "Écoute bien : tôt.",
+ "touche le bloc qui fait le son: fu!": "Touche le bloc qui fait le son : fût !",
+ "lit": "Le lit.",
+ "sept": "[calmly] /sɛt/.",
+ "che, comme dans chapeau.": "[calmly] /ʃə/, comme dans chapeau."
 }

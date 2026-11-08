@@ -2,7 +2,7 @@
 // Lancer : npm run check   (Node 22.6+ : les types TypeScript sont simplement ignorés)
 import { COUNT_CHAPTERS, COUNT_LEVELS, DICE, NUMBER_WORDS, THINGS } from '../src/content/counting.ts';
 import { HEROES, regions } from '../src/content/heroes.ts';
-import { decode, DECOY_SYLLABLES, graphemes, PIC_WORDS, READING_CHAPTERS, READING_LEVELS, SIGHT_WORDS } from '../src/content/reading.ts';
+import { ARTICLES, decode, DECOY_SYLLABLES, graphemes, PIC_WORDS, READING_CHAPTERS, READING_LEVELS, SIGHT_WORDS } from '../src/content/reading.ts';
 import { TIPS } from '../src/content/tips.ts';
 import { GLYPHS, LETTER_SPEECH, WRITING_CHAPTERS, WRITING_LEVELS } from '../src/content/writing.ts';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
@@ -136,6 +136,13 @@ READING_LEVELS.forEach((l, i) => {
   if (!('items' in l) || l.kind !== 'sound') return;
   const groups = new Set(l.items.map((it) => it.group ?? it.text));
   if (groups.size < l.choices) err(`Lire, niveau ${i + 1} (${l.name}) : ${groups.size} sons différents pour ${l.choices} choix`);
+});
+
+// un mot d'une syllabe répété après une réussite a besoin de son article (« Le pain ! »)
+READING_LEVELS.forEach((l, i) => {
+  const need = (w: string) => !ARTICLES[w] && err(`Lire, niveau ${i + 1} (${l.name}) : « ${w} » (une syllabe) n'a pas d'article dans ARTICLES`);
+  if ('items' in l && l.kind !== 'sound') for (const it of l.items) if (it.parts?.length === 1 && !it.example) need(it.text);
+  if (l.kind === 'clap') for (const w of l.words) if (w.syl.length === 1) need(w.word);
 });
 
 // banque d'images (syllabes, rimes, premier son)

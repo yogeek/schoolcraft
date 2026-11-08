@@ -22,6 +22,28 @@ const clipsReady = import('./voice.json')
   })
   .catch(() => {});
 const CLIP_DIR = `${import.meta.env.BASE_URL}voice/`;
+/** clip file → when each syllable (then the word) starts, in seconds: the screen lights them up */
+let markList: Record<string, number[]> = {};
+void import('./voiceMarks.json')
+  .then((m) => {
+    markList = m.default as Record<string, number[]>;
+  })
+  .catch(() => {});
+
+export interface SayOpts {
+  rate?: number;
+  pitch?: number;
+  /** called when the voice reaches each mark of the text (syllables, then the word) */
+  onMark?: (i: number) => void;
+  /** how many marks the text has: without recorded marks, they are spread over time */
+  marks?: number;
+}
+/** spoken marks without timings (device voice, a clip without marks): about one syllable every 0.55 s */
+function spreadMarks(opts: SayOpts, my: () => boolean): void {
+  const { onMark, marks = 0 } = opts;
+  if (!onMark) return;
+  for (let i = 0; i < marks; i++) window.setTimeout(() => my() && onMark(i), i * 550);
+}
 
 /** the clips of a whole text, or null when one of its sentences was not recorded */
 function clipsFor(text: string): string[] | null {
@@ -76,17 +98,29 @@ try {
 /** the clip being played: stopping it ends the pending `say()` */
 let playing: { stop(): void } | null = null;
 
-function playClips(files: string[], rate: number): Promise<boolean> {
+function playClips(files: string[], rate: number, onMark?: (i: number) => void): Promise<boolean> {
   const el = audioEl();
   if (!el) return Promise.resolve(false);
   return new Promise((resolve) => {
     let i = 0;
     let over = false;
     let t = 0;
+    let frame = 0;
+    let mark = 0; // marks already reached, over all the clips of the text
+    const watch = (times: number[], before: number) => {
+      cancelAnimationFrame(frame);
+      const tick = () => {
+        if (over) return;
+        while (mark - before < times.length && el.currentTime >= times[mark - before]) onMark!(mark++);
+        if (mark - before < times.length) frame = requestAnimationFrame(tick);
+      };
+      tick();
+    };
     const finish = (ok: boolean) => {
       if (over) return;
       over = true;
       clearTimeout(t);
+      cancelAnimationFrame(frame);
       el.onended = el.onerror = null;
       if (playing === me) playing = null;
       resolve(ok);
@@ -105,6 +139,8 @@ function playClips(files: string[], rate: number): Promise<boolean> {
       if (over) return;
       if (!src) return finish(i > 1);
       el.src = src;
+      const times = onMark ? markList[files[i - 1]] : undefined;
+      if (times) watch(times, mark);
       // a little quicker when counting along; never slower: a recorded clip already has its pauses,
       // and stretching it made the syllables drawl (« puuu… maaa »)
       el.playbackRate = rate >= 1 ? 1.08 : 1;
@@ -317,21 +353,26 @@ function speakDevice(text: string, opts: { rate?: number; pitch?: number }): Pro
  * Speak a text (cutting whatever was being said). Resolves when finished, or after a timeout
  * because some browsers never fire `end`. Never rejects: the games keep working without a voice.
  */
-export async function say(text: string, opts: { rate?: number; pitch?: number } = {}): Promise<void> {
+export async function say(text: string, opts: SayOpts = {}): Promise<void> {
   stopSpeech();
   const files = useClips() ? clipsFor(text) : null;
+  const my = ++sayToken;
+  const current = () => my === sayToken;
+  // marks are recorded with the clip; otherwise (device voice) they are spread over time
+  const timed = !!files && files.some((f) => markList[f]);
   if (MUTE) {
     said.push(text);
+    if (opts.onMark) for (let i = 0; i < (opts.marks ?? 0); i++) opts.onMark(i);
     return new Promise((resolve) => setTimeout(resolve, 60));
   }
   if (files) {
-    const my = ++sayToken;
-    if (await playClips(files, opts.rate ?? 0.85)) {
+    if (!timed) spreadMarks(opts, current);
+    if (await playClips(files, opts.rate ?? 0.85, timed ? opts.onMark : undefined)) {
       if (QUIET) voiceLog.push({ text, via: 'clip' });
       return;
     }
-    if (my !== sayToken) return; // cut by another sentence meanwhile
-  }
+    if (!current()) return; // cut by another sentence meanwhile
+  } else spreadMarks(opts, current);
   if (QUIET) {
     voiceLog.push({ text, via: 'device' });
     return new Promise((resolve) => setTimeout(resolve, 60));
@@ -364,15 +405,17 @@ function ac(): AudioContext | null {
   }
 }
 
-function tone(freq: number, start: number, dur: number, type: OscillatorType = 'square', vol = 0.08): void {
+/** a tone; `to`: the frequency it slides to (a drum falls in pitch) */
+function tone(freq: number, start: number, dur: number, type: OscillatorType = 'square', vol = 0.08, to?: number): void {
   const c = ac();
   if (!c) return;
   try {
     const o = c.createOscillator();
     const g = c.createGain();
     o.type = type;
-    o.frequency.value = freq;
     const t0 = c.currentTime + start;
+    o.frequency.setValueAtTime(freq, t0);
+    if (to) o.frequency.exponentialRampToValueAtTime(to, t0 + dur);
     g.gain.setValueAtTime(vol, t0);
     g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
     o.connect(g).connect(c.destination);
@@ -383,6 +426,29 @@ function tone(freq: number, start: number, dur: number, type: OscillatorType = '
   }
 }
 
+/** a short burst of filtered noise: the « skin » of a drum, the click of a block */
+function noise(start: number, dur: number, freq: number, vol: number): void {
+  const c = ac();
+  if (!c) return;
+  try {
+    const buf = c.createBuffer(1, Math.ceil(c.sampleRate * dur), c.sampleRate);
+    const data = buf.getChannelData(0);
+    for (let i = 0; i < data.length; i++) data[i] = (Math.random() * 2 - 1) * (1 - i / data.length);
+    const src = c.createBufferSource();
+    src.buffer = buf;
+    const f = c.createBiquadFilter();
+    f.type = 'bandpass';
+    f.frequency.value = freq;
+    const g = c.createGain();
+    g.gain.value = vol;
+    src.connect(f).connect(g).connect(c.destination);
+    src.start(c.currentTime + start);
+  } catch {
+    /* audio is a bonus */
+  }
+}
+
+// Phone speakers play almost nothing under ~250 Hz: low sounds need an audible attack or harmonic.
 export const sfx = {
   /** must be called from a user gesture once, to unlock audio on iOS */
   unlock(): void {
@@ -402,12 +468,14 @@ export const sfx = {
     tone(196, 0.15, 0.25, 'triangle', 0.12);
   },
   place(): void {
-    tone(180, 0, 0.08, 'triangle', 0.15);
+    tone(360, 0, 0.08, 'triangle', 0.15, 200);
+    noise(0, 0.03, 2500, 0.15);
   },
   /** the syllable drum */
   drum(): void {
-    tone(110, 0, 0.14, 'triangle', 0.25);
-    tone(70, 0.01, 0.18, 'sine', 0.2);
+    noise(0, 0.05, 1500, 0.5);
+    tone(320, 0, 0.16, 'triangle', 0.35, 110);
+    tone(110, 0.01, 0.2, 'sine', 0.2, 70);
   },
   /** a token hops one square forward */
   hop(): void {

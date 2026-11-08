@@ -14,6 +14,10 @@ import {
   graphemes,
   LOOKALIKE,
   PIC_WORDS,
+  foundLine,
+  listenLine,
+  spokenSyllables,
+  wordLine,
   type Item,
   type PicWord,
   type ReadingLevel,
@@ -41,11 +45,49 @@ export function picture(pic: string, label: string, cls = ''): HTMLButtonElement
 
 const slowly = { rate: 0.75 };
 
-/** after two mistakes, the right answer shines (help grows with each mistake, then the child finds it) */
+/** the last help: the right answer shines (help grows with each mistake, then the child finds it) */
 async function showAnswer(r: Round, el: Element | null | undefined): Promise<void> {
   if (!el || !r.open()) return;
   el.classList.add('hint');
   await r.say('Regarde celui qui brille !');
+}
+
+/** a first help: the answers already tried fade away, fewer to choose from (except those still needed later) */
+function fadeTried(r: Round, needed: string[] = []): void {
+  r.choices.querySelectorAll('.choice.tried').forEach((x) => {
+    if (!needed.includes(x.getAttribute('aria-label') ?? '')) x.classList.add('out');
+  });
+}
+
+/**
+ * After a word is found: its syllables appear under the answers and light up one by one as the voice
+ * says them, then the whole word (« sa · pin → sapin »).
+ */
+async function sayWord(r: Round, it: Item): Promise<void> {
+  const parts = it.parts && it.parts.length > 1 ? it.parts : null;
+  // the voice says the syllables heard (« va… lise »): each lights the written parts it covers
+  const spoken = parts ? spokenSyllables(it) : [];
+  const strip = h('div', { class: 'syl-strip', 'aria-hidden': 'true' });
+  const chips: HTMLElement[] = [];
+  let from = 0;
+  for (const p of parts ?? []) {
+    chips.push(h('span', { class: 'syl' }, ...letters(p, it.mute, from)));
+    from += p.length;
+  }
+  const whole = h('span', { class: 'syl word' }, ...letters(it.text, it.mute));
+  strip.append(...chips.flatMap((c, i) => (i ? [h('span', { class: 'syl-dot' }, '·'), c] : [c])), ...(parts ? [h('span', { class: 'syl-eq' }, '→')] : []), whole);
+  r.choices.append(strip);
+  const steps = spoken.length > 1 ? [...spoken.map((x) => x.chips.map((k) => chips[k])), [whole]] : [[whole]];
+  const light = (i: number) =>
+    steps.forEach((group, k) =>
+      group.forEach((c) => {
+        c.classList.toggle('on', k === i);
+        if (k < i) c.classList.add('said');
+      }),
+    );
+  await r.say(foundLine(it), { onMark: light, marks: steps.length });
+  [...chips, whole].forEach((c) => c.classList.remove('on'));
+  whole.classList.add('said');
 }
 
 export function readingGame(level: ReadingLevel): Game {
@@ -112,29 +154,46 @@ function choiceGame(level: Extract<ReadingLevel, { items: Item[] }>): Game {
     return shuffle(others).slice(0, n);
   }
 
-  async function after(r: Round): Promise<void> {
+  async function after(r: Round, el: HTMLElement): Promise<void> {
     r.bubble(`« ${target.text} »`);
-    if (target.parts && target.parts.length > 1) await r.say(`${target.parts.join('… ')}… ${target.speak} !`, slowly);
-    else if (target.example) await r.say(`${target.speak}, ${target.example}.`);
-    else await r.say(`${target.speak} !`);
+    if (target.parts) return sayWord(r, target);
+    // a sound or a syllable: its block pulses while it is said
+    el.classList.add('saying');
+    await r.say(target.example ? `${target.speak}, ${target.example}.` : `${target.speak} !`);
+    el.classList.remove('saying');
   }
+
+  const named = (it: Item) => `Celui-là, c'est : ${it.speak}.`;
+  const seek = () => `Cherche : ${target.speak}.`;
 
   async function pick(r: Round, it: Item, el: HTMLElement): Promise<void> {
     if (!r.open()) return;
     sfx.unlock();
-    if (it.text === target.text) return r.win(el, () => after(r));
+    if (it.text === target.text) return r.win(el, () => after(r, el));
     r.miss(el);
+    el.classList.add('tried');
+    // help grows: name what was touched; then fewer answers and a clue; then the answer shines
     if (level.kind === 'read') {
       await r.say(`Ça, c'est : ${it.speak}. Lis encore le mot !`);
-      // after two mistakes, help by reading the syllables slowly; after three, show the picture
-      if (r.misses === 2 && target.parts && r.open()) await r.say(`Écoute : ${target.parts.join('… ')}.`, { rate: 0.7 });
+      if (r.misses === 2) {
+        fadeTried(r);
+        if (target.parts && r.open()) await r.say(listenLine(target));
+      }
       if (r.misses >= 3) await showAnswer(r, answer);
-    } else if (r.misses >= 2) {
-      await r.say(`Celui-là, c'est : ${it.speak}.`);
+    } else if (r.misses >= 3) {
+      await r.say(named(it));
       await showAnswer(r, answer);
+    } else if (r.misses === 2) {
+      await r.say(named(it));
+      fadeTried(r);
+      if (!r.open()) return;
+      // the clue: the syllables of the word, or the sound with its word
+      if (target.parts && target.parts.length > 1) await r.say(listenLine(target));
+      else if (target.example) await r.say(`${target.speak}, ${target.example}.`);
+      else await r.say(seek());
     } else {
-      await r.say(`Celui-là, c'est : ${it.speak}. Essaie encore !`);
-      if (r.open()) await r.say(`Cherche : ${target.speak}.`);
+      await r.say(`${named(it)} Essaie encore !`);
+      if (r.open()) await r.say(seek());
     }
   }
 
@@ -220,18 +279,21 @@ function buildGame(items: Item[]): Game {
               if (built === parts.length) {
                 return r.win(box, async () => {
                   r.bubble(`« ${target.text} »`);
-                  await r.say(`${parts.join('… ')}… ${target.speak} !`, slowly);
+                  await sayWord(r, target);
                 });
               }
-              void r.say(s, { rate: 0.8 });
             } else {
               r.miss(b);
+              b.classList.add('tried');
               await r.say(`Celui-là, c'est : ${s}.`);
-              if (r.misses >= 2) {
+              if (r.misses >= 3) {
                 // the next syllable shines
                 const next = [...r.choices.querySelectorAll<HTMLElement>('.choice:not(.used)')].find((x) => x.getAttribute('aria-label') === parts[built]);
                 await showAnswer(r, next);
-              } else if (r.open()) await r.say(`Écoute : ${parts.join('… ')}.`, slowly);
+              } else if (r.misses === 2) {
+                fadeTried(r, parts.slice(built));
+                if (r.open()) await r.say(`Cherche : ${parts[built]}.`);
+              } else if (r.open()) await r.say(listenLine(target));
             }
           };
           return b;
@@ -288,15 +350,17 @@ function spellGame(items: Item[]): Game {
               if (built === gs.length) {
                 return r.win(box, async () => {
                   r.bubble(`« ${target.text} »`);
-                  if (isWord(target)) await r.say(`${target.parts!.join('… ')}… ${target.speak} !`, slowly);
+                  if (isWord(target)) await sayWord(r, target);
                   else await r.say(`${target.speak} !`);
                 });
               }
             } else {
               r.miss(b);
+              b.classList.add('tried');
               await r.say(`Écoute bien : ${target.speak}.`, slowly);
-              // after two mistakes, the next letter shines
-              if (r.misses >= 2 && r.open()) {
+              if (r.misses === 2) fadeTried(r, gs.slice(built));
+              // after three mistakes, the next letter shines
+              if (r.misses >= 3 && r.open()) {
                 const next = [...r.choices.querySelectorAll<HTMLElement>('.choice:not(.used)')].find((x) => x.getAttribute('aria-label') === gs[built]);
                 next?.classList.add('hint');
               }
@@ -330,7 +394,7 @@ function clapGame(words: PicWord[]): Game {
       const n = target.syl.length;
       r.bubble('Tape les syllabes !');
       const card = h('button', { class: 'pic-card', 'aria-label': `${target.word} : réécouter` }, h('span', { 'aria-hidden': 'true' }, target.pic));
-      card.onclick = () => void r.say(target.word);
+      card.onclick = () => void r.say(`Écoute : ${target.word}.`);
       const beats = h('div', { class: 'beats', 'aria-live': 'polite' });
       r.stage.classList.add('clap-stage');
       r.stage.append(card, beats);
@@ -339,14 +403,16 @@ function clapGame(words: PicWord[]): Game {
       r.choices.append(drum);
 
       const light = async (count: number) => {
-        // say the syllables one by one, a beat lights up with each
+        // the syllables in one go (said alone, a syllable could sound English or like an abbreviation),
+        // a beat lights up with each
         beats.replaceChildren();
         for (let i = 0; i < count; i++) beats.append(h('span', { class: 'beat' }));
-        for (let i = 0; i < count; i++) {
+        const on = (i: number) => {
           beats.children[i]?.classList.add('on');
           sfx.drum();
-          await r.say(target.syl[i], { rate: 0.8 });
-        }
+        };
+        if (count === 1) on(0);
+        else await r.say(`Écoute : ${target.syl.join('… ')}.`, { onMark: on, marks: count });
       };
 
       drum.onclick = async () => {
@@ -366,12 +432,12 @@ function clapGame(words: PicWord[]): Game {
           return r.win(drum, async () => {
             r.bubble(`${n} syllabe${n > 1 ? 's' : ''}`);
             await light(n);
-            await r.say(`${target.word} ! ${n === 1 ? 'Une syllabe' : `${['', '', 'Deux', 'Trois', 'Quatre'][n]} syllabes`} !`);
+            await r.say(`${wordLine(target.word)} ${n === 1 ? 'Une syllabe' : `${['', '', 'Deux', 'Trois', 'Quatre'][n]} syllabes`} !`);
           });
         }
         r.miss(drum);
         r.hold(true);
-        await r.say(taps < n ? 'Il en manque ! Écoute :' : "C'est trop ! Écoute :");
+        await r.say(taps < n ? 'Il en manque !' : "C'est trop !");
         await light(n);
         await r.wait(400);
         beats.replaceChildren();
@@ -424,7 +490,7 @@ function soundPicGame(words: PicWord[], kind: 'rhyme' | 'initial', choices: numb
       for (const w of others) if (wrong.length < choices - 1 && !wrong.some((x) => prop(x) === prop(w))) wrong.push(w);
       r.bubble(kind === 'rhyme' ? 'Ça rime ?' : 'Le même début ?');
       const card = h('button', { class: 'pic-card', 'aria-label': `${model.word} : réécouter` }, h('span', { 'aria-hidden': 'true' }, model.pic));
-      card.onclick = () => void r.say(model.word);
+      card.onclick = () => void r.say(`Écoute : ${model.word}.`);
       r.stage.append(card);
       r.choices.classList.add('kind-pic');
       options = shuffle([answer, ...wrong]).map((w) => {
@@ -435,14 +501,24 @@ function soundPicGame(words: PicWord[], kind: 'rhyme' | 'initial', choices: numb
           if (w === answer) {
             return r.win(b, async () => {
               r.bubble(kind === 'rhyme' ? 'Ça rime !' : 'Le même son !');
-              await r.say(`${model.word}… ${answer.word}…`, slowly);
+              // each picture lights up while its word is said
+              for (const el of [card, b]) {
+                el.classList.add('naming');
+                await r.say(`${el === card ? model.word : answer.word}…`);
+                el.classList.remove('naming');
+              }
               await r.say(kind === 'rhyme' ? 'Ça finit pareil !' : 'Ça commence pareil !');
             });
           }
           r.miss(b);
+          b.classList.add('tried');
           await r.say(`${model.word}… ${w.word}…`, slowly);
-          if (r.misses >= 2) await showAnswer(r, options.find((o) => o.w === answer)?.el);
-          else if (r.open()) await r.say(kind === 'rhyme' ? 'Ça ne finit pas pareil. Essaie encore !' : 'Ça ne commence pas pareil. Essaie encore !');
+          if (r.misses >= 3) await showAnswer(r, options.find((o) => o.w === answer)?.el);
+          else if (r.misses === 2) {
+            // fewer pictures, and the model word again
+            fadeTried(r);
+            if (r.open()) await r.say(`Écoute : ${model.word}. ${question()}`);
+          } else if (r.open()) await r.say(kind === 'rhyme' ? 'Ça ne finit pas pareil. Essaie encore !' : 'Ça ne commence pas pareil. Essaie encore !');
         };
         return { w, el: b };
       });

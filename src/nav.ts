@@ -1,7 +1,7 @@
 // Screen lifecycle. Every screen gets a token: when the child leaves (home button, end of a
 // session…), the old screen's pending speech and timers must stop instead of talking over the new
 // screen or navigating on their own.
-import { say, stopSpeech } from './audio';
+import { say, stopSpeech, type SayOpts } from './audio';
 
 let token = 0;
 
@@ -9,7 +9,7 @@ export interface ScreenScope {
   /** false as soon as another screen was shown */
   alive(): boolean;
   /** speak only while this screen is shown */
-  say(text: string, opts?: { rate?: number; pitch?: number }): Promise<void>;
+  say(text: string, opts?: SayOpts): Promise<void>;
   /** wait, then tell whether the screen is still shown */
   wait(ms: number): Promise<boolean>;
 }

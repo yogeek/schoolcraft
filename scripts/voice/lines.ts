@@ -8,13 +8,13 @@ import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { COUNT_LEVELS, NUMBER_WORDS as W, THINGS } from '../../src/content/counting.ts';
 import { HEROES } from '../../src/content/heroes.ts';
-import { PIC_WORDS, READING_LEVELS, DECOY_SYLLABLES, type Item } from '../../src/content/reading.ts';
+import { DECOY_SYLLABLES, PIC_WORDS, READING_LEVELS, foundLine, ipa, listenLine, soundIpa, spokenParts, spokenSyllables, wordLine, type Item, type PicWord } from '../../src/content/reading.ts';
 import { LETTER_SPEECH, WRITING_LEVELS } from '../../src/content/writing.ts';
 import { BLOCK_NAMES } from '../../src/pixel.ts';
 import { pieces, sentences, voiceKey } from '../../src/voiceKey.ts';
 
 const ROOT = new URL('../../', import.meta.url).pathname;
-const lines = new Map<string, { text: string; tag?: string }>();
+const lines = new Map<string, { text: string; tag?: string; say?: string; marks?: number[] }>();
 /** add every sentence of a text */
 function add(text: string, tag?: string): void {
   for (const s of sentences(text)) {
@@ -65,6 +65,9 @@ for (const f of files(join(ROOT, 'src'))) {
 // praise is said with joy
 for (const s of ['Tu as réessayé, et tu as trouvé !', "Bravo, tu n'as rien lâché !", 'Oui ! En cherchant bien, tu as trouvé.', 'Bien joué, tu as continué !']) add(s, 'praise');
 
+// « Super ! » said with joy took an English accent: in IPA, plainly
+lines.set(voiceKey('Super !'), { text: 'Super !', tag: 'praise', say: '/sypɛʁ/ !' });
+
 // ---------------------------------------------------------------- sessions
 const maxLevel = Math.max(READING_LEVELS.length, WRITING_LEVELS.length, COUNT_LEVELS.length);
 for (const n of range(1, maxLevel)) add(`Niveau ${n}.`);
@@ -109,79 +112,151 @@ for (const n of range(1, 9)) {
 }
 
 // ---------------------------------------------------------------- Lire
-const speakOf = (it: Item) => it.speak;
-const joinParts = (it: Item) => `${it.parts!.join('… ')}… ${it.speak} !`;
+// Sounds, syllables and words said alone are sent in IPA between slashes (`say`): written out, the
+// voice read « no » as « numéro », « xi » as « onze », « che » as « tché », and many syllables as
+// English. The app's text stays the key; `marks` are the characters where each syllable and the word
+// start, so the screen lights them as they are said (games/reading.ts: sayWord(), the clap).
+const LEAD = '[calmly] ';
+/** one sentence, with what the voice is sent */
+function addSay(text: string, say: string, marks?: number[], tag?: string): void {
+  // a text that starts with a slash made the voice say « slash »: a tone tag before it does not
+  if (say.startsWith('/')) {
+    say = `${LEAD}${say}`;
+    marks = marks?.map((m) => m + LEAD.length);
+  }
+  const key = voiceKey(text);
+  if (!lines.has(key)) lines.set(key, { text, tag, say, ...(marks ? { marks } : {}) });
+}
+/** « /va/. /liz/. » then the rest: the marks at each syllable, and at `word` in the rest */
+function sylSay(ipas: string[], head: string, tail: string, word?: string): { say: string; marks: number[] } {
+  let say = head;
+  const marks: number[] = [];
+  for (const x of ipas) {
+    marks.push(say.length + 1); // the first sound, after the slash
+    say += `/${x}/. `;
+  }
+  say = (say + tail).trim();
+  if (word) marks.push(say.lastIndexOf(word));
+  return { say, marks };
+}
+const sound = (it: Item) => `/${soundIpa(it.text)}/`;
+const wordIpa = (it: Item) => `/${ipa(it.text, it.mute ?? [])}/`;
+const sylIpa = (p: string) => `/${soundIpa(p)}/`;
+/** a word found: its syllables heard, then « Ça fait : sapin ! »; or the word with its article */
+function found(it: Item): void {
+  const sp = spokenParts(it);
+  if (sp) {
+    const { say, marks } = sylSay(spokenSyllables(it).map((x) => x.ipa), '', `Ça fait : ${it.speak} !`, it.speak);
+    addSay(foundLine(it), say, marks);
+  } else add(foundLine(it));
+}
+/** the help « Écoute : va… lise. » */
+function listen(it: Item): void {
+  if (spokenParts(it)) {
+    const { say, marks } = sylSay(spokenSyllables(it).map((x) => x.ipa), 'Écoute : ', '');
+    addSay(listenLine(it), say, marks);
+  }
+  else addSay(listenLine(it), `Écoute : ${wordIpa(it)}.`);
+}
 for (const level of READING_LEVELS) {
   if ('items' in level) {
     for (const it of level.items) {
-      const s = speakOf(it);
-      // the answer, after a success
-      if (it.parts && it.parts.length > 1) add(joinParts(it));
-      else if (it.example) add(`${s}, ${it.example}.`);
-      else add(`${s} !`);
+      const s = it.speak;
       switch (level.kind) {
         case 'sound':
-          add(`Touche le bloc qui fait le son : ${s} !`);
-          add(`Celui-là, c'est : ${s}.`);
-          add(`Cherche : ${s}.`);
+          // a sound or a syllable: the voice says « le son : /…/ » (alone, it read « no » as « numéro »)
+          addSay(`Touche le bloc qui fait le son : ${s} !`, `Touche le bloc qui fait le son : ${sound(it)} !`);
+          addSay(`Celui-là, c'est : ${s}.`, `Celui-là, c'est le son : ${sound(it)}.`);
+          addSay(`Cherche : ${s}.`, `Cherche le son : ${sound(it)}.`);
+          if (it.example) addSay(`${s}, ${it.example}.`, `${sound(it)}, ${it.example}.`);
+          else addSay(`${s} !`, `Le son : ${sound(it)} !`);
           break;
         case 'word':
-          add(`Touche le mot : ${s} !`);
-          add(`Celui-là, c'est : ${s}.`);
-          add(`Cherche : ${s}.`);
+          found(it);
+          listen(it);
+          addSay(`Touche le mot : ${s} !`, `Touche le mot : ${wordIpa(it)} !`);
+          addSay(`Celui-là, c'est : ${s}.`, `Celui-là, c'est : ${wordIpa(it)}.`);
+          addSay(`Cherche : ${s}.`, `Cherche : ${wordIpa(it)}.`);
+          if (it.example) add(`${s}, ${it.example}.`);
           break;
         case 'read':
-          add(`Ça, c'est : ${s}.`);
-          if (it.parts) add(`Écoute : ${it.parts.join('… ')}.`);
+          found(it);
+          listen(it);
+          addSay(`Ça, c'est : ${s}.`, `Ça, c'est : ${wordIpa(it)}.`);
           break;
         case 'build':
+          found(it);
+          listen(it);
           add(`Construis le mot : ${s} !`);
-          add(`Écoute : ${it.parts!.join('… ')}.`);
           for (const p of it.parts!) {
-            add(p);
-            add(`Celui-là, c'est : ${p}.`);
+            addSay(`Celui-là, c'est : ${p}.`, `Celui-là, c'est : ${sylIpa(p)}.`);
+            addSay(`Cherche : ${p}.`, `Cherche : ${sylIpa(p)}.`);
           }
           break;
         case 'spell':
-          add(it.parts && it.parts.length > 1 ? `Écris le mot : ${s} !` : `Écris la syllabe : ${s} !`);
-          add(`Écoute bien : ${s}.`);
+          if (it.parts && it.parts.length > 1) {
+            found(it);
+            add(`Écris le mot : ${s} !`);
+            addSay(`Écoute bien : ${s}.`, `Écoute bien : ${wordIpa(it)}.`);
+          } else {
+            addSay(`Écris la syllabe : ${s} !`, `Écris la syllabe : ${sound(it)} !`);
+            addSay(`Écoute bien : ${s}.`, `Écoute bien : ${sound(it)}.`);
+            addSay(`${s} !`, `Le son : ${sound(it)} !`);
+          }
           break;
       }
     }
   }
-  if (level.kind === 'build') for (const d of DECOY_SYLLABLES) add(`Celui-là, c'est : ${d}.`);
-  if (level.kind === 'clap' || level.kind === 'rhyme' || level.kind === 'initial') {
-    for (const w of level.words) {
-      if (level.kind === 'clap') {
-        add(`Tape les syllabes du mot : ${w.word} !`);
-        add(`${w.word} !`);
-        for (const s of w.syl) add(s);
-      } else {
-        add(`Écoute : ${w.word}.`);
-        add(level.kind === 'rhyme' ? `Quelle image finit comme : ${w.word} ?` : `Quelle image commence comme : ${w.word} ?`);
-      }
-    }
-  }
+  if (level.kind === 'build') for (const d of DECOY_SYLLABLES) addSay(`Celui-là, c'est : ${d}.`, `Celui-là, c'est : ${sylIpa(d)}.`);
   if (level.kind === 'sentence') for (const s of level.sentences) add(s.text);
   if (level.kind === 'riddle') for (const x of level.riddles) add(x.text);
 }
 for (const n of ['Une syllabe !', 'Deux syllabes !', 'Trois syllabes !', 'Quatre syllabes !']) add(n);
-// pictures are named one by one, and compared piece by piece (« mouton… bateau… »)
+// pictures: named one by one, compared piece by piece (« mouton… bateau… »), in IPA from their oral
+// syllables (« ca-nard », not the d of « canard »); the clap says the syllables after « Écoute : »
+const picIpa = (w: PicWord) => w.syl.map((s, i) => ipa(s, [], i === w.syl.length - 1, i === w.syl.length - 1));
+const picSay = (w: PicWord) => `/${picIpa(w).join('')}/`;
 for (const w of PIC_WORDS) {
-  add(w.word);
-  addPieces(`${w.word}…`);
+  addSay(w.word, `${picSay(w)}.`);
+  addSay(`${w.word}…`, `${picSay(w)}.`);
+  addSay(`Écoute : ${w.word}.`, `Écoute : ${picSay(w)}.`);
+}
+for (const level of READING_LEVELS) {
+  if (level.kind !== 'clap' && level.kind !== 'rhyme' && level.kind !== 'initial') continue;
+  for (const w of level.words) {
+    if (level.kind === 'clap') {
+      add(`Tape les syllabes du mot : ${w.word} !`);
+      add(wordLine(w.word));
+      if (w.syl.length > 1) {
+        const { say, marks } = sylSay(picIpa(w), 'Écoute : ', '');
+        addSay(`Écoute : ${w.syl.join('… ')}.`, say, marks);
+      }
+    } else {
+      const q = level.kind === 'rhyme' ? 'Quelle image finit comme' : 'Quelle image commence comme';
+      addSay(`${q} : ${w.word} ?`, `${q} : ${picSay(w)} ?`);
+    }
+  }
 }
 
 // ---------------------------------------------------------------- Écrire
+// letter names the voice got wrong when written (« euh » hesitant, « k » English): in IPA
+const LETTER_IPA: Record<string, string> = { euh: 'ə', k: 'ka', q: 'ky', z: 'zɛd' };
 for (const l of Object.values(LETTER_SPEECH)) {
-  add(`Voici la lettre : ${l.name}, comme ${l.ex}.`);
-  add(`${l.name}, comme ${l.ex} !`);
+  const x = LETTER_IPA[l.name];
+  if (x) {
+    addSay(`Voici la lettre : ${l.name}, comme ${l.ex}.`, `Voici la lettre : /${x}/, comme ${l.ex}.`);
+    addSay(`${l.name}, comme ${l.ex} !`, `/${x}/, comme ${l.ex} !`);
+  } else {
+    add(`Voici la lettre : ${l.name}, comme ${l.ex}.`);
+    add(`${l.name}, comme ${l.ex} !`);
+  }
 }
 for (const n of range(0, 9)) add(`Voici le chiffre : ${W[n]}.`);
 
 // ---------------------------------------------------------------- Compter
 // each template only with the numbers the games can use
 const each = (a: number, b: number, f: (n: number) => string) => range(a, b).forEach((n) => add(f(n)));
+addSay(W[7], '/sɛt/.'); // alone, « sept » was read « septembre »
 each(1, 20, (n) => W[n]); // counting one by one, the race, 11 to 20
 each(0, 9, (n) => `${W[n]} !`); // a die roll, a traced digit
 each(1, 10, (n) => `Ça, c'est le nombre ${W[n]}.`);
@@ -236,7 +311,7 @@ for (const a of range(1, 10))
     if (a - b >= 1) add(`${W[a]} moins ${W[b]}, ça fait ${W[a - b]} !`);
   }
 
-const out = [...lines].map(([key, v]) => ({ key, text: v.text, ...(v.tag ? { tag: v.tag } : {}) }));
+const out = [...lines].map(([key, v]) => ({ key, text: v.text, ...(v.tag ? { tag: v.tag } : {}), ...(v.say ? { say: v.say } : {}), ...(v.marks ? { marks: v.marks } : {}) }));
 writeFileSync(join(ROOT, 'scripts/voice/lines.json'), JSON.stringify(out, null, 1) + '\n');
 const chars = out.reduce((a, b) => a + b.text.length, 0);
 console.log(`${out.length} phrases, ${chars} caractères → scripts/voice/lines.json`);

@@ -124,7 +124,7 @@ export const RARE_SOUNDS: Item[] = [
   item('ill', 'ille', 'comme dans fille'),
   item('ph', 'feu', 'comme dans dauphin', 'f'),
   item('oin', 'ouin', 'comme dans coin'),
-  item('ch', 'che', 'comme dans chat'),
+  item('ch', 'che', 'comme dans chapeau'),
   item('j', 'je', 'comme dans judo'),
 ];
 
@@ -285,8 +285,27 @@ export const CLUSTER_WORDS: Item[] = [
   word('prin-ces-s[e]', '👸'),
 ];
 
-/** Les petits mots qu'on lit partout (mots-outils). */
-export const TOOL_WORDS: Item[] = ['le', 'la', 'les', 'un', 'une', 'il', 'elle', 'on', 'dans', 'sur', 'avec', 'mon', 'ma', 'des', 'du', 'pour'].map((w) => word(w));
+/** Les petits mots qu'on lit partout (mots-outils), redits dans un bout de phrase après une réussite. */
+const TOOL_EXAMPLES: Record<string, string> = {
+  le: 'le chat',
+  la: 'la lune',
+  les: 'les chats',
+  un: 'un chat',
+  une: 'une pomme',
+  il: 'il joue',
+  elle: 'elle chante',
+  on: 'on joue',
+  dans: 'dans la boîte',
+  sur: 'sur la table',
+  avec: 'avec papa',
+  mon: 'mon vélo',
+  ma: 'ma maison',
+  des: 'des bonbons',
+  du: 'du pain',
+  pour: 'pour toi',
+};
+const TOOL_SPELLING: Record<string, string> = { les: 'le[s]', des: 'de[s]', dans: 'dan[s]' };
+export const TOOL_WORDS: Item[] = Object.entries(TOOL_EXAMPLES).map(([w, example]) => ({ ...word(TOOL_SPELLING[w] ?? w), example }));
 
 /**
  * Ce qu'il faut savoir pour lire un mot : la suite de ses « codes » (graphèmes, avec le c, le g et le
@@ -294,6 +313,19 @@ export const TOOL_WORDS: Item[] = ['le', 'la', 'les', 'un', 'une', 'il', 'elle',
  * déchiffrables avec ce qui a été appris avant (`npm run check`).
  */
 export function decode(text: string, mute: number[] = []): string[] {
+  return segments(text, mute).flatMap((g) => (g.cluster ? [g.code, 'consonnes accrochées'] : [g.code]));
+}
+
+/** a grapheme of a word: its code (see `decode()`), where it starts and how many letters it takes */
+export interface Segment {
+  code: string;
+  at: number;
+  len: number;
+  /** a consonant hooked to the one before (« br », « cl ») */
+  cluster?: boolean;
+}
+
+export function segments(text: string, mute: number[] = []): Segment[] {
   // look-ahead uses the written letters (a silent e still makes the c of « glace » soft)
   const t = [...text.toLowerCase()];
   const vowel = (c: string | undefined) => !!c && 'aeiouyéèêëàâîïôûùœ'.includes(c);
@@ -303,7 +335,8 @@ export function decode(text: string, mute: number[] = []): string[] {
   const MULTI = ['eau', 'oin', 'ain', 'ein', 'ill', 'ou', 'oi', 'eu', 'œu', 'au', 'ai', 'ei', 'ch', 'gn', 'ph', 'qu'];
   const NASAL = ['an', 'en', 'on', 'in', 'un', 'am', 'em', 'om', 'im'];
   const spoken = (i: number, n: number) => Array.from({ length: n }, (_, k) => i + k).every((k) => k < t.length && !mute.includes(k));
-  const out: string[] = [];
+  const out: Segment[] = [];
+  const push = (code: string, at: number, len: number, cluster = false) => out.push({ code, at, len, ...(cluster ? { cluster } : {}) });
   for (let i = 0; i < t.length; ) {
     const c = t[i];
     if (mute.includes(i)) {
@@ -315,43 +348,204 @@ export function decode(text: string, mute: number[] = []): string[] {
     const yod = ['euill', 'ouill', 'eill', 'aill', 'euil', 'ouil', 'eil', 'ail'].find((m) => r.startsWith(m) && (m.endsWith('ll') || r === m) && spoken(i, m.length - 2));
     if (yod) {
       const v = yod.slice(0, yod.indexOf('i'));
-      out.push(v === 'e' ? 'è' : v, 'ill');
+      push(v === 'e' ? 'è' : v, i, v.length);
+      push('ill', i + v.length, yod.length - v.length);
       i += yod.length;
       continue;
     }
     // « ain », « ein », « oin » are one sound unless a vowel or another n follows (« laine », « moins »… )
     const multi = MULTI.find((m) => r.startsWith(m) && spoken(i, m.length) && !(m.length === 3 && m.endsWith('n') && (vowel(t[i + 3]) || t[i + 3] === 'n')));
     if (multi) {
-      out.push(multi === 'œu' ? 'eu' : multi);
+      push(multi === 'œu' ? 'eu' : multi, i, multi.length);
       i += multi.length;
       continue;
     }
     // vowel + n (or m before b, p) is a nasal sound when no vowel and no second n / m follows
     const nasal = NASAL.find((m) => r.startsWith(m) && spoken(i, 2) && !vowel(t[i + 2]) && t[i + 2] !== m[1] && (m[1] === 'n' || is(t[i + 2], 'bp')));
     if (nasal) {
-      out.push(nasal === 'un' ? 'in' : nasal);
+      push(nasal === 'un' ? 'in' : nasal, i, 2);
       i += 2;
       continue;
     }
     if (c === 'g' && t[i + 1] === 'u' && soft(t[i + 2])) {
-      out.push('gu');
+      push('gu', i, 2);
       i += 2;
       continue;
     }
     if (is(c, 'bcdfglmnprst') && t[i + 1] === c && spoken(i, 2)) {
-      out.push('double');
+      push('double', i, 2);
       i += 2;
       continue;
     }
-    if (c === 'c') out.push(soft(t[i + 1]) ? 'c doux' : 'c');
-    else if (c === 'ç') out.push('c doux');
-    else if (c === 'g') out.push(soft(t[i + 1]) ? 'g doux' : 'g');
-    else if (c === 's' && vowel(t[i - 1]) && vowel(t[i + 1])) out.push('s entre voyelles');
-    else if (is(c, 'lr') && is(t[i - 1], 'bcdfgptv') && !mute.includes(i - 1)) out.push(c, 'consonnes accrochées');
-    else out.push(ACCENT[c] ?? c);
+    if (c === 'c') push(soft(t[i + 1]) ? 'c doux' : 'c', i, 1);
+    else if (c === 'ç') push('c doux', i, 1);
+    else if (c === 'g') push(soft(t[i + 1]) ? 'g doux' : 'g', i, 1);
+    else if (c === 's' && vowel(t[i - 1]) && vowel(t[i + 1])) push('s entre voyelles', i, 1);
+    else push(ACCENT[c] ?? c, i, 1, is(c, 'lr') && is(t[i - 1], 'bcdfgptv') && !mute.includes(i - 1));
     i++;
   }
   return out;
+}
+
+// ---------------------------------------------------------------- prononciation (alphabet phonétique)
+// La voix enregistrée (ElevenLabs, eleven_v4) lit l'alphabet phonétique écrit entre barres obliques
+// (« /ʒi/. /ʁaf/. »). Les sons et les syllabes isolés lui sont donnés ainsi : écrits en lettres, elle les
+// lisait comme des abréviations (« dra » : docteur), en anglais (« pin ») ou comme des interjections
+// (« euh », « ouin »). Les mots, eux, restent écrits : dans une phrase, elle les dit bien.
+
+const IPA: Record<string, string> = {
+  a: 'a', i: 'i', o: 'o', u: 'y', é: 'e', è: 'ɛ', ai: 'ɛ', ei: 'ɛ', ou: 'u', oi: 'wa', eu: 'ø', au: 'o', eau: 'o',
+  on: 'ɔ̃', om: 'ɔ̃', an: 'ɑ̃', en: 'ɑ̃', am: 'ɑ̃', em: 'ɑ̃', in: 'ɛ̃', ain: 'ɛ̃', ein: 'ɛ̃', im: 'ɛ̃', oin: 'wɛ̃',
+  ch: 'ʃ', j: 'ʒ', gn: 'ɲ', ill: 'j', ph: 'f', qu: 'k', gu: 'g', c: 'k', 'c doux': 's', g: 'g', 'g doux': 'ʒ',
+  's entre voyelles': 'z', z: 'z', k: 'k', x: 'ks', r: 'ʁ', y: 'i', w: 'w', h: '', m: 'm', n: 'n', l: 'l', p: 'p',
+  t: 't', b: 'b', d: 'd', f: 'f', v: 'v', s: 's', q: 'k',
+};
+const VOWEL_CODES = new Set(['a', 'i', 'o', 'u', 'e', 'é', 'è', 'ai', 'ei', 'ou', 'oi', 'eu', 'au', 'eau', 'on', 'om', 'an', 'en', 'am', 'em', 'in', 'ain', 'ein', 'im', 'oin', 'y']);
+
+/** a grapheme and how it is said */
+interface Phone extends Segment {
+  p: string;
+  vowel: boolean;
+}
+
+/**
+ * How each grapheme of a word (or of a syllable) is said, in IPA. `mute`: silent letters. `final`: the
+ * letters end a word, so a last e is silent (« lise » /liz/). `guess`: no silent letter is marked, so a
+ * last t, d, s, x, z or p after a vowel is taken as silent (« chat », « dent »), as in most words.
+ */
+function phones(text: string, mute: number[] = [], final = true, guess = false, cuts: number[] = []): Phone[] {
+  const t = text.toLowerCase();
+  const silent = [...mute];
+  if (guess && final && t.length > 2 && 'tdsxzp'.includes(t[t.length - 1]) && /[aeiouéèênm]/.test(t[t.length - 2])) silent.push(t.length - 1);
+  const segs = segments(t, silent);
+  const out: Phone[] = [];
+  segs.forEach((g, k) => {
+    const next = segs[k + 1];
+    const prev = out[k - 1];
+    const after = segs.slice(k + 1);
+    let vowel = VOWEL_CODES.has(g.code);
+    let p = IPA[g.code] ?? g.code;
+    if (g.code === 'double') p = IPA[t[g.at]] ?? t[g.at];
+    // « ill » after a vowel is a glide (soleil), after a consonant it is « ij » (fille, gorille)
+    if (g.code === 'ill') {
+      vowel = !prev?.vowel;
+      p = vowel ? 'ij' : 'j';
+    }
+    if (g.code === 'e' || g.code === 'eu') {
+      const nextVowel = !!next && VOWEL_CODES.has(next.code);
+      const closed = !!next && !nextVowel && (next.code === 'double' || after.length === 1 || !VOWEL_CODES.has(after[1].code));
+      // a silent consonant at the end (« nez », « pied », « les ») makes e say « é »
+      const beforeSilent = !next && silent.includes(g.at + 1) && g.at + 2 === t.length && t[g.at + 1] !== 's';
+      if (g.code === 'eu') p = closed ? 'œ' : 'ø';
+      // « les », « des », but « lunettes » /lynɛt/: a final silent s after another vowel keeps e silent
+      else if (beforeSilent || (!next && 'sz'.includes(t[g.at + 1] ?? '') && silent.includes(g.at + 1) && !out.some((x) => x.vowel))) p = 'e';
+      else if (!next && final && out.some((x) => x.vowel)) {
+        p = '';
+        vowel = false;
+      }
+      else if (closed) p = 'ɛ';
+      else p = 'ə';
+    }
+    out.push({ ...g, p, vowel });
+  });
+  // i, u, ou before a vowel glide (« pluie » /plɥi/, « pingouin » /pɛ̃gwɛ̃/), but not across a cut
+  // between written syllables (« pi-a-no », « li-on » are said in full)
+  out.forEach((x, k) => {
+    const next = out[k + 1];
+    if (!next?.vowel || next.p === '' || next.p === 'ə' || cuts.includes(next.at)) return;
+    if (x.code === 'i' || x.code === 'y') Object.assign(x, { p: 'j', vowel: false });
+    else if (x.code === 'u' && next.code === 'i') Object.assign(x, { p: 'ɥ', vowel: false });
+    else if (x.code === 'ou') Object.assign(x, { p: 'w', vowel: false });
+  });
+  return out;
+}
+
+/** The pronunciation of a syllable, a grapheme or a word, in IPA (see `phones()`). */
+export function ipa(text: string, mute: number[] = [], final = true, guess = !mute.length): string {
+  return phones(text, mute, final, guess)
+    .map((x) => x.p)
+    .join('');
+}
+
+/** A sound or a syllable said on its own, in IPA: a consonant alone gets a light « e » (« gne » /ɲə/). */
+export function soundIpa(text: string): string {
+  const FIX: Record<string, string> = { e: 'ə', in: 'ɛ̃', am: 'ɑ̃', om: 'ɔ̃', em: 'ɑ̃', im: 'ɛ̃' };
+  if (FIX[text]) return FIX[text];
+  const ph = phones(text, [], false);
+  const p = ph.map((x) => x.p).join('');
+  return ph.some((x) => x.vowel) ? p : `${p}ə`;
+}
+
+/**
+ * The syllables the voice says for a written word: silent letters dropped, a part left without a vowel
+ * joined to the one before (« va-li-s[e] » → va, lis), a doubled letter said once, with the next part
+ * (« bal-lon » → ba, lon). Each is said as in the whole word (« mai-son » → mɛ, zɔ̃).
+ * `chips`: which written parts light up with each spoken syllable.
+ */
+export function spokenSyllables(it: Item): { ipa: string; chips: number[] }[] {
+  const parts = it.parts ?? [it.text];
+  const starts: number[] = [];
+  parts.reduce((at, p) => (starts.push(at), at + p.length), 0);
+  const ph = phones(it.text, it.mute ?? [], true, false, starts);
+  const partOf = (at: number) => starts.filter((x) => x <= at).length - 1;
+  const groups: { ph: Phone[]; chips: number[] }[] = parts.map((_, k) => ({ ph: [], chips: [k] }));
+  for (const x of ph) {
+    let k = partOf(x.at);
+    if (x.code === 'double' && partOf(x.at + 1) > k) k++;
+    groups[k].ph.push(x);
+  }
+  const merged: typeof groups = [];
+  for (const gr of groups) {
+    const last = merged[merged.length - 1];
+    if (last && !gr.ph.some((x) => x.vowel)) {
+      last.ph.push(...gr.ph);
+      last.chips.push(...gr.chips);
+    } else merged.push({ ph: [...gr.ph], chips: [...gr.chips] });
+  }
+  return merged.map((gr) => ({ ipa: gr.ph.map((x) => x.p).join(''), chips: gr.chips }));
+}
+
+/**
+ * Ce que dit Pixel quand un mot est trouvé : ses syllabes une à une, puis le mot dans une petite phrase
+ * (seul et avec « ! », un mot répété prenait parfois un accent anglais : « sapine », « payne »).
+ * Les syllabes et le mot s'allument à l'écran au moment où ils sont dits.
+ */
+export const syllableLine = (parts: string[], word: string): string => `${parts.join('… ')}… ça fait : ${word} !`;
+
+/**
+ * The syllables of a word as they are said (written letters of each spoken syllable: « va… lise… »),
+ * or null when the word is said in one go (« lune »: one syllable out loud, said with its article).
+ */
+export function spokenParts(it: Item): string[] | null {
+  if (!it.parts || it.parts.length < 2) return null;
+  const sp = spokenSyllables(it);
+  if (sp.length < 2) return null;
+  return sp.map((x) => x.chips.map((k) => it.parts![k]).join(''));
+}
+
+/** The help « Écoute : va… lise. »: the syllables heard, or the word said in one go. */
+export const listenLine = (it: Item): string => `Écoute : ${(spokenParts(it) ?? [it.speak]).join('… ')}.`;
+
+/** What Pixel says when a word is found (see `syllableLine()` and `wordLine()`). */
+export function foundLine(it: Item): string {
+  const sp = spokenParts(it);
+  if (sp) return syllableLine(sp, it.speak);
+  return it.example ? `${it.speak}, ${it.example}.` : wordLine(it.speak);
+}
+
+/** l'article des mots d'une syllabe : « Le pain ! » sonne français, « Pain ! » seul sonnait anglais (choisi à l'oreille) */
+export const ARTICLES: Record<string, string> = {
+  chat: 'le', rat: 'le', loup: 'le', lit: 'le', riz: 'le', dé: 'le', nez: 'le', pied: 'le', fée: 'la', dent: 'la',
+  gant: 'le', main: 'la', pain: 'le', feu: 'le', roi: 'le', bouche: 'la', douche: 'la', pomme: 'la', lune: 'la',
+  vache: 'la', poule: 'la', cœur: 'le', mur: 'le', bol: 'le', fil: 'le', bus: 'le', lait: 'le', fleur: 'la',
+  clé: 'la', bras: 'le', train: 'le', grue: 'la', mouche: 'la', loupe: 'la', quille: 'la', glace: 'la', plage: 'la',
+  crabe: 'le', prise: 'la', arbre: "l'", livre: 'le', fraise: 'la',
+};
+/** un mot répété après une réussite, sans ses syllabes : avec son article, ou « Ça fait : panda ! » */
+export function wordLine(word: string): string {
+  const a = ARTICLES[word];
+  if (!a) return `Ça fait : ${word} !`;
+  return a.endsWith("'") ? `L'${word} !` : `${a[0].toUpperCase()}${a.slice(1)} ${word} !`;
 }
 
 /** Les petits mots des phrases, appris en entier (et pas encore déchiffrables pour certains). */
@@ -413,10 +607,10 @@ export const PIC_WORDS: PicWord[] = [
   pw('lama', '🦙', 'la-ma', 'a', 'l'),
   pw('sofa', '🛋️', 'so-fa', 'a', 's'),
   pw('hibou', '🦉', 'i-bou', 'ou'),
-  pw('bisou', '😘', 'bi-sou', 'ou', 'b'),
+  pw('bisou', '😘', 'bi-zou', 'ou', 'b'),
   pw('souris', '🐭', 'sou-ri', 'i', 's'),
   pw('kiwi', '🥝', 'ki-wi', 'i', 'k'),
-  pw('taxi', '🚕', 'ta-xi', 'i', 't'),
+  pw('taxi', '🚕', 'tak-si', 'i', 't'),
   pw('fourmi', '🐜', 'four-mi', 'i', 'f'),
   pw('moto', '🏍️', 'mo-to', 'o', 'm'),
   pw('vélo', '🚲', 'vé-lo', 'o', 'v'),
