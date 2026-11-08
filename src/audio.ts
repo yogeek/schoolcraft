@@ -105,8 +105,9 @@ function playClips(files: string[], rate: number): Promise<boolean> {
       if (over) return;
       if (!src) return finish(i > 1);
       el.src = src;
-      // slower for syllables said one by one, a little quicker when counting along
-      el.playbackRate = rate < 0.8 ? 0.9 : rate >= 1 ? 1.08 : 1;
+      // a little quicker when counting along; never slower: a recorded clip already has its pauses,
+      // and stretching it made the syllables drawl (« puuu… maaa »)
+      el.playbackRate = rate >= 1 ? 1.08 : 1;
       el.onended = () => (i < files.length ? (t = window.setTimeout(() => void next(), 120)) : finish(true));
       // a clip that cannot load: the device's voice takes over (only if nothing was said yet)
       el.onerror = () => finish(i > 1);

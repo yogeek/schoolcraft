@@ -21,6 +21,8 @@ const opt = (name, def) => (args.includes(name) ? Number(args[args.indexOf(name)
 const LIMIT = opt('--limit', Infinity);
 const MAX_CREDITS = opt('--max-credits', 26000);
 const REDO = new Set(args.includes('--redo') ? args.slice(args.indexOf('--redo') + 1).filter((a) => !a.startsWith('--')) : []);
+/** --redo-match <regex>: record again every sentence whose text matches */
+const REDO_MATCH = args.includes('--redo-match') ? new RegExp(args[args.indexOf('--redo-match') + 1]) : null;
 
 const OUT = `${ROOT}public/voice/`;
 const META = `${ROOT}scripts/voice/clips.json`;
@@ -39,9 +41,28 @@ const fnv = (s) => {
   return h.toString(16).padStart(8, '0');
 };
 
+/**
+ * Syllables said one by one (« pu… ma… puma ! », « Écoute : pu… ma. »): with « … » the voice drawls
+ * and sounds languid, so they are sent with dots (« pu. ma. Puma ! »), chosen by ear. A syllable said
+ * alone can be read as an English word (« to » → « tou »): SYLLABLE_AS respells it.
+ */
+const SYLLABLE_AS = { to: 'tôt' };
+const say = (syl) => SYLLABLE_AS[syl] ?? syl;
+function syllablesPrompt(t) {
+  // syllables are lowercase (not « Cinq… et deux… sept ! » of the ten-frame)
+  let m = t.match(/^((?:[a-zàâçéèêîôûœ][^…]*… )+)([^…]+) !$/);
+  if (m) {
+    const syl = m[1].split('… ').filter(Boolean);
+    return `${syl.map(say).join('. ')}. ${m[2][0].toUpperCase()}${m[2].slice(1)} !`;
+  }
+  m = t.match(/^Écoute : ((?:[^…]+… )+[^…]+)\.$/);
+  if (m) return `Écoute : ${m[1].split('… ').map(say).join('. ')}.`;
+  return t;
+}
+
 /** what is sent to the voice: joy for praise; a final dot on a lone word helps short clips */
 function prompt(line) {
-  let t = SAY_AS[line.key] ?? line.text;
+  let t = syllablesPrompt(SAY_AS[line.key] ?? line.text);
   if (!/[.!?…:]$/.test(t)) t += '.';
   if (line.tag === 'praise') t = `[happily] ${t}`;
   return t;
@@ -157,7 +178,7 @@ function saveAll() {
   for (const f of readdirSync(OUT)) if (f.endsWith('.mp3') && !used.has(f)) unlinkSync(OUT + f);
 }
 
-const todo = lines.filter((l) => REDO.has(l.key) || !clips[l.key] || !existsSync(OUT + clips[l.key].file)).slice(0, LIMIT);
+const todo = lines.filter((l) => REDO.has(l.key) || REDO_MATCH?.test(l.text) || !clips[l.key] || !existsSync(OUT + clips[l.key].file)).slice(0, LIMIT);
 console.log(`${todo.length} phrases à enregistrer (déjà : ${Object.keys(clips).length}, crédits déjà dépensés : ${spentBefore})`);
 let done = 0;
 let stop = false;
