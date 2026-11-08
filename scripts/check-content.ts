@@ -2,7 +2,7 @@
 // Lancer : npm run check   (Node 22.6+ : les types TypeScript sont simplement ignorés)
 import { COUNT_CHAPTERS, COUNT_LEVELS, DICE, NUMBER_WORDS, THINGS } from '../src/content/counting.ts';
 import { HEROES, regions } from '../src/content/heroes.ts';
-import { DECOY_SYLLABLES, graphemes, PIC_WORDS, READING_CHAPTERS, READING_LEVELS } from '../src/content/reading.ts';
+import { decode, DECOY_SYLLABLES, graphemes, PIC_WORDS, READING_CHAPTERS, READING_LEVELS, SIGHT_WORDS } from '../src/content/reading.ts';
 import { TIPS } from '../src/content/tips.ts';
 import { GLYPHS, LETTER_SPEECH, WRITING_CHAPTERS, WRITING_LEVELS } from '../src/content/writing.ts';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
@@ -92,6 +92,50 @@ READING_LEVELS.forEach((l, i) => {
     const pics = l.items.map((it) => it.pic);
     if (new Set(pics).size !== pics.length) err(`${where} : deux mots ont la même image`);
   }
+});
+
+// déchiffrable : chaque mot à lire ne demande que des sons appris aux niveaux d'avant (ou à celui-ci)
+{
+  const known = new Set<string>();
+  /** a word of a sentence: final silent letters as in most words (e, s, t, d, x, z, p, h), a silent h first */
+  const sentenceWord = (w: string) => {
+    const mute: number[] = [];
+    if (w.startsWith('h')) mute.push(0);
+    let end = w.length - 1;
+    if (end > 1 && 'stdxzph'.includes(w[end])) mute.push(end--);
+    if (end > 1 && w[end] === 'e' && !'aeiouéè'.includes(w[end - 1])) mute.push(end);
+    return decode(w, mute);
+  };
+  READING_LEVELS.forEach((l, i) => {
+    for (const c of l.teaches ?? []) known.add(c);
+    const where = `Lire, niveau ${i + 1} (${l.name})`;
+    const check = (what: string, codes: string[]) => {
+      const unknown = [...new Set(codes.filter((c) => !known.has(c)))];
+      if (unknown.length) err(`${where} : « ${what} » demande des sons pas encore appris : ${unknown.join(', ')}`);
+    };
+    if ('items' in l && l.kind !== 'sound') {
+      for (const it of l.items) {
+        if (it.mute && !known.has('muette')) err(`${where} : « ${it.text} » a une lettre muette avant le niveau des lettres muettes`);
+        if (l.kind !== 'spell' || it.parts) check(it.text, decode(it.text, it.mute));
+      }
+    }
+    // (« Vrai » et « Faux » sont écrits sur les boutons)
+    const sentence = (text: string) => {
+      for (const w of text.toLowerCase().split(/[^a-zàâçéèêëîïôûùœ']+/).filter(Boolean)) {
+        const bare = w.replace(/^[a-z]'/, '');
+        if (!bare || SIGHT_WORDS.includes(bare)) continue;
+        check(w, sentenceWord(bare));
+      }
+    };
+    if (l.kind === 'sentence') ['vrai', 'faux', ...l.sentences.map((x) => x.text)].forEach(sentence);
+    if (l.kind === 'riddle') l.riddles.forEach((x) => sentence(x.text));
+  });
+}
+// même son : deux blocs d'un même groupe ne doivent pas pouvoir être la seule bonne réponse ensemble
+READING_LEVELS.forEach((l, i) => {
+  if (!('items' in l) || l.kind !== 'sound') return;
+  const groups = new Set(l.items.map((it) => it.group ?? it.text));
+  if (groups.size < l.choices) err(`Lire, niveau ${i + 1} (${l.name}) : ${groups.size} sons différents pour ${l.choices} choix`);
 });
 
 // banque d'images (syllabes, rimes, premier son)

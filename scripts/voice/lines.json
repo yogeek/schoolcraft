@@ -634,6 +634,54 @@
   "text": "Niveau 19."
  },
  {
+  "key": "niveau 20.",
+  "text": "Niveau 20."
+ },
+ {
+  "key": "niveau 21.",
+  "text": "Niveau 21."
+ },
+ {
+  "key": "niveau 22.",
+  "text": "Niveau 22."
+ },
+ {
+  "key": "niveau 23.",
+  "text": "Niveau 23."
+ },
+ {
+  "key": "niveau 24.",
+  "text": "Niveau 24."
+ },
+ {
+  "key": "niveau 25.",
+  "text": "Niveau 25."
+ },
+ {
+  "key": "niveau 26.",
+  "text": "Niveau 26."
+ },
+ {
+  "key": "niveau 27.",
+  "text": "Niveau 27."
+ },
+ {
+  "key": "niveau 28.",
+  "text": "Niveau 28."
+ },
+ {
+  "key": "niveau 29.",
+  "text": "Niveau 29."
+ },
+ {
+  "key": "niveau 30.",
+  "text": "Niveau 30."
+ },
+ {
+  "key": "niveau 31.",
+  "text": "Niveau 31."
+ },
+ {
   "key": "écoute le mot, et tape sur le tambour une fois pour chaque syllabe.",
   "text": "Écoute le mot, et tape sur le tambour une fois pour chaque syllabe."
  },
@@ -686,12 +734,48 @@
   "text": "Écoute le mot, et écris-le avec les lettres."
  },
  {
+  "key": "les lettres en gris ne se disent pas.",
+  "text": "Les lettres en gris ne se disent pas."
+ },
+ {
   "key": "parfois, deux lettres font un seul son.",
   "text": "Parfois, deux lettres font un seul son."
  },
  {
   "key": "lis le mot en entier, et touche la bonne image.",
   "text": "Lis le mot en entier, et touche la bonne image."
+ },
+ {
+  "key": "le c, le k et le q font le même son.",
+  "text": "Le c, le k et le q font le même son."
+ },
+ {
+  "key": "écoute bien!",
+  "text": "Écoute bien !"
+ },
+ {
+  "key": "devant le e et le i, le c et le g changent de son!",
+  "text": "Devant le e et le i, le c et le g changent de son !"
+ },
+ {
+  "key": "un même son peut s'écrire de plusieurs façons.",
+  "text": "Un même son peut s’écrire de plusieurs façons."
+ },
+ {
+  "key": "encore des sons écrits avec plusieurs lettres!",
+  "text": "Encore des sons écrits avec plusieurs lettres !"
+ },
+ {
+  "key": "deux consonnes peuvent s'accrocher: écoute bien!",
+  "text": "Deux consonnes peuvent s’accrocher : écoute bien !"
+ },
+ {
+  "key": "des petits mots qu'on lit partout.",
+  "text": "Des petits mots qu’on lit partout."
+ },
+ {
+  "key": "écoute, et trouve-le!",
+  "text": "Écoute, et trouve-le !"
  },
  {
   "key": "le château des phrases!",
@@ -1044,6 +1128,102 @@
  {
   "key": "on passe au niveau 19.",
   "text": "On passe au niveau 19."
+ },
+ {
+  "key": "et tu passes au niveau 20!",
+  "text": "Et tu passes au niveau 20 !"
+ },
+ {
+  "key": "on passe au niveau 20.",
+  "text": "On passe au niveau 20."
+ },
+ {
+  "key": "et tu passes au niveau 21!",
+  "text": "Et tu passes au niveau 21 !"
+ },
+ {
+  "key": "on passe au niveau 21.",
+  "text": "On passe au niveau 21."
+ },
+ {
+  "key": "et tu passes au niveau 22!",
+  "text": "Et tu passes au niveau 22 !"
+ },
+ {
+  "key": "on passe au niveau 22.",
+  "text": "On passe au niveau 22."
+ },
+ {
+  "key": "et tu passes au niveau 23!",
+  "text": "Et tu passes au niveau 23 !"
+ },
+ {
+  "key": "on passe au niveau 23.",
+  "text": "On passe au niveau 23."
+ },
+ {
+  "key": "et tu passes au niveau 24!",
+  "text": "Et tu passes au niveau 24 !"
+ },
+ {
+  "key": "on passe au niveau 24.",
+  "text": "On passe au niveau 24."
+ },
+ {
+  "key": "et tu passes au niveau 25!",
+  "text": "Et tu passes au niveau 25 !"
+ },
+ {
+  "key": "on passe au niveau 25.",
+  "text": "On passe au niveau 25."
+ },
+ {
+  "key": "et tu passes au niveau 26!",
+  "text": "Et tu passes au niveau 26 !"
+ },
+ {
+  "key": "on passe au niveau 26.",
+  "text": "On passe au niveau 26."
+ },
+ {
+  "key": "et tu passes au niveau 27!",
+  "text": "Et tu passes au niveau 27 !"
+ },
+ {
+  "key": "on passe au niveau 27.",
+  "text": "On passe au niveau 27."
+ },
+ {
+  "key": "et tu passes au niveau 28!",
+  "text": "Et tu passes au niveau 28 !"
+ },
+ {
+  "key": "on passe au niveau 28.",
+  "text": "On passe au niveau 28."
+ },
+ {
+  "key": "et tu passes au niveau 29!",
+  "text": "Et tu passes au niveau 29 !"
+ },
+ {
+  "key": "on passe au niveau 29.",
+  "text": "On passe au niveau 29."
+ },
+ {
+  "key": "et tu passes au niveau 30!",
+  "text": "Et tu passes au niveau 30 !"
+ },
+ {
+  "key": "on passe au niveau 30.",
+  "text": "On passe au niveau 30."
+ },
+ {
+  "key": "et tu passes au niveau 31!",
+  "text": "Et tu passes au niveau 31 !"
+ },
+ {
+  "key": "on passe au niveau 31.",
+  "text": "On passe au niveau 31."
  },
  {
   "key": "maintenant, on va lire!",
@@ -5342,134 +5522,6 @@
   "text": "Cherche : domino."
  },
  {
-  "key": "to… ma… te… tomate!",
-  "text": "to… ma… te… tomate !"
- },
- {
-  "key": "touche le mot: tomate!",
-  "text": "Touche le mot : tomate !"
- },
- {
-  "key": "celui-là, c'est: tomate.",
-  "text": "Celui-là, c'est : tomate."
- },
- {
-  "key": "cherche: tomate.",
-  "text": "Cherche : tomate."
- },
- {
-  "key": "sa… la… de… salade!",
-  "text": "sa… la… de… salade !"
- },
- {
-  "key": "touche le mot: salade!",
-  "text": "Touche le mot : salade !"
- },
- {
-  "key": "celui-là, c'est: salade.",
-  "text": "Celui-là, c'est : salade."
- },
- {
-  "key": "cherche: salade.",
-  "text": "Cherche : salade."
- },
- {
-  "key": "ba… na… ne… banane!",
-  "text": "ba… na… ne… banane !"
- },
- {
-  "key": "touche le mot: banane!",
-  "text": "Touche le mot : banane !"
- },
- {
-  "key": "celui-là, c'est: banane.",
-  "text": "Celui-là, c'est : banane."
- },
- {
-  "key": "cherche: banane.",
-  "text": "Cherche : banane."
- },
- {
-  "key": "pi… ra… te… pirate!",
-  "text": "pi… ra… te… pirate !"
- },
- {
-  "key": "touche le mot: pirate!",
-  "text": "Touche le mot : pirate !"
- },
- {
-  "key": "celui-là, c'est: pirate.",
-  "text": "Celui-là, c'est : pirate."
- },
- {
-  "key": "cherche: pirate.",
-  "text": "Cherche : pirate."
- },
- {
-  "key": "ca… na… pé… canapé!",
-  "text": "ca… na… pé… canapé !"
- },
- {
-  "key": "touche le mot: canapé!",
-  "text": "Touche le mot : canapé !"
- },
- {
-  "key": "celui-là, c'est: canapé.",
-  "text": "Celui-là, c'est : canapé."
- },
- {
-  "key": "cherche: canapé.",
-  "text": "Cherche : canapé."
- },
- {
-  "key": "ca… fé… café!",
-  "text": "ca… fé… café !"
- },
- {
-  "key": "touche le mot: café!",
-  "text": "Touche le mot : café !"
- },
- {
-  "key": "celui-là, c'est: café.",
-  "text": "Celui-là, c'est : café."
- },
- {
-  "key": "cherche: café.",
-  "text": "Cherche : café."
- },
- {
-  "key": "ki… wi… kiwi!",
-  "text": "ki… wi… kiwi !"
- },
- {
-  "key": "touche le mot: kiwi!",
-  "text": "Touche le mot : kiwi !"
- },
- {
-  "key": "celui-là, c'est: kiwi.",
-  "text": "Celui-là, c'est : kiwi."
- },
- {
-  "key": "cherche: kiwi.",
-  "text": "Cherche : kiwi."
- },
- {
-  "key": "li… mo… na… de… limonade!",
-  "text": "li… mo… na… de… limonade !"
- },
- {
-  "key": "touche le mot: limonade!",
-  "text": "Touche le mot : limonade !"
- },
- {
-  "key": "celui-là, c'est: limonade.",
-  "text": "Celui-là, c'est : limonade."
- },
- {
-  "key": "cherche: limonade.",
-  "text": "Cherche : limonade."
- },
- {
   "key": "bé… bé… bébé!",
   "text": "bé… bé… bébé !"
  },
@@ -5484,6 +5536,134 @@
  {
   "key": "cherche: bébé.",
   "text": "Cherche : bébé."
+ },
+ {
+  "key": "pi… ja… ma… pijama!",
+  "text": "pi… ja… ma… pijama !"
+ },
+ {
+  "key": "touche le mot: pijama!",
+  "text": "Touche le mot : pijama !"
+ },
+ {
+  "key": "celui-là, c'est: pijama.",
+  "text": "Celui-là, c'est : pijama."
+ },
+ {
+  "key": "cherche: pijama.",
+  "text": "Cherche : pijama."
+ },
+ {
+  "key": "tu… tu… tutu!",
+  "text": "tu… tu… tutu !"
+ },
+ {
+  "key": "touche le mot: tutu!",
+  "text": "Touche le mot : tutu !"
+ },
+ {
+  "key": "celui-là, c'est: tutu.",
+  "text": "Celui-là, c'est : tutu."
+ },
+ {
+  "key": "cherche: tutu.",
+  "text": "Cherche : tutu."
+ },
+ {
+  "key": "lo… to… loto!",
+  "text": "lo… to… loto !"
+ },
+ {
+  "key": "touche le mot: loto!",
+  "text": "Touche le mot : loto !"
+ },
+ {
+  "key": "celui-là, c'est: loto.",
+  "text": "Celui-là, c'est : loto."
+ },
+ {
+  "key": "cherche: loto.",
+  "text": "Cherche : loto."
+ },
+ {
+  "key": "vi… dé… o… vidéo!",
+  "text": "vi… dé… o… vidéo !"
+ },
+ {
+  "key": "touche le mot: vidéo!",
+  "text": "Touche le mot : vidéo !"
+ },
+ {
+  "key": "celui-là, c'est: vidéo.",
+  "text": "Celui-là, c'est : vidéo."
+ },
+ {
+  "key": "cherche: vidéo.",
+  "text": "Cherche : vidéo."
+ },
+ {
+  "key": "sa… la… mi… salami!",
+  "text": "sa… la… mi… salami !"
+ },
+ {
+  "key": "touche le mot: salami!",
+  "text": "Touche le mot : salami !"
+ },
+ {
+  "key": "celui-là, c'est: salami.",
+  "text": "Celui-là, c'est : salami."
+ },
+ {
+  "key": "cherche: salami.",
+  "text": "Cherche : salami."
+ },
+ {
+  "key": "jo… li… joli!",
+  "text": "jo… li… joli !"
+ },
+ {
+  "key": "touche le mot: joli!",
+  "text": "Touche le mot : joli !"
+ },
+ {
+  "key": "celui-là, c'est: joli.",
+  "text": "Celui-là, c'est : joli."
+ },
+ {
+  "key": "cherche: joli.",
+  "text": "Cherche : joli."
+ },
+ {
+  "key": "pu… ma… puma!",
+  "text": "pu… ma… puma !"
+ },
+ {
+  "key": "touche le mot: puma!",
+  "text": "Touche le mot : puma !"
+ },
+ {
+  "key": "celui-là, c'est: puma.",
+  "text": "Celui-là, c'est : puma."
+ },
+ {
+  "key": "cherche: puma.",
+  "text": "Cherche : puma."
+ },
+ {
+  "key": "a… mi… ami!",
+  "text": "a… mi… ami !"
+ },
+ {
+  "key": "touche le mot: ami!",
+  "text": "Touche le mot : ami !"
+ },
+ {
+  "key": "celui-là, c'est: ami.",
+  "text": "Celui-là, c'est : ami."
+ },
+ {
+  "key": "cherche: ami.",
+  "text": "Cherche : ami."
  },
  {
   "key": "construis le mot: moto!",
@@ -5566,120 +5746,92 @@
   "text": "Écoute : do… mi… no."
  },
  {
-  "key": "construis le mot: tomate!",
-  "text": "Construis le mot : tomate !"
- },
- {
-  "key": "écoute: to… ma… te.",
-  "text": "Écoute : to… ma… te."
- },
- {
-  "key": "te",
-  "text": "te"
- },
- {
-  "key": "celui-là, c'est: te.",
-  "text": "Celui-là, c'est : te."
- },
- {
-  "key": "construis le mot: salade!",
-  "text": "Construis le mot : salade !"
- },
- {
-  "key": "écoute: sa… la… de.",
-  "text": "Écoute : sa… la… de."
- },
- {
-  "key": "de",
-  "text": "de"
- },
- {
-  "key": "celui-là, c'est: de.",
-  "text": "Celui-là, c'est : de."
- },
- {
-  "key": "construis le mot: banane!",
-  "text": "Construis le mot : banane !"
- },
- {
-  "key": "écoute: ba… na… ne.",
-  "text": "Écoute : ba… na… ne."
- },
- {
-  "key": "ne",
-  "text": "ne"
- },
- {
-  "key": "celui-là, c'est: ne.",
-  "text": "Celui-là, c'est : ne."
- },
- {
-  "key": "construis le mot: pirate!",
-  "text": "Construis le mot : pirate !"
- },
- {
-  "key": "écoute: pi… ra… te.",
-  "text": "Écoute : pi… ra… te."
- },
- {
-  "key": "construis le mot: canapé!",
-  "text": "Construis le mot : canapé !"
- },
- {
-  "key": "écoute: ca… na… pé.",
-  "text": "Écoute : ca… na… pé."
- },
- {
-  "key": "celui-là, c'est: ca.",
-  "text": "Celui-là, c'est : ca."
- },
- {
-  "key": "pé",
-  "text": "pé"
- },
- {
-  "key": "construis le mot: café!",
-  "text": "Construis le mot : café !"
- },
- {
-  "key": "écoute: ca… fé.",
-  "text": "Écoute : ca… fé."
- },
- {
-  "key": "construis le mot: kiwi!",
-  "text": "Construis le mot : kiwi !"
- },
- {
-  "key": "écoute: ki… wi.",
-  "text": "Écoute : ki… wi."
- },
- {
-  "key": "celui-là, c'est: ki.",
-  "text": "Celui-là, c'est : ki."
- },
- {
-  "key": "celui-là, c'est: wi.",
-  "text": "Celui-là, c'est : wi."
- },
- {
-  "key": "construis le mot: limonade!",
-  "text": "Construis le mot : limonade !"
- },
- {
-  "key": "écoute: li… mo… na… de.",
-  "text": "Écoute : li… mo… na… de."
- },
- {
-  "key": "li",
-  "text": "li"
- },
- {
   "key": "construis le mot: bébé!",
   "text": "Construis le mot : bébé !"
  },
  {
   "key": "écoute: bé… bé.",
   "text": "Écoute : bé… bé."
+ },
+ {
+  "key": "construis le mot: pijama!",
+  "text": "Construis le mot : pijama !"
+ },
+ {
+  "key": "écoute: pi… ja… ma.",
+  "text": "Écoute : pi… ja… ma."
+ },
+ {
+  "key": "ja",
+  "text": "ja"
+ },
+ {
+  "key": "construis le mot: tutu!",
+  "text": "Construis le mot : tutu !"
+ },
+ {
+  "key": "écoute: tu… tu.",
+  "text": "Écoute : tu… tu."
+ },
+ {
+  "key": "construis le mot: loto!",
+  "text": "Construis le mot : loto !"
+ },
+ {
+  "key": "écoute: lo… to.",
+  "text": "Écoute : lo… to."
+ },
+ {
+  "key": "construis le mot: vidéo!",
+  "text": "Construis le mot : vidéo !"
+ },
+ {
+  "key": "écoute: vi… dé… o.",
+  "text": "Écoute : vi… dé… o."
+ },
+ {
+  "key": "construis le mot: salami!",
+  "text": "Construis le mot : salami !"
+ },
+ {
+  "key": "écoute: sa… la… mi.",
+  "text": "Écoute : sa… la… mi."
+ },
+ {
+  "key": "construis le mot: joli!",
+  "text": "Construis le mot : joli !"
+ },
+ {
+  "key": "écoute: jo… li.",
+  "text": "Écoute : jo… li."
+ },
+ {
+  "key": "jo",
+  "text": "jo"
+ },
+ {
+  "key": "li",
+  "text": "li"
+ },
+ {
+  "key": "construis le mot: puma!",
+  "text": "Construis le mot : puma !"
+ },
+ {
+  "key": "écoute: pu… ma.",
+  "text": "Écoute : pu… ma."
+ },
+ {
+  "key": "pu",
+  "text": "pu"
+ },
+ {
+  "key": "construis le mot: ami!",
+  "text": "Construis le mot : ami !"
+ },
+ {
+  "key": "écoute: a… mi.",
+  "text": "Écoute : a… mi."
  },
  {
   "key": "ça, c'est: moto.",
@@ -5694,88 +5846,84 @@
   "text": "Ça, c'est : vélo."
  },
  {
-  "key": "ça, c'est: kiwi.",
-  "text": "Ça, c'est : kiwi."
- },
- {
-  "key": "ça, c'est: tomate.",
-  "text": "Ça, c'est : tomate."
- },
- {
-  "key": "ça, c'est: banane.",
-  "text": "Ça, c'est : banane."
+  "key": "ça, c'est: sofa.",
+  "text": "Ça, c'est : sofa."
  },
  {
   "key": "ça, c'est: radio.",
   "text": "Ça, c'est : radio."
  },
  {
-  "key": "ça, c'est: café.",
-  "text": "Ça, c'est : café."
- },
- {
-  "key": "ro… bot… robot!",
-  "text": "ro… bot… robot !"
- },
- {
-  "key": "ça, c'est: robot.",
-  "text": "Ça, c'est : robot."
- },
- {
-  "key": "écoute: ro… bot.",
-  "text": "Écoute : ro… bot."
- },
- {
-  "key": "ça, c'est: sofa.",
-  "text": "Ça, c'est : sofa."
- },
- {
   "key": "ça, c'est: bébé.",
   "text": "Ça, c'est : bébé."
  },
  {
-  "key": "ça, c'est: salade.",
-  "text": "Ça, c'est : salade."
- },
- {
-  "key": "tu… li… pe… tulipe!",
-  "text": "tu… li… pe… tulipe !"
- },
- {
-  "key": "ça, c'est: tulipe.",
-  "text": "Ça, c'est : tulipe."
- },
- {
-  "key": "écoute: tu… li… pe.",
-  "text": "Écoute : tu… li… pe."
- },
- {
-  "key": "lu… ne… lune!",
-  "text": "lu… ne… lune !"
- },
- {
-  "key": "ça, c'est: lune.",
-  "text": "Ça, c'est : lune."
- },
- {
-  "key": "écoute: lu… ne.",
-  "text": "Écoute : lu… ne."
- },
- {
-  "key": "fu… sée… fusée!",
-  "text": "fu… sée… fusée !"
- },
- {
-  "key": "ça, c'est: fusée.",
-  "text": "Ça, c'est : fusée."
- },
- {
-  "key": "écoute: fu… sée.",
-  "text": "Écoute : fu… sée."
+  "key": "ça, c'est: judo.",
+  "text": "Ça, c'est : judo."
  },
  {
   "key": "ça, c'est: dé.",
   "text": "Ça, c'est : dé."
+ },
+ {
+  "key": "mur!",
+  "text": "mur !"
+ },
+ {
+  "key": "ça, c'est: mur.",
+  "text": "Ça, c'est : mur."
+ },
+ {
+  "key": "écoute: mur.",
+  "text": "Écoute : mur."
+ },
+ {
+  "key": "bol!",
+  "text": "bol !"
+ },
+ {
+  "key": "ça, c'est: bol.",
+  "text": "Ça, c'est : bol."
+ },
+ {
+  "key": "écoute: bol.",
+  "text": "Écoute : bol."
+ },
+ {
+  "key": "pi… a… no… piano!",
+  "text": "pi… a… no… piano !"
+ },
+ {
+  "key": "ça, c'est: piano.",
+  "text": "Ça, c'est : piano."
+ },
+ {
+  "key": "écoute: pi… a… no.",
+  "text": "Écoute : pi… a… no."
+ },
+ {
+  "key": "fil!",
+  "text": "fil !"
+ },
+ {
+  "key": "ça, c'est: fil.",
+  "text": "Ça, c'est : fil."
+ },
+ {
+  "key": "écoute: fil.",
+  "text": "Écoute : fil."
+ },
+ {
+  "key": "bus!",
+  "text": "bus !"
+ },
+ {
+  "key": "ça, c'est: bus.",
+  "text": "Ça, c'est : bus."
+ },
+ {
+  "key": "écoute: bus.",
+  "text": "Écoute : bus."
  },
  {
   "key": "écris le mot: moto!",
@@ -5834,28 +5982,12 @@
   "text": "Écoute bien : dodo."
  },
  {
-  "key": "écris le mot: kiwi!",
-  "text": "Écris le mot : kiwi !"
- },
- {
-  "key": "écoute bien: kiwi.",
-  "text": "Écoute bien : kiwi."
- },
- {
   "key": "écris le mot: bébé!",
   "text": "Écris le mot : bébé !"
  },
  {
   "key": "écoute bien: bébé.",
   "text": "Écoute bien : bébé."
- },
- {
-  "key": "écris le mot: café!",
-  "text": "Écris le mot : café !"
- },
- {
-  "key": "écoute bien: café.",
-  "text": "Écoute bien : café."
  },
  {
   "key": "écris le mot: radio!",
@@ -5874,28 +6006,12 @@
   "text": "Écoute bien : domino."
  },
  {
-  "key": "écris le mot: canapé!",
-  "text": "Écris le mot : canapé !"
- },
- {
-  "key": "écoute bien: canapé.",
-  "text": "Écoute bien : canapé."
- },
- {
-  "key": "tu… tu… tutu!",
-  "text": "tu… tu… tutu !"
- },
- {
   "key": "écris le mot: tutu!",
   "text": "Écris le mot : tutu !"
  },
  {
   "key": "écoute bien: tutu.",
   "text": "Écoute bien : tutu."
- },
- {
-  "key": "lo… to… loto!",
-  "text": "lo… to… loto !"
  },
  {
   "key": "écris le mot: loto!",
@@ -5918,28 +6034,156 @@
   "text": "Écoute bien : sumo."
  },
  {
-  "key": "ka… ra… té… karaté!",
-  "text": "ka… ra… té… karaté !"
- },
- {
-  "key": "écris le mot: karaté!",
-  "text": "Écris le mot : karaté !"
- },
- {
-  "key": "écoute bien: karaté.",
-  "text": "Écoute bien : karaté."
- },
- {
-  "key": "vi… dé… o… vidéo!",
-  "text": "vi… dé… o… vidéo !"
- },
- {
   "key": "écris le mot: vidéo!",
   "text": "Écris le mot : vidéo !"
  },
  {
   "key": "écoute bien: vidéo.",
   "text": "Écoute bien : vidéo."
+ },
+ {
+  "key": "écris le mot: puma!",
+  "text": "Écris le mot : puma !"
+ },
+ {
+  "key": "écoute bien: puma.",
+  "text": "Écoute bien : puma."
+ },
+ {
+  "key": "écris le mot: ami!",
+  "text": "Écris le mot : ami !"
+ },
+ {
+  "key": "écoute bien: ami.",
+  "text": "Écoute bien : ami."
+ },
+ {
+  "key": "écris le mot: joli!",
+  "text": "Écris le mot : joli !"
+ },
+ {
+  "key": "écoute bien: joli.",
+  "text": "Écoute bien : joli."
+ },
+ {
+  "key": "écris le mot: pijama!",
+  "text": "Écris le mot : pijama !"
+ },
+ {
+  "key": "écoute bien: pijama.",
+  "text": "Écoute bien : pijama."
+ },
+ {
+  "key": "lu… ne… lune!",
+  "text": "lu… ne… lune !"
+ },
+ {
+  "key": "ça, c'est: lune.",
+  "text": "Ça, c'est : lune."
+ },
+ {
+  "key": "écoute: lu… ne.",
+  "text": "Écoute : lu… ne."
+ },
+ {
+  "key": "to… ma… te… tomate!",
+  "text": "to… ma… te… tomate !"
+ },
+ {
+  "key": "ça, c'est: tomate.",
+  "text": "Ça, c'est : tomate."
+ },
+ {
+  "key": "écoute: to… ma… te.",
+  "text": "Écoute : to… ma… te."
+ },
+ {
+  "key": "ba… na… ne… banane!",
+  "text": "ba… na… ne… banane !"
+ },
+ {
+  "key": "ça, c'est: banane.",
+  "text": "Ça, c'est : banane."
+ },
+ {
+  "key": "écoute: ba… na… ne.",
+  "text": "Écoute : ba… na… ne."
+ },
+ {
+  "key": "tu… li… pe… tulipe!",
+  "text": "tu… li… pe… tulipe !"
+ },
+ {
+  "key": "ça, c'est: tulipe.",
+  "text": "Ça, c'est : tulipe."
+ },
+ {
+  "key": "écoute: tu… li… pe.",
+  "text": "Écoute : tu… li… pe."
+ },
+ {
+  "key": "sa… la… de… salade!",
+  "text": "sa… la… de… salade !"
+ },
+ {
+  "key": "ça, c'est: salade.",
+  "text": "Ça, c'est : salade."
+ },
+ {
+  "key": "écoute: sa… la… de.",
+  "text": "Écoute : sa… la… de."
+ },
+ {
+  "key": "ro… bot… robot!",
+  "text": "ro… bot… robot !"
+ },
+ {
+  "key": "ça, c'est: robot.",
+  "text": "Ça, c'est : robot."
+ },
+ {
+  "key": "écoute: ro… bot.",
+  "text": "Écoute : ro… bot."
+ },
+ {
+  "key": "ça, c'est: lit.",
+  "text": "Ça, c'est : lit."
+ },
+ {
+  "key": "ça, c'est: riz.",
+  "text": "Ça, c'est : riz."
+ },
+ {
+  "key": "ça, c'est: chat.",
+  "text": "Ça, c'est : chat."
+ },
+ {
+  "key": "ça, c'est: rat.",
+  "text": "Ça, c'est : rat."
+ },
+ {
+  "key": "va… che… vache!",
+  "text": "va… che… vache !"
+ },
+ {
+  "key": "ça, c'est: vache.",
+  "text": "Ça, c'est : vache."
+ },
+ {
+  "key": "écoute: va… che.",
+  "text": "Écoute : va… che."
+ },
+ {
+  "key": "pi… ra… te… pirate!",
+  "text": "pi… ra… te… pirate !"
+ },
+ {
+  "key": "ça, c'est: pirate.",
+  "text": "Ça, c'est : pirate."
+ },
+ {
+  "key": "écoute: pi… ra… te.",
+  "text": "Écoute : pi… ra… te."
  },
  {
   "key": "ou, comme dans loup.",
@@ -6022,24 +6266,20 @@
   "text": "Cherche : oua."
  },
  {
-  "key": "che, comme dans chat.",
-  "text": "che, comme dans chat."
+  "key": "eux, comme dans feu.",
+  "text": "eux, comme dans feu."
  },
  {
-  "key": "touche le bloc qui fait le son: che!",
-  "text": "Touche le bloc qui fait le son : che !"
+  "key": "touche le bloc qui fait le son: eux!",
+  "text": "Touche le bloc qui fait le son : eux !"
  },
  {
-  "key": "celui-là, c'est: che.",
-  "text": "Celui-là, c'est : che."
+  "key": "celui-là, c'est: eux.",
+  "text": "Celui-là, c'est : eux."
  },
  {
-  "key": "cherche: che.",
-  "text": "Cherche : che."
- },
- {
-  "key": "euh, comme dans feu.",
-  "text": "euh, comme dans feu."
+  "key": "cherche: eux.",
+  "text": "Cherche : eux."
  },
  {
   "key": "mou!",
@@ -6366,36 +6606,740 @@
   "text": "Cherche : lapin."
  },
  {
-  "key": "pois… son… poisson!",
-  "text": "pois… son… poisson !"
- },
- {
-  "key": "touche le mot: poisson!",
-  "text": "Touche le mot : poisson !"
- },
- {
-  "key": "celui-là, c'est: poisson.",
-  "text": "Celui-là, c'est : poisson."
- },
- {
-  "key": "cherche: poisson.",
-  "text": "Cherche : poisson."
- },
- {
-  "key": "touche le mot: chat!",
-  "text": "Touche le mot : chat !"
- },
- {
-  "key": "celui-là, c'est: chat.",
-  "text": "Celui-là, c'est : chat."
- },
- {
-  "key": "cherche: chat.",
-  "text": "Cherche : chat."
- },
- {
   "key": "touche le mot: loup!",
   "text": "Touche le mot : loup !"
+ },
+ {
+  "key": "bon… bon… bonbon!",
+  "text": "bon… bon… bonbon !"
+ },
+ {
+  "key": "touche le mot: bonbon!",
+  "text": "Touche le mot : bonbon !"
+ },
+ {
+  "key": "celui-là, c'est: bonbon.",
+  "text": "Celui-là, c'est : bonbon."
+ },
+ {
+  "key": "cherche: bonbon.",
+  "text": "Cherche : bonbon."
+ },
+ {
+  "key": "four… mi… fourmi!",
+  "text": "four… mi… fourmi !"
+ },
+ {
+  "key": "touche le mot: fourmi!",
+  "text": "Touche le mot : fourmi !"
+ },
+ {
+  "key": "celui-là, c'est: fourmi.",
+  "text": "Celui-là, c'est : fourmi."
+ },
+ {
+  "key": "cherche: fourmi.",
+  "text": "Cherche : fourmi."
+ },
+ {
+  "key": "pou… le… poule!",
+  "text": "pou… le… poule !"
+ },
+ {
+  "key": "touche le mot: poule!",
+  "text": "Touche le mot : poule !"
+ },
+ {
+  "key": "celui-là, c'est: poule.",
+  "text": "Celui-là, c'est : poule."
+ },
+ {
+  "key": "cherche: poule.",
+  "text": "Cherche : poule."
+ },
+ {
+  "key": "touche le mot: roi!",
+  "text": "Touche le mot : roi !"
+ },
+ {
+  "key": "é… toi… le… étoile!",
+  "text": "é… toi… le… étoile !"
+ },
+ {
+  "key": "touche le mot: étoile!",
+  "text": "Touche le mot : étoile !"
+ },
+ {
+  "key": "celui-là, c'est: étoile.",
+  "text": "Celui-là, c'est : étoile."
+ },
+ {
+  "key": "cherche: étoile.",
+  "text": "Cherche : étoile."
+ },
+ {
+  "key": "sa… pin… sapin!",
+  "text": "sa… pin… sapin !"
+ },
+ {
+  "key": "touche le mot: sapin!",
+  "text": "Touche le mot : sapin !"
+ },
+ {
+  "key": "celui-là, c'est: sapin.",
+  "text": "Celui-là, c'est : sapin."
+ },
+ {
+  "key": "cherche: sapin.",
+  "text": "Cherche : sapin."
+ },
+ {
+  "key": "pan… da… panda!",
+  "text": "pan… da… panda !"
+ },
+ {
+  "key": "touche le mot: panda!",
+  "text": "Touche le mot : panda !"
+ },
+ {
+  "key": "celui-là, c'est: panda.",
+  "text": "Celui-là, c'est : panda."
+ },
+ {
+  "key": "cherche: panda.",
+  "text": "Cherche : panda."
+ },
+ {
+  "key": "li… on… lion!",
+  "text": "li… on… lion !"
+ },
+ {
+  "key": "touche le mot: lion!",
+  "text": "Touche le mot : lion !"
+ },
+ {
+  "key": "celui-là, c'est: lion.",
+  "text": "Celui-là, c'est : lion."
+ },
+ {
+  "key": "cherche: lion.",
+  "text": "Cherche : lion."
+ },
+ {
+  "key": "ru… ban… ruban!",
+  "text": "ru… ban… ruban !"
+ },
+ {
+  "key": "touche le mot: ruban!",
+  "text": "Touche le mot : ruban !"
+ },
+ {
+  "key": "celui-là, c'est: ruban.",
+  "text": "Celui-là, c'est : ruban."
+ },
+ {
+  "key": "cherche: ruban.",
+  "text": "Cherche : ruban."
+ },
+ {
+  "key": "sou… ris… souris!",
+  "text": "sou… ris… souris !"
+ },
+ {
+  "key": "touche le mot: souris!",
+  "text": "Touche le mot : souris !"
+ },
+ {
+  "key": "celui-là, c'est: souris.",
+  "text": "Celui-là, c'est : souris."
+ },
+ {
+  "key": "cherche: souris.",
+  "text": "Cherche : souris."
+ },
+ {
+  "key": "vi… o… lon… violon!",
+  "text": "vi… o… lon… violon !"
+ },
+ {
+  "key": "touche le mot: violon!",
+  "text": "Touche le mot : violon !"
+ },
+ {
+  "key": "celui-là, c'est: violon.",
+  "text": "Celui-là, c'est : violon."
+ },
+ {
+  "key": "cherche: violon.",
+  "text": "Cherche : violon."
+ },
+ {
+  "key": "nou… nours… nounours!",
+  "text": "nou… nours… nounours !"
+ },
+ {
+  "key": "touche le mot: nounours!",
+  "text": "Touche le mot : nounours !"
+ },
+ {
+  "key": "celui-là, c'est: nounours.",
+  "text": "Celui-là, c'est : nounours."
+ },
+ {
+  "key": "cherche: nounours.",
+  "text": "Cherche : nounours."
+ },
+ {
+  "key": "hi… bou… hibou!",
+  "text": "hi… bou… hibou !"
+ },
+ {
+  "key": "touche le mot: hibou!",
+  "text": "Touche le mot : hibou !"
+ },
+ {
+  "key": "celui-là, c'est: hibou.",
+  "text": "Celui-là, c'est : hibou."
+ },
+ {
+  "key": "cherche: hibou.",
+  "text": "Cherche : hibou."
+ },
+ {
+  "key": "dou… che… douche!",
+  "text": "dou… che… douche !"
+ },
+ {
+  "key": "touche le mot: douche!",
+  "text": "Touche le mot : douche !"
+ },
+ {
+  "key": "celui-là, c'est: douche.",
+  "text": "Celui-là, c'est : douche."
+ },
+ {
+  "key": "cherche: douche.",
+  "text": "Cherche : douche."
+ },
+ {
+  "key": "bou… che… bouche!",
+  "text": "bou… che… bouche !"
+ },
+ {
+  "key": "touche le mot: bouche!",
+  "text": "Touche le mot : bouche !"
+ },
+ {
+  "key": "celui-là, c'est: bouche.",
+  "text": "Celui-là, c'est : bouche."
+ },
+ {
+  "key": "cherche: bouche.",
+  "text": "Cherche : bouche."
+ },
+ {
+  "key": "mou… che… mouche!",
+  "text": "mou… che… mouche !"
+ },
+ {
+  "key": "touche le mot: mouche!",
+  "text": "Touche le mot : mouche !"
+ },
+ {
+  "key": "celui-là, c'est: mouche.",
+  "text": "Celui-là, c'est : mouche."
+ },
+ {
+  "key": "cherche: mouche.",
+  "text": "Cherche : mouche."
+ },
+ {
+  "key": "touche le mot: feu!",
+  "text": "Touche le mot : feu !"
+ },
+ {
+  "key": "lou… pe… loupe!",
+  "text": "lou… pe… loupe !"
+ },
+ {
+  "key": "touche le mot: loupe!",
+  "text": "Touche le mot : loupe !"
+ },
+ {
+  "key": "celui-là, c'est: loupe.",
+  "text": "Celui-là, c'est : loupe."
+ },
+ {
+  "key": "cherche: loupe.",
+  "text": "Cherche : loupe."
+ },
+ {
+  "key": "ça, c'est: mouton.",
+  "text": "Ça, c'est : mouton."
+ },
+ {
+  "key": "écoute: mou… ton.",
+  "text": "Écoute : mou… ton."
+ },
+ {
+  "key": "ça, c'est: lapin.",
+  "text": "Ça, c'est : lapin."
+ },
+ {
+  "key": "écoute: la… pin.",
+  "text": "Écoute : la… pin."
+ },
+ {
+  "key": "ça, c'est: loup.",
+  "text": "Ça, c'est : loup."
+ },
+ {
+  "key": "ça, c'est: bonbon.",
+  "text": "Ça, c'est : bonbon."
+ },
+ {
+  "key": "écoute: bon… bon.",
+  "text": "Écoute : bon… bon."
+ },
+ {
+  "key": "ça, c'est: fourmi.",
+  "text": "Ça, c'est : fourmi."
+ },
+ {
+  "key": "écoute: four… mi.",
+  "text": "Écoute : four… mi."
+ },
+ {
+  "key": "ça, c'est: poule.",
+  "text": "Ça, c'est : poule."
+ },
+ {
+  "key": "écoute: pou… le.",
+  "text": "Écoute : pou… le."
+ },
+ {
+  "key": "ça, c'est: roi.",
+  "text": "Ça, c'est : roi."
+ },
+ {
+  "key": "ça, c'est: étoile.",
+  "text": "Ça, c'est : étoile."
+ },
+ {
+  "key": "écoute: é… toi… le.",
+  "text": "Écoute : é… toi… le."
+ },
+ {
+  "key": "ça, c'est: sapin.",
+  "text": "Ça, c'est : sapin."
+ },
+ {
+  "key": "écoute: sa… pin.",
+  "text": "Écoute : sa… pin."
+ },
+ {
+  "key": "ça, c'est: panda.",
+  "text": "Ça, c'est : panda."
+ },
+ {
+  "key": "écoute: pan… da.",
+  "text": "Écoute : pan… da."
+ },
+ {
+  "key": "ça, c'est: lion.",
+  "text": "Ça, c'est : lion."
+ },
+ {
+  "key": "écoute: li… on.",
+  "text": "Écoute : li… on."
+ },
+ {
+  "key": "ça, c'est: ruban.",
+  "text": "Ça, c'est : ruban."
+ },
+ {
+  "key": "écoute: ru… ban.",
+  "text": "Écoute : ru… ban."
+ },
+ {
+  "key": "ça, c'est: souris.",
+  "text": "Ça, c'est : souris."
+ },
+ {
+  "key": "écoute: sou… ris.",
+  "text": "Écoute : sou… ris."
+ },
+ {
+  "key": "ça, c'est: violon.",
+  "text": "Ça, c'est : violon."
+ },
+ {
+  "key": "écoute: vi… o… lon.",
+  "text": "Écoute : vi… o… lon."
+ },
+ {
+  "key": "ça, c'est: nounours.",
+  "text": "Ça, c'est : nounours."
+ },
+ {
+  "key": "écoute: nou… nours.",
+  "text": "Écoute : nou… nours."
+ },
+ {
+  "key": "ça, c'est: hibou.",
+  "text": "Ça, c'est : hibou."
+ },
+ {
+  "key": "écoute: hi… bou.",
+  "text": "Écoute : hi… bou."
+ },
+ {
+  "key": "ça, c'est: douche.",
+  "text": "Ça, c'est : douche."
+ },
+ {
+  "key": "écoute: dou… che.",
+  "text": "Écoute : dou… che."
+ },
+ {
+  "key": "ça, c'est: bouche.",
+  "text": "Ça, c'est : bouche."
+ },
+ {
+  "key": "écoute: bou… che.",
+  "text": "Écoute : bou… che."
+ },
+ {
+  "key": "ça, c'est: mouche.",
+  "text": "Ça, c'est : mouche."
+ },
+ {
+  "key": "écoute: mou… che.",
+  "text": "Écoute : mou… che."
+ },
+ {
+  "key": "ça, c'est: feu.",
+  "text": "Ça, c'est : feu."
+ },
+ {
+  "key": "ça, c'est: loupe.",
+  "text": "Ça, c'est : loupe."
+ },
+ {
+  "key": "écoute: lou… pe.",
+  "text": "Écoute : lou… pe."
+ },
+ {
+  "key": "ca!",
+  "text": "ca !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: ca!",
+  "text": "Touche le bloc qui fait le son : ca !"
+ },
+ {
+  "key": "celui-là, c'est: ca.",
+  "text": "Celui-là, c'est : ca."
+ },
+ {
+  "key": "cherche: ca.",
+  "text": "Cherche : ca."
+ },
+ {
+  "key": "ka!",
+  "text": "ka !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: ka!",
+  "text": "Touche le bloc qui fait le son : ka !"
+ },
+ {
+  "key": "celui-là, c'est: ka.",
+  "text": "Celui-là, c'est : ka."
+ },
+ {
+  "key": "cherche: ka.",
+  "text": "Cherche : ka."
+ },
+ {
+  "key": "co!",
+  "text": "co !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: co!",
+  "text": "Touche le bloc qui fait le son : co !"
+ },
+ {
+  "key": "celui-là, c'est: co.",
+  "text": "Celui-là, c'est : co."
+ },
+ {
+  "key": "cherche: co.",
+  "text": "Cherche : co."
+ },
+ {
+  "key": "qui!",
+  "text": "qui !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: qui!",
+  "text": "Touche le bloc qui fait le son : qui !"
+ },
+ {
+  "key": "celui-là, c'est: qui.",
+  "text": "Celui-là, c'est : qui."
+ },
+ {
+  "key": "cherche: qui.",
+  "text": "Cherche : qui."
+ },
+ {
+  "key": "ga!",
+  "text": "ga !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: ga!",
+  "text": "Touche le bloc qui fait le son : ga !"
+ },
+ {
+  "key": "celui-là, c'est: ga.",
+  "text": "Celui-là, c'est : ga."
+ },
+ {
+  "key": "cherche: ga.",
+  "text": "Cherche : ga."
+ },
+ {
+  "key": "go!",
+  "text": "go !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: go!",
+  "text": "Touche le bloc qui fait le son : go !"
+ },
+ {
+  "key": "celui-là, c'est: go.",
+  "text": "Celui-là, c'est : go."
+ },
+ {
+  "key": "cherche: go.",
+  "text": "Cherche : go."
+ },
+ {
+  "key": "gui!",
+  "text": "gui !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: gui!",
+  "text": "Touche le bloc qui fait le son : gui !"
+ },
+ {
+  "key": "celui-là, c'est: gui.",
+  "text": "Celui-là, c'est : gui."
+ },
+ {
+  "key": "cherche: gui.",
+  "text": "Cherche : gui."
+ },
+ {
+  "key": "gué!",
+  "text": "gué !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: gué!",
+  "text": "Touche le bloc qui fait le son : gué !"
+ },
+ {
+  "key": "celui-là, c'est: gué.",
+  "text": "Celui-là, c'est : gué."
+ },
+ {
+  "key": "cherche: gué.",
+  "text": "Cherche : gué."
+ },
+ {
+  "key": "ce!",
+  "text": "ce !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: ce!",
+  "text": "Touche le bloc qui fait le son : ce !"
+ },
+ {
+  "key": "celui-là, c'est: ce.",
+  "text": "Celui-là, c'est : ce."
+ },
+ {
+  "key": "cherche: ce.",
+  "text": "Cherche : ce."
+ },
+ {
+  "key": "ça!",
+  "text": "ça !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: ça!",
+  "text": "Touche le bloc qui fait le son : ça !"
+ },
+ {
+  "key": "celui-là, c'est: ça.",
+  "text": "Celui-là, c'est : ça."
+ },
+ {
+  "key": "cherche: ça.",
+  "text": "Cherche : ça."
+ },
+ {
+  "key": "je!",
+  "text": "je !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: je!",
+  "text": "Touche le bloc qui fait le son : je !"
+ },
+ {
+  "key": "celui-là, c'est: je.",
+  "text": "Celui-là, c'est : je."
+ },
+ {
+  "key": "cherche: je.",
+  "text": "Cherche : je."
+ },
+ {
+  "key": "j'y!",
+  "text": "j'y !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: j'y!",
+  "text": "Touche le bloc qui fait le son : j'y !"
+ },
+ {
+  "key": "celui-là, c'est: j'y.",
+  "text": "Celui-là, c'est : j'y."
+ },
+ {
+  "key": "cherche: j'y.",
+  "text": "Cherche : j'y."
+ },
+ {
+  "key": "è, comme dans zèbre.",
+  "text": "è, comme dans zèbre."
+ },
+ {
+  "key": "touche le bloc qui fait le son: è!",
+  "text": "Touche le bloc qui fait le son : è !"
+ },
+ {
+  "key": "celui-là, c'est: è.",
+  "text": "Celui-là, c'est : è."
+ },
+ {
+  "key": "cherche: è.",
+  "text": "Cherche : è."
+ },
+ {
+  "key": "è, comme dans lait.",
+  "text": "è, comme dans lait."
+ },
+ {
+  "key": "è, comme dans baleine.",
+  "text": "è, comme dans baleine."
+ },
+ {
+  "key": "o, comme dans jaune.",
+  "text": "o, comme dans jaune."
+ },
+ {
+  "key": "o, comme dans bateau.",
+  "text": "o, comme dans bateau."
+ },
+ {
+  "key": "an, comme dans dent.",
+  "text": "an, comme dans dent."
+ },
+ {
+  "key": "an, comme dans jambe.",
+  "text": "an, comme dans jambe."
+ },
+ {
+  "key": "hein, comme dans pain.",
+  "text": "hein, comme dans pain."
+ },
+ {
+  "key": "on, comme dans pompier.",
+  "text": "on, comme dans pompier."
+ },
+ {
+  "key": "gne, comme dans montagne.",
+  "text": "gne, comme dans montagne."
+ },
+ {
+  "key": "touche le bloc qui fait le son: gne!",
+  "text": "Touche le bloc qui fait le son : gne !"
+ },
+ {
+  "key": "celui-là, c'est: gne.",
+  "text": "Celui-là, c'est : gne."
+ },
+ {
+  "key": "cherche: gne.",
+  "text": "Cherche : gne."
+ },
+ {
+  "key": "ille, comme dans fille.",
+  "text": "ille, comme dans fille."
+ },
+ {
+  "key": "touche le bloc qui fait le son: ille!",
+  "text": "Touche le bloc qui fait le son : ille !"
+ },
+ {
+  "key": "celui-là, c'est: ille.",
+  "text": "Celui-là, c'est : ille."
+ },
+ {
+  "key": "cherche: ille.",
+  "text": "Cherche : ille."
+ },
+ {
+  "key": "feu, comme dans dauphin.",
+  "text": "feu, comme dans dauphin."
+ },
+ {
+  "key": "ouin, comme dans coin.",
+  "text": "ouin, comme dans coin."
+ },
+ {
+  "key": "touche le bloc qui fait le son: ouin!",
+  "text": "Touche le bloc qui fait le son : ouin !"
+ },
+ {
+  "key": "celui-là, c'est: ouin.",
+  "text": "Celui-là, c'est : ouin."
+ },
+ {
+  "key": "cherche: ouin.",
+  "text": "Cherche : ouin."
+ },
+ {
+  "key": "che, comme dans chat.",
+  "text": "che, comme dans chat."
+ },
+ {
+  "key": "touche le bloc qui fait le son: che!",
+  "text": "Touche le bloc qui fait le son : che !"
+ },
+ {
+  "key": "celui-là, c'est: che.",
+  "text": "Celui-là, c'est : che."
+ },
+ {
+  "key": "cherche: che.",
+  "text": "Cherche : che."
+ },
+ {
+  "key": "je, comme dans judo.",
+  "text": "je, comme dans judo."
  },
  {
   "key": "ca… deau… cadeau!",
@@ -6478,22 +7422,6 @@
   "text": "Cherche : chameau."
  },
  {
-  "key": "bal… lon… ballon!",
-  "text": "bal… lon… ballon !"
- },
- {
-  "key": "touche le mot: ballon!",
-  "text": "Touche le mot : ballon !"
- },
- {
-  "key": "celui-là, c'est: ballon.",
-  "text": "Celui-là, c'est : ballon."
- },
- {
-  "key": "cherche: ballon.",
-  "text": "Cherche : ballon."
- },
- {
   "key": "mai… son… maison!",
   "text": "mai… son… maison !"
  },
@@ -6508,34 +7436,6 @@
  {
   "key": "cherche: maison.",
   "text": "Cherche : maison."
- },
- {
-  "key": "ci… tron… citron!",
-  "text": "ci… tron… citron !"
- },
- {
-  "key": "touche le mot: citron!",
-  "text": "Touche le mot : citron !"
- },
- {
-  "key": "celui-là, c'est: citron.",
-  "text": "Celui-là, c'est : citron."
- },
- {
-  "key": "cherche: citron.",
-  "text": "Cherche : citron."
- },
- {
-  "key": "a… vion… avion!",
-  "text": "a… vion… avion !"
- },
- {
-  "key": "celui-là, c'est: avion.",
-  "text": "Celui-là, c'est : avion."
- },
- {
-  "key": "cherche: avion.",
-  "text": "Cherche : avion."
  },
  {
   "key": "ca… mion… camion!",
@@ -6554,26 +7454,6 @@
   "text": "Cherche : camion."
  },
  {
-  "key": "touche le mot: roi!",
-  "text": "Touche le mot : roi !"
- },
- {
-  "key": "é… toi… le… étoile!",
-  "text": "é… toi… le… étoile !"
- },
- {
-  "key": "touche le mot: étoile!",
-  "text": "Touche le mot : étoile !"
- },
- {
-  "key": "celui-là, c'est: étoile.",
-  "text": "Celui-là, c'est : étoile."
- },
- {
-  "key": "cherche: étoile.",
-  "text": "Cherche : étoile."
- },
- {
   "key": "co… chon… cochon!",
   "text": "co… chon… cochon !"
  },
@@ -6590,54 +7470,6 @@
   "text": "Cherche : cochon."
  },
  {
-  "key": "pom… me… pomme!",
-  "text": "pom… me… pomme !"
- },
- {
-  "key": "touche le mot: pomme!",
-  "text": "Touche le mot : pomme !"
- },
- {
-  "key": "celui-là, c'est: pomme.",
-  "text": "Celui-là, c'est : pomme."
- },
- {
-  "key": "cherche: pomme.",
-  "text": "Cherche : pomme."
- },
- {
-  "key": "four… mi… fourmi!",
-  "text": "four… mi… fourmi !"
- },
- {
-  "key": "touche le mot: fourmi!",
-  "text": "Touche le mot : fourmi !"
- },
- {
-  "key": "celui-là, c'est: fourmi.",
-  "text": "Celui-là, c'est : fourmi."
- },
- {
-  "key": "cherche: fourmi.",
-  "text": "Cherche : fourmi."
- },
- {
-  "key": "pou… le… poule!",
-  "text": "pou… le… poule !"
- },
- {
-  "key": "touche le mot: poule!",
-  "text": "Touche le mot : poule !"
- },
- {
-  "key": "celui-là, c'est: poule.",
-  "text": "Celui-là, c'est : poule."
- },
- {
-  "key": "cherche: poule.",
-  "text": "Cherche : poule."
- },
- {
   "key": "oi… seau… oiseau!",
   "text": "oi… seau… oiseau !"
  },
@@ -6652,54 +7484,6 @@
  {
   "key": "cherche: oiseau.",
   "text": "Cherche : oiseau."
- },
- {
-  "key": "pin… gouin… pingouin!",
-  "text": "pin… gouin… pingouin !"
- },
- {
-  "key": "touche le mot: pingouin!",
-  "text": "Touche le mot : pingouin !"
- },
- {
-  "key": "celui-là, c'est: pingouin.",
-  "text": "Celui-là, c'est : pingouin."
- },
- {
-  "key": "cherche: pingouin.",
-  "text": "Cherche : pingouin."
- },
- {
-  "key": "bon… bon… bonbon!",
-  "text": "bon… bon… bonbon !"
- },
- {
-  "key": "touche le mot: bonbon!",
-  "text": "Touche le mot : bonbon !"
- },
- {
-  "key": "celui-là, c'est: bonbon.",
-  "text": "Celui-là, c'est : bonbon."
- },
- {
-  "key": "cherche: bonbon.",
-  "text": "Cherche : bonbon."
- },
- {
-  "key": "pous… sin… poussin!",
-  "text": "pous… sin… poussin !"
- },
- {
-  "key": "touche le mot: poussin!",
-  "text": "Touche le mot : poussin !"
- },
- {
-  "key": "celui-là, c'est: poussin.",
-  "text": "Celui-là, c'est : poussin."
- },
- {
-  "key": "cherche: poussin.",
-  "text": "Cherche : poussin."
  },
  {
   "key": "dau… phin… dauphin!",
@@ -6734,52 +7518,408 @@
   "text": "Cherche : soleil."
  },
  {
-  "key": "cra… yon… crayon!",
-  "text": "cra… yon… crayon !"
+  "key": "a… beil… le… abeille!",
+  "text": "a… beil… le… abeille !"
  },
  {
-  "key": "touche le mot: crayon!",
-  "text": "Touche le mot : crayon !"
+  "key": "touche le mot: abeille!",
+  "text": "Touche le mot : abeille !"
  },
  {
-  "key": "celui-là, c'est: crayon.",
-  "text": "Celui-là, c'est : crayon."
+  "key": "celui-là, c'est: abeille.",
+  "text": "Celui-là, c'est : abeille."
  },
  {
-  "key": "cherche: crayon.",
-  "text": "Cherche : crayon."
+  "key": "cherche: abeille.",
+  "text": "Cherche : abeille."
  },
  {
-  "key": "ça, c'est: mouton.",
-  "text": "Ça, c'est : mouton."
+  "key": "go… ril… le… gorille!",
+  "text": "go… ril… le… gorille !"
  },
  {
-  "key": "écoute: mou… ton.",
-  "text": "Écoute : mou… ton."
+  "key": "touche le mot: gorille!",
+  "text": "Touche le mot : gorille !"
  },
  {
-  "key": "ça, c'est: lapin.",
-  "text": "Ça, c'est : lapin."
+  "key": "celui-là, c'est: gorille.",
+  "text": "Celui-là, c'est : gorille."
  },
  {
-  "key": "écoute: la… pin.",
-  "text": "Écoute : la… pin."
+  "key": "cherche: gorille.",
+  "text": "Cherche : gorille."
  },
  {
-  "key": "ça, c'est: poisson.",
-  "text": "Ça, c'est : poisson."
+  "key": "gi… ra… fe… girafe!",
+  "text": "gi… ra… fe… girafe !"
  },
  {
-  "key": "écoute: pois… son.",
-  "text": "Écoute : pois… son."
+  "key": "touche le mot: girafe!",
+  "text": "Touche le mot : girafe !"
  },
  {
-  "key": "ça, c'est: chat.",
-  "text": "Ça, c'est : chat."
+  "key": "celui-là, c'est: girafe.",
+  "text": "Celui-là, c'est : girafe."
  },
  {
-  "key": "ça, c'est: loup.",
-  "text": "Ça, c'est : loup."
+  "key": "cherche: girafe.",
+  "text": "Cherche : girafe."
+ },
+ {
+  "key": "ca… nard… canard!",
+  "text": "ca… nard… canard !"
+ },
+ {
+  "key": "touche le mot: canard!",
+  "text": "Touche le mot : canard !"
+ },
+ {
+  "key": "celui-là, c'est: canard.",
+  "text": "Celui-là, c'est : canard."
+ },
+ {
+  "key": "cherche: canard.",
+  "text": "Cherche : canard."
+ },
+ {
+  "key": "ce… ri… se… cerise!",
+  "text": "ce… ri… se… cerise !"
+ },
+ {
+  "key": "touche le mot: cerise!",
+  "text": "Touche le mot : cerise !"
+ },
+ {
+  "key": "celui-là, c'est: cerise.",
+  "text": "Celui-là, c'est : cerise."
+ },
+ {
+  "key": "cherche: cerise.",
+  "text": "Cherche : cerise."
+ },
+ {
+  "key": "va… li… se… valise!",
+  "text": "va… li… se… valise !"
+ },
+ {
+  "key": "touche le mot: valise!",
+  "text": "Touche le mot : valise !"
+ },
+ {
+  "key": "celui-là, c'est: valise.",
+  "text": "Celui-là, c'est : valise."
+ },
+ {
+  "key": "cherche: valise.",
+  "text": "Cherche : valise."
+ },
+ {
+  "key": "fu… sée… fusée!",
+  "text": "fu… sée… fusée !"
+ },
+ {
+  "key": "touche le mot: fusée!",
+  "text": "Touche le mot : fusée !"
+ },
+ {
+  "key": "celui-là, c'est: fusée.",
+  "text": "Celui-là, c'est : fusée."
+ },
+ {
+  "key": "cherche: fusée.",
+  "text": "Cherche : fusée."
+ },
+ {
+  "key": "pom… me… pomme!",
+  "text": "pom… me… pomme !"
+ },
+ {
+  "key": "touche le mot: pomme!",
+  "text": "Touche le mot : pomme !"
+ },
+ {
+  "key": "celui-là, c'est: pomme.",
+  "text": "Celui-là, c'est : pomme."
+ },
+ {
+  "key": "cherche: pomme.",
+  "text": "Cherche : pomme."
+ },
+ {
+  "key": "bal… lon… ballon!",
+  "text": "bal… lon… ballon !"
+ },
+ {
+  "key": "touche le mot: ballon!",
+  "text": "Touche le mot : ballon !"
+ },
+ {
+  "key": "celui-là, c'est: ballon.",
+  "text": "Celui-là, c'est : ballon."
+ },
+ {
+  "key": "cherche: ballon.",
+  "text": "Cherche : ballon."
+ },
+ {
+  "key": "pois… son… poisson!",
+  "text": "pois… son… poisson !"
+ },
+ {
+  "key": "touche le mot: poisson!",
+  "text": "Touche le mot : poisson !"
+ },
+ {
+  "key": "celui-là, c'est: poisson.",
+  "text": "Celui-là, c'est : poisson."
+ },
+ {
+  "key": "cherche: poisson.",
+  "text": "Cherche : poisson."
+ },
+ {
+  "key": "pous… sin… poussin!",
+  "text": "pous… sin… poussin !"
+ },
+ {
+  "key": "touche le mot: poussin!",
+  "text": "Touche le mot : poussin !"
+ },
+ {
+  "key": "celui-là, c'est: poussin.",
+  "text": "Celui-là, c'est : poussin."
+ },
+ {
+  "key": "cherche: poussin.",
+  "text": "Cherche : poussin."
+ },
+ {
+  "key": "ca… rot… te… carotte!",
+  "text": "ca… rot… te… carotte !"
+ },
+ {
+  "key": "touche le mot: carotte!",
+  "text": "Touche le mot : carotte !"
+ },
+ {
+  "key": "celui-là, c'est: carotte.",
+  "text": "Celui-là, c'est : carotte."
+ },
+ {
+  "key": "cherche: carotte.",
+  "text": "Cherche : carotte."
+ },
+ {
+  "key": "gui… ta… re… guitare!",
+  "text": "gui… ta… re… guitare !"
+ },
+ {
+  "key": "touche le mot: guitare!",
+  "text": "Touche le mot : guitare !"
+ },
+ {
+  "key": "celui-là, c'est: guitare.",
+  "text": "Celui-là, c'est : guitare."
+ },
+ {
+  "key": "cherche: guitare.",
+  "text": "Cherche : guitare."
+ },
+ {
+  "key": "ca… fé… café!",
+  "text": "ca… fé… café !"
+ },
+ {
+  "key": "touche le mot: café!",
+  "text": "Touche le mot : café !"
+ },
+ {
+  "key": "celui-là, c'est: café.",
+  "text": "Celui-là, c'est : café."
+ },
+ {
+  "key": "cherche: café.",
+  "text": "Cherche : café."
+ },
+ {
+  "key": "pin… gouin… pingouin!",
+  "text": "pin… gouin… pingouin !"
+ },
+ {
+  "key": "touche le mot: pingouin!",
+  "text": "Touche le mot : pingouin !"
+ },
+ {
+  "key": "celui-là, c'est: pingouin.",
+  "text": "Celui-là, c'est : pingouin."
+ },
+ {
+  "key": "cherche: pingouin.",
+  "text": "Cherche : pingouin."
+ },
+ {
+  "key": "mon… ta… gne… montagne!",
+  "text": "mon… ta… gne… montagne !"
+ },
+ {
+  "key": "touche le mot: montagne!",
+  "text": "Touche le mot : montagne !"
+ },
+ {
+  "key": "celui-là, c'est: montagne.",
+  "text": "Celui-là, c'est : montagne."
+ },
+ {
+  "key": "cherche: montagne.",
+  "text": "Cherche : montagne."
+ },
+ {
+  "key": "rai… sin… raisin!",
+  "text": "rai… sin… raisin !"
+ },
+ {
+  "key": "touche le mot: raisin!",
+  "text": "Touche le mot : raisin !"
+ },
+ {
+  "key": "celui-là, c'est: raisin.",
+  "text": "Celui-là, c'est : raisin."
+ },
+ {
+  "key": "cherche: raisin.",
+  "text": "Cherche : raisin."
+ },
+ {
+  "key": "ba… lei… ne… baleine!",
+  "text": "ba… lei… ne… baleine !"
+ },
+ {
+  "key": "touche le mot: baleine!",
+  "text": "Touche le mot : baleine !"
+ },
+ {
+  "key": "celui-là, c'est: baleine.",
+  "text": "Celui-là, c'est : baleine."
+ },
+ {
+  "key": "cherche: baleine.",
+  "text": "Cherche : baleine."
+ },
+ {
+  "key": "che… val… cheval!",
+  "text": "che… val… cheval !"
+ },
+ {
+  "key": "touche le mot: cheval!",
+  "text": "Touche le mot : cheval !"
+ },
+ {
+  "key": "celui-là, c'est: cheval.",
+  "text": "Celui-là, c'est : cheval."
+ },
+ {
+  "key": "cherche: cheval.",
+  "text": "Cherche : cheval."
+ },
+ {
+  "key": "ser… pent… serpent!",
+  "text": "ser… pent… serpent !"
+ },
+ {
+  "key": "touche le mot: serpent!",
+  "text": "Touche le mot : serpent !"
+ },
+ {
+  "key": "celui-là, c'est: serpent.",
+  "text": "Celui-là, c'est : serpent."
+ },
+ {
+  "key": "cherche: serpent.",
+  "text": "Cherche : serpent."
+ },
+ {
+  "key": "touche le mot: dent!",
+  "text": "Touche le mot : dent !"
+ },
+ {
+  "key": "celui-là, c'est: dent.",
+  "text": "Celui-là, c'est : dent."
+ },
+ {
+  "key": "cherche: dent.",
+  "text": "Cherche : dent."
+ },
+ {
+  "key": "touche le mot: gant!",
+  "text": "Touche le mot : gant !"
+ },
+ {
+  "key": "celui-là, c'est: gant.",
+  "text": "Celui-là, c'est : gant."
+ },
+ {
+  "key": "cherche: gant.",
+  "text": "Cherche : gant."
+ },
+ {
+  "key": "touche le mot: pain!",
+  "text": "Touche le mot : pain !"
+ },
+ {
+  "key": "celui-là, c'est: pain.",
+  "text": "Celui-là, c'est : pain."
+ },
+ {
+  "key": "cherche: pain.",
+  "text": "Cherche : pain."
+ },
+ {
+  "key": "lait!",
+  "text": "lait !"
+ },
+ {
+  "key": "touche le mot: lait!",
+  "text": "Touche le mot : lait !"
+ },
+ {
+  "key": "celui-là, c'est: lait.",
+  "text": "Celui-là, c'est : lait."
+ },
+ {
+  "key": "cherche: lait.",
+  "text": "Cherche : lait."
+ },
+ {
+  "key": "quil… le… quille!",
+  "text": "quil… le… quille !"
+ },
+ {
+  "key": "touche le mot: quille!",
+  "text": "Touche le mot : quille !"
+ },
+ {
+  "key": "celui-là, c'est: quille.",
+  "text": "Celui-là, c'est : quille."
+ },
+ {
+  "key": "cherche: quille.",
+  "text": "Cherche : quille."
+ },
+ {
+  "key": "voi… tu… re… voiture!",
+  "text": "voi… tu… re… voiture !"
+ },
+ {
+  "key": "touche le mot: voiture!",
+  "text": "Touche le mot : voiture !"
+ },
+ {
+  "key": "celui-là, c'est: voiture.",
+  "text": "Celui-là, c'est : voiture."
+ },
+ {
+  "key": "cherche: voiture.",
+  "text": "Cherche : voiture."
  },
  {
   "key": "ça, c'est: cadeau.",
@@ -6822,36 +7962,12 @@
   "text": "Écoute : cha… meau."
  },
  {
-  "key": "ça, c'est: ballon.",
-  "text": "Ça, c'est : ballon."
- },
- {
-  "key": "écoute: bal… lon.",
-  "text": "Écoute : bal… lon."
- },
- {
   "key": "ça, c'est: maison.",
   "text": "Ça, c'est : maison."
  },
  {
   "key": "écoute: mai… son.",
   "text": "Écoute : mai… son."
- },
- {
-  "key": "ça, c'est: citron.",
-  "text": "Ça, c'est : citron."
- },
- {
-  "key": "écoute: ci… tron.",
-  "text": "Écoute : ci… tron."
- },
- {
-  "key": "ça, c'est: avion.",
-  "text": "Ça, c'est : avion."
- },
- {
-  "key": "écoute: a… vion.",
-  "text": "Écoute : a… vion."
  },
  {
   "key": "ça, c'est: camion.",
@@ -6862,18 +7978,6 @@
   "text": "Écoute : ca… mion."
  },
  {
-  "key": "ça, c'est: roi.",
-  "text": "Ça, c'est : roi."
- },
- {
-  "key": "ça, c'est: étoile.",
-  "text": "Ça, c'est : étoile."
- },
- {
-  "key": "écoute: é… toi… le.",
-  "text": "Écoute : é… toi… le."
- },
- {
   "key": "ça, c'est: cochon.",
   "text": "Ça, c'est : cochon."
  },
@@ -6882,60 +7986,12 @@
   "text": "Écoute : co… chon."
  },
  {
-  "key": "ça, c'est: pomme.",
-  "text": "Ça, c'est : pomme."
- },
- {
-  "key": "écoute: pom… me.",
-  "text": "Écoute : pom… me."
- },
- {
-  "key": "ça, c'est: fourmi.",
-  "text": "Ça, c'est : fourmi."
- },
- {
-  "key": "écoute: four… mi.",
-  "text": "Écoute : four… mi."
- },
- {
-  "key": "ça, c'est: poule.",
-  "text": "Ça, c'est : poule."
- },
- {
-  "key": "écoute: pou… le.",
-  "text": "Écoute : pou… le."
- },
- {
   "key": "ça, c'est: oiseau.",
   "text": "Ça, c'est : oiseau."
  },
  {
   "key": "écoute: oi… seau.",
   "text": "Écoute : oi… seau."
- },
- {
-  "key": "ça, c'est: pingouin.",
-  "text": "Ça, c'est : pingouin."
- },
- {
-  "key": "écoute: pin… gouin.",
-  "text": "Écoute : pin… gouin."
- },
- {
-  "key": "ça, c'est: bonbon.",
-  "text": "Ça, c'est : bonbon."
- },
- {
-  "key": "écoute: bon… bon.",
-  "text": "Écoute : bon… bon."
- },
- {
-  "key": "ça, c'est: poussin.",
-  "text": "Ça, c'est : poussin."
- },
- {
-  "key": "écoute: pous… sin.",
-  "text": "Écoute : pous… sin."
  },
  {
   "key": "ça, c'est: dauphin.",
@@ -6954,12 +8010,1376 @@
   "text": "Écoute : so… leil."
  },
  {
-  "key": "ça, c'est: crayon.",
-  "text": "Ça, c'est : crayon."
+  "key": "ça, c'est: abeille.",
+  "text": "Ça, c'est : abeille."
  },
  {
-  "key": "écoute: cra… yon.",
-  "text": "Écoute : cra… yon."
+  "key": "écoute: a… beil… le.",
+  "text": "Écoute : a… beil… le."
+ },
+ {
+  "key": "ça, c'est: gorille.",
+  "text": "Ça, c'est : gorille."
+ },
+ {
+  "key": "écoute: go… ril… le.",
+  "text": "Écoute : go… ril… le."
+ },
+ {
+  "key": "ça, c'est: girafe.",
+  "text": "Ça, c'est : girafe."
+ },
+ {
+  "key": "écoute: gi… ra… fe.",
+  "text": "Écoute : gi… ra… fe."
+ },
+ {
+  "key": "ça, c'est: canard.",
+  "text": "Ça, c'est : canard."
+ },
+ {
+  "key": "écoute: ca… nard.",
+  "text": "Écoute : ca… nard."
+ },
+ {
+  "key": "ça, c'est: cerise.",
+  "text": "Ça, c'est : cerise."
+ },
+ {
+  "key": "écoute: ce… ri… se.",
+  "text": "Écoute : ce… ri… se."
+ },
+ {
+  "key": "ça, c'est: valise.",
+  "text": "Ça, c'est : valise."
+ },
+ {
+  "key": "écoute: va… li… se.",
+  "text": "Écoute : va… li… se."
+ },
+ {
+  "key": "ça, c'est: fusée.",
+  "text": "Ça, c'est : fusée."
+ },
+ {
+  "key": "écoute: fu… sée.",
+  "text": "Écoute : fu… sée."
+ },
+ {
+  "key": "ça, c'est: pomme.",
+  "text": "Ça, c'est : pomme."
+ },
+ {
+  "key": "écoute: pom… me.",
+  "text": "Écoute : pom… me."
+ },
+ {
+  "key": "ça, c'est: ballon.",
+  "text": "Ça, c'est : ballon."
+ },
+ {
+  "key": "écoute: bal… lon.",
+  "text": "Écoute : bal… lon."
+ },
+ {
+  "key": "ça, c'est: poisson.",
+  "text": "Ça, c'est : poisson."
+ },
+ {
+  "key": "écoute: pois… son.",
+  "text": "Écoute : pois… son."
+ },
+ {
+  "key": "ça, c'est: poussin.",
+  "text": "Ça, c'est : poussin."
+ },
+ {
+  "key": "écoute: pous… sin.",
+  "text": "Écoute : pous… sin."
+ },
+ {
+  "key": "ça, c'est: carotte.",
+  "text": "Ça, c'est : carotte."
+ },
+ {
+  "key": "écoute: ca… rot… te.",
+  "text": "Écoute : ca… rot… te."
+ },
+ {
+  "key": "ça, c'est: guitare.",
+  "text": "Ça, c'est : guitare."
+ },
+ {
+  "key": "écoute: gui… ta… re.",
+  "text": "Écoute : gui… ta… re."
+ },
+ {
+  "key": "ça, c'est: café.",
+  "text": "Ça, c'est : café."
+ },
+ {
+  "key": "écoute: ca… fé.",
+  "text": "Écoute : ca… fé."
+ },
+ {
+  "key": "ça, c'est: pingouin.",
+  "text": "Ça, c'est : pingouin."
+ },
+ {
+  "key": "écoute: pin… gouin.",
+  "text": "Écoute : pin… gouin."
+ },
+ {
+  "key": "ça, c'est: montagne.",
+  "text": "Ça, c'est : montagne."
+ },
+ {
+  "key": "écoute: mon… ta… gne.",
+  "text": "Écoute : mon… ta… gne."
+ },
+ {
+  "key": "ça, c'est: raisin.",
+  "text": "Ça, c'est : raisin."
+ },
+ {
+  "key": "écoute: rai… sin.",
+  "text": "Écoute : rai… sin."
+ },
+ {
+  "key": "ça, c'est: baleine.",
+  "text": "Ça, c'est : baleine."
+ },
+ {
+  "key": "écoute: ba… lei… ne.",
+  "text": "Écoute : ba… lei… ne."
+ },
+ {
+  "key": "ça, c'est: cheval.",
+  "text": "Ça, c'est : cheval."
+ },
+ {
+  "key": "écoute: che… val.",
+  "text": "Écoute : che… val."
+ },
+ {
+  "key": "ça, c'est: serpent.",
+  "text": "Ça, c'est : serpent."
+ },
+ {
+  "key": "écoute: ser… pent.",
+  "text": "Écoute : ser… pent."
+ },
+ {
+  "key": "ça, c'est: dent.",
+  "text": "Ça, c'est : dent."
+ },
+ {
+  "key": "ça, c'est: gant.",
+  "text": "Ça, c'est : gant."
+ },
+ {
+  "key": "ça, c'est: pain.",
+  "text": "Ça, c'est : pain."
+ },
+ {
+  "key": "ça, c'est: lait.",
+  "text": "Ça, c'est : lait."
+ },
+ {
+  "key": "écoute: lait.",
+  "text": "Écoute : lait."
+ },
+ {
+  "key": "ça, c'est: quille.",
+  "text": "Ça, c'est : quille."
+ },
+ {
+  "key": "écoute: quil… le.",
+  "text": "Écoute : quil… le."
+ },
+ {
+  "key": "ça, c'est: voiture.",
+  "text": "Ça, c'est : voiture."
+ },
+ {
+  "key": "écoute: voi… tu… re.",
+  "text": "Écoute : voi… tu… re."
+ },
+ {
+  "key": "écris le mot: cadeau!",
+  "text": "Écris le mot : cadeau !"
+ },
+ {
+  "key": "écoute bien: cadeau.",
+  "text": "Écoute bien : cadeau."
+ },
+ {
+  "key": "écris le mot: bateau!",
+  "text": "Écris le mot : bateau !"
+ },
+ {
+  "key": "écoute bien: bateau.",
+  "text": "Écoute bien : bateau."
+ },
+ {
+  "key": "écris le mot: chapeau!",
+  "text": "Écris le mot : chapeau !"
+ },
+ {
+  "key": "écoute bien: chapeau.",
+  "text": "Écoute bien : chapeau."
+ },
+ {
+  "key": "écris le mot: chameau!",
+  "text": "Écris le mot : chameau !"
+ },
+ {
+  "key": "écoute bien: chameau.",
+  "text": "Écoute bien : chameau."
+ },
+ {
+  "key": "écris le mot: cochon!",
+  "text": "Écris le mot : cochon !"
+ },
+ {
+  "key": "écoute bien: cochon.",
+  "text": "Écoute bien : cochon."
+ },
+ {
+  "key": "écris le mot: café!",
+  "text": "Écris le mot : café !"
+ },
+ {
+  "key": "écoute bien: café.",
+  "text": "Écoute bien : café."
+ },
+ {
+  "key": "écris le mot: dauphin!",
+  "text": "Écris le mot : dauphin !"
+ },
+ {
+  "key": "écoute bien: dauphin.",
+  "text": "Écoute bien : dauphin."
+ },
+ {
+  "key": "écris le mot: camion!",
+  "text": "Écris le mot : camion !"
+ },
+ {
+  "key": "écoute bien: camion.",
+  "text": "Écoute bien : camion."
+ },
+ {
+  "key": "écris le mot: mouton!",
+  "text": "Écris le mot : mouton !"
+ },
+ {
+  "key": "écoute bien: mouton.",
+  "text": "Écoute bien : mouton."
+ },
+ {
+  "key": "écris le mot: lapin!",
+  "text": "Écris le mot : lapin !"
+ },
+ {
+  "key": "écoute bien: lapin.",
+  "text": "Écoute bien : lapin."
+ },
+ {
+  "key": "écris le mot: bonbon!",
+  "text": "Écris le mot : bonbon !"
+ },
+ {
+  "key": "écoute bien: bonbon.",
+  "text": "Écoute bien : bonbon."
+ },
+ {
+  "key": "cou… teau… couteau!",
+  "text": "cou… teau… couteau !"
+ },
+ {
+  "key": "écris le mot: couteau!",
+  "text": "Écris le mot : couteau !"
+ },
+ {
+  "key": "écoute bien: couteau.",
+  "text": "Écoute bien : couteau."
+ },
+ {
+  "key": "bra!",
+  "text": "bra !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: bra!",
+  "text": "Touche le bloc qui fait le son : bra !"
+ },
+ {
+  "key": "celui-là, c'est: bra.",
+  "text": "Celui-là, c'est : bra."
+ },
+ {
+  "key": "cherche: bra.",
+  "text": "Cherche : bra."
+ },
+ {
+  "key": "bri!",
+  "text": "bri !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: bri!",
+  "text": "Touche le bloc qui fait le son : bri !"
+ },
+ {
+  "key": "celui-là, c'est: bri.",
+  "text": "Celui-là, c'est : bri."
+ },
+ {
+  "key": "cherche: bri.",
+  "text": "Cherche : bri."
+ },
+ {
+  "key": "cra!",
+  "text": "cra !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: cra!",
+  "text": "Touche le bloc qui fait le son : cra !"
+ },
+ {
+  "key": "celui-là, c'est: cra.",
+  "text": "Celui-là, c'est : cra."
+ },
+ {
+  "key": "cherche: cra.",
+  "text": "Cherche : cra."
+ },
+ {
+  "key": "cro!",
+  "text": "cro !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: cro!",
+  "text": "Touche le bloc qui fait le son : cro !"
+ },
+ {
+  "key": "celui-là, c'est: cro.",
+  "text": "Celui-là, c'est : cro."
+ },
+ {
+  "key": "cherche: cro.",
+  "text": "Cherche : cro."
+ },
+ {
+  "key": "dra!",
+  "text": "dra !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: dra!",
+  "text": "Touche le bloc qui fait le son : dra !"
+ },
+ {
+  "key": "celui-là, c'est: dra.",
+  "text": "Celui-là, c'est : dra."
+ },
+ {
+  "key": "cherche: dra.",
+  "text": "Cherche : dra."
+ },
+ {
+  "key": "fra!",
+  "text": "fra !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: fra!",
+  "text": "Touche le bloc qui fait le son : fra !"
+ },
+ {
+  "key": "celui-là, c'est: fra.",
+  "text": "Celui-là, c'est : fra."
+ },
+ {
+  "key": "cherche: fra.",
+  "text": "Cherche : fra."
+ },
+ {
+  "key": "fri!",
+  "text": "fri !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: fri!",
+  "text": "Touche le bloc qui fait le son : fri !"
+ },
+ {
+  "key": "celui-là, c'est: fri.",
+  "text": "Celui-là, c'est : fri."
+ },
+ {
+  "key": "cherche: fri.",
+  "text": "Cherche : fri."
+ },
+ {
+  "key": "gra!",
+  "text": "gra !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: gra!",
+  "text": "Touche le bloc qui fait le son : gra !"
+ },
+ {
+  "key": "celui-là, c'est: gra.",
+  "text": "Celui-là, c'est : gra."
+ },
+ {
+  "key": "cherche: gra.",
+  "text": "Cherche : gra."
+ },
+ {
+  "key": "gro!",
+  "text": "gro !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: gro!",
+  "text": "Touche le bloc qui fait le son : gro !"
+ },
+ {
+  "key": "celui-là, c'est: gro.",
+  "text": "Celui-là, c'est : gro."
+ },
+ {
+  "key": "cherche: gro.",
+  "text": "Cherche : gro."
+ },
+ {
+  "key": "pra!",
+  "text": "pra !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: pra!",
+  "text": "Touche le bloc qui fait le son : pra !"
+ },
+ {
+  "key": "celui-là, c'est: pra.",
+  "text": "Celui-là, c'est : pra."
+ },
+ {
+  "key": "cherche: pra.",
+  "text": "Cherche : pra."
+ },
+ {
+  "key": "pri!",
+  "text": "pri !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: pri!",
+  "text": "Touche le bloc qui fait le son : pri !"
+ },
+ {
+  "key": "celui-là, c'est: pri.",
+  "text": "Celui-là, c'est : pri."
+ },
+ {
+  "key": "cherche: pri.",
+  "text": "Cherche : pri."
+ },
+ {
+  "key": "tra!",
+  "text": "tra !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: tra!",
+  "text": "Touche le bloc qui fait le son : tra !"
+ },
+ {
+  "key": "celui-là, c'est: tra.",
+  "text": "Celui-là, c'est : tra."
+ },
+ {
+  "key": "cherche: tra.",
+  "text": "Cherche : tra."
+ },
+ {
+  "key": "tri!",
+  "text": "tri !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: tri!",
+  "text": "Touche le bloc qui fait le son : tri !"
+ },
+ {
+  "key": "celui-là, c'est: tri.",
+  "text": "Celui-là, c'est : tri."
+ },
+ {
+  "key": "cherche: tri.",
+  "text": "Cherche : tri."
+ },
+ {
+  "key": "vra!",
+  "text": "vra !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: vra!",
+  "text": "Touche le bloc qui fait le son : vra !"
+ },
+ {
+  "key": "celui-là, c'est: vra.",
+  "text": "Celui-là, c'est : vra."
+ },
+ {
+  "key": "cherche: vra.",
+  "text": "Cherche : vra."
+ },
+ {
+  "key": "bla!",
+  "text": "bla !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: bla!",
+  "text": "Touche le bloc qui fait le son : bla !"
+ },
+ {
+  "key": "celui-là, c'est: bla.",
+  "text": "Celui-là, c'est : bla."
+ },
+ {
+  "key": "cherche: bla.",
+  "text": "Cherche : bla."
+ },
+ {
+  "key": "cla!",
+  "text": "cla !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: cla!",
+  "text": "Touche le bloc qui fait le son : cla !"
+ },
+ {
+  "key": "celui-là, c'est: cla.",
+  "text": "Celui-là, c'est : cla."
+ },
+ {
+  "key": "cherche: cla.",
+  "text": "Cherche : cla."
+ },
+ {
+  "key": "clo!",
+  "text": "clo !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: clo!",
+  "text": "Touche le bloc qui fait le son : clo !"
+ },
+ {
+  "key": "celui-là, c'est: clo.",
+  "text": "Celui-là, c'est : clo."
+ },
+ {
+  "key": "cherche: clo.",
+  "text": "Cherche : clo."
+ },
+ {
+  "key": "fla!",
+  "text": "fla !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: fla!",
+  "text": "Touche le bloc qui fait le son : fla !"
+ },
+ {
+  "key": "celui-là, c'est: fla.",
+  "text": "Celui-là, c'est : fla."
+ },
+ {
+  "key": "cherche: fla.",
+  "text": "Cherche : fla."
+ },
+ {
+  "key": "flo!",
+  "text": "flo !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: flo!",
+  "text": "Touche le bloc qui fait le son : flo !"
+ },
+ {
+  "key": "celui-là, c'est: flo.",
+  "text": "Celui-là, c'est : flo."
+ },
+ {
+  "key": "cherche: flo.",
+  "text": "Cherche : flo."
+ },
+ {
+  "key": "gla!",
+  "text": "gla !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: gla!",
+  "text": "Touche le bloc qui fait le son : gla !"
+ },
+ {
+  "key": "celui-là, c'est: gla.",
+  "text": "Celui-là, c'est : gla."
+ },
+ {
+  "key": "cherche: gla.",
+  "text": "Cherche : gla."
+ },
+ {
+  "key": "pla!",
+  "text": "pla !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: pla!",
+  "text": "Touche le bloc qui fait le son : pla !"
+ },
+ {
+  "key": "celui-là, c'est: pla.",
+  "text": "Celui-là, c'est : pla."
+ },
+ {
+  "key": "cherche: pla.",
+  "text": "Cherche : pla."
+ },
+ {
+  "key": "plu!",
+  "text": "plu !"
+ },
+ {
+  "key": "touche le bloc qui fait le son: plu!",
+  "text": "Touche le bloc qui fait le son : plu !"
+ },
+ {
+  "key": "celui-là, c'est: plu.",
+  "text": "Celui-là, c'est : plu."
+ },
+ {
+  "key": "cherche: plu.",
+  "text": "Cherche : plu."
+ },
+ {
+  "key": "ci… tron… citron!",
+  "text": "ci… tron… citron !"
+ },
+ {
+  "key": "construis le mot: citron!",
+  "text": "Construis le mot : citron !"
+ },
+ {
+  "key": "écoute: ci… tron.",
+  "text": "Écoute : ci… tron."
+ },
+ {
+  "key": "celui-là, c'est: ci.",
+  "text": "Celui-là, c'est : ci."
+ },
+ {
+  "key": "celui-là, c'est: tron.",
+  "text": "Celui-là, c'est : tron."
+ },
+ {
+  "key": "cra… be… crabe!",
+  "text": "cra… be… crabe !"
+ },
+ {
+  "key": "construis le mot: crabe!",
+  "text": "Construis le mot : crabe !"
+ },
+ {
+  "key": "écoute: cra… be.",
+  "text": "Écoute : cra… be."
+ },
+ {
+  "key": "cra",
+  "text": "cra"
+ },
+ {
+  "key": "be",
+  "text": "be"
+ },
+ {
+  "key": "celui-là, c'est: be.",
+  "text": "Celui-là, c'est : be."
+ },
+ {
+  "key": "cro… co… di… le… crocodile!",
+  "text": "cro… co… di… le… crocodile !"
+ },
+ {
+  "key": "construis le mot: crocodile!",
+  "text": "Construis le mot : crocodile !"
+ },
+ {
+  "key": "écoute: cro… co… di… le.",
+  "text": "Écoute : cro… co… di… le."
+ },
+ {
+  "key": "cro",
+  "text": "cro"
+ },
+ {
+  "key": "le",
+  "text": "le"
+ },
+ {
+  "key": "celui-là, c'est: le.",
+  "text": "Celui-là, c'est : le."
+ },
+ {
+  "key": "dra… peau… drapeau!",
+  "text": "dra… peau… drapeau !"
+ },
+ {
+  "key": "construis le mot: drapeau!",
+  "text": "Construis le mot : drapeau !"
+ },
+ {
+  "key": "écoute: dra… peau.",
+  "text": "Écoute : dra… peau."
+ },
+ {
+  "key": "dra",
+  "text": "dra"
+ },
+ {
+  "key": "celui-là, c'est: peau.",
+  "text": "Celui-là, c'est : peau."
+ },
+ {
+  "key": "fro… ma… ge… fromage!",
+  "text": "fro… ma… ge… fromage !"
+ },
+ {
+  "key": "construis le mot: fromage!",
+  "text": "Construis le mot : fromage !"
+ },
+ {
+  "key": "écoute: fro… ma… ge.",
+  "text": "Écoute : fro… ma… ge."
+ },
+ {
+  "key": "celui-là, c'est: fro.",
+  "text": "Celui-là, c'est : fro."
+ },
+ {
+  "key": "ge",
+  "text": "ge"
+ },
+ {
+  "key": "celui-là, c'est: ge.",
+  "text": "Celui-là, c'est : ge."
+ },
+ {
+  "key": "gla… ce… glace!",
+  "text": "gla… ce… glace !"
+ },
+ {
+  "key": "construis le mot: glace!",
+  "text": "Construis le mot : glace !"
+ },
+ {
+  "key": "écoute: gla… ce.",
+  "text": "Écoute : gla… ce."
+ },
+ {
+  "key": "gla",
+  "text": "gla"
+ },
+ {
+  "key": "ce",
+  "text": "ce"
+ },
+ {
+  "key": "pla… ge… plage!",
+  "text": "pla… ge… plage !"
+ },
+ {
+  "key": "construis le mot: plage!",
+  "text": "Construis le mot : plage !"
+ },
+ {
+  "key": "écoute: pla… ge.",
+  "text": "Écoute : pla… ge."
+ },
+ {
+  "key": "pla",
+  "text": "pla"
+ },
+ {
+  "key": "trac… teur… tracteur!",
+  "text": "trac… teur… tracteur !"
+ },
+ {
+  "key": "construis le mot: tracteur!",
+  "text": "Construis le mot : tracteur !"
+ },
+ {
+  "key": "écoute: trac… teur.",
+  "text": "Écoute : trac… teur."
+ },
+ {
+  "key": "trac",
+  "text": "trac"
+ },
+ {
+  "key": "celui-là, c'est: trac.",
+  "text": "Celui-là, c'est : trac."
+ },
+ {
+  "key": "celui-là, c'est: teur.",
+  "text": "Celui-là, c'est : teur."
+ },
+ {
+  "key": "gre… nouil… le… grenouille!",
+  "text": "gre… nouil… le… grenouille !"
+ },
+ {
+  "key": "construis le mot: grenouille!",
+  "text": "Construis le mot : grenouille !"
+ },
+ {
+  "key": "écoute: gre… nouil… le.",
+  "text": "Écoute : gre… nouil… le."
+ },
+ {
+  "key": "gre",
+  "text": "gre"
+ },
+ {
+  "key": "celui-là, c'est: gre.",
+  "text": "Celui-là, c'est : gre."
+ },
+ {
+  "key": "nouil",
+  "text": "nouil"
+ },
+ {
+  "key": "celui-là, c'est: nouil.",
+  "text": "Celui-là, c'est : nouil."
+ },
+ {
+  "key": "pri… se… prise!",
+  "text": "pri… se… prise !"
+ },
+ {
+  "key": "construis le mot: prise!",
+  "text": "Construis le mot : prise !"
+ },
+ {
+  "key": "écoute: pri… se.",
+  "text": "Écoute : pri… se."
+ },
+ {
+  "key": "pri",
+  "text": "pri"
+ },
+ {
+  "key": "se",
+  "text": "se"
+ },
+ {
+  "key": "celui-là, c'est: se.",
+  "text": "Celui-là, c'est : se."
+ },
+ {
+  "key": "ar… bre… arbre!",
+  "text": "ar… bre… arbre !"
+ },
+ {
+  "key": "construis le mot: arbre!",
+  "text": "Construis le mot : arbre !"
+ },
+ {
+  "key": "écoute: ar… bre.",
+  "text": "Écoute : ar… bre."
+ },
+ {
+  "key": "ar",
+  "text": "ar"
+ },
+ {
+  "key": "celui-là, c'est: ar.",
+  "text": "Celui-là, c'est : ar."
+ },
+ {
+  "key": "bre",
+  "text": "bre"
+ },
+ {
+  "key": "celui-là, c'est: bre.",
+  "text": "Celui-là, c'est : bre."
+ },
+ {
+  "key": "li… vre… livre!",
+  "text": "li… vre… livre !"
+ },
+ {
+  "key": "construis le mot: livre!",
+  "text": "Construis le mot : livre !"
+ },
+ {
+  "key": "écoute: li… vre.",
+  "text": "Écoute : li… vre."
+ },
+ {
+  "key": "vre",
+  "text": "vre"
+ },
+ {
+  "key": "celui-là, c'est: vre.",
+  "text": "Celui-là, c'est : vre."
+ },
+ {
+  "key": "bro… co… li… brocoli!",
+  "text": "bro… co… li… brocoli !"
+ },
+ {
+  "key": "construis le mot: brocoli!",
+  "text": "Construis le mot : brocoli !"
+ },
+ {
+  "key": "écoute: bro… co… li.",
+  "text": "Écoute : bro… co… li."
+ },
+ {
+  "key": "bro",
+  "text": "bro"
+ },
+ {
+  "key": "celui-là, c'est: bro.",
+  "text": "Celui-là, c'est : bro."
+ },
+ {
+  "key": "frai… se… fraise!",
+  "text": "frai… se… fraise !"
+ },
+ {
+  "key": "construis le mot: fraise!",
+  "text": "Construis le mot : fraise !"
+ },
+ {
+  "key": "écoute: frai… se.",
+  "text": "Écoute : frai… se."
+ },
+ {
+  "key": "frai",
+  "text": "frai"
+ },
+ {
+  "key": "celui-là, c'est: frai.",
+  "text": "Celui-là, c'est : frai."
+ },
+ {
+  "key": "pla… nè… te… planète!",
+  "text": "pla… nè… te… planète !"
+ },
+ {
+  "key": "construis le mot: planète!",
+  "text": "Construis le mot : planète !"
+ },
+ {
+  "key": "écoute: pla… nè… te.",
+  "text": "Écoute : pla… nè… te."
+ },
+ {
+  "key": "nè",
+  "text": "nè"
+ },
+ {
+  "key": "celui-là, c'est: nè.",
+  "text": "Celui-là, c'est : nè."
+ },
+ {
+  "key": "te",
+  "text": "te"
+ },
+ {
+  "key": "celui-là, c'est: te.",
+  "text": "Celui-là, c'est : te."
+ },
+ {
+  "key": "dra… gon… dragon!",
+  "text": "dra… gon… dragon !"
+ },
+ {
+  "key": "construis le mot: dragon!",
+  "text": "Construis le mot : dragon !"
+ },
+ {
+  "key": "écoute: dra… gon.",
+  "text": "Écoute : dra… gon."
+ },
+ {
+  "key": "gon",
+  "text": "gon"
+ },
+ {
+  "key": "celui-là, c'est: gon.",
+  "text": "Celui-là, c'est : gon."
+ },
+ {
+  "key": "prin… ces… se… princesse!",
+  "text": "prin… ces… se… princesse !"
+ },
+ {
+  "key": "construis le mot: princesse!",
+  "text": "Construis le mot : princesse !"
+ },
+ {
+  "key": "écoute: prin… ces… se.",
+  "text": "Écoute : prin… ces… se."
+ },
+ {
+  "key": "prin",
+  "text": "prin"
+ },
+ {
+  "key": "celui-là, c'est: prin.",
+  "text": "Celui-là, c'est : prin."
+ },
+ {
+  "key": "ces",
+  "text": "ces"
+ },
+ {
+  "key": "celui-là, c'est: ces.",
+  "text": "Celui-là, c'est : ces."
+ },
+ {
+  "key": "ça, c'est: citron.",
+  "text": "Ça, c'est : citron."
+ },
+ {
+  "key": "ça, c'est: crabe.",
+  "text": "Ça, c'est : crabe."
+ },
+ {
+  "key": "ça, c'est: crocodile.",
+  "text": "Ça, c'est : crocodile."
+ },
+ {
+  "key": "ça, c'est: drapeau.",
+  "text": "Ça, c'est : drapeau."
+ },
+ {
+  "key": "fleur!",
+  "text": "fleur !"
+ },
+ {
+  "key": "ça, c'est: fleur.",
+  "text": "Ça, c'est : fleur."
+ },
+ {
+  "key": "écoute: fleur.",
+  "text": "Écoute : fleur."
+ },
+ {
+  "key": "ça, c'est: fromage.",
+  "text": "Ça, c'est : fromage."
+ },
+ {
+  "key": "ça, c'est: glace.",
+  "text": "Ça, c'est : glace."
+ },
+ {
+  "key": "ça, c'est: plage.",
+  "text": "Ça, c'est : plage."
+ },
+ {
+  "key": "clé!",
+  "text": "clé !"
+ },
+ {
+  "key": "ça, c'est: clé.",
+  "text": "Ça, c'est : clé."
+ },
+ {
+  "key": "écoute: clé.",
+  "text": "Écoute : clé."
+ },
+ {
+  "key": "bras!",
+  "text": "bras !"
+ },
+ {
+  "key": "ça, c'est: bras.",
+  "text": "Ça, c'est : bras."
+ },
+ {
+  "key": "écoute: bras.",
+  "text": "Écoute : bras."
+ },
+ {
+  "key": "ça, c'est: tracteur.",
+  "text": "Ça, c'est : tracteur."
+ },
+ {
+  "key": "train!",
+  "text": "train !"
+ },
+ {
+  "key": "ça, c'est: train.",
+  "text": "Ça, c'est : train."
+ },
+ {
+  "key": "écoute: train.",
+  "text": "Écoute : train."
+ },
+ {
+  "key": "ça, c'est: grenouille.",
+  "text": "Ça, c'est : grenouille."
+ },
+ {
+  "key": "ça, c'est: prise.",
+  "text": "Ça, c'est : prise."
+ },
+ {
+  "key": "ça, c'est: arbre.",
+  "text": "Ça, c'est : arbre."
+ },
+ {
+  "key": "ça, c'est: livre.",
+  "text": "Ça, c'est : livre."
+ },
+ {
+  "key": "ça, c'est: brocoli.",
+  "text": "Ça, c'est : brocoli."
+ },
+ {
+  "key": "ça, c'est: fraise.",
+  "text": "Ça, c'est : fraise."
+ },
+ {
+  "key": "ça, c'est: planète.",
+  "text": "Ça, c'est : planète."
+ },
+ {
+  "key": "ça, c'est: dragon.",
+  "text": "Ça, c'est : dragon."
+ },
+ {
+  "key": "grue!",
+  "text": "grue !"
+ },
+ {
+  "key": "ça, c'est: grue.",
+  "text": "Ça, c'est : grue."
+ },
+ {
+  "key": "écoute: grue.",
+  "text": "Écoute : grue."
+ },
+ {
+  "key": "ça, c'est: princesse.",
+  "text": "Ça, c'est : princesse."
+ },
+ {
+  "key": "le!",
+  "text": "le !"
+ },
+ {
+  "key": "touche le mot: le!",
+  "text": "Touche le mot : le !"
+ },
+ {
+  "key": "cherche: le.",
+  "text": "Cherche : le."
+ },
+ {
+  "key": "touche le mot: la!",
+  "text": "Touche le mot : la !"
+ },
+ {
+  "key": "les!",
+  "text": "les !"
+ },
+ {
+  "key": "touche le mot: les!",
+  "text": "Touche le mot : les !"
+ },
+ {
+  "key": "celui-là, c'est: les.",
+  "text": "Celui-là, c'est : les."
+ },
+ {
+  "key": "cherche: les.",
+  "text": "Cherche : les."
+ },
+ {
+  "key": "un!",
+  "text": "un !"
+ },
+ {
+  "key": "touche le mot: un!",
+  "text": "Touche le mot : un !"
+ },
+ {
+  "key": "celui-là, c'est: un.",
+  "text": "Celui-là, c'est : un."
+ },
+ {
+  "key": "cherche: un.",
+  "text": "Cherche : un."
+ },
+ {
+  "key": "une!",
+  "text": "une !"
+ },
+ {
+  "key": "touche le mot: une!",
+  "text": "Touche le mot : une !"
+ },
+ {
+  "key": "celui-là, c'est: une.",
+  "text": "Celui-là, c'est : une."
+ },
+ {
+  "key": "cherche: une.",
+  "text": "Cherche : une."
+ },
+ {
+  "key": "il!",
+  "text": "il !"
+ },
+ {
+  "key": "touche le mot: il!",
+  "text": "Touche le mot : il !"
+ },
+ {
+  "key": "celui-là, c'est: il.",
+  "text": "Celui-là, c'est : il."
+ },
+ {
+  "key": "cherche: il.",
+  "text": "Cherche : il."
+ },
+ {
+  "key": "elle!",
+  "text": "elle !"
+ },
+ {
+  "key": "touche le mot: elle!",
+  "text": "Touche le mot : elle !"
+ },
+ {
+  "key": "celui-là, c'est: elle.",
+  "text": "Celui-là, c'est : elle."
+ },
+ {
+  "key": "cherche: elle.",
+  "text": "Cherche : elle."
+ },
+ {
+  "key": "on!",
+  "text": "on !"
+ },
+ {
+  "key": "touche le mot: on!",
+  "text": "Touche le mot : on !"
+ },
+ {
+  "key": "dans!",
+  "text": "dans !"
+ },
+ {
+  "key": "touche le mot: dans!",
+  "text": "Touche le mot : dans !"
+ },
+ {
+  "key": "celui-là, c'est: dans.",
+  "text": "Celui-là, c'est : dans."
+ },
+ {
+  "key": "cherche: dans.",
+  "text": "Cherche : dans."
+ },
+ {
+  "key": "sur!",
+  "text": "sur !"
+ },
+ {
+  "key": "touche le mot: sur!",
+  "text": "Touche le mot : sur !"
+ },
+ {
+  "key": "celui-là, c'est: sur.",
+  "text": "Celui-là, c'est : sur."
+ },
+ {
+  "key": "cherche: sur.",
+  "text": "Cherche : sur."
+ },
+ {
+  "key": "avec!",
+  "text": "avec !"
+ },
+ {
+  "key": "touche le mot: avec!",
+  "text": "Touche le mot : avec !"
+ },
+ {
+  "key": "celui-là, c'est: avec.",
+  "text": "Celui-là, c'est : avec."
+ },
+ {
+  "key": "cherche: avec.",
+  "text": "Cherche : avec."
+ },
+ {
+  "key": "mon!",
+  "text": "mon !"
+ },
+ {
+  "key": "touche le mot: mon!",
+  "text": "Touche le mot : mon !"
+ },
+ {
+  "key": "celui-là, c'est: mon.",
+  "text": "Celui-là, c'est : mon."
+ },
+ {
+  "key": "cherche: mon.",
+  "text": "Cherche : mon."
+ },
+ {
+  "key": "touche le mot: ma!",
+  "text": "Touche le mot : ma !"
+ },
+ {
+  "key": "des!",
+  "text": "des !"
+ },
+ {
+  "key": "touche le mot: des!",
+  "text": "Touche le mot : des !"
+ },
+ {
+  "key": "celui-là, c'est: des.",
+  "text": "Celui-là, c'est : des."
+ },
+ {
+  "key": "cherche: des.",
+  "text": "Cherche : des."
+ },
+ {
+  "key": "touche le mot: du!",
+  "text": "Touche le mot : du !"
+ },
+ {
+  "key": "pour!",
+  "text": "pour !"
+ },
+ {
+  "key": "touche le mot: pour!",
+  "text": "Touche le mot : pour !"
+ },
+ {
+  "key": "celui-là, c'est: pour.",
+  "text": "Celui-là, c'est : pour."
+ },
+ {
+  "key": "cherche: pour.",
+  "text": "Cherche : pour."
  },
  {
   "key": "le chat fait miaou.",
@@ -8120,10 +10540,6 @@
  {
   "key": "zéro!",
   "text": "zéro !"
- },
- {
-  "key": "un!",
-  "text": "un !"
  },
  {
   "key": "deux!",

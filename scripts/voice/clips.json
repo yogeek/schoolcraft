@@ -12464,46 +12464,6 @@
   "stt": "Tou-ma-te, tomate",
   "score": 0.92
  },
- "touche le mot: tomate!": {
-  "file": "c3a6cac7-a99906.mp3",
-  "text": "Touche le mot : tomate !",
-  "sent": "Touche le mot : tomate !",
-  "dur": 2,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Touche le mot tomate",
-  "score": 1
- },
- "celui-là, c'est: tomate.": {
-  "file": "81ce2941-5ef23a.mp3",
-  "text": "Celui-là, c'est : tomate.",
-  "sent": "Celui-là, c'est : tomate.",
-  "dur": 2.32,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Celui-là, c'est tomate",
-  "score": 1
- },
- "cherche: tomate.": {
-  "file": "a5c20833-c4bd49.mp3",
-  "text": "Cherche : tomate.",
-  "sent": "Cherche : tomate.",
-  "dur": 1.76,
-  "cost": 7,
-  "sttCost": 1,
-  "stt": "Cherche tomate",
-  "score": 1
- },
- "touche le mot: salade!": {
-  "file": "a2f0fa37-613e06.mp3",
-  "text": "Touche le mot : salade !",
-  "sent": "Touche le mot : salade !",
-  "dur": 2,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Touche le mot salade",
-  "score": 1
- },
  "sa… la… de… salade!": {
   "file": "ee57bcc0-b71ba9.mp3",
   "text": "sa… la… de… salade !",
@@ -12512,36 +12472,6 @@
   "cost": 8,
   "sttCost": 1,
   "stt": "Sa-la-de, salade",
-  "score": 1
- },
- "celui-là, c'est: salade.": {
-  "file": "90709bad-339c42.mp3",
-  "text": "Celui-là, c'est : salade.",
-  "sent": "Celui-là, c'est : salade.",
-  "dur": 2.32,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Celui-là, c'est salade",
-  "score": 1
- },
- "cherche: salade.": {
-  "file": "f182d0af-a1092b.mp3",
-  "text": "Cherche : salade.",
-  "sent": "Cherche : salade.",
-  "dur": 1.84,
-  "cost": 7,
-  "sttCost": 1,
-  "stt": "Cherche : salade",
-  "score": 1
- },
- "touche le mot: banane!": {
-  "file": "dc06ae1c-647b45.mp3",
-  "text": "Touche le mot : banane !",
-  "sent": "Touche le mot : banane !",
-  "dur": 2,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Touche le mot banane",
   "score": 1
  },
  "ba… na… ne… banane!": {
@@ -12554,26 +12484,6 @@
   "stt": "Ba-na-ne. Banane",
   "score": 1
  },
- "celui-là, c'est: banane.": {
-  "file": "1fcab9fa-85b71e.mp3",
-  "text": "Celui-là, c'est : banane.",
-  "sent": "Celui-là, c'est : banane.",
-  "dur": 2.4,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Celui-là, c'est banane",
-  "score": 1
- },
- "cherche: banane.": {
-  "file": "967cc0ec-59c2df.mp3",
-  "text": "Cherche : banane.",
-  "sent": "Cherche : banane.",
-  "dur": 1.76,
-  "cost": 7,
-  "sttCost": 0,
-  "stt": "Cherche banane",
-  "score": 1
- },
  "pi… ra… te… pirate!": {
   "file": "f4c9cdbc-5292cf.mp3",
   "text": "pi… ra… te… pirate !",
@@ -12584,66 +12494,6 @@
   "stt": "Pi-rate. Pirate",
   "score": 1
  },
- "touche le mot: pirate!": {
-  "file": "0f561be8-560530.mp3",
-  "text": "Touche le mot : pirate !",
-  "sent": "Touche le mot : pirate !",
-  "dur": 1.92,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Touche le mot pirate",
-  "score": 1
- },
- "celui-là, c'est: pirate.": {
-  "file": "2fecb926-756859.mp3",
-  "text": "Celui-là, c'est : pirate.",
-  "sent": "Celui-là, c'est : pirate.",
-  "dur": 2.32,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Celui-là, c'est pirate",
-  "score": 1
- },
- "cherche: pirate.": {
-  "file": "a1d1d058-72846a.mp3",
-  "text": "Cherche : pirate.",
-  "sent": "Cherche : pirate.",
-  "dur": 1.76,
-  "cost": 7,
-  "sttCost": 1,
-  "stt": "Cherche pirate",
-  "score": 1
- },
- "ca… na… pé… canapé!": {
-  "file": "cca09d46-3bd372.mp3",
-  "text": "ca… na… pé… canapé !",
-  "sent": "ca… na… pé… canapé !",
-  "dur": 3.2,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Ca-na-pé. Canapé",
-  "score": 1
- },
- "touche le mot: canapé!": {
-  "file": "b08fb73e-4fca98.mp3",
-  "text": "Touche le mot : canapé !",
-  "sent": "Touche le mot : canapé !",
-  "dur": 1.92,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Touche le mot canapé",
-  "score": 1
- },
- "celui-là, c'est: canapé.": {
-  "file": "d22de28a-7259cb.mp3",
-  "text": "Celui-là, c'est : canapé.",
-  "sent": "Celui-là, c'est : canapé.",
-  "dur": 2.16,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Celui-là, c'est canapé",
-  "score": 1
- },
  "ca… fé… café!": {
   "file": "40d6b224-831449.mp3",
   "text": "ca… fé… café !",
@@ -12651,16 +12501,6 @@
   "dur": 2.4,
   "cost": 6,
   "sttCost": 0,
-  "score": 1
- },
- "cherche: canapé.": {
-  "file": "8f0bf748-11d72c.mp3",
-  "text": "Cherche : canapé.",
-  "sent": "Cherche : canapé.",
-  "dur": 1.92,
-  "cost": 7,
-  "sttCost": 1,
-  "stt": "Cherche canapé",
   "score": 1
  },
  "touche le mot: café!": {
@@ -12693,75 +12533,6 @@
   "stt": "Cherche café",
   "score": 1
  },
- "ki… wi… kiwi!": {
-  "file": "5828e604-ff2fd6.mp3",
-  "text": "ki… wi… kiwi !",
-  "sent": "ki… wi… kiwi !",
-  "dur": 2.48,
-  "cost": 6,
-  "sttCost": 0,
-  "score": 1
- },
- "touche le mot: kiwi!": {
-  "file": "d70b059f-cc632e.mp3",
-  "text": "Touche le mot : kiwi !",
-  "sent": "Touche le mot : kiwi !",
-  "dur": 1.92,
-  "cost": 9,
-  "sttCost": 1,
-  "stt": "Touche le mot kiwi",
-  "score": 1
- },
- "cherche: kiwi.": {
-  "file": "f86b3c1f-3b6be8.mp3",
-  "text": "Cherche : kiwi.",
-  "sent": "Cherche : kiwi.",
-  "dur": 1.68,
-  "cost": 6,
-  "sttCost": 0,
-  "stt": "Cherche kiwi",
-  "score": 1
- },
- "celui-là, c'est: kiwi.": {
-  "file": "4619c839-e123ae.mp3",
-  "text": "Celui-là, c'est : kiwi.",
-  "sent": "Celui-là, c'est : kiwi.",
-  "dur": 2.16,
-  "cost": 9,
-  "sttCost": 1,
-  "stt": "Celui-là, c'est kiwi",
-  "score": 1
- },
- "touche le mot: limonade!": {
-  "file": "714970b4-0f0e15.mp3",
-  "text": "Touche le mot : limonade !",
-  "sent": "Touche le mot : limonade !",
-  "dur": 2.16,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Touche le mot limonade",
-  "score": 1
- },
- "celui-là, c'est: limonade.": {
-  "file": "2966b04a-d77550.mp3",
-  "text": "Celui-là, c'est : limonade.",
-  "sent": "Celui-là, c'est : limonade.",
-  "dur": 2.56,
-  "cost": 11,
-  "sttCost": 1,
-  "stt": "Celui-là, c'est limonade",
-  "score": 1
- },
- "li… mo… na… de… limonade!": {
-  "file": "d4393a80-822bc7.mp3",
-  "text": "li… mo… na… de… limonade !",
-  "sent": "li… mo… na… de… limonade !",
-  "dur": 4,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Li-mo-nade. Limonade",
-  "score": 1
- },
  "bé… bé… bébé!": {
   "file": "c54114cc-84e190.mp3",
   "text": "bé… bé… bébé !",
@@ -12769,16 +12540,6 @@
   "dur": 2.56,
   "cost": 6,
   "sttCost": 0,
-  "score": 1
- },
- "cherche: limonade.": {
-  "file": "6b141e00-03773a.mp3",
-  "text": "Cherche : limonade.",
-  "sent": "Cherche : limonade.",
-  "dur": 2,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Cherche limonade",
   "score": 1
  },
  "touche le mot: bébé!": {
@@ -12999,16 +12760,6 @@
   "stt": "Construit le mot domino",
   "score": 0.95
  },
- "construis le mot: tomate!": {
-  "file": "15324659-5ef545.mp3",
-  "text": "Construis le mot : tomate !",
-  "sent": "Construis le mot : tomate !",
-  "dur": 2.16,
-  "cost": 11,
-  "sttCost": 1,
-  "stt": "Construit le mot tomate",
-  "score": 0.95
- },
  "écoute: do… mi… no.": {
   "file": "01af53c7-d0161b.mp3",
   "text": "Écoute : do… mi… no.",
@@ -13038,25 +12789,6 @@
   "stt": "Celui-là, c'est te",
   "score": 1
  },
- "construis le mot: salade!": {
-  "file": "752e9809-52cf49.mp3",
-  "text": "Construis le mot : salade !",
-  "sent": "Construis le mot : salade !",
-  "dur": 2.16,
-  "cost": 11,
-  "sttCost": 1,
-  "stt": "Construit le mot salade",
-  "score": 0.95
- },
- "de": {
-  "file": "5c1ccea2-71cc91.mp3",
-  "text": "de",
-  "sent": "de.",
-  "dur": 0.72,
-  "cost": 1,
-  "sttCost": 0,
-  "score": 1
- },
  "écoute: to… ma… te.": {
   "file": "f1b56f4b-704c90.mp3",
   "text": "Écoute : to… ma… te.",
@@ -13077,35 +12809,6 @@
   "stt": "Écoute : ça, la, de",
   "score": 0.92
  },
- "celui-là, c'est: de.": {
-  "file": "3d6d5b30-f38e73.mp3",
-  "text": "Celui-là, c'est : de.",
-  "sent": "Celui-là, c'est : de.",
-  "dur": 2,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Celui-là, c'est deux",
-  "score": 0.87
- },
- "construis le mot: banane!": {
-  "file": "467577ae-109ca6.mp3",
-  "text": "Construis le mot : banane !",
-  "sent": "Construis le mot : banane !",
-  "dur": 2.16,
-  "cost": 11,
-  "sttCost": 1,
-  "stt": "Construit le mot banane",
-  "score": 0.95
- },
- "ne": {
-  "file": "5836603c-a46c9e.mp3",
-  "text": "ne",
-  "sent": "ne.",
-  "dur": 0.72,
-  "cost": 1,
-  "sttCost": 0,
-  "score": 1
- },
  "écoute: ba… na… ne.": {
   "file": "df862f94-d00aee.mp3",
   "text": "Écoute : ba… na… ne.",
@@ -13116,26 +12819,6 @@
   "stt": "Écoute : ba-na-ne",
   "score": 1
  },
- "celui-là, c'est: ne.": {
-  "file": "ffae0842-5af249.mp3",
-  "text": "Celui-là, c'est : ne.",
-  "sent": "Celui-là, c'est : ne.",
-  "dur": 2.16,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Celui-là, c'est nœud",
-  "score": 0.86
- },
- "construis le mot: pirate!": {
-  "file": "ae74bda2-a706ae.mp3",
-  "text": "Construis le mot : pirate !",
-  "sent": "Construis le mot : pirate !",
-  "dur": 2.24,
-  "cost": 11,
-  "sttCost": 1,
-  "stt": "Construit le mot pirate",
-  "score": 0.95
- },
  "écoute: pi… ra… te.": {
   "file": "6fdc3b48-f0ab22.mp3",
   "text": "Écoute : pi… ra… te.",
@@ -13144,35 +12827,6 @@
   "cost": 8,
   "sttCost": 1,
   "stt": "Écoute : pi-ra-te",
-  "score": 1
- },
- "construis le mot: canapé!": {
-  "file": "488a8f8c-224173.mp3",
-  "text": "Construis le mot : canapé !",
-  "sent": "Construis le mot : canapé !",
-  "dur": 2.24,
-  "cost": 11,
-  "sttCost": 1,
-  "stt": "Construit le mot canapé",
-  "score": 0.95
- },
- "écoute: ca… na… pé.": {
-  "file": "3ec65a28-e9b6ee.mp3",
-  "text": "Écoute : ca… na… pé.",
-  "sent": "Écoute : ca… na… pé.",
-  "dur": 3.12,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Écoute : ca-na-pé",
-  "score": 1
- },
- "pé": {
-  "file": "11638f17-b8a417.mp3",
-  "text": "pé",
-  "sent": "pé.",
-  "dur": 0.48,
-  "cost": 1,
-  "sttCost": 0,
   "score": 1
  },
  "celui-là, c'est: ca.": {
@@ -13185,26 +12839,6 @@
   "stt": "Celui-là, c'est ça",
   "score": 1
  },
- "construis le mot: café!": {
-  "file": "daf4b71b-c76111.mp3",
-  "text": "Construis le mot : café !",
-  "sent": "Construis le mot : café !",
-  "dur": 2.08,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Construit le mot café",
-  "score": 0.94
- },
- "construis le mot: kiwi!": {
-  "file": "991d5b45-00c833.mp3",
-  "text": "Construis le mot : kiwi !",
-  "sent": "Construis le mot : kiwi !",
-  "dur": 2.08,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Construit le mot kiwi",
-  "score": 0.94
- },
  "écoute: ca… fé.": {
   "file": "8d075713-b58bb1.mp3",
   "text": "Écoute : ca… fé.",
@@ -13215,46 +12849,6 @@
   "stt": "Écoute. Ca-fé",
   "score": 1
  },
- "celui-là, c'est: wi.": {
-  "file": "3eaa51dd-8ff9f2.mp3",
-  "text": "Celui-là, c'est : wi.",
-  "sent": "Celui-là, c'est : wi.",
-  "dur": 2.16,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Celui-là, c'est oui",
-  "score": 0.86
- },
- "celui-là, c'est: ki.": {
-  "file": "c088a091-85e77b.mp3",
-  "text": "Celui-là, c'est : ki.",
-  "sent": "Celui-là, c'est : ki.",
-  "dur": 2.16,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Celui-là, c'est qui ?",
-  "score": 0.86
- },
- "construis le mot: limonade!": {
-  "file": "b92ec02a-be973e.mp3",
-  "text": "Construis le mot : limonade !",
-  "sent": "Construis le mot : limonade !",
-  "dur": 2.4,
-  "cost": 12,
-  "sttCost": 1,
-  "stt": "Construit le mot limonade",
-  "score": 0.95
- },
- "écoute: li… mo… na… de.": {
-  "file": "53e8d2cc-dbc32f.mp3",
-  "text": "Écoute : li… mo… na… de.",
-  "sent": "Écoute : li… mo… na… de.",
-  "dur": 3.92,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Écoute, Li-mon-ade",
-  "score": 1
- },
  "li": {
   "file": "4031bd46-b8834e.mp3",
   "text": "li",
@@ -13263,16 +12857,6 @@
   "cost": 1,
   "sttCost": 0,
   "score": 1
- },
- "écoute: ki… wi.": {
-  "file": "0504d36b-44d0f3.mp3",
-  "text": "Écoute : ki… wi.",
-  "sent": "Écoute : ki… wi.",
-  "dur": 2.56,
-  "cost": 18,
-  "sttCost": 3,
-  "stt": "Écoute. Qui... Oui",
-  "score": 0.67
  },
  "construis le mot: bébé!": {
   "file": "03f1a431-08b87a.mp3",
@@ -13322,16 +12906,6 @@
   "cost": 7,
   "sttCost": 1,
   "stt": "Ça, c'est vélo",
-  "score": 1
- },
- "ça, c'est: kiwi.": {
-  "file": "527b9ca0-a2b72e.mp3",
-  "text": "Ça, c'est : kiwi.",
-  "sent": "Ça, c'est : kiwi.",
-  "dur": 1.92,
-  "cost": 7,
-  "sttCost": 1,
-  "stt": "Ça, c'est kiwi",
   "score": 1
  },
  "ça, c'est: tomate.": {
@@ -13672,16 +13246,6 @@
   "stt": "Écris le mot dodo",
   "score": 1
  },
- "écris le mot: kiwi!": {
-  "file": "61af3d1c-f8d9a5.mp3",
-  "text": "Écris le mot : kiwi !",
-  "sent": "Écris le mot : kiwi !",
-  "dur": 1.92,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Écris le mot kiwi",
-  "score": 1
- },
  "écris le mot: bébé!": {
   "file": "c21ba618-a03597.mp3",
   "text": "Écris le mot : bébé !",
@@ -13690,16 +13254,6 @@
   "cost": 8,
   "sttCost": 1,
   "stt": "Écris le mot bébé",
-  "score": 1
- },
- "écoute bien: kiwi.": {
-  "file": "964cfc33-e09eab.mp3",
-  "text": "Écoute bien : kiwi.",
-  "sent": "Écoute bien : kiwi.",
-  "dur": 1.84,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Écoute bien : kiwi",
   "score": 1
  },
  "écoute bien: bébé.": {
@@ -13781,26 +13335,6 @@
   "sttCost": 0,
   "score": 1
  },
- "écris le mot: canapé!": {
-  "file": "7e782eab-dca2f0.mp3",
-  "text": "Écris le mot : canapé !",
-  "sent": "Écris le mot : canapé !",
-  "dur": 2.08,
-  "cost": 9,
-  "sttCost": 1,
-  "stt": "Écris le mot canapé",
-  "score": 1
- },
- "écoute bien: canapé.": {
-  "file": "c7b81464-34981a.mp3",
-  "text": "Écoute bien : canapé.",
-  "sent": "Écoute bien : canapé.",
-  "dur": 1.84,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Écoute bien : canapé",
-  "score": 1
- },
  "lo… to… loto!": {
   "file": "c8abe8fc-e4f3c0.mp3",
   "text": "lo… to… loto !",
@@ -13869,16 +13403,6 @@
   "stt": "Écoute bien ce mot",
   "score": 0.8
  },
- "ka… ra… té… karaté!": {
-  "file": "a0af152e-cb8694.mp3",
-  "text": "ka… ra… té… karaté !",
-  "sent": "ka… ra… té… karaté !",
-  "dur": 3.04,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Ka-ra-té. Karaté",
-  "score": 1
- },
  "écris le mot: sumo!": {
   "file": "d2746070-df0f8f.mp3",
   "text": "Écris le mot : sumo !",
@@ -13887,26 +13411,6 @@
   "cost": 16,
   "sttCost": 2,
   "stt": "Écris le mot sumo",
-  "score": 1
- },
- "écris le mot: karaté!": {
-  "file": "d73a813b-9b6a42.mp3",
-  "text": "Écris le mot : karaté !",
-  "sent": "Écris le mot : karaté !",
-  "dur": 1.92,
-  "cost": 9,
-  "sttCost": 1,
-  "stt": "Écris le mot karaté",
-  "score": 1
- },
- "écoute bien: karaté.": {
-  "file": "9c90528c-966508.mp3",
-  "text": "Écoute bien : karaté.",
-  "sent": "Écoute bien : karaté.",
-  "dur": 2,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Écoute bien. Karaté",
   "score": 1
  },
  "écris le mot: vidéo!": {
@@ -14183,16 +13687,6 @@
   "dur": 1.04,
   "cost": 2,
   "sttCost": 0,
-  "score": 1
- },
- "euh, comme dans feu.": {
-  "file": "0248754a-20d937.mp3",
-  "text": "euh, comme dans feu.",
-  "sent": "euh, comme dans feu.",
-  "dur": 2.16,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Euh, comme dans feu",
   "score": 1
  },
  "celui-là, c'est: mou.": {
@@ -15020,36 +14514,6 @@
   "stt": "Cherche poisson",
   "score": 1
  },
- "touche le mot: chat!": {
-  "file": "3e9d86fd-0a9ee4.mp3",
-  "text": "Touche le mot : chat !",
-  "sent": "Touche le mot : chat !",
-  "dur": 1.84,
-  "cost": 9,
-  "sttCost": 0,
-  "stt": "Touche le mot chat",
-  "score": 1
- },
- "celui-là, c'est: chat.": {
-  "file": "7b0f0993-0d1c88.mp3",
-  "text": "Celui-là, c'est : chat.",
-  "sent": "Celui-là, c'est : chat.",
-  "dur": 2.24,
-  "cost": 9,
-  "sttCost": 1,
-  "stt": "Celui-là, c'est chat",
-  "score": 1
- },
- "cherche: chat.": {
-  "file": "36729d95-3fb7ad.mp3",
-  "text": "Cherche : chat.",
-  "sent": "Cherche : chat.",
-  "dur": 1.84,
-  "cost": 6,
-  "sttCost": 0,
-  "stt": "Cherche, chatte",
-  "score": 0.85
- },
  "touche le mot: loup!": {
   "file": "b37136e7-e4c5c8.mp3",
   "text": "Touche le mot : loup !",
@@ -15350,46 +14814,6 @@
   "stt": "Ci-tron. Citron",
   "score": 1
  },
- "touche le mot: citron!": {
-  "file": "5bd9893e-96c088.mp3",
-  "text": "Touche le mot : citron !",
-  "sent": "Touche le mot : citron !",
-  "dur": 1.92,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Touche le mot citron",
-  "score": 1
- },
- "celui-là, c'est: citron.": {
-  "file": "dced4038-9b2361.mp3",
-  "text": "Celui-là, c'est : citron.",
-  "sent": "Celui-là, c'est : citron.",
-  "dur": 2.24,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Celui-là, c'est citron",
-  "score": 1
- },
- "cherche: citron.": {
-  "file": "da238b3e-64169a.mp3",
-  "text": "Cherche : citron.",
-  "sent": "Cherche : citron.",
-  "dur": 1.84,
-  "cost": 7,
-  "sttCost": 0,
-  "stt": "Cherche citron",
-  "score": 1
- },
- "a… vion… avion!": {
-  "file": "c4f9375e-b2ff7e.mp3",
-  "text": "a… vion… avion !",
-  "sent": "a… vion… avion !",
-  "dur": 2.4,
-  "cost": 6,
-  "sttCost": 1,
-  "stt": "A-vion. Avion",
-  "score": 1
- },
  "touche le mot: avion!": {
   "file": "37d06426-db6965.mp3",
   "text": "Touche le mot : avion !",
@@ -15398,26 +14822,6 @@
   "cost": 9,
   "sttCost": 0,
   "stt": "Touche le mot avion",
-  "score": 1
- },
- "celui-là, c'est: avion.": {
-  "file": "3bb82426-6e427a.mp3",
-  "text": "Celui-là, c'est : avion.",
-  "sent": "Celui-là, c'est : avion.",
-  "dur": 2.24,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Celui-là, c'est avion",
-  "score": 1
- },
- "cherche: avion.": {
-  "file": "427a529c-fda557.mp3",
-  "text": "Cherche : avion.",
-  "sent": "Cherche : avion.",
-  "dur": 1.68,
-  "cost": 6,
-  "sttCost": 0,
-  "stt": "Cherche avion",
   "score": 1
  },
  "ca… mion… camion!": {
@@ -15910,46 +15314,6 @@
   "stt": "Cherche soleil",
   "score": 1
  },
- "cra… yon… crayon!": {
-  "file": "2297bdd0-71a40e.mp3",
-  "text": "cra… yon… crayon !",
-  "sent": "cra… yon… crayon !",
-  "dur": 2.4,
-  "cost": 7,
-  "sttCost": 1,
-  "stt": "Crayon, crayon",
-  "score": 1
- },
- "touche le mot: crayon!": {
-  "file": "26011d8d-369e25.mp3",
-  "text": "Touche le mot : crayon !",
-  "sent": "Touche le mot : crayon !",
-  "dur": 1.84,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Touche le mot crayon",
-  "score": 1
- },
- "cherche: crayon.": {
-  "file": "5fe7844d-58a379.mp3",
-  "text": "Cherche : crayon.",
-  "sent": "Cherche : crayon.",
-  "dur": 1.76,
-  "cost": 7,
-  "sttCost": 0,
-  "stt": "Cherche crayon",
-  "score": 1
- },
- "celui-là, c'est: crayon.": {
-  "file": "d72cacb7-659b25.mp3",
-  "text": "Celui-là, c'est : crayon.",
-  "sent": "Celui-là, c'est : crayon.",
-  "dur": 2.24,
-  "cost": 10,
-  "sttCost": 1,
-  "stt": "Celui-là, c'est crayon",
-  "score": 1
- },
  "ça, c'est: mouton.": {
   "file": "7f38a064-91392e.mp3",
   "text": "Ça, c'est : mouton.",
@@ -16178,26 +15542,6 @@
   "cost": 7,
   "sttCost": 1,
   "stt": "Écoute : citron",
-  "score": 1
- },
- "ça, c'est: avion.": {
-  "file": "a228ae01-ad0a05.mp3",
-  "text": "Ça, c'est : avion.",
-  "sent": "Ça, c'est : avion.",
-  "dur": 2,
-  "cost": 7,
-  "sttCost": 1,
-  "stt": "Ça, c'est avion",
-  "score": 1
- },
- "écoute: a… vion.": {
-  "file": "a14702e0-d594c9.mp3",
-  "text": "Écoute : a… vion.",
-  "sent": "Écoute : a… vion.",
-  "dur": 2.64,
-  "cost": 7,
-  "sttCost": 1,
-  "stt": "Écoute. Avion",
   "score": 1
  },
  "ça, c'est: camion.": {
@@ -16459,16 +15803,6 @@
   "stt": "Écoute, so, l'aile",
   "score": 0.85
  },
- "ça, c'est: crayon.": {
-  "file": "4abe1122-31bf93.mp3",
-  "text": "Ça, c'est : crayon.",
-  "sent": "Ça, c'est : crayon.",
-  "dur": 2.08,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Ça, c'est crayon",
-  "score": 1
- },
  "le chat fait miaou.": {
   "file": "94e4013d-4bd216.mp3",
   "text": "Le chat fait miaou.",
@@ -16478,16 +15812,6 @@
   "sttCost": 0,
   "stt": "Le chat fait miaou",
   "score": 1
- },
- "écoute: cra… yon.": {
-  "file": "b62c1291-047336.mp3",
-  "text": "Écoute : cra… yon.",
-  "sent": "Écoute : cra… yon.",
-  "dur": 2.64,
-  "cost": 7,
-  "sttCost": 1,
-  "stt": "Écoute : cra-yant",
-  "score": 0.85
  },
  "la banane est jaune.": {
   "file": "3c81d814-01b3a5.mp3",
@@ -24915,6 +24239,6601 @@
   "cost": 10,
   "sttCost": 0,
   "stt": "Compte tous les ballons",
+  "score": 1
+ },
+ "niveau 21.": {
+  "file": "2d90b66a-34145f.mp3",
+  "text": "Niveau 21.",
+  "sent": "Niveau 21.",
+  "dur": 1.28,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "niveau 22.": {
+  "file": "4f97a7b5-8315ea.mp3",
+  "text": "Niveau 22.",
+  "sent": "Niveau 22.",
+  "dur": 1.28,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "niveau 20.": {
+  "file": "4f932a87-18d80b.mp3",
+  "text": "Niveau 20.",
+  "sent": "Niveau 20.",
+  "dur": 1.04,
+  "cost": 4,
+  "sttCost": 0,
+  "stt": "Niveau 20",
+  "score": 1
+ },
+ "niveau 24.": {
+  "file": "cf9cee63-7cbc4b.mp3",
+  "text": "Niveau 24.",
+  "sent": "Niveau 24.",
+  "dur": 1.28,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "niveau 23.": {
+  "file": "2d953398-cd7c82.mp3",
+  "text": "Niveau 23.",
+  "sent": "Niveau 23.",
+  "dur": 1.28,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "niveau 25.": {
+  "file": "ad9a7a46-0d7c49.mp3",
+  "text": "Niveau 25.",
+  "sent": "Niveau 25.",
+  "dur": 1.36,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "niveau 26.": {
+  "file": "2fa202b1-f4984f.mp3",
+  "text": "Niveau 26.",
+  "sent": "Niveau 26.",
+  "dur": 1.44,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "niveau 27.": {
+  "file": "cd9f29d4-335acf.mp3",
+  "text": "Niveau 27.",
+  "sent": "Niveau 27.",
+  "dur": 1.36,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "niveau 28.": {
+  "file": "2fa67fdf-5ff44e.mp3",
+  "text": "Niveau 28.",
+  "sent": "Niveau 28.",
+  "dur": 1.28,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "niveau 30.": {
+  "file": "414a938c-2a1d95.mp3",
+  "text": "Niveau 30.",
+  "sent": "Niveau 30.",
+  "dur": 1.12,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "niveau 29.": {
+  "file": "4da47082-a949ce.mp3",
+  "text": "Niveau 29.",
+  "sent": "Niveau 29.",
+  "dur": 1.28,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "niveau 31.": {
+  "file": "634d07a9-75696f.mp3",
+  "text": "Niveau 31.",
+  "sent": "Niveau 31.",
+  "dur": 1.36,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "les lettres en gris ne se disent pas.": {
+  "file": "b74a96b2-e9dec4.mp3",
+  "text": "Les lettres en gris ne se disent pas.",
+  "sent": "Les lettres en gris ne se disent pas.",
+  "dur": 2.16,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Les lettres en gris ne se disent pas",
+  "score": 1
+ },
+ "écoute bien!": {
+  "file": "5b6d67f0-2d8fe4.mp3",
+  "text": "Écoute bien !",
+  "sent": "Écoute bien !",
+  "dur": 0.88,
+  "cost": 5,
+  "sttCost": 0,
+  "stt": "Écoute bien",
+  "score": 1
+ },
+ "le c, le k et le q font le même son.": {
+  "file": "cb9e50d0-f733bc.mp3",
+  "text": "Le c, le k et le q font le même son.",
+  "sent": "Le c, le k et le q font le même son.",
+  "dur": 3.52,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Le C, le K et le Q font le même son",
+  "score": 1
+ },
+ "un même son peut s'écrire de plusieurs façons.": {
+  "file": "736d14cf-fb36d5.mp3",
+  "text": "Un même son peut s’écrire de plusieurs façons.",
+  "sent": "Un même son peut s’écrire de plusieurs façons.",
+  "dur": 2.56,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Un même son peut s'écrire de plusieurs façons",
+  "score": 1
+ },
+ "encore des sons écrits avec plusieurs lettres!": {
+  "file": "0b1a4ab2-184a04.mp3",
+  "text": "Encore des sons écrits avec plusieurs lettres !",
+  "sent": "Encore des sons écrits avec plusieurs lettres !",
+  "dur": 2.64,
+  "cost": 19,
+  "sttCost": 1,
+  "stt": "Encore des sons écrits avec plusieurs lettres",
+  "score": 1
+ },
+ "devant le e et le i, le c et le g changent de son!": {
+  "file": "015ed4bd-a67978.mp3",
+  "text": "Devant le e et le i, le c et le g changent de son !",
+  "sent": "Devant le e et le i, le c et le g changent de son !",
+  "dur": 4.24,
+  "cost": 20,
+  "sttCost": 1,
+  "stt": "Devant le E et le I, le C et le G changent de son",
+  "score": 1
+ },
+ "deux consonnes peuvent s'accrocher: écoute bien!": {
+  "file": "4798f049-4d8c03.mp3",
+  "text": "Deux consonnes peuvent s’accrocher : écoute bien !",
+  "sent": "Deux consonnes peuvent s’accrocher : écoute bien !",
+  "dur": 2.8,
+  "cost": 20,
+  "sttCost": 1,
+  "stt": "Deux consonnes peuvent s'accrocher. Écoute bien",
+  "score": 1
+ },
+ "écoute, et trouve-le!": {
+  "file": "b865fff8-a6a14f.mp3",
+  "text": "Écoute, et trouve-le !",
+  "sent": "Écoute, et trouve-le !",
+  "dur": 1.68,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Écoute et trouve-le",
+  "score": 1
+ },
+ "des petits mots qu'on lit partout.": {
+  "file": "0169ba2d-48c91d.mp3",
+  "text": "Des petits mots qu’on lit partout.",
+  "sent": "Des petits mots qu’on lit partout.",
+  "dur": 1.92,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Des petits mots qu'on lit partout",
+  "score": 1
+ },
+ "et tu passes au niveau 20!": {
+  "file": "1145214d-2ae74c.mp3",
+  "text": "Et tu passes au niveau 20 !",
+  "sent": "Et tu passes au niveau 20 !",
+  "dur": 1.68,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Et tu passes au niveau vingt",
+  "score": 1
+ },
+ "on passe au niveau 20.": {
+  "file": "06eeaee0-9cfd18.mp3",
+  "text": "On passe au niveau 20.",
+  "sent": "On passe au niveau 20.",
+  "dur": 1.44,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "On passe au niveau vingt",
+  "score": 1
+ },
+ "et tu passes au niveau 21!": {
+  "file": "7547fd50-942326.mp3",
+  "text": "Et tu passes au niveau 21 !",
+  "sent": "Et tu passes au niveau 21 !",
+  "dur": 1.76,
+  "cost": 33,
+  "sttCost": 1,
+  "stt": "Et tu passes au niveau vingt et un",
+  "score": 0.67
+ },
+ "et tu passes au niveau 22!": {
+  "file": "0540913b-355723.mp3",
+  "text": "Et tu passes au niveau 22 !",
+  "sent": "Et tu passes au niveau 22 !",
+  "dur": 1.76,
+  "cost": 33,
+  "sttCost": 0,
+  "stt": "Et tu passes au niveau vingt-deux",
+  "score": 0.67
+ },
+ "on passe au niveau 21.": {
+  "file": "08f0f09d-49225d.mp3",
+  "text": "On passe au niveau 21.",
+  "sent": "On passe au niveau 21.",
+  "dur": 1.68,
+  "cost": 27,
+  "sttCost": 0,
+  "stt": "On passe au niveau vingt et un",
+  "score": 0.63
+ },
+ "on passe au niveau 22.": {
+  "file": "86e96832-c08ca7.mp3",
+  "text": "On passe au niveau 22.",
+  "sent": "On passe au niveau 22.",
+  "dur": 1.68,
+  "cost": 27,
+  "sttCost": 0,
+  "stt": "On passe au niveau vingt-deux",
+  "score": 0.63
+ },
+ "et tu passes au niveau 23!": {
+  "file": "e942a3be-2224f6.mp3",
+  "text": "Et tu passes au niveau 23 !",
+  "sent": "Et tu passes au niveau 23 !",
+  "dur": 1.76,
+  "cost": 33,
+  "sttCost": 3,
+  "stt": "Et tu passes au niveau vingt-trois",
+  "score": 0.64
+ },
+ "on passe au niveau 23.": {
+  "file": "a8ebdc4f-60b5b8.mp3",
+  "text": "On passe au niveau 23.",
+  "sent": "On passe au niveau 23.",
+  "dur": 1.84,
+  "cost": 27,
+  "sttCost": 1,
+  "stt": "On passe au niveau vingt-trois",
+  "score": 0.6
+ },
+ "et tu passes au niveau 24!": {
+  "file": "e94f6fb1-d829a8.mp3",
+  "text": "Et tu passes au niveau 24 !",
+  "sent": "Et tu passes au niveau 24 !",
+  "dur": 1.84,
+  "cost": 33,
+  "sttCost": 3,
+  "stt": "Et tu passes au niveau vingt-quatre",
+  "score": 0.62
+ },
+ "on passe au niveau 24.": {
+  "file": "a6f8a51c-90ca1d.mp3",
+  "text": "On passe au niveau 24.",
+  "sent": "On passe au niveau 24.",
+  "dur": 1.68,
+  "cost": 27,
+  "sttCost": 0,
+  "stt": "On passe au niveau vingt-quatre",
+  "score": 0.58
+ },
+ "et tu passes au niveau 25!": {
+  "file": "0d51e6f4-70355d.mp3",
+  "text": "Et tu passes au niveau 25 !",
+  "sent": "Et tu passes au niveau 25 !",
+  "dur": 1.92,
+  "cost": 33,
+  "sttCost": 3,
+  "stt": "Et tu passes au niveau vingt-cinq",
+  "score": 0.67
+ },
+ "on passe au niveau 25.": {
+  "file": "88fab479-5f6a68.mp3",
+  "text": "On passe au niveau 25.",
+  "sent": "On passe au niveau 25.",
+  "dur": 1.76,
+  "cost": 27,
+  "sttCost": 0,
+  "stt": "On passe au niveau vingt-cinq",
+  "score": 0.63
+ },
+ "et tu passes au niveau 26!": {
+  "file": "5d4a161f-e9d65e.mp3",
+  "text": "Et tu passes au niveau 26 !",
+  "sent": "Et tu passes au niveau 26 !",
+  "dur": 1.92,
+  "cost": 33,
+  "sttCost": 3,
+  "stt": "Et tu passes au niveau vingt-six",
+  "score": 0.69
+ },
+ "on passe au niveau 26.": {
+  "file": "26f35e6e-d8465b.mp3",
+  "text": "On passe au niveau 26.",
+  "sent": "On passe au niveau 26.",
+  "dur": 1.6,
+  "cost": 27,
+  "sttCost": 0,
+  "stt": "On passe au niveau vingt-six",
+  "score": 0.65
+ },
+ "et tu passes au niveau 27!": {
+  "file": "814c8d62-a068c8.mp3",
+  "text": "Et tu passes au niveau 27 !",
+  "sent": "Et tu passes au niveau 27 !",
+  "dur": 1.84,
+  "cost": 33,
+  "sttCost": 3,
+  "stt": "Et tu passes au niveau vingt-sept",
+  "score": 0.67
+ },
+ "on passe au niveau 27.": {
+  "file": "88f6374b-4e4fa6.mp3",
+  "text": "On passe au niveau 27.",
+  "sent": "On passe au niveau 27.",
+  "dur": 1.68,
+  "cost": 27,
+  "sttCost": 0,
+  "stt": "On passe au niveau vingt-sept",
+  "score": 0.63
+ },
+ "et tu passes au niveau 28!": {
+  "file": "e1314e05-ebdecf.mp3",
+  "text": "Et tu passes au niveau 28 !",
+  "sent": "Et tu passes au niveau 28 !",
+  "dur": 1.92,
+  "cost": 33,
+  "sttCost": 3,
+  "stt": "Et tu passes au niveau vingt-huit",
+  "score": 0.67
+ },
+ "on passe au niveau 28.": {
+  "file": "a6da9008-0e11f4.mp3",
+  "text": "On passe au niveau 28.",
+  "sent": "On passe au niveau 28.",
+  "dur": 1.68,
+  "cost": 27,
+  "sttCost": 1,
+  "stt": "On passe au niveau vingt-huit",
+  "score": 0.63
+ },
+ "et tu passes au niveau 29!": {
+  "file": "0533c548-52e82e.mp3",
+  "text": "Et tu passes au niveau 29 !",
+  "sent": "Et tu passes au niveau 29 !",
+  "dur": 1.76,
+  "cost": 33,
+  "sttCost": 2,
+  "stt": "Et tu passes au niveau vingt-neuf",
+  "score": 0.67
+ },
+ "on passe au niveau 29.": {
+  "file": "08dd68e5-01e21c.mp3",
+  "text": "On passe au niveau 29.",
+  "sent": "On passe au niveau 29.",
+  "dur": 1.6,
+  "cost": 27,
+  "sttCost": 0,
+  "stt": "On passe au niveau vingt-neuf",
+  "score": 0.63
+ },
+ "et tu passes au niveau 30!": {
+  "file": "cf1a1d92-807496.mp3",
+  "text": "Et tu passes au niveau 30 !",
+  "sent": "Et tu passes au niveau 30 !",
+  "dur": 1.68,
+  "cost": 33,
+  "sttCost": 0,
+  "stt": "Et tu passes au niveau trente",
+  "score": 0.75
+ },
+ "on passe au niveau 30.": {
+  "file": "95862e3b-ee9523.mp3",
+  "text": "On passe au niveau 30.",
+  "sent": "On passe au niveau 30.",
+  "dur": 1.6,
+  "cost": 27,
+  "sttCost": 0,
+  "stt": "On passe au niveau trente",
+  "score": 0.71
+ },
+ "et tu passes au niveau 31!": {
+  "file": "6b17418f-d4b3b3.mp3",
+  "text": "Et tu passes au niveau 31 !",
+  "sent": "Et tu passes au niveau 31 !",
+  "dur": 1.76,
+  "cost": 33,
+  "sttCost": 1,
+  "stt": "Et tu passes au niveau trente-et-un",
+  "score": 0.64
+ },
+ "pi… ja… ma… pijama!": {
+  "file": "410b4f10-459648.mp3",
+  "text": "pi… ja… ma… pijama !",
+  "sent": "pi… ja… ma… pijama !",
+  "dur": 3.04,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Pi-ja-ma. Pyjama",
+  "score": 0.92
+ },
+ "touche le mot: pijama!": {
+  "file": "8116a84b-1f0387.mp3",
+  "text": "Touche le mot : pijama !",
+  "sent": "Touche le mot : pijama !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot pyjama",
+  "score": 0.94
+ },
+ "celui-là, c'est: pijama.": {
+  "file": "3e506129-8f0954.mp3",
+  "text": "Celui-là, c'est : pijama.",
+  "sent": "Celui-là, c'est : pijama.",
+  "dur": 2.32,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est pyjama",
+  "score": 0.94
+ },
+ "on passe au niveau 31.": {
+  "file": "7383ba1e-4fe258.mp3",
+  "text": "On passe au niveau 31.",
+  "sent": "On passe au niveau 31.",
+  "dur": 1.76,
+  "cost": 27,
+  "sttCost": 0,
+  "stt": "On passe au niveau trente-et-un",
+  "score": 0.6
+ },
+ "cherche: pijama.": {
+  "file": "2ea0c343-516d14.mp3",
+  "text": "Cherche : pijama.",
+  "sent": "Cherche : pijama.",
+  "dur": 1.92,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche pyjama",
+  "score": 0.92
+ },
+ "touche le mot: tutu!": {
+  "file": "ca63ee03-ca6681.mp3",
+  "text": "Touche le mot : tutu !",
+  "sent": "Touche le mot : tutu !",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Touche le mot Tutu",
+  "score": 1
+ },
+ "celui-là, c'est: tutu.": {
+  "file": "b7a1db2d-a65a5b.mp3",
+  "text": "Celui-là, c'est : tutu.",
+  "sent": "Celui-là, c'est : tutu.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Tutu",
+  "score": 1
+ },
+ "cherche: tutu.": {
+  "file": "4b3f0653-1b768d.mp3",
+  "text": "Cherche : tutu.",
+  "sent": "Cherche : tutu.",
+  "dur": 1.68,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche Tutu",
+  "score": 1
+ },
+ "touche le mot: loto!": {
+  "file": "f83322cb-03955e.mp3",
+  "text": "Touche le mot : loto !",
+  "sent": "Touche le mot : loto !",
+  "dur": 2,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Touche le mot : loto",
+  "score": 1
+ },
+ "celui-là, c'est: loto.": {
+  "file": "8cfd73ad-3c9c8c.mp3",
+  "text": "Celui-là, c'est : loto.",
+  "sent": "Celui-là, c'est : loto.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est l'auto",
+  "score": 0.88
+ },
+ "cherche: loto.": {
+  "file": "2ec12cc3-5cd53e.mp3",
+  "text": "Cherche : loto.",
+  "sent": "Cherche : loto.",
+  "dur": 1.76,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche l'auto",
+  "score": 0.83
+ },
+ "touche le mot: vidéo!": {
+  "file": "c8fa5a13-cf3263.mp3",
+  "text": "Touche le mot : vidéo !",
+  "sent": "Touche le mot : vidéo !",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Touche le mot vidéo",
+  "score": 1
+ },
+ "celui-là, c'est: vidéo.": {
+  "file": "54a659d9-73d206.mp3",
+  "text": "Celui-là, c'est : vidéo.",
+  "sent": "Celui-là, c'est : vidéo.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est vidéo",
+  "score": 1
+ },
+ "cherche: vidéo.": {
+  "file": "1f897993-de7721.mp3",
+  "text": "Cherche : vidéo.",
+  "sent": "Cherche : vidéo.",
+  "dur": 1.68,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche vidéo",
+  "score": 1
+ },
+ "sa… la… mi… salami!": {
+  "file": "67a25c34-8ca85b.mp3",
+  "text": "sa… la… mi… salami !",
+  "sent": "sa… la… mi… salami !",
+  "dur": 3.44,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Sa-la-mi. Salami",
+  "score": 1
+ },
+ "touche le mot: salami!": {
+  "file": "4da65364-96eca6.mp3",
+  "text": "Touche le mot : salami !",
+  "sent": "Touche le mot : salami !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot : salami",
+  "score": 1
+ },
+ "celui-là, c'est: salami.": {
+  "file": "f412d62a-552bb6.mp3",
+  "text": "Celui-là, c'est : salami.",
+  "sent": "Celui-là, c'est : salami.",
+  "dur": 2.32,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est salami",
+  "score": 1
+ },
+ "jo… li… joli!": {
+  "file": "6d8f38f4-17df09.mp3",
+  "text": "jo… li… joli !",
+  "sent": "jo… li… joli !",
+  "dur": 2.64,
+  "cost": 6,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: salami.": {
+  "file": "a4f51aec-d91c49.mp3",
+  "text": "Cherche : salami.",
+  "sent": "Cherche : salami.",
+  "dur": 1.84,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche salami",
+  "score": 1
+ },
+ "touche le mot: joli!": {
+  "file": "8cf8331f-a995e9.mp3",
+  "text": "Touche le mot : joli !",
+  "sent": "Touche le mot : joli !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Touche le mot joli",
+  "score": 1
+ },
+ "celui-là, c'est: joli.": {
+  "file": "de18239d-5ab0a2.mp3",
+  "text": "Celui-là, c'est : joli.",
+  "sent": "Celui-là, c'est : joli.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est joli",
+  "score": 1
+ },
+ "pu… ma… puma!": {
+  "file": "68be3304-83cfda.mp3",
+  "text": "pu… ma… puma !",
+  "sent": "pu… ma… puma !",
+  "dur": 2.24,
+  "cost": 6,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le mot: puma!": {
+  "file": "9135d4c4-9eab3a.mp3",
+  "text": "Touche le mot : puma !",
+  "sent": "Touche le mot : puma !",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Touche le mot puma",
+  "score": 1
+ },
+ "celui-là, c'est: puma.": {
+  "file": "47923d5e-69cf13.mp3",
+  "text": "Celui-là, c'est : puma.",
+  "sent": "Celui-là, c'est : puma.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Puma",
+  "score": 1
+ },
+ "cherche: joli.": {
+  "file": "53031443-62a6d7.mp3",
+  "text": "Cherche : joli.",
+  "sent": "Cherche : joli.",
+  "dur": 1.76,
+  "cost": 12,
+  "sttCost": 2,
+  "stt": "Cherche : joli",
+  "score": 1
+ },
+ "a… mi… ami!": {
+  "file": "7bcc6786-3230e9.mp3",
+  "text": "a… mi… ami !",
+  "sent": "a… mi… ami !",
+  "dur": 2.48,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: puma.": {
+  "file": "c4613fe4-c6e75c.mp3",
+  "text": "Cherche : puma.",
+  "sent": "Cherche : puma.",
+  "dur": 1.76,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche Puma",
+  "score": 1
+ },
+ "touche le mot: ami!": {
+  "file": "3b1d1300-2678f1.mp3",
+  "text": "Touche le mot : ami !",
+  "sent": "Touche le mot : ami !",
+  "dur": 1.92,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Touche le mot ami",
+  "score": 1
+ },
+ "celui-là, c'est: ami.": {
+  "file": "e3bc338c-290359.mp3",
+  "text": "Celui-là, c'est : ami.",
+  "sent": "Celui-là, c'est : ami.",
+  "dur": 2.4,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est ami",
+  "score": 1
+ },
+ "cherche: ami.": {
+  "file": "8ca1bac6-ea87fd.mp3",
+  "text": "Cherche : ami.",
+  "sent": "Cherche : ami.",
+  "dur": 1.84,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche ami",
+  "score": 1
+ },
+ "construis le mot: pijama!": {
+  "file": "8254dc4d-fde873.mp3",
+  "text": "Construis le mot : pijama !",
+  "sent": "Construis le mot : pijama !",
+  "dur": 2.16,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Construit le mot pyjama",
+  "score": 0.9
+ },
+ "ja": {
+  "file": "6c3f7a14-5f846c.mp3",
+  "text": "ja",
+  "sent": "ja.",
+  "dur": 0.72,
+  "cost": 1,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: pi… ja… ma.": {
+  "file": "13425703-3236f9.mp3",
+  "text": "Écoute : pi… ja… ma.",
+  "sent": "Écoute : pi… ja… ma.",
+  "dur": 3.44,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute : pyjama",
+  "score": 0.92
+ },
+ "construis le mot: tutu!": {
+  "file": "8ed3d8f1-4c7aa0.mp3",
+  "text": "Construis le mot : tutu !",
+  "sent": "Construis le mot : tutu !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Construit le mot tutu",
+  "score": 0.94
+ },
+ "écoute: tu… tu.": {
+  "file": "edba2637-98e474.mp3",
+  "text": "Écoute : tu… tu.",
+  "sent": "Écoute : tu… tu.",
+  "dur": 2.72,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Écoute, tu tues",
+  "score": 0.83
+ },
+ "construis le mot: loto!": {
+  "file": "55805719-a17841.mp3",
+  "text": "Construis le mot : loto !",
+  "sent": "Construis le mot : loto !",
+  "dur": 2.16,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Construit le mot : loto",
+  "score": 0.94
+ },
+ "construis le mot: vidéo!": {
+  "file": "e753af1d-21ac1d.mp3",
+  "text": "Construis le mot : vidéo !",
+  "sent": "Construis le mot : vidéo !",
+  "dur": 2.16,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Construit le mot vidéo",
+  "score": 0.95
+ },
+ "écoute: vi… dé… o.": {
+  "file": "2f7a1293-415fd0.mp3",
+  "text": "Écoute : vi… dé… o.",
+  "sent": "Écoute : vi… dé… o.",
+  "dur": 3.44,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute : vi-dé-o",
+  "score": 1
+ },
+ "construis le mot: salami!": {
+  "file": "6f644f16-a31862.mp3",
+  "text": "Construis le mot : salami !",
+  "sent": "Construis le mot : salami !",
+  "dur": 2.24,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Construit le mot salami",
+  "score": 0.95
+ },
+ "écoute: lo… to.": {
+  "file": "e0a27ccf-b30ce5.mp3",
+  "text": "Écoute : lo… to.",
+  "sent": "Écoute : lo… to.",
+  "dur": 2.72,
+  "cost": 18,
+  "sttCost": 3,
+  "stt": "Écoute Law two",
+  "score": 0.75
+ },
+ "construis le mot: joli!": {
+  "file": "35cac37d-196fa0.mp3",
+  "text": "Construis le mot : joli !",
+  "sent": "Construis le mot : joli !",
+  "dur": 2.16,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Construit le mot joli",
+  "score": 0.94
+ },
+ "écoute: sa… la… mi.": {
+  "file": "fbc42e84-0d37fd.mp3",
+  "text": "Écoute : sa… la… mi.",
+  "sent": "Écoute : sa… la… mi.",
+  "dur": 3.52,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute : sa, la, mi",
+  "score": 1
+ },
+ "jo": {
+  "file": "623f6a56-1844ce.mp3",
+  "text": "jo",
+  "sent": "jo.",
+  "dur": 0.8,
+  "cost": 1,
+  "sttCost": 0,
+  "score": 1
+ },
+ "construis le mot: puma!": {
+  "file": "68a98a0a-a25cbe.mp3",
+  "text": "Construis le mot : puma !",
+  "sent": "Construis le mot : puma !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Construit le mot puma",
+  "score": 0.94
+ },
+ "écoute: pu… ma.": {
+  "file": "b3d6e488-f54d5d.mp3",
+  "text": "Écoute : pu… ma.",
+  "sent": "Écoute : pu… ma.",
+  "dur": 2.72,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Écoute, pu... main",
+  "score": 0.83
+ },
+ "pu": {
+  "file": "5c4e6b6e-98a048.mp3",
+  "text": "pu",
+  "sent": "pu.",
+  "dur": 0.64,
+  "cost": 1,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: a… mi.": {
+  "file": "aaaa597a-51fa4c.mp3",
+  "text": "Écoute : a… mi.",
+  "sent": "Écoute : a… mi.",
+  "dur": 2.48,
+  "cost": 6,
+  "sttCost": 0,
+  "score": 1
+ },
+ "construis le mot: ami!": {
+  "file": "4e563562-cb662b.mp3",
+  "text": "Construis le mot : ami !",
+  "sent": "Construis le mot : ami !",
+  "dur": 2.08,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Construit le mot ami",
+  "score": 0.94
+ },
+ "mur!": {
+  "file": "1e0b8dda-e9e5bc.mp3",
+  "text": "mur !",
+  "sent": "mur !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: jo… li.": {
+  "file": "43763cc7-3286d5.mp3",
+  "text": "Écoute : jo… li.",
+  "sent": "Écoute : jo… li.",
+  "dur": 2.56,
+  "cost": 18,
+  "sttCost": 3,
+  "stt": "Écoute, Joe Lee",
+  "score": 0.75
+ },
+ "ça, c'est: judo.": {
+  "file": "f3e9d144-7f6b2c.mp3",
+  "text": "Ça, c'est : judo.",
+  "sent": "Ça, c'est : judo.",
+  "dur": 1.92,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est judo",
+  "score": 1
+ },
+ "ça, c'est: mur.": {
+  "file": "d8625600-c55926.mp3",
+  "text": "Ça, c'est : mur.",
+  "sent": "Ça, c'est : mur.",
+  "dur": 2.16,
+  "cost": 6,
+  "sttCost": 0,
+  "score": 1
+ },
+ "bol!": {
+  "file": "a3969995-930f90.mp3",
+  "text": "bol !",
+  "sent": "bol !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: mur.": {
+  "file": "5043db6d-a4793e.mp3",
+  "text": "Écoute : mur.",
+  "sent": "Écoute : mur.",
+  "dur": 1.76,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "ça, c'est: bol.": {
+  "file": "ff66aba7-3ad1c6.mp3",
+  "text": "Ça, c'est : bol.",
+  "sent": "Ça, c'est : bol.",
+  "dur": 2,
+  "cost": 6,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: bol.": {
+  "file": "8b32d7d6-ff9750.mp3",
+  "text": "Écoute : bol.",
+  "sent": "Écoute : bol.",
+  "dur": 1.84,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "pi… a… no… piano!": {
+  "file": "9d2eab86-358329.mp3",
+  "text": "pi… a… no… piano !",
+  "sent": "pi… a… no… piano !",
+  "dur": 2.96,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Pi... Ah non, piano",
+  "score": 0.83
+ },
+ "ça, c'est: piano.": {
+  "file": "fd0a7007-9539ef.mp3",
+  "text": "Ça, c'est : piano.",
+  "sent": "Ça, c'est : piano.",
+  "dur": 2,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est piano",
+  "score": 1
+ },
+ "fil!": {
+  "file": "eeeac24f-b25fff.mp3",
+  "text": "fil !",
+  "sent": "fil !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: pi… a… no.": {
+  "file": "0850dcee-c20fdf.mp3",
+  "text": "Écoute : pi… a… no.",
+  "sent": "Écoute : pi… a… no.",
+  "dur": 3.04,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute : P-A-NO",
+  "score": 0.91
+ },
+ "ça, c'est: fil.": {
+  "file": "98eaebd5-029c2b.mp3",
+  "text": "Ça, c'est : fil.",
+  "sent": "Ça, c'est : fil.",
+  "dur": 1.92,
+  "cost": 6,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: fil.": {
+  "file": "0884d3e0-190a78.mp3",
+  "text": "Écoute : fil.",
+  "sent": "Écoute : fil.",
+  "dur": 1.68,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "bus!": {
+  "file": "b4fbeb08-9173d6.mp3",
+  "text": "bus !",
+  "sent": "bus !",
+  "dur": 0.96,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "ça, c'est: bus.": {
+  "file": "cde77b9e-3058d6.mp3",
+  "text": "Ça, c'est : bus.",
+  "sent": "Ça, c'est : bus.",
+  "dur": 2.08,
+  "cost": 6,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: bus.": {
+  "file": "4cd8cb63-37876c.mp3",
+  "text": "Écoute : bus.",
+  "sent": "Écoute : bus.",
+  "dur": 1.76,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écris le mot: puma!": {
+  "file": "a6a65eb7-10ad30.mp3",
+  "text": "Écris le mot : puma !",
+  "sent": "Écris le mot : puma !",
+  "dur": 1.84,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écris le mot puma",
+  "score": 1
+ },
+ "écris le mot: ami!": {
+  "file": "e701fae9-3cb17b.mp3",
+  "text": "Écris le mot : ami !",
+  "sent": "Écris le mot : ami !",
+  "dur": 1.92,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écris le mot ami",
+  "score": 1
+ },
+ "écoute bien: puma.": {
+  "file": "c69c7d00-1d10c9.mp3",
+  "text": "Écoute bien : puma.",
+  "sent": "Écoute bien : puma.",
+  "dur": 1.92,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute bien : puma",
+  "score": 1
+ },
+ "écoute bien: ami.": {
+  "file": "d21099f2-304779.mp3",
+  "text": "Écoute bien : ami.",
+  "sent": "Écoute bien : ami.",
+  "dur": 1.84,
+  "cost": 7,
+  "sttCost": 0,
+  "stt": "Écoute bien, Annie",
+  "score": 0.8
+ },
+ "écris le mot: joli!": {
+  "file": "ca867368-70e9ea.mp3",
+  "text": "Écris le mot : joli !",
+  "sent": "Écris le mot : joli !",
+  "dur": 1.84,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écris le mot joli",
+  "score": 1
+ },
+ "écoute bien: joli.": {
+  "file": "1eff775f-ffff71.mp3",
+  "text": "Écoute bien : joli.",
+  "sent": "Écoute bien : joli.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute bien. Jolie",
+  "score": 0.93
+ },
+ "écris le mot: pijama!": {
+  "file": "b0eba36c-4feb2e.mp3",
+  "text": "Écris le mot : pijama !",
+  "sent": "Écris le mot : pijama !",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Écris le mot pyjama",
+  "score": 0.94
+ },
+ "ça, c'est: lit.": {
+  "file": "31af5c6b-196890.mp3",
+  "text": "Ça, c'est : lit.",
+  "sent": "Ça, c'est : lit.",
+  "dur": 2,
+  "cost": 6,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute bien: pijama.": {
+  "file": "4d30eea7-ca8f5a.mp3",
+  "text": "Écoute bien : pijama.",
+  "sent": "Écoute bien : pijama.",
+  "dur": 1.92,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute bien : pyjama",
+  "score": 0.94
+ },
+ "ça, c'est: riz.": {
+  "file": "e7d6c077-6ee5d7.mp3",
+  "text": "Ça, c'est : riz.",
+  "sent": "Ça, c'est : riz.",
+  "dur": 1.84,
+  "cost": 6,
+  "sttCost": 0,
+  "score": 1
+ },
+ "ça, c'est: rat.": {
+  "file": "01138371-fefe05.mp3",
+  "text": "Ça, c'est : rat.",
+  "sent": "Ça, c'est : rat.",
+  "dur": 2,
+  "cost": 6,
+  "sttCost": 0,
+  "score": 1
+ },
+ "va… che… vache!": {
+  "file": "614fbff6-f59396.mp3",
+  "text": "va… che… vache !",
+  "sent": "va… che… vache !",
+  "dur": 2.48,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Va-che, vache !",
+  "score": 1
+ },
+ "ça, c'est: vache.": {
+  "file": "6c179c0f-98fad2.mp3",
+  "text": "Ça, c'est : vache.",
+  "sent": "Ça, c'est : vache.",
+  "dur": 2,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est vache",
+  "score": 1
+ },
+ "écoute: va… che.": {
+  "file": "d1fc1e8e-12429a.mp3",
+  "text": "Écoute : va… che.",
+  "sent": "Écoute : va… che.",
+  "dur": 2.72,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute, va, check",
+  "score": 0.85
+ },
+ "ça, c'est: pirate.": {
+  "file": "5f654623-b7372d.mp3",
+  "text": "Ça, c'est : pirate.",
+  "sent": "Ça, c'est : pirate.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est pirate",
+  "score": 1
+ },
+ "eux, comme dans feu.": {
+  "file": "e5f74f1a-827b16.mp3",
+  "text": "eux, comme dans feu.",
+  "sent": "eux, comme dans feu.",
+  "dur": 2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "E comme dans feu",
+  "score": 0.87
+ },
+ "touche le bloc qui fait le son: eux!": {
+  "file": "152b20bf-481316.mp3",
+  "text": "Touche le bloc qui fait le son : eux !",
+  "sent": "Touche le bloc qui fait le son : eux !",
+  "dur": 2.4,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son E",
+  "score": 0.93
+ },
+ "celui-là, c'est: eux.": {
+  "file": "3f7d3ae5-ab2aaf.mp3",
+  "text": "Celui-là, c'est : eux.",
+  "sent": "Celui-là, c'est : eux.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est E",
+  "score": 0.86
+ },
+ "cherche: eux.": {
+  "file": "b35f8ef7-30d0d1.mp3",
+  "text": "Cherche : eux.",
+  "sent": "Cherche : eux.",
+  "dur": 1.52,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche E",
+  "score": 0.8
+ },
+ "sa… pin… sapin!": {
+  "file": "810d5eea-ce03b5.mp3",
+  "text": "sa… pin… sapin !",
+  "sent": "sa… pin… sapin !",
+  "dur": 2.56,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Sapin. Sapin",
+  "score": 1
+ },
+ "touche le mot: sapin!": {
+  "file": "bca6e12a-8ce583.mp3",
+  "text": "Touche le mot : sapin !",
+  "sent": "Touche le mot : sapin !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Touche le mot sapin",
+  "score": 1
+ },
+ "celui-là, c'est: sapin.": {
+  "file": "ed0223ae-f3a635.mp3",
+  "text": "Celui-là, c'est : sapin.",
+  "sent": "Celui-là, c'est : sapin.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est sapin",
+  "score": 1
+ },
+ "cherche: sapin.": {
+  "file": "547eb480-78d45c.mp3",
+  "text": "Cherche : sapin.",
+  "sent": "Cherche : sapin.",
+  "dur": 1.76,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche sapin",
+  "score": 1
+ },
+ "pan… da… panda!": {
+  "file": "3cca24f0-d2253f.mp3",
+  "text": "pan… da… panda !",
+  "sent": "pan… da… panda !",
+  "dur": 2.56,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Pan-da. Panda",
+  "score": 1
+ },
+ "touche le mot: panda!": {
+  "file": "30b2c9f3-58ce5a.mp3",
+  "text": "Touche le mot : panda !",
+  "sent": "Touche le mot : panda !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Touche le mot panda",
+  "score": 1
+ },
+ "celui-là, c'est: panda.": {
+  "file": "3a591223-5a883f.mp3",
+  "text": "Celui-là, c'est : panda.",
+  "sent": "Celui-là, c'est : panda.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est panda",
+  "score": 1
+ },
+ "li… on… lion!": {
+  "file": "0cdd2b28-e367c3.mp3",
+  "text": "li… on… lion !",
+  "sent": "li… on… lion !",
+  "dur": 2.64,
+  "cost": 6,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: panda.": {
+  "file": "ed0bf721-d4534f.mp3",
+  "text": "Cherche : panda.",
+  "sent": "Cherche : panda.",
+  "dur": 1.68,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche panda",
+  "score": 1
+ },
+ "touche le mot: lion!": {
+  "file": "779cd0e1-26e0f9.mp3",
+  "text": "Touche le mot : lion !",
+  "sent": "Touche le mot : lion !",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Touche le mot lion",
+  "score": 1
+ },
+ "cherche: lion.": {
+  "file": "c571cced-362c57.mp3",
+  "text": "Cherche : lion.",
+  "sent": "Cherche : lion.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche Lyon",
+  "score": 0.91
+ },
+ "celui-là, c'est: lion.": {
+  "file": "44bff9b7-dac6bc.mp3",
+  "text": "Celui-là, c'est : lion.",
+  "sent": "Celui-là, c'est : lion.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est lion",
+  "score": 1
+ },
+ "ru… ban… ruban!": {
+  "file": "172ba00c-5e2e76.mp3",
+  "text": "ru… ban… ruban !",
+  "sent": "ru… ban… ruban !",
+  "dur": 2.8,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Ruban. Ruban",
+  "score": 1
+ },
+ "touche le mot: ruban!": {
+  "file": "23005fc9-7f3196.mp3",
+  "text": "Touche le mot : ruban !",
+  "sent": "Touche le mot : ruban !",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Touche le mot : ruban",
+  "score": 1
+ },
+ "celui-là, c'est: ruban.": {
+  "file": "d6529e51-47186b.mp3",
+  "text": "Celui-là, c'est : ruban.",
+  "sent": "Celui-là, c'est : ruban.",
+  "dur": 2.32,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est ruban",
+  "score": 1
+ },
+ "cherche: ruban.": {
+  "file": "3ed707b7-3f0b04.mp3",
+  "text": "Cherche : ruban.",
+  "sent": "Cherche : ruban.",
+  "dur": 1.84,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche ruban",
+  "score": 1
+ },
+ "touche le mot: souris!": {
+  "file": "b9fbb344-f0938b.mp3",
+  "text": "Touche le mot : souris !",
+  "sent": "Touche le mot : souris !",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot souris",
+  "score": 1
+ },
+ "sou… ris… souris!": {
+  "file": "775f4dc0-a3a0b9.mp3",
+  "text": "sou… ris… souris !",
+  "sent": "sou… ris… souris !",
+  "dur": 2.72,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Sou-ri, souris",
+  "score": 0.92
+ },
+ "celui-là, c'est: souris.": {
+  "file": "f56912da-c2b4f3.mp3",
+  "text": "Celui-là, c'est : souris.",
+  "sent": "Celui-là, c'est : souris.",
+  "dur": 2.32,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est souris",
+  "score": 1
+ },
+ "cherche: souris.": {
+  "file": "6a03fb48-87a11a.mp3",
+  "text": "Cherche : souris.",
+  "sent": "Cherche : souris.",
+  "dur": 1.76,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche souris",
+  "score": 1
+ },
+ "touche le mot: violon!": {
+  "file": "95414eb6-cb357e.mp3",
+  "text": "Touche le mot : violon !",
+  "sent": "Touche le mot : violon !",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot violon",
+  "score": 1
+ },
+ "celui-là, c'est: violon.": {
+  "file": "b3769224-218b20.mp3",
+  "text": "Celui-là, c'est : violon.",
+  "sent": "Celui-là, c'est : violon.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est violon",
+  "score": 1
+ },
+ "cherche: violon.": {
+  "file": "dbceac32-2c737a.mp3",
+  "text": "Cherche : violon.",
+  "sent": "Cherche : violon.",
+  "dur": 1.68,
+  "cost": 7,
+  "sttCost": 0,
+  "stt": "Cherche violon",
+  "score": 1
+ },
+ "nou… nours… nounours!": {
+  "file": "657a7598-b4534d.mp3",
+  "text": "nou… nours… nounours !",
+  "sent": "nou… nours… nounours !",
+  "dur": 3.04,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Nou-nours. Nounours",
+  "score": 1
+ },
+ "vi… o… lon… violon!": {
+  "file": "7ae12b54-f46b52.mp3",
+  "text": "vi… o… lon… violon !",
+  "sent": "vi… o… lon… violon !",
+  "dur": 3.28,
+  "cost": 24,
+  "sttCost": 3,
+  "stt": "Vi-o-lon. Violon",
+  "score": 1
+ },
+ "touche le mot: nounours!": {
+  "file": "50541b6a-d3b215.mp3",
+  "text": "Touche le mot : nounours !",
+  "sent": "Touche le mot : nounours !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot : nounours",
+  "score": 1
+ },
+ "celui-là, c'est: nounours.": {
+  "file": "179c8230-deb25b.mp3",
+  "text": "Celui-là, c'est : nounours.",
+  "sent": "Celui-là, c'est : nounours.",
+  "dur": 2.4,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Nounours",
+  "score": 1
+ },
+ "cherche: nounours.": {
+  "file": "ab50ae56-a7f575.mp3",
+  "text": "Cherche : nounours.",
+  "sent": "Cherche : nounours.",
+  "dur": 1.92,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Cherche Nounours",
+  "score": 1
+ },
+ "hi… bou… hibou!": {
+  "file": "8f93273e-124969.mp3",
+  "text": "hi… bou… hibou !",
+  "sent": "hi… bou… hibou !",
+  "dur": 2.32,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Hi-- bou. Hibou",
+  "score": 1
+ },
+ "touche le mot: hibou!": {
+  "file": "9d6a636e-147ba1.mp3",
+  "text": "Touche le mot : hibou !",
+  "sent": "Touche le mot : hibou !",
+  "dur": 1.76,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Touche le mot hibou",
+  "score": 1
+ },
+ "cherche: hibou.": {
+  "file": "01eef2e0-2482af.mp3",
+  "text": "Cherche : hibou.",
+  "sent": "Cherche : hibou.",
+  "dur": 1.84,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche hibou",
+  "score": 1
+ },
+ "celui-là, c'est: hibou.": {
+  "file": "5f01296e-9e71b3.mp3",
+  "text": "Celui-là, c'est : hibou.",
+  "sent": "Celui-là, c'est : hibou.",
+  "dur": 2.4,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est hibou",
+  "score": 1
+ },
+ "dou… che… douche!": {
+  "file": "a2b20028-3c16be.mp3",
+  "text": "dou… che… douche !",
+  "sent": "dou… che… douche !",
+  "dur": 2.4,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Douche. Douche",
+  "score": 1
+ },
+ "celui-là, c'est: douche.": {
+  "file": "2c722847-03a711.mp3",
+  "text": "Celui-là, c'est : douche.",
+  "sent": "Celui-là, c'est : douche.",
+  "dur": 2.32,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est douche",
+  "score": 1
+ },
+ "touche le mot: douche!": {
+  "file": "20bd062d-9302ce.mp3",
+  "text": "Touche le mot : douche !",
+  "sent": "Touche le mot : douche !",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot douche",
+  "score": 1
+ },
+ "cherche: douche.": {
+  "file": "72cbc15d-358d71.mp3",
+  "text": "Cherche : douche.",
+  "sent": "Cherche : douche.",
+  "dur": 1.76,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche douche",
+  "score": 1
+ },
+ "bou… che… bouche!": {
+  "file": "efc497e4-4347c5.mp3",
+  "text": "bou… che… bouche !",
+  "sent": "bou… che… bouche !",
+  "dur": 2.48,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Bouche. Bouche",
+  "score": 1
+ },
+ "touche le mot: bouche!": {
+  "file": "460eda97-8b7e2c.mp3",
+  "text": "Touche le mot : bouche !",
+  "sent": "Touche le mot : bouche !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot bouche",
+  "score": 1
+ },
+ "celui-là, c'est: bouche.": {
+  "file": "3ebad26d-169885.mp3",
+  "text": "Celui-là, c'est : bouche.",
+  "sent": "Celui-là, c'est : bouche.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est bouche",
+  "score": 1
+ },
+ "cherche: bouche.": {
+  "file": "8af7a777-180604.mp3",
+  "text": "Cherche : bouche.",
+  "sent": "Cherche : bouche.",
+  "dur": 1.76,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche, bouche",
+  "score": 1
+ },
+ "mou… che… mouche!": {
+  "file": "e274a66c-851ea1.mp3",
+  "text": "mou… che… mouche !",
+  "sent": "mou… che… mouche !",
+  "dur": 2.64,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Mouche. Mouche",
+  "score": 1
+ },
+ "touche le mot: mouche!": {
+  "file": "e15725e6-647c2f.mp3",
+  "text": "Touche le mot : mouche !",
+  "sent": "Touche le mot : mouche !",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot mouche",
+  "score": 1
+ },
+ "celui-là, c'est: mouche.": {
+  "file": "628d22a0-92d96b.mp3",
+  "text": "Celui-là, c'est : mouche.",
+  "sent": "Celui-là, c'est : mouche.",
+  "dur": 2.32,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est mouche",
+  "score": 1
+ },
+ "cherche: mouche.": {
+  "file": "afea9186-b29d6a.mp3",
+  "text": "Cherche : mouche.",
+  "sent": "Cherche : mouche.",
+  "dur": 1.76,
+  "cost": 7,
+  "sttCost": 0,
+  "stt": "Cherche mouche",
+  "score": 1
+ },
+ "touche le mot: feu!": {
+  "file": "a1ac81db-a82fd1.mp3",
+  "text": "Touche le mot : feu !",
+  "sent": "Touche le mot : feu !",
+  "dur": 1.76,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Touche le mot feu",
+  "score": 1
+ },
+ "touche le mot: loupe!": {
+  "file": "68911a8e-ef3914.mp3",
+  "text": "Touche le mot : loupe !",
+  "sent": "Touche le mot : loupe !",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Touche le mot loupe",
+  "score": 1
+ },
+ "lou… pe… loupe!": {
+  "file": "c08b4102-e1c120.mp3",
+  "text": "lou… pe… loupe !",
+  "sent": "lou… pe… loupe !",
+  "dur": 2.56,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Loupe, loupe",
+  "score": 1
+ },
+ "celui-là, c'est: loupe.": {
+  "file": "e4a1704a-e60c2d.mp3",
+  "text": "Celui-là, c'est : loupe.",
+  "sent": "Celui-là, c'est : loupe.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Loup",
+  "score": 0.94
+ },
+ "cherche: loupe.": {
+  "file": "31722048-09af37.mp3",
+  "text": "Cherche : loupe.",
+  "sent": "Cherche : loupe.",
+  "dur": 1.68,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche loupe",
+  "score": 1
+ },
+ "ça, c'est: sapin.": {
+  "file": "17287269-b523c6.mp3",
+  "text": "Ça, c'est : sapin.",
+  "sent": "Ça, c'est : sapin.",
+  "dur": 1.92,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est sapin",
+  "score": 1
+ },
+ "ça, c'est: panda.": {
+  "file": "e74e038c-6f60f0.mp3",
+  "text": "Ça, c'est : panda.",
+  "sent": "Ça, c'est : panda.",
+  "dur": 1.92,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est panda",
+  "score": 1
+ },
+ "écoute: sa… pin.": {
+  "file": "948d21f4-105eee.mp3",
+  "text": "Écoute : sa… pin.",
+  "sent": "Écoute : sa… pin.",
+  "dur": 2.48,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute, ça pie",
+  "score": 0.82
+ },
+ "écoute: pan… da.": {
+  "file": "ed323c1d-004d2a.mp3",
+  "text": "Écoute : pan… da.",
+  "sent": "Écoute : pan… da.",
+  "dur": 2.48,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute. Pan-da",
+  "score": 1
+ },
+ "ça, c'est: lion.": {
+  "file": "d2070a0e-0294e6.mp3",
+  "text": "Ça, c'est : lion.",
+  "sent": "Ça, c'est : lion.",
+  "dur": 2,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est Lyon",
+  "score": 0.9
+ },
+ "ça, c'est: ruban.": {
+  "file": "9a2ea5fe-54e81e.mp3",
+  "text": "Ça, c'est : ruban.",
+  "sent": "Ça, c'est : ruban.",
+  "dur": 2,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est Ruban",
+  "score": 1
+ },
+ "écoute: li… on.": {
+  "file": "a4f25b69-204fe9.mp3",
+  "text": "Écoute : li… on.",
+  "sent": "Écoute : li… on.",
+  "dur": 2.64,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Écoute, li-ons",
+  "score": 0.91
+ },
+ "ça, c'est: souris.": {
+  "file": "0164be2b-bcea06.mp3",
+  "text": "Ça, c'est : souris.",
+  "sent": "Ça, c'est : souris.",
+  "dur": 2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est souris",
+  "score": 1
+ },
+ "écoute: ru… ban.": {
+  "file": "c96d919b-227007.mp3",
+  "text": "Écoute : ru… ban.",
+  "sent": "Écoute : ru… ban.",
+  "dur": 2.8,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute. Rue Bain",
+  "score": 0.85
+ },
+ "écoute: sou… ris.": {
+  "file": "aa5df274-c51db1.mp3",
+  "text": "Écoute : sou… ris.",
+  "sent": "Écoute : sou… ris.",
+  "dur": 2.72,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute, sou-ris",
+  "score": 1
+ },
+ "ça, c'est: violon.": {
+  "file": "5f079c09-a5629c.mp3",
+  "text": "Ça, c'est : violon.",
+  "sent": "Ça, c'est : violon.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est violon",
+  "score": 1
+ },
+ "ça, c'est: nounours.": {
+  "file": "3b78f57d-11a88e.mp3",
+  "text": "Ça, c'est : nounours.",
+  "sent": "Ça, c'est : nounours.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est Nounours",
+  "score": 1
+ },
+ "écoute: vi… o… lon.": {
+  "file": "a6581212-24e964.mp3",
+  "text": "Écoute : vi… o… lon.",
+  "sent": "Écoute : vi… o… lon.",
+  "dur": 3.52,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute : vi-o-lon",
+  "score": 1
+ },
+ "ça, c'est: hibou.": {
+  "file": "4209b16d-3d082e.mp3",
+  "text": "Ça, c'est : hibou.",
+  "sent": "Ça, c'est : hibou.",
+  "dur": 2.08,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est hibou",
+  "score": 1
+ },
+ "écoute: hi… bou.": {
+  "file": "1851161c-be7851.mp3",
+  "text": "Écoute : hi… bou.",
+  "sent": "Écoute : hi… bou.",
+  "dur": 2.64,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute. Hi, Boo",
+  "score": 0.91
+ },
+ "écoute: nou… nours.": {
+  "file": "f37e1892-3a1c7e.mp3",
+  "text": "Écoute : nou… nours.",
+  "sent": "Écoute : nou… nours.",
+  "dur": 3.28,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute, nous, nous",
+  "score": 0.86
+ },
+ "ça, c'est: douche.": {
+  "file": "c9f8345a-33fa36.mp3",
+  "text": "Ça, c'est : douche.",
+  "sent": "Ça, c'est : douche.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est douche",
+  "score": 1
+ },
+ "ça, c'est: bouche.": {
+  "file": "8a9bb53c-838cb2.mp3",
+  "text": "Ça, c'est : bouche.",
+  "sent": "Ça, c'est : bouche.",
+  "dur": 2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est bouche",
+  "score": 1
+ },
+ "écoute: dou… che.": {
+  "file": "a4578d91-d4d135.mp3",
+  "text": "Écoute : dou… che.",
+  "sent": "Écoute : dou… che.",
+  "dur": 2.64,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute. Doux-chet",
+  "score": 0.86
+ },
+ "ça, c'est: mouche.": {
+  "file": "ddc0c5d1-8d4526.mp3",
+  "text": "Ça, c'est : mouche.",
+  "sent": "Ça, c'est : mouche.",
+  "dur": 2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est Mouche",
+  "score": 1
+ },
+ "écoute: bou… che.": {
+  "file": "e473a2db-59bcf1.mp3",
+  "text": "Écoute : bou… che.",
+  "sent": "Écoute : bou… che.",
+  "dur": 2.56,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute. Boucher",
+  "score": 0.92
+ },
+ "écoute: mou… che.": {
+  "file": "09c32c72-1b548f.mp3",
+  "text": "Écoute : mou… che.",
+  "sent": "Écoute : mou… che.",
+  "dur": 2.8,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute, mouchet",
+  "score": 0.92
+ },
+ "ça, c'est: feu.": {
+  "file": "29459f0c-fa8444.mp3",
+  "text": "Ça, c'est : feu.",
+  "sent": "Ça, c'est : feu.",
+  "dur": 1.92,
+  "cost": 6,
+  "sttCost": 0,
+  "score": 1
+ },
+ "ça, c'est: loupe.": {
+  "file": "841650f9-cc90d5.mp3",
+  "text": "Ça, c'est : loupe.",
+  "sent": "Ça, c'est : loupe.",
+  "dur": 2,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est Loupe",
+  "score": 1
+ },
+ "ca!": {
+  "file": "31749fb8-94be38.mp3",
+  "text": "ca !",
+  "sent": "ca !",
+  "dur": 0.64,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: lou… pe.": {
+  "file": "47ea6294-b9533a.mp3",
+  "text": "Écoute : lou… pe.",
+  "sent": "Écoute : lou… pe.",
+  "dur": 2.56,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute : loupe",
+  "score": 1
+ },
+ "cherche: ca.": {
+  "file": "6d6a319b-b567cb.mp3",
+  "text": "Cherche : ca.",
+  "sent": "Cherche : ca.",
+  "dur": 1.84,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "ka!": {
+  "file": "a80b9fd0-54c146.mp3",
+  "text": "ka !",
+  "sent": "ka !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: ca!": {
+  "file": "55aa7951-907fb9.mp3",
+  "text": "Touche le bloc qui fait le son : ca !",
+  "sent": "Touche le bloc qui fait le son : ca !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son K",
+  "score": 0.92
+ },
+ "cherche: ka.": {
+  "file": "d67b8183-5c8993.mp3",
+  "text": "Cherche : ka.",
+  "sent": "Cherche : ka.",
+  "dur": 1.52,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: ka!": {
+  "file": "cc417969-357644.mp3",
+  "text": "Touche le bloc qui fait le son : ka !",
+  "sent": "Touche le bloc qui fait le son : ka !",
+  "dur": 2.64,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son « ka ».",
+  "score": 1
+ },
+ "celui-là, c'est: ka.": {
+  "file": "e09c5aa9-243a6a.mp3",
+  "text": "Celui-là, c'est : ka.",
+  "sent": "Celui-là, c'est : ka.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Ka",
+  "score": 1
+ },
+ "co!": {
+  "file": "ad8d67d2-6e67e0.mp3",
+  "text": "co !",
+  "sent": "co !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: co.": {
+  "file": "ed516335-f793c8.mp3",
+  "text": "Cherche : co.",
+  "sent": "Cherche : co.",
+  "dur": 1.44,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: co.": {
+  "file": "fa0aba6f-5ed580.mp3",
+  "text": "Celui-là, c'est : co.",
+  "sent": "Celui-là, c'est : co.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Ko",
+  "score": 0.92
+ },
+ "touche le bloc qui fait le son: co!": {
+  "file": "4187c793-0b7b6a.mp3",
+  "text": "Touche le bloc qui fait le son : co !",
+  "sent": "Touche le bloc qui fait le son : co !",
+  "dur": 2.48,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son KO",
+  "score": 0.96
+ },
+ "qui!": {
+  "file": "7c87daa5-00c206.mp3",
+  "text": "qui !",
+  "sent": "qui !",
+  "dur": 0.64,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: qui.": {
+  "file": "9c3d7074-cd0ae3.mp3",
+  "text": "Celui-là, c'est : qui.",
+  "sent": "Celui-là, c'est : qui.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est qui",
+  "score": 1
+ },
+ "touche le bloc qui fait le son: qui!": {
+  "file": "cbd58e6e-2e86b0.mp3",
+  "text": "Touche le bloc qui fait le son : qui !",
+  "sent": "Touche le bloc qui fait le son : qui !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son ki",
+  "score": 0.93
+ },
+ "cherche: qui.": {
+  "file": "c544ca6e-ca1054.mp3",
+  "text": "Cherche : qui.",
+  "sent": "Cherche : qui.",
+  "dur": 1.52,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche qui",
+  "score": 1
+ },
+ "ga!": {
+  "file": "f716a24c-ac1465.mp3",
+  "text": "ga !",
+  "sent": "ga !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: ga.": {
+  "file": "bb0d0a47-83afc6.mp3",
+  "text": "Cherche : ga.",
+  "sent": "Cherche : ga.",
+  "dur": 1.68,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: ga.": {
+  "file": "2e3f3355-1ebe2b.mp3",
+  "text": "Celui-là, c'est : ga.",
+  "sent": "Celui-là, c'est : ga.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est gars",
+  "score": 0.87
+ },
+ "touche le bloc qui fait le son: ga!": {
+  "file": "98d2dc65-fce06f.mp3",
+  "text": "Touche le bloc qui fait le son : ga !",
+  "sent": "Touche le bloc qui fait le son : ga !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son ga",
+  "score": 1
+ },
+ "go!": {
+  "file": "831bfbde-abe729.mp3",
+  "text": "go !",
+  "sent": "go !",
+  "dur": 0.96,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: go.": {
+  "file": "bb2f9c89-65f671.mp3",
+  "text": "Cherche : go.",
+  "sent": "Cherche : go.",
+  "dur": 1.68,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: go!": {
+  "file": "14eba47f-314ffa.mp3",
+  "text": "Touche le bloc qui fait le son : go !",
+  "sent": "Touche le bloc qui fait le son : go !",
+  "dur": 2.48,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son Go",
+  "score": 1
+ },
+ "celui-là, c'est: go.": {
+  "file": "ae5801bb-631f65.mp3",
+  "text": "Celui-là, c'est : go.",
+  "sent": "Celui-là, c'est : go.",
+  "dur": 2.24,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Go",
+  "score": 1
+ },
+ "gui!": {
+  "file": "e99b1593-9d8be9.mp3",
+  "text": "gui !",
+  "sent": "gui !",
+  "dur": 0.96,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: gui.": {
+  "file": "7dbfc1b4-bf17d5.mp3",
+  "text": "Cherche : gui.",
+  "sent": "Cherche : gui.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche Guy",
+  "score": 0.9
+ },
+ "touche le bloc qui fait le son: gui!": {
+  "file": "72a92e70-170d09.mp3",
+  "text": "Touche le bloc qui fait le son : gui !",
+  "sent": "Touche le bloc qui fait le son : gui !",
+  "dur": 2.48,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son gui",
+  "score": 1
+ },
+ "celui-là, c'est: gui.": {
+  "file": "c7fb5b2e-8dd220.mp3",
+  "text": "Celui-là, c'est : gui.",
+  "sent": "Celui-là, c'est : gui.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Guy",
+  "score": 0.93
+ },
+ "gué!": {
+  "file": "0b57f7bc-0b0a56.mp3",
+  "text": "gué !",
+  "sent": "gué !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: gué.": {
+  "file": "d3e2c9ed-6d9b16.mp3",
+  "text": "Celui-là, c'est : gué.",
+  "sent": "Celui-là, c'est : gué.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est gay",
+  "score": 0.86
+ },
+ "touche le bloc qui fait le son: gué!": {
+  "file": "fe10e07d-0236be.mp3",
+  "text": "Touche le bloc qui fait le son : gué !",
+  "sent": "Touche le bloc qui fait le son : gué !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son « gay ».",
+  "score": 0.93
+ },
+ "cherche: gué.": {
+  "file": "f5654edb-bebc4e.mp3",
+  "text": "Cherche : gué.",
+  "sent": "Cherche : gué.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche : gay",
+  "score": 0.8
+ },
+ "ce!": {
+  "file": "c97e895c-ee0dd1.mp3",
+  "text": "ce !",
+  "sent": "ce !",
+  "dur": 0.72,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: ce.": {
+  "file": "cd603b5f-df9e5b.mp3",
+  "text": "Cherche : ce.",
+  "sent": "Cherche : ce.",
+  "dur": 1.6,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: ce!": {
+  "file": "fda0f46d-e6d351.mp3",
+  "text": "Touche le bloc qui fait le son : ce !",
+  "sent": "Touche le bloc qui fait le son : ce !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son ce",
+  "score": 1
+ },
+ "celui-là, c'est: ce.": {
+  "file": "d9fb7d85-2fbdac.mp3",
+  "text": "Celui-là, c'est : ce.",
+  "sent": "Celui-là, c'est : ce.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est ce",
+  "score": 1
+ },
+ "ça!": {
+  "file": "c8784511-fbedcc.mp3",
+  "text": "ça !",
+  "sent": "ça !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: ça.": {
+  "file": "23019f7a-99b28b.mp3",
+  "text": "Cherche : ça.",
+  "sent": "Cherche : ça.",
+  "dur": 1.6,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: ça!": {
+  "file": "c6e8b26e-7143d9.mp3",
+  "text": "Touche le bloc qui fait le son : ça !",
+  "sent": "Touche le bloc qui fait le son : ça !",
+  "dur": 2.48,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son ça",
+  "score": 1
+ },
+ "celui-là, c'est: ça.": {
+  "file": "0d2f1d98-16ed18.mp3",
+  "text": "Celui-là, c'est : ça.",
+  "sent": "Celui-là, c'est : ça.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est ça",
+  "score": 1
+ },
+ "je!": {
+  "file": "04e377cb-b53960.mp3",
+  "text": "je !",
+  "sent": "je !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: je.": {
+  "file": "41536f88-439052.mp3",
+  "text": "Cherche : je.",
+  "sent": "Cherche : je.",
+  "dur": 1.6,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: je.": {
+  "file": "2ae9cd46-9d7c25.mp3",
+  "text": "Celui-là, c'est : je.",
+  "sent": "Celui-là, c'est : je.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est « je ».",
+  "score": 1
+ },
+ "j'y!": {
+  "file": "c3a36d3c-e93d3d.mp3",
+  "text": "j'y !",
+  "sent": "j'y !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: je!": {
+  "file": "bff46866-5ee042.mp3",
+  "text": "Touche le bloc qui fait le son : je !",
+  "sent": "Touche le bloc qui fait le son : je !",
+  "dur": 2.72,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son je",
+  "score": 1
+ },
+ "cherche: j'y.": {
+  "file": "ec05697f-90ef65.mp3",
+  "text": "Cherche : j'y.",
+  "sent": "Cherche : j'y.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: j'y.": {
+  "file": "ab90162d-c5e2ee.mp3",
+  "text": "Celui-là, c'est : j'y.",
+  "sent": "Celui-là, c'est : j'y.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est J",
+  "score": 0.92
+ },
+ "touche le bloc qui fait le son: j'y!": {
+  "file": "a8f4f3a3-bf5d9e.mp3",
+  "text": "Touche le bloc qui fait le son : j'y !",
+  "sent": "Touche le bloc qui fait le son : j'y !",
+  "dur": 2.64,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son J",
+  "score": 0.96
+ },
+ "è, comme dans zèbre.": {
+  "file": "5526c8ad-9d6bdd.mp3",
+  "text": "è, comme dans zèbre.",
+  "sent": "è, comme dans zèbre.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Z, comme dans zèbre",
+  "score": 0.93
+ },
+ "celui-là, c'est: è.": {
+  "file": "6924441c-a5502f.mp3",
+  "text": "Celui-là, c'est : è.",
+  "sent": "Celui-là, c'est : è.",
+  "dur": 2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est È",
+  "score": 1
+ },
+ "touche le bloc qui fait le son: è!": {
+  "file": "d74f27ec-f2ac63.mp3",
+  "text": "Touche le bloc qui fait le son : è !",
+  "sent": "Touche le bloc qui fait le son : è !",
+  "dur": 2.48,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son « è ».",
+  "score": 1
+ },
+ "cherche: è.": {
+  "file": "bd9e2b26-c327d8.mp3",
+  "text": "Cherche : è.",
+  "sent": "Cherche : è.",
+  "dur": 1.68,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "è, comme dans lait.": {
+  "file": "3b0909d3-1d9fbc.mp3",
+  "text": "è, comme dans lait.",
+  "sent": "è, comme dans lait.",
+  "dur": 1.92,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "\"È\", comme dans \"lait\".",
+  "score": 1
+ },
+ "è, comme dans baleine.": {
+  "file": "817700db-d3165c.mp3",
+  "text": "è, comme dans baleine.",
+  "sent": "è, comme dans baleine.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "\"È\" comme dans baleine",
+  "score": 1
+ },
+ "o, comme dans jaune.": {
+  "file": "44a9ac34-5f4954.mp3",
+  "text": "o, comme dans jaune.",
+  "sent": "o, comme dans jaune.",
+  "dur": 2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "O comme dans jaune",
+  "score": 1
+ },
+ "o, comme dans bateau.": {
+  "file": "5b5cf7a5-84407d.mp3",
+  "text": "o, comme dans bateau.",
+  "sent": "o, comme dans bateau.",
+  "dur": 1.92,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "O comme dans bateau",
+  "score": 1
+ },
+ "an, comme dans dent.": {
+  "file": "21d4508e-04c842.mp3",
+  "text": "an, comme dans dent.",
+  "sent": "an, comme dans dent.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ant comme dans Dante",
+  "score": 0.82
+ },
+ "an, comme dans jambe.": {
+  "file": "4c19edd8-ab21f2.mp3",
+  "text": "an, comme dans jambe.",
+  "sent": "an, comme dans jambe.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "An comme dans jambe",
+  "score": 1
+ },
+ "hein, comme dans pain.": {
+  "file": "b0038be6-a79943.mp3",
+  "text": "hein, comme dans pain.",
+  "sent": "hein, comme dans pain.",
+  "dur": 2,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Un comme dans pain",
+  "score": 0.82
+ },
+ "gne, comme dans montagne.": {
+  "file": "eaa718dd-7d5942.mp3",
+  "text": "gne, comme dans montagne.",
+  "sent": "gne, comme dans montagne.",
+  "dur": 2.48,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Gné, comme dans montagne",
+  "score": 1
+ },
+ "on, comme dans pompier.": {
+  "file": "60181c45-a89e54.mp3",
+  "text": "on, comme dans pompier.",
+  "sent": "on, comme dans pompier.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "On, comme dans pompier",
+  "score": 1
+ },
+ "touche le bloc qui fait le son: gne!": {
+  "file": "292cfdb5-13bef5.mp3",
+  "text": "Touche le bloc qui fait le son : gne !",
+  "sent": "Touche le bloc qui fait le son : gne !",
+  "dur": 2.48,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son nia",
+  "score": 0.89
+ },
+ "celui-là, c'est: gne.": {
+  "file": "9d3619a7-9a92fa.mp3",
+  "text": "Celui-là, c'est : gne.",
+  "sent": "Celui-là, c'est : gne.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est gn.",
+  "score": 0.93
+ },
+ "ille, comme dans fille.": {
+  "file": "3716d358-037beb.mp3",
+  "text": "ille, comme dans fille.",
+  "sent": "ille, comme dans fille.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Il comme dans fille",
+  "score": 0.89
+ },
+ "touche le bloc qui fait le son: ille!": {
+  "file": "f0c1eb1b-d481a6.mp3",
+  "text": "Touche le bloc qui fait le son : ille !",
+  "sent": "Touche le bloc qui fait le son : ille !",
+  "dur": 2.72,
+  "cost": 16,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son « il ».",
+  "score": 0.93
+ },
+ "celui-là, c'est: ille.": {
+  "file": "e173bf23-85d37d.mp3",
+  "text": "Celui-là, c'est : ille.",
+  "sent": "Celui-là, c'est : ille.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est il l'est",
+  "score": 0.88
+ },
+ "cherche: ille.": {
+  "file": "eb01c459-d2a0fc.mp3",
+  "text": "Cherche : ille.",
+  "sent": "Cherche : ille.",
+  "dur": 1.68,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche : île",
+  "score": 0.91
+ },
+ "cherche: gne.": {
+  "file": "85930829-ba697c.mp3",
+  "text": "Cherche : gne.",
+  "sent": "Cherche : gne.",
+  "dur": 1.68,
+  "cost": 18,
+  "sttCost": 0,
+  "stt": "Cherche Gmail",
+  "score": 0.67
+ },
+ "feu, comme dans dauphin.": {
+  "file": "91c4a767-7fbad2.mp3",
+  "text": "feu, comme dans dauphin.",
+  "sent": "feu, comme dans dauphin.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Feu comme dans dauphin",
+  "score": 1
+ },
+ "ouin, comme dans coin.": {
+  "file": "be09e346-fcf3ee.mp3",
+  "text": "ouin, comme dans coin.",
+  "sent": "ouin, comme dans coin.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Oin, comme dans coin",
+  "score": 0.94
+ },
+ "touche le bloc qui fait le son: ouin!": {
+  "file": "3e30b53c-1fab37.mp3",
+  "text": "Touche le bloc qui fait le son : ouin !",
+  "sent": "Touche le bloc qui fait le son : ouin !",
+  "dur": 2.56,
+  "cost": 16,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son ouin",
+  "score": 1
+ },
+ "celui-là, c'est: ouin.": {
+  "file": "3c1baca8-5b1253.mp3",
+  "text": "Celui-là, c'est : ouin.",
+  "sent": "Celui-là, c'est : ouin.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est ouin",
+  "score": 1
+ },
+ "cherche: ouin.": {
+  "file": "f5433496-d72ef9.mp3",
+  "text": "Cherche : ouin.",
+  "sent": "Cherche : ouin.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche ouin",
+  "score": 1
+ },
+ "je, comme dans judo.": {
+  "file": "4361434f-663ea8.mp3",
+  "text": "je, comme dans judo.",
+  "sent": "je, comme dans judo.",
+  "dur": 2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Je, comme dans judo",
+  "score": 1
+ },
+ "a… beil… le… abeille!": {
+  "file": "27576c94-ebb496.mp3",
+  "text": "a… beil… le… abeille !",
+  "sent": "a… beil… le… abeille !",
+  "dur": 3.44,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "A-beille, le abeille",
+  "score": 0.88
+ },
+ "touche le mot: abeille!": {
+  "file": "1803290f-21a4b4.mp3",
+  "text": "Touche le mot : abeille !",
+  "sent": "Touche le mot : abeille !",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot abeille",
+  "score": 1
+ },
+ "celui-là, c'est: abeille.": {
+  "file": "231691eb-2cae4d.mp3",
+  "text": "Celui-là, c'est : abeille.",
+  "sent": "Celui-là, c'est : abeille.",
+  "dur": 2.32,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Abeille",
+  "score": 1
+ },
+ "cherche: abeille.": {
+  "file": "17c645b1-c066a6.mp3",
+  "text": "Cherche : abeille.",
+  "sent": "Cherche : abeille.",
+  "dur": 1.76,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche abeille",
+  "score": 1
+ },
+ "touche le mot: gorille!": {
+  "file": "1429565d-a5a5ae.mp3",
+  "text": "Touche le mot : gorille !",
+  "sent": "Touche le mot : gorille !",
+  "dur": 2.08,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot : borille",
+  "score": 0.94
+ },
+ "go… ril… le… gorille!": {
+  "file": "5939a308-38f059.mp3",
+  "text": "go… ril… le… gorille !",
+  "sent": "go… ril… le… gorille !",
+  "dur": 3.44,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Go-ril, le gorille",
+  "score": 1
+ },
+ "celui-là, c'est: gorille.": {
+  "file": "ef925161-a51be3.mp3",
+  "text": "Celui-là, c'est : gorille.",
+  "sent": "Celui-là, c'est : gorille.",
+  "dur": 2.4,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est gorille",
+  "score": 1
+ },
+ "cherche: gorille.": {
+  "file": "104044f7-22b2e2.mp3",
+  "text": "Cherche : gorille.",
+  "sent": "Cherche : gorille.",
+  "dur": 1.84,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche gorille",
+  "score": 1
+ },
+ "gi… ra… fe… girafe!": {
+  "file": "c5f89970-acad69.mp3",
+  "text": "gi… ra… fe… girafe !",
+  "sent": "gi… ra… fe… girafe !",
+  "dur": 3.36,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Gi-ra-fe. Girafe",
+  "score": 1
+ },
+ "touche le mot: girafe!": {
+  "file": "e61e5603-b71e6f.mp3",
+  "text": "Touche le mot : girafe !",
+  "sent": "Touche le mot : girafe !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot girafe",
+  "score": 1
+ },
+ "celui-là, c'est: girafe.": {
+  "file": "9b47bb89-b596a5.mp3",
+  "text": "Celui-là, c'est : girafe.",
+  "sent": "Celui-là, c'est : girafe.",
+  "dur": 2.32,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est girafe",
+  "score": 1
+ },
+ "cherche: girafe.": {
+  "file": "f26db42b-fb6824.mp3",
+  "text": "Cherche : girafe.",
+  "sent": "Cherche : girafe.",
+  "dur": 1.92,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche girafe",
+  "score": 1
+ },
+ "ca… nard… canard!": {
+  "file": "7ab5876c-5a464a.mp3",
+  "text": "ca… nard… canard !",
+  "sent": "ca… nard… canard !",
+  "dur": 2.56,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ca-nard. Canard",
+  "score": 1
+ },
+ "touche le mot: canard!": {
+  "file": "91a602c2-f71148.mp3",
+  "text": "Touche le mot : canard !",
+  "sent": "Touche le mot : canard !",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot canard",
+  "score": 1
+ },
+ "celui-là, c'est: canard.": {
+  "file": "91917888-56b769.mp3",
+  "text": "Celui-là, c'est : canard.",
+  "sent": "Celui-là, c'est : canard.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est canard",
+  "score": 1
+ },
+ "cherche: canard.": {
+  "file": "062fd5ba-237125.mp3",
+  "text": "Cherche : canard.",
+  "sent": "Cherche : canard.",
+  "dur": 1.76,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche Tanar",
+  "score": 0.85
+ },
+ "touche le mot: cerise!": {
+  "file": "9d6ef940-4b5435.mp3",
+  "text": "Touche le mot : cerise !",
+  "sent": "Touche le mot : cerise !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot cerise",
+  "score": 1
+ },
+ "celui-là, c'est: cerise.": {
+  "file": "da8261f6-6474c4.mp3",
+  "text": "Celui-là, c'est : cerise.",
+  "sent": "Celui-là, c'est : cerise.",
+  "dur": 2.32,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est cerise",
+  "score": 1
+ },
+ "cherche: cerise.": {
+  "file": "74109420-1c9b87.mp3",
+  "text": "Cherche : cerise.",
+  "sent": "Cherche : cerise.",
+  "dur": 1.92,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche cerise",
+  "score": 1
+ },
+ "ce… ri… se… cerise!": {
+  "file": "e0d465c4-d9cafc.mp3",
+  "text": "ce… ri… se… cerise !",
+  "sent": "ce… ri… se… cerise !",
+  "dur": 3.52,
+  "cost": 16,
+  "sttCost": 2,
+  "stt": "Ce-rises, cerises",
+  "score": 0.86
+ },
+ "va… li… se… valise!": {
+  "file": "4445f2dc-af6501.mp3",
+  "text": "va… li… se… valise !",
+  "sent": "va… li… se… valise !",
+  "dur": 3.2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Va-li-se. Valise",
+  "score": 1
+ },
+ "touche le mot: valise!": {
+  "file": "32e970f1-cea6e2.mp3",
+  "text": "Touche le mot : valise !",
+  "sent": "Touche le mot : valise !",
+  "dur": 2.08,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot valise",
+  "score": 1
+ },
+ "celui-là, c'est: valise.": {
+  "file": "3c6dce3b-953265.mp3",
+  "text": "Celui-là, c'est : valise.",
+  "sent": "Celui-là, c'est : valise.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est valise",
+  "score": 1
+ },
+ "cherche: valise.": {
+  "file": "9390c9c1-29ea54.mp3",
+  "text": "Cherche : valise.",
+  "sent": "Cherche : valise.",
+  "dur": 1.92,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche valise",
+  "score": 1
+ },
+ "touche le mot: fusée!": {
+  "file": "41237c18-90299a.mp3",
+  "text": "Touche le mot : fusée !",
+  "sent": "Touche le mot : fusée !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Touche le mot fusée",
+  "score": 1
+ },
+ "celui-là, c'est: fusée.": {
+  "file": "f90a331a-d91a56.mp3",
+  "text": "Celui-là, c'est : fusée.",
+  "sent": "Celui-là, c'est : fusée.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est fusée",
+  "score": 1
+ },
+ "cherche: fusée.": {
+  "file": "55c5f45c-c399d9.mp3",
+  "text": "Cherche : fusée.",
+  "sent": "Cherche : fusée.",
+  "dur": 1.92,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Cherche : fusée",
+  "score": 1
+ },
+ "ca… rot… te… carotte!": {
+  "file": "ebb2f790-d3f3f9.mp3",
+  "text": "ca… rot… te… carotte !",
+  "sent": "ca… rot… te… carotte !",
+  "dur": 3.36,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Carotte, carotte",
+  "score": 1
+ },
+ "touche le mot: carotte!": {
+  "file": "03c5d4c1-058f14.mp3",
+  "text": "Touche le mot : carotte !",
+  "sent": "Touche le mot : carotte !",
+  "dur": 2.08,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot carotte",
+  "score": 1
+ },
+ "celui-là, c'est: carotte.": {
+  "file": "f11c375d-dbe187.mp3",
+  "text": "Celui-là, c'est : carotte.",
+  "sent": "Celui-là, c'est : carotte.",
+  "dur": 2.32,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est carotte",
+  "score": 1
+ },
+ "cherche: carotte.": {
+  "file": "8f6664fb-d84e29.mp3",
+  "text": "Cherche : carotte.",
+  "sent": "Cherche : carotte.",
+  "dur": 1.84,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche carotte",
+  "score": 1
+ },
+ "gui… ta… re… guitare!": {
+  "file": "8c0f5e86-d43522.mp3",
+  "text": "gui… ta… re… guitare !",
+  "sent": "gui… ta… re… guitare !",
+  "dur": 3.04,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Gui-ta-re. Guitare",
+  "score": 1
+ },
+ "touche le mot: guitare!": {
+  "file": "5e6085d4-cc5439.mp3",
+  "text": "Touche le mot : guitare !",
+  "sent": "Touche le mot : guitare !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot guitare",
+  "score": 1
+ },
+ "celui-là, c'est: guitare.": {
+  "file": "05543d44-23bb77.mp3",
+  "text": "Celui-là, c'est : guitare.",
+  "sent": "Celui-là, c'est : guitare.",
+  "dur": 2.32,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est guitare",
+  "score": 1
+ },
+ "cherche: guitare.": {
+  "file": "7a4546c6-93ee35.mp3",
+  "text": "Cherche : guitare.",
+  "sent": "Cherche : guitare.",
+  "dur": 1.92,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche guitare",
+  "score": 1
+ },
+ "touche le mot: montagne!": {
+  "file": "4f416cb6-8debc9.mp3",
+  "text": "Touche le mot : montagne !",
+  "sent": "Touche le mot : montagne !",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot montagne",
+  "score": 1
+ },
+ "mon… ta… gne… montagne!": {
+  "file": "69189ec0-c133f3.mp3",
+  "text": "mon… ta… gne… montagne !",
+  "sent": "mon… ta… gne… montagne !",
+  "dur": 3.6,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Montagne. Montagne",
+  "score": 1
+ },
+ "celui-là, c'est: montagne.": {
+  "file": "6b892570-89fb7d.mp3",
+  "text": "Celui-là, c'est : montagne.",
+  "sent": "Celui-là, c'est : montagne.",
+  "dur": 2.48,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est montagne",
+  "score": 1
+ },
+ "cherche: montagne.": {
+  "file": "f13f757e-c6bfb3.mp3",
+  "text": "Cherche : montagne.",
+  "sent": "Cherche : montagne.",
+  "dur": 1.92,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Cherche montagne",
+  "score": 1
+ },
+ "rai… sin… raisin!": {
+  "file": "2a0164dc-3b2935.mp3",
+  "text": "rai… sin… raisin !",
+  "sent": "rai… sin… raisin !",
+  "dur": 2.72,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Raisin, raisin",
+  "score": 1
+ },
+ "touche le mot: raisin!": {
+  "file": "3460d6f5-7743b6.mp3",
+  "text": "Touche le mot : raisin !",
+  "sent": "Touche le mot : raisin !",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot raisin",
+  "score": 1
+ },
+ "celui-là, c'est: raisin.": {
+  "file": "8fcb3a63-9ecbf7.mp3",
+  "text": "Celui-là, c'est : raisin.",
+  "sent": "Celui-là, c'est : raisin.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est raisin",
+  "score": 1
+ },
+ "cherche: raisin.": {
+  "file": "68d7711d-f2b5a3.mp3",
+  "text": "Cherche : raisin.",
+  "sent": "Cherche : raisin.",
+  "dur": 1.68,
+  "cost": 7,
+  "sttCost": 0,
+  "stt": "Cherche raisin",
+  "score": 1
+ },
+ "ba… lei… ne… baleine!": {
+  "file": "74776d70-1fa212.mp3",
+  "text": "ba… lei… ne… baleine !",
+  "sent": "ba… lei… ne… baleine !",
+  "dur": 3.2,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Ba-lai-ne, baleine",
+  "score": 0.93
+ },
+ "touche le mot: baleine!": {
+  "file": "e8125ddb-7083b3.mp3",
+  "text": "Touche le mot : baleine !",
+  "sent": "Touche le mot : baleine !",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot baleine",
+  "score": 1
+ },
+ "celui-là, c'est: baleine.": {
+  "file": "fe85e23b-77ced9.mp3",
+  "text": "Celui-là, c'est : baleine.",
+  "sent": "Celui-là, c'est : baleine.",
+  "dur": 2.4,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est baleine",
+  "score": 1
+ },
+ "cherche: baleine.": {
+  "file": "99df0e5d-e9663e.mp3",
+  "text": "Cherche : baleine.",
+  "sent": "Cherche : baleine.",
+  "dur": 1.84,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche baleine",
+  "score": 1
+ },
+ "che… val… cheval!": {
+  "file": "1c7d85e8-688d4a.mp3",
+  "text": "che… val… cheval !",
+  "sent": "che… val… cheval !",
+  "dur": 2.64,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cheval, cheval",
+  "score": 1
+ },
+ "touche le mot: cheval!": {
+  "file": "5a6ea818-b015c1.mp3",
+  "text": "Touche le mot : cheval !",
+  "sent": "Touche le mot : cheval !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot cheval",
+  "score": 1
+ },
+ "celui-là, c'est: cheval.": {
+  "file": "536b3f9e-44fea8.mp3",
+  "text": "Celui-là, c'est : cheval.",
+  "sent": "Celui-là, c'est : cheval.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est cheval",
+  "score": 1
+ },
+ "cherche: cheval.": {
+  "file": "d661e35c-ea92cc.mp3",
+  "text": "Cherche : cheval.",
+  "sent": "Cherche : cheval.",
+  "dur": 1.92,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche cheval",
+  "score": 1
+ },
+ "ser… pent… serpent!": {
+  "file": "170493fa-d79f0b.mp3",
+  "text": "ser… pent… serpent !",
+  "sent": "ser… pent… serpent !",
+  "dur": 2.64,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Serpent. Serpent",
+  "score": 1
+ },
+ "touche le mot: serpent!": {
+  "file": "7bc401de-3689d1.mp3",
+  "text": "Touche le mot : serpent !",
+  "sent": "Touche le mot : serpent !",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot serpent",
+  "score": 1
+ },
+ "celui-là, c'est: serpent.": {
+  "file": "0d60ad5a-4c3e43.mp3",
+  "text": "Celui-là, c'est : serpent.",
+  "sent": "Celui-là, c'est : serpent.",
+  "dur": 2.32,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est serpent",
+  "score": 1
+ },
+ "cherche: serpent.": {
+  "file": "3db165e8-efcf85.mp3",
+  "text": "Cherche : serpent.",
+  "sent": "Cherche : serpent.",
+  "dur": 1.92,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche serpent",
+  "score": 1
+ },
+ "touche le mot: dent!": {
+  "file": "cc928e98-63eb7d.mp3",
+  "text": "Touche le mot : dent !",
+  "sent": "Touche le mot : dent !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Touche le mot dent",
+  "score": 1
+ },
+ "celui-là, c'est: dent.": {
+  "file": "ec5097c6-11cb42.mp3",
+  "text": "Celui-là, c'est : dent.",
+  "sent": "Celui-là, c'est : dent.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est dent",
+  "score": 1
+ },
+ "cherche: dent.": {
+  "file": "e146b8c0-36c607.mp3",
+  "text": "Cherche : dent.",
+  "sent": "Cherche : dent.",
+  "dur": 1.68,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche dans",
+  "score": 0.82
+ },
+ "touche le mot: gant!": {
+  "file": "29dbccfd-fd6f86.mp3",
+  "text": "Touche le mot : gant !",
+  "sent": "Touche le mot : gant !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Touche le mot gant",
+  "score": 1
+ },
+ "celui-là, c'est: gant.": {
+  "file": "941bf1a7-1402f0.mp3",
+  "text": "Celui-là, c'est : gant.",
+  "sent": "Celui-là, c'est : gant.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est gant",
+  "score": 1
+ },
+ "cherche: gant.": {
+  "file": "fb2c0de5-b97b69.mp3",
+  "text": "Cherche : gant.",
+  "sent": "Cherche : gant.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Cherche gant",
+  "score": 1
+ },
+ "touche le mot: pain!": {
+  "file": "82f2fd7b-24fdda.mp3",
+  "text": "Touche le mot : pain !",
+  "sent": "Touche le mot : pain !",
+  "dur": 1.76,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Touche le mot pain",
+  "score": 1
+ },
+ "lait!": {
+  "file": "aac730d6-053907.mp3",
+  "text": "lait !",
+  "sent": "lait !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: pain.": {
+  "file": "aa3f12f5-794945.mp3",
+  "text": "Celui-là, c'est : pain.",
+  "sent": "Celui-là, c'est : pain.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Pain",
+  "score": 1
+ },
+ "cherche: pain.": {
+  "file": "295d2b87-d7d923.mp3",
+  "text": "Cherche : pain.",
+  "sent": "Cherche : pain.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche pain",
+  "score": 1
+ },
+ "touche le mot: lait!": {
+  "file": "4a465631-3f6edb.mp3",
+  "text": "Touche le mot : lait !",
+  "sent": "Touche le mot : lait !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Touche le mot lait",
+  "score": 1
+ },
+ "cherche: lait.": {
+  "file": "f06e50e9-98b71a.mp3",
+  "text": "Cherche : lait.",
+  "sent": "Cherche : lait.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche lait",
+  "score": 1
+ },
+ "celui-là, c'est: lait.": {
+  "file": "a15e88b3-49c2f7.mp3",
+  "text": "Celui-là, c'est : lait.",
+  "sent": "Celui-là, c'est : lait.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est lait",
+  "score": 1
+ },
+ "touche le mot: quille!": {
+  "file": "a897cdef-257ef7.mp3",
+  "text": "Touche le mot : quille !",
+  "sent": "Touche le mot : quille !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot quille",
+  "score": 1
+ },
+ "quil… le… quille!": {
+  "file": "63b71a4c-61f4ea.mp3",
+  "text": "quil… le… quille !",
+  "sent": "quil… le… quille !",
+  "dur": 2.72,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Qu'il le quille",
+  "score": 1
+ },
+ "cherche: quille.": {
+  "file": "94305adf-8e2dd3.mp3",
+  "text": "Cherche : quille.",
+  "sent": "Cherche : quille.",
+  "dur": 1.68,
+  "cost": 7,
+  "sttCost": 0,
+  "stt": "Cherche quille",
+  "score": 1
+ },
+ "celui-là, c'est: quille.": {
+  "file": "93ca3c51-32e133.mp3",
+  "text": "Celui-là, c'est : quille.",
+  "sent": "Celui-là, c'est : quille.",
+  "dur": 2.24,
+  "cost": 20,
+  "sttCost": 2,
+  "stt": "Celui-là, c'est qui",
+  "score": 0.82
+ },
+ "voi… tu… re… voiture!": {
+  "file": "f5672ff4-4bf9ea.mp3",
+  "text": "voi… tu… re… voiture !",
+  "sent": "voi… tu… re… voiture !",
+  "dur": 3.36,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Voitu-re. Voiture",
+  "score": 1
+ },
+ "cherche: voiture.": {
+  "file": "96e53331-5b93c8.mp3",
+  "text": "Cherche : voiture.",
+  "sent": "Cherche : voiture.",
+  "dur": 1.92,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Cherche voiture",
+  "score": 1
+ },
+ "touche le mot: voiture!": {
+  "file": "959593e3-012126.mp3",
+  "text": "Touche le mot : voiture !",
+  "sent": "Touche le mot : voiture !",
+  "dur": 2.16,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Touche le mot voiture",
+  "score": 1
+ },
+ "celui-là, c'est: voiture.": {
+  "file": "5bf35623-fd7e91.mp3",
+  "text": "Celui-là, c'est : voiture.",
+  "sent": "Celui-là, c'est : voiture.",
+  "dur": 2.4,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est voiture",
+  "score": 1
+ },
+ "ça, c'est: abeille.": {
+  "file": "bf0a9990-aee1cb.mp3",
+  "text": "Ça, c'est : abeille.",
+  "sent": "Ça, c'est : abeille.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est abeille",
+  "score": 1
+ },
+ "ça, c'est: gorille.": {
+  "file": "10414b02-ea0b03.mp3",
+  "text": "Ça, c'est : gorille.",
+  "sent": "Ça, c'est : gorille.",
+  "dur": 2.24,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est gorille",
+  "score": 1
+ },
+ "écoute: a… beil… le.": {
+  "file": "7017bbb9-652dcc.mp3",
+  "text": "Écoute : a… beil… le.",
+  "sent": "Écoute : a… beil… le.",
+  "dur": 3.36,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute : a-beille-le",
+  "score": 0.87
+ },
+ "écoute: go… ril… le.": {
+  "file": "04527297-221392.mp3",
+  "text": "Écoute : go… ril… le.",
+  "sent": "Écoute : go… ril… le.",
+  "dur": 3.2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute, go rille-le",
+  "score": 0.87
+ },
+ "ça, c'est: girafe.": {
+  "file": "bfcfe630-9c420e.mp3",
+  "text": "Ça, c'est : girafe.",
+  "sent": "Ça, c'est : girafe.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est girafe",
+  "score": 1
+ },
+ "écoute: gi… ra… fe.": {
+  "file": "a64ab8cb-39e987.mp3",
+  "text": "Écoute : gi… ra… fe.",
+  "sent": "Écoute : gi… ra… fe.",
+  "dur": 3.04,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute : gui-ra-fe",
+  "score": 0.92
+ },
+ "ça, c'est: canard.": {
+  "file": "8f4862a9-1c93c5.mp3",
+  "text": "Ça, c'est : canard.",
+  "sent": "Ça, c'est : canard.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est canard",
+  "score": 1
+ },
+ "écoute: ca… nard.": {
+  "file": "5549970e-d00150.mp3",
+  "text": "Écoute : ca… nard.",
+  "sent": "Écoute : ca… nard.",
+  "dur": 2.96,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute : ca-nard",
+  "score": 1
+ },
+ "ça, c'est: cerise.": {
+  "file": "6ab03fbb-be7297.mp3",
+  "text": "Ça, c'est : cerise.",
+  "sent": "Ça, c'est : cerise.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est cerise",
+  "score": 1
+ },
+ "ça, c'est: valise.": {
+  "file": "7813a596-2df68c.mp3",
+  "text": "Ça, c'est : valise.",
+  "sent": "Ça, c'est : valise.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est valise",
+  "score": 1
+ },
+ "écoute: va… li… se.": {
+  "file": "cc60b2b1-6429d9.mp3",
+  "text": "Écoute : va… li… se.",
+  "sent": "Écoute : va… li… se.",
+  "dur": 3.28,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute, va-li-se",
+  "score": 1
+ },
+ "ça, c'est: carotte.": {
+  "file": "e52b7cde-8e2ed9.mp3",
+  "text": "Ça, c'est : carotte.",
+  "sent": "Ça, c'est : carotte.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est carotte",
+  "score": 1
+ },
+ "écoute: ce… ri… se.": {
+  "file": "9d10ccd0-2e27fa.mp3",
+  "text": "Écoute : ce… ri… se.",
+  "sent": "Écoute : ce… ri… se.",
+  "dur": 3.52,
+  "cost": 16,
+  "sttCost": 2,
+  "stt": "Écoute : se rie se",
+  "score": 0.85
+ },
+ "écoute: ca… rot… te.": {
+  "file": "0ac3381b-5920d9.mp3",
+  "text": "Écoute : ca… rot… te.",
+  "sent": "Écoute : ca… rot… te.",
+  "dur": 3.36,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute : ca-rot-te",
+  "score": 1
+ },
+ "ça, c'est: guitare.": {
+  "file": "2256518f-4d063f.mp3",
+  "text": "Ça, c'est : guitare.",
+  "sent": "Ça, c'est : guitare.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est guitare",
+  "score": 1
+ },
+ "écoute: gui… ta… re.": {
+  "file": "5d40e806-9a6ceb.mp3",
+  "text": "Écoute : gui… ta… re.",
+  "sent": "Écoute : gui… ta… re.",
+  "dur": 3.28,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute : gui-ta-re",
+  "score": 1
+ },
+ "ça, c'est: montagne.": {
+  "file": "544e9081-d7cd06.mp3",
+  "text": "Ça, c'est : montagne.",
+  "sent": "Ça, c'est : montagne.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est montagne",
+  "score": 1
+ },
+ "écoute: mon… ta… gne.": {
+  "file": "7d8338e6-a7ae92.mp3",
+  "text": "Écoute : mon… ta… gne.",
+  "sent": "Écoute : mon… ta… gne.",
+  "dur": 3.52,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Écoute : mon-ta-gne",
+  "score": 1
+ },
+ "ça, c'est: raisin.": {
+  "file": "cfc881e6-79744d.mp3",
+  "text": "Ça, c'est : raisin.",
+  "sent": "Ça, c'est : raisin.",
+  "dur": 2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est raisin",
+  "score": 1
+ },
+ "ça, c'est: baleine.": {
+  "file": "506d4198-f014b9.mp3",
+  "text": "Ça, c'est : baleine.",
+  "sent": "Ça, c'est : baleine.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est baleine",
+  "score": 1
+ },
+ "écoute: ba… lei… ne.": {
+  "file": "9d35aa15-dd4813.mp3",
+  "text": "Écoute : ba… lei… ne.",
+  "sent": "Écoute : ba… lei… ne.",
+  "dur": 3.6,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute, Ba-leine",
+  "score": 1
+ },
+ "ça, c'est: cheval.": {
+  "file": "49cc1267-989196.mp3",
+  "text": "Ça, c'est : cheval.",
+  "sent": "Ça, c'est : cheval.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est cheval",
+  "score": 1
+ },
+ "écoute: che… val.": {
+  "file": "18ecd5b0-7f47a3.mp3",
+  "text": "Écoute : che… val.",
+  "sent": "Écoute : che… val.",
+  "dur": 2.8,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute, je... Val",
+  "score": 0.83
+ },
+ "écoute: rai… sin.": {
+  "file": "4a98d689-64eeaf.mp3",
+  "text": "Écoute : rai… sin.",
+  "sent": "Écoute : rai… sin.",
+  "dur": 2.88,
+  "cost": 21,
+  "sttCost": 3,
+  "stt": "Écoute : ré-cin",
+  "score": 0.75
+ },
+ "ça, c'est: serpent.": {
+  "file": "0959a501-682e06.mp3",
+  "text": "Ça, c'est : serpent.",
+  "sent": "Ça, c'est : serpent.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est serpent",
+  "score": 1
+ },
+ "écoute: ser… pent.": {
+  "file": "a47be51c-9d43ca.mp3",
+  "text": "Écoute : ser… pent.",
+  "sent": "Écoute : ser… pent.",
+  "dur": 2.88,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute, sœur Pant",
+  "score": 0.85
+ },
+ "ça, c'est: dent.": {
+  "file": "83189723-ba14e3.mp3",
+  "text": "Ça, c'est : dent.",
+  "sent": "Ça, c'est : dent.",
+  "dur": 1.84,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est dent",
+  "score": 1
+ },
+ "ça, c'est: gant.": {
+  "file": "0a2dc6b2-26a2ed.mp3",
+  "text": "Ça, c'est : gant.",
+  "sent": "Ça, c'est : gant.",
+  "dur": 1.92,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est gant",
+  "score": 1
+ },
+ "ça, c'est: pain.": {
+  "file": "27cab410-3f6945.mp3",
+  "text": "Ça, c'est : pain.",
+  "sent": "Ça, c'est : pain.",
+  "dur": 2.08,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça c'est pain",
+  "score": 1
+ },
+ "écoute: lait.": {
+  "file": "e845c661-a06c1c.mp3",
+  "text": "Écoute : lait.",
+  "sent": "Écoute : lait.",
+  "dur": 1.76,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Écoute : lait",
+  "score": 1
+ },
+ "ça, c'est: quille.": {
+  "file": "caf290c8-ef51c3.mp3",
+  "text": "Ça, c'est : quille.",
+  "sent": "Ça, c'est : quille.",
+  "dur": 2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est quille",
+  "score": 1
+ },
+ "écoute: quil… le.": {
+  "file": "07f1f01b-fb49cc.mp3",
+  "text": "Écoute : quil… le.",
+  "sent": "Écoute : quil… le.",
+  "dur": 2.48,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute, qu'il le",
+  "score": 1
+ },
+ "ça, c'est: voiture.": {
+  "file": "3d466d8c-bf17aa.mp3",
+  "text": "Ça, c'est : voiture.",
+  "sent": "Ça, c'est : voiture.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est voiture",
+  "score": 1
+ },
+ "ça, c'est: lait.": {
+  "file": "894b127e-60b46e.mp3",
+  "text": "Ça, c'est : lait.",
+  "sent": "Ça, c'est : lait.",
+  "dur": 1.84,
+  "cost": 21,
+  "sttCost": 3,
+  "stt": "Ça, c'est l'ex",
+  "score": 0.7
+ },
+ "écoute: voi… tu… re.": {
+  "file": "427ef1b9-b32f86.mp3",
+  "text": "Écoute : voi… tu… re.",
+  "sent": "Écoute : voi… tu… re.",
+  "dur": 3.6,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute, vois-tu re",
+  "score": 0.93
+ },
+ "écris le mot: cadeau!": {
+  "file": "b642a077-68a780.mp3",
+  "text": "Écris le mot : cadeau !",
+  "sent": "Écris le mot : cadeau !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Écris le mot cadeau",
+  "score": 1
+ },
+ "écoute bien: cadeau.": {
+  "file": "4e6f7544-cb9f68.mp3",
+  "text": "Écoute bien : cadeau.",
+  "sent": "Écoute bien : cadeau.",
+  "dur": 1.76,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Écoute bien. Cadeau",
+  "score": 1
+ },
+ "écris le mot: bateau!": {
+  "file": "89f9ba50-4e10f0.mp3",
+  "text": "Écris le mot : bateau !",
+  "sent": "Écris le mot : bateau !",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Écris le mot bateau",
+  "score": 1
+ },
+ "écoute bien: bateau.": {
+  "file": "03155acb-f10cf5.mp3",
+  "text": "Écoute bien : bateau.",
+  "sent": "Écoute bien : bateau.",
+  "dur": 1.84,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute bien : bateau",
+  "score": 1
+ },
+ "écris le mot: chapeau!": {
+  "file": "b40caa97-bf2d1c.mp3",
+  "text": "Écris le mot : chapeau !",
+  "sent": "Écris le mot : chapeau !",
+  "dur": 2.08,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Écris le mot chapeau",
+  "score": 1
+ },
+ "écoute bien: chapeau.": {
+  "file": "ce78f068-385c20.mp3",
+  "text": "Écoute bien : chapeau.",
+  "sent": "Écoute bien : chapeau.",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Écoute bien : chapeau",
+  "score": 1
+ },
+ "écris le mot: chameau!": {
+  "file": "90a13d00-ea3714.mp3",
+  "text": "Écris le mot : chameau !",
+  "sent": "Écris le mot : chameau !",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Écris le mot chameau",
+  "score": 1
+ },
+ "écoute bien: chameau.": {
+  "file": "8b2433cf-d4a68e.mp3",
+  "text": "Écoute bien : chameau.",
+  "sent": "Écoute bien : chameau.",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Écoute bien : chameau",
+  "score": 1
+ },
+ "écris le mot: cochon!": {
+  "file": "d96f0b80-34ea74.mp3",
+  "text": "Écris le mot : cochon !",
+  "sent": "Écris le mot : cochon !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Écris le mot cochon",
+  "score": 1
+ },
+ "écoute bien: cochon.": {
+  "file": "b29f9af3-d86a58.mp3",
+  "text": "Écoute bien : cochon.",
+  "sent": "Écoute bien : cochon.",
+  "dur": 1.76,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute bien. Cochon",
+  "score": 1
+ },
+ "écris le mot: dauphin!": {
+  "file": "43e4779d-157eb4.mp3",
+  "text": "Écris le mot : dauphin !",
+  "sent": "Écris le mot : dauphin !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Écris le mot dauphin",
+  "score": 1
+ },
+ "écoute bien: dauphin.": {
+  "file": "cafe82d2-03e4a0.mp3",
+  "text": "Écoute bien : dauphin.",
+  "sent": "Écoute bien : dauphin.",
+  "dur": 2,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Écoute bien. Dauphin",
+  "score": 1
+ },
+ "écris le mot: camion!": {
+  "file": "e14c92e5-70b170.mp3",
+  "text": "Écris le mot : camion !",
+  "sent": "Écris le mot : camion !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Écris le mot camion",
+  "score": 1
+ },
+ "écoute bien: camion.": {
+  "file": "3af10c0e-302de0.mp3",
+  "text": "Écoute bien : camion.",
+  "sent": "Écoute bien : camion.",
+  "dur": 1.92,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute bien : camion",
+  "score": 1
+ },
+ "écoute bien: mouton.": {
+  "file": "8b9011bb-b7c76e.mp3",
+  "text": "Écoute bien : mouton.",
+  "sent": "Écoute bien : mouton.",
+  "dur": 2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute bien. Mouton",
+  "score": 1
+ },
+ "écris le mot: mouton!": {
+  "file": "1225a608-570423.mp3",
+  "text": "Écris le mot : mouton !",
+  "sent": "Écris le mot : mouton !",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Écris le mot mouton",
+  "score": 1
+ },
+ "écris le mot: lapin!": {
+  "file": "687ebc00-286e54.mp3",
+  "text": "Écris le mot : lapin !",
+  "sent": "Écris le mot : lapin !",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Écris le mot lapin",
+  "score": 1
+ },
+ "écoute bien: lapin.": {
+  "file": "60f64057-af959a.mp3",
+  "text": "Écoute bien : lapin.",
+  "sent": "Écoute bien : lapin.",
+  "dur": 1.84,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute bien : lapin",
+  "score": 1
+ },
+ "écris le mot: bonbon!": {
+  "file": "b96a44b6-1ca661.mp3",
+  "text": "Écris le mot : bonbon !",
+  "sent": "Écris le mot : bonbon !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Écris le mot bonbon",
+  "score": 1
+ },
+ "écoute bien: bonbon.": {
+  "file": "3483a1b9-681ef2.mp3",
+  "text": "Écoute bien : bonbon.",
+  "sent": "Écoute bien : bonbon.",
+  "dur": 1.84,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute bien : bonbon",
+  "score": 1
+ },
+ "écris le mot: couteau!": {
+  "file": "98c4d1ae-cdb8a1.mp3",
+  "text": "Écris le mot : couteau !",
+  "sent": "Écris le mot : couteau !",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Écris le mot couteau",
+  "score": 1
+ },
+ "cou… teau… couteau!": {
+  "file": "045b052c-fb9b48.mp3",
+  "text": "cou… teau… couteau !",
+  "sent": "cou… teau… couteau !",
+  "dur": 2.56,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Cou-teau. Couteau",
+  "score": 1
+ },
+ "bra!": {
+  "file": "37689227-741604.mp3",
+  "text": "bra !",
+  "sent": "bra !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute bien: couteau.": {
+  "file": "b1767fd5-90be79.mp3",
+  "text": "Écoute bien : couteau.",
+  "sent": "Écoute bien : couteau.",
+  "dur": 1.76,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Écoute bien. Couteau",
+  "score": 1
+ },
+ "touche le bloc qui fait le son: bra!": {
+  "file": "5db028f0-ad7d49.mp3",
+  "text": "Touche le bloc qui fait le son : bra !",
+  "sent": "Touche le bloc qui fait le son : bra !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son bra",
+  "score": 1
+ },
+ "celui-là, c'est: bra.": {
+  "file": "3eb6e26a-d25744.mp3",
+  "text": "Celui-là, c'est : bra.",
+  "sent": "Celui-là, c'est : bra.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est bras",
+  "score": 0.93
+ },
+ "bri!": {
+  "file": "a77cca2f-7cf357.mp3",
+  "text": "bri !",
+  "sent": "bri !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: bra.": {
+  "file": "7592db64-819057.mp3",
+  "text": "Cherche : bra.",
+  "sent": "Cherche : bra.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche bras",
+  "score": 0.91
+ },
+ "touche le bloc qui fait le son: bri!": {
+  "file": "6d9cba68-5c8790.mp3",
+  "text": "Touche le bloc qui fait le son : bri !",
+  "sent": "Touche le bloc qui fait le son : bri !",
+  "dur": 2.64,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son « bri ».",
+  "score": 1
+ },
+ "celui-là, c'est: bri.": {
+  "file": "5eca9c82-ad8b9c.mp3",
+  "text": "Celui-là, c'est : bri.",
+  "sent": "Celui-là, c'est : bri.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Bri",
+  "score": 1
+ },
+ "cherche: bri.": {
+  "file": "95a6957c-51fb14.mp3",
+  "text": "Cherche : bri.",
+  "sent": "Cherche : bri.",
+  "dur": 1.84,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche Brie",
+  "score": 0.91
+ },
+ "cra!": {
+  "file": "51401136-6acca8.mp3",
+  "text": "cra !",
+  "sent": "cra !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: cra!": {
+  "file": "b0dcbb09-8bc3ca.mp3",
+  "text": "Touche le bloc qui fait le son : cra !",
+  "sent": "Touche le bloc qui fait le son : cra !",
+  "dur": 2.48,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son cra",
+  "score": 1
+ },
+ "celui-là, c'est: cra.": {
+  "file": "91a6f03b-6f4aee.mp3",
+  "text": "Celui-là, c'est : cra.",
+  "sent": "Celui-là, c'est : cra.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Kra",
+  "score": 0.93
+ },
+ "cherche: cra.": {
+  "file": "8f1a673d-b23be3.mp3",
+  "text": "Cherche : cra.",
+  "sent": "Cherche : cra.",
+  "dur": 1.68,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche gras",
+  "score": 0.82
+ },
+ "cro!": {
+  "file": "6562c2f4-397e1a.mp3",
+  "text": "cro !",
+  "sent": "cro !",
+  "dur": 0.72,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: cro!": {
+  "file": "bce14b1b-281a63.mp3",
+  "text": "Touche le bloc qui fait le son : cro !",
+  "sent": "Touche le bloc qui fait le son : cro !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son cro",
+  "score": 1
+ },
+ "celui-là, c'est: cro.": {
+  "file": "118e21d5-2e7c34.mp3",
+  "text": "Celui-là, c'est : cro.",
+  "sent": "Celui-là, c'est : cro.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Cro",
+  "score": 1
+ },
+ "cherche: cro.": {
+  "file": "8f0b5cb3-81135e.mp3",
+  "text": "Cherche : cro.",
+  "sent": "Cherche : cro.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche croc",
+  "score": 0.91
+ },
+ "dra!": {
+  "file": "fe8c7b75-dc9500.mp3",
+  "text": "dra !",
+  "sent": "dra !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: dra.": {
+  "file": "e7048a14-1f5399.mp3",
+  "text": "Celui-là, c'est : dra.",
+  "sent": "Celui-là, c'est : dra.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est drap",
+  "score": 0.93
+ },
+ "touche le bloc qui fait le son: dra!": {
+  "file": "facb1622-c70e33.mp3",
+  "text": "Touche le bloc qui fait le son : dra !",
+  "sent": "Touche le bloc qui fait le son : dra !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son « dra ».",
+  "score": 1
+ },
+ "fra!": {
+  "file": "45aa7043-16f623.mp3",
+  "text": "fra !",
+  "sent": "fra !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: fra!": {
+  "file": "4e7d682c-6bb66e.mp3",
+  "text": "Touche le bloc qui fait le son : fra !",
+  "sent": "Touche le bloc qui fait le son : fra !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son « Fra ».",
+  "score": 1
+ },
+ "celui-là, c'est: fra.": {
+  "file": "ff282986-f45345.mp3",
+  "text": "Celui-là, c'est : fra.",
+  "sent": "Celui-là, c'est : fra.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Fra",
+  "score": 1
+ },
+ "fri!": {
+  "file": "b5bea84b-e12101.mp3",
+  "text": "fri !",
+  "sent": "fri !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: fra.": {
+  "file": "20da1248-58b195.mp3",
+  "text": "Cherche : fra.",
+  "sent": "Cherche : fra.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche, fra",
+  "score": 1
+ },
+ "cherche: dra.": {
+  "file": "8fbf37fa-fb89bf.mp3",
+  "text": "Cherche : dra.",
+  "sent": "Cherche : dra.",
+  "dur": 1.68,
+  "cost": 18,
+  "sttCost": 0,
+  "stt": "Serge Drap",
+  "score": 0.5
+ },
+ "celui-là, c'est: fri.": {
+  "file": "ff3bb13e-942784.mp3",
+  "text": "Celui-là, c'est : fri.",
+  "sent": "Celui-là, c'est : fri.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est free",
+  "score": 0.87
+ },
+ "cherche: fri.": {
+  "file": "80ee3120-62c172.mp3",
+  "text": "Cherche : fri.",
+  "sent": "Cherche : fri.",
+  "dur": 1.68,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche : free",
+  "score": 0.82
+ },
+ "touche le bloc qui fait le son: fri!": {
+  "file": "7e913b74-338694.mp3",
+  "text": "Touche le bloc qui fait le son : fri !",
+  "sent": "Touche le bloc qui fait le son : fri !",
+  "dur": 2.48,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son free",
+  "score": 0.93
+ },
+ "gra!": {
+  "file": "e29af292-497fd7.mp3",
+  "text": "gra !",
+  "sent": "gra !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: gra!": {
+  "file": "3d704ec5-5ac508.mp3",
+  "text": "Touche le bloc qui fait le son : gra !",
+  "sent": "Touche le bloc qui fait le son : gra !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son gra",
+  "score": 1
+ },
+ "celui-là, c'est: gra.": {
+  "file": "2f9d9bf7-f9307d.mp3",
+  "text": "Celui-là, c'est : gra.",
+  "sent": "Celui-là, c'est : gra.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est gras",
+  "score": 0.93
+ },
+ "cherche: gra.": {
+  "file": "3a619e21-6a4c32.mp3",
+  "text": "Cherche : gra.",
+  "sent": "Cherche : gra.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche gras",
+  "score": 0.91
+ },
+ "gro!": {
+  "file": "66822a78-5d7a5c.mp3",
+  "text": "gro !",
+  "sent": "gro !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: gro!": {
+  "file": "b98916df-7281fb.mp3",
+  "text": "Touche le bloc qui fait le son : gro !",
+  "sent": "Touche le bloc qui fait le son : gro !",
+  "dur": 2.64,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son gros",
+  "score": 0.96
+ },
+ "celui-là, c'est: gro.": {
+  "file": "2fc02e39-fc02a5.mp3",
+  "text": "Celui-là, c'est : gro.",
+  "sent": "Celui-là, c'est : gro.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est gros",
+  "score": 0.93
+ },
+ "cherche: gro.": {
+  "file": "3a661b4f-7cc79f.mp3",
+  "text": "Cherche : gro.",
+  "sent": "Cherche : gro.",
+  "dur": 1.68,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche gros",
+  "score": 0.91
+ },
+ "pra!": {
+  "file": "9e3937e9-8bc04e.mp3",
+  "text": "pra !",
+  "sent": "pra !",
+  "dur": 0.72,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: pra!": {
+  "file": "ffa9e8d6-b6a1fe.mp3",
+  "text": "Touche le bloc qui fait le son : pra !",
+  "sent": "Touche le bloc qui fait le son : pra !",
+  "dur": 2.48,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son pra",
+  "score": 1
+ },
+ "celui-là, c'est: pra.": {
+  "file": "3f57c108-d06aee.mp3",
+  "text": "Celui-là, c'est : pra.",
+  "sent": "Celui-là, c'est : pra.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Pra",
+  "score": 1
+ },
+ "pri!": {
+  "file": "0e4d6ff1-e5e5f7.mp3",
+  "text": "pri !",
+  "sent": "pri !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: pri!": {
+  "file": "6fbe20de-002366.mp3",
+  "text": "Touche le bloc qui fait le son : pri !",
+  "sent": "Touche le bloc qui fait le son : pri !",
+  "dur": 2.48,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son : pris",
+  "score": 0.96
+ },
+ "celui-là, c'est: pri.": {
+  "file": "9f6bdfe0-0b01ef.mp3",
+  "text": "Celui-là, c'est : pri.",
+  "sent": "Celui-là, c'est : pri.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est tri",
+  "score": 0.93
+ },
+ "tra!": {
+  "file": "9180e025-bf9c01.mp3",
+  "text": "tra !",
+  "sent": "tra !",
+  "dur": 0.72,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: pri.": {
+  "file": "fa0ab77e-1634f6.mp3",
+  "text": "Cherche : pri.",
+  "sent": "Cherche : pri.",
+  "dur": 1.76,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche prix",
+  "score": 0.91
+ },
+ "cherche: pra.": {
+  "file": "f9f72fc6-18193a.mp3",
+  "text": "Cherche : pra.",
+  "sent": "Cherche : pra.",
+  "dur": 1.76,
+  "cost": 18,
+  "sttCost": 0,
+  "stt": "Cherche Pra",
+  "score": 1
+ },
+ "touche le bloc qui fait le son: tra!": {
+  "file": "8e8a6132-931a04.mp3",
+  "text": "Touche le bloc qui fait le son : tra !",
+  "sent": "Touche le bloc qui fait le son : tra !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son tra",
+  "score": 1
+ },
+ "celui-là, c'est: tra.": {
+  "file": "7ac3d524-8efba2.mp3",
+  "text": "Celui-là, c'est : tra.",
+  "sent": "Celui-là, c'est : tra.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Tra",
+  "score": 1
+ },
+ "cherche: tra.": {
+  "file": "22b39caa-d3401a.mp3",
+  "text": "Cherche : tra.",
+  "sent": "Cherche : tra.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche, trace",
+  "score": 0.83
+ },
+ "tri!": {
+  "file": "c194b36d-71de72.mp3",
+  "text": "tri !",
+  "sent": "tri !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: tri.": {
+  "file": "9ad78f3c-50142c.mp3",
+  "text": "Celui-là, c'est : tri.",
+  "sent": "Celui-là, c'est : tri.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est tri",
+  "score": 1
+ },
+ "touche le bloc qui fait le son: tri!": {
+  "file": "9e76f2aa-9ab805.mp3",
+  "text": "Touche le bloc qui fait le son : tri !",
+  "sent": "Touche le bloc qui fait le son : tri !",
+  "dur": 2.48,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son tri",
+  "score": 1
+ },
+ "cherche: tri.": {
+  "file": "42c756c2-b25450.mp3",
+  "text": "Cherche : tri.",
+  "sent": "Cherche : tri.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche, crie",
+  "score": 0.82
+ },
+ "vra!": {
+  "file": "f1eb89f3-191df7.mp3",
+  "text": "vra !",
+  "sent": "vra !",
+  "dur": 1.04,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: vra!": {
+  "file": "a23c4e7c-6ec4b9.mp3",
+  "text": "Touche le bloc qui fait le son : vra !",
+  "sent": "Touche le bloc qui fait le son : vra !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son vra",
+  "score": 1
+ },
+ "celui-là, c'est: vra.": {
+  "file": "6c33c4d6-6e68cb.mp3",
+  "text": "Celui-là, c'est : vra.",
+  "sent": "Celui-là, c'est : vra.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Vra",
+  "score": 1
+ },
+ "cherche: vra.": {
+  "file": "cd1b2bf8-da8234.mp3",
+  "text": "Cherche : vra.",
+  "sent": "Cherche : vra.",
+  "dur": 1.84,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche vrai",
+  "score": 0.91
+ },
+ "bla!": {
+  "file": "c6cac40d-c39930.mp3",
+  "text": "bla !",
+  "sent": "bla !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: bla.": {
+  "file": "84202a3c-25cf2b.mp3",
+  "text": "Celui-là, c'est : bla.",
+  "sent": "Celui-là, c'est : bla.",
+  "dur": 2.32,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Blah",
+  "score": 0.93
+ },
+ "cherche: bla.": {
+  "file": "22fb6102-d84599.mp3",
+  "text": "Cherche : bla.",
+  "sent": "Cherche : bla.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche bla",
+  "score": 1
+ },
+ "touche le bloc qui fait le son: bla!": {
+  "file": "9adf5a06-619f48.mp3",
+  "text": "Touche le bloc qui fait le son : bla !",
+  "sent": "Touche le bloc qui fait le son : bla !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son bla",
+  "score": 1
+ },
+ "cla!": {
+  "file": "f2247e00-8f35dd.mp3",
+  "text": "cla !",
+  "sent": "cla !",
+  "dur": 0.96,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: cla.": {
+  "file": "6cdbab89-87b470.mp3",
+  "text": "Celui-là, c'est : cla.",
+  "sent": "Celui-là, c'est : cla.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Kla",
+  "score": 0.93
+ },
+ "touche le bloc qui fait le son: cla!": {
+  "file": "0d6e20ab-ad5760.mp3",
+  "text": "Touche le bloc qui fait le son : cla !",
+  "sent": "Touche le bloc qui fait le son : cla !",
+  "dur": 2.64,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son cla",
+  "score": 1
+ },
+ "cherche: cla.": {
+  "file": "6caf93a7-3749a5.mp3",
+  "text": "Cherche : cla.",
+  "sent": "Cherche : cla.",
+  "dur": 1.68,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche. Cla",
+  "score": 1
+ },
+ "clo!": {
+  "file": "0e159f8a-3d9da9.mp3",
+  "text": "clo !",
+  "sent": "clo !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: clo!": {
+  "file": "01699099-8a288e.mp3",
+  "text": "Touche le bloc qui fait le son : clo !",
+  "sent": "Touche le bloc qui fait le son : clo !",
+  "dur": 2.64,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son clos",
+  "score": 0.96
+ },
+ "celui-là, c'est: clo.": {
+  "file": "6cb91947-8e002c.mp3",
+  "text": "Celui-là, c'est : clo.",
+  "sent": "Celui-là, c'est : clo.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Clo",
+  "score": 1
+ },
+ "fla!": {
+  "file": "fbeb0a71-04a6ac.mp3",
+  "text": "fla !",
+  "sent": "fla !",
+  "dur": 1.04,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: fla!": {
+  "file": "f289d34a-8372ed.mp3",
+  "text": "Touche le bloc qui fait le son : fla !",
+  "sent": "Touche le bloc qui fait le son : fla !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son fla",
+  "score": 1
+ },
+ "celui-là, c'est: fla.": {
+  "file": "26232540-095355.mp3",
+  "text": "Celui-là, c'est : fla.",
+  "sent": "Celui-là, c'est : fla.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Fla",
+  "score": 1
+ },
+ "flo!": {
+  "file": "e7c858b3-31e358.mp3",
+  "text": "flo !",
+  "sent": "flo !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: clo.": {
+  "file": "6cd225e9-cb885b.mp3",
+  "text": "Cherche : clo.",
+  "sent": "Cherche : clo.",
+  "dur": 1.6,
+  "cost": 18,
+  "sttCost": 0,
+  "stt": "Cherche Clo",
+  "score": 1
+ },
+ "celui-là, c'est: flo.": {
+  "file": "46144d16-4444fd.mp3",
+  "text": "Celui-là, c'est : flo.",
+  "sent": "Celui-là, c'est : flo.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Flo",
+  "score": 1
+ },
+ "touche le bloc qui fait le son: flo!": {
+  "file": "d698b1c0-3ac852.mp3",
+  "text": "Touche le bloc qui fait le son : flo !",
+  "sent": "Touche le bloc qui fait le son : flo !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son Flo",
+  "score": 1
+ },
+ "cherche: fla.": {
+  "file": "c520b49e-859aad.mp3",
+  "text": "Cherche : fla.",
+  "sent": "Cherche : fla.",
+  "dur": 1.76,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Cherche fla",
+  "score": 1
+ },
+ "gla!": {
+  "file": "2c5a5864-6cfa00.mp3",
+  "text": "gla !",
+  "sent": "gla !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le bloc qui fait le son: gla!": {
+  "file": "fe66186f-b696d8.mp3",
+  "text": "Touche le bloc qui fait le son : gla !",
+  "sent": "Touche le bloc qui fait le son : gla !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son gla",
+  "score": 1
+ },
+ "celui-là, c'est: gla.": {
+  "file": "766f3aad-b5dbf3.mp3",
+  "text": "Celui-là, c'est : gla.",
+  "sent": "Celui-là, c'est : gla.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est gla",
+  "score": 1
+ },
+ "cherche: flo.": {
+  "file": "4507e638-fc1f2f.mp3",
+  "text": "Cherche : flo.",
+  "sent": "Cherche : flo.",
+  "dur": 1.52,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Cherche Flo",
+  "score": 1
+ },
+ "pla!": {
+  "file": "7acb670b-eb498e.mp3",
+  "text": "pla !",
+  "sent": "pla !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: gla.": {
+  "file": "2c5ab0a3-0cd612.mp3",
+  "text": "Cherche : gla.",
+  "sent": "Cherche : gla.",
+  "dur": 1.76,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche glas",
+  "score": 0.91
+ },
+ "celui-là, c'est: pla.": {
+  "file": "e123fa5e-1d3e68.mp3",
+  "text": "Celui-là, c'est : pla.",
+  "sent": "Celui-là, c'est : pla.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est plat",
+  "score": 0.93
+ },
+ "touche le bloc qui fait le son: pla!": {
+  "file": "1e14b620-f479dc.mp3",
+  "text": "Touche le bloc qui fait le son : pla !",
+  "sent": "Touche le bloc qui fait le son : pla !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son plah",
+  "score": 0.96
+ },
+ "cherche: pla.": {
+  "file": "236c9480-318f70.mp3",
+  "text": "Cherche : pla.",
+  "sent": "Cherche : pla.",
+  "dur": 1.52,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche plat",
+  "score": 0.91
+ },
+ "plu!": {
+  "file": "72ad455f-35aa61.mp3",
+  "text": "plu !",
+  "sent": "plu !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: plu.": {
+  "file": "614145f2-fe2dd9.mp3",
+  "text": "Celui-là, c'est : plu.",
+  "sent": "Celui-là, c'est : plu.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est plus",
+  "score": 0.93
+ },
+ "touche le bloc qui fait le son: plu!": {
+  "file": "55f6f934-03947a.mp3",
+  "text": "Touche le bloc qui fait le son : plu !",
+  "sent": "Touche le bloc qui fait le son : plu !",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche le bloc qui fait le son plus",
+  "score": 0.96
+ },
+ "cherche: plu.": {
+  "file": "a34f48ec-b8b1e4.mp3",
+  "text": "Cherche : plu.",
+  "sent": "Cherche : plu.",
+  "dur": 1.76,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche plus",
+  "score": 0.91
+ },
+ "construis le mot: citron!": {
+  "file": "670e430c-79e3a1.mp3",
+  "text": "Construis le mot : citron !",
+  "sent": "Construis le mot : citron !",
+  "dur": 2.16,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Construit le mot citron",
+  "score": 0.95
+ },
+ "celui-là, c'est: ci.": {
+  "file": "da199299-72312c.mp3",
+  "text": "Celui-là, c'est : ci.",
+  "sent": "Celui-là, c'est : ci.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est si",
+  "score": 0.92
+ },
+ "celui-là, c'est: tron.": {
+  "file": "4735a7f4-e84480.mp3",
+  "text": "Celui-là, c'est : tron.",
+  "sent": "Celui-là, c'est : tron.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est tronc",
+  "score": 0.94
+ },
+ "cra… be… crabe!": {
+  "file": "3d4e39d6-d60a6f.mp3",
+  "text": "cra… be… crabe !",
+  "sent": "cra… be… crabe !",
+  "dur": 2.56,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Crabe, crabe",
+  "score": 1
+ },
+ "construis le mot: crabe!": {
+  "file": "8d4a2226-52724c.mp3",
+  "text": "Construis le mot : crabe !",
+  "sent": "Construis le mot : crabe !",
+  "dur": 2.08,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Construit le mot crabe",
+  "score": 0.95
+ },
+ "écoute: cra… be.": {
+  "file": "73e3f592-084396.mp3",
+  "text": "Écoute : cra… be.",
+  "sent": "Écoute : cra… be.",
+  "dur": 2.56,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute : crabe",
+  "score": 1
+ },
+ "cra": {
+  "file": "e144c393-c4aa3f.mp3",
+  "text": "cra",
+  "sent": "cra.",
+  "dur": 0.72,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "be": {
+  "file": "382ba080-4636ba.mp3",
+  "text": "be",
+  "sent": "be.",
+  "dur": 0.8,
+  "cost": 1,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: be.": {
+  "file": "c452e65e-ed13f5.mp3",
+  "text": "Celui-là, c'est : be.",
+  "sent": "Celui-là, c'est : be.",
+  "dur": 2.24,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est B",
+  "score": 0.92
+ },
+ "cro… co… di… le… crocodile!": {
+  "file": "64e48898-f2ad24.mp3",
+  "text": "cro… co… di… le… crocodile !",
+  "sent": "cro… co… di… le… crocodile !",
+  "dur": 3.84,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Croco-dile. Crocodile",
+  "score": 1
+ },
+ "construis le mot: crocodile!": {
+  "file": "e0e2da79-3a4a11.mp3",
+  "text": "Construis le mot : crocodile !",
+  "sent": "Construis le mot : crocodile !",
+  "dur": 2.32,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Construit le mot crocodile",
+  "score": 0.96
+ },
+ "cro": {
+  "file": "ef44d99d-c74cf7.mp3",
+  "text": "cro",
+  "sent": "cro.",
+  "dur": 0.72,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "le": {
+  "file": "4c31d02a-c8fae8.mp3",
+  "text": "le",
+  "sent": "le.",
+  "dur": 0.72,
+  "cost": 1,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: cro… co… di… le.": {
+  "file": "62060685-5da953.mp3",
+  "text": "Écoute : cro… co… di… le.",
+  "sent": "Écoute : cro… co… di… le.",
+  "dur": 4,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Écoute : cro-co-di-le",
+  "score": 1
+ },
+ "celui-là, c'est: le.": {
+  "file": "067f4238-3ec62b.mp3",
+  "text": "Celui-là, c'est : le.",
+  "sent": "Celui-là, c'est : le.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est le",
+  "score": 1
+ },
+ "dra… peau… drapeau!": {
+  "file": "2cbcdbd8-f11e0d.mp3",
+  "text": "dra… peau… drapeau !",
+  "sent": "dra… peau… drapeau !",
+  "dur": 2.64,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Dra-peau, drapeau",
+  "score": 1
+ },
+ "dra": {
+  "file": "e425d3f6-008e2e.mp3",
+  "text": "dra",
+  "sent": "dra.",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "construis le mot: drapeau!": {
+  "file": "26113615-7edf45.mp3",
+  "text": "Construis le mot : drapeau !",
+  "sent": "Construis le mot : drapeau !",
+  "dur": 2.08,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Construit le mot drapeau",
+  "score": 0.95
+ },
+ "écoute: dra… peau.": {
+  "file": "17b77205-8df3b5.mp3",
+  "text": "Écoute : dra… peau.",
+  "sent": "Écoute : dra… peau.",
+  "dur": 2.56,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute. Dra-peau",
+  "score": 1
+ },
+ "celui-là, c'est: peau.": {
+  "file": "4222b07e-f7d49d.mp3",
+  "text": "Celui-là, c'est : peau.",
+  "sent": "Celui-là, c'est : peau.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Po",
+  "score": 0.8
+ },
+ "fro… ma… ge… fromage!": {
+  "file": "b22b82f6-2c85b8.mp3",
+  "text": "fro… ma… ge… fromage !",
+  "sent": "fro… ma… ge… fromage !",
+  "dur": 3.2,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Froma-ge. Fromage",
+  "score": 1
+ },
+ "construis le mot: fromage!": {
+  "file": "89cb4d80-6ce34b.mp3",
+  "text": "Construis le mot : fromage !",
+  "sent": "Construis le mot : fromage !",
+  "dur": 2.24,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Construit le mot fromage",
+  "score": 0.95
+ },
+ "ge": {
+  "file": "3c206dd9-3f4cc2.mp3",
+  "text": "ge",
+  "sent": "ge.",
+  "dur": 0.8,
+  "cost": 1,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: fro… ma… ge.": {
+  "file": "087d69fc-f9e9a4.mp3",
+  "text": "Écoute : fro… ma… ge.",
+  "sent": "Écoute : fro… ma… ge.",
+  "dur": 3.52,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute. Froma-gue",
+  "score": 0.93
+ },
+ "celui-là, c'est: fro.": {
+  "file": "9f369cf0-ee46a8.mp3",
+  "text": "Celui-là, c'est : fro.",
+  "sent": "Celui-là, c'est : fro.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Fro",
+  "score": 1
+ },
+ "celui-là, c'est: ge.": {
+  "file": "8e48c4d1-8b573a.mp3",
+  "text": "Celui-là, c'est : ge.",
+  "sent": "Celui-là, c'est : ge.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est gué",
+  "score": 0.93
+ },
+ "gla… ce… glace!": {
+  "file": "a4764f14-35abd7.mp3",
+  "text": "gla… ce… glace !",
+  "sent": "gla… ce… glace !",
+  "dur": 2.56,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Glace, glace",
+  "score": 1
+ },
+ "construis le mot: glace!": {
+  "file": "dc0319df-585cd0.mp3",
+  "text": "Construis le mot : glace !",
+  "sent": "Construis le mot : glace !",
+  "dur": 2.16,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Construit le mot glace",
+  "score": 0.95
+ },
+ "gla": {
+  "file": "6b1e14ad-12997d.mp3",
+  "text": "gla",
+  "sent": "gla.",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "ce": {
+  "file": "5c299a95-61082d.mp3",
+  "text": "ce",
+  "sent": "ce.",
+  "dur": 0.56,
+  "cost": 1,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: gla… ce.": {
+  "file": "b0995b73-cb56d2.mp3",
+  "text": "Écoute : gla… ce.",
+  "sent": "Écoute : gla… ce.",
+  "dur": 2.96,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute : gla-ce",
+  "score": 1
+ },
+ "pla… ge… plage!": {
+  "file": "66f3997a-1dc251.mp3",
+  "text": "pla… ge… plage !",
+  "sent": "pla… ge… plage !",
+  "dur": 2.32,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Plag-- plage",
+  "score": 0.9
+ },
+ "construis le mot: plage!": {
+  "file": "b8ad9df8-bb206f.mp3",
+  "text": "Construis le mot : plage !",
+  "sent": "Construis le mot : plage !",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Construit le mot : plage",
+  "score": 0.95
+ },
+ "pla": {
+  "file": "723a4f88-c295fe.mp3",
+  "text": "pla",
+  "sent": "pla.",
+  "dur": 0.72,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: pla… ge.": {
+  "file": "7fe73ab0-0e9169.mp3",
+  "text": "Écoute : pla… ge.",
+  "sent": "Écoute : pla… ge.",
+  "dur": 2.48,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute : pla-ge",
+  "score": 1
+ },
+ "trac… teur… tracteur!": {
+  "file": "449fc13c-63f6ec.mp3",
+  "text": "trac… teur… tracteur !",
+  "sent": "trac… teur… tracteur !",
+  "dur": 2.96,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Tracteur. Tracteur",
+  "score": 1
+ },
+ "construis le mot: tracteur!": {
+  "file": "3fe0aed3-f6361d.mp3",
+  "text": "Construis le mot : tracteur !",
+  "sent": "Construis le mot : tracteur !",
+  "dur": 2.4,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Construit le mot tracteur",
+  "score": 0.95
+ },
+ "écoute: trac… teur.": {
+  "file": "06ae16b1-24d19b.mp3",
+  "text": "Écoute : trac… teur.",
+  "sent": "Écoute : trac… teur.",
+  "dur": 2.88,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute : tracteur",
+  "score": 1
+ },
+ "trac": {
+  "file": "4f80783f-7b8318.mp3",
+  "text": "trac",
+  "sent": "trac.",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: trac.": {
+  "file": "6d8eed07-e9acf0.mp3",
+  "text": "Celui-là, c'est : trac.",
+  "sent": "Celui-là, c'est : trac.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est trac",
+  "score": 1
+ },
+ "celui-là, c'est: teur.": {
+  "file": "37398c25-b23c95.mp3",
+  "text": "Celui-là, c'est : teur.",
+  "sent": "Celui-là, c'est : teur.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est peur",
+  "score": 0.93
+ },
+ "gre… nouil… le… grenouille!": {
+  "file": "2badaa08-1874a7.mp3",
+  "text": "gre… nouil… le… grenouille !",
+  "sent": "gre… nouil… le… grenouille !",
+  "dur": 3.68,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Gré-nouille le-- grenouille",
+  "score": 0.91
+ },
+ "gre": {
+  "file": "63379ffb-2b1025.mp3",
+  "text": "gre",
+  "sent": "gre.",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "construis le mot: grenouille!": {
+  "file": "27bd3dd9-ca1e33.mp3",
+  "text": "Construis le mot : grenouille !",
+  "sent": "Construis le mot : grenouille !",
+  "dur": 2.32,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Construit le mot grenouille",
+  "score": 0.96
+ },
+ "écoute: gre… nouil… le.": {
+  "file": "877faedb-f114d6.mp3",
+  "text": "Écoute : gre… nouil… le.",
+  "sent": "Écoute : gre… nouil… le.",
+  "dur": 3.12,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Écoute : gre-nouille",
+  "score": 1
+ },
+ "nouil": {
+  "file": "f145c9d0-25ef03.mp3",
+  "text": "nouil",
+  "sent": "nouil.",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: gre.": {
+  "file": "afa75fd3-2ff7af.mp3",
+  "text": "Celui-là, c'est : gre.",
+  "sent": "Celui-là, c'est : gre.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Grey",
+  "score": 0.93
+ },
+ "celui-là, c'est: nouil.": {
+  "file": "5607629e-382b63.mp3",
+  "text": "Celui-là, c'est : nouil.",
+  "sent": "Celui-là, c'est : nouil.",
+  "dur": 2.32,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est nouille",
+  "score": 0.89
+ },
+ "pri… se… prise!": {
+  "file": "00695b76-c6f86e.mp3",
+  "text": "pri… se… prise !",
+  "sent": "pri… se… prise !",
+  "dur": 2.48,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Pri-se, prise",
+  "score": 1
+ },
+ "construis le mot: prise!": {
+  "file": "bcb89f3e-feeb76.mp3",
+  "text": "Construis le mot : prise !",
+  "sent": "Construis le mot : prise !",
+  "dur": 2.16,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Construit le mot : prise",
+  "score": 0.95
+ },
+ "pri": {
+  "file": "567acaca-6745d4.mp3",
+  "text": "pri",
+  "sent": "pri.",
+  "dur": 0.72,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "se": {
+  "file": "3c520aa5-1c2841.mp3",
+  "text": "se",
+  "sent": "se.",
+  "dur": 0.8,
+  "cost": 1,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: pri… se.": {
+  "file": "13f2f2a6-ad7e94.mp3",
+  "text": "Écoute : pri… se.",
+  "sent": "Écoute : pri… se.",
+  "dur": 2.64,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute, pris ce",
+  "score": 0.92
+ },
+ "celui-là, c'est: se.": {
+  "file": "ac2f47d5-2fe3e5.mp3",
+  "text": "Celui-là, c'est : se.",
+  "sent": "Celui-là, c'est : se.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est ce",
+  "score": 0.92
+ },
+ "ar… bre… arbre!": {
+  "file": "eaaee074-0155ef.mp3",
+  "text": "ar… bre… arbre !",
+  "sent": "ar… bre… arbre !",
+  "dur": 2.56,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Arbre, arbre",
+  "score": 1
+ },
+ "construis le mot: arbre!": {
+  "file": "4d2be10f-53a343.mp3",
+  "text": "Construis le mot : arbre !",
+  "sent": "Construis le mot : arbre !",
+  "dur": 2.16,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Construit le mot arbre",
+  "score": 0.95
+ },
+ "ar": {
+  "file": "5d251efa-8bf411.mp3",
+  "text": "ar",
+  "sent": "ar.",
+  "dur": 0.8,
+  "cost": 1,
+  "sttCost": 0,
+  "score": 1
+ },
+ "bre": {
+  "file": "71e6d370-3a3c46.mp3",
+  "text": "bre",
+  "sent": "bre.",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: ar… bre.": {
+  "file": "493ad5fb-cbb39c.mp3",
+  "text": "Écoute : ar… bre.",
+  "sent": "Écoute : ar… bre.",
+  "dur": 2.8,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute : arbre",
+  "score": 1
+ },
+ "celui-là, c'est: ar.": {
+  "file": "7eb1d9b8-a5b1d7.mp3",
+  "text": "Celui-là, c'est : ar.",
+  "sent": "Celui-là, c'est : ar.",
+  "dur": 2.24,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est art",
+  "score": 0.93
+ },
+ "celui-là, c'est: bre.": {
+  "file": "bec0a646-637b69.mp3",
+  "text": "Celui-là, c'est : bre.",
+  "sent": "Celui-là, c'est : bre.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Bree",
+  "score": 0.93
+ },
+ "li… vre… livre!": {
+  "file": "88a40c74-f2e854.mp3",
+  "text": "li… vre… livre !",
+  "sent": "li… vre… livre !",
+  "dur": 2.72,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Livre, livre",
+  "score": 1
+ },
+ "construis le mot: livre!": {
+  "file": "7ddecca3-cb58ba.mp3",
+  "text": "Construis le mot : livre !",
+  "sent": "Construis le mot : livre !",
+  "dur": 2.16,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Construit le mot : livre",
+  "score": 0.95
+ },
+ "vre": {
+  "file": "6d55184c-732f44.mp3",
+  "text": "vre",
+  "sent": "vre.",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: li… vre.": {
+  "file": "293706ef-e009de.mp3",
+  "text": "Écoute : li… vre.",
+  "sent": "Écoute : li… vre.",
+  "dur": 2.56,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute : livre",
+  "score": 1
+ },
+ "celui-là, c'est: vre.": {
+  "file": "ec2a00fa-916cac.mp3",
+  "text": "Celui-là, c'est : vre.",
+  "sent": "Celui-là, c'est : vre.",
+  "dur": 2.8,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est V-R-E",
+  "score": 1
+ },
+ "bro… co… li… brocoli!": {
+  "file": "30d79c4c-40af53.mp3",
+  "text": "bro… co… li… brocoli !",
+  "sent": "bro… co… li… brocoli !",
+  "dur": 3.04,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Brocoli. Brocoli",
+  "score": 1
+ },
+ "bro": {
+  "file": "7be6e32e-41ab24.mp3",
+  "text": "bro",
+  "sent": "bro.",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "construis le mot: brocoli!": {
+  "file": "4cb9dafd-28f607.mp3",
+  "text": "Construis le mot : brocoli !",
+  "sent": "Construis le mot : brocoli !",
+  "dur": 2.32,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Construit le mot : brocoli",
+  "score": 0.95
+ },
+ "écoute: bro… co… li.": {
+  "file": "956e744d-aae6a6.mp3",
+  "text": "Écoute : bro… co… li.",
+  "sent": "Écoute : bro… co… li.",
+  "dur": 3.36,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute : bro-co-li",
+  "score": 1
+ },
+ "celui-là, c'est: bro.": {
+  "file": "3ed974ac-6bd598.mp3",
+  "text": "Celui-là, c'est : bro.",
+  "sent": "Celui-là, c'est : bro.",
+  "dur": 2.32,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est bro",
+  "score": 1
+ },
+ "frai… se… fraise!": {
+  "file": "21f2b934-dd80c2.mp3",
+  "text": "frai… se… fraise !",
+  "sent": "frai… se… fraise !",
+  "dur": 2.8,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Fraise, euh, fraise",
+  "score": 0.8
+ },
+ "frai": {
+  "file": "8daae19b-949b0d.mp3",
+  "text": "frai",
+  "sent": "frai.",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "construis le mot: fraise!": {
+  "file": "d07d69bf-ad646d.mp3",
+  "text": "Construis le mot : fraise !",
+  "sent": "Construis le mot : fraise !",
+  "dur": 2.24,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Construit le mot : fraise",
+  "score": 0.95
+ },
+ "écoute: frai… se.": {
+  "file": "2ff18b95-1f8fa2.mp3",
+  "text": "Écoute : frai… se.",
+  "sent": "Écoute : frai… se.",
+  "dur": 3.04,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute, frais-se",
+  "score": 0.92
+ },
+ "celui-là, c'est: frai.": {
+  "file": "f6df1f03-3b2467.mp3",
+  "text": "Celui-là, c'est : frai.",
+  "sent": "Celui-là, c'est : frai.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est frais",
+  "score": 0.94
+ },
+ "pla… nè… te… planète!": {
+  "file": "be8d6ad4-07f507.mp3",
+  "text": "pla… nè… te… planète !",
+  "sent": "pla… nè… te… planète !",
+  "dur": 3.12,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Pla-nè-te. Planète",
+  "score": 1
+ },
+ "construis le mot: planète!": {
+  "file": "af8099e4-a3ead7.mp3",
+  "text": "Construis le mot : planète !",
+  "sent": "Construis le mot : planète !",
+  "dur": 2.24,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Construit le mot planète",
+  "score": 0.95
+ },
+ "nè": {
+  "file": "f7201bfa-e269c3.mp3",
+  "text": "nè",
+  "sent": "nè.",
+  "dur": 0.72,
+  "cost": 1,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: pla… nè… te.": {
+  "file": "f7544bba-cdd815.mp3",
+  "text": "Écoute : pla… nè… te.",
+  "sent": "Écoute : pla… nè… te.",
+  "dur": 3.2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute : pla-nè-te",
+  "score": 1
+ },
+ "celui-là, c'est: nè.": {
+  "file": "226b8418-d5dadf.mp3",
+  "text": "Celui-là, c'est : nè.",
+  "sent": "Celui-là, c'est : nè.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est nez",
+  "score": 0.93
+ },
+ "dra… gon… dragon!": {
+  "file": "c7ffd350-76f2dc.mp3",
+  "text": "dra… gon… dragon !",
+  "sent": "dra… gon… dragon !",
+  "dur": 2.56,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Dragon, dragon",
+  "score": 1
+ },
+ "gon": {
+  "file": "3e1b8f3f-12764d.mp3",
+  "text": "gon",
+  "sent": "gon.",
+  "dur": 0.72,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "construis le mot: dragon!": {
+  "file": "d1384f54-4aebe6.mp3",
+  "text": "Construis le mot : dragon !",
+  "sent": "Construis le mot : dragon !",
+  "dur": 2.16,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Construit le mot dragon",
+  "score": 0.95
+ },
+ "écoute: dra… gon.": {
+  "file": "6f5802b6-2915cb.mp3",
+  "text": "Écoute : dra… gon.",
+  "sent": "Écoute : dra… gon.",
+  "dur": 2.64,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Écoute : dra-gon",
+  "score": 1
+ },
+ "celui-là, c'est: gon.": {
+  "file": "8a2917cf-70bbf4.mp3",
+  "text": "Celui-là, c'est : gon.",
+  "sent": "Celui-là, c'est : gon.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Gong",
+  "score": 0.93
+ },
+ "construis le mot: princesse!": {
+  "file": "9c0d9e5b-43d4ab.mp3",
+  "text": "Construis le mot : princesse !",
+  "sent": "Construis le mot : princesse !",
+  "dur": 2.24,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Construit le mot princesse",
+  "score": 0.96
+ },
+ "prin… ces… se… princesse!": {
+  "file": "d9fae7c8-00e142.mp3",
+  "text": "prin… ces… se… princesse !",
+  "sent": "prin… ces… se… princesse !",
+  "dur": 3.28,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Prin-ces-se. Princesse",
+  "score": 1
+ },
+ "prin": {
+  "file": "c74d002c-c0f1c4.mp3",
+  "text": "prin",
+  "sent": "prin.",
+  "dur": 0.72,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: prin… ces… se.": {
+  "file": "ef32576f-c90b81.mp3",
+  "text": "Écoute : prin… ces… se.",
+  "sent": "Écoute : prin… ces… se.",
+  "dur": 3.44,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Écoute : prin-ces-se",
+  "score": 1
+ },
+ "ces": {
+  "file": "fb7ed812-f9b3be.mp3",
+  "text": "ces",
+  "sent": "ces.",
+  "dur": 0.64,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: prin.": {
+  "file": "456feb8a-691375.mp3",
+  "text": "Celui-là, c'est : prin.",
+  "sent": "Celui-là, c'est : prin.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est Prince",
+  "score": 0.88
+ },
+ "ça, c'est: crabe.": {
+  "file": "7e17e0bf-6376f5.mp3",
+  "text": "Ça, c'est : crabe.",
+  "sent": "Ça, c'est : crabe.",
+  "dur": 2,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est crabe",
+  "score": 1
+ },
+ "celui-là, c'est: ces.": {
+  "file": "d0b40000-d01c6f.mp3",
+  "text": "Celui-là, c'est : ces.",
+  "sent": "Celui-là, c'est : ces.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est « c'est »",
+  "score": 0.93
+ },
+ "ça, c'est: crocodile.": {
+  "file": "839d07ac-69147a.mp3",
+  "text": "Ça, c'est : crocodile.",
+  "sent": "Ça, c'est : crocodile.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Ça, c'est crocodile",
+  "score": 1
+ },
+ "fleur!": {
+  "file": "ddc0b0a8-3b18ed.mp3",
+  "text": "fleur !",
+  "sent": "fleur !",
+  "dur": 0.88,
+  "cost": 3,
+  "sttCost": 0,
+  "score": 1
+ },
+ "ça, c'est: drapeau.": {
+  "file": "dfadc770-ad4107.mp3",
+  "text": "Ça, c'est : drapeau.",
+  "sent": "Ça, c'est : drapeau.",
+  "dur": 2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est drapeau",
+  "score": 1
+ },
+ "ça, c'est: fleur.": {
+  "file": "bae1c52e-2eb92a.mp3",
+  "text": "Ça, c'est : fleur.",
+  "sent": "Ça, c'est : fleur.",
+  "dur": 2.08,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est fleur",
+  "score": 1
+ },
+ "écoute: fleur.": {
+  "file": "953024bb-8e18d2.mp3",
+  "text": "Écoute : fleur.",
+  "sent": "Écoute : fleur.",
+  "dur": 1.76,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Écoute : fleur",
+  "score": 1
+ },
+ "ça, c'est: plage.": {
+  "file": "7693809d-228742.mp3",
+  "text": "Ça, c'est : plage.",
+  "sent": "Ça, c'est : plage.",
+  "dur": 2.08,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est plage",
+  "score": 1
+ },
+ "ça, c'est: fromage.": {
+  "file": "7aed4d45-569657.mp3",
+  "text": "Ça, c'est : fromage.",
+  "sent": "Ça, c'est : fromage.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est fromage",
+  "score": 1
+ },
+ "ça, c'est: glace.": {
+  "file": "1a2dc6b6-35e788.mp3",
+  "text": "Ça, c'est : glace.",
+  "sent": "Ça, c'est : glace.",
+  "dur": 2.08,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est glace",
+  "score": 1
+ },
+ "clé!": {
+  "file": "943caf35-740e20.mp3",
+  "text": "clé !",
+  "sent": "clé !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "écoute: clé.": {
+  "file": "142fae32-dd5be6.mp3",
+  "text": "Écoute : clé.",
+  "sent": "Écoute : clé.",
+  "dur": 1.68,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "ça, c'est: clé.": {
+  "file": "6f458ca5-e83c4b.mp3",
+  "text": "Ça, c'est : clé.",
+  "sent": "Ça, c'est : clé.",
+  "dur": 1.76,
+  "cost": 6,
+  "sttCost": 0,
+  "score": 1
+ },
+ "bras!": {
+  "file": "ec1a2cb4-f9fcc7.mp3",
+  "text": "bras !",
+  "sent": "bras !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "ça, c'est: bras.": {
+  "file": "da9c8504-d97111.mp3",
+  "text": "Ça, c'est : bras.",
+  "sent": "Ça, c'est : bras.",
+  "dur": 2,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est bras",
+  "score": 1
+ },
+ "écoute: bras.": {
+  "file": "563acc0f-db72d9.mp3",
+  "text": "Écoute : bras.",
+  "sent": "Écoute : bras.",
+  "dur": 1.76,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Écoute, bras",
+  "score": 1
+ },
+ "train!": {
+  "file": "b6797558-245029.mp3",
+  "text": "train !",
+  "sent": "train !",
+  "dur": 0.88,
+  "cost": 3,
+  "sttCost": 0,
+  "score": 1
+ },
+ "ça, c'est: tracteur.": {
+  "file": "7daa5a62-746146.mp3",
+  "text": "Ça, c'est : tracteur.",
+  "sent": "Ça, c'est : tracteur.",
+  "dur": 2.24,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est tracteur",
+  "score": 1
+ },
+ "ça, c'est: train.": {
+  "file": "6f0cfcaa-265ea4.mp3",
+  "text": "Ça, c'est : train.",
+  "sent": "Ça, c'est : train.",
+  "dur": 1.92,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est train",
+  "score": 1
+ },
+ "écoute: train.": {
+  "file": "eefbee2b-799762.mp3",
+  "text": "Écoute : train.",
+  "sent": "Écoute : train.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Écoute : train",
+  "score": 1
+ },
+ "ça, c'est: grenouille.": {
+  "file": "f7c945ec-a5555d.mp3",
+  "text": "Ça, c'est : grenouille.",
+  "sent": "Ça, c'est : grenouille.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Ça, c'est grenouille",
+  "score": 1
+ },
+ "ça, c'est: prise.": {
+  "file": "7669a297-3a6dcb.mp3",
+  "text": "Ça, c'est : prise.",
+  "sent": "Ça, c'est : prise.",
+  "dur": 2.08,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est prise",
+  "score": 1
+ },
+ "ça, c'est: arbre.": {
+  "file": "caacf956-fdf95b.mp3",
+  "text": "Ça, c'est : arbre.",
+  "sent": "Ça, c'est : arbre.",
+  "dur": 2,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est arbre",
+  "score": 1
+ },
+ "ça, c'est: livre.": {
+  "file": "aef12202-35a5ef.mp3",
+  "text": "Ça, c'est : livre.",
+  "sent": "Ça, c'est : livre.",
+  "dur": 2.16,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est livre",
+  "score": 1
+ },
+ "ça, c'est: brocoli.": {
+  "file": "6060b7e8-f9ad7b.mp3",
+  "text": "Ça, c'est : brocoli.",
+  "sent": "Ça, c'est : brocoli.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est brocoli",
+  "score": 1
+ },
+ "ça, c'est: fraise.": {
+  "file": "080d2246-dd0d36.mp3",
+  "text": "Ça, c'est : fraise.",
+  "sent": "Ça, c'est : fraise.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est fraise",
+  "score": 1
+ },
+ "grue!": {
+  "file": "5a50f891-446a9f.mp3",
+  "text": "grue !",
+  "sent": "grue !",
+  "dur": 1.04,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "ça, c'est: planète.": {
+  "file": "5ec6ae81-41ac3a.mp3",
+  "text": "Ça, c'est : planète.",
+  "sent": "Ça, c'est : planète.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est Planet",
+  "score": 0.92
+ },
+ "ça, c'est: dragon.": {
+  "file": "4c0ff681-803430.mp3",
+  "text": "Ça, c'est : dragon.",
+  "sent": "Ça, c'est : dragon.",
+  "dur": 2.08,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ça, c'est dragon",
+  "score": 1
+ },
+ "ça, c'est: grue.": {
+  "file": "75a6c785-0adbf0.mp3",
+  "text": "Ça, c'est : grue.",
+  "sent": "Ça, c'est : grue.",
+  "dur": 2,
+  "cost": 7,
+  "sttCost": 1,
+  "stt": "Ça, c'est grue",
+  "score": 1
+ },
+ "écoute: grue.": {
+  "file": "cf17a826-77b67a.mp3",
+  "text": "Écoute : grue.",
+  "sent": "Écoute : grue.",
+  "dur": 1.92,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Écoute, Gru",
+  "score": 0.9
+ },
+ "le!": {
+  "file": "fd6a8151-a287b8.mp3",
+  "text": "le !",
+  "sent": "le !",
+  "dur": 0.72,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "ça, c'est: princesse.": {
+  "file": "cd14218a-80a3be.mp3",
+  "text": "Ça, c'est : princesse.",
+  "sent": "Ça, c'est : princesse.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Ça, c'est princesse",
+  "score": 1
+ },
+ "touche le mot: le!": {
+  "file": "1e8a81fe-a8a137.mp3",
+  "text": "Touche le mot : le !",
+  "sent": "Touche le mot : le !",
+  "dur": 1.76,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Touche le mot le",
+  "score": 1
+ },
+ "cherche: le.": {
+  "file": "65bdfa96-d03f69.mp3",
+  "text": "Cherche : le.",
+  "sent": "Cherche : le.",
+  "dur": 1.6,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "les!": {
+  "file": "f36b0f4e-2e3f9a.mp3",
+  "text": "les !",
+  "sent": "les !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le mot: la!": {
+  "file": "b6946ba2-470f2b.mp3",
+  "text": "Touche le mot : la !",
+  "sent": "Touche le mot : la !",
+  "dur": 1.76,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Touche le mot « la ».",
+  "score": 1
+ },
+ "touche le mot: les!": {
+  "file": "c68eee4b-393ca0.mp3",
+  "text": "Touche le mot : les !",
+  "sent": "Touche le mot : les !",
+  "dur": 1.84,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Touche le mot « les ».",
+  "score": 1
+ },
+ "celui-là, c'est: les.": {
+  "file": "b1d692d3-6635fe.mp3",
+  "text": "Celui-là, c'est : les.",
+  "sent": "Celui-là, c'est : les.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est lait",
+  "score": 0.8
+ },
+ "cherche: les.": {
+  "file": "e36b9349-3eed07.mp3",
+  "text": "Cherche : les.",
+  "sent": "Cherche : les.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche les",
+  "score": 1
+ },
+ "cherche: un.": {
+  "file": "400ad892-f3eb0e.mp3",
+  "text": "Cherche : un.",
+  "sent": "Cherche : un.",
+  "dur": 1.52,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le mot: un!": {
+  "file": "c1bd675e-66384b.mp3",
+  "text": "Touche le mot : un !",
+  "sent": "Touche le mot : un !",
+  "dur": 1.68,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Touche le mot un",
+  "score": 1
+ },
+ "celui-là, c'est: un.": {
+  "file": "634c5cd8-99b63d.mp3",
+  "text": "Celui-là, c'est : un.",
+  "sent": "Celui-là, c'est : un.",
+  "dur": 2.16,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est un",
+  "score": 1
+ },
+ "une!": {
+  "file": "9bd2b5e4-dc0500.mp3",
+  "text": "une !",
+  "sent": "une !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le mot: une!": {
+  "file": "5394d791-26dcb5.mp3",
+  "text": "Touche le mot : une !",
+  "sent": "Touche le mot : une !",
+  "dur": 2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Touche le mot une",
+  "score": 1
+ },
+ "celui-là, c'est: une.": {
+  "file": "c88af435-5fc611.mp3",
+  "text": "Celui-là, c'est : une.",
+  "sent": "Celui-là, c'est : une.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est une",
+  "score": 1
+ },
+ "cherche: une.": {
+  "file": "0e85e1fb-e5e9f9.mp3",
+  "text": "Cherche : une.",
+  "sent": "Cherche : une.",
+  "dur": 1.68,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche une",
+  "score": 1
+ },
+ "il!": {
+  "file": "dee3e11b-b8c806.mp3",
+  "text": "il !",
+  "sent": "il !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: il.": {
+  "file": "2d9e0f94-b0772b.mp3",
+  "text": "Cherche : il.",
+  "sent": "Cherche : il.",
+  "dur": 1.68,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "celui-là, c'est: il.": {
+  "file": "65618f06-76b4e2.mp3",
+  "text": "Celui-là, c'est : il.",
+  "sent": "Celui-là, c'est : il.",
+  "dur": 2.24,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est il",
+  "score": 1
+ },
+ "touche le mot: il!": {
+  "file": "dabec484-ed65ed.mp3",
+  "text": "Touche le mot : il !",
+  "sent": "Touche le mot : il !",
+  "dur": 1.92,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Touche le mot « il ».",
+  "score": 1
+ },
+ "elle!": {
+  "file": "1070cc92-85e1f6.mp3",
+  "text": "elle !",
+  "sent": "elle !",
+  "dur": 0.72,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le mot: elle!": {
+  "file": "7cd608d5-1f9832.mp3",
+  "text": "Touche le mot : elle !",
+  "sent": "Touche le mot : elle !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Touche le mot elle",
+  "score": 1
+ },
+ "celui-là, c'est: elle.": {
+  "file": "07f204d7-351f42.mp3",
+  "text": "Celui-là, c'est : elle.",
+  "sent": "Celui-là, c'est : elle.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est elle",
+  "score": 1
+ },
+ "cherche: elle.": {
+  "file": "7d7473c5-39c558.mp3",
+  "text": "Cherche : elle.",
+  "sent": "Cherche : elle.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche elle",
+  "score": 1
+ },
+ "on!": {
+  "file": "f6277863-8bac42.mp3",
+  "text": "on !",
+  "sent": "on !",
+  "dur": 0.72,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "dans!": {
+  "file": "143c6420-c28b45.mp3",
+  "text": "dans !",
+  "sent": "dans !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le mot: on!": {
+  "file": "701819d0-fe083a.mp3",
+  "text": "Touche le mot : on !",
+  "sent": "Touche le mot : on !",
+  "dur": 1.68,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Touche le mot on",
+  "score": 1
+ },
+ "touche le mot: dans!": {
+  "file": "839ddde3-013dea.mp3",
+  "text": "Touche le mot : dans !",
+  "sent": "Touche le mot : dans !",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Touche le mot dans",
+  "score": 1
+ },
+ "celui-là, c'est: dans.": {
+  "file": "7830d3d9-599f74.mp3",
+  "text": "Celui-là, c'est : dans.",
+  "sent": "Celui-là, c'est : dans.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est dent",
+  "score": 0.87
+ },
+ "sur!": {
+  "file": "62fc018c-77b8f9.mp3",
+  "text": "sur !",
+  "sent": "sur !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: dans.": {
+  "file": "27afa8c7-9a6f7e.mp3",
+  "text": "Cherche : dans.",
+  "sent": "Cherche : dans.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche dans",
+  "score": 1
+ },
+ "touche le mot: sur!": {
+  "file": "ecbf72b1-5bd183.mp3",
+  "text": "Touche le mot : sur !",
+  "sent": "Touche le mot : sur !",
+  "dur": 2,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Touche le mot sur",
+  "score": 1
+ },
+ "celui-là, c'est: sur.": {
+  "file": "38a9571d-bd4eaa.mp3",
+  "text": "Celui-là, c'est : sur.",
+  "sent": "Celui-là, c'est : sur.",
+  "dur": 2.32,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est sûr",
+  "score": 1
+ },
+ "cherche: sur.": {
+  "file": "c10dff8f-2b3884.mp3",
+  "text": "Cherche : sur.",
+  "sent": "Cherche : sur.",
+  "dur": 1.76,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Cherche sur",
+  "score": 1
+ },
+ "avec!": {
+  "file": "c6866575-9f18f5.mp3",
+  "text": "avec !",
+  "sent": "avec !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le mot: avec!": {
+  "file": "3f04207a-c27927.mp3",
+  "text": "Touche le mot : avec !",
+  "sent": "Touche le mot : avec !",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Touche le mot avec",
+  "score": 1
+ },
+ "celui-là, c'est: avec.": {
+  "file": "02e954c4-ef8d62.mp3",
+  "text": "Celui-là, c'est : avec.",
+  "sent": "Celui-là, c'est : avec.",
+  "dur": 2.24,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est avec",
+  "score": 1
+ },
+ "cherche: avec.": {
+  "file": "55681ac2-9d6588.mp3",
+  "text": "Cherche : avec.",
+  "sent": "Cherche : avec.",
+  "dur": 1.68,
+  "cost": 6,
+  "sttCost": 1,
+  "stt": "Cherche avec",
+  "score": 1
+ },
+ "mon!": {
+  "file": "24873d20-c05e53.mp3",
+  "text": "mon !",
+  "sent": "mon !",
+  "dur": 0.8,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le mot: mon!": {
+  "file": "09ecdb81-f5e997.mp3",
+  "text": "Touche le mot : mon !",
+  "sent": "Touche le mot : mon !",
+  "dur": 1.68,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Touche le mot ment",
+  "score": 0.87
+ },
+ "celui-là, c'est: mon.": {
+  "file": "06af0369-467ca9.mp3",
+  "text": "Celui-là, c'est : mon.",
+  "sent": "Celui-là, c'est : mon.",
+  "dur": 2.16,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est mon",
+  "score": 1
+ },
+ "cherche: mon.": {
+  "file": "95f6d45b-002542.mp3",
+  "text": "Cherche : mon.",
+  "sent": "Cherche : mon.",
+  "dur": 1.6,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche mon",
+  "score": 1
+ },
+ "des!": {
+  "file": "45029e86-c78758.mp3",
+  "text": "des !",
+  "sent": "des !",
+  "dur": 0.88,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "touche le mot: ma!": {
+  "file": "ab762d41-df2c43.mp3",
+  "text": "Touche le mot : ma !",
+  "sent": "Touche le mot : ma !",
+  "dur": 1.84,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Touche le mot ma",
+  "score": 1
+ },
+ "touche le mot: des!": {
+  "file": "cdf4c6f3-2b2aab.mp3",
+  "text": "Touche le mot : des !",
+  "sent": "Touche le mot : des !",
+  "dur": 1.92,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Touche le mot des",
+  "score": 1
+ },
+ "celui-là, c'est: des.": {
+  "file": "d3bd885b-192b8e.mp3",
+  "text": "Celui-là, c'est : des.",
+  "sent": "Celui-là, c'est : des.",
+  "dur": 2,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est des",
+  "score": 1
+ },
+ "pour!": {
+  "file": "574eb7b2-b81562.mp3",
+  "text": "pour !",
+  "sent": "pour !",
+  "dur": 0.72,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "cherche: des.": {
+  "file": "2bb686b1-db5cce.mp3",
+  "text": "Cherche : des.",
+  "sent": "Cherche : des.",
+  "dur": 1.52,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche des",
+  "score": 1
+ },
+ "touche le mot: du!": {
+  "file": "f54928a6-82310f.mp3",
+  "text": "Touche le mot : du !",
+  "sent": "Touche le mot : du !",
+  "dur": 1.76,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Touche le mot du",
+  "score": 1
+ },
+ "touche le mot: pour!": {
+  "file": "a6c447a5-bd87e9.mp3",
+  "text": "Touche le mot : pour !",
+  "sent": "Touche le mot : pour !",
+  "dur": 2,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Touche le mot pour",
+  "score": 1
+ },
+ "celui-là, c'est: pour.": {
+  "file": "7a043747-dba178.mp3",
+  "text": "Celui-là, c'est : pour.",
+  "sent": "Celui-là, c'est : pour.",
+  "dur": 2.32,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Celui-là, c'est pour",
+  "score": 1
+ },
+ "cherche: pour.": {
+  "file": "68bb7d45-00b8ed.mp3",
+  "text": "Cherche : pour.",
+  "sent": "Cherche : pour.",
+  "dur": 1.68,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Cherche pour",
   "score": 1
  }
 }

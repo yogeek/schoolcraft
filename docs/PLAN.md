@@ -9,7 +9,7 @@ L'étude pédagogique qui fonde la v3 (recherche, programmes 2025, applications 
 |---|---|
 | Tout à la voix, pas d'échec punitif, grosses cibles | ✅ Voix partout, félicitations sur l'effort, toucher tolérant |
 | Conscience phonologique | ✅ Syllabes au tambour, rimes, premier son (images nommées par la voix) |
-| Lecture : sons → syllabes → mots → phrases | ✅ 19 niveaux en 5 chapitres, encodage (écrire avec des lettres), vrai ou faux, devinettes |
+| Lecture : sons → syllabes → mots → phrases | ✅ 31 niveaux en 7 chapitres, dans l'ordre des méthodes de CP (lettres muettes, c et g, autres écritures d'un son, consonnes accrochées, mots-outils), mots toujours déchiffrables, encodage, vrai ou faux, devinettes |
 | Écriture | ✅ Tracé au doigt : capitales, chiffres, cursive par familles de gestes, « sans modèle » |
 | Maths | ✅ 16 niveaux : compter, comparer, coup d'œil (dés, cadre de dix), course des nombres, grotte (décomposer), faire dix, additions, problèmes, 11 à 20 |
 | Révisions espacées, niveaux qui se débloquent | ✅ Leitner à 3 boîtes, une question de révision par partie, niveau suivant à 80 % |

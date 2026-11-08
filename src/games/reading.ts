@@ -25,8 +25,14 @@ import { pickWeighted } from '../state';
 import { blockImg, h, rand, shuffle } from '../ui';
 
 /** A block with a letter, syllable, word or picture on it. */
-export function plaque(text: string, cls = '', label = text): HTMLButtonElement {
-  return h('button', { class: `choice ${cls}`.trim(), 'aria-label': label }, blockImg('plaque'), h('span', { class: `glyph len${Math.min([...text].length, 4)}` }, text));
+export function plaque(text: string, cls = '', label = text, content: (Node | string)[] = [text]): HTMLButtonElement {
+  return h('button', { class: `choice ${cls}`.trim(), 'aria-label': label }, blockImg('plaque'), h('span', { class: `glyph len${Math.min([...text].length, 4)}` }, ...content));
+}
+
+/** The letters of a word, the silent ones in grey (« lou[p] »), as in CP reading books. `from`: where `text` starts in the word. */
+export function letters(text: string, mute: number[] | undefined, from = 0): (Node | string)[] {
+  if (!mute?.length) return [text];
+  return [...text].map((ch, i) => (mute.includes(from + i) ? h('span', { class: 'mute' }, ch) : ch));
 }
 
 export function picture(pic: string, label: string, cls = ''): HTMLButtonElement {
@@ -93,7 +99,9 @@ function choiceGame(level: Extract<ReadingLevel, { items: Item[] }>): Game {
   let answer: HTMLElement | null = null;
 
   function distractors(n: number): Item[] {
-    const others = level.items.filter((i) => i.text !== target.text);
+    // never another way to write the same sound (o, au, eau): both would be right
+    const sound = (i: Item) => i.group ?? i.text;
+    const others = level.items.filter((i) => i.text !== target.text && sound(i) !== sound(target));
     if (level.similar) {
       // half alike, half random, so it stays fair
       const alike = shuffle([...others]).sort((a, b) => likeness(target, b) - likeness(target, a));
@@ -138,7 +146,7 @@ function choiceGame(level: Extract<ReadingLevel, { items: Item[] }>): Game {
       r.choices.classList.add(`kind-${level.kind}`);
       if (level.kind === 'read') {
         r.bubble('Lis le mot !');
-        r.stage.append(h('div', { class: 'word-card', lang: 'fr' }, target.text));
+        r.stage.append(h('div', { class: 'word-card', lang: 'fr', 'aria-label': target.text }, ...letters(target.text, target.mute)));
         r.choices.append(...shuffle([target, ...distractors(level.choices - 1)]).map((it) => {
           const b = picture(it.pic ?? '?', it.text);
           b.onclick = () => void pick(r, it, b);
@@ -150,7 +158,7 @@ function choiceGame(level: Extract<ReadingLevel, { items: Item[] }>): Game {
         r.choices.append(
           ...shuffle([target, ...distractors(level.choices - 1)]).map((it) => {
             const text = level.mixedCase && Math.random() < 0.5 ? it.text.toUpperCase() : it.text;
-            const b = plaque(text);
+            const b = plaque(text, '', text, text === it.text ? letters(text, it.mute) : [text]);
             b.onclick = () => void pick(r, it, b);
             if (it === target) answer = b;
             return b;
@@ -204,7 +212,8 @@ function buildGame(items: Item[]): Game {
               sfx.place();
               b.classList.add('used');
               const box = slots.children[built] as HTMLElement;
-              box.replaceChildren(blockImg('plaque'), h('span', { class: `glyph len${Math.min(s.length, 4)}` }, s));
+              const from = parts.slice(0, built).join('').length;
+              box.replaceChildren(blockImg('plaque'), h('span', { class: `glyph len${Math.min(s.length, 4)}` }, ...letters(s, target.mute, from)));
               box.classList.add('filled');
               built++;
               r.choices.querySelectorAll('.hint').forEach((x) => x.classList.remove('hint'));

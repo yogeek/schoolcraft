@@ -112,11 +112,11 @@ et pour les plus solides scientifiquement, une progression explicite.
 | Principe | Dans le jeu |
 |---|---|
 | Phonologie avant et avec les lettres | Chapitre « La prairie des sons » : compter les syllabes en tapant sur un tambour, trouver la rime, trouver le premier son, avec des images nommées par la voix |
-| CGP explicites et progressives, mots déchiffrables | Lettres et syllabes par ordre de difficulté, puis mots, puis phrases (vrai ou faux) et devinettes : la voix ne lit jamais à la place de l'enfant, sauf pour l'aider après une erreur |
+| CGP explicites et progressives, mots déchiffrables | 31 niveaux dans l'ordre des méthodes syllabiques de CP : voyelles, consonnes qui se prolongent (m, l, r, s) puis les autres, premiers mots, lettres muettes (écrites en gris), sons à deux lettres (ou, on, an, in, oi, eu), lettres qui changent de son (c, g, s, qu, gu), autres écritures d'un son (è, ai, ei, au, eau, en, ain…), sons rares (gn, ill, ph, oin), consonnes accrochées (br, cl…), mots-outils, puis phrases et devinettes. `npm run check` refuse tout mot qui demande un son pas encore appris (`decode()` dans `reading.ts`). La voix ne lit jamais à la place de l'enfant, sauf pour l'aider après une erreur |
 | Encodage avec le décodage | Niveaux « Écrire des syllabes » et « Écrire des mots » : on entend, on compose avec des lettres |
 | Geste + son + vue | Nouvelle activité **Écrire** : Pixel montre le tracé, dit le nom de la lettre et un mot repère ; l'enfant trace au doigt en suivant le chemin, dans le bon sens ; la lettre réussie se construit en blocs |
 | Familles de lettres | Capitales (traits, pointes, ronds), chiffres, puis cursive par familles de gestes, et enfin « sans modèle » |
-| Plateau linéaire | **La course des nombres** : un plateau en ligne de 1 à 10 puis de 1 à 20 (deux rangées de dix), un dé à points, on touche la case d'arrivée, la voix compte les cases ; Pixel joue aussi |
+| Plateau linéaire | **La course des nombres** : un plateau en ligne de 1 à 10 puis de 1 à 20 (un seul chemin qui revient sous le 10, pour que 10 et 11 restent voisins), un dé à points, on touche la case d'arrivée, la voix compte les cases ; Pixel joue aussi |
 | La boîte, les décompositions | **La grotte** : des blocs entrent dans une grotte, combien sont cachés ? ; **Faire dix** avec un cadre de dix ; **Dix et encore** pour 11 à 20 |
 | Comparer, subitizing | **Le plus grand tas**, **Quel nombre est le plus grand ?**, coup d'œil sur dés et cadres de dix |
 | Problèmes | Petits problèmes racontés (ajouter, enlever) avec images puis l'écriture « 3 + 2 » |
@@ -133,12 +133,14 @@ et pour les plus solides scientifiquement, une progression explicite.
 - Un univers de blocs original où **apprendre construit quelque chose** : chaque réponse est un
   bloc, chaque lettre tracée se bâtit en blocs, chaque héros colorié se réveille.
 - Les trois piliers réunis dans une seule application gratuite : lire, **écrire** et compter,
-  alignés sur les programmes français 2025, de la MS au CP.
+  inspirés des programmes français 2025, de la MS au CP. Ce qui manque encore : la soustraction en
+  dehors des petits problèmes, les nombres au-delà de 20, la compréhension de petits textes.
 - Tout est dit à voix haute : l'enfant n'a jamais besoin de savoir lire une consigne.
 
 ### Limites assumées
-- La voix est la synthèse du navigateur : bonne pour les mots, imparfaite pour les sons isolés.
-  On fait dire des syllabes et des mots repères plutôt que des phonèmes seuls.
+- La voix est enregistrée (synthèse ElevenLabs, voix de l'appareil en secours) : bonne pour les
+  mots, moins sûre pour les sons isolés. On fait dire des syllabes et des mots repères plutôt que
+  des phonèmes seuls.
 - Pas de reconnaissance de la parole (elle enverrait la voix de l'enfant à un serveur) : quand
   Pixel demande de répéter un son, on ne vérifie pas.
 - Le tracé au doigt ne remplace pas le crayon : c'est un entraînement du geste et de la forme.

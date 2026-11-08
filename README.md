@@ -13,7 +13,7 @@ avec une progression pas à pas et des récompenses à collectionner.
 - **L'aventure du jour** : une partie de Lire, d'Écrire et de Compter (une dizaine de minutes), puis un coffre
   de blocs spéciaux (briques, feuilles, fleurs, cristal) pour la maison. Pas de série à ne pas casser.
 - **Une carte par activité** : les niveaux en chemin, groupés en chapitres, avec des étoiles ; le niveau en cours brille.
-- **Lire** : 19 niveaux en 5 chapitres (contenu : `src/content/reading.ts`)
+- **Lire** : 31 niveaux en 7 chapitres (contenu : `src/content/reading.ts`)
   1. *La prairie des sons* (conscience phonologique) : taper les syllabes sur un tambour, les rimes, le premier son
   2. *La forêt des lettres* : voyelles, grandes et petites lettres, premières syllabes, nouvelles consonnes, syllabes qui se ressemblent
   3. *La mine des mots* : écrire des syllabes avec des lettres (encodage), écouter des mots, construire des mots, lire sans aide, écrire des mots

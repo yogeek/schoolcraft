@@ -38,7 +38,7 @@ export interface DayLog {
 }
 
 export interface GameState {
-  version: 3;
+  version: 4;
   levels: Record<ActivityId, LevelState>;
   /** best stars (0–3) per level, index = level − 1 */
   stars: Record<ActivityId, number[]>;
@@ -172,7 +172,7 @@ function fresh(): GameState {
   inventory.grass = 2;
   inventory.wood = 2;
   return {
-    version: 3,
+    version: 4,
     levels: { sounds: { current: 1, unlocked: 1 }, write: { current: 1, unlocked: 1 }, count: { current: 1, unlocked: 1 } },
     stars: { sounds: [], write: [], count: [] },
     inventory,
@@ -200,6 +200,20 @@ const V3_LEVELS: Partial<Record<ActivityId, number[]>> = {
   sounds: [0, 4, 5, 6, 7, 8, 10, 11, 14, 15, 16, 12, 17],
   count: [0, 1, 2, 5, 4, 11, 13],
 };
+
+/**
+ * v3 → v4: reading went from 19 to 31 levels (silent letters, c and g, other spellings of a sound,
+ * consonant clusters, little words). Index = v3 level number, value = the same level in v4.
+ */
+const V4_READING = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 30, 31];
+
+/** A level number of an older save, in today's numbering. */
+function migrateLevel(a: ActivityId, n: number, version: number): number {
+  const v3 = V3_LEVELS[a];
+  if (version < 3 && v3) n = v3[Math.min(n, v3.length - 1)];
+  if (version < 4 && a === 'sounds') n = V4_READING[Math.min(n, V4_READING.length - 1)];
+  return n;
+}
 
 /** Repair anything missing or malformed, and upgrade old saves. Never throws. */
 function sanitize(raw: unknown): GameState {
@@ -229,13 +243,10 @@ function sanitize(raw: unknown): GameState {
     const l = (s.levels as Record<string, Partial<LevelState>> | undefined)?.[a];
     let unlocked = Math.max(1, count(l?.unlocked));
     let current = Math.min(Math.max(1, count(l?.current)), unlocked);
-    const map = V3_LEVELS[a];
-    if (version < 3 && map && l) {
-      const last = map.length - 1;
-      const to = (n: number) => map[Math.min(n, last)];
+    if (version < 4 && l) {
       // every old level up to `unlocked` stays open in its new place
-      const opened = Array.from({ length: Math.min(unlocked, last) }, (_, i) => to(i + 1));
-      current = to(current);
+      const opened = Array.from({ length: unlocked }, (_, i) => migrateLevel(a, i + 1, version));
+      current = migrateLevel(a, current, version);
       unlocked = Math.max(...opened);
     }
     base.levels[a] = { unlocked: Math.max(unlocked, current), current };
@@ -244,7 +255,14 @@ function sanitize(raw: unknown): GameState {
   // stars
   for (const a of ACTIVITIES) {
     const st = (s.stars as Record<string, unknown> | undefined)?.[a];
-    if (Array.isArray(st)) base.stars[a] = st.map((v) => Math.min(3, count(v)));
+    if (!Array.isArray(st)) continue;
+    const stars = st.map((v) => Math.min(3, count(v)));
+    if (version < 4 && a === 'sounds') {
+      // stars came with v3: only the v3 → v4 renumbering applies
+      const moved: number[] = [];
+      stars.forEach((v, i) => (moved[V4_READING[Math.min(i + 1, V4_READING.length - 1)] - 1] = v));
+      base.stars[a] = Array.from(moved, (v) => v ?? 0);
+    } else base.stars[a] = stars;
   }
 
   // stats: keep only well-formed, prefixed keys (v1 also stored unused keys like "3" or "a")

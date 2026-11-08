@@ -788,6 +788,10 @@ img.block.mini {
   justify-content: center;
   width: 100%;
 }
+/* silent letters in grey, as in CP reading books (« lou[p] ») */
+.mute {
+  color: #a9a39a;
+}
 .word-card {
   font-size: clamp(2.6rem, 13vw, 5rem);
   font-weight: 700;
@@ -1774,7 +1778,13 @@ button span,
   background-color: #8fa9c4;
 }
 .chapter.c4 {
-  background-color: #9b7ad1;
+  background-color: #3f86b5;
+}
+.chapter.c5 {
+  background-color: #b5703f;
+}
+.chapter.c6 {
+  background-color: #8a64c9;
 }
 .chapter-title {
   margin: 0 0 4px;

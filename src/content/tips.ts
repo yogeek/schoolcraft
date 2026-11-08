@@ -20,8 +20,16 @@ export const TIPS: Record<'sounds' | 'write' | 'count', string[][]> = {
       'Écrivez son prénom et celui des copains : on lit, on compare les lettres.',
     ],
     [
-      'Chasse aux sons dans un livre : où entend-on « on », « ou », « ch » ? Où les voit-on écrits ?',
+      'Chasse aux sons dans un livre : où entend-on « on », « ou », « an » ? Où les voit-on écrits ?',
       'Faites lire les étiquettes, les panneaux, la liste des courses.',
+    ],
+    [
+      'Cherchez des mots avec « ca », « co » et d’autres avec « ce », « ci » : pourquoi le c ne fait-il pas le même bruit ?',
+      'Faites une affiche par son (« o », « an »…) et collez-y les mots trouvés, rangés selon leur écriture : o, au, eau.',
+    ],
+    [
+      'Jouez aux mots accrochés : « tra », « pla », « cro »… Qui trouve un mot qui commence comme ça ?',
+      'Lisez ensemble un album simple : l’enfant lit les mots qu’il sait déchiffrer, vous lisez le reste.',
     ],
     [
       'Écrivez une petite phrase vraie ou fausse sur un papier (« Papa a des ailes ») : à l’enfant de lire et de dire !',
@@ -49,7 +57,7 @@ export const TIPS: Record<'sounds' | 'write' | 'count', string[][]> = {
       'Jouez à la bataille avec les cartes de 1 à 6 : qui a le plus ?',
     ],
     [
-      'Jouez à un jeu de plateau en ligne droite (jeu de l’oie, petits chevaux) : en avançant, dites le numéro des cases. C’est ce qui aide le plus.',
+      'Dessinez une bande de cases numérotées de 1 à 10, en ligne droite, et jouez avec un dé et deux pions : en avançant, dites le numéro de chaque case. Un plateau en ligne droite aide mieux qu’un parcours qui tourne.',
       'Le jeu de la boîte : cachez quelques jetons sous un bol, montrez combien il y en a en tout et combien restent dehors : combien sont cachés ?',
       'Montrez des quantités avec les doigts, d’un coup : « cinq et deux ».',
     ],
