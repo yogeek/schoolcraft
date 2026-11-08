@@ -2689,14 +2689,14 @@ button span,
   margin: 4px 0;
 }
 
-/* inside games, a slightly moving finger must not turn into a scroll */
+/* inside games, a slightly moving finger must not turn into a scroll (not on the map: a finger
+   on a level must still scroll the page; a scroll cancels the tap) */
 .drum,
 .square,
 .die,
 .pile-choice,
 .truth,
-.pic-card,
-.node {
+.pic-card {
   touch-action: none;
 }
 .drum span,
