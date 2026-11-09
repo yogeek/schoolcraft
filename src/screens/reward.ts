@@ -12,7 +12,8 @@ import type { Ctx } from './types';
 
 const VERB: Record<ActivityId, string> = { sounds: 'lire', write: 'écrire', count: 'compter' };
 
-export function rewardScreen(prev: Ctx, won: BlockType[], replay: ActivityId, result: SessionResult): void {
+/** `advanced`: this game moved today's adventure on (its first game of this activity today) */
+export function rewardScreen(prev: Ctx, won: BlockType[], replay: ActivityId, result: SessionResult, advanced = true): void {
   // a new screen: the activity's pending speech and timers stop here
   const ctx: Ctx = { go: prev.go, root: prev.root, ...beginScreen(prev.root) };
   sfx.fanfare();
@@ -21,8 +22,11 @@ export function rewardScreen(prev: Ctx, won: BlockType[], replay: ActivityId, re
   const hero = currentHero();
   const next = nextInMission();
   const chest = chestReady();
+  // the next step of the adventure is announced once, when this game advanced it: a child who chose to
+  // go on with the same activity (« Niveau suivant ») does not hear « on va écrire » after every level
+  // (the « Continuer » button still shows the adventure)
   // no question the child cannot answer (« On continue ? »), and never "ton héros" / "tes héros" in speech: voices sometimes glue the words (« tes-z-héros »)
-  const invite = chest ? "Tu as fini l'aventure du jour : un coffre t'attend !" : next ? `Maintenant, on va ${VERB[next]} !` : hero ? 'Tu veux colorier un ami ?' : 'Tu peux construire ta maison !';
+  const invite = chest ? "Tu as fini l'aventure du jour : un coffre t'attend !" : next && advanced ? `Maintenant, on va ${VERB[next]} !` : hero ? 'Tu veux colorier un ami ?' : 'Tu peux construire ta maison !';
   let title = 'Bravo !';
   let speech: string;
   if (result.next && result.isNew) {

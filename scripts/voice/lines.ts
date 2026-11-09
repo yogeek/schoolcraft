@@ -36,7 +36,8 @@ const files = (d: string): string[] =>
     const p = join(d, f);
     return statSync(p).isDirectory() ? (f === 'content' ? [] : files(p)) : f.endsWith('.ts') ? [p] : [];
   });
-const PRAISE_LIST = /(?:PRAISE|COUNTED|praise)\s*[:=]\s*(?:[^[;]*\?\s*)?\[([^\]]*)\]/g;
+// a praise list, or both lists of `praise: cond ? [...] : [...]` (the second one was missed)
+const PRAISE_LIST = /(?:PRAISE|COUNTED|praise)\s*[:=]([^\n]*)/g;
 const STRING = /(['"])((?:\\.|(?!\1).)*)\1/g;
 /** a complete utterance, not a piece of a template (« le plus grand ») */
 const complete = (s: string) => /^[A-ZÀ-ÖØ-Þ]/.test(s) && /[.!?:]$/.test(s);
@@ -59,7 +60,7 @@ for (const f of files(join(ROOT, 'src'))) {
     templates(m[1]);
     for (const s of m[1].replace(/`[^`]*`/g, '').matchAll(STRING)) spoken.add(s[2]);
   }
-  for (const m of src.matchAll(PRAISE_LIST)) for (const s of m[1].matchAll(STRING)) add(s[2].replace(/\\'/g, "'"), 'praise');
+  for (const m of src.matchAll(PRAISE_LIST)) for (const list of m[1].matchAll(/\[([^\]]*)\]/g)) for (const s of list[1].matchAll(STRING)) add(s[2].replace(/\\'/g, "'"), 'praise');
   for (const s of spoken) if (complete(s)) add(s.replace(/\\'/g, "'"));
 }
 // praise is said with joy

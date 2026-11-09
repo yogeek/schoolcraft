@@ -15,6 +15,7 @@ import {
   LOOKALIKE,
   PIC_WORDS,
   foundLine,
+  segments,
   listenLine,
   spokenSyllables,
   wordLine,
@@ -322,7 +323,7 @@ function spellGame(items: Item[]): Game {
       target = pickWeighted(items, key, prev);
       prev = target;
       built = 0;
-      const gs = graphemes(target.text);
+      const gs = graphemes(target.text, target.parts);
       r.bubble(isWord(target) ? 'Écris le mot !' : 'Écris la syllabe !');
       r.choices.classList.add('kind-spell');
       const slots = h('div', { class: 'slots letters' });
@@ -471,6 +472,23 @@ function clapGame(words: PicWord[]): Game {
 }
 
 // ---------------------------------------------------------------- rhymes and first sounds
+/** the first sound of a written word, as letters (« ch » of « chat », « c » of « cœur ») */
+const firstLetters = (word: string): string => {
+  const s = segments(word)[0];
+  return s ? word.slice(s.at, s.at + s.len) : '';
+};
+
+/**
+ * After a first-sound answer is found: the two words written under the pictures, their shared
+ * beginning in gold. The task stays a listening one (shown only afterwards), and only when both
+ * words start with the same letters: « cadeau » and « kiwi » share a sound, not a letter.
+ */
+function showOnset(r: Round, a: PicWord, b: PicWord): void {
+  const lead = firstLetters(a.word);
+  if (!lead || lead !== firstLetters(b.word)) return;
+  const written = (w: PicWord) => h('span', { class: 'syl word said' }, h('span', { class: 'lead' }, lead), w.word.slice(lead.length));
+  r.choices.append(h('div', { class: 'syl-strip onset-strip', 'aria-label': `${a.word} et ${b.word} commencent par ${lead}` }, written(a), h('span', { class: 'syl-dot' }, '·'), written(b)));
+}
 function soundPicGame(words: PicWord[], kind: 'rhyme' | 'initial', choices: number): Game {
   const prop = (w: PicWord) => (kind === 'rhyme' ? w.rime : w.onset);
   const key = (w: PicWord) => `${kind === 'rhyme' ? 'rime' : 'onset'}:${w.word}`;
@@ -523,6 +541,7 @@ function soundPicGame(words: PicWord[], kind: 'rhyme' | 'initial', choices: numb
                 await r.say(`${el === card ? model.word : answer.word}…`);
                 el.classList.remove('naming');
               }
+              if (kind === 'initial') showOnset(r, model, answer);
               await r.say(kind === 'rhyme' ? 'Ça finit pareil !' : 'Ça commence pareil !');
             });
           }

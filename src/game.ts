@@ -206,8 +206,8 @@ export function runSession(ctx: Ctx, spec: SessionSpec): void {
     if (index >= plan.length) {
       locked = true;
       const rounds = plan.filter((g) => g === game).length;
-      logGame(activity);
-      return rewardScreen(ctx, won, activity, endSession(activity, levelNo, firstTry, rounds));
+      const advanced = logGame(activity);
+      return rewardScreen(ctx, won, activity, endSession(activity, levelNo, firstTry, rounds), advanced);
     }
     setupRound();
     ask();

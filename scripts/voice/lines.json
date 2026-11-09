@@ -258,6 +258,11 @@
   "tag": "praise"
  },
  {
+  "key": "oui, le même son!",
+  "text": "Oui, le même son !",
+  "tag": "praise"
+ },
+ {
   "key": "bravo, tu as compris!",
   "text": "Bravo, tu as compris !",
   "tag": "praise"

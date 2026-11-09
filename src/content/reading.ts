@@ -694,14 +694,20 @@ export const ONSET_WORDS = PIC_WORDS.filter((w) => w.onset && PIC_WORDS.some((o)
 // seule tuile (ch, ou, on…), comme on les apprend.
 export const GRAPHEMES = ['eau', 'ch', 'ou', 'on', 'an', 'in', 'oi', 'eu', 'au', 'ai', 'gn', 'ph'];
 
-/** Découpe « chapeau » en ch-a-p-eau. */
-export function graphemes(text: string): string[] {
+/**
+ * Découpe « chapeau » en ch-a-p-eau, syllabe par syllabe (`parts`) : « do-mi-no » donne d-o-m-i-n-o,
+ * pas un « in » à cheval sur deux syllabes. Une voyelle suivie de n ou m n'est un son nasal que si
+ * aucune voyelle ne suit (« a-mi », « ca-na-pé »).
+ */
+export function graphemes(text: string, parts: string[] = [text]): string[] {
   const out: string[] = [];
-  let i = 0;
-  while (i < text.length) {
-    const g = GRAPHEMES.find((x) => text.startsWith(x, i));
-    out.push(g ?? text[i]);
-    i += g ? g.length : 1;
+  for (const part of parts) {
+    let i = 0;
+    while (i < part.length) {
+      const g = GRAPHEMES.find((x) => part.startsWith(x, i) && !(/[nm]$/.test(x) && /[aeiouyéèêàâîôûh]/.test(part[i + x.length] ?? '')));
+      out.push(g ?? part[i]);
+      i += g ? g.length : 1;
+    }
   }
   return out;
 }

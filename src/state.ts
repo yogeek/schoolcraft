@@ -401,12 +401,15 @@ export function logGood(): void {
 }
 
 /** A finished game: today's adventure moves on; old days are dropped from the log. */
-export function logGame(a: ActivityId): void {
+/** A finished game, for the daily adventure; true when it is today's first one of this activity. */
+export function logGame(a: ActivityId): boolean {
   const m = mission();
-  if (!m.done.includes(a)) m.done.push(a);
+  const first = !m.done.includes(a);
+  if (first) m.done.push(a);
   const days = Object.keys(state.history).sort();
   for (const old of days.slice(0, Math.max(0, days.length - 60))) delete state.history[old];
   save();
+  return first;
 }
 
 /** Add play time to today's log (called by the play clock). */

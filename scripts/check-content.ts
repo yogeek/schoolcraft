@@ -84,7 +84,7 @@ READING_LEVELS.forEach((l, i) => {
     if (!it.speak.trim()) err(`${where} : « ${it.text} » n'a rien à dire pour la voix`);
     if (l.kind !== 'sound' && l.kind !== 'spell' && (!it.parts || it.parts.join('') !== it.text)) err(`${where} : « ${it.text} » doit être découpé en syllabes (ex. mo-to)`);
     if (l.kind === 'build' && it.parts && it.parts.length > 4) err(`${where} : « ${it.text} » a plus de 4 syllabes (trop large pour l'écran)`);
-    if (l.kind === 'spell' && graphemes(it.text).length > 6) err(`${where} : « ${it.text} » a trop de lettres pour l'écran`);
+    if (l.kind === 'spell' && graphemes(it.text, it.parts).length > 6) err(`${where} : « ${it.text} » a trop de lettres pour l'écran`);
     if (l.kind === 'read' && !it.pic) err(`${where} : « ${it.text} » n'a pas d'image`);
     if (it.example && LIAISON.test(it.example)) err(`${where} : « ${it.example} » fait une liaison avant une voyelle (écrire « comme école », pas « comme dans école »)`);
   }

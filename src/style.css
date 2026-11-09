@@ -2162,6 +2162,12 @@ button span,
 .syl.word {
   letter-spacing: 1px;
 }
+/* « ça commence pareil » : the shared beginning of the two words */
+.onset-strip .lead {
+  color: var(--ink);
+  background: var(--gold);
+  padding: 0 2px;
+}
 .syl-dot,
 .syl-eq {
   color: #fff;

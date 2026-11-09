@@ -30524,5 +30524,15 @@
   "sttCost": 1,
   "stt": "Che comme dans chapeau",
   "score": 1
+ },
+ "oui, le même son!": {
+  "file": "94af7a02-491ca5.mp3",
+  "text": "Oui, le même son !",
+  "sent": "[happily] Oui, le même son !",
+  "dur": 1.84,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Oui, le même son",
+  "score": 1
  }
 }
