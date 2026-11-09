@@ -678,7 +678,12 @@ export const PIC_WORDS: PicWord[] = [
 ];
 
 /** Mots pour taper les syllabes : MS (1 à 3 syllabes). */
-export const CLAP_WORDS = PIC_WORDS.filter((w) => !w.noClap && w.syl.length <= 4);
+/**
+ * Words to clap: not those ending in a silent e after a consonant (« bouche », « girafe »). Their count
+ * depends on the region and on how carefully they are said: one syllable in standard French, two when
+ * the e is said (« bou-che », as in the South and often at school). Eduscol advises to avoid them.
+ */
+export const CLAP_WORDS = PIC_WORDS.filter((w) => !w.noClap && w.syl.length <= 4 && !/[^aeiouyéèêë]es?$/.test(w.word));
 /** Mots qui riment avec au moins un autre mot. */
 export const RHYME_WORDS = PIC_WORDS.filter((w) => w.rime && PIC_WORDS.some((o) => o !== w && o.rime === w.rime));
 /** Mots dont le premier son est partagé par au moins un autre mot. */

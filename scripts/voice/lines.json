@@ -10822,30 +10822,6 @@
   "text": "Tape les syllabes du mot : roi !"
  },
  {
-  "key": "tape les syllabes du mot: bouche!",
-  "text": "Tape les syllabes du mot : bouche !"
- },
- {
-  "key": "tape les syllabes du mot: douche!",
-  "text": "Tape les syllabes du mot : douche !"
- },
- {
-  "key": "tape les syllabes du mot: pomme!",
-  "text": "Tape les syllabes du mot : pomme !"
- },
- {
-  "key": "tape les syllabes du mot: lune!",
-  "text": "Tape les syllabes du mot : lune !"
- },
- {
-  "key": "tape les syllabes du mot: vache!",
-  "text": "Tape les syllabes du mot : vache !"
- },
- {
-  "key": "tape les syllabes du mot: poule!",
-  "text": "Tape les syllabes du mot : poule !"
- },
- {
   "key": "tape les syllabes du mot: cœur!",
   "text": "Tape les syllabes du mot : cœur !"
  },
@@ -11311,98 +11287,6 @@
   ]
  },
  {
-  "key": "tape les syllabes du mot: nuage!",
-  "text": "Tape les syllabes du mot : nuage !"
- },
- {
-  "key": "ça fait: nuage!",
-  "text": "Ça fait : nuage !"
- },
- {
-  "key": "écoute: nu… age.",
-  "text": "Écoute : nu… age.",
-  "say": "Écoute : /ny/. /aʒ/.",
-  "marks": [
-   10,
-   16
-  ]
- },
- {
-  "key": "tape les syllabes du mot: fromage!",
-  "text": "Tape les syllabes du mot : fromage !"
- },
- {
-  "key": "ça fait: fromage!",
-  "text": "Ça fait : fromage !"
- },
- {
-  "key": "tape les syllabes du mot: chaussette!",
-  "text": "Tape les syllabes du mot : chaussette !"
- },
- {
-  "key": "ça fait: chaussette!",
-  "text": "Ça fait : chaussette !"
- },
- {
-  "key": "écoute: chau… ssette.",
-  "text": "Écoute : chau… ssette.",
-  "say": "Écoute : /ʃo/. /sɛt/.",
-  "marks": [
-   10,
-   16
-  ]
- },
- {
-  "key": "tape les syllabes du mot: baguette!",
-  "text": "Tape les syllabes du mot : baguette !"
- },
- {
-  "key": "ça fait: baguette!",
-  "text": "Ça fait : baguette !"
- },
- {
-  "key": "écoute: ba… guette.",
-  "text": "Écoute : ba… guette.",
-  "say": "Écoute : /ba/. /gɛt/.",
-  "marks": [
-   10,
-   16
-  ]
- },
- {
-  "key": "tape les syllabes du mot: lunettes!",
-  "text": "Tape les syllabes du mot : lunettes !"
- },
- {
-  "key": "ça fait: lunettes!",
-  "text": "Ça fait : lunettes !"
- },
- {
-  "key": "écoute: lu… nettes.",
-  "text": "Écoute : lu… nettes.",
-  "say": "Écoute : /ly/. /nɛt/.",
-  "marks": [
-   10,
-   16
-  ]
- },
- {
-  "key": "tape les syllabes du mot: valise!",
-  "text": "Tape les syllabes du mot : valise !"
- },
- {
-  "key": "ça fait: valise!",
-  "text": "Ça fait : valise !"
- },
- {
-  "key": "tape les syllabes du mot: voiture!",
-  "text": "Tape les syllabes du mot : voiture !"
- },
- {
-  "key": "ça fait: voiture!",
-  "text": "Ça fait : voiture !"
- },
- {
   "key": "tape les syllabes du mot: tortue!",
   "text": "Tape les syllabes du mot : tortue !"
  },
@@ -11420,68 +11304,12 @@
   ]
  },
  {
-  "key": "tape les syllabes du mot: tomate!",
-  "text": "Tape les syllabes du mot : tomate !"
- },
- {
-  "key": "ça fait: tomate!",
-  "text": "Ça fait : tomate !"
- },
- {
-  "key": "tape les syllabes du mot: banane!",
-  "text": "Tape les syllabes du mot : banane !"
- },
- {
-  "key": "ça fait: banane!",
-  "text": "Ça fait : banane !"
- },
- {
   "key": "tape les syllabes du mot: soleil!",
   "text": "Tape les syllabes du mot : soleil !"
  },
  {
   "key": "ça fait: soleil!",
   "text": "Ça fait : soleil !"
- },
- {
-  "key": "tape les syllabes du mot: abeille!",
-  "text": "Tape les syllabes du mot : abeille !"
- },
- {
-  "key": "ça fait: abeille!",
-  "text": "Ça fait : abeille !"
- },
- {
-  "key": "tape les syllabes du mot: gorille!",
-  "text": "Tape les syllabes du mot : gorille !"
- },
- {
-  "key": "ça fait: gorille!",
-  "text": "Ça fait : gorille !"
- },
- {
-  "key": "tape les syllabes du mot: girafe!",
-  "text": "Tape les syllabes du mot : girafe !"
- },
- {
-  "key": "ça fait: girafe!",
-  "text": "Ça fait : girafe !"
- },
- {
-  "key": "tape les syllabes du mot: tulipe!",
-  "text": "Tape les syllabes du mot : tulipe !"
- },
- {
-  "key": "ça fait: tulipe!",
-  "text": "Ça fait : tulipe !"
- },
- {
-  "key": "tape les syllabes du mot: salade!",
-  "text": "Tape les syllabes du mot : salade !"
- },
- {
-  "key": "ça fait: salade!",
-  "text": "Ça fait : salade !"
  },
  {
   "key": "tape les syllabes du mot: kangourou!",
@@ -11574,24 +11402,6 @@
   ]
  },
  {
-  "key": "tape les syllabes du mot: dinosaure!",
-  "text": "Tape les syllabes du mot : dinosaure !"
- },
- {
-  "key": "ça fait: dinosaure!",
-  "text": "Ça fait : dinosaure !"
- },
- {
-  "key": "écoute: di… no… zor.",
-  "text": "Écoute : di… no… zor.",
-  "say": "Écoute : /di/. /no/. /zoʁ/.",
-  "marks": [
-   10,
-   16,
-   22
-  ]
- },
- {
   "key": "tape les syllabes du mot: parapluie!",
   "text": "Tape les syllabes du mot : parapluie !"
  },
@@ -11628,24 +11438,6 @@
   ]
  },
  {
-  "key": "tape les syllabes du mot: coccinelle!",
-  "text": "Tape les syllabes du mot : coccinelle !"
- },
- {
-  "key": "ça fait: coccinelle!",
-  "text": "Ça fait : coccinelle !"
- },
- {
-  "key": "écoute: cok… si… nèl.",
-  "text": "Écoute : cok… si… nèl.",
-  "say": "Écoute : /kok/. /si/. /nɛl/.",
-  "marks": [
-   10,
-   17,
-   23
-  ]
- },
- {
   "key": "tape les syllabes du mot: télévision!",
   "text": "Tape les syllabes du mot : télévision !"
  },
@@ -11662,25 +11454,6 @@
    16,
    22,
    28
-  ]
- },
- {
-  "key": "tape les syllabes du mot: hippopotame!",
-  "text": "Tape les syllabes du mot : hippopotame !"
- },
- {
-  "key": "ça fait: hippopotame!",
-  "text": "Ça fait : hippopotame !"
- },
- {
-  "key": "écoute: i… po… po… tame.",
-  "text": "Écoute : i… po… po… tame.",
-  "say": "Écoute : /i/. /po/. /po/. /tam/.",
-  "marks": [
-   10,
-   15,
-   21,
-   27
   ]
  },
  {

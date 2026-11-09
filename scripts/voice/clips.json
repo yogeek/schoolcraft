@@ -3708,16 +3708,6 @@
   "sttCost": 0,
   "score": 1
  },
- "tape les syllabes du mot: bouche!": {
-  "file": "081b67e0-dc742b.mp3",
-  "text": "Tape les syllabes du mot : bouche !",
-  "sent": "Tape les syllabes du mot : bouche !",
-  "dur": 2.48,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot bouche",
-  "score": 1
- },
  "douche": {
   "file": "121e4e57-1db30e.mp3",
   "text": "douche",
@@ -3725,16 +3715,6 @@
   "dur": 0.8,
   "cost": 3,
   "sttCost": 0,
-  "score": 1
- },
- "tape les syllabes du mot: douche!": {
-  "file": "7a3f4d46-a758a6.mp3",
-  "text": "Tape les syllabes du mot : douche !",
-  "sent": "Tape les syllabes du mot : douche !",
-  "dur": 2.48,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot douche",
   "score": 1
  },
  "pomme": {
@@ -3746,16 +3726,6 @@
   "sttCost": 0,
   "score": 1
  },
- "tape les syllabes du mot: pomme!": {
-  "file": "ce9b58dc-76791d.mp3",
-  "text": "Tape les syllabes du mot : pomme !",
-  "sent": "Tape les syllabes du mot : pomme !",
-  "dur": 2.4,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot pomme",
-  "score": 1
- },
  "lune": {
   "file": "0103373b-ced1d8.mp3",
   "text": "lune",
@@ -3763,16 +3733,6 @@
   "dur": 0.8,
   "cost": 2,
   "sttCost": 0,
-  "score": 1
- },
- "tape les syllabes du mot: lune!": {
-  "file": "5078bb92-b5948d.mp3",
-  "text": "Tape les syllabes du mot : lune !",
-  "sent": "Tape les syllabes du mot : lune !",
-  "dur": 2.56,
-  "cost": 13,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot lune",
   "score": 1
  },
  "vache": {
@@ -3784,16 +3744,6 @@
   "sttCost": 0,
   "score": 1
  },
- "tape les syllabes du mot: vache!": {
-  "file": "40ea149d-001c8b.mp3",
-  "text": "Tape les syllabes du mot : vache !",
-  "sent": "Tape les syllabes du mot : vache !",
-  "dur": 2.56,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot vache",
-  "score": 1
- },
  "poule": {
   "file": "3f0dea94-7ac91c.mp3",
   "text": "poule",
@@ -3801,16 +3751,6 @@
   "dur": 0.88,
   "cost": 2,
   "sttCost": 0,
-  "score": 1
- },
- "tape les syllabes du mot: poule!": {
-  "file": "0ac6716b-7d9e1e.mp3",
-  "text": "Tape les syllabes du mot : poule !",
-  "sent": "Tape les syllabes du mot : poule !",
-  "dur": 2.4,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot poule",
   "score": 1
  },
  "cœur": {
@@ -4212,76 +4152,6 @@
   "stt": "Tape les syllabes du mot homard",
   "score": 1
  },
- "tape les syllabes du mot: nuage!": {
-  "file": "a1869bc6-1c4551.mp3",
-  "text": "Tape les syllabes du mot : nuage !",
-  "sent": "Tape les syllabes du mot : nuage !",
-  "dur": 2.8,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot nuage",
-  "score": 1
- },
- "tape les syllabes du mot: fromage!": {
-  "file": "4ad4cb2b-16c51f.mp3",
-  "text": "Tape les syllabes du mot : fromage !",
-  "sent": "Tape les syllabes du mot : fromage !",
-  "dur": 2.64,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot fromage",
-  "score": 1
- },
- "tape les syllabes du mot: chaussette!": {
-  "file": "10b855ab-70bdf5.mp3",
-  "text": "Tape les syllabes du mot : chaussette !",
-  "sent": "Tape les syllabes du mot : chaussette !",
-  "dur": 2.64,
-  "cost": 16,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot chaussette",
-  "score": 1
- },
- "tape les syllabes du mot: baguette!": {
-  "file": "32809ea5-fec608.mp3",
-  "text": "Tape les syllabes du mot : baguette !",
-  "sent": "Tape les syllabes du mot : baguette !",
-  "dur": 2.56,
-  "cost": 15,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot baguette",
-  "score": 1
- },
- "tape les syllabes du mot: lunettes!": {
-  "file": "cab688ca-8c2d30.mp3",
-  "text": "Tape les syllabes du mot : lunettes !",
-  "sent": "Tape les syllabes du mot : lunettes !",
-  "dur": 2.48,
-  "cost": 15,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot lunettes",
-  "score": 1
- },
- "tape les syllabes du mot: valise!": {
-  "file": "486887b2-02d986.mp3",
-  "text": "Tape les syllabes du mot : valise !",
-  "sent": "Tape les syllabes du mot : valise !",
-  "dur": 2.64,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot valise",
-  "score": 1
- },
- "tape les syllabes du mot: voiture!": {
-  "file": "d1f23d6a-b41ab2.mp3",
-  "text": "Tape les syllabes du mot : voiture !",
-  "sent": "Tape les syllabes du mot : voiture !",
-  "dur": 2.72,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot voiture",
-  "score": 1
- },
  "tape les syllabes du mot: tortue!": {
   "file": "a38032bf-0ae4e0.mp3",
   "text": "Tape les syllabes du mot : tortue !",
@@ -4292,26 +4162,6 @@
   "stt": "Tape les syllabes du mot tortue",
   "score": 1
  },
- "tape les syllabes du mot: tomate!": {
-  "file": "f13fed2c-56adb6.mp3",
-  "text": "Tape les syllabes du mot : tomate !",
-  "sent": "Tape les syllabes du mot : tomate !",
-  "dur": 2.48,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot tomate",
-  "score": 1
- },
- "tape les syllabes du mot: banane!": {
-  "file": "9048f373-c7d8c5.mp3",
-  "text": "Tape les syllabes du mot : banane !",
-  "sent": "Tape les syllabes du mot : banane !",
-  "dur": 2.64,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot banane",
-  "score": 1
- },
  "tape les syllabes du mot: soleil!": {
   "file": "64defd5c-5a6e6b.mp3",
   "text": "Tape les syllabes du mot : soleil !",
@@ -4320,56 +4170,6 @@
   "cost": 14,
   "sttCost": 1,
   "stt": "Tape les syllabes du mot soleil",
-  "score": 1
- },
- "tape les syllabes du mot: abeille!": {
-  "file": "f5d15082-c4f3b3.mp3",
-  "text": "Tape les syllabes du mot : abeille !",
-  "sent": "Tape les syllabes du mot : abeille !",
-  "dur": 2.48,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot abeille",
-  "score": 1
- },
- "tape les syllabes du mot: gorille!": {
-  "file": "f66d9b4c-b26a96.mp3",
-  "text": "Tape les syllabes du mot : gorille !",
-  "sent": "Tape les syllabes du mot : gorille !",
-  "dur": 2.56,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot gorille",
-  "score": 1
- },
- "tape les syllabes du mot: girafe!": {
-  "file": "d13894c4-7b9e7d.mp3",
-  "text": "Tape les syllabes du mot : girafe !",
-  "sent": "Tape les syllabes du mot : girafe !",
-  "dur": 2.64,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot girafe",
-  "score": 1
- },
- "tape les syllabes du mot: tulipe!": {
-  "file": "47140795-1e7f31.mp3",
-  "text": "Tape les syllabes du mot : tulipe !",
-  "sent": "Tape les syllabes du mot : tulipe !",
-  "dur": 2.48,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot : tulipe",
-  "score": 1
- },
- "tape les syllabes du mot: salade!": {
-  "file": "72f6a360-9cac18.mp3",
-  "text": "Tape les syllabes du mot : salade !",
-  "sent": "Tape les syllabes du mot : salade !",
-  "dur": 2.56,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot : salade",
   "score": 1
  },
  "tape les syllabes du mot: kangourou!": {
@@ -4422,16 +4222,6 @@
   "stt": "Tape les syllabes du mot : escargot",
   "score": 1
  },
- "tape les syllabes du mot: dinosaure!": {
-  "file": "cd1e4c68-506c5d.mp3",
-  "text": "Tape les syllabes du mot : dinosaure !",
-  "sent": "Tape les syllabes du mot : dinosaure !",
-  "dur": 2.72,
-  "cost": 15,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot dinosaure",
-  "score": 1
- },
  "tape les syllabes du mot: parapluie!": {
   "file": "2a1d148f-c74d9d.mp3",
   "text": "Tape les syllabes du mot : parapluie !",
@@ -4452,16 +4242,6 @@
   "stt": "Tape les syllabes du mot koala",
   "score": 1
  },
- "tape les syllabes du mot: coccinelle!": {
-  "file": "9386e153-ee9717.mp3",
-  "text": "Tape les syllabes du mot : coccinelle !",
-  "sent": "Tape les syllabes du mot : coccinelle !",
-  "dur": 2.64,
-  "cost": 16,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot coccinelle",
-  "score": 1
- },
  "tape les syllabes du mot: télévision!": {
   "file": "b917cec0-4c8328.mp3",
   "text": "Tape les syllabes du mot : télévision !",
@@ -4470,16 +4250,6 @@
   "cost": 16,
   "sttCost": 1,
   "stt": "Tape les syllabes du mot : télévision",
-  "score": 1
- },
- "tape les syllabes du mot: hippopotame!": {
-  "file": "26cee346-08fa22.mp3",
-  "text": "Tape les syllabes du mot : hippopotame !",
-  "sent": "Tape les syllabes du mot : hippopotame !",
-  "dur": 2.96,
-  "cost": 16,
-  "sttCost": 1,
-  "stt": "Tape les syllabes du mot hippopotame",
   "score": 1
  },
  "tape les syllabes du mot: ordinateur!": {
@@ -27918,76 +27688,6 @@
   "stt": "Ça fait Homard",
   "score": 1
  },
- "ça fait: nuage!": {
-  "file": "aa12289b-28efec.mp3",
-  "text": "Ça fait : nuage !",
-  "sent": "Ça fait : nuage !",
-  "dur": 1.92,
-  "cost": 7,
-  "sttCost": 1,
-  "stt": "Ça fait nuage",
-  "score": 1
- },
- "ça fait: fromage!": {
-  "file": "efc98612-41cf1d.mp3",
-  "text": "Ça fait : fromage !",
-  "sent": "Ça fait : fromage !",
-  "dur": 1.92,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Ça fait fromage",
-  "score": 1
- },
- "ça fait: chaussette!": {
-  "file": "0a44fad4-93bbf8.mp3",
-  "text": "Ça fait : chaussette !",
-  "sent": "Ça fait : chaussette !",
-  "dur": 1.76,
-  "cost": 9,
-  "sttCost": 0,
-  "stt": "Ça fait chaussette",
-  "score": 1
- },
- "ça fait: baguette!": {
-  "file": "880ed882-fb7a5b.mp3",
-  "text": "Ça fait : baguette !",
-  "sent": "Ça fait : baguette !",
-  "dur": 1.68,
-  "cost": 8,
-  "sttCost": 0,
-  "stt": "Ça fait baguette",
-  "score": 1
- },
- "ça fait: lunettes!": {
-  "file": "68afbb99-5423b4.mp3",
-  "text": "Ça fait : lunettes !",
-  "sent": "Ça fait : lunettes !",
-  "dur": 1.76,
-  "cost": 8,
-  "sttCost": 0,
-  "stt": "Ça fait lunettes",
-  "score": 1
- },
- "ça fait: valise!": {
-  "file": "607cb1b5-3da616.mp3",
-  "text": "Ça fait : valise !",
-  "sent": "Ça fait : valise !",
-  "dur": 1.76,
-  "cost": 7,
-  "sttCost": 0,
-  "stt": "Ça fait valise",
-  "score": 1
- },
- "ça fait: voiture!": {
-  "file": "b272f47f-f9ce9c.mp3",
-  "text": "Ça fait : voiture !",
-  "sent": "Ça fait : voiture !",
-  "dur": 1.84,
-  "cost": 8,
-  "sttCost": 0,
-  "stt": "Ça fait voiture",
-  "score": 1
- },
  "ça fait: tortue!": {
   "file": "60b65c7c-97316e.mp3",
   "text": "Ça fait : tortue !",
@@ -27998,16 +27698,6 @@
   "stt": "Ça fait tortue",
   "score": 1
  },
- "ça fait: tomate!": {
-  "file": "0eac188b-60a77b.mp3",
-  "text": "Ça fait : tomate !",
-  "sent": "Ça fait : tomate !",
-  "dur": 1.68,
-  "cost": 7,
-  "sttCost": 0,
-  "stt": "Ça fait tomate",
-  "score": 1
- },
  "ça fait: soleil!": {
   "file": "78cc2a27-dea50b.mp3",
   "text": "Ça fait : soleil !",
@@ -28016,66 +27706,6 @@
   "cost": 7,
   "sttCost": 0,
   "stt": "Ça fait soleil",
-  "score": 1
- },
- "ça fait: banane!": {
-  "file": "02ed86a0-78d2b5.mp3",
-  "text": "Ça fait : banane !",
-  "sent": "Ça fait : banane !",
-  "dur": 1.76,
-  "cost": 7,
-  "sttCost": 1,
-  "stt": "Ça fait banane",
-  "score": 1
- },
- "ça fait: abeille!": {
-  "file": "d7fa7c23-bffc9c.mp3",
-  "text": "Ça fait : abeille !",
-  "sent": "Ça fait : abeille !",
-  "dur": 1.76,
-  "cost": 8,
-  "sttCost": 0,
-  "stt": "Ça fait abeille",
-  "score": 1
- },
- "ça fait: gorille!": {
-  "file": "4f2b8ee9-bacb0d.mp3",
-  "text": "Ça fait : gorille !",
-  "sent": "Ça fait : gorille !",
-  "dur": 1.92,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Ça fait gorille",
-  "score": 1
- },
- "ça fait: girafe!": {
-  "file": "c6ce3fb7-3a0b22.mp3",
-  "text": "Ça fait : girafe !",
-  "sent": "Ça fait : girafe !",
-  "dur": 1.84,
-  "cost": 7,
-  "sttCost": 1,
-  "stt": "Ça fait girafe",
-  "score": 1
- },
- "ça fait: tulipe!": {
-  "file": "f4ad4c42-1bc91e.mp3",
-  "text": "Ça fait : tulipe !",
-  "sent": "Ça fait : tulipe !",
-  "dur": 1.68,
-  "cost": 7,
-  "sttCost": 0,
-  "stt": "Ça fait tulipe",
-  "score": 1
- },
- "ça fait: salade!": {
-  "file": "d2089a9b-a77fce.mp3",
-  "text": "Ça fait : salade !",
-  "sent": "Ça fait : salade !",
-  "dur": 1.68,
-  "cost": 7,
-  "sttCost": 0,
-  "stt": "Ça fait salade",
   "score": 1
  },
  "ça fait: kangourou!": {
@@ -28128,16 +27758,6 @@
   "stt": "Ça fait escargot",
   "score": 1
  },
- "ça fait: dinosaure!": {
-  "file": "dd236b25-7fa88c.mp3",
-  "text": "Ça fait : dinosaure !",
-  "sent": "Ça fait : dinosaure !",
-  "dur": 1.92,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Ça fait dinosaure",
-  "score": 1
- },
  "ça fait: parapluie!": {
   "file": "878ee0c2-40a321.mp3",
   "text": "Ça fait : parapluie !",
@@ -28158,16 +27778,6 @@
   "stt": "Ça fait koala",
   "score": 1
  },
- "ça fait: coccinelle!": {
-  "file": "e6a6fb34-2c9b43.mp3",
-  "text": "Ça fait : coccinelle !",
-  "sent": "Ça fait : coccinelle !",
-  "dur": 1.68,
-  "cost": 9,
-  "sttCost": 0,
-  "stt": "Ça fait coccinelle",
-  "score": 1
- },
  "ça fait: télévision!": {
   "file": "1ea4a0d7-c73a15.mp3",
   "text": "Ça fait : télévision !",
@@ -28176,16 +27786,6 @@
   "cost": 9,
   "sttCost": 1,
   "stt": "Ça fait télévision",
-  "score": 1
- },
- "ça fait: hippopotame!": {
-  "file": "e634aec7-46cc69.mp3",
-  "text": "Ça fait : hippopotame !",
-  "sent": "Ça fait : hippopotame !",
-  "dur": 2,
-  "cost": 9,
-  "sttCost": 1,
-  "stt": "Ça fait hippopotame",
   "score": 1
  },
  "ça fait: ordinateur!": {
@@ -30764,62 +30364,6 @@
    2
   ]
  },
- "écoute: nu… age.": {
-  "file": "8aaca465-7a020c.mp3",
-  "text": "Écoute : nu… age.",
-  "sent": "Écoute : /ny/. /aʒ/.",
-  "dur": 2.08,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Écoute. Nuage",
-  "score": 1,
-  "marks": [
-   1.08,
-   1.44
-  ]
- },
- "écoute: chau… ssette.": {
-  "file": "90bc2a08-24d799.mp3",
-  "text": "Écoute : chau… ssette.",
-  "sent": "Écoute : /ʃo/. /sɛt/.",
-  "dur": 2.64,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Écoute. Chaud. Sept",
-  "score": 1,
-  "marks": [
-   1.15,
-   1.96
-  ]
- },
- "écoute: ba… guette.": {
-  "file": "1117768a-df4312.mp3",
-  "text": "Écoute : ba… guette.",
-  "sent": "Écoute : /ba/. /gɛt/.",
-  "dur": 2.56,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Écoute. Bah, guette",
-  "score": 1,
-  "marks": [
-   1.16,
-   2.04
-  ]
- },
- "écoute: lu… nettes.": {
-  "file": "c4fb58cd-dbe0e1.mp3",
-  "text": "Écoute : lu… nettes.",
-  "sent": "Écoute : /ly/. /nɛt/.",
-  "dur": 2.8,
-  "cost": 8,
-  "sttCost": 1,
-  "stt": "Écoute, lu, net",
-  "score": 1,
-  "marks": [
-   1.2,
-   2.12
-  ]
- },
  "écoute: tor… tue.": {
   "file": "9323ff38-dbfd99.mp3",
   "text": "Écoute : tor… tue.",
@@ -30909,21 +30453,6 @@
    2.95
   ]
  },
- "écoute: di… no… zor.": {
-  "file": "8c4309c8-0ed8b4.mp3",
-  "text": "Écoute : di… no… zor.",
-  "sent": "Écoute : /di/. /no/. /zoʁ/.",
-  "dur": 3.52,
-  "cost": 11,
-  "sttCost": 1,
-  "stt": "Écoute, dis, nos, or",
-  "score": 1,
-  "marks": [
-   1.16,
-   2.08,
-   2.88
-  ]
- },
  "écoute: pa… ra… pluie.": {
   "file": "90304a24-5a1837.mp3",
   "text": "Écoute : pa… ra… pluie.",
@@ -30952,21 +30481,6 @@
    1.2,
    2,
    2.8
-  ]
- },
- "écoute: cok… si… nèl.": {
-  "file": "a92f885d-09b0a0.mp3",
-  "text": "Écoute : cok… si… nèl.",
-  "sent": "Écoute : /kok/. /si/. /nɛl/.",
-  "dur": 3.36,
-  "cost": 11,
-  "sttCost": 1,
-  "stt": "Écoute. Coq, ci, nel",
-  "score": 1,
-  "marks": [
-   1.09,
-   1.9,
-   2.68
   ]
  },
  "écoute: té… lé… vi… zion.": {
@@ -31000,16 +30514,6 @@
    2.88,
    3.64
   ]
- },
- "écoute: i… po… po… tame.": {
-  "file": "fd1cdefb-d5a093.mp3",
-  "text": "Écoute : i… po… po… tame.",
-  "sent": "Écoute : i. po. po. tame.",
-  "dur": 3.84,
-  "cost": 49,
-  "sttCost": 4,
-  "stt": "Écoute. I po po tame",
-  "score": 1
  },
  "che, comme dans chapeau.": {
   "file": "953ae333-e1bcd8.mp3",
