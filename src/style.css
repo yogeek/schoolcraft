@@ -2088,6 +2088,24 @@ button span,
 .drum.good {
   outline: 6px solid var(--gold);
 }
+/* until the instruction is over: greyed, then it pops up when it is the child's turn */
+.drum.waiting {
+  filter: grayscale(1);
+  opacity: 0.45;
+}
+.drum:not(.waiting) {
+  transition: filter 0.3s, opacity 0.3s;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .drum.pop {
+    animation: drum-ready 0.35s;
+  }
+}
+@keyframes drum-ready {
+  50% {
+    transform: scale(1.08);
+  }
+}
 .choice.naming {
   outline: 6px solid #fff;
   transform: translateY(-6px);

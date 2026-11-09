@@ -383,6 +383,18 @@ function clapGame(words: PicWord[]): Game {
   let target: PicWord = words[0];
   let prev: PicWord | undefined;
   const key = (w: PicWord) => `clap:${w.word}`;
+  let drum: HTMLButtonElement | null = null;
+  /** the drum waits for the end of the instruction (a child taps as soon as it shows) */
+  const ready = (on: boolean) => {
+    if (!drum) return;
+    drum.classList.toggle('waiting', !on);
+    drum.setAttribute('aria-disabled', String(!on));
+    if (on) {
+      drum.classList.remove('hit');
+      drum.classList.add('pop');
+      drum.addEventListener('animationend', () => drum?.classList.remove('pop'), { once: true });
+    }
+  };
 
   return {
     praise: ['Bravo, bien tapé !', 'Super, tu as bien écouté !', 'Oui, bravo !', 'Génial !'],
@@ -398,9 +410,10 @@ function clapGame(words: PicWord[]): Game {
       const beats = h('div', { class: 'beats', 'aria-live': 'polite' });
       r.stage.classList.add('clap-stage');
       r.stage.append(card, beats);
-      const drum = h('button', { class: 'drum', 'aria-label': 'Tambour : taper une syllabe' }, h('span', { 'aria-hidden': 'true' }, '🥁'));
+      const d = h('button', { class: 'drum waiting', 'aria-label': 'Tambour : taper une syllabe', 'aria-disabled': 'true' }, h('span', { 'aria-hidden': 'true' }, '🥁'));
+      drum = d;
       r.choices.classList.add('kind-clap');
-      r.choices.append(drum);
+      r.choices.append(d);
 
       const light = async (count: number) => {
         // the syllables in one go (said alone, a syllable could sound English or like an abbreviation),
@@ -415,13 +428,13 @@ function clapGame(words: PicWord[]): Game {
         else await r.say(`Écoute : ${target.syl.join('… ')}.`, { onMark: on, marks: count });
       };
 
-      drum.onclick = async () => {
-        if (!r.open()) return;
+      d.onclick = async () => {
+        if (!r.open() || d.classList.contains('waiting')) return;
         sfx.unlock();
         sfx.drum();
-        drum.classList.remove('hit');
-        void drum.offsetWidth;
-        drum.classList.add('hit');
+        d.classList.remove('hit', 'pop');
+        void d.offsetWidth;
+        d.classList.add('hit');
         if (taps >= 6) return;
         taps++;
         beats.append(h('span', { class: 'beat on' }));
@@ -429,13 +442,13 @@ function clapGame(words: PicWord[]): Game {
         // the child stops tapping (a young child thinks between two syllables): count the taps
         if (!(await r.wait(2200)) || my !== tapSeq || !r.open()) return;
         if (taps === n) {
-          return r.win(drum, async () => {
+          return r.win(d, async () => {
             r.bubble(`${n} syllabe${n > 1 ? 's' : ''}`);
             await light(n);
             await r.say(`${wordLine(target.word)} ${n === 1 ? 'Une syllabe' : `${['', '', 'Deux', 'Trois', 'Quatre'][n]} syllabes`} !`);
           });
         }
-        r.miss(drum);
+        r.miss(d);
         r.hold(true);
         await r.say(taps < n ? 'Il en manque !' : "C'est trop !");
         await light(n);
@@ -447,9 +460,12 @@ function clapGame(words: PicWord[]): Game {
       };
       return key(target);
     },
-    ask(r) {
+    async ask(r) {
+      r.bubble('Écoute bien…');
+      ready(false);
+      await r.say(`Tape les syllabes du mot : ${target.word} !`);
+      ready(true);
       r.bubble('Tape les syllabes !');
-      return r.say(`Tape les syllabes du mot : ${target.word} !`);
     },
   };
 }
