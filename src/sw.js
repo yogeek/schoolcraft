@@ -68,13 +68,13 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   const sameOrigin = url.origin === self.location.origin;
-  if (!sameOrigin && url.hostname !== 'fonts.googleapis.com' && url.hostname !== 'fonts.gstatic.com') return;
+  if (!sameOrigin) return;
   // clips never change: a new recording gets a new file name
   if (sameOrigin && url.pathname.includes('/voice/')) {
     e.respondWith(caches.match(req, MATCH).then((hit) => hit || fetch(req).then((res) => store(req, res, VOICE))));
     return;
   }
-  if ((sameOrigin && url.pathname.includes('/assets/')) || url.hostname === 'fonts.gstatic.com') {
+  if (url.pathname.includes('/assets/')) {
     e.respondWith(cacheFirst(req));
     return;
   }

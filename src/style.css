@@ -1,3 +1,20 @@
+/* Andika (SIL, OFL licence in src/fonts/OFL.txt), served by the app itself: no request to Google */
+@font-face {
+  font-family: 'Andika';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/andika-400-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Andika';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/andika-700-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 :root {
   --sky-top: #5fb0f0;
   --sky-bottom: #bfe6ff;
@@ -1963,7 +1980,7 @@ button span,
   align-items: center;
 }
 .trace-board {
-  --board: clamp(220px, min(92vw, calc(100vh - 330px)), 460px);
+  --board: clamp(220px, min(92vw, calc(100vh - 405px)), 460px);
   width: var(--board);
   height: var(--board);
   background: var(--paper);
@@ -1974,7 +1991,7 @@ button span,
 }
 @supports (height: 100dvh) {
   .trace-board {
-    --board: clamp(220px, min(92vw, calc(100dvh - 330px)), 460px);
+    --board: clamp(220px, min(92vw, calc(100dvh - 405px)), 460px);
   }
 }
 .trace-svg {
@@ -3184,5 +3201,64 @@ button span,
   }
   .home .logo {
     font-size: 1.45rem;
+  }
+}
+
+/* ---------- small phones (320 px wide, or a short portrait screen) ---------- */
+.level-btn {
+  white-space: nowrap;
+}
+@media (max-width: 359px) {
+  .logo {
+    font-size: 1.35rem;
+    letter-spacing: 0;
+  }
+  .counter {
+    min-width: 0;
+    font-size: 1.15rem;
+    padding: 4px 8px 4px 6px;
+  }
+  .counter img {
+    width: 26px;
+    height: 26px;
+  }
+  .parents {
+    min-width: 0;
+    padding: 8px 4px;
+  }
+  .level-btn {
+    font-size: 1.1rem;
+    padding: 6px 10px;
+  }
+}
+/* the answers stand just above the ground instead of far above it: no scrolling on a short phone */
+@media (orientation: portrait) and (max-height: 700px) {
+  .choices {
+    margin-bottom: 96px;
+  }
+  .actions,
+  .tiles {
+    margin-bottom: 96px;
+  }
+}
+/* the welcome dialog fits without scrolling to its button */
+@media (orientation: portrait) and (max-height: 640px) {
+  .welcome-panel {
+    gap: 8px;
+    padding: 12px;
+  }
+  .welcome-body {
+    gap: 8px;
+  }
+  .welcome-body p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  .welcome-panel .grade-btn {
+    padding: 10px 8px;
+  }
+  .panel .limit-btn {
+    min-height: 48px;
+    padding: 6px 8px;
   }
 }
