@@ -420,8 +420,12 @@
   "text": "Chaque jour, on part à l’aventure : on lit, on écrit et on compte !"
  },
  {
-  "key": "avec les blocs gagnés, tu colories tes amis et tu construis ta maison.",
-  "text": "Avec les blocs gagnés, tu colories tes amis et tu construis ta maison."
+  "key": "avec tes étoiles, tu réveilles tes amis.",
+  "text": "Avec tes étoiles, tu réveilles tes amis."
+ },
+ {
+  "key": "avec les blocs, tu construis ta maison.",
+  "text": "Avec les blocs, tu construis ta maison."
  },
  {
   "key": "bravo, tu as fini l'aventure du jour!",
@@ -480,12 +484,20 @@
   "text": "Touche le coffre pour l'ouvrir !"
  },
  {
-  "key": "celui-là dort encore.",
-  "text": "Celui-là dort encore."
+  "key": "tu as bien travaillé aujourd'hui!",
+  "text": "Tu as bien travaillé aujourd'hui !"
  },
  {
-  "key": "colorie d'abord le personnage qui t'attend!",
-  "text": "Colorie d'abord le personnage qui t'attend !"
+  "key": "à demain?",
+  "text": "À demain ?"
+ },
+ {
+  "key": "pixel va faire une sieste.",
+  "text": "Pixel va faire une sieste."
+ },
+ {
+  "key": "celui-là dort encore.",
+  "text": "Celui-là dort encore."
  },
  {
   "key": "voici tes amis.",
@@ -496,8 +508,12 @@
   "text": "Ils dorment !"
  },
  {
-  "key": "colorie-les pour les réveiller.",
-  "text": "Colorie-les pour les réveiller."
+  "key": "voici tes amis!",
+  "text": "Voici tes amis !"
+ },
+ {
+  "key": "colorie d'abord le personnage qui t'attend!",
+  "text": "Colorie d'abord le personnage qui t'attend !"
  },
  {
   "key": "bravo, tu as réveillé tout le monde!",
@@ -508,8 +524,8 @@
   "text": "Touche un ami pour le voir."
  },
  {
-  "key": "voici tes amis!",
-  "text": "Voici tes amis !"
+  "key": "colorie-les pour les réveiller.",
+  "text": "Colorie-les pour les réveiller."
  },
  {
   "key": "touche celui qui brille pour le colorier.",
@@ -518,10 +534,6 @@
  {
   "key": "encore une couleur!",
   "text": "Encore une couleur !"
- },
- {
-  "key": "il te faut des blocs pour colorier.",
-  "text": "Il te faut des blocs pour colorier."
  },
  {
   "key": "on continue le coloriage!",
@@ -552,16 +564,16 @@
   "text": "C'est l'heure de faire une pause !"
  },
  {
-  "key": "pixel va faire une sieste.",
-  "text": "Pixel va faire une sieste."
- },
- {
   "key": "reviens jouer plus tard!",
   "text": "Reviens jouer plus tard !"
  },
  {
   "key": "bien joué!",
   "text": "Bien joué !"
+ },
+ {
+  "key": "tes étoiles réveillent un ami!",
+  "text": "Tes étoiles réveillent un ami !"
  },
  {
   "key": "tu as fini l'aventure du jour: un coffre t'attend!",
@@ -1618,6 +1630,30 @@
  {
   "key": "je vais jusqu'à la lune!",
   "text": "Je vais jusqu'à la lune !"
+ },
+ {
+  "key": "encore une étoile, et un ami se réveille!",
+  "text": "Encore une étoile, et un ami se réveille !"
+ },
+ {
+  "key": "encore deux étoiles, et un ami se réveille!",
+  "text": "Encore deux étoiles, et un ami se réveille !"
+ },
+ {
+  "key": "encore trois étoiles, et un ami se réveille!",
+  "text": "Encore trois étoiles, et un ami se réveille !"
+ },
+ {
+  "key": "encore quatre étoiles, et un ami se réveille!",
+  "text": "Encore quatre étoiles, et un ami se réveille !"
+ },
+ {
+  "key": "encore cinq étoiles, et un ami se réveille!",
+  "text": "Encore cinq étoiles, et un ami se réveille !"
+ },
+ {
+  "key": "gagne des étoiles pour les réveiller.",
+  "text": "Gagne des étoiles pour les réveiller."
  },
  {
   "key": "touche les cases avec le chiffre: un!",

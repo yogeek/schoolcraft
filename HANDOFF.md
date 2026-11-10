@@ -38,17 +38,13 @@ session, then `CLAUDE.md` (architecture, conventions) and `AGENTS.md` (how to wo
 
 The owner asked for these after a first real use. They were proposed on 2026-11-10 and not started.
 
-1. **A parent onboarding at first launch.** Done on 2026-11-10 (`src/screens/welcome.ts`), not
-   yet committed: class, then time per sitting (15 min pre-selected), then a coach mark on
+1. **A parent onboarding at first launch.** Done on 2026-11-10 (`src/screens/welcome.ts`, v3.2): class, then time per sitting (15 min pre-selected), then a coach mark on
    « Parents », and a dot on that button until the parents' area is opened once on the device.
-2. **Rewards that are earned, not farmed.** The problem: blocks come too easily, and the child
-   stays in the house or the album long after the exercises. Expected, task-contingent rewards
-   lower intrinsic motivation (Lepper 1973; Deci, Koestner and Ryan 1999). The proposal:
-   - heroes wake up with progress, for example a chapter finished, shown as « Encore 2 niveaux pour
-     réveiller Luna », instead of being bought with blocks;
-   - blocks are given per finished game: 1 to 3 by stars, 1 when replaying a 3-star level;
-   - a soft end of the session after the chest (« À demain ? »).
-   This needs state v5 with a migration in `sanitize()`; heroes already coloured stay awake.
+2. **Rewards that are earned, not farmed.** Done on 2026-11-10, not yet committed. Heroes wake up
+   with stars (one every 5 stars, derived from the save, so no state v5 was needed), colouring is
+   free, blocks come with the finished game (1 to 3 by stars, 1 when replaying a 3-star level),
+   and after the chest Pixel offers « À demain ? » (a `rest` screen). See `CLAUDE.md` § Reward
+   economy. Its 11 new sentences are recorded and were approved by ear (`ecoute-5.html`).
 3. **Building with a model.** For example « Construis une tour de 7 blocs » or « Recopie le motif
    rouge, bleu, rouge… ». It is maths of the maternelle programme (counting, patterns, symmetry).
 4. **Heroes inside the learning, and a village.**
@@ -67,14 +63,18 @@ stories to read with questions, and a pre/post test with families.
 ## Voice budget and tools
 
 - **Main key: `ELEVENLABS_API_KEY` in `~/.elevenlabs`** (Starter plan, the owner's account).
-  - It cannot read the balance (`user_read` missing), so ask the owner to look at the dashboard.
-  - By our own count it was close to empty after the IPA re-recording. Small runs (up to 45 credits)
-    still worked on 2026-11-10.
+  - **Empty on 2026-11-10: 3 credits left of 40,000** (the API said so when a request failed).
+    New sentences wait for the monthly reset or a top-up.
+  - It cannot read the balance (`user_read` missing); a failed request shows it.
   - Cost is about 0.4 credit per character, plus about 1 per speech-to-text check.
   - Always run with `--budget N`, and `--dry-run` first.
-- **`ELEVENLABS_API_KEY_OTHER_USER` in the same file: another person's account** (10,000 credits),
-  offered by the owner « if needed ». It is probably a free plan, where the « Adina » library voice
-  is refused by the API (402). This key is untested, so check before relying on it.
+- **`ELEVENLABS_API_KEY_OTHER_USER` in the same file: the key to use now.** Free at first (402
+  on « Adina »), the owner moved it to the Starter plan on 2026-11-10; it recorded the 10 sentences
+  of the earned rewards that day (159 credits). Run it as
+  `ELEVENLABS_API_KEY="$ELEVENLABS_API_KEY_OTHER_USER" node scripts/voice/generate.mjs …`.
+- **Caution:** `generate.mjs` deletes the clips of sentences that `lines.ts` no longer finds. A
+  sentence hidden in an expression `lines.ts` does not follow (`${a ?? b}`) loses its clip: check
+  `git status public/voice` after a run.
 - **Workflow:**
   1. Change the text in the code.
   2. Run `node --experimental-strip-types scripts/voice/lines.ts`.

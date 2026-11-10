@@ -874,16 +874,6 @@
   "stt": "Encore une couleur",
   "score": 1
  },
- "il te faut des blocs pour colorier.": {
-  "file": "6f4ff24f-4d836b.mp3",
-  "text": "Il te faut des blocs pour colorier.",
-  "sent": "Il te faut des blocs pour colorier.",
-  "dur": 2,
-  "cost": 14,
-  "sttCost": 1,
-  "stt": "Il te faut des blocs pour colorier",
-  "score": 1
- },
  "on continue le coloriage!": {
   "file": "321d4224-0af685.mp3",
   "text": "On continue le coloriage !",
@@ -21403,16 +21393,6 @@
   "stt": "Je suis Pixel",
   "score": 1
  },
- "avec les blocs gagnés, tu colories tes amis et tu construis ta maison.": {
-  "file": "10d57f18-f0854f.mp3",
-  "text": "Avec les blocs gagnés, tu colories tes amis et tu construis ta maison.",
-  "sent": "Avec les blocs gagnés, tu colories tes amis et tu construis ta maison.",
-  "dur": 3.84,
-  "cost": 28,
-  "sttCost": 1,
-  "stt": "Avec les blocs gagnés, tu colories tes amis et tu construis ta maison",
-  "score": 1
- },
  "chaque jour, on part à l'aventure: on lit, on écrit et on compte!": {
   "file": "471f6b0e-0b3328.mp3",
   "text": "Chaque jour, on part à l’aventure : on lit, on écrit et on compte !",
@@ -30545,6 +30525,26 @@
   "stt": "Tu peux construire ta maison",
   "score": 1
  },
+ "tu veux colorier un ami?": {
+  "file": "4b67ecbc-941b23.mp3",
+  "text": "Tu veux colorier un ami ?",
+  "sent": "Tu veux colorier un ami ?",
+  "dur": 1.52,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Tu veux colorier un ami ?",
+  "score": 1
+ },
+ "avec tes étoiles, tu réveilles tes amis.": {
+  "file": "027b2b25-0a6b3a.mp3",
+  "text": "Avec tes étoiles, tu réveilles tes amis.",
+  "sent": "Avec tes étoiles, tu réveilles tes amis.",
+  "dur": 2.48,
+  "cost": 16,
+  "sttCost": 1,
+  "stt": "Avec tes étoiles, tu réveilles tes amis",
+  "score": 1
+ },
  "tu as fini l'aventure du jour: un coffre t'attend!": {
   "file": "8a898fec-c9e866.mp3",
   "text": "Tu as fini l'aventure du jour : un coffre t'attend !",
@@ -30555,14 +30555,103 @@
   "stt": "Tu as fini l'aventure du jour. Un coffre t'attend",
   "score": 1
  },
- "tu veux colorier un ami?": {
-  "file": "4b67ecbc-941b23.mp3",
-  "text": "Tu veux colorier un ami ?",
-  "sent": "Tu veux colorier un ami ?",
-  "dur": 1.52,
-  "cost": 10,
+ "à demain?": {
+  "file": "fd31b2a5-0f1f00.mp3",
+  "text": "À demain ?",
+  "sent": "À demain ?",
+  "dur": 0.72,
+  "cost": 4,
   "sttCost": 0,
-  "stt": "Tu veux colorier un ami ?",
+  "score": 1
+ },
+ "avec les blocs, tu construis ta maison.": {
+  "file": "6d0049c2-1c6240.mp3",
+  "text": "Avec les blocs, tu construis ta maison.",
+  "sent": "Avec les blocs, tu construis ta maison.",
+  "dur": 2.4,
+  "cost": 16,
+  "sttCost": 1,
+  "stt": "Avec les blocs, tu construis ta maison",
+  "score": 1
+ },
+ "tu as bien travaillé aujourd'hui!": {
+  "file": "af8a0d17-febc37.mp3",
+  "text": "Tu as bien travaillé aujourd'hui !",
+  "sent": "Tu as bien travaillé aujourd'hui !",
+  "dur": 1.92,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Tu as bien travaillé aujourd'hui",
+  "score": 1
+ },
+ "tes étoiles réveillent un ami!": {
+  "file": "2f6b51cb-7d9e41.mp3",
+  "text": "Tes étoiles réveillent un ami !",
+  "sent": "Tes étoiles réveillent un ami !",
+  "dur": 1.92,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Tes étoiles réveillent un ami",
+  "score": 1
+ },
+ "encore une étoile, et un ami se réveille!": {
+  "file": "9bb4daf9-5ac23c.mp3",
+  "text": "Encore une étoile, et un ami se réveille !",
+  "sent": "Encore une étoile, et un ami se réveille !",
+  "dur": 2.8,
+  "cost": 17,
+  "sttCost": 1,
+  "stt": "Encore une étoile et un ami se réveille",
+  "score": 1
+ },
+ "encore deux étoiles, et un ami se réveille!": {
+  "file": "a93c7054-f1ff87.mp3",
+  "text": "Encore deux étoiles, et un ami se réveille !",
+  "sent": "Encore deux étoiles, et un ami se réveille !",
+  "dur": 2.96,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Encore deux étoiles et un ami se réveille",
+  "score": 1
+ },
+ "encore trois étoiles, et un ami se réveille!": {
+  "file": "475cc6c7-d3d076.mp3",
+  "text": "Encore trois étoiles, et un ami se réveille !",
+  "sent": "Encore trois étoiles, et un ami se réveille !",
+  "dur": 2.8,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Encore trois étoiles et un ami se réveille",
+  "score": 1
+ },
+ "encore quatre étoiles, et un ami se réveille!": {
+  "file": "01c3f5c4-88ad01.mp3",
+  "text": "Encore quatre étoiles, et un ami se réveille !",
+  "sent": "Encore quatre étoiles, et un ami se réveille !",
+  "dur": 2.96,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Encore quatre étoiles et un ami se réveille",
+  "score": 1
+ },
+ "encore cinq étoiles, et un ami se réveille!": {
+  "file": "20543bbf-4c2013.mp3",
+  "text": "Encore cinq étoiles, et un ami se réveille !",
+  "sent": "Encore cinq étoiles, et un ami se réveille !",
+  "dur": 2.96,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Encore cinq étoiles et un ami se réveille",
+  "score": 1
+ },
+ "gagne des étoiles pour les réveiller.": {
+  "file": "1ad344b8-f744c6.mp3",
+  "text": "Gagne des étoiles pour les réveiller.",
+  "sent": "Gagne des étoiles pour les réveiller.",
+  "dur": 2,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Gagne des étoiles pour les réveiller",
   "score": 1
  }
 }

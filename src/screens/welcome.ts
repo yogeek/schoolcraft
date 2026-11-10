@@ -8,6 +8,15 @@ import { fr, h, modal } from '../ui';
 import type { Ctx } from './types';
 
 const SEEN = 'schoolcraft:parents-seen';
+/** the welcome dialog was just filled in: home shows the coach mark before Pixel speaks */
+let coachNext = false;
+
+/** Home asks whether to show the coach mark now (once, right after the welcome dialog). */
+export function takeCoach(): boolean {
+  const c = coachNext;
+  coachNext = false;
+  return c;
+}
 
 /** The parents' area was opened at least once on this device (shared by every child). */
 export function parentsSeen(): boolean {
@@ -73,8 +82,8 @@ export function welcomeDialog(ctx: Ctx): void {
       state.settings.limitMin = chosen;
       save();
       dlg.close();
-      ctx.go('home'); // the tiles show the levels of the class
-      if (!parentsSeen()) coachParents();
+      coachNext = !parentsSeen();
+      ctx.go('home'); // the tiles show the levels of the class; home shows the coach mark
     };
     body.replaceChildren(
       step(2),
@@ -88,10 +97,10 @@ export function welcomeDialog(ctx: Ctx): void {
   askClass();
 }
 
-/** Points at the « Parents » button of home, once. Any tap closes it. */
-export function coachParents(): void {
+/** Points at the « Parents » button of home, once. Any tap closes it, then `then` runs. */
+export function coachParents(then: () => void): void {
   const target = document.querySelector<HTMLElement>('.home .parents');
-  if (!target) return;
+  if (!target) return then();
   const r = target.getBoundingClientRect();
   const ring = h('div', { class: 'coach-ring' });
   Object.assign(ring.style, { left: `${r.left - 6}px`, top: `${r.top - 6}px`, width: `${r.width + 12}px`, height: `${r.height + 12}px` });
@@ -106,8 +115,10 @@ export function coachParents(): void {
   tip.style.left = `${Math.max(8, r.left)}px`;
   const overlay = h('div', { class: 'overlay coach' }, ring, tip);
   const close = () => {
+    if (!overlay.isConnected) return;
     overlay.remove();
     removeEventListener('resize', close);
+    then();
   };
   overlay.onclick = close; // the button too (its click bubbles up)
   addEventListener('resize', close);

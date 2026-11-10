@@ -2,17 +2,18 @@
 //
 // A session is a few questions ("rounds"). Each game type only knows how to show a question
 // (`setup`, without speaking), how to ask it (`ask`), and calls `r.win()` / `r.miss()`. The engine
-// does the rest: progress squares, blocks won, praise, stats for spaced repetition, the review
+// does the rest: progress squares, praise, blocks won at the end (by stars), stats for spaced repetition, the review
 // question from an earlier level, the end of the session and the reward screen.
 //
 // Every question has its own number: speech and timers of an old question never talk over (or
 // act on) the next one, and nothing runs once the child left the screen.
 import { sfx, type SayOpts } from './audio';
-import { endSession } from './levels';
+import { endSession, starsOf } from './levels';
+import { readyHero } from './screens/heroes';
 import { rewardScreen } from './screens/reward';
 import type { Ctx } from './screens/types';
-import { logGame, logGood, record, type ActivityId, type BlockType } from './state';
-import { bubble, giveBlock, h, levelButton, mascot, rand, reducedMotion, rewardType, setBubble, speakerButton, topBar } from './ui';
+import { logGame, logGood, record, type ActivityId } from './state';
+import { bubble, gameBlocks, giveBlock, h, levelButton, mascot, rand, reducedMotion, setBubble, speakerButton, topBar } from './ui';
 
 export interface Round {
   /** question material (word, blocks, board…) */
@@ -30,7 +31,7 @@ export interface Round {
   miss(el?: Element | null): void;
   /** mistakes on this question so far */
   readonly misses: number;
-  /** the right answer: block, praise, then `after` (e.g. say the word), then the next question */
+  /** the right answer: praise, then `after` (e.g. say the word), then the next question */
   win(el?: Element | null, after?: () => Promise<void>): Promise<void>;
   /** block the answers for a moment (an animation is running) */
   hold(on: boolean): void;
@@ -79,14 +80,12 @@ export function runSession(ctx: Ctx, spec: SessionSpec): void {
   let index = 0;
   let firstTry = 0;
   let good = 0;
-  let streak = 0;
   let seq = 0;
   let locked = true;
   let held = false;
   let misses = 0;
   let key = '';
   let asked = false;
-  const won: BlockType[] = [];
 
   const progress = h('div', { class: 'progress', role: 'img', 'aria-label': `${plan.length} questions` });
   plan.forEach((g) => progress.append(h('span', { class: g === game ? '' : 'review' })));
@@ -140,7 +139,6 @@ export function runSession(ctx: Ctx, spec: SessionSpec): void {
         if (!shown() || locked) return;
         if (misses === 0) record(key, false); // a question counts as missed once
         misses++;
-        streak = 0;
         sfx.oops();
         react('hmm');
         if (el) {
@@ -160,13 +158,9 @@ export function runSession(ctx: Ctx, spec: SessionSpec): void {
         }
         good++;
         logGood();
-        streak++;
         sfx.good();
         react('cheer');
         el?.classList.add('good');
-        const t = rewardType(streak);
-        won.push(t);
-        giveBlock(t, el ?? fox);
         progress.children[index]?.classList.add('done');
         const praise = misses === 0 ? rand(current().praise ?? PRAISE) : rand(RETRY_PRAISE);
         setBubble(bub, praise);
@@ -207,7 +201,13 @@ export function runSession(ctx: Ctx, spec: SessionSpec): void {
       locked = true;
       const rounds = plan.filter((g) => g === game).length;
       const advanced = logGame(activity);
-      return rewardScreen(ctx, won, activity, endSession(activity, levelNo, firstTry, rounds), advanced);
+      // blocks come with the finished game, by its stars: replaying an easy level brings little
+      const before = starsOf(activity, levelNo);
+      const hadFriend = readyHero() !== null;
+      const result = endSession(activity, levelNo, firstTry, rounds);
+      const won = gameBlocks(result.stars, before);
+      for (const t of won) giveBlock(t);
+      return rewardScreen(ctx, won, activity, result, { advanced, newFriend: !hadFriend && readyHero() !== null });
     }
     setupRound();
     ask();

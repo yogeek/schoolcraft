@@ -89,10 +89,12 @@ export function giveBlock(type: BlockType, from?: Element): void {
     });
 }
 
-/** A random "common" block; gold when on a streak of 3. */
-export function rewardType(streak: number): BlockType {
-  if (streak > 0 && streak % 3 === 0) return 'gold';
-  return rand(COMMON_BLOCKS);
+/** Blocks for a finished game: one per star (at least one for finishing), the third one gold;
+ *  a single block when the level already had 3 stars (replaying it is fine, farming it is not). */
+export function gameBlocks(stars: number, before: number): BlockType[] {
+  if (before >= 3) return [rand(COMMON_BLOCKS)];
+  if (stars >= 3) return [rand(COMMON_BLOCKS), rand(COMMON_BLOCKS), 'gold'];
+  return Array.from({ length: Math.max(1, stars) }, () => rand(COMMON_BLOCKS));
 }
 
 export function topBar(onHome: () => void, title?: string | Node): HTMLElement {

@@ -953,6 +953,16 @@ img.block.mini {
   background: #d9d4c7;
   color: #777;
 }
+/* the next hero: asleep until enough stars, but not hidden among the others */
+.hero-card.locked.next {
+  background: var(--paper);
+  color: var(--ink);
+  outline: 4px dashed var(--gold);
+}
+.hero-card .need {
+  color: #b8860b;
+  font-size: 1.2rem;
+}
 
 .paint-wrap {
   width: 100%;
@@ -1282,7 +1292,8 @@ button span,
   border: 2px solid var(--ink);
   padding: 2px;
 }
-.btn-hero svg {
+.btn-hero svg,
+.btn-fox svg {
   display: block;
 }
 

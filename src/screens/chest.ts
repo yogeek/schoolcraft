@@ -1,12 +1,13 @@
 // L'aventure du jour : une partie de Lire, d'Écrire et de Compter. Quand les trois sont faites, un
 // coffre s'ouvre avec des blocs spéciaux (briques, feuilles, fleurs, cristal) pour la maison.
-// Pas de série à ne pas casser : un jour sans jeu ne fait rien perdre.
+// Pas de série à ne pas casser : un jour sans jeu ne fait rien perdre. Après le coffre, Pixel propose
+// doucement de s'arrêter là (« À demain ? ») : l'enfant peut encore jouer, mais la séance a une fin.
 import { sfx } from '../audio';
 import { burst } from '../heroArt';
 import { ACTIVITY_NAMES } from '../levels';
-import { BLOCK_NAMES, chestSVG } from '../pixel';
+import { BLOCK_NAMES, chestSVG, foxSVG } from '../pixel';
 import { ACTIVITIES, mission, save, SPECIAL_BLOCKS, state, type ActivityId, type BlockType } from '../state';
-import { blockImg, bumpCounter, h, reducedMotion, shuffle } from '../ui';
+import { blockImg, bubble, bumpCounter, h, HOUSE_SVG, mascot, reducedMotion, shuffle, topBar } from '../ui';
 import type { Ctx } from './types';
 
 /** The next activity of today's adventure, or null when all three are done. */
@@ -61,12 +62,54 @@ export function openChest(ctx: Ctx, then: () => void): void {
   art.onclick = () => void open();
   done.onclick = () => {
     overlay.remove();
-    then();
+    softEnd(ctx, then);
   };
   void ctx.say("Bravo, tu as fini l'aventure du jour ! Touche le coffre pour l'ouvrir !");
   setTimeout(() => {
     if (overlay.isConnected && ctx.alive()) void open();
   }, 6000);
+}
+
+/** After the chest: « À demain ? ». Stopping is offered first; « Encore un peu » goes on (`then`). */
+function softEnd(ctx: Ctx, then: () => void): void {
+  const speech = "Tu as bien travaillé aujourd'hui ! À demain ?";
+  const bye = h('button', { class: 'btn big green' }, h('span', { class: 'btn-fox', html: foxSVG(40, true) }), 'À demain !');
+  bye.onclick = () => ctx.go('rest');
+  const more = h('button', { class: 'btn big' }, h('span', { html: HOUSE_SVG }), 'Encore un peu');
+  more.onclick = () => {
+    overlay.remove();
+    then();
+  };
+  const panel = h(
+    'div',
+    { class: 'panel hero-panel', role: 'dialog', 'aria-modal': 'true', 'aria-label': 'À demain ?' },
+    h('div', { class: 'hero' }, mascot(110, () => void ctx.say(speech)), bubble('À demain ?')),
+    h('div', { class: 'actions' }, bye, more),
+  );
+  const overlay = h('div', { class: 'overlay hero-overlay' }, panel);
+  document.body.append(overlay);
+  void ctx.say(speech);
+}
+
+/** The adventure is over for today: Pixel goes to sleep. The house button still leads home. */
+export function restScreen(ctx: Ctx): void {
+  const speech = 'Pixel va faire une sieste. Reviens demain pour un nouveau coffre.';
+  const fox = h('button', { class: 'fox-btn sleeping', 'aria-label': 'Pixel dort', html: foxSVG(160, true) });
+  fox.onclick = () => {
+    sfx.unlock();
+    void ctx.say(speech);
+  };
+  ctx.root.append(
+    h(
+      'main',
+      { class: 'screen pause' },
+      topBar(() => ctx.go('home')),
+      h('div', { class: 'zzz', 'aria-hidden': 'true' }, 'Z z z'),
+      h('div', { class: 'hero' }, fox, bubble('À demain !')),
+      h('div', { class: 'ground' }),
+    ),
+  );
+  void ctx.say(speech);
 }
 
 /** Small strip showing today's adventure: three activities and the chest. */

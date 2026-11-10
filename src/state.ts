@@ -374,15 +374,6 @@ export function pickWeighted<T>(items: readonly T[], key: (item: T) => string, a
   return items.filter((_, k) => weights[k] > 0).pop() ?? items[0];
 }
 
-/** Spend one block (the most plentiful kind first). Returns false when there is none left. */
-export function spendBlock(): boolean {
-  const t = [...BLOCK_TYPES].sort((a, b) => state.inventory[b] - state.inventory[a])[0];
-  if (state.inventory[t] <= 0) return false;
-  state.inventory[t]--;
-  save();
-  return true;
-}
-
 /** Today's adventure (reset when the day changed). */
 export function mission(): GameState['mission'] {
   const d = today();

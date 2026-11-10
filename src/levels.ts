@@ -60,6 +60,13 @@ export function unlockedLevel(a: ActivityId): number {
   return clamped(a).unlocked;
 }
 
+/** All the stars won so far, over the three activities (they wake the heroes up). */
+export function totalStars(): number {
+  let n = 0;
+  for (const a of ['sounds', 'write', 'count'] as const) for (const v of state.stars[a]) n += v ?? 0;
+  return n;
+}
+
 export function starsOf(a: ActivityId, n: number): number {
   return state.stars[a][n - 1] ?? 0;
 }

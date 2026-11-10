@@ -79,6 +79,12 @@ renvoie à une source ; les limites des études sont signalées.
 - **Intégration intrinsèque** (Habgood et Ainsworth, 2011) : quand le jeu *est* l'apprentissage
   (et non une récompense à côté), les enfants apprennent plus et jouent sept fois plus longtemps
   de leur plein gré.
+- **Les récompenses attendues et liées à la tâche** (« fais ceci et tu auras cela ») font baisser
+  la motivation intrinsèque : des enfants de maternelle à qui l'on avait promis un diplôme pour
+  dessiner dessinaient ensuite moins d'eux-mêmes (Lepper, Greene et Nisbett, 1973) ; la
+  méta-analyse de Deci, Koestner et Ryan (1999, 128 études) confirme l'effet pour les récompenses
+  tangibles attendues, et le trouve plus fort chez les enfants. Les retours qui informent sur la
+  compétence (étoiles, progrès visibles) ne l'ont pas.
 - **Les détails séduisants nuisent** : les animations et décorations sans lien avec la tâche font
   baisser l'apprentissage, surtout chez les enfants (méta-analyses Rey, 2012 ; Sundararajan et
   Adesope, 2020). Les fêtes et effets viennent donc **après** la réponse, jamais pendant.
@@ -120,7 +126,7 @@ et pour les plus solides scientifiquement, une progression explicite.
 | La boîte, les décompositions | **La grotte** : des blocs entrent dans une grotte, combien sont cachés ? ; **Faire dix** avec un cadre de dix ; **Dix et encore** pour 11 à 20 |
 | Comparer, subitizing | **Le plus grand tas**, **Quel nombre est le plus grand ?**, coup d'œil sur dés et cadres de dix |
 | Problèmes | Petits problèmes racontés (ajouter, enlever) avec images puis l'écriture « 3 + 2 » |
-| Intégration intrinsèque | Les blocs gagnés en apprenant servent à colorier et réveiller des héros et à construire ; la lettre tracée devient un mur de blocs ; la course est un jeu de nombres |
+| Intégration intrinsèque, récompenses méritées | Les **étoiles** (le progrès) réveillent les héros, un nouvel ami toutes les 5 étoiles ; les blocs viennent avec la partie finie (1 à 3 selon les étoiles, 1 seul en rejouant un niveau déjà réussi à 3 étoiles), pas avec chaque réponse, et servent à construire la maison ; après le coffre, Pixel propose « À demain ? ». La lettre tracée devient un mur de blocs ; la course est un jeu de nombres |
 | Pas de distraction pendant la tâche | Écran de jeu épuré ; effets seulement après la réponse |
 | Féliciter le processus | Après une réussite au deuxième essai : « Tu as réessayé, et tu as trouvé ! » ; compliments neutres en genre |
 | Répétition espacée et entrelacée | Boîtes de Leitner par élément, et une question de **révision** d'un niveau déjà réussi glissée dans chaque partie |

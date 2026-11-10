@@ -4,7 +4,7 @@
 import { currentVoice, DEVICE_AUTO, onVoices, recordedCount, setVoiceChoice, sfx, speechAvailable, voiceChoice, voiceList } from '../audio';
 import { HEROES } from '../content/heroes';
 import { TIPS } from '../content/tips';
-import { ACTIVITY_NAMES, applyGrade, CHAPTERS, chapterOf, currentLevel, GRADE_NAMES, LEVEL_NAMES, MAX_LEVEL, parentSetLevel, unlockedLevel } from '../levels';
+import { ACTIVITY_NAMES, applyGrade, CHAPTERS, chapterOf, currentLevel, GRADE_NAMES, LEVEL_NAMES, MAX_LEVEL, parentSetLevel, totalStars, unlockedLevel } from '../levels';
 import { foxSVG } from '../pixel';
 import { playedMinutes, resetPlayClock } from '../playtime';
 import { currentProfile, profileName, profiles, resetAll, save, state, today, totalBlocks, type ActivityId, type Grade } from '../state';
@@ -304,11 +304,11 @@ export function parentsScreen(ctx: Ctx): void {
           'section',
           { class: 'card' },
           h('h2', {}, 'En bref'),
-          h('p', {}, `Blocs en réserve : ${totalBlocks()} · Héros réveillés : ${done} sur ${HEROES.length}`),
+          h('p', {}, `Étoiles : ${totalStars()} · Héros réveillés : ${done} sur ${HEROES.length} · Blocs en réserve : ${totalBlocks()}`),
           h(
             'p',
             { class: 'muted' },
-            'Chaque bonne réponse rapporte un bloc ; les blocs servent à colorier les héros et à construire la maison. Un niveau se débloque quand l’enfant réussit 80 % des réponses du premier coup. Pastilles : ',
+            'Les étoiles gagnées dans les niveaux réveillent les héros (un nouveau toutes les 5 étoiles), que l’enfant colorie ensuite. Chaque partie finie rapporte 1 à 3 blocs selon les étoiles (1 seul en rejouant un niveau déjà à 3 étoiles) ; les blocs servent à construire la maison. Un niveau se débloque quand l’enfant réussit 80 % des réponses du premier coup. Pastilles : ',
             h('span', { class: 'chip box3' }, 'acquis'),
             ' ',
             h('span', { class: 'chip box2' }, 'en cours'),

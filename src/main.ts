@@ -7,15 +7,15 @@ import { beginScreen } from './nav';
 import { overLimit, startPlayClock, tickPlayClock } from './playtime';
 import { activityScreen } from './screens/activity';
 import { buildScreen } from './screens/build';
-import { chestReady, missionStrip, nextInMission, openChest } from './screens/chest';
+import { chestReady, missionStrip, nextInMission, openChest, restScreen } from './screens/chest';
 import { colorScreen, currentHero, heroesScreen } from './screens/heroes';
 import { mapScreen } from './screens/map';
 import { askWhoOnce, whoButton } from './screens/profiles';
 import { parentGate, parentsScreen, pauseScreen } from './screens/parents';
 import type { Ctx, ScreenName } from './screens/types';
-import { parentsSeen, welcomeDialog } from './screens/welcome';
+import { coachParents, parentsSeen, takeCoach, welcomeDialog } from './screens/welcome';
 import { mission, state, type ActivityId } from './state';
-import { blockImg, bubble, counter, h, installTapFix, mascot } from './ui';
+import { blockImg, bubble, counter, h, installTapFix, mascot, reducedMotion, setBubble } from './ui';
 
 const app = document.getElementById('app')!;
 let shown: ScreenName = 'home';
@@ -45,15 +45,24 @@ function go(name: ScreenName, activity?: ActivityId): void {
       return colorScreen(ctx);
     case 'pause':
       return pauseScreen(ctx);
+    case 'rest':
+      return restScreen(ctx);
   }
 }
 
 /** when home last spoke (see the end of homeScreen) */
 let homeSpoke = -1e9;
+/** Pixel introduced itself in this visit (a child who has not played yet hears it on each launch) */
+let introduced = false;
+
+/** this child has not finished a single game yet */
+function brandNew(): boolean {
+  return Object.keys(state.stats).length === 0 && Object.values(state.stars).every((l) => l.length === 0);
+}
 
 function homeScreen(ctx: Ctx): void {
   const welcome =
-    'Coucou ! Je suis Pixel. Chaque jour, on part à l’aventure : on lit, on écrit et on compte ! Avec les blocs gagnés, tu colories tes amis et tu construis ta maison.';
+    'Coucou ! Je suis Pixel. Chaque jour, on part à l’aventure : on lit, on écrit et on compte ! Avec tes étoiles, tu réveilles tes amis. Avec les blocs, tu construis ta maison.';
 
   const tile = (label: string, icon: Node, cls: string, onTap: () => void, level?: number) => {
     const text = h('span', { class: 'tile-text' }, h('span', { class: 'tile-label' }, label));
@@ -96,6 +105,8 @@ function homeScreen(ctx: Ctx): void {
     void ctx.say(adventureSpeech);
   };
 
+  const fox = mascot(130, () => void ctx.say(welcome));
+  const bub = bubble(ready ? 'Un coffre t’attend !' : 'Coucou ! On joue ?');
   const parents = h('button', { class: `parents${parentsSeen() ? '' : ' unseen'}` }, 'Parents');
   parents.onclick = () => parentGate(() => ctx.go('parents'));
   const who = whoButton();
@@ -105,7 +116,7 @@ function homeScreen(ctx: Ctx): void {
       'main',
       { class: 'screen home' },
       h('header', { class: 'topbar' }, h('div', { class: 'top-left' }, parents, who ?? ''), h('h1', { class: 'logo' }, 'SchoolCraft'), counter()),
-      h('div', { class: 'hero' }, mascot(130, () => void ctx.say(welcome)), bubble(ready ? 'Un coffre t’attend !' : 'Coucou ! On joue ?')),
+      h('div', { class: 'hero' }, fox, bub),
       adventure,
       h(
         'nav',
@@ -120,16 +131,28 @@ function homeScreen(ctx: Ctx): void {
     ),
   );
 
-  const welcoming = state.settings.grade === null;
-  if (welcoming) welcomeDialog(ctx);
-  else askWhoOnce();
   // back home after playing: Pixel says what comes next (speech needs a first touch on some devices).
-  // Home drawn again right away (class chosen, child picked) does not say it twice, and Pixel
-  // keeps quiet while the parents fill in the welcome dialog.
-  if (!welcoming && navigator.userActivation?.hasBeenActive && performance.now() - homeSpoke > 3000) {
+  // A child who has not played yet first hears Pixel introduce itself. Home drawn again right away
+  // (class chosen, child picked) does not say it twice.
+  const speak = () => {
+    if (!navigator.userActivation?.hasBeenActive || performance.now() - homeSpoke < 3000) return;
     homeSpoke = performance.now();
     const started = mission().done.length > 0;
-    void ctx.say(ready ? "Bravo, tu as fini l'aventure du jour ! Ouvre ton coffre !" : todo ? (started ? "Touche l'aventure du jour pour continuer !" : "Touche l'aventure du jour pour commencer !") : 'Tu peux colorier tes amis, ou construire ta maison !');
+    const next = ready ? "Bravo, tu as fini l'aventure du jour ! Ouvre ton coffre !" : todo ? (started ? "Touche l'aventure du jour pour continuer !" : "Touche l'aventure du jour pour commencer !") : 'Tu peux colorier tes amis, ou construire ta maison !';
+    if (!introduced && brandNew()) {
+      introduced = true;
+      setBubble(bub, 'Coucou ! Je suis Pixel !');
+      if (!reducedMotion()) fox.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-18px)' }, { transform: 'translateY(0)' }], { duration: 380, iterations: 2 });
+      void ctx.say(welcome).then(() => (ctx.alive() ? ctx.say(next) : undefined));
+    } else void ctx.say(next);
+  };
+  // Pixel keeps quiet while the parents fill in the welcome dialog, and while the coach mark
+  // shows them their area: it speaks to the child once the device is handed over
+  if (state.settings.grade === null) welcomeDialog(ctx);
+  else if (takeCoach()) coachParents(speak);
+  else {
+    askWhoOnce();
+    speak();
   }
 }
 

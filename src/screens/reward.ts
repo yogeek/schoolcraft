@@ -7,26 +7,34 @@ import { beginScreen } from '../nav';
 import { state, type ActivityId, type BlockType } from '../state';
 import { blockImg, bubble, h, mascot, topBar } from '../ui';
 import { chestReady, missionStrip, nextInMission, openChest } from './chest';
-import { currentHero } from './heroes';
+import { readyHero } from './heroes';
 import type { Ctx } from './types';
 
 const VERB: Record<ActivityId, string> = { sounds: 'lire', write: 'écrire', count: 'compter' };
 
-/** `advanced`: this game moved today's adventure on (its first game of this activity today) */
-export function rewardScreen(prev: Ctx, won: BlockType[], replay: ActivityId, result: SessionResult, advanced = true): void {
+/**
+ * `advanced`: this game moved today's adventure on (its first game of this activity today);
+ * `newFriend`: its stars made a hero ready to colour.
+ */
+export function rewardScreen(prev: Ctx, won: BlockType[], replay: ActivityId, result: SessionResult, { advanced = true, newFriend = false } = {}): void {
   // a new screen: the activity's pending speech and timers stop here
   const ctx: Ctx = { go: prev.go, root: prev.root, ...beginScreen(prev.root) };
   sfx.fanfare();
   const n = won.length;
   const blocks = `Tu as gagné ${n} bloc${n > 1 ? 's' : ''} !`;
-  const hero = currentHero();
+  const hero = readyHero();
   const next = nextInMission();
   const chest = chestReady();
   // the next step of the adventure is announced once, when this game advanced it: a child who chose to
   // go on with the same activity (« Niveau suivant ») does not hear « on va écrire » after every level
   // (the « Continuer » button still shows the adventure)
   // no question the child cannot answer (« On continue ? »), and never "ton héros" / "tes héros" in speech: voices sometimes glue the words (« tes-z-héros »)
-  const invite = chest ? "Tu as fini l'aventure du jour : un coffre t'attend !" : next && advanced ? `Maintenant, on va ${VERB[next]} !` : hero ? 'Tu veux colorier un ami ?' : 'Tu peux construire ta maison !';
+  const invite = [
+    newFriend ? 'Tes étoiles réveillent un ami !' : '',
+    chest ? "Tu as fini l'aventure du jour : un coffre t'attend !" : next && advanced ? `Maintenant, on va ${VERB[next]} !` : hero ? 'Tu veux colorier un ami ?' : 'Tu peux construire ta maison !',
+  ]
+    .filter(Boolean)
+    .join(' ');
   let title = 'Bravo !';
   let speech: string;
   if (result.next && result.isNew) {

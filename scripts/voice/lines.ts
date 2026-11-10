@@ -116,6 +116,10 @@ for (const hero of HEROES) {
   add(hero.line);
   for (const z of Object.values(hero.palette)) add(/^[aeiouyéèêh]/i.test(z.name) ? `L'${z.name}.` : `Le ${z.name}.`);
 }
+// the next hero wakes up with stars (screens/heroes.ts: starsLine)
+add('Encore une étoile, et un ami se réveille !');
+for (const n of ['deux', 'trois', 'quatre', 'cinq']) add(`Encore ${n} étoiles, et un ami se réveille !`);
+add('Gagne des étoiles pour les réveiller.');
 for (const n of range(1, 9)) {
   add(`Touche les cases avec le chiffre : ${NUMBERS[n]} !`);
   add(`Ici, c'est le chiffre ${NUMBERS[n]}.`);

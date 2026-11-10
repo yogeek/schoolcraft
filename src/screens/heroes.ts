@@ -1,14 +1,45 @@
 // Mini-jeu récompense : colorier des héros (coloriage magique numéroté), qui s'animent une fois finis
-// et rejoignent la collection « Mes héros ». Chaque couleur posée coûte un bloc gagné en jouant.
+// et rejoignent la collection « Mes héros ». Un héros se réveille avec les étoiles gagnées dans les
+// niveaux (pas avec des blocs : une récompense qu'on achète en rejouant un niveau facile pousse à
+// « farmer » au lieu d'apprendre) ; le colorier est ensuite gratuit.
 // Voix : on ne dit jamais « tes héros » / « les héros » (certaines voix lient : « tes-z-héros »).
 import { sfx } from '../audio';
 import { HEROES, regions, type Hero } from '../content/heroes';
 import { burst, heroSVG, isComplete } from '../heroArt';
-import { save, spendBlock, state, totalBlocks } from '../state';
-import { bubble, setBubble, bumpCounter, h, mascot, reducedMotion, topBar } from '../ui';
+import { totalStars } from '../levels';
+import { save, state } from '../state';
+import { bubble, setBubble, h, mascot, reducedMotion, topBar } from '../ui';
 import type { Ctx } from './types';
 
 const NUMBERS = ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf'];
+
+/** Stars needed (over all the levels) before hero number `i` (0 = the first) can be coloured: a new
+ *  friend every 5 stars, about one every 2 or 3 levels passed. */
+export function starsNeeded(i: number): number {
+  return 3 + 5 * i;
+}
+
+/** Stars still missing before the next hero can be coloured (0 when one is ready, or all are awake). */
+export function starsToNextHero(): number {
+  const hero = currentHero();
+  if (!hero) return 0;
+  return Math.max(0, starsNeeded(HEROES.indexOf(hero)) - totalStars());
+}
+
+/** The hero the child can colour now: the next one, once enough stars are won. A hero already
+ *  started (coloured with blocks before stars woke heroes) stays open. */
+export function readyHero(): Hero | null {
+  const hero = currentHero();
+  if (!hero) return null;
+  return (state.heroes.filled[hero.id]?.length ?? 0) > 0 || starsToNextHero() === 0 ? hero : null;
+}
+
+const FEM = ['zéro', 'une', 'deux', 'trois', 'quatre', 'cinq'];
+/** « Encore trois étoiles, et un ami se réveille ! » (the gap is at most 5 stars, except in old saves) */
+export function starsLine(n: number): string {
+  if (n < 1 || n >= FEM.length) return 'Gagne des étoiles pour les réveiller.';
+  return n === 1 ? 'Encore une étoile, et un ami se réveille !' : `Encore ${FEM[n]} étoiles, et un ami se réveille !`;
+}
 
 /** The hero waiting to be coloured (null when all are awake). Repairs a hero coloured but not marked done. */
 export function currentHero(): Hero | null {
@@ -30,6 +61,8 @@ function filledOf(hero: Hero): string[] {
 // ---------------------------------------------------------------- album
 export function heroesScreen(ctx: Ctx): void {
   const current = currentHero();
+  const ready = readyHero();
+  const missing = starsToNextHero();
   const grid = h('div', { class: 'album' });
 
   for (const hero of HEROES) {
@@ -40,26 +73,35 @@ export function heroesScreen(ctx: Ctx): void {
     if (done) {
       art = heroSVG(hero, 'all', 96, 'idle');
       label = hero.name;
-    } else if (isCurrent) {
+    } else if (isCurrent && ready) {
       art = heroSVG(hero, new Set(filledOf(hero)), 96);
       label = 'À colorier';
+    } else if (isCurrent) {
+      art = heroSVG(hero, 'silhouette', 96);
+      label = `encore ${missing} ★`;
     } else {
       art = heroSVG(hero, 'silhouette', 96);
       label = '???';
     }
     const card = h(
       'button',
-      { class: `hero-card${done ? ' done' : ''}${isCurrent ? ' current' : ''}${!done && !isCurrent ? ' locked' : ''}`, 'aria-label': done ? `${hero.name}, ${hero.title}` : label },
+      {
+        class: `hero-card${done ? ' done' : ''}${isCurrent && ready ? ' current' : ''}${isCurrent && !ready ? ' next' : ''}${!done && !(isCurrent && ready) ? ' locked' : ''}`,
+        'aria-label': done ? `${hero.name}, ${hero.title}` : isCurrent && !ready ? `Encore ${missing} étoiles` : label,
+      },
       h('div', { class: 'hero-art', html: art }),
-      h('span', {}, label),
+      isCurrent && !ready ? h('span', { class: 'need' }, `${missing} ★`) : h('span', {}, label),
     );
     card.onclick = () => {
       sfx.unlock();
       if (done) showHero(hero, false, ctx);
-      else if (isCurrent) ctx.go('color');
-      else {
+      else if (isCurrent && ready) ctx.go('color');
+      else if (isCurrent) {
         sfx.oops();
-        void ctx.say("Celui-là dort encore. Colorie d'abord le personnage qui t'attend !");
+        void ctx.say(starsLine(missing));
+      } else {
+        sfx.oops();
+        void ctx.say(ready ? "Celui-là dort encore. Colorie d'abord le personnage qui t'attend !" : `Celui-là dort encore. ${starsLine(missing)}`);
       }
     };
     grid.append(card);
@@ -67,13 +109,16 @@ export function heroesScreen(ctx: Ctx): void {
 
   const count = state.heroes.done.length;
   const all = count >= HEROES.length;
-  const bubbleText = count === 0 ? 'Colorie ton premier héros !' : all ? 'Tu as tous les héros !' : `${count} héros sur ${HEROES.length}`;
-  const speech =
-    count === 0
-      ? 'Voici tes amis. Ils dorment ! Colorie-les pour les réveiller.'
-      : all
-        ? 'Bravo, tu as réveillé tout le monde ! Touche un ami pour le voir.'
-        : 'Voici tes amis ! Touche celui qui brille pour le colorier.';
+  const bubbleText = all ? 'Tu as tous les héros !' : ready ? (count === 0 ? 'Colorie ton premier héros !' : `${count} héros sur ${HEROES.length}`) : `Encore ${missing} ★ !`;
+  const speech = all
+    ? 'Bravo, tu as réveillé tout le monde ! Touche un ami pour le voir.'
+    : ready
+      ? count === 0
+        ? 'Voici tes amis. Ils dorment ! Colorie-les pour les réveiller.'
+        : 'Voici tes amis ! Touche celui qui brille pour le colorier.'
+      : count === 0
+        ? `Voici tes amis. Ils dorment ! ${starsLine(missing)}`
+        : `Voici tes amis ! ${starsLine(missing)}`;
   ctx.root.append(
     h(
       'main',
@@ -134,7 +179,7 @@ function showHero(hero: Hero, isNew: boolean, ctx: Ctx): void {
 
 // ---------------------------------------------------------------- colouring
 export function colorScreen(ctx: Ctx): void {
-  const hero = currentHero();
+  const hero = readyHero();
   if (!hero) return ctx.go('heroes');
   const zones = regions(hero);
   const filled = filledOf(hero);
@@ -165,7 +210,7 @@ export function colorScreen(ctx: Ctx): void {
 
   const palette = h('div', { class: 'paint-palette' });
   const bub = bubble('Qui est-ce ?');
-  const instructions = 'Qui est-ce ? Colorie pour le découvrir ! Choisis une couleur en bas, puis touche les cases avec le même chiffre. Chaque couleur coûte un bloc.';
+  const instructions = 'Qui est-ce ? Colorie pour le découvrir ! Choisis une couleur en bas, puis touche les cases avec le même chiffre.';
 
   function paintCell(c: (typeof cells)[number]): void {
     c.el.style.background = hero!.palette[c.zone].color;
@@ -214,13 +259,7 @@ export function colorScreen(ctx: Ctx): void {
       await ctx.say(`Ici, c'est le chiffre ${NUMBERS[n]}. Cherche le chiffre ${NUMBERS[want]} !`);
       return;
     }
-    if (!spendBlock()) {
-      sfx.oops();
-      showNoBlocks();
-      return;
-    }
     busy = true;
-    bumpCounter();
     sfx.place();
     filled.push(zone);
     const complete = isComplete(hero!, filled);
@@ -255,23 +294,9 @@ export function colorScreen(ctx: Ctx): void {
     if (my === talk && selected && !busy) void sayColour(selected);
   }
 
-  function showNoBlocks(): void {
-    setBubble(bub, 'Il te faut des blocs !');
-    void ctx.say('Il te faut des blocs pour colorier. Joue à lire ou à compter pour en gagner !');
-    actions.hidden = false;
-  }
-
-  const read = h('button', { class: 'btn' }, 'Lire');
-  read.onclick = () => ctx.go('sounds');
-  const count = h('button', { class: 'btn' }, 'Compter');
-  count.onclick = () => ctx.go('count');
-  const actions = h('div', { class: 'actions small' }, read, count);
-  actions.hidden = true;
-
   const repeat = () => {
     const my = ++talk;
-    if (totalBlocks() === 0) showNoBlocks();
-    else if (selected)
+    if (selected)
       void ctx.say(filled.length === 0 ? instructions : 'On continue le coloriage !').then(() => {
         if (my === talk && selected && !busy) void sayColour(selected);
       });
@@ -283,7 +308,6 @@ export function colorScreen(ctx: Ctx): void {
       { class: 'screen color' },
       topBar(() => ctx.go('home'), 'Coloriage'),
       h('div', { class: 'hero small' }, mascot(70, repeat), bub),
-      actions,
       h('div', { class: 'paint-wrap' }, grid),
       palette,
     ),
