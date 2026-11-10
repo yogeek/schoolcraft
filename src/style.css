@@ -2264,7 +2264,10 @@ button span,
     outline: 6px solid var(--gold);
   }
 }
-.choice.hint {
+.choice.hint,
+.truth.hint,
+.pile-choice.hint,
+.square.hint {
   outline: 6px solid #fff;
   animation: pop 1s ease-in-out infinite;
 }

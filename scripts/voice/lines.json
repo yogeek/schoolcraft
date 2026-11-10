@@ -112,6 +112,10 @@
   "text": "On compte ensemble !"
  },
  {
+  "key": "regarde celui qui brille!",
+  "text": "Regarde celui qui brille !"
+ },
+ {
   "key": "regarde bien!",
   "text": "Regarde bien !"
  },
@@ -271,10 +275,6 @@
   "key": "bravo, tu as trouvé!",
   "text": "Bravo, tu as trouvé !",
   "tag": "praise"
- },
- {
-  "key": "regarde celui qui brille!",
-  "text": "Regarde celui qui brille !"
  },
  {
   "key": "lis le mot, et touche la bonne image.",
@@ -12908,8 +12908,8 @@
   "text": "Ça, c'est dix."
  },
  {
-  "key": "ce tas a un blocs.",
-  "text": "Ce tas a un blocs."
+  "key": "ce tas a un bloc.",
+  "text": "Ce tas a un bloc."
  },
  {
   "key": "ce tas a deux blocs.",

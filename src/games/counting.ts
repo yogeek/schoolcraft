@@ -69,6 +69,16 @@ async function countTogether(r: Round, els: Element[]): Promise<void> {
   r.hold(false);
 }
 
+/** the last help, after the child was counted with: the right answer shines (as in Lire) */
+async function shine(r: Round, el: Element | null | undefined): Promise<void> {
+  if (!el || !r.open()) return;
+  el.classList.add('hint');
+  await r.say('Regarde celui qui brille !');
+}
+
+/** the number button showing `n` */
+const numberEl = (r: Round, n: number) => [...r.choices.querySelectorAll('.choice')].find((e) => e.getAttribute('aria-label') === String(n));
+
 function shake(el: Element): void {
   el.classList.remove('shake');
   void (el as HTMLElement).offsetWidth;
@@ -150,6 +160,7 @@ function countGame(level: CountLevel): Game {
           pile.classList.remove('covered');
           pile.querySelectorAll('.counted').forEach((b) => b.classList.remove('counted'));
           await r.say(`Ça, c'est le nombre ${W[k]}.`);
+          if (r.misses >= 3) return shine(r, numberEl(r, target));
           await countTogether(r, [...pile.querySelectorAll('.pile-block, .frame-cell.full')]);
           if (r.open()) await r.say('Combien y a-t-il de blocs ?');
           return;
@@ -217,7 +228,9 @@ function compareGame(level: CountLevel): Game {
               });
             }
             r.miss(b);
-            await r.say(digits ? `Ça, c'est ${W[n]}. Cherche ${word()} !` : `Ce tas a ${W[n]} blocs. Cherche le tas qui en a ${word()} !`);
+            // two answers only: the hint first, then the right one shines
+            if (r.misses >= 2) return shine(r, [...r.choices.children].find((x) => x !== b));
+            await r.say(digits ? `Ça, c'est ${W[n]}. Cherche ${word()} !` : `Ce tas a ${n === 1 ? 'un bloc' : `${W[n]} blocs`}. Cherche le tas qui en a ${word()} !`);
           };
           return b;
         }),
@@ -343,6 +356,7 @@ function raceGame(level: CountLevel): Game {
         if (n !== target) {
           r.miss(sq);
           await r.say(`Tu es sur ${pos === 0 ? 'le départ' : `le ${W[pos]}`}. Tu avances de ${W[roll]}.`);
+          if (r.misses >= 3) return shine(r, squares[target]);
           if (r.misses >= 2 && r.open()) {
             // count the squares together, without moving
             r.hold(true);
@@ -454,6 +468,7 @@ function hideGame(level: CountLevel): Game {
         }
         r.miss(el);
         await r.say(`Il y avait ${W[n]} blocs. Il en reste ${W[n - k]} dehors.`);
+        if (r.misses >= 3) return shine(r, numberEl(r, k));
         // after two mistakes, the hidden places show (count them)
         if (r.misses >= 2) cave.classList.add('hint');
         if (r.open()) await r.say(r.misses >= 2 ? 'Compte les places dans la grotte !' : 'Combien sont cachés ?');
@@ -505,7 +520,10 @@ function make10Game(level: CountLevel): Game {
         }
         r.miss(el);
         empty.forEach((c) => c.classList.add('glow'));
-        if (r.misses >= 2) {
+        if (r.misses >= 3) {
+          empty.forEach((c) => c.classList.remove('glow'));
+          await shine(r, numberEl(r, 10 - n));
+        } else if (r.misses >= 2) {
           empty.forEach((c) => c.classList.remove('glow'));
           await countTogether(r, empty);
         } else await r.say('Compte les cases vides !');
@@ -567,6 +585,7 @@ function addGame(level: CountLevel): Game {
         pile.querySelectorAll('.counted').forEach((b) => b.classList.remove('counted'));
         if (r.misses >= 2) {
           await r.say(`Ça, c'est le nombre ${W[k]}.`);
+          if (r.misses >= 3) return shine(r, numberEl(r, target));
           await countTogether(r, [...pile.querySelectorAll('.pile-block')]);
           return;
         }
@@ -626,6 +645,7 @@ function problemGame(level: CountLevel): Game {
           });
         }
         r.miss(el);
+        if (r.misses >= 3) return shine(r, numberEl(r, result()));
         if (r.misses >= 2) {
           await countTogether(r, [...r.stage.querySelectorAll('.thing:not(.gone)')]);
           return;
@@ -701,9 +721,11 @@ function tensGame(level: CountLevel): Game {
         }
         r.miss(el);
         if (n === 20) {
+          if (r.misses >= 2) return shine(r, numberEl(r, n));
           await r.say('Deux tours de dix. Dix, et encore dix !');
           return;
         }
+        if (r.misses >= 3) return shine(r, numberEl(r, n));
         await r.say('Une tour, c’est dix. Compte à partir de dix !');
         if (r.misses >= 2 && r.open()) {
           r.hold(true);

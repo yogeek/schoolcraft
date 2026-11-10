@@ -288,7 +288,7 @@ each(1, 20, (n) => W[n]); // counting one by one, the race, 11 to 20
 each(0, 9, (n) => `${W[n]} !`); // a die roll, a traced digit
 each(1, 10, (n) => `Ça, c'est le nombre ${W[n]}.`);
 each(1, 10, (n) => `Ça, c'est ${W[n]}.`);
-each(1, 6, (n) => `Ce tas a ${W[n]} blocs.`);
+each(1, 6, (n) => (n === 1 ? "Ce tas a un bloc." : `Ce tas a ${W[n]} blocs.`));
 each(1, 10, (n) => `Il y a ${W[n]} bloc${n > 1 ? 's' : ''} !`);
 each(3, 10, (n) => `Il y a ${W[n]} blocs.`);
 each(3, 10, (n) => `Il y avait ${W[n]} blocs.`);
