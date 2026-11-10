@@ -125,7 +125,7 @@ et pour les plus solides scientifiquement, une progression explicite.
 | Féliciter le processus | Après une réussite au deuxième essai : « Tu as réessayé, et tu as trouvé ! » ; compliments neutres en genre |
 | Répétition espacée et entrelacée | Boîtes de Leitner par élément, et une question de **révision** d'un niveau déjà réussi glissée dans chaque partie |
 | Progression visible, autonomie | Une **carte** par activité (chapitres, étoiles, niveau qui brille) ; l'enfant choisit parmi les niveaux atteints |
-| Séances courtes, régularité sans pression | **L'aventure du jour** : lire, écrire, compter (environ 10 minutes), un coffre à la fin. Pas de série à ne pas casser : on collectionne les coffres, on ne perd jamais rien |
+| Séances courtes, régularité sans pression | **L'aventure du jour** : lire, écrire, compter (environ 10 minutes), un coffre à la fin. Pas de série à ne pas casser : on collectionne les coffres, on ne perd jamais rien <br>Au premier lancement, les parents choisissent une durée par séance (15 minutes proposées par défaut) : l'OMS (2019) conseille au plus une heure d'écran par jour avant 5 ans, et la commission « Enfants et écrans » (2024) un usage modéré et accompagné avant 6 ans |
 | Pilier social | Espace parents : classe de l'enfant (MS, GS, CP) pour choisir le point de départ, progrès par compétence, et des **idées d'activités à faire ensemble** liées à ce que l'enfant travaille |
 | Données | Rien ne quitte l'appareil, pas de compte, pas de publicité, pas de micro |
 

@@ -355,9 +355,15 @@ function speakDevice(text: string, opts: { rate?: number; pitch?: number }): Pro
  */
 export async function say(text: string, opts: SayOpts = {}): Promise<void> {
   stopSpeech();
-  const files = useClips() ? clipsFor(text) : null;
   const my = ++sayToken;
   const current = () => my === sayToken;
+  // right after a reload (switching child), a screen can speak before the clip list has loaded:
+  // wait for it, or the device voice would say a sentence that has a clip
+  if (!clipList && useClips() && !MUTE) {
+    await clipsReady;
+    if (!current()) return;
+  }
+  const files = useClips() ? clipsFor(text) : null;
   // marks are recorded with the clip; otherwise (device voice) they are spread over time
   const timed = !!files && files.some((f) => markList[f]);
   if (MUTE) {

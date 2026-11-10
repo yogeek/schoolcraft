@@ -11,6 +11,7 @@ import { currentProfile, profileName, profiles, resetAll, save, state, today, to
 import { childrenCard } from './profiles';
 import { bubble, h, modal, topBar } from '../ui';
 import type { Ctx } from './types';
+import { markParentsSeen } from './welcome';
 
 /** The voice is the device's own: the parents can pick another one and listen to it. */
 function voiceCard(ctx: Ctx): HTMLElement {
@@ -195,6 +196,7 @@ function weekCard(): HTMLElement {
 }
 
 export function parentsScreen(ctx: Ctx): void {
+  markParentsSeen();
   const section = (activity: ActivityId) => {
     const title = ACTIVITY_NAMES[activity];
     const select = h('select', { 'aria-label': `Niveau ${title}` });

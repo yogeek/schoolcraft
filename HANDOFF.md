@@ -38,12 +38,9 @@ session, then `CLAUDE.md` (architecture, conventions) and `AGENTS.md` (how to wo
 
 The owner asked for these after a first real use. They were proposed on 2026-11-10 and not started.
 
-1. **A parent onboarding at first launch.** It goes after the class question, in the same dialog,
-   in writing (Pixel's voice is for the child). Pre-selecting 15 minutes is a proposal.
-   - Step 1: choose a session time limit (10, 15 or 20 min, or no limit).
-   - Step 2: a coach mark on the « Parents » button (« Ici : progrès, temps de jeu, niveau, voix.
-     Protégé par une petite multiplication. »).
-   - Until the parents' area has been visited once, a dot stays on the button.
+1. **A parent onboarding at first launch.** Done on 2026-11-10 (`src/screens/welcome.ts`), not
+   yet committed: class, then time per sitting (15 min pre-selected), then a coach mark on
+   « Parents », and a dot on that button until the parents' area is opened once on the device.
 2. **Rewards that are earned, not farmed.** The problem: blocks come too easily, and the child
    stays in the house or the album long after the exercises. Expected, task-contingent rewards
    lower intrinsic motivation (Lepper 1973; Deci, Koestner and Ryan 1999). The proposal:

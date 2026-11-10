@@ -2,7 +2,7 @@ import './style.css';
 import { prefetchVoice, sfx, stopSpeech } from './audio';
 import { HEROES } from './content/heroes';
 import { heroSVG } from './heroArt';
-import { applyGrade, currentLevel, GRADE_NAMES, parentSetLevel } from './levels';
+import { currentLevel, parentSetLevel } from './levels';
 import { beginScreen } from './nav';
 import { overLimit, startPlayClock, tickPlayClock } from './playtime';
 import { activityScreen } from './screens/activity';
@@ -13,8 +13,9 @@ import { mapScreen } from './screens/map';
 import { askWhoOnce, whoButton } from './screens/profiles';
 import { parentGate, parentsScreen, pauseScreen } from './screens/parents';
 import type { Ctx, ScreenName } from './screens/types';
-import { mission, save, state, type ActivityId, type Grade } from './state';
-import { blockImg, bubble, counter, h, installTapFix, mascot, modal } from './ui';
+import { parentsSeen, welcomeDialog } from './screens/welcome';
+import { mission, state, type ActivityId } from './state';
+import { blockImg, bubble, counter, h, installTapFix, mascot } from './ui';
 
 const app = document.getElementById('app')!;
 let shown: ScreenName = 'home';
@@ -95,7 +96,7 @@ function homeScreen(ctx: Ctx): void {
     void ctx.say(adventureSpeech);
   };
 
-  const parents = h('button', { class: 'parents' }, 'Parents');
+  const parents = h('button', { class: `parents${parentsSeen() ? '' : ' unseen'}` }, 'Parents');
   parents.onclick = () => parentGate(() => ctx.go('parents'));
   const who = whoButton();
 
@@ -119,44 +120,17 @@ function homeScreen(ctx: Ctx): void {
     ),
   );
 
-  if (state.settings.grade === null) askGrade(ctx);
+  const welcoming = state.settings.grade === null;
+  if (welcoming) welcomeDialog(ctx);
   else askWhoOnce();
   // back home after playing: Pixel says what comes next (speech needs a first touch on some devices).
-  // Home drawn again right away (class chosen, child picked) does not say it twice.
-  if (navigator.userActivation?.hasBeenActive && performance.now() - homeSpoke > 3000) {
+  // Home drawn again right away (class chosen, child picked) does not say it twice, and Pixel
+  // keeps quiet while the parents fill in the welcome dialog.
+  if (!welcoming && navigator.userActivation?.hasBeenActive && performance.now() - homeSpoke > 3000) {
     homeSpoke = performance.now();
     const started = mission().done.length > 0;
     void ctx.say(ready ? "Bravo, tu as fini l'aventure du jour ! Ouvre ton coffre !" : todo ? (started ? "Touche l'aventure du jour pour continuer !" : "Touche l'aventure du jour pour commencer !") : 'Tu peux colorier tes amis, ou construire ta maison !');
   }
-}
-
-/** First launch: the parents tell the class, so the child starts at the right place. */
-function askGrade(ctx: Ctx): void {
-  const pick = (g: Grade | null) => () => {
-    if (g) applyGrade(g);
-    else state.settings.grade = 'MS'; // "plus tard": start at the beginning, do not ask again
-    save();
-    dlg.close();
-    ctx.go('home');
-  };
-  const options = (['MS', 'GS', 'CP'] as Grade[]).map((g) => {
-    const b = h('button', { class: 'btn grade-btn' }, GRADE_NAMES[g]);
-    b.onclick = pick(g);
-    return b;
-  });
-  const later = h('button', { class: 'btn small' }, 'Commencer au début');
-  later.onclick = pick(null);
-  const dlg = modal({
-    title: 'Bienvenue !',
-    body: [
-      h('p', { class: 'center' }, 'Pour les parents : dans quelle classe est votre enfant ? Les jeux commenceront au bon niveau (modifiable dans l’espace Parents).'),
-      h('div', { class: 'grade-list' }, ...options),
-      later,
-    ],
-    actions: [],
-    dismissable: false,
-    cls: 'welcome-panel',
-  });
 }
 
 installTapFix();

@@ -2629,6 +2629,125 @@ button span,
 .welcome-panel .panel-actions {
   display: none;
 }
+.welcome-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.welcome-step {
+  margin: 0;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
+.limit-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.panel .limit-btn {
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 56px;
+  font-size: 1.1rem;
+  background: #fff;
+}
+.panel .limit-btn[aria-pressed='true'] {
+  background: var(--gold);
+}
+.limit-hint {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+/* phone held sideways: the whole step fits without scrolling */
+@media (orientation: landscape) and (max-height: 500px) {
+  .welcome-panel {
+    width: min(680px, 100%);
+    padding: 10px 16px;
+    gap: 6px;
+  }
+  .welcome-body {
+    gap: 8px;
+  }
+  .welcome-body p {
+    margin: 0;
+  }
+  .welcome-panel .grade-list,
+  .limit-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .limit-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .welcome-panel .grade-btn {
+    padding: 10px 8px;
+    font-size: 1.1rem;
+  }
+  .panel .limit-btn {
+    min-height: 48px;
+    padding: 6px 8px;
+  }
+  .welcome-panel .btn.green {
+    padding: 8px 20px;
+  }
+}
+/* the dot stays on « Parents » until the parents' area was opened once on this device */
+.parents.unseen {
+  position: relative;
+}
+.parents.unseen::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  right: 4px;
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  border: 2px solid var(--ink);
+}
+.overlay.coach {
+  display: block;
+  padding: 0;
+  background: none;
+}
+/* a spotlight: the ring's shadow darkens everything but the button */
+.coach-ring {
+  position: fixed;
+  border: 4px solid var(--gold);
+  box-shadow: 0 0 0 4px var(--ink), 0 0 0 100vmax rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+.coach-tip {
+  position: fixed;
+  width: min(300px, calc(100vw - 16px));
+  background: var(--paper);
+  border: 4px solid var(--ink);
+  box-shadow: 0 6px 0 var(--ink);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.coach-tip p {
+  margin: 0;
+  font-size: 1.05rem;
+}
+.coach-tip .btn {
+  align-self: flex-end;
+}
+.coach-tip::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 20px;
+  border: 8px solid transparent;
+  border-bottom-color: var(--ink);
+}
 .grade-row {
   display: flex;
   flex-wrap: wrap;
