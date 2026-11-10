@@ -502,7 +502,66 @@ img.block.mini {
     repeating-linear-gradient(90deg, #7d5939 0 calc(var(--cell) / 2), #8d6644 calc(var(--cell) / 2) var(--cell));
   background-color: var(--dirt);
 }
+/* Pixel's challenge, drawn in the bubble: a number and a block, or a pattern of blocks */
+.model {
+  --m: clamp(20px, 6vw, 28px);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  justify-content: center;
+}
+.model .block.mini {
+  width: var(--m);
+  height: var(--m);
+  transition: transform 0.15s;
+}
+.model .block.mini.lit {
+  transform: translateY(-6px) scale(1.15);
+  filter: drop-shadow(0 0 4px var(--gold));
+}
+.model .block.mini.shown {
+  outline: 2px dashed var(--ink);
+  outline-offset: 1px;
+}
+.model-slot.lit {
+  background: var(--gold);
+  animation: pop 0.6s ease-in-out infinite;
+}
+.model-cap {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-align: center;
+}
+.model-n {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-right: 4px;
+}
+.model-slot {
+  display: grid;
+  place-items: center;
+  width: var(--m);
+  height: var(--m);
+  border: 2px dashed var(--ink);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.btn.star-btn {
+  min-width: 56px;
+  min-height: 48px;
+  justify-content: center;
+  padding: 4px 14px;
+  font-size: 1.8rem;
+  background: var(--gold);
+  animation: pop 1.6s ease-in-out infinite;
+}
 .build-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
   padding: 0 0 calc(16px + env(safe-area-inset-bottom));
 }
 .btn.tidy {
@@ -1492,6 +1551,17 @@ button span,
   .screen.build > .build-actions {
     grid-column: 1;
     padding: 0 0 8px;
+  }
+  .screen.build > .hero .fox-btn svg {
+    width: 52px;
+    height: auto;
+  }
+  .screen.build > .hero .bubble {
+    padding: 6px 10px;
+  }
+  .screen.build > .palette .slot {
+    width: 44px;
+    height: 44px;
   }
   .screen.build > .world-wrap {
     grid-column: 2;

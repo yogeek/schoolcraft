@@ -30653,5 +30653,315 @@
   "sttCost": 1,
   "stt": "Gagne des étoiles pour les réveiller",
   "score": 1
+ },
+ "bravo, tu as réussi le défi!": {
+  "file": "97dee6ff-786260.mp3",
+  "text": "Bravo, tu as réussi le défi !",
+  "sent": "Bravo, tu as réussi le défi !",
+  "dur": 2.32,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Bravo, tu as réussi le défi",
+  "score": 1
+ },
+ "une tour de trois blocs!": {
+  "file": "8ea4f349-4453dc.mp3",
+  "text": "Une tour de trois blocs !",
+  "sent": "Une tour de trois blocs !",
+  "dur": 1.76,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Une tour de trois blocs",
+  "score": 1
+ },
+ "construis une tour de trois blocs!": {
+  "file": "bf1a3cdb-7bfd52.mp3",
+  "text": "Construis une tour de trois blocs !",
+  "sent": "Construis une tour de trois blocs !",
+  "dur": 2.16,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Construit une tour de trois blocs",
+  "score": 0.96
+ },
+ "il en faut trois.": {
+  "file": "534a3d90-7c4c98.mp3",
+  "text": "Il en faut trois.",
+  "sent": "Il en faut trois.",
+  "dur": 1.2,
+  "cost": 7,
+  "sttCost": 0,
+  "stt": "Il en faut trois",
+  "score": 1
+ },
+ "une tour de quatre blocs!": {
+  "file": "f7c99c06-242226.mp3",
+  "text": "Une tour de quatre blocs !",
+  "sent": "Une tour de quatre blocs !",
+  "dur": 2.08,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Une tour de quatre blocs",
+  "score": 1
+ },
+ "construis une tour de quatre blocs!": {
+  "file": "25a5375c-ce0360.mp3",
+  "text": "Construis une tour de quatre blocs !",
+  "sent": "Construis une tour de quatre blocs !",
+  "dur": 2.24,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Construit une tour de quatre blocs",
+  "score": 0.97
+ },
+ "il en faut quatre.": {
+  "file": "647f983d-0f152a.mp3",
+  "text": "Il en faut quatre.",
+  "sent": "Il en faut quatre.",
+  "dur": 1.2,
+  "cost": 7,
+  "sttCost": 0,
+  "stt": "Il en faut quatre",
+  "score": 1
+ },
+ "construis une tour de cinq blocs!": {
+  "file": "09a6a2dd-3c442f.mp3",
+  "text": "Construis une tour de cinq blocs !",
+  "sent": "Construis une tour de cinq blocs !",
+  "dur": 2,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Construit une tour de cinq blocs",
+  "score": 0.96
+ },
+ "une tour de cinq blocs!": {
+  "file": "0e978343-87fa4e.mp3",
+  "text": "Une tour de cinq blocs !",
+  "sent": "Une tour de cinq blocs !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Une tour de cinq blocs",
+  "score": 1
+ },
+ "il en faut cinq.": {
+  "file": "2b0ab268-800d94.mp3",
+  "text": "Il en faut cinq.",
+  "sent": "Il en faut cinq.",
+  "dur": 1.36,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Il en faut cinq",
+  "score": 1
+ },
+ "une tour de six blocs!": {
+  "file": "94f98704-cd469b.mp3",
+  "text": "Une tour de six blocs !",
+  "sent": "Une tour de six blocs !",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Une tour de six blocs",
+  "score": 1
+ },
+ "construis une tour de six blocs!": {
+  "file": "13395a16-9f3904.mp3",
+  "text": "Construis une tour de six blocs !",
+  "sent": "Construis une tour de six blocs !",
+  "dur": 2.08,
+  "cost": 13,
+  "sttCost": 1,
+  "stt": "Construit une tour de six blocs",
+  "score": 0.96
+ },
+ "il en faut six.": {
+  "file": "68afd001-adfa35.mp3",
+  "text": "Il en faut six.",
+  "sent": "Il en faut six.",
+  "dur": 1.36,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Il en faut six",
+  "score": 1
+ },
+ "construis une tour de sept blocs!": {
+  "file": "bbff2e72-6cde40.mp3",
+  "text": "Construis une tour de sept blocs !",
+  "sent": "Construis une tour de sept blocs !",
+  "dur": 2,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Construit une tour de sept blocs",
+  "score": 0.96
+ },
+ "il en faut sept.": {
+  "file": "c33e9503-b7e803.mp3",
+  "text": "Il en faut sept.",
+  "sent": "Il en faut sept.",
+  "dur": 1.36,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Il en faut sept",
+  "score": 1
+ },
+ "une tour de sept blocs!": {
+  "file": "bc412ccc-138545.mp3",
+  "text": "Une tour de sept blocs !",
+  "sent": "Une tour de sept blocs !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Une tour de sept blocs",
+  "score": 1
+ },
+ "ta tour a quatre blocs.": {
+  "file": "02eb9b90-d8f08f.mp3",
+  "text": "Ta tour a quatre blocs.",
+  "sent": "Ta tour a quatre blocs.",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Ta tour a quatre blocs",
+  "score": 1
+ },
+ "ta tour a cinq blocs.": {
+  "file": "8fe6c2a1-10465a.mp3",
+  "text": "Ta tour a cinq blocs.",
+  "sent": "Ta tour a cinq blocs.",
+  "dur": 1.92,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Ta tour a cinq blocs",
+  "score": 1
+ },
+ "ta tour a six blocs.": {
+  "file": "b1d75b98-dcbaeb.mp3",
+  "text": "Ta tour a six blocs.",
+  "sent": "Ta tour a six blocs.",
+  "dur": 1.68,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Ta tour a six blocs",
+  "score": 1
+ },
+ "ta tour a sept blocs.": {
+  "file": "000b3656-54ea4a.mp3",
+  "text": "Ta tour a sept blocs.",
+  "sent": "Ta tour a sept blocs.",
+  "dur": 1.76,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Ta tour a sept blocs",
+  "score": 1
+ },
+ "recopie ce motif!": {
+  "file": "db754cca-f3f4b6.mp3",
+  "text": "Recopie ce motif !",
+  "sent": "Recopie ce motif !",
+  "dur": 1.52,
+  "cost": 7,
+  "sttCost": 0,
+  "stt": "Recopie ce motif",
+  "score": 1
+ },
+ "touche l'étoile pour un nouveau défi!": {
+  "file": "9f857a0d-b8adbc.mp3",
+  "text": "Touche l'étoile pour un nouveau défi !",
+  "sent": "Touche l'étoile pour un nouveau défi !",
+  "dur": 2.08,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Touche l'étoile pour un nouveau défi",
+  "score": 1
+ },
+ "ta tour a deux blocs.": {
+  "file": "bb437474-93d3e0.mp3",
+  "text": "Ta tour a deux blocs.",
+  "sent": "Ta tour a deux blocs.",
+  "dur": 1.68,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Ta tour a deux blocs",
+  "score": 1
+ },
+ "ta tour a un bloc.": {
+  "file": "2aaf69cc-61f4c7.mp3",
+  "text": "Ta tour a un bloc.",
+  "sent": "Ta tour a un bloc.",
+  "dur": 1.6,
+  "cost": 7,
+  "sttCost": 0,
+  "stt": "Ta tour a un bloc",
+  "score": 1
+ },
+ "pas tout à fait.": {
+  "file": "194d6de6-166dfc.mp3",
+  "text": "Pas tout à fait.",
+  "sent": "Pas tout à fait.",
+  "dur": 1.12,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Pas tout à fait",
+  "score": 1
+ },
+ "ta tour a trois blocs.": {
+  "file": "4ff8c019-8cd79d.mp3",
+  "text": "Ta tour a trois blocs.",
+  "sent": "Ta tour a trois blocs.",
+  "dur": 1.68,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Ta tour a trois blocs",
+  "score": 1
+ },
+ "écoute bien le motif!": {
+  "file": "774c9c1e-628ab4.mp3",
+  "text": "Écoute bien le motif !",
+  "sent": "Écoute bien le motif !",
+  "dur": 1.52,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Écoute bien le motif",
+  "score": 1
+ },
+ "regarde bien le motif en entier!": {
+  "file": "263562fc-7248cb.mp3",
+  "text": "Regarde bien le motif en entier !",
+  "sent": "Regarde bien le motif en entier !",
+  "dur": 2.24,
+  "cost": 13,
+  "sttCost": 1,
+  "stt": "Regarde bien le motif en entier",
+  "score": 1
+ },
+ "et après, qu'est-ce qui vient?": {
+  "file": "c27c957f-5c6e9c.mp3",
+  "text": "Et après, qu'est-ce qui vient ?",
+  "sent": "Et après, qu'est-ce qui vient ?",
+  "dur": 1.76,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Et après, qu'est-ce qui vient ?",
+  "score": 1
+ },
+ "à toi de trouver la suite!": {
+  "file": "f5cefd9c-3fa078.mp3",
+  "text": "À toi de trouver la suite !",
+  "sent": "À toi de trouver la suite !",
+  "dur": 1.44,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "À toi de trouver la suite",
+  "score": 1
+ },
+ "recopie ce motif, puis trouve la suite!": {
+  "file": "8fcecfb9-d36a0a.mp3",
+  "text": "Recopie ce motif, puis trouve la suite !",
+  "sent": "Recopie ce motif, puis trouve la suite !",
+  "dur": 2.72,
+  "cost": 16,
+  "sttCost": 1,
+  "stt": "Recopie ce motif, puis trouve la suite",
+  "score": 1
  }
 }

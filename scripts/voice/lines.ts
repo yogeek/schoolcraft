@@ -116,6 +116,16 @@ for (const hero of HEROES) {
   add(hero.line);
   for (const z of Object.values(hero.palette)) add(/^[aeiouyéèêh]/i.test(z.name) ? `L'${z.name}.` : `Le ${z.name}.`);
 }
+// Pixel's building challenges (challenge.ts, screens/build.ts)
+for (const n of ['trois', 'quatre', 'cinq', 'six', 'sept']) {
+  add(`Construis une tour de ${n} blocs !`);
+  add(`Une tour de ${n} blocs !`);
+  add(`Il en faut ${n}.`);
+}
+add('Ta tour a un bloc.');
+for (const n of ['deux', 'trois', 'quatre', 'cinq', 'six', 'sept']) add(`Ta tour a ${n} blocs.`);
+for (const s of ['Pas tout à fait. Écoute bien le motif !', 'Regarde bien le motif en entier !']) add(s);
+for (const s of ['Recopie ce motif !', 'Recopie ce motif, puis trouve la suite !', "Et après, qu'est-ce qui vient ?", 'À toi de trouver la suite !', 'Bravo, tu as réussi le défi !', "Touche l'étoile pour un nouveau défi !"]) add(s);
 // the next hero wakes up with stars (screens/heroes.ts: starsLine)
 add('Encore une étoile, et un ami se réveille !');
 for (const n of ['deux', 'trois', 'quatre', 'cinq']) add(`Encore ${n} étoiles, et un ami se réveille !`);

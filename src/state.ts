@@ -52,6 +52,8 @@ export interface GameState {
   mission: { day: string; done: ActivityId[]; chest: boolean };
   /** chests opened so far (one per completed adventure) */
   chests: number;
+  /** Pixel's building challenges done in « Ma maison » (challenge.ts: the next one gets harder) */
+  challenges: number;
   /** play per day (YYYY-MM-DD), last 60 days */
   history: Record<string, DayLog>;
   settings: {
@@ -181,6 +183,7 @@ function fresh(): GameState {
     heroes: { filled: {}, done: [] },
     mission: { day: '', done: [], chest: false },
     chests: 0,
+    challenges: 0,
     history: {},
     settings: { limitMin: 0, grade: null },
     play: { ms: 0, last: 0 },
@@ -289,6 +292,7 @@ function sanitize(raw: unknown): GameState {
     base.mission = { day: m.day, done: Array.isArray(m.done) ? [...new Set(m.done.filter(isActivity))] : [], chest: m.chest === true };
   }
   base.chests = count(s.chests);
+  base.challenges = count(s.challenges); // added without a version bump: older saves simply have 0
   if (s.history && typeof s.history === 'object') {
     const days = Object.keys(s.history).filter(isDay).sort().slice(-60);
     for (const d of days) {

@@ -40,13 +40,14 @@ The owner asked for these after a first real use. They were proposed on 2026-11-
 
 1. **A parent onboarding at first launch.** Done on 2026-11-10 (`src/screens/welcome.ts`, v3.2): class, then time per sitting (15 min pre-selected), then a coach mark on
    « Parents », and a dot on that button until the parents' area is opened once on the device.
-2. **Rewards that are earned, not farmed.** Done on 2026-11-10, not yet committed. Heroes wake up
+2. **Rewards that are earned, not farmed.** Done on 2026-11-10 (v3.3). Heroes wake up
    with stars (one every 5 stars, derived from the save, so no state v5 was needed), colouring is
    free, blocks come with the finished game (1 to 3 by stars, 1 when replaying a 3-star level),
    and after the chest Pixel offers « À demain ? » (a `rest` screen). See `CLAUDE.md` § Reward
    economy. Its 11 new sentences are recorded and were approved by ear (`ecoute-5.html`).
-3. **Building with a model.** For example « Construis une tour de 7 blocs » or « Recopie le motif
-   rouge, bleu, rouge… ». It is maths of the maternelle programme (counting, patterns, symmetry).
+3. **Building with a model.** Done on 2026-11-10 (v3.4): Pixel's challenges in « Ma
+   maison » (towers of 3 to 7 blocks, patterns to copy or continue), see `CLAUDE.md`. Symmetry
+   (« construis la même chose de l'autre côté ») is not done. Listening page: `ecoute-6.html`.
 4. **Heroes inside the learning, and a village.**
    - the awakened hero comes along on the daily adventure and appears in the story problems;
    - a short story read aloud when a hero wakes up, with one comprehension question;

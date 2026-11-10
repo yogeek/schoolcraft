@@ -448,6 +448,26 @@
   "text": "Tu peux colorier tes amis, ou construire ta maison !"
  },
  {
+  "key": "touche un bloc posé pour le reprendre.",
+  "text": "Touche un bloc posé pour le reprendre."
+ },
+ {
+  "key": "choisis un bloc en bas, puis touche le ciel pour le poser!",
+  "text": "Choisis un bloc en bas, puis touche le ciel pour le poser !"
+ },
+ {
+  "key": "et après, qu'est-ce qui vient?",
+  "text": "Et après, qu'est-ce qui vient ?"
+ },
+ {
+  "key": "à toi de trouver la suite!",
+  "text": "À toi de trouver la suite !"
+ },
+ {
+  "key": "bravo, tu as réussi le défi!",
+  "text": "Bravo, tu as réussi le défi !"
+ },
+ {
   "key": "tu n'as plus de blocs.",
   "text": "Tu n'as plus de blocs."
  },
@@ -466,14 +486,6 @@
  {
   "key": "tout est rangé!",
   "text": "Tout est rangé !"
- },
- {
-  "key": "choisis un bloc en bas, puis touche le ciel pour le poser!",
-  "text": "Choisis un bloc en bas, puis touche le ciel pour le poser !"
- },
- {
-  "key": "touche un bloc posé pour le reprendre.",
-  "text": "Touche un bloc posé pour le reprendre."
  },
  {
   "key": "et de l'or!",
@@ -1630,6 +1642,118 @@
  {
   "key": "je vais jusqu'à la lune!",
   "text": "Je vais jusqu'à la lune !"
+ },
+ {
+  "key": "construis une tour de trois blocs!",
+  "text": "Construis une tour de trois blocs !"
+ },
+ {
+  "key": "une tour de trois blocs!",
+  "text": "Une tour de trois blocs !"
+ },
+ {
+  "key": "il en faut trois.",
+  "text": "Il en faut trois."
+ },
+ {
+  "key": "construis une tour de quatre blocs!",
+  "text": "Construis une tour de quatre blocs !"
+ },
+ {
+  "key": "une tour de quatre blocs!",
+  "text": "Une tour de quatre blocs !"
+ },
+ {
+  "key": "il en faut quatre.",
+  "text": "Il en faut quatre."
+ },
+ {
+  "key": "construis une tour de cinq blocs!",
+  "text": "Construis une tour de cinq blocs !"
+ },
+ {
+  "key": "une tour de cinq blocs!",
+  "text": "Une tour de cinq blocs !"
+ },
+ {
+  "key": "il en faut cinq.",
+  "text": "Il en faut cinq."
+ },
+ {
+  "key": "construis une tour de six blocs!",
+  "text": "Construis une tour de six blocs !"
+ },
+ {
+  "key": "une tour de six blocs!",
+  "text": "Une tour de six blocs !"
+ },
+ {
+  "key": "il en faut six.",
+  "text": "Il en faut six."
+ },
+ {
+  "key": "construis une tour de sept blocs!",
+  "text": "Construis une tour de sept blocs !"
+ },
+ {
+  "key": "une tour de sept blocs!",
+  "text": "Une tour de sept blocs !"
+ },
+ {
+  "key": "il en faut sept.",
+  "text": "Il en faut sept."
+ },
+ {
+  "key": "ta tour a un bloc.",
+  "text": "Ta tour a un bloc."
+ },
+ {
+  "key": "ta tour a deux blocs.",
+  "text": "Ta tour a deux blocs."
+ },
+ {
+  "key": "ta tour a trois blocs.",
+  "text": "Ta tour a trois blocs."
+ },
+ {
+  "key": "ta tour a quatre blocs.",
+  "text": "Ta tour a quatre blocs."
+ },
+ {
+  "key": "ta tour a cinq blocs.",
+  "text": "Ta tour a cinq blocs."
+ },
+ {
+  "key": "ta tour a six blocs.",
+  "text": "Ta tour a six blocs."
+ },
+ {
+  "key": "ta tour a sept blocs.",
+  "text": "Ta tour a sept blocs."
+ },
+ {
+  "key": "pas tout à fait.",
+  "text": "Pas tout à fait."
+ },
+ {
+  "key": "écoute bien le motif!",
+  "text": "Écoute bien le motif !"
+ },
+ {
+  "key": "regarde bien le motif en entier!",
+  "text": "Regarde bien le motif en entier !"
+ },
+ {
+  "key": "recopie ce motif!",
+  "text": "Recopie ce motif !"
+ },
+ {
+  "key": "recopie ce motif, puis trouve la suite!",
+  "text": "Recopie ce motif, puis trouve la suite !"
+ },
+ {
+  "key": "touche l'étoile pour un nouveau défi!",
+  "text": "Touche l'étoile pour un nouveau défi !"
  },
  {
   "key": "encore une étoile, et un ami se réveille!",
