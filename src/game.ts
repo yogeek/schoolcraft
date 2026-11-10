@@ -201,7 +201,7 @@ export function runSession(ctx: Ctx, spec: SessionSpec): void {
       locked = true;
       const rounds = plan.filter((g) => g === game).length;
       const advanced = logGame(activity);
-      // blocks come with the finished game, by its stars: replaying an easy level brings little
+      // blocks come with the finished game, by its stars: a game that does not beat the level's record brings one
       const before = starsOf(activity, levelNo);
       const hadFriend = readyHero() !== null;
       const result = endSession(activity, levelNo, firstTry, rounds);

@@ -90,9 +90,10 @@ export function giveBlock(type: BlockType, from?: Element): void {
 }
 
 /** Blocks for a finished game: one per star (at least one for finishing), the third one gold;
- *  a single block when the level already had 3 stars (replaying it is fine, farming it is not). */
+ *  a single block when the game does not beat the level's record (replaying it is fine, farming it
+ *  is not: what pays is doing better). */
 export function gameBlocks(stars: number, before: number): BlockType[] {
-  if (before >= 3) return [rand(COMMON_BLOCKS)];
+  if (stars <= before) return [rand(COMMON_BLOCKS)];
   if (stars >= 3) return [rand(COMMON_BLOCKS), rand(COMMON_BLOCKS), 'gold'];
   return Array.from({ length: Math.max(1, stars) }, () => rand(COMMON_BLOCKS));
 }

@@ -42,7 +42,7 @@ The owner asked for these after a first real use. They were proposed on 2026-11-
    « Parents », and a dot on that button until the parents' area is opened once on the device.
 2. **Rewards that are earned, not farmed.** Done on 2026-11-10 (v3.3). Heroes wake up
    with stars (one every 5 stars, derived from the save, so no state v5 was needed), colouring is
-   free, blocks come with the finished game (1 to 3 by stars, 1 when replaying a 3-star level),
+   free, blocks come with the finished game (1 to 3 by stars, 1 when the game does not beat the level's star record),
    and after the chest Pixel offers « À demain ? » (a `rest` screen). See `CLAUDE.md` § Reward
    economy. Its 11 new sentences are recorded and were approved by ear (`ecoute-5.html`).
 3. **Building with a model.** Done on 2026-11-10 (v3.4): Pixel's challenges in « Ma

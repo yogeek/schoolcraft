@@ -308,7 +308,7 @@ export function parentsScreen(ctx: Ctx): void {
           h(
             'p',
             { class: 'muted' },
-            'Les étoiles gagnées dans les niveaux réveillent les héros (un nouveau toutes les 5 étoiles), que l’enfant colorie ensuite. Chaque partie finie rapporte 1 à 3 blocs selon les étoiles (1 seul en rejouant un niveau déjà à 3 étoiles) ; les blocs servent à construire la maison. Un niveau se débloque quand l’enfant réussit 80 % des réponses du premier coup. Pastilles : ',
+            'Les étoiles gagnées dans les niveaux réveillent les héros (un nouveau toutes les 5 étoiles), que l’enfant colorie ensuite. Chaque partie finie rapporte 1 à 3 blocs selon les étoiles (1 seul quand la partie ne fait pas mieux que le record d’étoiles du niveau) ; les blocs servent à construire la maison. Un niveau se débloque quand l’enfant réussit 80 % des réponses du premier coup. Pastilles : ',
             h('span', { class: 'chip box3' }, 'acquis'),
             ' ',
             h('span', { class: 'chip box2' }, 'en cours'),
