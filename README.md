@@ -7,6 +7,8 @@ avec une progression pas à pas et des récompenses à collectionner.
 
 - Étude pédagogique (recherche, applications de référence, choix du jeu) : [docs/ETUDE.md](docs/ETUDE.md)
 - Plan de conception et feuille de route : [docs/PLAN.md](docs/PLAN.md)
+- Pour reprendre le travail (état actuel, propositions en attente) : [HANDOFF.md](HANDOFF.md) ; consignes pour les
+  agents de code : [AGENTS.md](AGENTS.md) et [CLAUDE.md](CLAUDE.md)
 
 ## Ce que contient le jeu
 
@@ -15,10 +17,22 @@ avec une progression pas à pas et des récompenses à collectionner.
 - **Une carte par activité** : les niveaux en chemin, groupés en chapitres, avec des étoiles ; le niveau en cours brille.
 - **Lire** : 31 niveaux en 7 chapitres (contenu : `src/content/reading.ts`)
   1. *La prairie des sons* (conscience phonologique) : taper les syllabes sur un tambour, les rimes, le premier son
-  2. *La forêt des lettres* : voyelles, grandes et petites lettres, premières syllabes, nouvelles consonnes, syllabes qui se ressemblent
-  3. *La mine des mots* : écrire des syllabes avec des lettres (encodage), écouter des mots, construire des mots, lire sans aide, écrire des mots
-  4. *La montagne des sons* : sons à deux lettres (ou, on, an, in, oi, ch, eu), syllabes et mots difficiles
-  5. *Le château des phrases* : vrai ou faux ?, devinettes
+  2. *La forêt des lettres* : voyelles, grandes et petites lettres, premières syllabes, nouvelles consonnes, syllabes jumelles
+  3. *La mine des mots* : écrire des syllabes avec des lettres (encodage), écouter des mots, construire des mots,
+     lire sans aide, écrire des mots, les lettres muettes (écrites en gris)
+  4. *La montagne des sons* : sons à deux lettres (ou, on, an, in, oi, eu), syllabes et mots avec ces sons
+  5. *La rivière des lettres* : les sons k et g, le c et le g qui changent, un son et plusieurs écritures (o, au, eau…),
+     des sons plus rares (gn, ill, ph, oin), mots difficiles à écouter, lire et écrire
+  6. *Le pont des sons accrochés* : br, cl, tr… dans des syllabes puis des mots
+  7. *Le château des phrases* : les petits mots, vrai ou faux ?, devinettes
+
+  Les mots proposés sont toujours déchiffrables avec les sons déjà appris (vérifié par `npm run check`).
+- **Aide qui grandit avec les erreurs** : à la 1re erreur, Pixel dit ce qui a été touché ; à la 2e, les réponses
+  essayées s'effacent et un indice est donné (les syllabes, le son avec son mot) ; à la 3e, la bonne réponse brille.
+  En calcul, Pixel compte avec l'enfant.
+- **Après une réussite, on voit ce qui est dit** : les syllabes du mot s'affichent sous les réponses et s'allument
+  une à une au moment où la voix les dit ; au tambour, un battement s'allume avec chaque syllabe ; pour « le même
+  début », les deux mots s'écrivent avec leur début commun en couleur.
 - **Écrire** : 12 niveaux (contenu : `src/content/writing.ts`). Pixel montre le tracé en disant la lettre et un mot repère,
   puis l'enfant trace au doigt en suivant le chemin, dans le bon sens ; la lettre réussie se construit en blocs.
   Capitales (traits droits, traits penchés, ronds), chiffres, puis cursive par familles de gestes (ronds, coupes,
@@ -34,6 +48,7 @@ avec une progression pas à pas et des récompenses à collectionner.
   Un héros terminé se réveille (animation, phrase, effet) et rejoint la collection. 12 héros originaux dans `src/content/heroes.ts`.
 - **Ma maison** : construction libre avec les blocs gagnés ; toucher un bloc posé le reprend, « Tout ranger » rend tous les blocs.
 - **Pixel le renard** guide tout à la voix et félicite l'effort ; le toucher (ou le haut-parleur) répète la consigne.
+  Le tambour et le tableau de tracé attendent la fin de la consigne avant de réagir.
 - **Plusieurs enfants** : jusqu'à 4 profils, chacun avec son avatar et sa progression (« Qui joue ? » à l'accueil).
 - **Espace parents** (protégé par une multiplication) : classe de l'enfant (MS, GS, CP) pour démarrer au bon niveau,
   temps de jeu de la semaine, progrès par compétence, idées d'activités à faire ensemble sans écran, la méthode,
@@ -65,7 +80,8 @@ GitHub Pages à chaque push sur `main`. À activer une fois : *Settings → Page
   une image à `PIC_WORDS` avec ses syllabes orales, son groupe de rime et son premier son.
 - **Lettres à tracer** : dans `src/content/writing.ts`, chaque trait est un chemin SVG dans une boîte de 100 de haut,
   dans l'ordre et le sens où on l'écrit.
-- Lancer `npm run check` : chaque erreur est expliquée en français (ligne trop longue, couleur manquante…).
+- Lancer `npm run check` : chaque erreur est expliquée en français (ligne trop longue, couleur manquante, mot qui
+  demande un son pas encore appris, phrase sans enregistrement…).
 
 ## Règles pour les phrases dites par la voix
 
@@ -74,11 +90,15 @@ GitHub Pages à chaque push sur `main`. À activer une fois : *Settings → Page
   On écrit « comme école », et les consignes mettent « : » avant l'élément (« Touche le mot : avion »).
   `npm run check` signale les exemples fautifs.
 - Éviter « tes héros », « les héros » (certaines voix disent « tes-z-héros ») : dire « tes amis ».
+- Un mot d'une syllabe répété seul prend un accent anglais (« payne ») : le dire avec son article (« Le pain ! »).
 
 ## Limites connues
 
-- La voix de Pixel est enregistrée (environ 2 500 phrases créées avec ElevenLabs, voix « Adina ») et marche hors ligne ; une phrase non enregistrée est dite par la voix de l'appareil. Après avoir changé une phrase : `scripts/voice/lines.ts` puis `scripts/voice/generate.mjs`.
-  À terme : enregistrer les sons pour une prononciation parfaite des sons isolés.
+- La voix de Pixel est enregistrée (environ 3 000 phrases créées avec ElevenLabs, voix « Adina ») et marche hors ligne ;
+  une phrase non enregistrée est dite par la voix de l'appareil. Les sons et syllabes isolés sont envoyés en alphabet
+  phonétique (sinon « no » était lu « numéro », « che » « tché »…), et les phrases qui sonnaient faux ont été
+  réenregistrées après écoute. Après avoir changé une phrase : `scripts/voice/lines.ts` puis
+  `scripts/voice/generate.mjs` (voir [AGENTS.md](AGENTS.md)).
 - Les images des niveaux « lire » sont des emojis : leur dessin varie selon le téléphone.
 - Le tracé au doigt entraîne le geste et la forme des lettres ; il ne remplace pas le crayon sur papier.
 - Pas de reconnaissance de la parole : quand Pixel demande de répéter, rien n'est vérifié (et la voix de l'enfant

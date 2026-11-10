@@ -1,6 +1,6 @@
 # SchoolCraft — Plan de conception
 
-## État actuel (novembre 2026, v3)
+## État actuel (novembre 2026, v3.1)
 
 L'étude pédagogique qui fonde la v3 (recherche, programmes 2025, applications de référence) est dans
 [ETUDE.md](ETUDE.md).
@@ -19,7 +19,8 @@ L'étude pédagogique qui fonde la v3 (recherche, programmes 2025, applications 
 | Espace parents | ✅ Classe (MS, GS, CP), semaine, progrès par compétence, idées à faire ensemble, méthode, limite de temps |
 | Profils multiples | ✅ Jusqu'à 4 enfants, avatar et progression séparés |
 | PWA hors ligne, GitHub Pages | ✅ |
-| Sons enregistrés, mots en cursive attachée | ⏳ Prochaines étapes (voir la feuille de route) |
+| Voix enregistrée partout | ✅ Environ 3 000 phrases, sons et syllabes en alphabet phonétique, réécoutées par un adulte |
+| Mots en cursive attachée, récompenses repensées | ⏳ Prochaines étapes (voir la feuille de route et `HANDOFF.md`) |
 
 Ce qui suit est le plan initial ; la feuille de route (§ 7) est à jour.
 
@@ -129,8 +130,17 @@ Pas de pub, pas d'achats intégrés, pas de traqueurs.
 - Voix enregistrée : toutes les phrases du jeu (environ 2 500) générées une fois avec ElevenLabs (modèle v4,
   voix « Adina »), vérifiées par reconnaissance vocale, jouées hors ligne ; la voix de l'appareil reste en secours.
 
+- v3.1 (premiers essais avec un enfant) : aide qui grandit avec les erreurs, syllabes qui s'allument au moment où
+  elles sont dites, voix en alphabet phonétique pour les sons et syllabes (environ 270 phrases réenregistrées après
+  écoute), tambour audible et bloqué pendant la consigne, mots à e muet retirés du tambour, tracé bloqué pendant la
+  démonstration, tuiles d'écriture coupées par syllabe, carte qui défile au doigt.
+
 **Prochaines étapes possibles**
-- Faire écouter les sons isolés (« mmm », « sss ») et les syllabes par un adulte, et réenregistrer ceux qui sonnent faux.
+- Premier lancement : présenter l'espace Parents et proposer une limite de temps (mini accueil des parents).
+- Récompenses : réveiller les héros avec la progression (et non en achetant avec des blocs), des blocs par partie
+  finie plutôt que par réponse, une fin de séance douce après le coffre (Lepper 1973 ; Deci, Koestner et Ryan 1999).
+- Construire d'après un modèle (compter, reproduire un motif, symétrie), les héros dans les exercices et un village
+  qui grandit avec les chapitres. Détails dans `HANDOFF.md`.
 - Écrire des syllabes et des mots en cursive attachée (lettres reliées).
 - Lecture : lettres muettes, sons é/è/ai, petites histoires à lire avec questions de compréhension, fluence (lire vite et bien).
 - Calcul : nombres jusqu'à 100 (dizaines), soustractions par complément, doubles.
