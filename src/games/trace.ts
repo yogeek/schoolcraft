@@ -66,7 +66,7 @@ export function writingGame(level: WritingLevel): Game {
       // then the demo would wipe it
       let waiting = true;
       let offs = 0;
-      let hinted = 0; // last time the voice said where to start (it does not repeat itself)
+      let hinted = -Infinity; // last time the voice said where to start (it does not repeat itself)
       let stuck = 0; // since when the finger moves without the ink going forward
 
       // ---------- the board
