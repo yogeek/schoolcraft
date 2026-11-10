@@ -30534,5 +30534,35 @@
   "sttCost": 0,
   "stt": "Oui, le même son",
   "score": 1
+ },
+ "tu peux construire ta maison!": {
+  "file": "9b5d2d25-b46383.mp3",
+  "text": "Tu peux construire ta maison !",
+  "sent": "Tu peux construire ta maison !",
+  "dur": 2,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Tu peux construire ta maison",
+  "score": 1
+ },
+ "tu as fini l'aventure du jour: un coffre t'attend!": {
+  "file": "8a898fec-c9e866.mp3",
+  "text": "Tu as fini l'aventure du jour : un coffre t'attend !",
+  "sent": "Tu as fini l'aventure du jour : un coffre t'attend !",
+  "dur": 3.2,
+  "cost": 21,
+  "sttCost": 1,
+  "stt": "Tu as fini l'aventure du jour. Un coffre t'attend",
+  "score": 1
+ },
+ "tu veux colorier un ami?": {
+  "file": "4b67ecbc-941b23.mp3",
+  "text": "Tu veux colorier un ami ?",
+  "sent": "Tu veux colorier un ami ?",
+  "dur": 1.52,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Tu veux colorier un ami ?",
+  "score": 1
  }
 }

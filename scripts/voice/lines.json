@@ -560,6 +560,22 @@
   "text": "Reviens jouer plus tard !"
  },
  {
+  "key": "bien joué!",
+  "text": "Bien joué !"
+ },
+ {
+  "key": "tu as fini l'aventure du jour: un coffre t'attend!",
+  "text": "Tu as fini l'aventure du jour : un coffre t'attend !"
+ },
+ {
+  "key": "tu veux colorier un ami?",
+  "text": "Tu veux colorier un ami ?"
+ },
+ {
+  "key": "tu peux construire ta maison!",
+  "text": "Tu peux construire ta maison !"
+ },
+ {
   "key": "niveau 1.",
   "text": "Niveau 1."
  },
@@ -1238,10 +1254,6 @@
  {
   "key": "maintenant, on va compter!",
   "text": "Maintenant, on va compter !"
- },
- {
-  "key": "bien joué!",
-  "text": "Bien joué !"
  },
  {
   "key": "tu as réussi le dernier niveau!",

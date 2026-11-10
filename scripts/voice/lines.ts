@@ -56,10 +56,21 @@ for (const f of files(join(ROOT, 'src'))) {
   }
   // template literals: their fixed sentences (« À moi ! » in `À moi ! Le dé dit : ${…}.`)
   for (const m of src.matchAll(/say\(([^;]{0,400})/g)) templates(m[1].split(/\)\s*(?:;|\.then|,\s*bub)/)[0]);
-  for (const m of src.matchAll(/(?:const|let) (?:speech|story|s1|s2|q)\b[^=]*=([^;]{0,700})/g)) {
-    templates(m[1]);
-    for (const s of m[1].replace(/`[^`]*`/g, '').matchAll(STRING)) spoken.add(s[2]);
+  // variables that are spoken, and those they interpolate (`${invite}` in the reward speech):
+  // their literals and the fixed sentences of their templates
+  const names = new Set(['speech', 'story', 's1', 's2', 'q']);
+  for (const m of src.matchAll(/say\(([^;]{0,400})/g)) for (const v of m[1].matchAll(/\$\{\s*([A-Za-z]\w*)\s*\}/g)) names.add(v[1]);
+  // declarations and assignments (`let speech: string;` then `speech = \`…\``)
+  const decl = (n: string) => [...src.matchAll(new RegExp(`(?<![.\\w])${n}(?:\\s*:[^=;\\n]*)?\\s*=(?![=>])([^;]{0,700})`, 'g'))].map((m) => m[1]);
+  for (let grew = true; grew; ) {
+    grew = false;
+    for (const n of [...names]) for (const d of decl(n)) for (const v of d.matchAll(/\$\{\s*([A-Za-z]\w*)\s*\}/g)) if (!names.has(v[1])) names.add(v[1]), (grew = true);
   }
+  for (const n of names)
+    for (const d of decl(n)) {
+      templates(d);
+      for (const s of d.replace(/`[^`]*`/g, '').matchAll(STRING)) spoken.add(s[2]);
+    }
   for (const m of src.matchAll(PRAISE_LIST)) for (const list of m[1].matchAll(/\[([^\]]*)\]/g)) for (const s of list[1].matchAll(STRING)) add(s[2].replace(/\\'/g, "'"), 'praise');
   for (const s of spoken) if (complete(s)) add(s.replace(/\\'/g, "'"));
 }

@@ -1978,7 +1978,8 @@ button span,
   stroke-width: 1.4;
   pointer-events: none;
 }
-.trace-board.demo .trace-start {
+.trace-board.demo .trace-start,
+.trace-board.waiting .trace-start {
   visibility: hidden;
 }
 .trace-block {

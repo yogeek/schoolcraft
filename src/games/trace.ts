@@ -49,7 +49,7 @@ export function writingGame(level: WritingLevel): Game {
   let prev: string | undefined;
   let saidRepeat = false;
   /** the question being shown */
-  let cur: { demo(): Promise<void>; intro: string; started(): boolean } | null = null;
+  let cur: { demo(): Promise<void>; intro: string; started(): boolean; go(): void } | null = null;
 
   return {
     praise: ['Joli tracé !', 'Bravo, tu as bien suivi le chemin !', 'Superbe lettre !', 'Bien écrit !', 'Bravo !'],
@@ -59,7 +59,12 @@ export function writingGame(level: WritingLevel): Game {
       prev = char;
       const gl = glyph(level.script, char);
       const words = speech(gl);
+      // the bubble is never empty, from the level intro on (ask() says the same)
+      r.bubble(memory ? 'Écris de mémoire !' : 'Regarde bien !');
       let demoing = false;
+      // the board waits for the end of the instruction: a finger during the level intro would trace,
+      // then the demo would wipe it
+      let waiting = true;
       let offs = 0;
       let hinted = 0; // last time the voice said where to start (it does not repeat itself)
       let stuck = 0; // since when the finger moves without the ink going forward
@@ -83,7 +88,7 @@ export function writingGame(level: WritingLevel): Game {
       const pen = svg('circle', { r: 5, class: 'trace-pen', visibility: 'hidden' });
       view.append(...roads, ...(memory ? [] : dashes), ...inks, blocks, marker, pen);
 
-      const board = h('div', { class: 'trace-board', role: 'img', 'aria-label': `Tracer : ${gl.char}` });
+      const board = h('div', { class: 'trace-board waiting', role: 'img', 'aria-label': `Tracer : ${gl.char}` });
       board.append(view);
       r.stage.classList.add('trace-stage');
       r.stage.append(board);
@@ -231,7 +236,7 @@ export function writingGame(level: WritingLevel): Game {
 
       // ---------- the child traces
       view.addEventListener('pointerdown', (e) => {
-        if (!r.open() || demoing || stroke >= pts.length) return;
+        if (!r.open() || demoing || waiting || stroke >= pts.length) return;
         const p = toBox(e);
         if (dist(p, pts[stroke][at]) > tol(scale()).start) {
           nudge();
@@ -336,7 +341,11 @@ export function writingGame(level: WritingLevel): Game {
       view.addEventListener('pointerup', lift);
       view.addEventListener('pointercancel', lift);
 
-      cur = { demo, intro: words.intro, started: () => stroke > 0 || at > 0 };
+      const go = () => {
+        waiting = false;
+        board.classList.remove('waiting');
+      };
+      cur = { demo, intro: words.intro, started: () => stroke > 0 || at > 0, go };
       return `write:${level.script}:${char}`;
     },
 
@@ -352,6 +361,7 @@ export function writingGame(level: WritingLevel): Game {
       }
       r.hold(false);
       if (!r.open()) return;
+      t.go();
       r.bubble('À toi !');
       await r.say(memory ? 'Écris-la de mémoire. Pose ton doigt sur le point vert.' : 'À toi ! Pose ton doigt sur le point vert, et suis le chemin.');
     },
@@ -367,6 +377,7 @@ export function writingGame(level: WritingLevel): Game {
       await r.say(t.intro);
       await t.demo();
       r.hold(false);
+      t.go();
       if (r.open()) await r.say('À toi !');
     },
   };
