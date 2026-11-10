@@ -3,7 +3,7 @@
 // Pixel propose aussi un défi (challenge.ts) : une tour d'un nombre donné de blocs, un motif à
 // recopier ou à continuer. Le modèle s'affiche dans sa bulle ; l'enfant construit dans sa maison.
 import { sfx } from '../audio';
-import { columnRun, freshTower, NUMBER_WORDS as W, nextChallenge, solved, wrongPattern, type Challenge } from '../challenge';
+import { columnRun, freshTower, NUMBER_WORDS as W, nextChallenge, solved, wrongPattern, type Planned } from '../challenge';
 import { burst } from '../heroArt';
 import { BLOCK_NAMES, blockTexture, ofBlock } from '../pixel';
 import { BLOCK_TYPES, save, SPECIAL_BLOCKS, state, WORLD_COLS, WORLD_ROWS, type BlockType } from '../state';
@@ -44,17 +44,22 @@ export function buildScreen(ctx: Ctx): void {
   const placed = () => state.world.reduce((n, row) => n + row.filter(Boolean).length, 0);
 
   // ---------------------------------------------------------------- Pixel's challenge
-  let ch: Challenge | null = nextChallenge();
+  let ch: Planned | null = nextChallenge();
   let won = false;
   /** cells placed since the challenge started ("r,c") */
   const fresh = new Set<string>();
   let talk = 0; // latest spoken line; an older sequence (naming the model) stops
+  /** Any other line: it stops Pixel naming the model, which would talk over it. */
+  const say = (text: string) => {
+    talk++;
+    return ctx.say(text);
+  };
   let toldHeight = 0;
   /** wrong patterns so far (help grows: the pattern again, then the answer in the « ? » slots) */
   let misses = 0;
   let toldWrong = '';
   const model = h('div', { class: 'model', 'aria-hidden': 'true' });
-  const fox = mascot(70, () => void (ch && !won ? sayChallenge() : ctx.say(instructions)));
+  const fox = mascot(70, () => void (ch && !won ? sayChallenge() : say(instructions)));
 
   function renderModel(): void {
     if (!ch || won) return setBubble(bub, won ? 'Bravo !' : 'Construis ta maison !');
@@ -111,8 +116,7 @@ export function buildScreen(ctx: Ctx): void {
         const height = freshTower(fresh);
         if (height > 0 && height < ch.n && height !== toldHeight) {
           toldHeight = height;
-          talk++;
-          void ctx.say(`${height === 1 ? 'Ta tour a un bloc.' : `Ta tour a ${W[height]} blocs.`} Il en faut ${W[ch.n]}.`);
+          void say(`${height === 1 ? 'Ta tour a un bloc.' : `Ta tour a ${W[height]} blocs.`} Il en faut ${W[ch.n]}.`);
         }
         return;
       }
@@ -131,8 +135,7 @@ export function buildScreen(ctx: Ctx): void {
       const height = bottom - top + 1;
       if (height > ch.n && height !== toldHeight && height < W.length) {
         toldHeight = height;
-        talk++;
-        void ctx.say(`Ta tour a ${W[height]} blocs. Il en faut ${W[ch.n]}. Touche un bloc posé pour le reprendre.`);
+        void say(`Ta tour a ${W[height]} blocs. Il en faut ${W[ch.n]}. Touche un bloc posé pour le reprendre.`);
       }
     }
   }
@@ -140,15 +143,15 @@ export function buildScreen(ctx: Ctx): void {
   function win(): void {
     if (!ch) return;
     won = true;
-    state.challenges++;
+    if (ch.planned) state.challenges++;
     save();
     sfx.fanfare();
     if (!reducedMotion()) burst(fox, 'stars', 16);
     renderModel();
     another.hidden = false;
-    talk++;
+    const my = talk + 1;
     const praise = ch.kind === 'tower' ? `Bravo ! Une tour de ${W[ch.n]} blocs !` : 'Bravo, tu as réussi le défi !';
-    void ctx.say(praise).then(() => (ctx.alive() && won ? ctx.say("Touche l'étoile pour un nouveau défi !") : undefined));
+    void say(praise).then(() => (ctx.alive() && won && my === talk ? ctx.say("Touche l'étoile pour un nouveau défi !") : undefined));
   }
 
   // a new challenge (shown after a success)
@@ -165,7 +168,7 @@ export function buildScreen(ctx: Ctx): void {
     another.hidden = true;
     renderModel();
     if (ch) void sayChallenge();
-    else void ctx.say("Tu n'as plus de blocs. Joue à lire ou à compter pour en gagner !");
+    else void say("Tu n'as plus de blocs. Joue à lire ou à compter pour en gagner !");
   };
 
   function tapCell(r: number, c: number): void {
@@ -182,7 +185,7 @@ export function buildScreen(ctx: Ctx): void {
       if (!selected || state.inventory[selected] <= 0) {
         sfx.oops();
         setBubble(bub, 'Plus de blocs !');
-        void ctx.say("Tu n'as plus de blocs. Joue à lire ou à compter pour en gagner !");
+        void say("Tu n'as plus de blocs. Joue à lire ou à compter pour en gagner !");
         return;
       }
       state.world[r][c] = selected;
@@ -208,11 +211,11 @@ export function buildScreen(ctx: Ctx): void {
         b.onclick = () => {
           sfx.tap();
           if (n === 0) {
-            void ctx.say(`Tu n'as pas encore de blocs ${ofBlock(t)}.`);
+            void say(`Tu n'as pas encore de blocs ${ofBlock(t)}.`);
             return;
           }
           selected = t;
-          void ctx.say(BLOCK_NAMES[t]);
+          void say(BLOCK_NAMES[t]);
           renderPalette();
         };
         return b;
@@ -225,7 +228,7 @@ export function buildScreen(ctx: Ctx): void {
   const tidy = h('button', { class: 'btn tidy' }, 'Tout ranger');
   tidy.onclick = () => {
     sfx.tap();
-    void ctx.say('Tu veux ranger tous les blocs ? Ta maison va disparaître.');
+    void say('Tu veux ranger tous les blocs ? Ta maison va disparaître.');
     modal({
       title: 'Tout ranger ?',
       body: [h('p', { class: 'muted center' }, 'Les blocs reviennent dans ta réserve.')],
@@ -245,7 +248,7 @@ export function buildScreen(ctx: Ctx): void {
             selected = BLOCK_TYPES.find((t) => state.inventory[t] > 0) ?? null;
             renderPalette();
             bumpCounter();
-            void ctx.say('Tout est rangé !');
+            void say('Tout est rangé !');
           },
         },
         { label: 'Non', cls: 'green' },

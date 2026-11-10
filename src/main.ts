@@ -148,8 +148,10 @@ function homeScreen(ctx: Ctx): void {
   };
   // Pixel keeps quiet while the parents fill in the welcome dialog, and while the coach mark
   // shows them their area: it speaks to the child once the device is handed over
-  if (state.settings.grade === null) welcomeDialog(ctx);
-  else if (takeCoach()) coachParents(speak);
+  // several children: who is playing comes first, so the class is set on the right child's save
+  if (state.settings.grade === null) {
+    if (!askWhoOnce(() => ctx.alive() && welcomeDialog(ctx))) welcomeDialog(ctx);
+  } else if (takeCoach()) coachParents(speak);
   else {
     askWhoOnce();
     speak();

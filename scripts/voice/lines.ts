@@ -222,6 +222,7 @@ for (const level of READING_LEVELS) {
         case 'spell':
           if (it.parts && it.parts.length > 1) {
             found(it);
+            listen(it); // the clue after a 2nd mistake
             add(`Écris le mot : ${s} !`);
             addSay(`Écoute bien : ${s}.`, `Écoute bien : ${wordIpa(it)}.`);
           } else {

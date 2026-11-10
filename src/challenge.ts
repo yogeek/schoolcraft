@@ -3,12 +3,16 @@
 // « algorithmes » in the maternelle programme). The child builds with their own blocks, right in
 // the house: the blocks stay there and can be taken back. Only blocks placed during the challenge
 // count, so a tower already in the house does not solve it.
+
 import { BLOCK_TYPES, state, WORLD_COLS, WORLD_ROWS, type BlockType } from './state';
 
 export type Challenge =
   | { kind: 'tower'; n: number }
   /** `model` is shown; `goal` is what must be built (longer than the model when it continues it) */
   | { kind: 'pattern'; model: BlockType[]; goal: BlockType[] };
+
+/** A challenge, and whether it is the planned one (a smaller one, when blocks are short, does not move the plan on). */
+export type Planned = Challenge & { planned: boolean };
 
 export const NUMBER_WORDS = ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit'];
 
@@ -53,13 +57,13 @@ function build(p: Plan): Challenge | null {
 }
 
 /** The next challenge for this child, or null when they do not have enough blocks for any. */
-export function nextChallenge(): Challenge | null {
+export function nextChallenge(): Planned | null {
   const k = state.challenges;
   const planned = PLANS[k % PLANS.length];
   // not enough blocks for this one: an earlier, smaller one
   for (const p of [planned, ...PLANS.slice(0, k % PLANS.length).reverse()]) {
     const c = build(p);
-    if (c) return c;
+    if (c) return { ...c, planned: p === planned };
   }
   return null;
 }
@@ -73,7 +77,12 @@ export function columnRun(r: number, c: number): { top: number; bottom: number }
   return { top, bottom };
 }
 
-/** The challenge is built with at least one block placed since it started (`fresh`: "r,c" keys). */
+/**
+ * The challenge is built with blocks placed since it started (`fresh`: "r,c" keys). A tower is a
+ * whole column of exactly n blocks, all of them new: rebuilding one block of a column that was
+ * already there does not count. A pattern is n new blocks in a row, in order; blocks already in the
+ * house may touch it (the grid is narrow, the child builds next to their house).
+ */
 export function solved(ch: Challenge, fresh: Set<string>): boolean {
   const w = state.world;
   if (ch.kind === 'tower') {
@@ -82,19 +91,32 @@ export function solved(ch: Challenge, fresh: Set<string>): boolean {
         if (!w[r][c] || (r > 0 && w[r - 1][c])) continue; // top of a column of blocks
         const { bottom } = columnRun(r, c);
         if (bottom - r + 1 !== ch.n) continue;
-        for (let k = r; k <= bottom; k++) if (fresh.has(`${k},${c}`)) return true;
+        let all = true;
+        for (let k = r; k <= bottom; k++) all &&= fresh.has(`${k},${c}`);
+        if (all) return true;
       }
     return false;
   }
-  const L = ch.goal.length;
-  for (let r = 0; r < WORLD_ROWS; r++)
-    for (let c = 0; c + L <= WORLD_COLS; c++) {
-      // exactly the goal: no block glued on either side
-      if ((c > 0 && w[r][c - 1]) || (c + L < WORLD_COLS && w[r][c + L])) continue;
-      if (!ch.goal.every((t, i) => w[r][c + i] === t)) continue;
-      for (let i = 0; i < L; i++) if (fresh.has(`${r},${c + i}`)) return true;
-    }
-  return false;
+  return freshRuns(fresh).some(({ r, left, right }) => {
+    for (let c = left; c + ch.goal.length - 1 <= right; c++) if (ch.goal.every((t, i) => w[r][c + i] === t)) return true;
+    return false;
+  });
+}
+
+/** Rows of new blocks side by side (only blocks placed since the challenge started). */
+function freshRuns(fresh: Set<string>): { r: number; left: number; right: number }[] {
+  const w = state.world;
+  const runs = new Map<string, { r: number; left: number; right: number }>();
+  for (const key of fresh) {
+    const [r, c] = key.split(',').map(Number);
+    if (!w[r]?.[c]) continue;
+    let left = c;
+    let right = c;
+    while (left > 0 && w[r][left - 1] && fresh.has(`${r},${left - 1}`)) left--;
+    while (right < WORLD_COLS - 1 && w[r][right + 1] && fresh.has(`${r},${right + 1}`)) right++;
+    runs.set(`${r}:${left}`, { r, left, right });
+  }
+  return [...runs.values()];
 }
 
 /** The tallest tower holding a block placed since the challenge started (0 when there is none). */
@@ -110,20 +132,12 @@ export function freshTower(fresh: Set<string>): number {
 }
 
 /**
- * A finished but wrong pattern: a row of blocks, as long as the goal or longer, holding a block
- * placed since the challenge started. Returns what it is made of (to tell it once), or null.
+ * A finished but wrong pattern: a row of new blocks as long as the goal or longer that is not the
+ * pattern. Returns what it is made of (to tell it once), or null.
  */
 export function wrongPattern(ch: Challenge, fresh: Set<string>): string | null {
-  if (ch.kind !== 'pattern') return null;
+  if (ch.kind !== 'pattern' || solved(ch, fresh)) return null;
   const w = state.world;
-  for (const key of fresh) {
-    const [r, c] = key.split(',').map(Number);
-    if (!w[r]?.[c]) continue;
-    let left = c;
-    let right = c;
-    while (left > 0 && w[r][left - 1]) left--;
-    while (right < WORLD_COLS - 1 && w[r][right + 1]) right++;
-    if (right - left + 1 >= ch.goal.length) return `${r}:${left}:${w[r].slice(left, right + 1).join(',')}`;
-  }
-  return null;
+  const run = freshRuns(fresh).find(({ left, right }) => right - left + 1 >= ch.goal.length);
+  return run ? `${run.r}:${run.left}:${w[run.r].slice(run.left, run.right + 1).join(',')}` : null;
 }

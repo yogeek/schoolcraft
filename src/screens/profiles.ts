@@ -13,30 +13,38 @@ export function avatarSVG(p: Profile, size: number): string {
 
 const ASKED = 'schoolcraft:who';
 
-/** Ask "who is playing?" once per visit, when there are several children. */
-export function askWhoOnce(): void {
+/**
+ * Ask "who is playing?" once per visit, when there are several children. `then` runs once the
+ * child playing now is confirmed (picking another child reloads the app on their save instead).
+ * Returns false when nothing was asked.
+ */
+export function askWhoOnce(then?: () => void): boolean {
   try {
-    if (profiles.list.length < 2 || sessionStorage.getItem(ASKED)) return;
+    if (profiles.list.length < 2 || sessionStorage.getItem(ASKED)) return false;
     sessionStorage.setItem(ASKED, '1');
   } catch {
-    return;
+    return false;
   }
-  pickChild();
+  pickChild(then);
+  return true;
 }
 
 /** "Who is playing?" (only shown when there are several children). */
-export function pickChild(): void {
+export function pickChild(then?: () => void): void {
   const list = h('div', { class: 'who-list' });
   for (const p of profiles.list) {
     const b = h('button', { class: `who${p.id === profiles.current ? ' current' : ''}`, 'aria-label': profileName(p) }, h('span', { class: 'who-art', html: avatarSVG(p, 72) }), h('span', { class: 'who-name' }, profileName(p)));
     b.onclick = () => {
       sfx.tap();
-      if (p.id === profiles.current) dlg.close();
-      else switchProfile(p.id);
+      if (p.id === profiles.current) {
+        dlg.close();
+        then?.();
+      } else switchProfile(p.id);
     };
     list.append(b);
   }
-  const dlg = modal({ title: 'Qui joue ?', body: [list], actions: [], cls: 'who-panel' });
+  // with something to do next, a tap beside the dialog must not skip it
+  const dlg = modal({ title: 'Qui joue ?', body: [list], actions: [], cls: 'who-panel', dismissable: !then });
 }
 
 /** Avatar of the child playing, in the home top bar. */

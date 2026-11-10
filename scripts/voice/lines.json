@@ -289,6 +289,10 @@
   "text": "C'est trop !"
  },
  {
+  "key": "une syllabe!",
+  "text": "Une syllabe !"
+ },
+ {
   "key": "tape les syllabes.",
   "text": "Tape les syllabes."
  },
@@ -4583,6 +4587,15 @@
   ]
  },
  {
+  "key": "écoute: su… mo.",
+  "text": "Écoute : su… mo.",
+  "say": "Écoute : /sy/. /mo/.",
+  "marks": [
+   10,
+   16
+  ]
+ },
+ {
   "key": "écris le mot: sumo!",
   "text": "Écris le mot : sumo !"
  },
@@ -7958,6 +7971,15 @@
   ]
  },
  {
+  "key": "écoute: cou… teau.",
+  "text": "Écoute : cou… teau.",
+  "say": "Écoute : /ku/. /to/.",
+  "marks": [
+   10,
+   16
+  ]
+ },
+ {
   "key": "écris le mot: couteau!",
   "text": "Écris le mot : couteau !"
  },
@@ -9595,10 +9617,6 @@
  {
   "key": "on le met aux pieds avant les chaussures.",
   "text": "On le met aux pieds avant les chaussures."
- },
- {
-  "key": "une syllabe!",
-  "text": "Une syllabe !"
  },
  {
   "key": "deux syllabes!",

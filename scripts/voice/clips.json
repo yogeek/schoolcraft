@@ -30963,5 +30963,33 @@
   "sttCost": 1,
   "stt": "Recopie ce motif, puis trouve la suite",
   "score": 1
+ },
+ "écoute: cou… teau.": {
+  "file": "4bb0ddc5-5d1aea.mp3",
+  "text": "Écoute : cou… teau.",
+  "sent": "Écoute : /ku/. /to/.",
+  "dur": 2.48,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute, cou, tau",
+  "score": 1,
+  "marks": [
+   1.12,
+   2.05
+  ]
+ },
+ "écoute: su… mo.": {
+  "file": "ce632677-82c97e.mp3",
+  "text": "Écoute : su… mo.",
+  "sent": "Écoute : /sy/. /mo/.",
+  "dur": 2.48,
+  "cost": 8,
+  "sttCost": 1,
+  "stt": "Écoute : su, mot",
+  "score": 1,
+  "marks": [
+   1.24,
+   2.04
+  ]
  }
 }

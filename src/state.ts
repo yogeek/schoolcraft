@@ -104,9 +104,15 @@ const keyOf = (id: string) => (id === 'p1' ? 'schoolcraft:v1' : `schoolcraft:v1:
 /** storage key of the child playing; kept across versions, `version` inside drives migrations */
 const KEY = keyOf(profiles.current);
 
-export function saveProfiles(): void {
+/**
+ * Save the list of children. `current` (the child the app opens on next time) only changes when a
+ * child is picked: another tab may have picked one since this tab started, and must not be undone.
+ */
+export function saveProfiles(pick?: string): void {
   try {
-    localStorage.setItem(PROFILES_KEY, JSON.stringify(profiles));
+    const stored = loadProfiles();
+    const current = pick ?? (profiles.list.some((p) => p.id === stored.current) ? stored.current : profiles.current);
+    localStorage.setItem(PROFILES_KEY, JSON.stringify({ current, list: profiles.list }));
   } catch {
     /* storage full */
   }
@@ -124,8 +130,7 @@ export function profileName(p: Profile): string {
 export function switchProfile(id: string): void {
   if (id === profiles.current || !profiles.list.some((p) => p.id === id)) return;
   save();
-  profiles.current = id;
-  saveProfiles();
+  saveProfiles(id);
   location.reload();
 }
 
@@ -244,7 +249,8 @@ function sanitize(raw: unknown): GameState {
   // levels (clamped to the levels that exist by levels.ts, which knows the content)
   for (const a of ACTIVITIES) {
     const l = (s.levels as Record<string, Partial<LevelState>> | undefined)?.[a];
-    let unlocked = Math.max(1, count(l?.unlocked));
+    // levels.ts clamps to the real count later; a bound here keeps a corrupt number from freezing the load
+    let unlocked = Math.min(999, Math.max(1, count(l?.unlocked)));
     let current = Math.min(Math.max(1, count(l?.current)), unlocked);
     if (version < 4 && l) {
       // every old level up to `unlocked` stays open in its new place
@@ -309,10 +315,17 @@ function sanitize(raw: unknown): GameState {
 }
 
 function load(): GameState {
+  let raw: string | null = null;
   try {
-    const raw = localStorage.getItem(KEY);
+    raw = localStorage.getItem(KEY);
     return raw ? sanitize(JSON.parse(raw)) : fresh();
   } catch {
+    // unreadable: start afresh, but keep the old save aside, since the next save() overwrites it
+    try {
+      if (raw) localStorage.setItem(`${KEY}:broken`, raw);
+    } catch {
+      /* storage full */
+    }
     return fresh();
   }
 }
@@ -323,6 +336,13 @@ export const state: GameState = load();
 // so neither tab overwrites the other with old data
 try {
   window.addEventListener('storage', (e) => {
+    if (e.key === PROFILES_KEY) {
+      // children added, renamed or removed in another tab: take its list (this tab keeps its child)
+      const other = loadProfiles();
+      if (!other.list.some((p) => p.id === profiles.current)) return location.reload();
+      profiles.list = other.list;
+      return;
+    }
     if (e.key !== KEY || !e.newValue) return;
     try {
       Object.assign(state, sanitize(JSON.parse(e.newValue)));

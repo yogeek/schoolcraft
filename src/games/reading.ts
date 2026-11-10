@@ -17,6 +17,7 @@ import {
   foundLine,
   segments,
   listenLine,
+  READING_LEVELS,
   spokenSyllables,
   wordLine,
   type Item,
@@ -310,6 +311,9 @@ function buildGame(items: Item[]): Game {
 }
 
 // ---------------------------------------------------------------- spell with letters (encoding)
+/** how the voice says each sound taught in the sound levels (« Cherche : euh. » is recorded for them) */
+const SOUNDS = new Map(READING_LEVELS.flatMap((l) => (l.kind === 'sound' ? l.items.map((it) => [it.text, it.speak] as const) : [])));
+
 function spellGame(items: Item[]): Game {
   let target: Item = items[0];
   let prev: Item | undefined;
@@ -358,13 +362,19 @@ function spellGame(items: Item[]): Game {
             } else {
               r.miss(b);
               b.classList.add('tried');
-              await r.say(`Écoute bien : ${target.speak}.`, slowly);
-              if (r.misses === 2) fadeTried(r, gs.slice(built));
-              // after three mistakes, the next letter shines
-              if (r.misses >= 3 && r.open()) {
+              // help grows: the word again; then fewer letters and its syllables; then the next letter shines
+              if (r.misses >= 3) {
                 const next = [...r.choices.querySelectorAll<HTMLElement>('.choice:not(.used)')].find((x) => x.getAttribute('aria-label') === gs[built]);
-                next?.classList.add('hint');
-              }
+                await showAnswer(r, next);
+              } else if (r.misses === 2) {
+                fadeTried(r, gs.slice(built));
+                // a word: its syllables; a syllable: the sound of the letter to find (« Cherche : a. »)
+                const letter = SOUNDS.get(gs[built]);
+                if (!r.open()) return;
+                if (isWord(target)) await r.say(listenLine(target));
+                else if (letter) await r.say(`Cherche : ${letter}.`);
+                else await r.say(`${target.speak} !`); // « Le son : sa ! » (no clip for a consonant alone)
+              } else await r.say(`Écoute bien : ${target.speak}.`, slowly);
             }
           };
           return b;
@@ -438,7 +448,10 @@ function clapGame(words: PicWord[]): Game {
         d.classList.add('hit');
         if (taps >= 6) return;
         taps++;
-        beats.append(h('span', { class: 'beat on' }));
+        // after a mistake the empty boxes show how many syllables: each tap fills the next one
+        const empty = beats.querySelector('.beat:not(.on)');
+        if (empty) empty.classList.add('on');
+        else beats.append(h('span', { class: 'beat on' }));
         const my = ++tapSeq;
         // the child stops tapping (a young child thinks between two syllables): count the taps
         if (!(await r.wait(2200)) || my !== tapSeq || !r.open()) return;
@@ -451,10 +464,15 @@ function clapGame(words: PicWord[]): Game {
         }
         r.miss(d);
         r.hold(true);
+        // help grows: the syllables again; then their number, and one box per syllable to fill;
+        // then Pixel taps them with the child
         await r.say(taps < n ? 'Il en manque !' : "C'est trop !");
+        if (r.misses >= 3) await r.say('On compte ensemble !');
         await light(n);
+        if (r.misses >= 2) await r.say(n === 1 ? 'Une syllabe !' : `${['', '', 'Deux', 'Trois', 'Quatre'][n]} syllabes !`);
         await r.wait(400);
         beats.replaceChildren();
+        if (r.misses >= 2) for (let i = 0; i < n; i++) beats.append(h('span', { class: 'beat' }));
         taps = 0;
         r.hold(false);
         if (r.open()) await r.say('À toi ! Tape les syllabes.');
@@ -596,6 +614,8 @@ function sentenceGame(sentences: Sentence[]): Game {
             });
           }
           r.miss(b);
+          // help grows: the voice reads the sentence; then the right answer shines
+          if (r.misses >= 2) return showAnswer(r, b.parentElement?.querySelector(`.truth.${target.truth ? 'yes' : 'no'}`));
           await r.say('Écoute bien :');
           await r.say(target.text, slowly);
           if (r.open()) await r.say('Alors : vrai, ou faux ?');
@@ -626,19 +646,24 @@ function riddleGame(riddles: Riddle[]): Game {
       r.bubble('Qui suis-je ?');
       r.stage.append(h('div', { class: 'word-card sentence', lang: 'fr' }, target.text));
       r.choices.classList.add('kind-pic');
+      let right: HTMLElement | undefined;
       r.choices.append(
         ...shuffle([target.pic, ...target.wrong]).map((pic, i) => {
           const b = picture(pic, `image ${i + 1}`);
+          if (pic === target.pic) right = b;
           b.onclick = async () => {
             if (!r.open()) return;
             sfx.unlock();
             if (pic === target.pic) return r.win(b, () => r.say(target.text));
             r.miss(b);
-            // the child must read: first a nudge, then the voice reads it
+            b.classList.add('tried');
+            // the child must read: first a nudge; then the voice reads it, fewer pictures; then the answer shines
+            if (r.misses >= 3) return showAnswer(r, right);
             if (r.misses < 2) {
               await r.say('Relis bien la devinette !');
               return;
             }
+            fadeTried(r);
             await r.say('Écoute bien :');
             await r.say(target.text, slowly);
           };
