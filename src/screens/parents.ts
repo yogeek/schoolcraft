@@ -7,7 +7,7 @@ import { TIPS } from '../content/tips';
 import { ACTIVITY_NAMES, applyGrade, CHAPTERS, chapterOf, currentLevel, GRADE_NAMES, LEVEL_NAMES, MAX_LEVEL, parentSetLevel, totalStars, unlockedLevel } from '../levels';
 import { foxSVG } from '../pixel';
 import { playedMinutes, resetPlayClock } from '../playtime';
-import { currentProfile, profileName, profiles, resetAll, save, state, today, totalBlocks, type ActivityId, type Grade } from '../state';
+import { currentProfile, keepSaves, profileName, profiles, resetAll, save, state, today, totalBlocks, type ActivityId, type Grade } from '../state';
 import { childrenCard } from './profiles';
 import { bubble, h, modal, topBar } from '../ui';
 import type { Ctx } from './types';
@@ -75,6 +75,7 @@ export function parentGate(onOk: () => void): void {
   const check = () => {
     if (Number(input.value.trim()) === a * b) {
       dlg.close();
+      keepSaves(); // an adult is there to answer, if the browser asks
       onOk();
       return true;
     }

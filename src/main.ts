@@ -14,7 +14,7 @@ import { askWhoOnce, whoButton } from './screens/profiles';
 import { parentGate, parentsScreen, pauseScreen } from './screens/parents';
 import type { Ctx, ScreenName } from './screens/types';
 import { coachParents, parentsSeen, takeCoach, welcomeDialog } from './screens/welcome';
-import { exploring, mission, setExploring, state, type ActivityId } from './state';
+import { exploring, keepSaves, mission, setExploring, state, type ActivityId } from './state';
 import { blockImg, bubble, counter, h, installTapFix, mascot, reducedMotion, setBubble } from './ui';
 
 const app = document.getElementById('app')!;
@@ -172,6 +172,8 @@ function secretPress(el: HTMLElement, then: () => void): void {
 }
 
 installTapFix();
+// the installed app: ask the browser to keep the saves (granted silently there)
+if (matchMedia('(display-mode: standalone)').matches || (navigator as unknown as { standalone?: boolean }).standalone) keepSaves();
 // parent mode: every level open, no time limit, no welcome dialog, and a banner that says so
 if (exploring) {
   state.settings.grade ??= 'MS';

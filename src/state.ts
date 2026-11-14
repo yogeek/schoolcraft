@@ -384,6 +384,20 @@ try {
   /* no window (content checks under Node) */
 }
 
+/**
+ * Ask the browser to keep the saves when the phone runs short of space (otherwise it may clear
+ * them). Chrome decides silently (an installed app is usually granted); Firefox asks with a
+ * prompt, so this is only called at launch in the installed app and when an adult has just
+ * answered the parents' question.
+ */
+export function keepSaves(): void {
+  try {
+    void navigator.storage?.persisted?.().then((done) => (done ? undefined : navigator.storage.persist())).catch(() => {});
+  } catch {
+    /* no Storage API */
+  }
+}
+
 export function save(): void {
   try {
     localStorage.setItem(KEY, JSON.stringify(state));

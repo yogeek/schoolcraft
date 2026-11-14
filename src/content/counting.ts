@@ -53,7 +53,7 @@ export const COUNT_CHAPTERS = ['Les petits nombres', "Jusqu'à dix", 'Calculer',
 
 export const COUNT_LEVELS: CountLevel[] = [
   // 1. les petits nombres (MS)
-  { chapter: 0, name: "Compter jusqu'à 4", intro: 'Touche chaque bloc pour le compter, puis choisis le bon nombre.', mode: 'count', min: 1, max: 4, choices: 3 },
+  { chapter: 0, name: "Compter jusqu'à 5", intro: 'Touche chaque bloc pour le compter, puis choisis le bon nombre.', mode: 'count', min: 1, max: 5, choices: 3 },
   { chapter: 0, name: "Compter jusqu'à 6", intro: 'Encore plus de blocs ! Compte-les bien.', mode: 'count', min: 1, max: 6, choices: 3 },
   { chapter: 0, name: 'Le plus grand tas', intro: 'Regarde bien les deux tas de blocs.', mode: 'compare', min: 1, max: 6, choices: 0 },
   { chapter: 0, name: "Coup d'œil", intro: 'Regarde bien les blocs : ils vont se cacher !', mode: 'flash', min: 1, max: 6, choices: 4 },
