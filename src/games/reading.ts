@@ -136,6 +136,8 @@ function likeness(a: Item, b: Item): number {
 }
 
 const statKey = (it: Item) => `snd:${it.text}`;
+/** « o », « au » and « eau » are one sound: a game asks another sound before coming back to it */
+const sameSound = (it: Item) => `snd:${it.group ?? it.text}`;
 
 function choiceGame(level: Extract<ReadingLevel, { items: Item[] }>): Game {
   let target: Item = level.items[0];
@@ -202,7 +204,7 @@ function choiceGame(level: Extract<ReadingLevel, { items: Item[] }>): Game {
   return {
     praise: level.kind === 'read' ? ['Bien lu !', 'Bravo, tu as lu le mot !', 'Super lecture !', 'Oui, bravo !'] : undefined,
     setup(r) {
-      target = pickWeighted(level.items, statKey, prev);
+      target = pickWeighted(level.items, statKey, prev, sameSound);
       prev = target;
       r.choices.classList.add(`kind-${level.kind}`);
       if (level.kind === 'read') {

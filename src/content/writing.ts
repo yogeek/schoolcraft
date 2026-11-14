@@ -172,10 +172,10 @@ export const WRITING_LEVELS: WritingLevel[] = [
   { chapter: 1, script: 'dig', name: 'Les chiffres de 6 à 0', intro: 'Encore des chiffres !', chars: chars('67890') },
   // 3. la cursive (GS, CP)
   { chapter: 2, script: 'cur', name: 'Les ronds', intro: "L'écriture attachée ! On commence par les lettres rondes.", chars: chars('coadq') },
-  { chapter: 2, script: 'cur', name: 'Les coupes', intro: 'Des lettres qui montent et qui descendent.', chars: chars('iut') },
-  { chapter: 2, script: 'cur', name: 'Les ponts', intro: 'Des lettres avec des ponts !', chars: chars('nmp') },
+  { chapter: 2, script: 'cur', name: 'Les coupes', intro: 'Des lettres qui montent et qui descendent.', chars: chars('iutya') },
+  { chapter: 2, script: 'cur', name: 'Les ponts', intro: 'Des lettres avec des ponts !', chars: chars('nmphx') },
   { chapter: 2, script: 'cur', name: 'Les boucles', intro: 'Des lettres avec des boucles.', chars: chars('elbhkf') },
-  { chapter: 2, script: 'cur', name: 'Les jambages', intro: 'Des lettres qui descendent sous la ligne.', chars: chars('jyg') },
+  { chapter: 2, script: 'cur', name: 'Les jambages', intro: 'Des lettres qui descendent sous la ligne.', chars: chars('jygqf') },
   { chapter: 2, script: 'cur', name: 'Les lettres spéciales', intro: 'Des lettres un peu spéciales.', chars: chars('srvwxz') },
   { chapter: 2, script: 'cur', name: 'Sans modèle', intro: 'Maintenant, le chemin se cache ! Écris la lettre de mémoire.', chars: chars('coaditunmpelbhfjgsrv'), memory: true },
 ];

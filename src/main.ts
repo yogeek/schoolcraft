@@ -2,7 +2,7 @@ import './style.css';
 import { prefetchVoice, sfx, stopSpeech } from './audio';
 import { HEROES } from './content/heroes';
 import { heroSVG } from './heroArt';
-import { currentLevel, parentSetLevel } from './levels';
+import { currentLevel, parentSetLevel, unlockAll } from './levels';
 import { beginScreen } from './nav';
 import { overLimit, startPlayClock, tickPlayClock } from './playtime';
 import { activityScreen } from './screens/activity';
@@ -14,7 +14,7 @@ import { askWhoOnce, whoButton } from './screens/profiles';
 import { parentGate, parentsScreen, pauseScreen } from './screens/parents';
 import type { Ctx, ScreenName } from './screens/types';
 import { coachParents, parentsSeen, takeCoach, welcomeDialog } from './screens/welcome';
-import { mission, state, type ActivityId } from './state';
+import { exploring, mission, setExploring, state, type ActivityId } from './state';
 import { blockImg, bubble, counter, h, installTapFix, mascot, reducedMotion, setBubble } from './ui';
 
 const app = document.getElementById('app')!;
@@ -109,13 +109,14 @@ function homeScreen(ctx: Ctx): void {
   const bub = bubble(ready ? 'Un coffre t’attend !' : 'Coucou ! On joue ?');
   const parents = h('button', { class: `parents${parentsSeen() ? '' : ' unseen'}` }, 'Parents');
   parents.onclick = () => parentGate(() => ctx.go('parents'));
-  const who = whoButton();
-
+  const who = exploring ? null : whoButton();
+  const logo = h('h1', { class: 'logo' }, 'SchoolCraft');
+  secretPress(logo, () => parentGate(() => setExploring(!exploring)));
   ctx.root.append(
     h(
       'main',
       { class: 'screen home' },
-      h('header', { class: 'topbar' }, h('div', { class: 'top-left' }, parents, who ?? ''), h('h1', { class: 'logo' }, 'SchoolCraft'), counter()),
+      h('header', { class: 'topbar' }, h('div', { class: 'top-left' }, parents, who ?? ''), logo, counter()),
       h('div', { class: 'hero' }, fox, bub),
       adventure,
       h(
@@ -153,12 +154,31 @@ function homeScreen(ctx: Ctx): void {
     if (!askWhoOnce(() => ctx.alive() && welcomeDialog(ctx))) welcomeDialog(ctx);
   } else if (takeCoach()) coachParents(speak);
   else {
-    askWhoOnce();
+    if (!exploring) askWhoOnce();
     speak();
   }
 }
 
+/** a press held 3 s (parents only: a child taps; the parents' question comes next anyway) */
+function secretPress(el: HTMLElement, then: () => void): void {
+  let t = 0;
+  const stop = () => clearTimeout(t);
+  el.addEventListener('pointerdown', () => {
+    stop();
+    t = window.setTimeout(then, 3000);
+  });
+  for (const ev of ['pointerup', 'pointercancel', 'pointerleave'] as const) el.addEventListener(ev, stop);
+  el.addEventListener('contextmenu', (e) => e.preventDefault());
+}
+
 installTapFix();
+// parent mode: every level open, no time limit, no welcome dialog, and a banner that says so
+if (exploring) {
+  state.settings.grade ??= 'MS';
+  state.settings.limitMin = 0;
+  unlockAll();
+  document.body.append(h('div', { class: 'explore-banner', role: 'status' }, 'Mode parent : tous les niveaux sont ouverts. Appui long sur le logo pour revenir.'));
+}
 // dev only: #play=sounds:7 opens a level directly (for testing; not in production builds)
 const jump = import.meta.env.DEV ? /^#play=(sounds|write|count):(\d+)$/.exec(location.hash) : null;
 if (jump) {

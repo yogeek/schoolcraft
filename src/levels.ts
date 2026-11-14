@@ -86,6 +86,12 @@ export function parentSetLevel(a: ActivityId, n: number): void {
   save();
 }
 
+/** Parent mode: every level of every activity open, the current ones unchanged. */
+export function unlockAll(): void {
+  for (const a of ['sounds', 'write', 'count'] as const) clamped(a).unlocked = MAX_LEVEL[a];
+  save();
+}
+
 /** Where a child of each class starts (the levels below stay open, to review). */
 export const GRADE_START: Record<Grade, Record<ActivityId, number>> = {
   MS: { sounds: 1, write: 1, count: 1 },

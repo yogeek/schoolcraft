@@ -101,8 +101,33 @@ function loadProfiles(): { current: string; list: Profile[] } {
 export const profiles = loadProfiles();
 
 const keyOf = (id: string) => (id === 'p1' ? 'schoolcraft:v1' : `schoolcraft:v1:${id}`);
-/** storage key of the child playing; kept across versions, `version` inside drives migrations */
-const KEY = keyOf(profiles.current);
+
+/**
+ * Parent mode: the parents explore the app on a save of their own (every level open, no time
+ * limit), hidden from the children's list, so a child's progress is never touched. Device-wide
+ * flag; the long press on the home logo (then the parents' question) turns it on and off.
+ */
+const EXPLORE_KEY = 'schoolcraft:explore';
+export const exploring: boolean = (() => {
+  try {
+    return localStorage.getItem(EXPLORE_KEY) === '1';
+  } catch {
+    return false;
+  }
+})();
+export function setExploring(on: boolean): void {
+  save();
+  try {
+    if (on) localStorage.setItem(EXPLORE_KEY, '1');
+    else localStorage.removeItem(EXPLORE_KEY);
+  } catch {
+    return;
+  }
+  location.reload();
+}
+
+/** storage key of the child playing (or of the parent mode); kept across versions, `version` inside drives migrations */
+const KEY = exploring ? 'schoolcraft:v1:explore' : keyOf(profiles.current);
 
 /**
  * Save the list of children. `current` (the child the app opens on next time) only changes when a
@@ -128,9 +153,14 @@ export function profileName(p: Profile): string {
 
 /** Play as another child: the app restarts on that child's save. */
 export function switchProfile(id: string): void {
-  if (id === profiles.current || !profiles.list.some((p) => p.id === id)) return;
+  if ((id === profiles.current && !exploring) || !profiles.list.some((p) => p.id === id)) return;
   save();
   saveProfiles(id);
+  try {
+    localStorage.removeItem(EXPLORE_KEY); // picking a child leaves the parent mode
+  } catch {
+    /* ignore */
+  }
   location.reload();
 }
 
@@ -388,14 +418,35 @@ export function record(id: string, success: boolean): void {
  * Pick an item, favouring the ones in low boxes (missed or rarely seen): spaced repetition.
  * `key` gives the stats id of an item; `avoid` is not picked (no same question twice in a row).
  */
-export function pickWeighted<T>(items: readonly T[], key: (item: T) => string, avoid?: T): T {
-  const weights = items.map((i) => (i === avoid && items.length > 1 ? 0 : [0, 6, 3, 1][boxOf(key(i))]));
+/** How often each item was asked in the current game (by `same` key): a game does not ask the same
+ *  letter, sound or number twice while others are left. Cleared by `newGame()`. */
+const asked = new Map<string, number>();
+export function newGame(): void {
+  asked.clear();
+}
+
+/**
+ * Spaced repetition: items in box 1 come up most. Among the items asked the fewest times in this
+ * game (so no repeat before every item came once), never `avoid` (the previous question) when
+ * there is a choice. `same` tells which items count as the same question (default: the stats key;
+ * e.g. « au » and « eau » are the same sound).
+ */
+export function pickWeighted<T>(items: readonly T[], key: (item: T) => string, avoid?: T, same: (item: T) => string = key): T {
+  const pool = items.length > 1 && avoid !== undefined ? items.filter((i) => i !== avoid) : items.slice();
+  const least = Math.min(...pool.map((i) => asked.get(same(i)) ?? 0));
+  const fresh = pool.filter((i) => (asked.get(same(i)) ?? 0) === least);
+  const weights = fresh.map((i) => [0, 6, 3, 1][boxOf(key(i))] || 1);
   let r = Math.random() * weights.reduce((a, b) => a + b, 0);
-  for (let k = 0; k < items.length; k++) {
+  let pick = fresh[fresh.length - 1] ?? items[0];
+  for (let k = 0; k < fresh.length; k++) {
     r -= weights[k];
-    if (r < 0) return items[k];
+    if (r < 0) {
+      pick = fresh[k];
+      break;
+    }
   }
-  return items.filter((_, k) => weights[k] > 0).pop() ?? items[0];
+  asked.set(same(pick), (asked.get(same(pick)) ?? 0) + 1);
+  return pick;
 }
 
 /** Today's adventure (reset when the day changed). */

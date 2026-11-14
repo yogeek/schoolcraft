@@ -12,7 +12,7 @@ import { endSession, starsOf } from './levels';
 import { readyHero } from './screens/heroes';
 import { rewardScreen } from './screens/reward';
 import type { Ctx } from './screens/types';
-import { logGame, logGood, record, type ActivityId } from './state';
+import { logGame, logGood, newGame, record, type ActivityId } from './state';
 import { bubble, gameBlocks, giveBlock, h, levelButton, mascot, rand, reducedMotion, setBubble, speakerButton, topBar } from './ui';
 
 export interface Round {
@@ -72,6 +72,7 @@ export interface SessionSpec {
 export function runSession(ctx: Ctx, spec: SessionSpec): void {
   const { activity, levelNo, game } = spec;
   const n = game.rounds ?? ROUNDS[activity];
+  newGame(); // nothing asked yet: no question comes twice while others are left
   // one review question near the end (spaced, interleaved practice); it does not count for passing
   const plan: Game[] = Array.from({ length: n }, () => game);
   const review = spec.review && !game.noReview ? spec.review : null;

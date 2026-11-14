@@ -3262,3 +3262,25 @@ button span,
     padding: 6px 8px;
   }
 }
+
+/* the logo hides the parents' long press (parent mode): no text selection or callout */
+.home .logo {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* parent mode (every level open, a save of its own) */
+.explore-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  padding: 4px 10px calc(4px + env(safe-area-inset-bottom));
+  background: #5b3fa0;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  pointer-events: none;
+}
