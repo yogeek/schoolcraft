@@ -315,19 +315,25 @@ function raceGame(level: CountLevel): Game {
         dieBtn.setAttribute('aria-label', `Le dé : ${v}`);
       };
 
-      dieBtn.onclick = async () => {
-        if (!r.open() || rolled) return;
-        sfx.unlock();
+      // the die tumbles, then stops on `v` (the child's roll, or Pixel's on its turn)
+      const tumble = async (v: number): Promise<boolean> => {
         sfx.roll();
-        r.hold(true);
         dieBtn.classList.add('rolling');
         for (let i = 0; i < 6 && !reducedMotion(); i++) {
           showFace(1 + Math.floor(Math.random() * die));
-          if (!(await r.wait(80))) return;
+          if (!(await r.wait(80))) return false;
         }
         dieBtn.classList.remove('rolling');
+        showFace(v);
+        return true;
+      };
+
+      dieBtn.onclick = async () => {
+        if (!r.open() || rolled) return;
+        sfx.unlock();
+        r.hold(true);
+        if (!(await tumble(roll))) return;
         rolled = roll;
-        showFace(roll);
         r.hold(false);
         r.bubble(`Le dé : ${roll}`);
         await r.say(`${W[roll]} ! Touche la case où tu arrives.`);
@@ -384,6 +390,10 @@ function raceGame(level: CountLevel): Game {
           }
           // Pixel's turn
           const v = fox[turn - 1] ?? 1;
+          r.bubble('À Pixel !');
+          dieBtn.classList.add('fox-turn');
+          dieBtn.setAttribute('aria-label', 'Pixel lance le dé');
+          if (!(await tumble(v))) return;
           r.bubble(`À Pixel : ${v}`);
           await r.say(`À moi ! Le dé dit : ${W[v]}.`);
           const to = Math.min(end - 1, foxPos + v);
