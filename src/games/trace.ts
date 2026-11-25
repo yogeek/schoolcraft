@@ -14,10 +14,39 @@ import { blockImg, h, rand, reducedMotion } from '../ui';
 const NS = 'http://www.w3.org/2000/svg';
 const STEP = 2; // distance between two checkpoints of a stroke, in box units (the box is 100 high)
 const DEMO_SPEED = 75; // box units per second
+const LOOK = 5; // the ink looks this many checkpoints ahead of where it is (10 units)
+const LAG = 0.4; // per checkpoint: of two points as close to the finger, the ink takes the nearer one along the path
+const DOT = 6; // a stroke shorter than this (the dot of i and j) is done by touching it
 
 interface Pt {
   x: number;
   y: number;
+}
+
+const dist = (a: Pt, b: Pt) => Math.hypot(a.x - b.x, a.y - b.y);
+
+/**
+ * Where the ink goes when the finger is at p: the checkpoint of the stroke nearest to the finger,
+ * a few checkpoints ahead at most, on the road (within adv). It never jumps over a checkpoint the
+ * finger is not near (within skip): where a stroke turns back on itself (n, m, h, p, a, d…), the
+ * finger must really go to the end before coming back. Taking the nearest point, and not the
+ * farthest one in reach, keeps the ink under the finger: a finger that stops does not push the ink
+ * forward, and the end of a stroke must be reached.
+ */
+export function follow(line: Pt[], at: number, p: Pt, adv: number, skip: number): number {
+  let best = at;
+  const d0 = dist(p, line[at]);
+  let score = d0 <= adv ? d0 : Infinity;
+  for (let i = at + 1; i <= Math.min(line.length - 1, at + LOOK); i++) {
+    const d = dist(p, line[i]);
+    if (d > skip) break;
+    const s = d + LAG * (i - at);
+    if (d <= adv && s < score) {
+      best = i;
+      score = s;
+    }
+  }
+  return best;
 }
 
 function svg<K extends keyof SVGElementTagNameMap>(tag: K, attrs: Record<string, string | number> = {}): SVGElementTagNameMap[K] {
@@ -39,13 +68,18 @@ function speech(gl: Glyph): { intro: string; done: string } {
 export function writingGame(level: WritingLevel): Game {
   const memory = !!level.memory;
   // Tolerances follow the finger, not the drawing: they are set in screen pixels, then turned into
-  // box units for the board's current size (and kept within sensible bounds of the letter).
+  // box units for the board's current size, and kept within bounds of the letter (the grey road is
+  // 13 units wide: a finger on the road moves the ink; a cursive letter is 30 units high).
   const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
-  const tol = (scale: number) => ({
-    adv: clamp((memory ? 30 : 26) / scale, 8, 14), // the finger is "on" a checkpoint within this distance
-    off: clamp((memory ? 56 : 48) / scale, 16, 26), // farther than this from the path: off the path
-    start: clamp(40 / scale, 12, 20), // where a stroke may be started or taken up again
-  });
+  const tol = (scale: number) => {
+    const adv = clamp((memory ? 25 : 22) / scale, 7, memory ? 11 : 10); // the finger is "on" a checkpoint within this distance
+    return {
+      adv,
+      skip: adv * 1.3, // the ink may pass a checkpoint this far from the finger (a corner cut a little)
+      off: clamp((memory ? 50 : 44) / scale, 14, 22), // farther than this from the path: off the path
+      start: clamp(40 / scale, 12, 20), // where a stroke may be started or taken up again
+    };
+  };
   let prev: string | undefined;
   let saidRepeat = false;
   /** the question being shown */
@@ -120,8 +154,7 @@ export function writingGame(level: WritingLevel): Game {
       let stroke = 0;
       let at = 0; // checkpoint reached in the current stroke
       let pointer = -1;
-
-      const dist = (a: Pt, b: Pt) => Math.hypot(a.x - b.x, a.y - b.y);
+      let last: Pt | null = null; // where the finger was at the previous event
       const showInk = (s: number, upTo: number) => {
         const done = (lens[s] * upTo) / (pts[s].length - 1);
         inks[s].style.strokeDashoffset = `${Math.max(0, lens[s] + 1 - done)}`;
@@ -250,6 +283,7 @@ export function writingGame(level: WritingLevel): Game {
         }
         stuck = 0;
         pointer = e.pointerId;
+        last = p;
         try {
           view.setPointerCapture(e.pointerId); // keep the finger even when it slips off the board
         } catch {
@@ -257,7 +291,21 @@ export function writingGame(level: WritingLevel): Game {
         }
         movePen(p);
         e.preventDefault();
+        if (lens[stroke] < DOT) endStroke(); // the dot of i and j
       });
+
+      const endStroke = () => {
+        showInk(stroke, pts[stroke].length - 1);
+        pointer = -1;
+        stroke++;
+        at = 0;
+        movePen(null);
+        if (stroke >= pts.length) void finish();
+        else {
+          placeMarker();
+          r.bubble('Encore un trait !');
+        }
+      };
 
       view.addEventListener('pointermove', (e) => {
         if (e.pointerId !== pointer || stroke >= pts.length) return;
@@ -267,11 +315,18 @@ export function writingGame(level: WritingLevel): Game {
         }
         const p = toBox(e);
         movePen(p);
-        const { adv: ADV, off: OFF } = tol(scale());
+        const { adv, skip, off: OFF } = tol(scale());
         const line = pts[stroke];
-        // move forward along the path to the farthest checkpoint the finger covers (no skipping ahead)
+        // move forward along the path with the finger, in steps of one unit between two events (a quick
+        // finger does not jump; a slow one is not needed to be quick)
+        const from = last ?? p;
+        last = p;
+        const steps = Math.max(1, Math.ceil(dist(from, p)));
         let best = at;
-        for (let i = at + 1; i < Math.min(line.length, at + 9); i++) if (dist(p, line[i]) <= ADV) best = i;
+        for (let k = 1; k <= steps && best < line.length - 2; k++) {
+          const q = { x: from.x + ((p.x - from.x) * k) / steps, y: from.y + ((p.y - from.y) * k) / steps };
+          best = follow(line, best, q, adv, skip);
+        }
         // the finger moves but the ink waits (a little beside the path): show where the ink is
         if (best > at) stuck = 0;
         else if (!stuck) stuck = performance.now();
@@ -286,17 +341,7 @@ export function writingGame(level: WritingLevel): Game {
         let near = Infinity;
         for (let i = Math.max(0, at - 4); i < Math.min(line.length, at + 10); i++) near = Math.min(near, dist(p, line[i]));
         if (at >= line.length - 2) {
-          // this stroke is done
-          showInk(stroke, line.length - 1);
-          pointer = -1;
-          stroke++;
-          at = 0;
-          movePen(null);
-          if (stroke >= pts.length) void finish();
-          else {
-            placeMarker();
-            r.bubble('Encore un trait !');
-          }
+          endStroke(); // this stroke is done
           return;
         }
         placeMarker();
