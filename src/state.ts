@@ -38,7 +38,7 @@ export interface DayLog {
 }
 
 export interface GameState {
-  version: 4;
+  version: 5;
   levels: Record<ActivityId, LevelState>;
   /** best stars (0–3) per level, index = level − 1 */
   stars: Record<ActivityId, number[]>;
@@ -209,7 +209,7 @@ function fresh(): GameState {
   inventory.grass = 2;
   inventory.wood = 2;
   return {
-    version: 4,
+    version: 5,
     levels: { sounds: { current: 1, unlocked: 1 }, write: { current: 1, unlocked: 1 }, count: { current: 1, unlocked: 1 } },
     stars: { sounds: [], write: [], count: [] },
     inventory,
@@ -245,12 +245,26 @@ const V3_LEVELS: Partial<Record<ActivityId, number[]>> = {
  */
 const V4_READING = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 30, 31];
 
+/**
+ * v4 → v5: counting got two number-tower games (« Et encore un » after level 1, « Casser la tour »
+ * after « La grotte »). Index = v4 level number, value = the same level in v5.
+ */
+const V5_COUNT = [0, 1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18];
+
 /** A level number of an older save, in today's numbering. */
 function migrateLevel(a: ActivityId, n: number, version: number): number {
   const v3 = V3_LEVELS[a];
   if (version < 3 && v3) n = v3[Math.min(n, v3.length - 1)];
   if (version < 4 && a === 'sounds') n = V4_READING[Math.min(n, V4_READING.length - 1)];
+  if (version < 5 && a === 'count') n = V5_COUNT[Math.min(n, V5_COUNT.length - 1)];
   return n;
+}
+
+/** Stars of an older save (index = level − 1), moved to today's numbering. */
+function moveStars(stars: number[], map: number[]): number[] {
+  const moved: number[] = [];
+  stars.forEach((v, i) => (moved[map[Math.min(i + 1, map.length - 1)] - 1] = v));
+  return Array.from(moved, (v) => v ?? 0);
 }
 
 /** Repair anything missing or malformed, and upgrade old saves. Never throws. */
@@ -282,7 +296,7 @@ function sanitize(raw: unknown): GameState {
     // levels.ts clamps to the real count later; a bound here keeps a corrupt number from freezing the load
     let unlocked = Math.min(999, Math.max(1, count(l?.unlocked)));
     let current = Math.min(Math.max(1, count(l?.current)), unlocked);
-    if (version < 4 && l) {
+    if (version < 5 && l) {
       // every old level up to `unlocked` stays open in its new place
       const opened = Array.from({ length: unlocked }, (_, i) => migrateLevel(a, i + 1, version));
       current = migrateLevel(a, current, version);
@@ -295,13 +309,11 @@ function sanitize(raw: unknown): GameState {
   for (const a of ACTIVITIES) {
     const st = (s.stars as Record<string, unknown> | undefined)?.[a];
     if (!Array.isArray(st)) continue;
-    const stars = st.map((v) => Math.min(3, count(v)));
-    if (version < 4 && a === 'sounds') {
-      // stars came with v3: only the v3 → v4 renumbering applies
-      const moved: number[] = [];
-      stars.forEach((v, i) => (moved[V4_READING[Math.min(i + 1, V4_READING.length - 1)] - 1] = v));
-      base.stars[a] = Array.from(moved, (v) => v ?? 0);
-    } else base.stars[a] = stars;
+    let stars = st.map((v) => Math.min(3, count(v)));
+    // stars came with v3: only the later renumberings apply
+    if (version < 4 && a === 'sounds') stars = moveStars(stars, V4_READING);
+    if (version < 5 && a === 'count') stars = moveStars(stars, V5_COUNT);
+    base.stars[a] = stars;
   }
 
   // stats: keep only well-formed, prefixed keys (v1 also stored unused keys like "3" or "a")

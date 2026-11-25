@@ -3288,3 +3288,104 @@ button span,
   text-align: center;
   pointer-events: none;
 }
+
+/* ---------- number towers (Et encore un, Casser la tour) ---------- */
+.nt-stage {
+  --nt: clamp(40px, 11vw, 58px);
+}
+.nt-scene {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(16px, 6vw, 40px);
+  min-height: calc(var(--nt) * 6 + 40px);
+  padding-top: 34px;
+}
+/* one whole: joined blocks inside one outline, its number on top */
+.ntower {
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  border: 3px solid var(--ink);
+  background: var(--ink);
+  gap: 2px;
+}
+.ntower.nt-top {
+  animation: nt-step 0.35s ease-out;
+}
+.nt-block {
+  position: relative;
+  display: block;
+  width: var(--nt);
+  height: var(--nt);
+  padding: 0;
+  border: 0;
+  background: none;
+  touch-action: none;
+}
+.nt-block img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.nt-block.nt-loose {
+  border: 3px solid var(--ink);
+  box-sizing: content-box;
+  animation: bob 1.4s ease-in-out infinite;
+}
+.nt-block.nt-new {
+  animation: drop 0.35s;
+}
+.nt-block.glow,
+.nt-block.hint {
+  outline: 5px solid #fff;
+  outline-offset: -5px;
+  animation: pop 0.9s ease-in-out infinite;
+}
+.nt-label {
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: #fff;
+  background: var(--ink);
+  padding: 0 8px;
+}
+.nt-label.nt-new-label {
+  animation: pop 0.5s;
+}
+.nt-plus {
+  align-self: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #fff;
+  text-shadow: 2px 2px 0 var(--ink);
+}
+@keyframes nt-step {
+  from {
+    transform: translate(calc(var(--nt) * -1), calc(var(--nt) * -0.5));
+  }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  .nt-stage {
+    --nt: clamp(22px, 8.5vh, 38px);
+  }
+  .nt-scene {
+    padding-top: 28px;
+    min-height: calc(var(--nt) * 6 + 32px);
+  }
+  .nt-label {
+    top: -28px;
+    font-size: 1.1rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ntower.nt-top,
+  .nt-block.nt-loose,
+  .nt-block.nt-new {
+    animation: none;
+  }
+}

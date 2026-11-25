@@ -13,6 +13,7 @@ const FLASH_MS = 2000;
 const COUNTED = ['Bien compté !', 'Bravo !', 'Super !', 'Oui, bien joué !', 'Génial !'];
 
 const blockType = (): BlockType => rand(COMMON_BLOCKS.filter((t) => t !== 'glass'));
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const range = (a: number, b: number) => Array.from({ length: b - a + 1 }, (_, i) => a + i);
 /** « un » / « une » */
 const one = (n: number, fem: boolean) => (n === 1 ? (fem ? 'une' : 'un') : W[n]);
@@ -38,6 +39,10 @@ export function countingGame(level: CountLevel): Game {
       return problemGame(level);
     case 'tens':
       return tensGame(level);
+    case 'stick':
+      return stickGame(level);
+    case 'break':
+      return breakGame(level);
   }
 }
 
@@ -752,6 +757,189 @@ function tensGame(level: CountLevel): Game {
     ask(r) {
       r.bubble('Combien de blocs ?');
       return r.say(n === 20 ? 'Combien de blocs en tout ?' : 'Une tour, c’est dix blocs. Combien de blocs en tout ?');
+    },
+  };
+}
+
+// ---------------------------------------------------------------- number towers (one whole made of units)
+// A number is shown as one tower of joined blocks with its number on top: sticking a block on it
+// makes the next number (« trois, et encore un : quatre »), breaking it shows its two parts.
+// The idea (a number is a whole you can join and cut, rather than the last word of the count)
+// follows R. Brissiaud; the look is our own blocks.
+
+/** a number tower: blocks stacked bottom-up (child 0 is the bottom one), its number on top */
+function numberTower(type: BlockType, n: number, tap?: (i: number, el: HTMLElement) => void): { tower: HTMLElement; label: HTMLElement; blocks: HTMLElement[] } {
+  const label = h('span', { class: 'nt-label' }, String(n));
+  const blocks = range(1, n).map((i) => {
+    if (!tap) return h('div', { class: 'nt-block', 'aria-hidden': 'true' }, blockImg(type));
+    const b = h('button', { class: 'nt-block', 'aria-label': `bloc ${i}` }, blockImg(type));
+    b.onclick = () => tap(i, b);
+    return b;
+  });
+  const tower = h('div', { class: 'ntower' }, ...blocks, label);
+  return { tower, label, blocks };
+}
+
+const blocksWord = (n: number) => (n === 1 ? 'un bloc' : `${W[n]} blocs`);
+
+function stickGame(level: CountLevel): Game {
+  const pool = range(level.min, level.max);
+  const key = (n: number) => `count:stick:${n}`;
+  let n = 1;
+  let prev: number | undefined;
+  let stuck = false;
+  let tower: HTMLElement = h('div');
+  let label: HTMLElement = h('span');
+  let loose: HTMLElement = h('div');
+  const question = () => (n === 1 ? 'Un bloc, et encore un. Ça fait combien ?' : `Une tour de ${W[n]}, et encore un bloc. Ça fait combien ?`);
+
+  /** the loose block jumps onto the tower */
+  const stick = (r: Round) => {
+    if (stuck) return;
+    stuck = true;
+    sfx.place();
+    loose.classList.remove('nt-loose');
+    tower.insertBefore(loose, label);
+    loose.classList.add('nt-new');
+    r.stage.querySelector('.nt-plus')?.remove();
+  };
+
+  return {
+    praise: COUNTED,
+    setup(r) {
+      n = pickWeighted(pool, key, prev);
+      prev = n;
+      stuck = false;
+      const type = blockType();
+      ({ tower, label } = numberTower(type, n));
+      loose = h('div', { class: 'nt-block nt-loose', 'aria-hidden': 'true' }, blockImg(type));
+      r.stage.classList.add('nt-stage');
+      r.stage.append(h('div', { class: 'nt-scene' }, tower, h('span', { class: 'nt-plus', 'aria-hidden': 'true' }, '+ 1'), loose));
+      r.bubble(`${n} + 1 = ?`);
+      numberChoices(r, n + 1, level.choices, 1, level.max + 2, async (k, el) => {
+        if (!r.open()) return;
+        sfx.unlock();
+        if (k === n + 1) {
+          return r.win(el, async () => {
+            stick(r);
+            label.textContent = String(n + 1);
+            label.classList.add('nt-new-label');
+            r.bubble(`${n} + 1 = ${n + 1}`);
+            await r.say(`${cap(W[n])}, et encore un : ${W[n + 1]} !`);
+          });
+        }
+        r.miss(el);
+        await r.say(`Ça, c'est le nombre ${W[k]}.`);
+        if (r.misses >= 3) return shine(r, numberEl(r, n + 1));
+        if (r.misses >= 2) {
+          // the block sticks (look and check), and Pixel counts the tower with the child
+          stick(r);
+          label.textContent = '?';
+          await countTogether(r, [...tower.querySelectorAll('.nt-block')]);
+          if (r.open()) await r.say('Combien de blocs dans la tour ?');
+          return;
+        }
+        await r.say(n === 1 ? 'Il y a un bloc. Avec un de plus, ça fait combien ?' : `La tour a ${W[n]} blocs. Avec un de plus, ça fait combien ?`);
+      });
+      return key(n);
+    },
+    ask(r) {
+      r.bubble(`${n} + 1 = ?`);
+      return r.say(stuck ? 'Combien de blocs dans la tour ?' : question());
+    },
+  };
+}
+
+function breakGame(level: CountLevel): Game {
+  const pairs: [number, number][] = [];
+  for (let n = level.min; n <= level.max; n++) for (let k = 1; k < n; k++) pairs.push([n, k]);
+  const key = (p: [number, number]) => `count:break:${p[0]}-${p[1]}`;
+  let pair: [number, number] = pairs[0];
+  let prev: [number, number] | undefined;
+  let busy = false;
+  const want = () => (pair[1] === 1 ? 'Casse la tour pour garder un seul bloc en bas !' : `Casse la tour pour garder ${W[pair[1]]} blocs en bas !`);
+
+  return {
+    praise: ['Bien cassé !', 'Bravo !', 'Super !', 'Oui, bien joué !'],
+    setup(r) {
+      pair = pickWeighted(pairs, key, prev);
+      prev = pair;
+      busy = false;
+      const [n, k] = pair;
+      const type = blockType();
+      const scene = h('div', { class: 'nt-scene' });
+      const { tower, label, blocks } = numberTower(type, n, (i, el) => void cut(i, el));
+      const top = h('div', { class: 'ntower nt-top' });
+      const topLabel = h('span', { class: 'nt-label' });
+      scene.append(tower);
+      r.stage.classList.add('nt-stage');
+      r.stage.append(scene);
+      r.bubble(`Garde ${k} en bas`);
+
+      /** split the tower above block `i`: the top piece steps aside, each piece shows its number */
+      const split = (i: number) => {
+        sfx.place();
+        top.replaceChildren(...blocks.slice(i), topLabel);
+        topLabel.textContent = String(n - i);
+        label.textContent = String(i);
+        scene.append(top);
+      };
+      /** the pieces stick back together (after a wrong cut) */
+      const rejoin = (i: number) => {
+        for (const b of blocks.slice(i)) tower.insertBefore(b, label);
+        top.remove();
+        label.textContent = String(n);
+      };
+
+      const cut = async (i: number, el: HTMLElement) => {
+        if (!r.open() || busy) return;
+        sfx.unlock();
+        if (i === n) {
+          shake(el);
+          r.bubble('Touche plus bas !');
+          await r.say('Au-dessus, il n’y a plus rien. Touche un bloc plus bas !');
+          return;
+        }
+        blocks.forEach((b) => b.classList.remove('glow', 'hint'));
+        busy = true;
+        split(i);
+        if (i === k) {
+          return r.win(el, async () => {
+            r.bubble(`${k} + ${n - k} = ${n}`);
+            await r.say(`${W[k]} et ${W[n - k]}, ça fait ${W[n]}.`);
+          });
+        }
+        r.miss(el);
+        r.hold(true);
+        await r.say(`Ce morceau a ${blocksWord(i)}.`);
+        if (!(await r.wait(600))) return;
+        rejoin(i);
+        busy = false;
+        r.hold(false);
+        if (r.misses >= 3) {
+          blocks[k - 1].classList.add('hint');
+          await r.say('Regarde celui qui brille ! Casse juste au-dessus.');
+          return;
+        }
+        if (r.misses >= 2) {
+          // count from the bottom together, up to the piece to keep
+          busy = true;
+          await r.say('On compte ensemble !');
+          for (let j = 0; j < k; j++) {
+            blocks[j].classList.add('glow');
+            await r.say(W[j + 1], { rate: 1 });
+          }
+          busy = false;
+          if (r.open()) await r.say('Casse juste au-dessus !');
+          return;
+        }
+        await r.say(k === 1 ? 'Il en faut un seul.' : `Il en faut ${W[k]}.`);
+      };
+      return key(pair);
+    },
+    ask(r) {
+      r.bubble(`Garde ${pair[1]} en bas`);
+      return r.say(`Voici une tour de ${W[pair[0]]}. ${want()}`);
     },
   };
 }

@@ -162,13 +162,15 @@ if (NUMBER_WORDS.length < 21) err('Il manque des nombres en lettres (jusqu’à 
 COUNT_LEVELS.forEach((l, i) => {
   const where = `Compter, niveau ${i + 1} (${l.name})`;
   if (l.min < 1 || l.max > 20 || l.min >= l.max) err(`${where} : nombres de ${l.min} à ${l.max} (entre 1 et 20, min < max)`);
-  const asks = ['count', 'flash', 'frame', 'hide', 'make10', 'add', 'problem', 'tens'].includes(l.mode);
+  const asks = ['count', 'flash', 'frame', 'hide', 'make10', 'add', 'problem', 'tens', 'stick'].includes(l.mode);
   if (asks && (l.choices < 2 || l.choices > 6)) err(`${where} : ${l.choices} choix (de 2 à 6)`);
   if (l.mode === 'flash' && l.max > Math.max(...Object.keys(DICE).map(Number))) err(`${where} : pas de dé pour ${l.max}`);
   if ((l.mode === 'frame' || l.mode === 'make10') && l.max > 10) err(`${where} : le cadre de dix ne va pas au-delà de 10`);
   if (l.mode === 'make10' && l.max > 9) err(`${where} : il doit manquer au moins un bloc pour faire dix`);
   if (l.mode === 'add' && l.min < 2) err(`${where} : une addition demande au moins 2 blocs`);
   if (l.mode === 'hide' && l.min < 2) err(`${where} : il faut au moins 2 blocs pour en cacher`);
+  if (l.mode === 'stick' && l.max > 9) err(`${where} : la tour et encore un ne dépasse pas dix`);
+  if (l.mode === 'break' && (l.min < 2 || l.max > 8)) err(`${where} : une tour à casser a de 2 à 8 blocs`);
   if (l.mode === 'tens' && (l.min < 11 || l.max > 20)) err(`${where} : de 11 à 20`);
   if (l.mode === 'race' && (!l.die || l.die < 1 || l.die > 6 || l.die * 5 < l.max)) err(`${where} : dé de 1 à ${l.die}, impossible d'arriver en 5 tours`);
   if (!l.intro.trim()) err(`${where} : consigne vide`);

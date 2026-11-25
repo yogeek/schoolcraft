@@ -7,7 +7,7 @@ session, then `CLAUDE.md` (architecture, conventions) and `AGENTS.md` (how to wo
 
 - Live on GitHub Pages, deployed by CI on every push to `main`. Installed copies update themselves
   on their next launch with a connection.
-- Three activities: Lire (31 levels in 7 chapters), Écrire (12 levels), Compter (16 levels). The
+- Three activities: Lire (31 levels in 7 chapters), Écrire (12 levels), Compter (18 levels). The
   daily adventure, the hero album, the house, up to 4 child profiles and the parents area all work.
 - Pixel's voice is recorded (ElevenLabs, eleven_v4, voice « Adina »): 3,035 sentences in
   `public/voice/`. A crawl of all 59 levels on 2026-11-10 found every spoken sentence recorded.

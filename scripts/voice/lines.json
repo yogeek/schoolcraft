@@ -88,6 +88,10 @@
   "text": "Compte tous les blocs avec ton doigt !"
  },
  {
+  "key": "avec un de plus, ça fait combien?",
+  "text": "Avec un de plus, ça fait combien ?"
+ },
+ {
   "key": "bien compté!",
   "text": "Bien compté !",
   "tag": "praise"
@@ -105,6 +109,11 @@
  {
   "key": "oui, bravo!",
   "text": "Oui, bravo !",
+  "tag": "praise"
+ },
+ {
+  "key": "bien cassé!",
+  "text": "Bien cassé !",
   "tag": "praise"
  },
  {
@@ -198,6 +207,34 @@
  {
   "key": "une tour, c'est dix blocs.",
   "text": "Une tour, c’est dix blocs."
+ },
+ {
+  "key": "combien de blocs dans la tour?",
+  "text": "Combien de blocs dans la tour ?"
+ },
+ {
+  "key": "il y a un bloc.",
+  "text": "Il y a un bloc."
+ },
+ {
+  "key": "au-dessus, il n'y a plus rien.",
+  "text": "Au-dessus, il n’y a plus rien."
+ },
+ {
+  "key": "touche un bloc plus bas!",
+  "text": "Touche un bloc plus bas !"
+ },
+ {
+  "key": "casse juste au-dessus.",
+  "text": "Casse juste au-dessus."
+ },
+ {
+  "key": "casse juste au-dessus!",
+  "text": "Casse juste au-dessus !"
+ },
+ {
+  "key": "il en faut un seul.",
+  "text": "Il en faut un seul."
  },
  {
   "key": "combien lui en reste-t-il?",
@@ -904,6 +941,14 @@
   "text": "Touche chaque bloc pour le compter, puis choisis le bon nombre."
  },
  {
+  "key": "on colle un bloc de plus sur la tour.",
+  "text": "On colle un bloc de plus sur la tour."
+ },
+ {
+  "key": "devine combien ça fait!",
+  "text": "Devine combien ça fait !"
+ },
+ {
   "key": "encore plus de blocs!",
   "text": "Encore plus de blocs !"
  },
@@ -942,6 +987,10 @@
  {
   "key": "des blocs vont se cacher dans la grotte!",
   "text": "Des blocs vont se cacher dans la grotte !"
+ },
+ {
+  "key": "touche un bloc de la tour: elle se casse juste au-dessus!",
+  "text": "Touche un bloc de la tour : elle se casse juste au-dessus !"
  },
  {
   "key": "maintenant, les nombres sont écrits!",
@@ -14258,6 +14307,194 @@
  {
   "key": "dix et neuf: dix-neuf!",
   "text": "Dix et neuf : dix-neuf !"
+ },
+ {
+  "key": "un, et encore un: deux!",
+  "text": "Un, et encore un : deux !"
+ },
+ {
+  "key": "deux, et encore un: trois!",
+  "text": "Deux, et encore un : trois !"
+ },
+ {
+  "key": "trois, et encore un: quatre!",
+  "text": "Trois, et encore un : quatre !"
+ },
+ {
+  "key": "quatre, et encore un: cinq!",
+  "text": "Quatre, et encore un : cinq !"
+ },
+ {
+  "key": "cinq, et encore un: six!",
+  "text": "Cinq, et encore un : six !"
+ },
+ {
+  "key": "six, et encore un: sept!",
+  "text": "Six, et encore un : sept !"
+ },
+ {
+  "key": "sept, et encore un: huit!",
+  "text": "Sept, et encore un : huit !"
+ },
+ {
+  "key": "huit, et encore un: neuf!",
+  "text": "Huit, et encore un : neuf !"
+ },
+ {
+  "key": "neuf, et encore un: dix!",
+  "text": "Neuf, et encore un : dix !"
+ },
+ {
+  "key": "une tour de deux, et encore un bloc.",
+  "text": "Une tour de deux, et encore un bloc."
+ },
+ {
+  "key": "une tour de trois, et encore un bloc.",
+  "text": "Une tour de trois, et encore un bloc."
+ },
+ {
+  "key": "une tour de quatre, et encore un bloc.",
+  "text": "Une tour de quatre, et encore un bloc."
+ },
+ {
+  "key": "une tour de cinq, et encore un bloc.",
+  "text": "Une tour de cinq, et encore un bloc."
+ },
+ {
+  "key": "une tour de six, et encore un bloc.",
+  "text": "Une tour de six, et encore un bloc."
+ },
+ {
+  "key": "une tour de sept, et encore un bloc.",
+  "text": "Une tour de sept, et encore un bloc."
+ },
+ {
+  "key": "une tour de huit, et encore un bloc.",
+  "text": "Une tour de huit, et encore un bloc."
+ },
+ {
+  "key": "une tour de neuf, et encore un bloc.",
+  "text": "Une tour de neuf, et encore un bloc."
+ },
+ {
+  "key": "la tour a deux blocs.",
+  "text": "La tour a deux blocs."
+ },
+ {
+  "key": "la tour a trois blocs.",
+  "text": "La tour a trois blocs."
+ },
+ {
+  "key": "la tour a quatre blocs.",
+  "text": "La tour a quatre blocs."
+ },
+ {
+  "key": "la tour a cinq blocs.",
+  "text": "La tour a cinq blocs."
+ },
+ {
+  "key": "la tour a six blocs.",
+  "text": "La tour a six blocs."
+ },
+ {
+  "key": "la tour a sept blocs.",
+  "text": "La tour a sept blocs."
+ },
+ {
+  "key": "la tour a huit blocs.",
+  "text": "La tour a huit blocs."
+ },
+ {
+  "key": "la tour a neuf blocs.",
+  "text": "La tour a neuf blocs."
+ },
+ {
+  "key": "voici une tour de deux.",
+  "text": "Voici une tour de deux."
+ },
+ {
+  "key": "voici une tour de trois.",
+  "text": "Voici une tour de trois."
+ },
+ {
+  "key": "voici une tour de quatre.",
+  "text": "Voici une tour de quatre."
+ },
+ {
+  "key": "voici une tour de cinq.",
+  "text": "Voici une tour de cinq."
+ },
+ {
+  "key": "voici une tour de six.",
+  "text": "Voici une tour de six."
+ },
+ {
+  "key": "voici une tour de sept.",
+  "text": "Voici une tour de sept."
+ },
+ {
+  "key": "voici une tour de huit.",
+  "text": "Voici une tour de huit."
+ },
+ {
+  "key": "ce morceau a un bloc.",
+  "text": "Ce morceau a un bloc."
+ },
+ {
+  "key": "ce morceau a deux blocs.",
+  "text": "Ce morceau a deux blocs."
+ },
+ {
+  "key": "ce morceau a trois blocs.",
+  "text": "Ce morceau a trois blocs."
+ },
+ {
+  "key": "ce morceau a quatre blocs.",
+  "text": "Ce morceau a quatre blocs."
+ },
+ {
+  "key": "ce morceau a cinq blocs.",
+  "text": "Ce morceau a cinq blocs."
+ },
+ {
+  "key": "ce morceau a six blocs.",
+  "text": "Ce morceau a six blocs."
+ },
+ {
+  "key": "ce morceau a sept blocs.",
+  "text": "Ce morceau a sept blocs."
+ },
+ {
+  "key": "il en faut deux.",
+  "text": "Il en faut deux."
+ },
+ {
+  "key": "casse la tour pour garder un seul bloc en bas!",
+  "text": "Casse la tour pour garder un seul bloc en bas !"
+ },
+ {
+  "key": "casse la tour pour garder deux blocs en bas!",
+  "text": "Casse la tour pour garder deux blocs en bas !"
+ },
+ {
+  "key": "casse la tour pour garder trois blocs en bas!",
+  "text": "Casse la tour pour garder trois blocs en bas !"
+ },
+ {
+  "key": "casse la tour pour garder quatre blocs en bas!",
+  "text": "Casse la tour pour garder quatre blocs en bas !"
+ },
+ {
+  "key": "casse la tour pour garder cinq blocs en bas!",
+  "text": "Casse la tour pour garder cinq blocs en bas !"
+ },
+ {
+  "key": "casse la tour pour garder six blocs en bas!",
+  "text": "Casse la tour pour garder six blocs en bas !"
+ },
+ {
+  "key": "casse la tour pour garder sept blocs en bas!",
+  "text": "Casse la tour pour garder sept blocs en bas !"
  },
  {
   "key": "pixel a une pomme.",
