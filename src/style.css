@@ -2544,6 +2544,10 @@ button span,
 .die.shake {
   animation: shake 0.45s;
 }
+/* Pixel's roll: the die takes the fox's orange, so the child sees whose turn it is */
+.die.fox-turn {
+  background: #ffe2c4;
+}
 .die.pressed {
   transform: translateY(4px);
   box-shadow: 0 2px 0 var(--ink);
