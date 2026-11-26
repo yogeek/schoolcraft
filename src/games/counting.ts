@@ -793,34 +793,52 @@ function stickGame(level: CountLevel): Game {
   let loose: HTMLElement = h('div');
   const question = () => (n === 1 ? 'Un bloc, et encore un. Ça fait combien ?' : `Une tour de ${W[n]}, et encore un bloc. Ça fait combien ?`);
 
-  /** the loose block jumps onto the tower, in an arc (the scene keeps its layout: nothing else moves) */
+  /**
+   * The loose block jumps onto the tower, in an arc. A copy flies above the scene while the tower
+   * stays as it is; the real block joins the tower only when the copy lands, so the tower's outline
+   * and its number grow at that moment, not before (nothing else moves).
+   */
   const stick = async (r: Round): Promise<void> => {
     if (stuck) return;
     stuck = true;
-    const from = loose.getBoundingClientRect();
     const home = loose.parentElement;
-    home?.classList.add('nt-left');
-    r.stage.querySelector('.nt-plus')?.classList.add('nt-left');
-    tower.insertBefore(loose, label);
-    const to = loose.getBoundingClientRect();
-    if (reducedMotion()) {
+    const plus = r.stage.querySelector('.nt-plus');
+    const join = () => {
+      home?.classList.add('nt-left');
+      plus?.classList.add('nt-left');
+      tower.insertBefore(loose, label);
+    };
+    if (reducedMotion() || !home) {
+      join();
       sfx.place();
       return;
     }
+    const from = loose.getBoundingClientRect();
+    // where it will sit: measured by putting it there and back, before anything is painted
+    tower.insertBefore(loose, label);
+    const to = loose.getBoundingClientRect();
+    home.append(loose);
+    const fly = loose.cloneNode(true) as HTMLElement;
+    Object.assign(fly.style, { position: 'fixed', left: `${to.left}px`, top: `${to.top}px`, width: `${to.width}px`, height: `${to.height}px`, margin: '0', zIndex: '50', pointerEvents: 'none' });
+    document.body.append(fly);
+    home.classList.add('nt-left');
+    plus?.classList.add('nt-left');
     const dx = from.left - to.left;
     const dy = from.top - to.top;
     const lift = Math.max(40, to.height);
-    const jump = loose.animate(
+    const jump = fly.animate(
       [
-        { transform: `translate(${dx}px, ${dy}px)` },
-        { transform: `translate(${dx * 0.45}px, ${Math.min(dy, 0) - lift}px)`, offset: 0.55 },
+        { transform: `translate(${dx}px, ${dy}px)`, easing: 'cubic-bezier(0.3, 0, 0.6, 1)' },
+        { transform: `translate(${dx * 0.45}px, ${Math.min(dy, 0) - lift}px)`, offset: 0.5, easing: 'cubic-bezier(0.4, 0, 0.7, 1)' },
         { transform: 'translate(0, 0)' },
       ],
-      { duration: 550, easing: 'ease-in-out' },
+      { duration: 600 },
     );
     await jump.finished.catch(() => undefined);
+    tower.insertBefore(loose, label);
+    fly.remove();
     sfx.place();
-    loose.animate([{ transform: 'scaleY(0.85)' }, { transform: 'scaleY(1)' }], { duration: 160, easing: 'ease-out' });
+    loose.animate([{ transform: 'scaleY(0.85)', transformOrigin: '50% 100%' }, { transform: 'scaleY(1)', transformOrigin: '50% 100%' }], { duration: 160, easing: 'ease-out' });
   };
 
   return {
