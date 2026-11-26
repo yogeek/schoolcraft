@@ -11,7 +11,10 @@ const VOICE = 'schoolcraft-voice';
 const CORE = ['./', './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png', ...__ASSETS__.map((f) => './' + f)];
 
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)));
+  // `reload`: straight from the server. Through the HTTP cache (GitHub Pages sends max-age=600) the
+  // install stored the previous index.html next to the new build files: it pointed to build files no
+  // longer on the server, and the app stayed white.
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE.map((u) => new Request(u, { cache: 'reload' })))));
   self.skipWaiting();
 });
 
@@ -60,7 +63,8 @@ function networkFirst(req) {
       }
     };
     const timer = setTimeout(() => fallback().then(finish), 3000);
-    fetch(req)
+    // `no-cache`: revalidate with the server, never a stale page from the HTTP cache
+    fetch(req, { cache: 'no-cache' })
       .then((res) => {
         clearTimeout(timer);
         finish(store(req, res));

@@ -27,7 +27,15 @@
           try {
             if (!sessionStorage.getItem('schoolcraft:boot-retry')) {
               sessionStorage.setItem('schoolcraft:boot-retry', '1');
-              location.reload();
+              // online, a build file that failed to load means the offline copy is out of date:
+              // drop it (not the voice clips) so the reload gets the current version
+              var stale = navigator.onLine && errs.some(function (x) { return x.indexOf('/assets/') >= 0; }) && window.caches;
+              var clear = stale
+                ? caches.keys().then(function (keys) {
+                    return Promise.all(keys.filter(function (k) { return k.indexOf('schoolcraft-') === 0 && k !== 'schoolcraft-voice'; }).map(function (k) { return caches.delete(k); }));
+                  })
+                : Promise.resolve();
+              clear.catch(function () {}).then(function () { location.reload(); });
               return;
             }
           } catch (x) {}
