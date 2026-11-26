@@ -892,6 +892,8 @@ function breakGame(level: CountLevel): Game {
   let busy = false;
   /** the gesture was shown once in this game */
   let demoed = false;
+  /** removes the gesture listeners of the previous question (the stage element is kept between questions) */
+  let listening: AbortController | null = null;
   /** shows the cutting gesture across the seam above `j` blocks (set by setup) */
   let demo: (j: number, keep?: boolean) => Promise<void> = async () => undefined;
   const want = () => (pair[1] === 1 ? 'Coupe la tour pour garder un seul bloc en bas !' : `Coupe la tour pour garder ${W[pair[1]]} blocs en bas !`);
@@ -916,7 +918,7 @@ function breakGame(level: CountLevel): Game {
       const top = h('div', { class: 'ntower nt-top' });
       const topLabel = h('span', { class: 'nt-label' });
       scene.append(zone);
-      r.stage.classList.add('nt-stage');
+      r.stage.classList.add('nt-stage', 'nt-cutting');
       r.stage.append(scene);
       r.bubble(`Garde ${k} en bas`);
 
@@ -972,65 +974,82 @@ function breakGame(level: CountLevel): Game {
         label.textContent = String(n);
       };
 
-      // ---- the gesture: a finger sliding across the tower, from one side to the other
+      // ---- the gesture: a finger sliding across the tower, from one side to the other.
+      // It is caught on the whole question area (a finger often starts far from the tower), and
+      // never ignored while Pixel talks or shows the gesture: only a cut being shown blocks it.
       let track: { x: number; y: number }[] | null = null;
       let lastHint = 0;
+      listening?.abort();
+      listening = new AbortController();
+      const on = { signal: listening.signal };
       const local = (e: PointerEvent) => {
         const z = zone.getBoundingClientRect();
         return { x: e.clientX - z.left, y: e.clientY - z.top };
       };
-      zone.addEventListener('pointerdown', (e) => {
-        if (!r.open() || busy) return;
-        sfx.unlock();
-        zone.setPointerCapture(e.pointerId);
-        track = [local(e)];
-        scissors.classList.add('on');
-        moveScissors(track[0]);
-      });
       const moveScissors = (p: { x: number; y: number }) => {
         scissors.style.transform = `translate(${p.x}px, ${p.y}px)`;
       };
-      zone.addEventListener('pointermove', (e) => {
-        if (!track) return;
+      r.stage.addEventListener('pointerdown', (e) => {
+        if (!r.open() || busy || !e.isPrimary) return;
+        sfx.unlock();
+        r.stage.setPointerCapture(e.pointerId);
+        track = [local(e)];
+        scissors.classList.add('on');
+        moveScissors(track[0]);
+      }, on);
+      r.stage.addEventListener('pointermove', (e) => {
+        if (!track || !e.isPrimary) return;
+        // a fast finger: the browser merges moves, take them all
+        for (const ev of e.getCoalescedEvents?.() ?? [e]) track.push(local(ev));
         const p = local(e);
-        track.push(p);
         moveScissors(p);
         const j = nearestSeam(p.y);
         if (j) showLine(j);
         else hideLine();
-      });
+      }, on);
+      /** the height where the finger crossed the middle of the tower (between two moves if it went fast) */
+      const crossingY = (pts: { x: number; y: number }[], mid: number): number | null => {
+        for (let i = 1; i < pts.length; i++) {
+          const a = pts[i - 1];
+          const c = pts[i];
+          if ((a.x - mid) * (c.x - mid) <= 0 && a.x !== c.x) return a.y + ((c.y - a.y) * (mid - a.x)) / (c.x - a.x);
+        }
+        return null;
+      };
       const end = (e: PointerEvent) => {
-        if (!track) return;
+        if (!track || !e.isPrimary) return;
         const pts = track;
         track = null;
         scissors.classList.remove('on');
         hideLine();
-        if (e.type === 'pointercancel') return;
+        if (busy || !r.open()) return;
         const t = tower.getBoundingClientRect();
         const z = zone.getBoundingClientRect();
         const left = t.left - z.left;
         const right = t.right - z.left;
         const xs = pts.map((p) => p.x);
-        const across = Math.min(...xs) <= left + t.width * 0.2 && Math.max(...xs) >= right - t.width * 0.2;
-        const along = pts.filter((p) => p.x >= left && p.x <= right);
-        const j = across && along.length ? nearestSeam(along.reduce((a, p) => a + p.y, 0) / along.length) : 0;
+        // across: the slide went over the middle of the tower and covered most of its width
+        const span = Math.min(Math.max(...xs), right) - Math.max(Math.min(...xs), left);
+        const y = span >= t.width * 0.6 ? crossingY(pts, (left + right) / 2) : null;
+        const j = y === null ? 0 : nearestSeam(y);
         if (j) return void cut(j);
         // a tap, or a slide that did not cross the tower: show the gesture again (not a mistake)
-        if (Date.now() - lastHint < 3000 || !r.open()) return;
+        if (Date.now() - lastHint < 3000) return;
         lastHint = Date.now();
-        busy = true;
-        void (async () => {
-          r.bubble('Glisse ton doigt !');
-          await Promise.all([r.say('Glisse ton doigt d’un côté à l’autre de la tour !'), demo(demoSeam())]);
-          busy = false;
-        })();
+        r.bubble('Glisse ton doigt !');
+        void r.say('Glisse ton doigt d’un côté à l’autre de la tour !');
+        void demo(demoSeam());
       };
-      zone.addEventListener('pointerup', end);
-      zone.addEventListener('pointercancel', end);
+      r.stage.addEventListener('pointerup', end, on);
+      r.stage.addEventListener('pointercancel', end, on);
 
       const cut = async (i: number) => {
         if (!r.open() || busy) return;
         blocks.forEach((b) => b.classList.remove('glow'));
+        // a cut during the demonstration stops it
+        finger.getAnimations().forEach((a) => a.cancel());
+        line.getAnimations().forEach((a) => a.cancel());
+        finger.classList.remove('on');
         hideLine();
         busy = true;
         split(i);
@@ -1048,20 +1067,20 @@ function breakGame(level: CountLevel): Game {
         r.hold(false);
         if (r.misses >= 3) {
           // the last help: the cut to make is shown, and its line stays
+          busy = false;
           r.bubble('Coupe ici !');
           await Promise.all([r.say('Regarde : coupe ici !'), demo(k, true)]);
-          busy = false;
           return;
         }
         if (r.misses >= 2) {
-          // count from the bottom together, up to the piece to keep
+          // count from the bottom together, up to the piece to keep (a cut meanwhile still counts)
+          busy = false;
           await r.say('On compte ensemble !');
-          for (let j = 0; j < k; j++) {
+          for (let j = 0; j < k && !top.isConnected; j++) {
             blocks[j].classList.add('glow');
             await r.say(W[j + 1], { rate: 1 });
           }
-          busy = false;
-          if (r.open()) await r.say('Coupe juste au-dessus !');
+          if (r.open() && !top.isConnected) await r.say('Coupe juste au-dessus !');
           return;
         }
         busy = false;
@@ -1075,9 +1094,7 @@ function breakGame(level: CountLevel): Game {
       if (demoed || !r.open()) return;
       // the first time, Pixel shows the gesture (on another seam: it does not give the answer)
       demoed = true;
-      busy = true;
       await Promise.all([r.say('Regarde : on glisse le doigt, comme des ciseaux.'), demo(demoSeam())]);
-      busy = false;
     },
   };
 }
