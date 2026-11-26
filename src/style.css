@@ -3328,13 +3328,16 @@ button span,
   width: 100%;
   height: 100%;
 }
-.nt-block.nt-loose {
-  border: 3px solid var(--ink);
-  box-sizing: content-box;
+.ntower.nt-loose {
   animation: bob 1.4s ease-in-out infinite;
 }
-.nt-block.nt-new {
-  animation: drop 0.35s;
+/* what the joining block leaves behind keeps its place, so the tower does not slide */
+.nt-left {
+  visibility: hidden;
+  animation: none;
+}
+.nt-block {
+  will-change: transform;
 }
 .nt-block.glow,
 .nt-block.hint {
@@ -3384,8 +3387,7 @@ button span,
 }
 @media (prefers-reduced-motion: reduce) {
   .ntower.nt-top,
-  .nt-block.nt-loose,
-  .nt-block.nt-new {
+  .ntower.nt-loose {
     animation: none;
   }
 }

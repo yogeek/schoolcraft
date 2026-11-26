@@ -793,15 +793,34 @@ function stickGame(level: CountLevel): Game {
   let loose: HTMLElement = h('div');
   const question = () => (n === 1 ? 'Un bloc, et encore un. Ça fait combien ?' : `Une tour de ${W[n]}, et encore un bloc. Ça fait combien ?`);
 
-  /** the loose block jumps onto the tower */
-  const stick = (r: Round) => {
+  /** the loose block jumps onto the tower, in an arc (the scene keeps its layout: nothing else moves) */
+  const stick = async (r: Round): Promise<void> => {
     if (stuck) return;
     stuck = true;
-    sfx.place();
-    loose.classList.remove('nt-loose');
+    const from = loose.getBoundingClientRect();
+    const home = loose.parentElement;
+    home?.classList.add('nt-left');
+    r.stage.querySelector('.nt-plus')?.classList.add('nt-left');
     tower.insertBefore(loose, label);
-    loose.classList.add('nt-new');
-    r.stage.querySelector('.nt-plus')?.remove();
+    const to = loose.getBoundingClientRect();
+    if (reducedMotion()) {
+      sfx.place();
+      return;
+    }
+    const dx = from.left - to.left;
+    const dy = from.top - to.top;
+    const lift = Math.max(40, to.height);
+    const jump = loose.animate(
+      [
+        { transform: `translate(${dx}px, ${dy}px)` },
+        { transform: `translate(${dx * 0.45}px, ${Math.min(dy, 0) - lift}px)`, offset: 0.55 },
+        { transform: 'translate(0, 0)' },
+      ],
+      { duration: 550, easing: 'ease-in-out' },
+    );
+    await jump.finished.catch(() => undefined);
+    sfx.place();
+    loose.animate([{ transform: 'scaleY(0.85)' }, { transform: 'scaleY(1)' }], { duration: 160, easing: 'ease-out' });
   };
 
   return {
@@ -812,16 +831,17 @@ function stickGame(level: CountLevel): Game {
       stuck = false;
       const type = blockType();
       ({ tower, label } = numberTower(type, n));
-      loose = h('div', { class: 'nt-block nt-loose', 'aria-hidden': 'true' }, blockImg(type));
+      loose = h('div', { class: 'nt-block', 'aria-hidden': 'true' }, blockImg(type));
       r.stage.classList.add('nt-stage');
-      r.stage.append(h('div', { class: 'nt-scene' }, tower, h('span', { class: 'nt-plus', 'aria-hidden': 'true' }, '+ 1'), loose));
+      // the loose block sits in a one-block frame like the tower's, so it keeps its size when it joins
+      r.stage.append(h('div', { class: 'nt-scene' }, tower, h('span', { class: 'nt-plus', 'aria-hidden': 'true' }, '+ 1'), h('div', { class: 'ntower nt-loose' }, loose)));
       r.bubble(`${n} + 1 = ?`);
       numberChoices(r, n + 1, level.choices, 1, level.max + 2, async (k, el) => {
         if (!r.open()) return;
         sfx.unlock();
         if (k === n + 1) {
           return r.win(el, async () => {
-            stick(r);
+            await stick(r);
             label.textContent = String(n + 1);
             label.classList.add('nt-new-label');
             r.bubble(`${n} + 1 = ${n + 1}`);
@@ -833,7 +853,7 @@ function stickGame(level: CountLevel): Game {
         if (r.misses >= 3) return shine(r, numberEl(r, n + 1));
         if (r.misses >= 2) {
           // the block sticks (look and check), and Pixel counts the tower with the child
-          stick(r);
+          await stick(r);
           label.textContent = '?';
           await countTogether(r, [...tower.querySelectorAll('.nt-block')]);
           if (r.open()) await r.say('Combien de blocs dans la tour ?');
