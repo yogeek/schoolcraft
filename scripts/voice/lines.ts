@@ -330,7 +330,7 @@ each(2, 9, (n) => `La tour a ${W[n]} blocs.`);
 each(2, 8, (n) => `Voici une tour de ${W[n]}.`);
 each(1, 7, (n) => (n === 1 ? 'Ce morceau a un bloc.' : `Ce morceau a ${W[n]} blocs.`));
 each(1, 7, (n) => (n === 1 ? 'Il en faut un seul.' : `Il en faut ${W[n]}.`));
-each(1, 7, (n) => (n === 1 ? 'Casse la tour pour garder un seul bloc en bas !' : `Casse la tour pour garder ${W[n]} blocs en bas !`));
+each(1, 7, (n) => (n === 1 ? 'Coupe la tour pour garder un seul bloc en bas !' : `Coupe la tour pour garder ${W[n]} blocs en bas !`));
 // story problems
 const one = (n: number, fem: boolean) => (n === 1 ? (fem ? 'une' : 'un') : W[n]);
 for (const th of THINGS) {

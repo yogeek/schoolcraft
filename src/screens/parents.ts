@@ -127,7 +127,7 @@ const SKILLS: Record<ActivityId, { label: string; prefixes: string[]; chips?: bo
     { label: 'Comparer', prefixes: ['count:compare:', 'count:digits:'] },
     { label: 'La course des nombres (ligne numérique)', prefixes: ['count:race:'] },
     { label: 'Et encore un (tours-nombres)', prefixes: ['count:stick:'], chips: true },
-    { label: 'Décomposer (la grotte, casser la tour, faire dix)', prefixes: ['count:hide:', 'count:break:', 'count:make10:'] },
+    { label: 'Décomposer (la grotte, couper la tour, faire dix)', prefixes: ['count:hide:', 'count:break:', 'count:make10:'] },
     { label: 'Additions et problèmes', prefixes: ['count:add:', 'count:problem:'] },
     { label: 'Les nombres de 11 à 20', prefixes: ['count:tens:'], chips: true },
   ],

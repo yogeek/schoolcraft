@@ -30992,15 +30992,6 @@
   "stt": "Ce tas a un bloc",
   "score": 1
  },
- "bien cassé!": {
-  "file": "f3200e5a-58025f.mp3",
-  "text": "Bien cassé !",
-  "sent": "[happily] Bien cassé !",
-  "dur": 1.28,
-  "cost": 9,
-  "sttCost": 0,
-  "score": 1
- },
  "combien de blocs dans la tour?": {
   "file": "b460ba2e-af6120.mp3",
   "text": "Combien de blocs dans la tour ?",
@@ -31031,46 +31022,6 @@
   "stt": "Il y a un bloc",
   "score": 1
  },
- "au-dessus, il n'y a plus rien.": {
-  "file": "e63b5cbd-8d08f0.mp3",
-  "text": "Au-dessus, il n’y a plus rien.",
-  "sent": "Au-dessus, il n’y a plus rien.",
-  "dur": 1.92,
-  "cost": 12,
-  "sttCost": 0,
-  "stt": "Au-dessus, il n'y a plus rien",
-  "score": 1
- },
- "touche un bloc plus bas!": {
-  "file": "f5bfc71f-fce937.mp3",
-  "text": "Touche un bloc plus bas !",
-  "sent": "Touche un bloc plus bas !",
-  "dur": 1.52,
-  "cost": 10,
-  "sttCost": 0,
-  "stt": "Touche un bloc plus bas",
-  "score": 1
- },
- "casse juste au-dessus.": {
-  "file": "7485d427-cef67d.mp3",
-  "text": "Casse juste au-dessus.",
-  "sent": "Casse juste au-dessus.",
-  "dur": 1.6,
-  "cost": 9,
-  "sttCost": 0,
-  "stt": "Casse juste au-dessus",
-  "score": 1
- },
- "casse juste au-dessus!": {
-  "file": "6985c2d6-744cd5.mp3",
-  "text": "Casse juste au-dessus !",
-  "sent": "Casse juste au-dessus !",
-  "dur": 1.52,
-  "cost": 9,
-  "sttCost": 0,
-  "stt": "Casse juste au-dessus",
-  "score": 1
- },
  "il en faut un seul.": {
   "file": "cb98c4d1-1b04f9.mp3",
   "text": "Il en faut un seul.",
@@ -31099,16 +31050,6 @@
   "cost": 10,
   "sttCost": 0,
   "stt": "Devine combien ça fait",
-  "score": 1
- },
- "touche un bloc de la tour: elle se casse juste au-dessus!": {
-  "file": "f200f761-1c1d06.mp3",
-  "text": "Touche un bloc de la tour : elle se casse juste au-dessus !",
-  "sent": "Touche un bloc de la tour : elle se casse juste au-dessus !",
-  "dur": 3.36,
-  "cost": 24,
-  "sttCost": 1,
-  "stt": "Touche un bloc de la tour. Elle se casse juste au-dessus",
   "score": 1
  },
  "deux, et encore un: trois!": {
@@ -31511,76 +31452,6 @@
   "stt": "Il en faut deux",
   "score": 1
  },
- "casse la tour pour garder un seul bloc en bas!": {
-  "file": "4d3fe58a-51ab85.mp3",
-  "text": "Casse la tour pour garder un seul bloc en bas !",
-  "sent": "Casse la tour pour garder un seul bloc en bas !",
-  "dur": 2.56,
-  "cost": 19,
-  "sttCost": 1,
-  "stt": "Casse la tour pour garder un seul bloc en bas",
-  "score": 1
- },
- "casse la tour pour garder deux blocs en bas!": {
-  "file": "6aafe9e5-944349.mp3",
-  "text": "Casse la tour pour garder deux blocs en bas !",
-  "sent": "Casse la tour pour garder deux blocs en bas !",
-  "dur": 2.4,
-  "cost": 18,
-  "sttCost": 1,
-  "stt": "Casse la tour pour garder deux blocs en bas",
-  "score": 1
- },
- "casse la tour pour garder trois blocs en bas!": {
-  "file": "abf20108-ba3858.mp3",
-  "text": "Casse la tour pour garder trois blocs en bas !",
-  "sent": "Casse la tour pour garder trois blocs en bas !",
-  "dur": 2.48,
-  "cost": 18,
-  "sttCost": 1,
-  "stt": "Casse la tour pour garder trois blocs en bas",
-  "score": 1
- },
- "casse la tour pour garder quatre blocs en bas!": {
-  "file": "25e74321-6669a6.mp3",
-  "text": "Casse la tour pour garder quatre blocs en bas !",
-  "sent": "Casse la tour pour garder quatre blocs en bas !",
-  "dur": 2.4,
-  "cost": 19,
-  "sttCost": 1,
-  "stt": "Casse la tour pour garder quatre blocs en bas",
-  "score": 1
- },
- "casse la tour pour garder cinq blocs en bas!": {
-  "file": "416abdba-d289b4.mp3",
-  "text": "Casse la tour pour garder cinq blocs en bas !",
-  "sent": "Casse la tour pour garder cinq blocs en bas !",
-  "dur": 2.4,
-  "cost": 18,
-  "sttCost": 1,
-  "stt": "Casse la tour pour garder cinq blocs en bas",
-  "score": 1
- },
- "casse la tour pour garder six blocs en bas!": {
-  "file": "0180c473-14e385.mp3",
-  "text": "Casse la tour pour garder six blocs en bas !",
-  "sent": "Casse la tour pour garder six blocs en bas !",
-  "dur": 2.48,
-  "cost": 18,
-  "sttCost": 1,
-  "stt": "Casse la tour pour garder six blocs en bas",
-  "score": 1
- },
- "casse la tour pour garder sept blocs en bas!": {
-  "file": "900efc67-e7cef0.mp3",
-  "text": "Casse la tour pour garder sept blocs en bas !",
-  "sent": "Casse la tour pour garder sept blocs en bas !",
-  "dur": 2.24,
-  "cost": 18,
-  "sttCost": 1,
-  "stt": "Casse la tour pour garder sept blocs en bas",
-  "score": 1
- },
  "ça fait combien?": {
   "file": "9eee996e-b6c076.mp3",
   "text": "Ça fait combien ?",
@@ -31599,6 +31470,135 @@
   "cost": 9,
   "sttCost": 1,
   "stt": "Un bloc et encore un",
+  "score": 1
+ },
+ "bien coupé!": {
+  "file": "3de1c86d-cb6d13.mp3",
+  "text": "Bien coupé !",
+  "sent": "[happily] Bien coupé !",
+  "dur": 1.36,
+  "cost": 9,
+  "sttCost": 0,
+  "score": 1
+ },
+ "regarde: coupe ici!": {
+  "file": "c5701fc3-789a46.mp3",
+  "text": "Regarde : coupe ici !",
+  "sent": "Regarde : coupe ici !",
+  "dur": 1.68,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Regarde, coupe ici",
+  "score": 1
+ },
+ "glisse ton doigt d'un côté à l'autre de la tour!": {
+  "file": "584e5e90-8d8d40.mp3",
+  "text": "Glisse ton doigt d’un côté à l’autre de la tour !",
+  "sent": "Glisse ton doigt d’un côté à l’autre de la tour !",
+  "dur": 2.88,
+  "cost": 20,
+  "sttCost": 1,
+  "stt": "Glisse ton doigt d'un côté à l'autre de la tour",
+  "score": 1
+ },
+ "coupe juste au-dessus!": {
+  "file": "08d57b0b-c3cb15.mp3",
+  "text": "Coupe juste au-dessus !",
+  "sent": "Coupe juste au-dessus !",
+  "dur": 1.52,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Coupe juste au-dessus",
+  "score": 1
+ },
+ "regarde: on glisse le doigt, comme des ciseaux.": {
+  "file": "b7efeb2e-ec2938.mp3",
+  "text": "Regarde : on glisse le doigt, comme des ciseaux.",
+  "sent": "Regarde : on glisse le doigt, comme des ciseaux.",
+  "dur": 3.2,
+  "cost": 19,
+  "sttCost": 1,
+  "stt": "Regarde, on glisse le doigt comme des ciseaux",
+  "score": 1
+ },
+ "coupe la tour pour garder un seul bloc en bas!": {
+  "file": "e55110d7-2eae48.mp3",
+  "text": "Coupe la tour pour garder un seul bloc en bas !",
+  "sent": "Coupe la tour pour garder un seul bloc en bas !",
+  "dur": 2.64,
+  "cost": 19,
+  "sttCost": 1,
+  "stt": "Coupe la tour pour garder un seul bloc en bas",
+  "score": 1
+ },
+ "glisse ton doigt sur la tour, comme des ciseaux, pour la couper!": {
+  "file": "1f57263c-2f132a.mp3",
+  "text": "Glisse ton doigt sur la tour, comme des ciseaux, pour la couper !",
+  "sent": "Glisse ton doigt sur la tour, comme des ciseaux, pour la couper !",
+  "dur": 3.6,
+  "cost": 26,
+  "sttCost": 1,
+  "stt": "Glisse ton doigt sur la tour comme des ciseaux pour la couper",
+  "score": 1
+ },
+ "coupe la tour pour garder deux blocs en bas!": {
+  "file": "fc289300-ec568a.mp3",
+  "text": "Coupe la tour pour garder deux blocs en bas !",
+  "sent": "Coupe la tour pour garder deux blocs en bas !",
+  "dur": 2.4,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Coupe la tour pour garder deux blocs en bas",
+  "score": 1
+ },
+ "coupe la tour pour garder trois blocs en bas!": {
+  "file": "f6cb83b3-3dd1a1.mp3",
+  "text": "Coupe la tour pour garder trois blocs en bas !",
+  "sent": "Coupe la tour pour garder trois blocs en bas !",
+  "dur": 2.4,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Coupe la tour pour garder trois blocs en bas",
+  "score": 1
+ },
+ "coupe la tour pour garder quatre blocs en bas!": {
+  "file": "7248cb40-822ffa.mp3",
+  "text": "Coupe la tour pour garder quatre blocs en bas !",
+  "sent": "Coupe la tour pour garder quatre blocs en bas !",
+  "dur": 2.56,
+  "cost": 19,
+  "sttCost": 1,
+  "stt": "Coupe la tour pour garder quatre blocs en bas",
+  "score": 1
+ },
+ "coupe la tour pour garder cinq blocs en bas!": {
+  "file": "18d49a1b-640434.mp3",
+  "text": "Coupe la tour pour garder cinq blocs en bas !",
+  "sent": "Coupe la tour pour garder cinq blocs en bas !",
+  "dur": 2.4,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Coupe la tour pour garder cinq blocs en bas",
+  "score": 1
+ },
+ "coupe la tour pour garder six blocs en bas!": {
+  "file": "9f888b54-393bc0.mp3",
+  "text": "Coupe la tour pour garder six blocs en bas !",
+  "sent": "Coupe la tour pour garder six blocs en bas !",
+  "dur": 2.24,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Coupe la tour pour garder six blocs en bas",
+  "score": 1
+ },
+ "coupe la tour pour garder sept blocs en bas!": {
+  "file": "67d981a2-05aaee.mp3",
+  "text": "Coupe la tour pour garder sept blocs en bas !",
+  "sent": "Coupe la tour pour garder sept blocs en bas !",
+  "dur": 2.48,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Coupe la tour pour garder sept blocs en bas",
   "score": 1
  }
 }

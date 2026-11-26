@@ -3391,3 +3391,60 @@ button span,
     animation: none;
   }
 }
+
+/* ---------- cutting a number tower with the finger (Couper la tour) ---------- */
+.nt-cut {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px clamp(40px, 13vw, 70px) 0;
+  touch-action: none;
+  cursor: crosshair;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.nt-cutline {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  top: 0;
+  height: 0;
+  margin-top: -2px;
+  border-top: 5px dashed #fff;
+  filter: drop-shadow(0 0 2px var(--ink));
+  transform-origin: left center;
+  opacity: 0;
+  pointer-events: none;
+}
+.nt-cutline.preview,
+.nt-cutline.demo {
+  opacity: 1;
+}
+.nt-cutline.demo {
+  border-top-color: var(--gold);
+}
+.nt-scissors {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: -22px 0 0 -22px;
+  font-size: 38px;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+.nt-finger {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: -2px;
+  font-size: 40px;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.3));
+}
+.nt-scissors.on,
+.nt-finger.on {
+  opacity: 1;
+}

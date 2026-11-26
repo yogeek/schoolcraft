@@ -112,8 +112,8 @@
   "tag": "praise"
  },
  {
-  "key": "bien cassé!",
-  "text": "Bien cassé !",
+  "key": "bien coupé!",
+  "text": "Bien coupé !",
   "tag": "praise"
  },
  {
@@ -217,24 +217,24 @@
   "text": "Il y a un bloc."
  },
  {
-  "key": "au-dessus, il n'y a plus rien.",
-  "text": "Au-dessus, il n’y a plus rien."
+  "key": "glisse ton doigt d'un côté à l'autre de la tour!",
+  "text": "Glisse ton doigt d’un côté à l’autre de la tour !"
  },
  {
-  "key": "touche un bloc plus bas!",
-  "text": "Touche un bloc plus bas !"
+  "key": "regarde: coupe ici!",
+  "text": "Regarde : coupe ici !"
  },
  {
-  "key": "casse juste au-dessus.",
-  "text": "Casse juste au-dessus."
- },
- {
-  "key": "casse juste au-dessus!",
-  "text": "Casse juste au-dessus !"
+  "key": "coupe juste au-dessus!",
+  "text": "Coupe juste au-dessus !"
  },
  {
   "key": "il en faut un seul.",
   "text": "Il en faut un seul."
+ },
+ {
+  "key": "regarde: on glisse le doigt, comme des ciseaux.",
+  "text": "Regarde : on glisse le doigt, comme des ciseaux."
  },
  {
   "key": "combien lui en reste-t-il?",
@@ -989,8 +989,8 @@
   "text": "Des blocs vont se cacher dans la grotte !"
  },
  {
-  "key": "touche un bloc de la tour: elle se casse juste au-dessus!",
-  "text": "Touche un bloc de la tour : elle se casse juste au-dessus !"
+  "key": "glisse ton doigt sur la tour, comme des ciseaux, pour la couper!",
+  "text": "Glisse ton doigt sur la tour, comme des ciseaux, pour la couper !"
  },
  {
   "key": "maintenant, les nombres sont écrits!",
@@ -14477,32 +14477,32 @@
   "text": "Il en faut deux."
  },
  {
-  "key": "casse la tour pour garder un seul bloc en bas!",
-  "text": "Casse la tour pour garder un seul bloc en bas !"
+  "key": "coupe la tour pour garder un seul bloc en bas!",
+  "text": "Coupe la tour pour garder un seul bloc en bas !"
  },
  {
-  "key": "casse la tour pour garder deux blocs en bas!",
-  "text": "Casse la tour pour garder deux blocs en bas !"
+  "key": "coupe la tour pour garder deux blocs en bas!",
+  "text": "Coupe la tour pour garder deux blocs en bas !"
  },
  {
-  "key": "casse la tour pour garder trois blocs en bas!",
-  "text": "Casse la tour pour garder trois blocs en bas !"
+  "key": "coupe la tour pour garder trois blocs en bas!",
+  "text": "Coupe la tour pour garder trois blocs en bas !"
  },
  {
-  "key": "casse la tour pour garder quatre blocs en bas!",
-  "text": "Casse la tour pour garder quatre blocs en bas !"
+  "key": "coupe la tour pour garder quatre blocs en bas!",
+  "text": "Coupe la tour pour garder quatre blocs en bas !"
  },
  {
-  "key": "casse la tour pour garder cinq blocs en bas!",
-  "text": "Casse la tour pour garder cinq blocs en bas !"
+  "key": "coupe la tour pour garder cinq blocs en bas!",
+  "text": "Coupe la tour pour garder cinq blocs en bas !"
  },
  {
-  "key": "casse la tour pour garder six blocs en bas!",
-  "text": "Casse la tour pour garder six blocs en bas !"
+  "key": "coupe la tour pour garder six blocs en bas!",
+  "text": "Coupe la tour pour garder six blocs en bas !"
  },
  {
-  "key": "casse la tour pour garder sept blocs en bas!",
-  "text": "Casse la tour pour garder sept blocs en bas !"
+  "key": "coupe la tour pour garder sept blocs en bas!",
+  "text": "Coupe la tour pour garder sept blocs en bas !"
  },
  {
   "key": "pixel a une pomme.",
