@@ -31580,5 +31580,25 @@
   "sttCost": 1,
   "stt": "Casse la tour pour garder sept blocs en bas",
   "score": 1
+ },
+ "ça fait combien?": {
+  "file": "9eee996e-b6c076.mp3",
+  "text": "Ça fait combien ?",
+  "sent": "Ça fait combien ?",
+  "dur": 1.12,
+  "cost": 7,
+  "sttCost": 0,
+  "stt": "Ça fait combien?",
+  "score": 1
+ },
+ "un bloc, et encore un.": {
+  "file": "613ad47a-d4bd8e.mp3",
+  "text": "Un bloc, et encore un.",
+  "sent": "Un bloc, et encore un.",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Un bloc et encore un",
+  "score": 1
  }
 }
