@@ -763,19 +763,14 @@ function tensGame(level: CountLevel): Game {
 
 // ---------------------------------------------------------------- number towers (one whole made of units)
 // A number is shown as one tower of joined blocks with its number on top: sticking a block on it
-// makes the next number (« trois, et encore un : quatre »), breaking it shows its two parts.
+// makes the next number (« trois, et encore un : quatre »), cutting it shows its two parts.
 // The idea (a number is a whole you can join and cut, rather than the last word of the count)
 // follows R. Brissiaud; the look is our own blocks.
 
 /** a number tower: blocks stacked bottom-up (child 0 is the bottom one), its number on top */
-function numberTower(type: BlockType, n: number, tap?: (i: number, el: HTMLElement) => void): { tower: HTMLElement; label: HTMLElement; blocks: HTMLElement[] } {
+function numberTower(type: BlockType, n: number): { tower: HTMLElement; label: HTMLElement; blocks: HTMLElement[] } {
   const label = h('span', { class: 'nt-label' }, String(n));
-  const blocks = range(1, n).map((i) => {
-    if (!tap) return h('div', { class: 'nt-block', 'aria-hidden': 'true' }, blockImg(type));
-    const b = h('button', { class: 'nt-block', 'aria-label': `bloc ${i}` }, blockImg(type));
-    b.onclick = () => tap(i, b);
-    return b;
-  });
+  const blocks = range(1, n).map(() => h('div', { class: 'nt-block', 'aria-hidden': 'true' }, blockImg(type)));
   const tower = h('div', { class: 'ntower' }, ...blocks, label);
   return { tower, label, blocks };
 }
@@ -895,10 +890,16 @@ function breakGame(level: CountLevel): Game {
   let pair: [number, number] = pairs[0];
   let prev: [number, number] | undefined;
   let busy = false;
-  const want = () => (pair[1] === 1 ? 'Casse la tour pour garder un seul bloc en bas !' : `Casse la tour pour garder ${W[pair[1]]} blocs en bas !`);
+  /** the gesture was shown once in this game */
+  let demoed = false;
+  /** shows the cutting gesture across the seam above `j` blocks (set by setup) */
+  let demo: (j: number, keep?: boolean) => Promise<void> = async () => undefined;
+  const want = () => (pair[1] === 1 ? 'Coupe la tour pour garder un seul bloc en bas !' : `Coupe la tour pour garder ${W[pair[1]]} blocs en bas !`);
+  /** a seam to show the gesture on that is not the answer (near the top) */
+  const demoSeam = () => (pair[1] === pair[0] - 1 ? pair[0] - 2 : pair[0] - 1);
 
   return {
-    praise: ['Bien cassé !', 'Bravo !', 'Super !', 'Oui, bien joué !'],
+    praise: ['Bien coupé !', 'Bravo !', 'Super !', 'Oui, bien joué !'],
     setup(r) {
       pair = pickWeighted(pairs, key, prev);
       prev = pair;
@@ -906,13 +907,55 @@ function breakGame(level: CountLevel): Game {
       const [n, k] = pair;
       const type = blockType();
       const scene = h('div', { class: 'nt-scene' });
-      const { tower, label, blocks } = numberTower(type, n, (i, el) => void cut(i, el));
+      const { tower, label, blocks } = numberTower(type, n);
+      // the cutting area: the tower with room on both sides for the finger to start and end
+      const line = h('div', { class: 'nt-cutline', 'aria-hidden': 'true' });
+      const scissors = h('div', { class: 'nt-scissors', 'aria-hidden': 'true' }, '✂️');
+      const finger = h('div', { class: 'nt-finger', 'aria-hidden': 'true' }, '👆');
+      const zone = h('div', { class: 'nt-cut', role: 'img', 'aria-label': `une tour de ${n} blocs à couper` }, tower, line, scissors, finger);
       const top = h('div', { class: 'ntower nt-top' });
       const topLabel = h('span', { class: 'nt-label' });
-      scene.append(tower);
+      scene.append(zone);
       r.stage.classList.add('nt-stage');
       r.stage.append(scene);
       r.bubble(`Garde ${k} en bas`);
+
+      /** y of the seam above `j` blocks, in the zone (blocks[0] is the bottom one) */
+      const seamY = (j: number) => {
+        const z = zone.getBoundingClientRect();
+        return (blocks[j - 1].getBoundingClientRect().top + blocks[j].getBoundingClientRect().bottom) / 2 - z.top;
+      };
+      /** the seam nearest to a y in the zone, or 0 when the finger is not along the tower */
+      const nearestSeam = (y: number) => {
+        const z = zone.getBoundingClientRect();
+        const topY = blocks[n - 1].getBoundingClientRect().top - z.top;
+        const bottomY = blocks[0].getBoundingClientRect().bottom - z.top;
+        const unit = (bottomY - topY) / n;
+        if (y < topY + unit * 0.25 || y > bottomY - unit * 0.25) return 0;
+        let best = 1;
+        for (let j = 2; j < n; j++) if (Math.abs(seamY(j) - y) < Math.abs(seamY(best) - y)) best = j;
+        return best;
+      };
+      const showLine = (j: number, cls = 'preview') => {
+        line.className = `nt-cutline ${cls}`;
+        line.style.top = `${seamY(j)}px`;
+      };
+      const hideLine = () => (line.className = 'nt-cutline');
+
+      demo = async (j, keep = false) => {
+        if (!r.open()) return;
+        const w = zone.clientWidth;
+        showLine(j, 'demo');
+        finger.style.top = `${seamY(j)}px`;
+        finger.classList.add('on');
+        if (!reducedMotion()) {
+          const a = finger.animate([{ transform: 'translate(0, 0)' }, { transform: `translate(${w - 40}px, 0)` }], { duration: 1300, easing: 'ease-in-out' });
+          line.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: 1300, easing: 'ease-in-out' });
+          await a.finished.catch(() => undefined);
+        } else await r.wait(1300);
+        finger.classList.remove('on');
+        if (!keep) hideLine();
+      };
 
       /** split the tower above block `i`: the top piece steps aside, each piece shows its number */
       const split = (i: number) => {
@@ -929,55 +972,112 @@ function breakGame(level: CountLevel): Game {
         label.textContent = String(n);
       };
 
-      const cut = async (i: number, el: HTMLElement) => {
+      // ---- the gesture: a finger sliding across the tower, from one side to the other
+      let track: { x: number; y: number }[] | null = null;
+      let lastHint = 0;
+      const local = (e: PointerEvent) => {
+        const z = zone.getBoundingClientRect();
+        return { x: e.clientX - z.left, y: e.clientY - z.top };
+      };
+      zone.addEventListener('pointerdown', (e) => {
         if (!r.open() || busy) return;
         sfx.unlock();
-        if (i === n) {
-          shake(el);
-          r.bubble('Touche plus bas !');
-          await r.say('Au-dessus, il n’y a plus rien. Touche un bloc plus bas !');
-          return;
-        }
-        blocks.forEach((b) => b.classList.remove('glow', 'hint'));
+        zone.setPointerCapture(e.pointerId);
+        track = [local(e)];
+        scissors.classList.add('on');
+        moveScissors(track[0]);
+      });
+      const moveScissors = (p: { x: number; y: number }) => {
+        scissors.style.transform = `translate(${p.x}px, ${p.y}px)`;
+      };
+      zone.addEventListener('pointermove', (e) => {
+        if (!track) return;
+        const p = local(e);
+        track.push(p);
+        moveScissors(p);
+        const j = nearestSeam(p.y);
+        if (j) showLine(j);
+        else hideLine();
+      });
+      const end = (e: PointerEvent) => {
+        if (!track) return;
+        const pts = track;
+        track = null;
+        scissors.classList.remove('on');
+        hideLine();
+        if (e.type === 'pointercancel') return;
+        const t = tower.getBoundingClientRect();
+        const z = zone.getBoundingClientRect();
+        const left = t.left - z.left;
+        const right = t.right - z.left;
+        const xs = pts.map((p) => p.x);
+        const across = Math.min(...xs) <= left + t.width * 0.2 && Math.max(...xs) >= right - t.width * 0.2;
+        const along = pts.filter((p) => p.x >= left && p.x <= right);
+        const j = across && along.length ? nearestSeam(along.reduce((a, p) => a + p.y, 0) / along.length) : 0;
+        if (j) return void cut(j);
+        // a tap, or a slide that did not cross the tower: show the gesture again (not a mistake)
+        if (Date.now() - lastHint < 3000 || !r.open()) return;
+        lastHint = Date.now();
+        busy = true;
+        void (async () => {
+          r.bubble('Glisse ton doigt !');
+          await Promise.all([r.say('Glisse ton doigt d’un côté à l’autre de la tour !'), demo(demoSeam())]);
+          busy = false;
+        })();
+      };
+      zone.addEventListener('pointerup', end);
+      zone.addEventListener('pointercancel', end);
+
+      const cut = async (i: number) => {
+        if (!r.open() || busy) return;
+        blocks.forEach((b) => b.classList.remove('glow'));
+        hideLine();
         busy = true;
         split(i);
         if (i === k) {
-          return r.win(el, async () => {
+          return r.win(top, async () => {
             r.bubble(`${k} + ${n - k} = ${n}`);
             await r.say(`${W[k]} et ${W[n - k]}, ça fait ${W[n]}.`);
           });
         }
-        r.miss(el);
+        r.miss(top);
         r.hold(true);
         await r.say(`Ce morceau a ${blocksWord(i)}.`);
         if (!(await r.wait(600))) return;
         rejoin(i);
-        busy = false;
         r.hold(false);
         if (r.misses >= 3) {
-          blocks[k - 1].classList.add('hint');
-          await r.say('Regarde celui qui brille ! Casse juste au-dessus.');
+          // the last help: the cut to make is shown, and its line stays
+          r.bubble('Coupe ici !');
+          await Promise.all([r.say('Regarde : coupe ici !'), demo(k, true)]);
+          busy = false;
           return;
         }
         if (r.misses >= 2) {
           // count from the bottom together, up to the piece to keep
-          busy = true;
           await r.say('On compte ensemble !');
           for (let j = 0; j < k; j++) {
             blocks[j].classList.add('glow');
             await r.say(W[j + 1], { rate: 1 });
           }
           busy = false;
-          if (r.open()) await r.say('Casse juste au-dessus !');
+          if (r.open()) await r.say('Coupe juste au-dessus !');
           return;
         }
+        busy = false;
         await r.say(k === 1 ? 'Il en faut un seul.' : `Il en faut ${W[k]}.`);
       };
       return key(pair);
     },
-    ask(r) {
+    async ask(r) {
       r.bubble(`Garde ${pair[1]} en bas`);
-      return r.say(`Voici une tour de ${W[pair[0]]}. ${want()}`);
+      await r.say(`Voici une tour de ${W[pair[0]]}. ${want()}`);
+      if (demoed || !r.open()) return;
+      // the first time, Pixel shows the gesture (on another seam: it does not give the answer)
+      demoed = true;
+      busy = true;
+      await Promise.all([r.say('Regarde : on glisse le doigt, comme des ciseaux.'), demo(demoSeam())]);
+      busy = false;
     },
   };
 }
