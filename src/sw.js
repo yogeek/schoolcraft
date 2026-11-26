@@ -11,15 +11,25 @@ const VOICE = 'schoolcraft-voice';
 const CORE = ['./', './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png', ...__ASSETS__.map((f) => './' + f)];
 
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)));
+  // `reload`: straight from the server. Through the HTTP cache (GitHub Pages sends max-age=600) the
+  // install stored the previous index.html next to the new build files: it pointed to build files no
+  // longer on the server, and the app stayed white.
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE.map((u) => new Request(u, { cache: 'reload' })))));
   self.skipWaiting();
 });
 
+// Old versions are deleted, except the one just before: a page that started on it (its index.html came
+// from the old cache on a slow network, while this version was installing) still finds its build files.
+// Without them that page stays white.
 self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches
       .keys()
-      .then((keys) => Promise.all(keys.filter((k) => k.startsWith('schoolcraft-') && k !== CACHE && k !== VOICE).map((k) => caches.delete(k))))
+      .then((keys) => {
+        const old = keys.filter((k) => k.startsWith('schoolcraft-') && k !== CACHE && k !== VOICE);
+        // caches.keys() lists caches in creation order: the last one is the previous version
+        return Promise.all(old.slice(0, -1).map((k) => caches.delete(k)));
+      })
       .then(() => self.clients.claim()),
   );
 });
@@ -41,7 +51,9 @@ function cacheFirst(req) {
 }
 
 function networkFirst(req) {
-  const fallback = () => caches.match(req, MATCH).then((hit) => hit || (req.mode === 'navigate' ? caches.match('./', MATCH) : undefined));
+  // this version's copy first (the previous version's cache is kept, and caches.match() would find it first)
+  const mine = (r) => caches.open(CACHE).then((c) => c.match(r, MATCH)).then((hit) => hit || caches.match(r, MATCH));
+  const fallback = () => mine(req).then((hit) => hit || (req.mode === 'navigate' ? mine('./') : undefined));
   return new Promise((resolve) => {
     let settled = false;
     const finish = (res) => {
@@ -51,7 +63,8 @@ function networkFirst(req) {
       }
     };
     const timer = setTimeout(() => fallback().then(finish), 3000);
-    fetch(req)
+    // `no-cache`: revalidate with the server, never a stale page from the HTTP cache
+    fetch(req, { cache: 'no-cache' })
       .then((res) => {
         clearTimeout(timer);
         finish(store(req, res));

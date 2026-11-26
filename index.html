@@ -15,6 +15,35 @@
   </head>
   <body>
     <div id="app"></div>
+    <script>
+      // If the app has not started after 8 s (a script that failed to load after an update, or a
+      // browser too old), reload once; then show what went wrong instead of a white screen.
+      (function () {
+        var errs = [];
+        window.addEventListener('error', function (e) { errs.push((e.message || 'chargement impossible') + ' ' + ((e.target && e.target.src) || e.filename || '')); }, true);
+        setTimeout(function () {
+          var app = document.getElementById('app');
+          if (!app || app.children.length) return;
+          try {
+            if (!sessionStorage.getItem('schoolcraft:boot-retry')) {
+              sessionStorage.setItem('schoolcraft:boot-retry', '1');
+              // online, a build file that failed to load means the offline copy is out of date:
+              // drop it (not the voice clips) so the reload gets the current version
+              var stale = navigator.onLine && errs.some(function (x) { return x.indexOf('/assets/') >= 0; }) && window.caches;
+              var clear = stale
+                ? caches.keys().then(function (keys) {
+                    return Promise.all(keys.filter(function (k) { return k.indexOf('schoolcraft-') === 0 && k !== 'schoolcraft-voice'; }).map(function (k) { return caches.delete(k); }));
+                  })
+                : Promise.resolve();
+              clear.catch(function () {}).then(function () { location.reload(); });
+              return;
+            }
+          } catch (x) {}
+          var info = (navigator.userAgent + '\n' + errs.join('\n')).replace(/[<&]/g, function (c) { return c === '<' ? '&lt;' : '&amp;'; });
+          app.innerHTML = '<div style="font:18px/1.4 sans-serif;padding:24px;color:#222;background:#fff;min-height:100vh"><p>SchoolCraft n’a pas pu démarrer.</p><p><button style="font-size:18px;padding:8px 16px" onclick="location.reload()">Recharger</button></p><pre style="white-space:pre-wrap;font-size:12px;color:#666">' + info + '</pre></div>';
+        }, 8000);
+      })();
+    </script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

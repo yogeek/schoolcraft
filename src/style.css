@@ -3293,6 +3293,10 @@ button span,
 .nt-stage {
   --nt: clamp(40px, 11vw, 58px);
 }
+/* Couper la tour: the finger can start anywhere in the question area, which must not scroll */
+.nt-stage.nt-cutting {
+  touch-action: none;
+}
 .nt-scene {
   display: flex;
   align-items: flex-end;
