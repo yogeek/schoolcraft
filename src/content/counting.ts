@@ -29,7 +29,11 @@ export type CountMode =
   /** petits problèmes racontés (ajouter, enlever) */
   | 'problem'
   /** une tour de dix et des blocs seuls : 11 à 20 */
-  | 'tens';
+  | 'tens'
+  /** une tour-nombre, et encore un bloc : combien ça fait ? (le « + 1 répété ») */
+  | 'stick'
+  /** casser une tour-nombre pour garder un morceau donné (décomposer en manipulant) */
+  | 'break';
 
 export interface CountLevel {
   name: string;
@@ -54,6 +58,7 @@ export const COUNT_CHAPTERS = ['Les petits nombres', "Jusqu'à dix", 'Calculer',
 export const COUNT_LEVELS: CountLevel[] = [
   // 1. les petits nombres (MS)
   { chapter: 0, name: "Compter jusqu'à 5", intro: 'Touche chaque bloc pour le compter, puis choisis le bon nombre.', mode: 'count', min: 1, max: 5, choices: 3 },
+  { chapter: 0, name: 'Et encore un', intro: 'On colle un bloc de plus sur la tour. Devine combien ça fait !', mode: 'stick', min: 1, max: 5, choices: 3 },
   { chapter: 0, name: "Compter jusqu'à 6", intro: 'Encore plus de blocs ! Compte-les bien.', mode: 'count', min: 1, max: 6, choices: 3 },
   { chapter: 0, name: 'Le plus grand tas', intro: 'Regarde bien les deux tas de blocs.', mode: 'compare', min: 1, max: 6, choices: 0 },
   { chapter: 0, name: "Coup d'œil", intro: 'Regarde bien les blocs : ils vont se cacher !', mode: 'flash', min: 1, max: 6, choices: 4 },
@@ -62,6 +67,7 @@ export const COUNT_LEVELS: CountLevel[] = [
   { chapter: 1, name: 'La course des nombres', intro: 'On fait la course ! Lance le dé, et touche la case où tu arrives.', mode: 'race', min: 1, max: 10, choices: 0, die: 3 },
   { chapter: 1, name: "Coup d'œil jusqu'à 10", intro: 'Une rangée, c’est cinq. Regarde vite !', mode: 'frame', min: 3, max: 10, choices: 4 },
   { chapter: 1, name: 'La grotte', intro: 'Des blocs vont se cacher dans la grotte !', mode: 'hide', min: 3, max: 5, choices: 3 },
+  { chapter: 1, name: 'Casser la tour', intro: 'Touche un bloc de la tour : elle se casse juste au-dessus !', mode: 'break', min: 4, max: 6, choices: 0 },
   { chapter: 1, name: 'Le plus grand nombre', intro: 'Maintenant, les nombres sont écrits !', mode: 'digits', min: 1, max: 10, choices: 0 },
   { chapter: 1, name: "La grotte jusqu'à 10", intro: 'Encore plus de blocs dans la grotte !', mode: 'hide', min: 6, max: 10, choices: 4 },
   // 3. calculer (GS, CP)

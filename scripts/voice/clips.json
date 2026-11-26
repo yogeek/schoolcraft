@@ -30991,5 +30991,594 @@
   "sttCost": 0,
   "stt": "Ce tas a un bloc",
   "score": 1
+ },
+ "bien cassé!": {
+  "file": "f3200e5a-58025f.mp3",
+  "text": "Bien cassé !",
+  "sent": "[happily] Bien cassé !",
+  "dur": 1.28,
+  "cost": 9,
+  "sttCost": 0,
+  "score": 1
+ },
+ "combien de blocs dans la tour?": {
+  "file": "b460ba2e-af6120.mp3",
+  "text": "Combien de blocs dans la tour ?",
+  "sent": "Combien de blocs dans la tour ?",
+  "dur": 1.68,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Combien de blocs dans la tour ?",
+  "score": 1
+ },
+ "avec un de plus, ça fait combien?": {
+  "file": "2b15b669-3e98db.mp3",
+  "text": "Avec un de plus, ça fait combien ?",
+  "sent": "Avec un de plus, ça fait combien ?",
+  "dur": 2.4,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Avec un de plus, ça fait combien",
+  "score": 1
+ },
+ "il y a un bloc.": {
+  "file": "8a291e35-5e2dc8.mp3",
+  "text": "Il y a un bloc.",
+  "sent": "Il y a un bloc.",
+  "dur": 1.36,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Il y a un bloc",
+  "score": 1
+ },
+ "au-dessus, il n'y a plus rien.": {
+  "file": "e63b5cbd-8d08f0.mp3",
+  "text": "Au-dessus, il n’y a plus rien.",
+  "sent": "Au-dessus, il n’y a plus rien.",
+  "dur": 1.92,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Au-dessus, il n'y a plus rien",
+  "score": 1
+ },
+ "touche un bloc plus bas!": {
+  "file": "f5bfc71f-fce937.mp3",
+  "text": "Touche un bloc plus bas !",
+  "sent": "Touche un bloc plus bas !",
+  "dur": 1.52,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Touche un bloc plus bas",
+  "score": 1
+ },
+ "casse juste au-dessus.": {
+  "file": "7485d427-cef67d.mp3",
+  "text": "Casse juste au-dessus.",
+  "sent": "Casse juste au-dessus.",
+  "dur": 1.6,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Casse juste au-dessus",
+  "score": 1
+ },
+ "casse juste au-dessus!": {
+  "file": "6985c2d6-744cd5.mp3",
+  "text": "Casse juste au-dessus !",
+  "sent": "Casse juste au-dessus !",
+  "dur": 1.52,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Casse juste au-dessus",
+  "score": 1
+ },
+ "il en faut un seul.": {
+  "file": "cb98c4d1-1b04f9.mp3",
+  "text": "Il en faut un seul.",
+  "sent": "Il en faut un seul.",
+  "dur": 1.44,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Il en faut un seul",
+  "score": 1
+ },
+ "on colle un bloc de plus sur la tour.": {
+  "file": "d77f844e-184839.mp3",
+  "text": "On colle un bloc de plus sur la tour.",
+  "sent": "On colle un bloc de plus sur la tour.",
+  "dur": 2.08,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "On colle un bloc de plus sur la tour",
+  "score": 1
+ },
+ "devine combien ça fait!": {
+  "file": "b2e4ef43-e860cd.mp3",
+  "text": "Devine combien ça fait !",
+  "sent": "Devine combien ça fait !",
+  "dur": 1.52,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Devine combien ça fait",
+  "score": 1
+ },
+ "touche un bloc de la tour: elle se casse juste au-dessus!": {
+  "file": "f200f761-1c1d06.mp3",
+  "text": "Touche un bloc de la tour : elle se casse juste au-dessus !",
+  "sent": "Touche un bloc de la tour : elle se casse juste au-dessus !",
+  "dur": 3.36,
+  "cost": 24,
+  "sttCost": 1,
+  "stt": "Touche un bloc de la tour. Elle se casse juste au-dessus",
+  "score": 1
+ },
+ "deux, et encore un: trois!": {
+  "file": "e3ae0b01-24a57b.mp3",
+  "text": "Deux, et encore un : trois !",
+  "sent": "Deux, et encore un : trois !",
+  "dur": 2.4,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Deux. Et encore un, trois",
+  "score": 1
+ },
+ "un, et encore un: deux!": {
+  "file": "85ae6ccb-a1d9b1.mp3",
+  "text": "Un, et encore un : deux !",
+  "sent": "Un, et encore un : deux !",
+  "dur": 2.32,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Un et encore un, deux",
+  "score": 1
+ },
+ "trois, et encore un: quatre!": {
+  "file": "c5136581-ac6c96.mp3",
+  "text": "Trois, et encore un : quatre !",
+  "sent": "Trois, et encore un : quatre !",
+  "dur": 2.64,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Trois et encore un, quatre",
+  "score": 1
+ },
+ "quatre, et encore un: cinq!": {
+  "file": "9de11afd-783072.mp3",
+  "text": "Quatre, et encore un : cinq !",
+  "sent": "Quatre, et encore un : cinq !",
+  "dur": 2.48,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Quatre. Et encore un. Cinq",
+  "score": 1
+ },
+ "cinq, et encore un: six!": {
+  "file": "98227c87-9c2e44.mp3",
+  "text": "Cinq, et encore un : six !",
+  "sent": "Cinq, et encore un : six !",
+  "dur": 2.56,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Cinq et encore un, six",
+  "score": 1
+ },
+ "six, et encore un: sept!": {
+  "file": "4fdfdcda-924b4f.mp3",
+  "text": "Six, et encore un : sept !",
+  "sent": "Six, et encore un : sept !",
+  "dur": 2.64,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Six. Et encore un. Sept",
+  "score": 1
+ },
+ "sept, et encore un: huit!": {
+  "file": "b0d0713e-056e68.mp3",
+  "text": "Sept, et encore un : huit !",
+  "sent": "Sept, et encore un : huit !",
+  "dur": 2.56,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Sept. Et encore un. Huit",
+  "score": 1
+ },
+ "huit, et encore un: neuf!": {
+  "file": "7ef5d210-3b437e.mp3",
+  "text": "Huit, et encore un : neuf !",
+  "sent": "Huit, et encore un : neuf !",
+  "dur": 2.56,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Huit. Et encore un. Neuf",
+  "score": 1
+ },
+ "neuf, et encore un: dix!": {
+  "file": "818d8727-d0081e.mp3",
+  "text": "Neuf, et encore un : dix !",
+  "sent": "Neuf, et encore un : dix !",
+  "dur": 2.72,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Neuf et encore un, dix",
+  "score": 1
+ },
+ "une tour de deux, et encore un bloc.": {
+  "file": "a259ae2a-653e4e.mp3",
+  "text": "Une tour de deux, et encore un bloc.",
+  "sent": "Une tour de deux, et encore un bloc.",
+  "dur": 2.48,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Une tour de deux et encore un bloc",
+  "score": 1
+ },
+ "une tour de trois, et encore un bloc.": {
+  "file": "d59cc883-11cdf6.mp3",
+  "text": "Une tour de trois, et encore un bloc.",
+  "sent": "Une tour de trois, et encore un bloc.",
+  "dur": 2.64,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Une tour de trois et encore un bloc",
+  "score": 1
+ },
+ "une tour de quatre, et encore un bloc.": {
+  "file": "9a2d7e62-459d05.mp3",
+  "text": "Une tour de quatre, et encore un bloc.",
+  "sent": "Une tour de quatre, et encore un bloc.",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Une tour de quatre et encore un bloc",
+  "score": 1
+ },
+ "une tour de cinq, et encore un bloc.": {
+  "file": "5c8426d5-5578a8.mp3",
+  "text": "Une tour de cinq, et encore un bloc.",
+  "sent": "Une tour de cinq, et encore un bloc.",
+  "dur": 2.56,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Une tour de cinq et encore un bloc",
+  "score": 1
+ },
+ "une tour de six, et encore un bloc.": {
+  "file": "3d758468-eb798b.mp3",
+  "text": "Une tour de six, et encore un bloc.",
+  "sent": "Une tour de six, et encore un bloc.",
+  "dur": 2.64,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Une tour de six et encore un bloc",
+  "score": 1
+ },
+ "une tour de sept, et encore un bloc.": {
+  "file": "0f786b50-8ea252.mp3",
+  "text": "Une tour de sept, et encore un bloc.",
+  "sent": "Une tour de sept, et encore un bloc.",
+  "dur": 2.64,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Une tour de sept et encore un bloc",
+  "score": 1
+ },
+ "une tour de huit, et encore un bloc.": {
+  "file": "5146a446-2ed1b1.mp3",
+  "text": "Une tour de huit, et encore un bloc.",
+  "sent": "Une tour de huit, et encore un bloc.",
+  "dur": 2.56,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Une tour de huit et encore un bloc",
+  "score": 1
+ },
+ "une tour de neuf, et encore un bloc.": {
+  "file": "dd2ba156-f56765.mp3",
+  "text": "Une tour de neuf, et encore un bloc.",
+  "sent": "Une tour de neuf, et encore un bloc.",
+  "dur": 2.64,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Une tour de neuf et encore un bloc",
+  "score": 1
+ },
+ "la tour a deux blocs.": {
+  "file": "43ab726c-2fa062.mp3",
+  "text": "La tour a deux blocs.",
+  "sent": "La tour a deux blocs.",
+  "dur": 1.68,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "La tour a deux blocs",
+  "score": 1
+ },
+ "la tour a trois blocs.": {
+  "file": "3b3118d1-d1e97b.mp3",
+  "text": "La tour a trois blocs.",
+  "sent": "La tour a trois blocs.",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "La tour a trois blocs",
+  "score": 1
+ },
+ "la tour a cinq blocs.": {
+  "file": "381fd2e9-8f25cb.mp3",
+  "text": "La tour a cinq blocs.",
+  "sent": "La tour a cinq blocs.",
+  "dur": 1.76,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "La tour a cinq blocs",
+  "score": 1
+ },
+ "la tour a quatre blocs.": {
+  "file": "37bbf5f8-de6ef0.mp3",
+  "text": "La tour a quatre blocs.",
+  "sent": "La tour a quatre blocs.",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "La tour a quatre blocs",
+  "score": 1
+ },
+ "la tour a six blocs.": {
+  "file": "61b42010-ee2683.mp3",
+  "text": "La tour a six blocs.",
+  "sent": "La tour a six blocs.",
+  "dur": 1.68,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "La tour a six blocs",
+  "score": 1
+ },
+ "la tour a sept blocs.": {
+  "file": "165fae7e-72570e.mp3",
+  "text": "La tour a sept blocs.",
+  "sent": "La tour a sept blocs.",
+  "dur": 1.76,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "La tour a sept blocs",
+  "score": 1
+ },
+ "la tour a huit blocs.": {
+  "file": "23ee3570-e65d5c.mp3",
+  "text": "La tour a huit blocs.",
+  "sent": "La tour a huit blocs.",
+  "dur": 1.68,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "La tour a huit blocs",
+  "score": 1
+ },
+ "la tour a neuf blocs.": {
+  "file": "149fc34c-a5173b.mp3",
+  "text": "La tour a neuf blocs.",
+  "sent": "La tour a neuf blocs.",
+  "dur": 1.76,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "La tour a neuf blocs",
+  "score": 1
+ },
+ "voici une tour de deux.": {
+  "file": "afef3db2-466667.mp3",
+  "text": "Voici une tour de deux.",
+  "sent": "Voici une tour de deux.",
+  "dur": 1.68,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Voici une tour de deux",
+  "score": 1
+ },
+ "voici une tour de trois.": {
+  "file": "896c2059-46a8b9.mp3",
+  "text": "Voici une tour de trois.",
+  "sent": "Voici une tour de trois.",
+  "dur": 1.52,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Voici une tour de trois",
+  "score": 1
+ },
+ "voici une tour de quatre.": {
+  "file": "98397e1e-c5efa2.mp3",
+  "text": "Voici une tour de quatre.",
+  "sent": "Voici une tour de quatre.",
+  "dur": 1.68,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Voici une tour de quatre",
+  "score": 1
+ },
+ "voici une tour de cinq.": {
+  "file": "16029a97-fa7a25.mp3",
+  "text": "Voici une tour de cinq.",
+  "sent": "Voici une tour de cinq.",
+  "dur": 1.6,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Voici une tour de cinq",
+  "score": 1
+ },
+ "voici une tour de six.": {
+  "file": "eead4234-3ece29.mp3",
+  "text": "Voici une tour de six.",
+  "sent": "Voici une tour de six.",
+  "dur": 1.68,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Voici une tour de six",
+  "score": 1
+ },
+ "voici une tour de sept.": {
+  "file": "c603a6c8-f37a6a.mp3",
+  "text": "Voici une tour de sept.",
+  "sent": "Voici une tour de sept.",
+  "dur": 1.68,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Voici une tour de sept",
+  "score": 1
+ },
+ "voici une tour de huit.": {
+  "file": "fa87470e-c0b324.mp3",
+  "text": "Voici une tour de huit.",
+  "sent": "Voici une tour de huit.",
+  "dur": 1.68,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Voici une tour de huit",
+  "score": 1
+ },
+ "ce morceau a un bloc.": {
+  "file": "b82159e7-0992b2.mp3",
+  "text": "Ce morceau a un bloc.",
+  "sent": "Ce morceau a un bloc.",
+  "dur": 1.84,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Ce morceau a un bloc",
+  "score": 1
+ },
+ "ce morceau a deux blocs.": {
+  "file": "b0aed2f1-d2bcd9.mp3",
+  "text": "Ce morceau a deux blocs.",
+  "sent": "Ce morceau a deux blocs.",
+  "dur": 1.76,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Ce morceau a deux blocs",
+  "score": 1
+ },
+ "ce morceau a trois blocs.": {
+  "file": "70631d0e-1d6e30.mp3",
+  "text": "Ce morceau a trois blocs.",
+  "sent": "Ce morceau a trois blocs.",
+  "dur": 1.84,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Ce morceau a trois blocs",
+  "score": 1
+ },
+ "ce morceau a quatre blocs.": {
+  "file": "620ad96d-15c4c0.mp3",
+  "text": "Ce morceau a quatre blocs.",
+  "sent": "Ce morceau a quatre blocs.",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ce morceau a quatre blocs",
+  "score": 1
+ },
+ "ce morceau a cinq blocs.": {
+  "file": "09dd8cac-25c26d.mp3",
+  "text": "Ce morceau a cinq blocs.",
+  "sent": "Ce morceau a cinq blocs.",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ce morceau a cinq blocs",
+  "score": 1
+ },
+ "ce morceau a six blocs.": {
+  "file": "f5f71a33-fdf1bb.mp3",
+  "text": "Ce morceau a six blocs.",
+  "sent": "Ce morceau a six blocs.",
+  "dur": 1.76,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Ce morceau a six blocs",
+  "score": 1
+ },
+ "ce morceau a sept blocs.": {
+  "file": "62d0122f-60f8bd.mp3",
+  "text": "Ce morceau a sept blocs.",
+  "sent": "Ce morceau a sept blocs.",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Ce morceau a sept blocs",
+  "score": 1
+ },
+ "il en faut deux.": {
+  "file": "ff649b4d-b9c4de.mp3",
+  "text": "Il en faut deux.",
+  "sent": "Il en faut deux.",
+  "dur": 1.2,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Il en faut deux",
+  "score": 1
+ },
+ "casse la tour pour garder un seul bloc en bas!": {
+  "file": "4d3fe58a-51ab85.mp3",
+  "text": "Casse la tour pour garder un seul bloc en bas !",
+  "sent": "Casse la tour pour garder un seul bloc en bas !",
+  "dur": 2.56,
+  "cost": 19,
+  "sttCost": 1,
+  "stt": "Casse la tour pour garder un seul bloc en bas",
+  "score": 1
+ },
+ "casse la tour pour garder deux blocs en bas!": {
+  "file": "6aafe9e5-944349.mp3",
+  "text": "Casse la tour pour garder deux blocs en bas !",
+  "sent": "Casse la tour pour garder deux blocs en bas !",
+  "dur": 2.4,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Casse la tour pour garder deux blocs en bas",
+  "score": 1
+ },
+ "casse la tour pour garder trois blocs en bas!": {
+  "file": "abf20108-ba3858.mp3",
+  "text": "Casse la tour pour garder trois blocs en bas !",
+  "sent": "Casse la tour pour garder trois blocs en bas !",
+  "dur": 2.48,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Casse la tour pour garder trois blocs en bas",
+  "score": 1
+ },
+ "casse la tour pour garder quatre blocs en bas!": {
+  "file": "25e74321-6669a6.mp3",
+  "text": "Casse la tour pour garder quatre blocs en bas !",
+  "sent": "Casse la tour pour garder quatre blocs en bas !",
+  "dur": 2.4,
+  "cost": 19,
+  "sttCost": 1,
+  "stt": "Casse la tour pour garder quatre blocs en bas",
+  "score": 1
+ },
+ "casse la tour pour garder cinq blocs en bas!": {
+  "file": "416abdba-d289b4.mp3",
+  "text": "Casse la tour pour garder cinq blocs en bas !",
+  "sent": "Casse la tour pour garder cinq blocs en bas !",
+  "dur": 2.4,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Casse la tour pour garder cinq blocs en bas",
+  "score": 1
+ },
+ "casse la tour pour garder six blocs en bas!": {
+  "file": "0180c473-14e385.mp3",
+  "text": "Casse la tour pour garder six blocs en bas !",
+  "sent": "Casse la tour pour garder six blocs en bas !",
+  "dur": 2.48,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Casse la tour pour garder six blocs en bas",
+  "score": 1
+ },
+ "casse la tour pour garder sept blocs en bas!": {
+  "file": "900efc67-e7cef0.mp3",
+  "text": "Casse la tour pour garder sept blocs en bas !",
+  "sent": "Casse la tour pour garder sept blocs en bas !",
+  "dur": 2.24,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Casse la tour pour garder sept blocs en bas",
+  "score": 1
  }
 }

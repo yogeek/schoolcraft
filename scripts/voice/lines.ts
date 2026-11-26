@@ -4,6 +4,7 @@
 // Fixed sentences are read from the code (string literals given to `say()`); sentences built from
 // content are listed here, template by template, like the games build them. A sentence missing
 // from this list is simply spoken by the device's voice; in dev, `window.__missing` lists them.
+import { fileURLToPath } from 'node:url';
 import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { COUNT_LEVELS, NUMBER_WORDS as W, THINGS } from '../../src/content/counting.ts';
@@ -13,7 +14,7 @@ import { LETTER_SPEECH, WRITING_LEVELS } from '../../src/content/writing.ts';
 import { BLOCK_NAMES } from '../../src/pixel.ts';
 import { pieces, sentences, voiceKey } from '../../src/voiceKey.ts';
 
-const ROOT = new URL('../../', import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL('../../', import.meta.url)); // a Windows path too (pathname gives /D:/…)
 const lines = new Map<string, { text: string; tag?: string; say?: string; marks?: number[] }>();
 /** add every sentence of a text */
 function add(text: string, tag?: string): void {
@@ -321,6 +322,14 @@ for (const t of range(2, 10))
     add(`Combien font : ${W[a]}… plus… ${W[t - a]} ?`);
   }
 for (const n of range(11, 19)) add(`Dix et ${W[n - 10]} : ${W[n]} !`);
+// number towers
+each(1, 9, (n) => `${cap(W[n])}, et encore un : ${W[n + 1]} !`);
+each(2, 9, (n) => `Une tour de ${W[n]}, et encore un bloc.`);
+each(2, 9, (n) => `La tour a ${W[n]} blocs.`);
+each(2, 8, (n) => `Voici une tour de ${W[n]}.`);
+each(1, 7, (n) => (n === 1 ? 'Ce morceau a un bloc.' : `Ce morceau a ${W[n]} blocs.`));
+each(1, 7, (n) => (n === 1 ? 'Il en faut un seul.' : `Il en faut ${W[n]}.`));
+each(1, 7, (n) => (n === 1 ? 'Casse la tour pour garder un seul bloc en bas !' : `Casse la tour pour garder ${W[n]} blocs en bas !`));
 // story problems
 const one = (n: number, fem: boolean) => (n === 1 ? (fem ? 'une' : 'un') : W[n]);
 for (const th of THINGS) {

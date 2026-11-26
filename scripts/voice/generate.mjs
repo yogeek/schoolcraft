@@ -7,11 +7,12 @@
 //
 // Clips already recorded are kept (scripts/voice/clips.json), so the script can be stopped and run
 // again. Only the fixed text of the game is sent, never anything about the child.
+import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, readdirSync, unlinkSync, writeFileSync } from 'node:fs';
 
-const ROOT = new URL('../../', import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL('../../', import.meta.url)); // a Windows path too (pathname gives /D:/…)
 const VOICE = 'FvmvwvObRqIHojkEGh5N'; // « Adina », from the ElevenLabs voice library (needs a paid plan)
 const MODEL = 'eleven_v4';
 const KEY = process.env.ELEVENLABS_API_KEY;

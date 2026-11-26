@@ -95,8 +95,8 @@ export function unlockAll(): void {
 /** Where a child of each class starts (the levels below stay open, to review). */
 export const GRADE_START: Record<Grade, Record<ActivityId, number>> = {
   MS: { sounds: 1, write: 1, count: 1 },
-  GS: { sounds: 4, write: 4, count: 5 },
-  CP: { sounds: 6, write: 6, count: 9 },
+  GS: { sounds: 4, write: 4, count: 6 },
+  CP: { sounds: 6, write: 6, count: 11 },
 };
 
 export const GRADE_NAMES: Record<Grade, string> = { MS: 'Moyenne section', GS: 'Grande section', CP: 'CP' };
