@@ -322,7 +322,8 @@ for (const t of range(2, 10))
     add(`Combien font : ${W[a]}… plus… ${W[t - a]} ?`);
   }
 for (const n of range(11, 19)) add(`Dix et ${W[n - 10]} : ${W[n]} !`);
-// number towers
+// number towers (the question is built in a closure the scan does not see)
+add('Un bloc, et encore un. Ça fait combien ?');
 each(1, 9, (n) => `${cap(W[n])}, et encore un : ${W[n + 1]} !`);
 each(2, 9, (n) => `Une tour de ${W[n]}, et encore un bloc.`);
 each(2, 9, (n) => `La tour a ${W[n]} blocs.`);
