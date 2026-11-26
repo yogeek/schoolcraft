@@ -2,10 +2,11 @@
 // list of ticked sentences to copy back. Grouped by risk (a word said alone, praise, after a success).
 //
 //   node scripts/voice/review.mjs <out.html> [audio URL prefix, default « voice/ »] [file: only these sentences]
+import { fileURLToPath } from 'node:url';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { voiceKey } from '../../src/voiceKey.ts';
 
-const ROOT = new URL('../../', import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL('../../', import.meta.url)); // a Windows path too (pathname gives /D:/…)
 const [out, prefix = 'voice/', only] = process.argv.slice(2);
 if (!out) throw new Error('usage: node scripts/voice/review.mjs <out.html> [audio prefix] [sentences file]');
 const keep = only ? new Set(readFileSync(only, 'utf8').split('\n').filter((t) => t.trim()).map((t) => voiceKey(t.trim()))) : null;

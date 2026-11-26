@@ -4,6 +4,7 @@
 // Fixed sentences are read from the code (string literals given to `say()`); sentences built from
 // content are listed here, template by template, like the games build them. A sentence missing
 // from this list is simply spoken by the device's voice; in dev, `window.__missing` lists them.
+import { fileURLToPath } from 'node:url';
 import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { COUNT_LEVELS, NUMBER_WORDS as W, THINGS } from '../../src/content/counting.ts';
@@ -13,7 +14,7 @@ import { LETTER_SPEECH, WRITING_LEVELS } from '../../src/content/writing.ts';
 import { BLOCK_NAMES } from '../../src/pixel.ts';
 import { pieces, sentences, voiceKey } from '../../src/voiceKey.ts';
 
-const ROOT = new URL('../../', import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL('../../', import.meta.url)); // a Windows path too (pathname gives /D:/…)
 const lines = new Map<string, { text: string; tag?: string; say?: string; marks?: number[] }>();
 /** add every sentence of a text */
 function add(text: string, tag?: string): void {
