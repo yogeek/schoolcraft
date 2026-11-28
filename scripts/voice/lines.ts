@@ -154,6 +154,7 @@ for (const n of range(1, 10)) {
 for (const c of range(0, 10)) add(c === 0 ? "Tu n'as allumé aucune bougie." : c === 1 ? 'Tu as allumé une bougie.' : `Tu as allumé ${W[c]} bougies.`);
 add('Allume autant de bougies que ce nombre !');
 add('Allume les bougies qui brillent !');
+add('Puis touche le bouton vert !');
 // Corail: the directions, one or two at a time (never straight back)
 const DIR_WORDS: Record<string, string> = { left: 'à gauche', right: 'à droite', up: 'en haut', down: 'en bas' };
 const BACK: Record<string, string> = { left: 'right', right: 'left', up: 'down', down: 'up' };
