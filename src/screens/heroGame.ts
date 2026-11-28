@@ -45,7 +45,7 @@ export function heroGameScreen(ctx: Ctx): void {
     const won = after > before;
     const speech = won
       ? after === MEDALS
-        ? `Bravo ! Tu as gagné toutes les médailles de ${hero.name} !`
+        ? `Bravo ! Tu as gagné toutes les médailles ${/^[aeiouyéè]/i.test(hero.name) ? "d'" : 'de '}${hero.name} !`
         : 'Bravo ! Tu as gagné une médaille ! La prochaine fois, ce sera un peu plus dur.'
       : after === MEDALS
         ? 'Bravo, quelle belle partie !'

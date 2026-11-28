@@ -734,22 +734,6 @@
   "text": "Pixel va faire une sieste."
  },
  {
-  "key": "tu as gagné une médaille!",
-  "text": "Tu as gagné une médaille !"
- },
- {
-  "key": "la prochaine fois, ce sera un peu plus dur.",
-  "text": "La prochaine fois, ce sera un peu plus dur."
- },
- {
-  "key": "bravo, quelle belle partie!",
-  "text": "Bravo, quelle belle partie !"
- },
- {
-  "key": "encore un peu d'entraînement, et tu gagneras une médaille!",
-  "text": "Encore un peu d'entraînement, et tu gagneras une médaille !"
- },
- {
   "key": "celui-là dort encore.",
   "text": "Celui-là dort encore."
  },
@@ -792,6 +776,22 @@
  {
   "key": "on continue le coloriage!",
   "text": "On continue le coloriage !"
+ },
+ {
+  "key": "tu as gagné une médaille!",
+  "text": "Tu as gagné une médaille !"
+ },
+ {
+  "key": "la prochaine fois, ce sera un peu plus dur.",
+  "text": "La prochaine fois, ce sera un peu plus dur."
+ },
+ {
+  "key": "bravo, quelle belle partie!",
+  "text": "Bravo, quelle belle partie !"
+ },
+ {
+  "key": "encore un peu d'entraînement, et tu gagneras une médaille!",
+  "text": "Encore un peu d'entraînement, et tu gagneras une médaille !"
  },
  {
   "key": "voici la carte!",
@@ -2302,8 +2302,8 @@
   "text": "Orageon t'a préparé un jeu."
  },
  {
-  "key": "tu as gagné toutes les médailles de orageon!",
-  "text": "Tu as gagné toutes les médailles de Orageon !"
+  "key": "tu as gagné toutes les médailles d'orageon!",
+  "text": "Tu as gagné toutes les médailles d'Orageon !"
  },
  {
   "key": "robo range ses pièces!",
@@ -2418,8 +2418,8 @@
   "text": "Astro t'a préparé un jeu."
  },
  {
-  "key": "tu as gagné toutes les médailles de astro!",
-  "text": "Tu as gagné toutes les médailles de Astro !"
+  "key": "tu as gagné toutes les médailles d'astro!",
+  "text": "Tu as gagné toutes les médailles d'Astro !"
  },
  {
   "key": "attrape la lettre: a!",

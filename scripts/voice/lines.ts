@@ -129,7 +129,7 @@ for (const id of GAME_HEROES) {
   for (const t of GAME_INTROS[id]) add(t);
   add(`${name} t'a préparé un jeu ! Touche son image pour jouer.`);
   add(`Et une clé ! ${name} t'a préparé un jeu. Va voir tes amis pour jouer !`);
-  add(`Bravo ! Tu as gagné toutes les médailles de ${name} !`);
+  add(`Bravo ! Tu as gagné toutes les médailles ${/^[aeiouyéè]/i.test(name) ? "d'" : 'de '}${name} !`);
 }
 add('Bravo ! Tu as gagné une médaille ! La prochaine fois, ce sera un peu plus dur.');
 add('Bravo, quelle belle partie !');
