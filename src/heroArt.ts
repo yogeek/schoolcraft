@@ -47,6 +47,11 @@ const PARTICLES: Record<Effect, { chars: string[]; colors: string[] }> = {
   snow: { chars: ['✻', '✼', '•'], colors: ['#ffffff', '#bfe9ff'] },
   hearts: { chars: ['♥'], colors: ['#ff6fa5', '#ffffff', '#c9b6f2'] },
   planets: { chars: ['●', '★', '✦'], colors: ['#f39c12', '#5dade2', '#f7d038'] },
+  rocks: { chars: ['■', '●'], colors: ['#9aa0a8', '#8a5a33', '#6b6f78'] },
+  leaves: { chars: ['♣', '✿'], colors: ['#5cb85c', '#3fa34d', '#f06292'] },
+  honey: { chars: ['●', '♥'], colors: ['#f7d038', '#f2a03d', '#ffffff'] },
+  notes: { chars: ['♪', '♫'], colors: ['#f06292', '#7b4bc4', '#f7d038'] },
+  sparkles: { chars: ['✧', '•', '✦'], colors: ['#f7e45a', '#ffffff', '#a8dcf5'] },
 };
 
 /** Burst of themed particles from the centre of `el`. */

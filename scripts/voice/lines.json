@@ -585,10 +585,6 @@
   "text": "Touche celui qui brille pour le colorier."
  },
  {
-  "key": "encore une couleur!",
-  "text": "Encore une couleur !"
- },
- {
   "key": "on continue le coloriage!",
   "text": "On continue le coloriage !"
  },
@@ -1697,6 +1693,174 @@
   "text": "Je vais jusqu'à la lune !"
  },
  {
+  "key": "tu as réveillé taupi, la petite taupe!",
+  "text": "Tu as réveillé Taupi, la petite taupe !"
+ },
+ {
+  "key": "taupi, la petite taupe!",
+  "text": "Taupi, la petite taupe !"
+ },
+ {
+  "key": "je creuse des tunnels sous la terre!",
+  "text": "Je creuse des tunnels sous la terre !"
+ },
+ {
+  "key": "tu as réveillé champi, le champignon!",
+  "text": "Tu as réveillé Champi, le champignon !"
+ },
+ {
+  "key": "champi, le champignon!",
+  "text": "Champi, le champignon !"
+ },
+ {
+  "key": "moi, je pousse après la pluie!",
+  "text": "Moi, je pousse après la pluie !"
+ },
+ {
+  "key": "tu as réveillé plume, la chouette savante!",
+  "text": "Tu as réveillé Plume, la chouette savante !"
+ },
+ {
+  "key": "plume, la chouette savante!",
+  "text": "Plume, la chouette savante !"
+ },
+ {
+  "key": "je connais toutes les lettres!",
+  "text": "Je connais toutes les lettres !"
+ },
+ {
+  "key": "tu as réveillé vaillant, le petit chevalier!",
+  "text": "Tu as réveillé Vaillant, le petit chevalier !"
+ },
+ {
+  "key": "vaillant, le petit chevalier!",
+  "text": "Vaillant, le petit chevalier !"
+ },
+ {
+  "key": "je protège tous mes amis!",
+  "text": "Je protège tous mes amis !"
+ },
+ {
+  "key": "tu as réveillé miel, l'abeille!",
+  "text": "Tu as réveillé Miel, l'abeille !"
+ },
+ {
+  "key": "miel, l'abeille!",
+  "text": "Miel, l'abeille !"
+ },
+ {
+  "key": "bzz!",
+  "text": "Bzz !"
+ },
+ {
+  "key": "je fais du miel pour mes amis!",
+  "text": "Je fais du miel pour mes amis !"
+ },
+ {
+  "key": "tu as réveillé galet, le géant de pierre!",
+  "text": "Tu as réveillé Galet, le géant de pierre !"
+ },
+ {
+  "key": "galet, le géant de pierre!",
+  "text": "Galet, le géant de pierre !"
+ },
+ {
+  "key": "je suis très fort, et très doux!",
+  "text": "Je suis très fort, et très doux !"
+ },
+ {
+  "key": "tu as réveillé pirouette, la petite acrobate!",
+  "text": "Tu as réveillé Pirouette, la petite acrobate !"
+ },
+ {
+  "key": "pirouette, la petite acrobate!",
+  "text": "Pirouette, la petite acrobate !"
+ },
+ {
+  "key": "regarde, je fais la roue!",
+  "text": "Regarde, je fais la roue !"
+ },
+ {
+  "key": "tu as réveillé ronce, le petit hérisson!",
+  "text": "Tu as réveillé Ronce, le petit hérisson !"
+ },
+ {
+  "key": "ronce, le petit hérisson!",
+  "text": "Ronce, le petit hérisson !"
+ },
+ {
+  "key": "mes piquants sont tout doux pour toi!",
+  "text": "Mes piquants sont tout doux pour toi !"
+ },
+ {
+  "key": "tu as réveillé luciole, la petite lumière!",
+  "text": "Tu as réveillé Luciole, la petite lumière !"
+ },
+ {
+  "key": "luciole, la petite lumière!",
+  "text": "Luciole, la petite lumière !"
+ },
+ {
+  "key": "la nuit, je brille pour toi!",
+  "text": "La nuit, je brille pour toi !"
+ },
+ {
+  "key": "tu as réveillé pistache, le petit dragon!",
+  "text": "Tu as réveillé Pistache, le petit dragon !"
+ },
+ {
+  "key": "pistache, le petit dragon!",
+  "text": "Pistache, le petit dragon !"
+ },
+ {
+  "key": "moi, je crache des bulles, pas du feu!",
+  "text": "Moi, je crache des bulles, pas du feu !"
+ },
+ {
+  "key": "tu as réveillé comète, l'étoile filante!",
+  "text": "Tu as réveillé Comète, l'étoile filante !"
+ },
+ {
+  "key": "comète, l'étoile filante!",
+  "text": "Comète, l'étoile filante !"
+ },
+ {
+  "key": "fais un vœu, et je file dans le ciel!",
+  "text": "Fais un vœu, et je file dans le ciel !"
+ },
+ {
+  "key": "tu as réveillé coquille, l'escargot voyageur!",
+  "text": "Tu as réveillé Coquille, l'escargot voyageur !"
+ },
+ {
+  "key": "coquille, l'escargot voyageur!",
+  "text": "Coquille, l'escargot voyageur !"
+ },
+ {
+  "key": "je vais lentement, mais j'arrive toujours!",
+  "text": "Je vais lentement, mais j'arrive toujours !"
+ },
+ {
+  "key": "qui est-ce?",
+  "text": "Qui est-ce ?"
+ },
+ {
+  "key": "colorie pour le découvrir!",
+  "text": "Colorie pour le découvrir !"
+ },
+ {
+  "key": "choisis une couleur en bas, puis touche les cases avec le même chiffre.",
+  "text": "Choisis une couleur en bas, puis touche les cases avec le même chiffre."
+ },
+ {
+  "key": "chaque couleur a un calcul.",
+  "text": "Chaque couleur a un calcul."
+ },
+ {
+  "key": "touche les cases avec la réponse!",
+  "text": "Touche les cases avec la réponse !"
+ },
+ {
   "key": "construis une tour de trois blocs!",
   "text": "Construis une tour de trois blocs !"
  },
@@ -1831,6 +1995,10 @@
  {
   "key": "gagne des étoiles pour les réveiller.",
   "text": "Gagne des étoiles pour les réveiller."
+ },
+ {
+  "key": "encore une couleur!",
+  "text": "Encore une couleur !"
  },
  {
   "key": "touche les cases avec le chiffre: un!",

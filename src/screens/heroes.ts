@@ -4,7 +4,7 @@
 // « farmer » au lieu d'apprendre) ; le colorier est ensuite gratuit.
 // Voix : on ne dit jamais « tes héros » / « les héros » (certaines voix lient : « tes-z-héros »).
 import { sfx } from '../audio';
-import { HEROES, regions, type Hero } from '../content/heroes';
+import { ADDITION_HEROES_FROM, HEROES, regions, type Hero } from '../content/heroes';
 import { burst, heroSVG, isComplete } from '../heroArt';
 import { totalStars } from '../levels';
 import { save, state } from '../state';
@@ -34,6 +34,8 @@ export function readyHero(): Hero | null {
   return (state.heroes.filled[hero.id]?.length ?? 0) > 0 || starsToNextHero() === 0 ? hero : null;
 }
 
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+
 const FEM = ['zéro', 'une', 'deux', 'trois', 'quatre', 'cinq'];
 /** « Encore trois étoiles, et un ami se réveille ! » (the gap is at most 5 stars, except in old saves) */
 export function starsLine(n: number): string {
@@ -52,6 +54,26 @@ export function currentHero(): Hero | null {
   }
   if (repaired) save();
   return HEROES.find((x) => !state.heroes.done.includes(x.id)) ?? null;
+}
+
+/** Season 2 heroes are coloured with additions: each colour carries `a + b`, its cells show the sum.
+ *  The sums (2 to 9, all different) and their terms are drawn from the hero's id, so a hero coloured
+ *  in several sittings keeps the same numbers. */
+export function additionsOf(hero: Hero): Record<string, { a: number; b: number; sum: number }> | null {
+  if (HEROES.indexOf(hero) < ADDITION_HEROES_FROM) return null;
+  let seed = [...hero.id].reduce((n, c) => (n * 31 + c.charCodeAt(0)) >>> 0, 7);
+  const rand = (n: number) => {
+    seed = (seed * 1103515245 + 12345) >>> 0;
+    return (seed >>> 8) % n;
+  };
+  const sums = [2, 3, 4, 5, 6, 7, 8, 9];
+  const out: Record<string, { a: number; b: number; sum: number }> = {};
+  for (const z of regions(hero)) {
+    const sum = sums.splice(rand(sums.length), 1)[0];
+    const a = 1 + rand(sum - 1);
+    out[z] = { a, b: sum - a, sum };
+  }
+  return out;
 }
 
 function filledOf(hero: Hero): string[] {
@@ -128,6 +150,8 @@ export function heroesScreen(ctx: Ctx): void {
       grid,
     ),
   );
+  // with 24 friends, the one waiting is far down the album: bring it into view
+  if (count >= 6) grid.querySelector('.hero-card.current, .hero-card.next')?.scrollIntoView({ block: 'center' });
   void ctx.say(speech);
 }
 
@@ -183,6 +207,12 @@ export function colorScreen(ctx: Ctx): void {
   if (!hero) return ctx.go('heroes');
   const zones = regions(hero);
   const filled = filledOf(hero);
+  const sums = additionsOf(hero);
+  /** the number written on a zone's cells: its rank, or the sum of its addition */
+  const label = (z: string) => (sums ? sums[z].sum : zones.indexOf(z) + 1);
+  const question = (z: string) => `Combien font : ${NUMBERS[sums![z].a]}… plus… ${NUMBERS[sums![z].b]} ?`;
+  const answer = (z: string) => `${cap(NUMBERS[sums![z].a])}… plus… ${NUMBERS[sums![z].b]}… ça fait : ${NUMBERS[sums![z].sum]} !`;
+  let misses = 0; // wrong cells for the selected colour (additions: the answer shows from the 2nd)
   let selected: string | null = zones.find((z) => !filled.includes(z)) ?? null;
   let busy = false;
   let talk = 0; // latest spoken reaction; an older follow-up sentence is dropped
@@ -200,7 +230,7 @@ export function colorScreen(ctx: Ctx): void {
       else if (ch === 'k' || ch === 'e') el.classList.add('ink');
       else {
         el.classList.add('zone');
-        el.dataset.n = String(zones.indexOf(ch) + 1);
+        el.dataset.n = String(label(ch));
         cells.push({ el, zone: ch, x, y });
         el.onclick = () => void tap(ch, x, y);
       }
@@ -210,7 +240,9 @@ export function colorScreen(ctx: Ctx): void {
 
   const palette = h('div', { class: 'paint-palette' });
   const bub = bubble('Qui est-ce ?');
-  const instructions = 'Qui est-ce ? Colorie pour le découvrir ! Choisis une couleur en bas, puis touche les cases avec le même chiffre.';
+  const instructions = sums
+    ? 'Qui est-ce ? Colorie pour le découvrir ! Chaque couleur a un calcul. Touche les cases avec la réponse !'
+    : 'Qui est-ce ? Colorie pour le découvrir ! Choisis une couleur en bas, puis touche les cases avec le même chiffre.';
 
   function paintCell(c: (typeof cells)[number]): void {
     c.el.style.background = hero!.palette[c.zone].color;
@@ -222,6 +254,7 @@ export function colorScreen(ctx: Ctx): void {
     const n = zones.indexOf(z) + 1;
     const name = hero!.palette[z].name;
     const the = /^[aeiouyéèêh]/i.test(name) ? `L'${name}` : `Le ${name}`; // « L'orange », « Le bleu »
+    if (sums) return ctx.say(`${the}. ${question(z)}`);
     return ctx.say(`${the}. Touche les cases avec le chiffre : ${NUMBERS[n]} !`);
   }
 
@@ -231,10 +264,13 @@ export function colorScreen(ctx: Ctx): void {
         .filter((z) => !filled.includes(z))
         .map((z) => {
           const n = zones.indexOf(z) + 1;
-          const sw = h('button', { class: `swatch${z === selected ? ' selected' : ''}`, 'aria-label': `${hero!.palette[z].name}, chiffre ${n}` }, h('span', {}, String(n)));
+          const sw = sums
+            ? h('button', { class: `swatch sum${z === selected ? ' selected' : ''}`, 'aria-label': `${hero!.palette[z].name}, ${sums[z].a} plus ${sums[z].b}` }, h('span', {}, `${sums[z].a}+${sums[z].b}`))
+            : h('button', { class: `swatch${z === selected ? ' selected' : ''}`, 'aria-label': `${hero!.palette[z].name}, chiffre ${n}` }, h('span', {}, String(n)));
           sw.style.background = hero!.palette[z].color;
           sw.onclick = () => {
             sfx.tap();
+            if (z !== selected) misses = 0;
             selected = z;
             renderPalette();
             talk++;
@@ -243,7 +279,8 @@ export function colorScreen(ctx: Ctx): void {
           return sw;
         }),
     );
-    cells.forEach((c) => c.el.classList.toggle('hint', c.zone === selected && !filled.includes(c.zone)));
+    // with additions the cells to touch are the answer: they glow only after two wrong ones
+    cells.forEach((c) => c.el.classList.toggle('hint', c.zone === selected && !filled.includes(c.zone) && (!sums || misses >= 2)));
   }
   renderPalette();
 
@@ -252,10 +289,24 @@ export function colorScreen(ctx: Ctx): void {
     if (busy || filled.includes(zone) || !selected) return;
     if (zone !== selected) {
       sfx.oops();
-      const n = zones.indexOf(zone) + 1;
-      const want = zones.indexOf(selected) + 1;
-      setBubble(bub, `Cherche le ${want} !`);
+      const n = label(zone);
+      const want = label(selected);
       talk++;
+      if (sums) {
+        // help grows: the question again, then the answer and the cells to touch glow
+        misses++;
+        const { a, b } = sums[selected];
+        if (misses === 1) {
+          setBubble(bub, `${a} + ${b} = ?`);
+          await ctx.say(`Ici, c'est le chiffre ${NUMBERS[n]}. ${question(selected)}`);
+        } else {
+          setBubble(bub, `${a} + ${b} = ${want}`);
+          renderPalette();
+          await ctx.say(`${answer(selected)} Cherche le chiffre ${NUMBERS[want]} !`);
+        }
+        return;
+      }
+      setBubble(bub, `Cherche le ${want} !`);
       await ctx.say(`Ici, c'est le chiffre ${NUMBERS[n]}. Cherche le chiffre ${NUMBERS[want]} !`);
       return;
     }
@@ -278,6 +329,7 @@ export function colorScreen(ctx: Ctx): void {
     const maxD = Math.max(...zoneCells.map((c) => Math.abs(c.x - x) + Math.abs(c.y - y)));
     if (!(await ctx.wait(maxD * step + 250))) return;
     selected = zones.find((z) => !filled.includes(z)) ?? null;
+    misses = 0;
     renderPalette();
     busy = false;
 
@@ -290,7 +342,9 @@ export function colorScreen(ctx: Ctx): void {
     const left = zones.length - filled.length;
     setBubble(bub, left === 1 ? 'Encore une couleur !' : `Encore ${left} couleurs !`);
     const my = ++talk;
-    await ctx.say(left === 1 ? 'Bravo ! Encore une couleur !' : `Bravo ! Encore ${NUMBERS[left]} couleurs.`);
+    // with additions, the calculation is said in full once found (« un… plus… deux… ça fait : trois ! »)
+    const done = sums ? answer(zone) : 'Bravo !';
+    await ctx.say(left === 1 ? `${done} Encore une couleur !` : `${done} Encore ${NUMBERS[left]} couleurs.`);
     if (my === talk && selected && !busy) void sayColour(selected);
   }
 

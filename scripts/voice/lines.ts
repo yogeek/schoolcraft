@@ -117,6 +117,10 @@ for (const hero of HEROES) {
   add(hero.line);
   for (const z of Object.values(hero.palette)) add(/^[aeiouyéèêh]/i.test(z.name) ? `L'${z.name}.` : `Le ${z.name}.`);
 }
+// the colouring instructions (a const the scan does not follow); season 2 heroes are coloured with
+// additions, whose sums reuse the Compter clips (screens/heroes.ts)
+add('Qui est-ce ? Colorie pour le découvrir ! Choisis une couleur en bas, puis touche les cases avec le même chiffre.');
+add('Qui est-ce ? Colorie pour le découvrir ! Chaque couleur a un calcul. Touche les cases avec la réponse !');
 // Pixel's building challenges (challenge.ts, screens/build.ts)
 for (const n of ['trois', 'quatre', 'cinq', 'six', 'sept']) {
   add(`Construis une tour de ${n} blocs !`);
@@ -131,6 +135,8 @@ for (const s of ['Recopie ce motif !', 'Recopie ce motif, puis trouve la suite !
 add('Encore une étoile, et un ami se réveille !');
 for (const n of ['deux', 'trois', 'quatre', 'cinq']) add(`Encore ${n} étoiles, et un ami se réveille !`);
 add('Gagne des étoiles pour les réveiller.');
+// after a zone, « Bravo ! » or the sum (a variable the scan does not follow), then what is left
+add('Encore une couleur !');
 for (const n of range(1, 9)) {
   add(`Touche les cases avec le chiffre : ${NUMBERS[n]} !`);
   add(`Ici, c'est le chiffre ${NUMBERS[n]}.`);
