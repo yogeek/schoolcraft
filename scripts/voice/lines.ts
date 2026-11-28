@@ -123,13 +123,13 @@ add('Qui est-ce ? Colorie pour le découvrir ! Choisis une couleur en bas, puis 
 add('Qui est-ce ? Colorie pour le découvrir ! Chaque couleur a un calcul. Touche les cases avec la réponse !');
 // ---------------------------------------------------------------- the friends' little games
 // (heroGames.ts, games/heroGames.ts, screens/heroGame.ts: templates the scan does not expand)
-const GAME_HEROES = ['kaze', 'flammeche', 'corail'];
+const GAME_HEROES = Object.keys(GAME_INTROS);
 for (const id of GAME_HEROES) {
   const name = HEROES.find((x) => x.id === id)!.name;
   for (const t of GAME_INTROS[id]) add(t);
   add(`${name} t'a préparé un jeu ! Touche son image pour jouer.`);
   add(`Et une clé ! ${name} t'a préparé un jeu. Va voir tes amis pour jouer !`);
-  add(`Bravo ! Tu as gagné toutes les médailles de ${name} !`);
+  add(`Bravo ! Tu as gagné toutes les médailles ${/^[aeiouyéè]/i.test(name) ? "d'" : 'de '}${name} !`);
 }
 add('Bravo ! Tu as gagné une médaille ! La prochaine fois, ce sera un peu plus dur.');
 add('Bravo, quelle belle partie !');
@@ -162,6 +162,37 @@ for (const a of Object.keys(DIR_WORDS)) {
   add(`Va ${DIR_WORDS[a]} !`);
   for (const b of Object.keys(DIR_WORDS)) if (b !== BACK[a]) add(`Va ${DIR_WORDS[a]}, puis ${DIR_WORDS[b]} !`);
 }
+// the nine other games (games/heroGames2.ts); pictures, syllables, rhymes and numbers reuse Lire and Compter clips
+for (const p of ['sur la table', 'sous la table', 'à côté de la table', 'devant la table', 'derrière la table']) {
+  add(`Cache Brume ${p} !`);
+  add(`Ça, c'est ${p}.`);
+}
+for (const s of [
+  'Ça finit pareil !',
+  'Casse une planche pour chaque syllabe !',
+  'Casse les planches qui brillent !',
+  'Quelle fleur vient après ?',
+  'Et après ?',
+  'Regarde bien !',
+  'Abracadabra !',
+  "Qu'est-ce qui a disparu ?",
+  'Celui-là est encore là. Regarde bien !',
+  "Celui-là n'était pas là. Regarde bien !",
+  'Compte les coups de tonnerre !',
+  'Combien de coups de tonnerre ?',
+  'Une pièce est différente. Laquelle ?',
+  "Elle n'a pas la même couleur !",
+  "Elle n'a pas la même forme !",
+  'Regarde bien les couleurs !',
+  'Regarde bien les formes !',
+  'Regarde les glaçons !',
+  'Combien de glaçons restent ?',
+  'Combien de glaçons sous la neige ?',
+  'Quel nombre manque ?',
+  'Décollage !',
+  'On compte ensemble !',
+])
+  add(s);
 for (const s of ["Ça, c'est la gauche.", "Ça, c'est la droite.", "Ça, c'est en haut.", "Ça, c'est en bas.", 'Trouve le chemin du trésor !', 'Le trésor !', "Oh non, ce n'est pas le trésor. On recommence !", 'Suis les pointillés !']) add(s);
 
 // Pixel's building challenges (challenge.ts, screens/build.ts)

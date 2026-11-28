@@ -496,6 +496,16 @@ export const sfx = {
   chest(): void {
     [392, 523, 659, 784, 1047, 1319].forEach((f, i) => tone(f, i * 0.09, 0.3, 'triangle', 0.1));
   },
+  /** a thunderclap: a crack, then a rumble with an audible top */
+  thunder(): void {
+    noise(0, 0.12, 2200, 0.6);
+    noise(0.05, 0.9, 400, 0.9);
+    tone(140, 0.02, 0.8, 'sawtooth', 0.12, 60);
+  },
+  /** a drop of melted ice */
+  drip(): void {
+    tone(1400, 0, 0.12, 'sine', 0.12, 500);
+  },
   fanfare(): void {
     [523, 659, 784, 1047, 784, 1047].forEach((f, i) => tone(f, i * 0.12, 0.2));
   },

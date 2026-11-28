@@ -273,6 +273,195 @@
   "text": "Suis les pointillés !"
  },
  {
+  "key": "casse une planche pour chaque syllabe!",
+  "text": "Casse une planche pour chaque syllabe !"
+ },
+ {
+  "key": "oui, ça rime!",
+  "text": "Oui, ça rime !",
+  "tag": "praise"
+ },
+ {
+  "key": "bravo, bien écouté!",
+  "text": "Bravo, bien écouté !",
+  "tag": "praise"
+ },
+ {
+  "key": "super oreille!",
+  "text": "Super oreille !",
+  "tag": "praise"
+ },
+ {
+  "key": "bravo, bien cassé!",
+  "text": "Bravo, bien cassé !",
+  "tag": "praise"
+ },
+ {
+  "key": "super, tu as bien écouté!",
+  "text": "Super, tu as bien écouté !",
+  "tag": "praise"
+ },
+ {
+  "key": "oui, le motif continue!",
+  "text": "Oui, le motif continue !",
+  "tag": "praise"
+ },
+ {
+  "key": "bravo, bien regardé!",
+  "text": "Bravo, bien regardé !",
+  "tag": "praise"
+ },
+ {
+  "key": "bravo, quelle mémoire!",
+  "text": "Bravo, quelle mémoire !",
+  "tag": "praise"
+ },
+ {
+  "key": "oui, bien regardé!",
+  "text": "Oui, bien regardé !",
+  "tag": "praise"
+ },
+ {
+  "key": "bravo, bien compté!",
+  "text": "Bravo, bien compté !",
+  "tag": "praise"
+ },
+ {
+  "key": "oui, bien écouté!",
+  "text": "Oui, bien écouté !",
+  "tag": "praise"
+ },
+ {
+  "key": "bravo, bien trié!",
+  "text": "Bravo, bien trié !",
+  "tag": "praise"
+ },
+ {
+  "key": "bip bip, bravo!",
+  "text": "Bip bip, bravo !",
+  "tag": "praise"
+ },
+ {
+  "key": "oui, bien calculé!",
+  "text": "Oui, bien calculé !",
+  "tag": "praise"
+ },
+ {
+  "key": "bravo, bien caché!",
+  "text": "Bravo, bien caché !",
+  "tag": "praise"
+ },
+ {
+  "key": "hou hou, bravo!",
+  "text": "Hou hou, bravo !",
+  "tag": "praise"
+ },
+ {
+  "key": "super, bien compté!",
+  "text": "Super, bien compté !",
+  "tag": "praise"
+ },
+ {
+  "key": "ça finit pareil!",
+  "text": "Ça finit pareil !"
+ },
+ {
+  "key": "ça ne finit pas pareil.",
+  "text": "Ça ne finit pas pareil."
+ },
+ {
+  "key": "essaie encore!",
+  "text": "Essaie encore !"
+ },
+ {
+  "key": "il en manque!",
+  "text": "Il en manque !"
+ },
+ {
+  "key": "c'est trop!",
+  "text": "C'est trop !"
+ },
+ {
+  "key": "casse les planches qui brillent!",
+  "text": "Casse les planches qui brillent !"
+ },
+ {
+  "key": "et après?",
+  "text": "Et après ?"
+ },
+ {
+  "key": "quelle fleur vient après?",
+  "text": "Quelle fleur vient après ?"
+ },
+ {
+  "key": "regarde bien le motif en entier!",
+  "text": "Regarde bien le motif en entier !"
+ },
+ {
+  "key": "qu'est-ce qui a disparu?",
+  "text": "Qu'est-ce qui a disparu ?"
+ },
+ {
+  "key": "abracadabra!",
+  "text": "Abracadabra !"
+ },
+ {
+  "key": "celui-là est encore là.",
+  "text": "Celui-là est encore là."
+ },
+ {
+  "key": "celui-là n'était pas là.",
+  "text": "Celui-là n'était pas là."
+ },
+ {
+  "key": "compte les coups de tonnerre!",
+  "text": "Compte les coups de tonnerre !"
+ },
+ {
+  "key": "combien de coups de tonnerre?",
+  "text": "Combien de coups de tonnerre ?"
+ },
+ {
+  "key": "une pièce est différente.",
+  "text": "Une pièce est différente."
+ },
+ {
+  "key": "laquelle?",
+  "text": "Laquelle ?"
+ },
+ {
+  "key": "elle n'a pas la même couleur!",
+  "text": "Elle n'a pas la même couleur !"
+ },
+ {
+  "key": "elle n'a pas la même forme!",
+  "text": "Elle n'a pas la même forme !"
+ },
+ {
+  "key": "regarde bien les couleurs!",
+  "text": "Regarde bien les couleurs !"
+ },
+ {
+  "key": "regarde bien les formes!",
+  "text": "Regarde bien les formes !"
+ },
+ {
+  "key": "regarde les glaçons!",
+  "text": "Regarde les glaçons !"
+ },
+ {
+  "key": "zéro!",
+  "text": "Zéro !"
+ },
+ {
+  "key": "quel nombre manque?",
+  "text": "Quel nombre manque ?"
+ },
+ {
+  "key": "décollage!",
+  "text": "Décollage !"
+ },
+ {
   "key": "lis encore le mot!",
   "text": "Lis encore le mot !"
  },
@@ -307,26 +496,6 @@
   "tag": "praise"
  },
  {
-  "key": "super, tu as bien écouté!",
-  "text": "Super, tu as bien écouté !",
-  "tag": "praise"
- },
- {
-  "key": "oui, ça rime!",
-  "text": "Oui, ça rime !",
-  "tag": "praise"
- },
- {
-  "key": "bravo, bien écouté!",
-  "text": "Bravo, bien écouté !",
-  "tag": "praise"
- },
- {
-  "key": "super oreille!",
-  "text": "Super oreille !",
-  "tag": "praise"
- },
- {
   "key": "oui, le même son!",
   "text": "Oui, le même son !",
   "tag": "praise"
@@ -346,14 +515,6 @@
   "text": "Lis le mot, et touche la bonne image."
  },
  {
-  "key": "il en manque!",
-  "text": "Il en manque !"
- },
- {
-  "key": "c'est trop!",
-  "text": "C'est trop !"
- },
- {
   "key": "une syllabe!",
   "text": "Une syllabe !"
  },
@@ -362,20 +523,8 @@
   "text": "Tape les syllabes."
  },
  {
-  "key": "ça finit pareil!",
-  "text": "Ça finit pareil !"
- },
- {
   "key": "ça commence pareil!",
   "text": "Ça commence pareil !"
- },
- {
-  "key": "ça ne finit pas pareil.",
-  "text": "Ça ne finit pas pareil."
- },
- {
-  "key": "essaie encore!",
-  "text": "Essaie encore !"
  },
  {
   "key": "ça ne commence pas pareil.",
@@ -2005,6 +2154,274 @@
   "text": "Tu as gagné toutes les médailles de Corail !"
  },
  {
+  "key": "bulle fait des bulles!",
+  "text": "Bulle fait des bulles !"
+ },
+ {
+  "key": "éclate celle qui finit comme le mot.",
+  "text": "Éclate celle qui finit comme le mot."
+ },
+ {
+  "key": "encore plus de bulles!",
+  "text": "Encore plus de bulles !"
+ },
+ {
+  "key": "cette fois, je ne dis pas les images.",
+  "text": "Cette fois, je ne dis pas les images."
+ },
+ {
+  "key": "à toi de les nommer dans ta tête!",
+  "text": "À toi de les nommer dans ta tête !"
+ },
+ {
+  "key": "bulle t'a préparé un jeu!",
+  "text": "Bulle t'a préparé un jeu !"
+ },
+ {
+  "key": "bulle t'a préparé un jeu.",
+  "text": "Bulle t'a préparé un jeu."
+ },
+ {
+  "key": "tu as gagné toutes les médailles de bulle!",
+  "text": "Tu as gagné toutes les médailles de Bulle !"
+ },
+ {
+  "key": "tao fait du kung-fu!",
+  "text": "Tao fait du kung-fu !"
+ },
+ {
+  "key": "casse une planche pour chaque syllabe.",
+  "text": "Casse une planche pour chaque syllabe."
+ },
+ {
+  "key": "des mots plus longs, maintenant!",
+  "text": "Des mots plus longs, maintenant !"
+ },
+ {
+  "key": "des mots très longs!",
+  "text": "Des mots très longs !"
+ },
+ {
+  "key": "concentre-toi bien.",
+  "text": "Concentre-toi bien."
+ },
+ {
+  "key": "tao t'a préparé un jeu!",
+  "text": "Tao t'a préparé un jeu !"
+ },
+ {
+  "key": "tao t'a préparé un jeu.",
+  "text": "Tao t'a préparé un jeu."
+ },
+ {
+  "key": "tu as gagné toutes les médailles de tao!",
+  "text": "Tu as gagné toutes les médailles de Tao !"
+ },
+ {
+  "key": "pousse plante des fleurs!",
+  "text": "Pousse plante des fleurs !"
+ },
+ {
+  "key": "regarde bien le motif.",
+  "text": "Regarde bien le motif."
+ },
+ {
+  "key": "les motifs sont plus difficiles!",
+  "text": "Les motifs sont plus difficiles !"
+ },
+ {
+  "key": "il manque deux fleurs, maintenant!",
+  "text": "Il manque deux fleurs, maintenant !"
+ },
+ {
+  "key": "pousse t'a préparé un jeu!",
+  "text": "Pousse t'a préparé un jeu !"
+ },
+ {
+  "key": "pousse t'a préparé un jeu.",
+  "text": "Pousse t'a préparé un jeu."
+ },
+ {
+  "key": "tu as gagné toutes les médailles de pousse!",
+  "text": "Tu as gagné toutes les médailles de Pousse !"
+ },
+ {
+  "key": "luna fait de la magie!",
+  "text": "Luna fait de la magie !"
+ },
+ {
+  "key": "retiens bien les images.",
+  "text": "Retiens bien les images."
+ },
+ {
+  "key": "encore plus d'images à retenir!",
+  "text": "Encore plus d’images à retenir !"
+ },
+ {
+  "key": "regarde très bien!",
+  "text": "Regarde très bien !"
+ },
+ {
+  "key": "luna t'a préparé un jeu!",
+  "text": "Luna t'a préparé un jeu !"
+ },
+ {
+  "key": "luna t'a préparé un jeu.",
+  "text": "Luna t'a préparé un jeu."
+ },
+ {
+  "key": "tu as gagné toutes les médailles de luna!",
+  "text": "Tu as gagné toutes les médailles de Luna !"
+ },
+ {
+  "key": "orageon fait un orage!",
+  "text": "Orageon fait un orage !"
+ },
+ {
+  "key": "compte les coups de tonnerre.",
+  "text": "Compte les coups de tonnerre."
+ },
+ {
+  "key": "encore plus de coups de tonnerre!",
+  "text": "Encore plus de coups de tonnerre !"
+ },
+ {
+  "key": "cette fois, pas d'éclairs!",
+  "text": "Cette fois, pas d’éclairs !"
+ },
+ {
+  "key": "compte seulement avec tes oreilles!",
+  "text": "Compte seulement avec tes oreilles !"
+ },
+ {
+  "key": "orageon t'a préparé un jeu!",
+  "text": "Orageon t'a préparé un jeu !"
+ },
+ {
+  "key": "orageon t'a préparé un jeu.",
+  "text": "Orageon t'a préparé un jeu."
+ },
+ {
+  "key": "tu as gagné toutes les médailles d'orageon!",
+  "text": "Tu as gagné toutes les médailles d'Orageon !"
+ },
+ {
+  "key": "robo range ses pièces!",
+  "text": "Robo range ses pièces !"
+ },
+ {
+  "key": "trouve celle qui est différente.",
+  "text": "Trouve celle qui est différente."
+ },
+ {
+  "key": "maintenant, regarde bien les formes!",
+  "text": "Maintenant, regarde bien les formes !"
+ },
+ {
+  "key": "attention, regarde bien les couleurs et les formes!",
+  "text": "Attention, regarde bien les couleurs et les formes !"
+ },
+ {
+  "key": "robo t'a préparé un jeu!",
+  "text": "Robo t'a préparé un jeu !"
+ },
+ {
+  "key": "robo t'a préparé un jeu.",
+  "text": "Robo t'a préparé un jeu."
+ },
+ {
+  "key": "tu as gagné toutes les médailles de robo!",
+  "text": "Tu as gagné toutes les médailles de Robo !"
+ },
+ {
+  "key": "il fait chaud, les glaçons de glaçon fondent!",
+  "text": "Il fait chaud, les glaçons de Glaçon fondent !"
+ },
+ {
+  "key": "compte ceux qui restent.",
+  "text": "Compte ceux qui restent."
+ },
+ {
+  "key": "encore plus de glaçons qui fondent!",
+  "text": "Encore plus de glaçons qui fondent !"
+ },
+ {
+  "key": "les glaçons se cachent sous la neige!",
+  "text": "Les glaçons se cachent sous la neige !"
+ },
+ {
+  "key": "retiens bien combien il y en a.",
+  "text": "Retiens bien combien il y en a."
+ },
+ {
+  "key": "glaçon t'a préparé un jeu!",
+  "text": "Glaçon t'a préparé un jeu !"
+ },
+ {
+  "key": "glaçon t'a préparé un jeu.",
+  "text": "Glaçon t'a préparé un jeu."
+ },
+ {
+  "key": "tu as gagné toutes les médailles de glaçon!",
+  "text": "Tu as gagné toutes les médailles de Glaçon !"
+ },
+ {
+  "key": "brume joue à cache-cache!",
+  "text": "Brume joue à cache-cache !"
+ },
+ {
+  "key": "écoute où il faut le cacher.",
+  "text": "Écoute où il faut le cacher."
+ },
+ {
+  "key": "une nouvelle cachette: à côté de la table!",
+  "text": "Une nouvelle cachette : à côté de la table !"
+ },
+ {
+  "key": "encore deux cachettes: devant et derrière la table!",
+  "text": "Encore deux cachettes : devant et derrière la table !"
+ },
+ {
+  "key": "brume t'a préparé un jeu!",
+  "text": "Brume t'a préparé un jeu !"
+ },
+ {
+  "key": "brume t'a préparé un jeu.",
+  "text": "Brume t'a préparé un jeu."
+ },
+ {
+  "key": "tu as gagné toutes les médailles de brume!",
+  "text": "Tu as gagné toutes les médailles de Brume !"
+ },
+ {
+  "key": "astro part dans l'espace!",
+  "text": "Astro part dans l’espace !"
+ },
+ {
+  "key": "trouve le nombre qui manque dans le compte à rebours.",
+  "text": "Trouve le nombre qui manque dans le compte à rebours."
+ },
+ {
+  "key": "maintenant, on compte à rebours à partir de dix!",
+  "text": "Maintenant, on compte à rebours à partir de dix !"
+ },
+ {
+  "key": "attention, il manque deux nombres!",
+  "text": "Attention, il manque deux nombres !"
+ },
+ {
+  "key": "astro t'a préparé un jeu!",
+  "text": "Astro t'a préparé un jeu !"
+ },
+ {
+  "key": "astro t'a préparé un jeu.",
+  "text": "Astro t'a préparé un jeu."
+ },
+ {
+  "key": "tu as gagné toutes les médailles d'astro!",
+  "text": "Tu as gagné toutes les médailles d'Astro !"
+ },
+ {
   "key": "attrape la lettre: a!",
   "text": "Attrape la lettre : a !"
  },
@@ -2449,6 +2866,54 @@
   "text": "Va en bas, puis en bas !"
  },
  {
+  "key": "cache brume sur la table!",
+  "text": "Cache Brume sur la table !"
+ },
+ {
+  "key": "ça, c'est sur la table.",
+  "text": "Ça, c'est sur la table."
+ },
+ {
+  "key": "cache brume sous la table!",
+  "text": "Cache Brume sous la table !"
+ },
+ {
+  "key": "ça, c'est sous la table.",
+  "text": "Ça, c'est sous la table."
+ },
+ {
+  "key": "cache brume à côté de la table!",
+  "text": "Cache Brume à côté de la table !"
+ },
+ {
+  "key": "ça, c'est à côté de la table.",
+  "text": "Ça, c'est à côté de la table."
+ },
+ {
+  "key": "cache brume devant la table!",
+  "text": "Cache Brume devant la table !"
+ },
+ {
+  "key": "ça, c'est devant la table.",
+  "text": "Ça, c'est devant la table."
+ },
+ {
+  "key": "cache brume derrière la table!",
+  "text": "Cache Brume derrière la table !"
+ },
+ {
+  "key": "ça, c'est derrière la table.",
+  "text": "Ça, c'est derrière la table."
+ },
+ {
+  "key": "combien de glaçons restent?",
+  "text": "Combien de glaçons restent ?"
+ },
+ {
+  "key": "combien de glaçons sous la neige?",
+  "text": "Combien de glaçons sous la neige ?"
+ },
+ {
   "key": "ça, c'est la gauche.",
   "text": "Ça, c'est la gauche."
  },
@@ -2539,10 +3004,6 @@
  {
   "key": "écoute bien le motif!",
   "text": "Écoute bien le motif !"
- },
- {
-  "key": "regarde bien le motif en entier!",
-  "text": "Regarde bien le motif en entier !"
  },
  {
   "key": "recopie ce motif!",
@@ -13587,10 +14048,6 @@
  {
   "key": "vingt",
   "text": "vingt"
- },
- {
-  "key": "zéro!",
-  "text": "zéro !"
  },
  {
   "key": "un!",

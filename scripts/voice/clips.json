@@ -33442,5 +33442,1112 @@
   "sttCost": 0,
   "stt": "Puis touche le bouton vert",
   "score": 1
+ },
+ "bravo, bien cassé!": {
+  "file": "694d0f7c-88ffa3.mp3",
+  "text": "Bravo, bien cassé !",
+  "sent": "[happily] Bravo, bien cassé !",
+  "dur": 2.16,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Bravo, bien cassé",
+  "score": 1
+ },
+ "casse une planche pour chaque syllabe!": {
+  "file": "96ef382b-b49ff3.mp3",
+  "text": "Casse une planche pour chaque syllabe !",
+  "sent": "Casse une planche pour chaque syllabe !",
+  "dur": 2.24,
+  "cost": 16,
+  "sttCost": 1,
+  "stt": "Casse une planche pour chaque syllabe",
+  "score": 1
+ },
+ "oui, le motif continue!": {
+  "file": "154e6f68-99b5f5.mp3",
+  "text": "Oui, le motif continue !",
+  "sent": "[happily] Oui, le motif continue !",
+  "dur": 2.08,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Oui, le motif continue",
+  "score": 1
+ },
+ "bravo, bien regardé!": {
+  "file": "b5b578df-39bf2f.mp3",
+  "text": "Bravo, bien regardé !",
+  "sent": "[happily] Bravo, bien regardé !",
+  "dur": 2.32,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Bravo ! Bien regardé",
+  "score": 1
+ },
+ "bravo, quelle mémoire!": {
+  "file": "62e3bf71-b5cbed.mp3",
+  "text": "Bravo, quelle mémoire !",
+  "sent": "[happily] Bravo, quelle mémoire !",
+  "dur": 2.48,
+  "cost": 13,
+  "sttCost": 1,
+  "stt": "Bravo, quelle mémoire !",
+  "score": 1
+ },
+ "oui, bien regardé!": {
+  "file": "d5b52468-9f400d.mp3",
+  "text": "Oui, bien regardé !",
+  "sent": "[happily] Oui, bien regardé !",
+  "dur": 1.92,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Oui, bien regardé",
+  "score": 1
+ },
+ "oui, bien écouté!": {
+  "file": "872be32c-68503b.mp3",
+  "text": "Oui, bien écouté !",
+  "sent": "[happily] Oui, bien écouté !",
+  "dur": 1.92,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Oui, bien écouté",
+  "score": 1
+ },
+ "bravo, bien trié!": {
+  "file": "e1f41dff-872d0b.mp3",
+  "text": "Bravo, bien trié !",
+  "sent": "[happily] Bravo, bien trié !",
+  "dur": 2.16,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Bravo, bien trié",
+  "score": 1
+ },
+ "bravo, bien compté!": {
+  "file": "fe5e7977-a9bc67.mp3",
+  "text": "Bravo, bien compté !",
+  "sent": "[happily] Bravo, bien compté !",
+  "dur": 2.08,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Bravo, bien compté",
+  "score": 1
+ },
+ "bip bip, bravo!": {
+  "file": "99043908-0e5dfc.mp3",
+  "text": "Bip bip, bravo !",
+  "sent": "[happily] Bip bip, bravo !",
+  "dur": 1.84,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Bip bip, bravo",
+  "score": 1
+ },
+ "oui, bien calculé!": {
+  "file": "81f89161-09e996.mp3",
+  "text": "Oui, bien calculé !",
+  "sent": "[happily] Oui, bien calculé !",
+  "dur": 2,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Oui, bien calculé",
+  "score": 1
+ },
+ "bravo, bien caché!": {
+  "file": "520d126b-91d720.mp3",
+  "text": "Bravo, bien caché !",
+  "sent": "[happily] Bravo, bien caché !",
+  "dur": 2.16,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Bravo, bien caché",
+  "score": 1
+ },
+ "hou hou, bravo!": {
+  "file": "bd95af74-1f4246.mp3",
+  "text": "Hou hou, bravo !",
+  "sent": "[happily] Hou hou, bravo !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Hou hou ! Bravo",
+  "score": 1
+ },
+ "casse les planches qui brillent!": {
+  "file": "68ea78b0-12911b.mp3",
+  "text": "Casse les planches qui brillent !",
+  "sent": "Casse les planches qui brillent !",
+  "dur": 1.6,
+  "cost": 13,
+  "sttCost": 0,
+  "stt": "Casse les planches qui brillent",
+  "score": 1
+ },
+ "super, bien compté!": {
+  "file": "e9d724b6-13f749.mp3",
+  "text": "Super, bien compté !",
+  "sent": "[happily] Super, bien compté !",
+  "dur": 2.16,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Super, bien compté",
+  "score": 1
+ },
+ "et après?": {
+  "file": "d86d0b50-5020ac.mp3",
+  "text": "Et après ?",
+  "sent": "Et après ?",
+  "dur": 0.96,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "quelle fleur vient après?": {
+  "file": "a2d8a0e1-565542.mp3",
+  "text": "Quelle fleur vient après ?",
+  "sent": "Quelle fleur vient après ?",
+  "dur": 1.44,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Quelle fleur vient après",
+  "score": 1
+ },
+ "qu'est-ce qui a disparu?": {
+  "file": "69c9ebf8-77cfa4.mp3",
+  "text": "Qu'est-ce qui a disparu ?",
+  "sent": "Qu'est-ce qui a disparu ?",
+  "dur": 1.44,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Qu'est-ce qui a disparu ?",
+  "score": 1
+ },
+ "abracadabra!": {
+  "file": "9488edb6-2afd7e.mp3",
+  "text": "Abracadabra !",
+  "sent": "Abracadabra !",
+  "dur": 1.36,
+  "cost": 5,
+  "sttCost": 0,
+  "stt": "Abracadabra",
+  "score": 1
+ },
+ "celui-là n'était pas là.": {
+  "file": "fd2192ff-862e53.mp3",
+  "text": "Celui-là n'était pas là.",
+  "sent": "Celui-là n'était pas là.",
+  "dur": 1.44,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Celui-là n'était pas là",
+  "score": 1
+ },
+ "celui-là est encore là.": {
+  "file": "fcea87c8-1d2194.mp3",
+  "text": "Celui-là est encore là.",
+  "sent": "Celui-là est encore là.",
+  "dur": 1.68,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Celui-là est encore là",
+  "score": 1
+ },
+ "compte les coups de tonnerre!": {
+  "file": "48fe6996-e503c7.mp3",
+  "text": "Compte les coups de tonnerre !",
+  "sent": "Compte les coups de tonnerre !",
+  "dur": 1.84,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Compte les coups de tonnerre",
+  "score": 1
+ },
+ "laquelle?": {
+  "file": "bbf128db-d92106.mp3",
+  "text": "Laquelle ?",
+  "sent": "Laquelle ?",
+  "dur": 0.88,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "une pièce est différente.": {
+  "file": "1206eed2-5fd314.mp3",
+  "text": "Une pièce est différente.",
+  "sent": "Une pièce est différente.",
+  "dur": 1.68,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Une pièce est différente",
+  "score": 1
+ },
+ "combien de coups de tonnerre?": {
+  "file": "e03fcffa-9b5d17.mp3",
+  "text": "Combien de coups de tonnerre ?",
+  "sent": "Combien de coups de tonnerre ?",
+  "dur": 1.6,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Combien de coups de tonnerre ?",
+  "score": 1
+ },
+ "regarde bien les couleurs!": {
+  "file": "d372e490-cad0f7.mp3",
+  "text": "Regarde bien les couleurs !",
+  "sent": "Regarde bien les couleurs !",
+  "dur": 1.68,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Regarde bien les couleurs",
+  "score": 1
+ },
+ "elle n'a pas la même couleur!": {
+  "file": "eb8553d0-4b892e.mp3",
+  "text": "Elle n'a pas la même couleur !",
+  "sent": "Elle n'a pas la même couleur !",
+  "dur": 1.6,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Elle n'a pas la même couleur",
+  "score": 1
+ },
+ "elle n'a pas la même forme!": {
+  "file": "40cafc7c-1cb770.mp3",
+  "text": "Elle n'a pas la même forme !",
+  "sent": "Elle n'a pas la même forme !",
+  "dur": 1.6,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Elle n'a pas la même forme",
+  "score": 1
+ },
+ "regarde les glaçons!": {
+  "file": "9f97788c-519c28.mp3",
+  "text": "Regarde les glaçons !",
+  "sent": "Regarde les glaçons !",
+  "dur": 1.44,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Regarde les glaçons",
+  "score": 1
+ },
+ "regarde bien les formes!": {
+  "file": "cd6784e4-071c93.mp3",
+  "text": "Regarde bien les formes !",
+  "sent": "Regarde bien les formes !",
+  "dur": 1.76,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Regarde bien les formes",
+  "score": 1
+ },
+ "quel nombre manque?": {
+  "file": "b1918229-21f245.mp3",
+  "text": "Quel nombre manque ?",
+  "sent": "Quel nombre manque ?",
+  "dur": 1.44,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Quel nombre manque ?",
+  "score": 1
+ },
+ "décollage!": {
+  "file": "e4bf8f47-5ad2d3.mp3",
+  "text": "Décollage !",
+  "sent": "Décollage !",
+  "dur": 1.12,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "bulle fait des bulles!": {
+  "file": "4bf98845-67b2fc.mp3",
+  "text": "Bulle fait des bulles !",
+  "sent": "Bulle fait des bulles !",
+  "dur": 1.36,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Bulle fait des bulles",
+  "score": 1
+ },
+ "éclate celle qui finit comme le mot.": {
+  "file": "1c5e1c4c-06f2b6.mp3",
+  "text": "Éclate celle qui finit comme le mot.",
+  "sent": "Éclate celle qui finit comme le mot.",
+  "dur": 2.32,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Éclate celle qui finit comme le mot",
+  "score": 1
+ },
+ "encore plus de bulles!": {
+  "file": "5702b3ea-a7c259.mp3",
+  "text": "Encore plus de bulles !",
+  "sent": "Encore plus de bulles !",
+  "dur": 1.76,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Encore plus de bulles",
+  "score": 1
+ },
+ "cette fois, je ne dis pas les images.": {
+  "file": "57a3ab43-635152.mp3",
+  "text": "Cette fois, je ne dis pas les images.",
+  "sent": "Cette fois, je ne dis pas les images.",
+  "dur": 2.08,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Cette fois, je ne dis pas les images",
+  "score": 1
+ },
+ "à toi de les nommer dans ta tête!": {
+  "file": "46fcbf03-c1d62d.mp3",
+  "text": "À toi de les nommer dans ta tête !",
+  "sent": "À toi de les nommer dans ta tête !",
+  "dur": 1.68,
+  "cost": 14,
+  "sttCost": 0,
+  "stt": "À toi de les nommer dans ta tête",
+  "score": 1
+ },
+ "bulle t'a préparé un jeu!": {
+  "file": "ad1f16bc-9d755f.mp3",
+  "text": "Bulle t'a préparé un jeu !",
+  "sent": "Bulle t'a préparé un jeu !",
+  "dur": 1.68,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Bulle t'a préparé un jeu",
+  "score": 1
+ },
+ "bulle t'a préparé un jeu.": {
+  "file": "b41f21c1-d464a3.mp3",
+  "text": "Bulle t'a préparé un jeu.",
+  "sent": "Bulle t'a préparé un jeu.",
+  "dur": 1.68,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Bull t'a préparé un jeu",
+  "score": 0.95
+ },
+ "tu as gagné toutes les médailles de bulle!": {
+  "file": "769662b6-9d918a.mp3",
+  "text": "Tu as gagné toutes les médailles de Bulle !",
+  "sent": "Tu as gagné toutes les médailles de Bulle !",
+  "dur": 2.48,
+  "cost": 17,
+  "sttCost": 1,
+  "stt": "Tu as gagné toutes les médailles de bulles",
+  "score": 0.97
+ },
+ "tao fait du kung-fu!": {
+  "file": "055fa876-b98014.mp3",
+  "text": "Tao fait du kung-fu !",
+  "sent": "Tao fait du kung-fu !",
+  "dur": 1.6,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Tao fait du kung-fu",
+  "score": 1
+ },
+ "casse une planche pour chaque syllabe.": {
+  "file": "93ef3372-926a60.mp3",
+  "text": "Casse une planche pour chaque syllabe.",
+  "sent": "Casse une planche pour chaque syllabe.",
+  "dur": 2.08,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Casse une planche pour chaque syllabe",
+  "score": 1
+ },
+ "des mots plus longs, maintenant!": {
+  "file": "e737292d-3e6fa2.mp3",
+  "text": "Des mots plus longs, maintenant !",
+  "sent": "Des mots plus longs, maintenant !",
+  "dur": 1.84,
+  "cost": 13,
+  "sttCost": 0,
+  "stt": "Des mots plus longs maintenant",
+  "score": 1
+ },
+ "des mots très longs!": {
+  "file": "a175ce08-300146.mp3",
+  "text": "Des mots très longs !",
+  "sent": "Des mots très longs !",
+  "dur": 1.68,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Des mots très lents",
+  "score": 0.88
+ },
+ "concentre-toi bien.": {
+  "file": "2ecf1951-ff51d6.mp3",
+  "text": "Concentre-toi bien.",
+  "sent": "Concentre-toi bien.",
+  "dur": 1.44,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Concentre-toi bien",
+  "score": 1
+ },
+ "tao t'a préparé un jeu.": {
+  "file": "68ae65ad-822d1b.mp3",
+  "text": "Tao t'a préparé un jeu.",
+  "sent": "Tao t'a préparé un jeu.",
+  "dur": 1.68,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Tao t'a préparé un jeu",
+  "score": 1
+ },
+ "tao t'a préparé un jeu!": {
+  "file": "59ae4e10-20cf9c.mp3",
+  "text": "Tao t'a préparé un jeu !",
+  "sent": "Tao t'a préparé un jeu !",
+  "dur": 1.76,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Tao t'a préparé un jeu",
+  "score": 1
+ },
+ "tu as gagné toutes les médailles de tao!": {
+  "file": "2ec769d2-36a6a2.mp3",
+  "text": "Tu as gagné toutes les médailles de Tao !",
+  "sent": "Tu as gagné toutes les médailles de Tao !",
+  "dur": 2.32,
+  "cost": 16,
+  "sttCost": 1,
+  "stt": "Tu as gagné toutes les médailles de Tao",
+  "score": 1
+ },
+ "regarde bien le motif.": {
+  "file": "8bed47df-1b2a2e.mp3",
+  "text": "Regarde bien le motif.",
+  "sent": "Regarde bien le motif.",
+  "dur": 1.68,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Regarde bien le motif",
+  "score": 1
+ },
+ "pousse plante des fleurs!": {
+  "file": "19c2e52a-49fe95.mp3",
+  "text": "Pousse plante des fleurs !",
+  "sent": "Pousse plante des fleurs !",
+  "dur": 1.52,
+  "cost": 20,
+  "sttCost": 0,
+  "stt": "Pousse, plante des fleurs",
+  "score": 1
+ },
+ "il manque deux fleurs, maintenant!": {
+  "file": "617f8a2c-a6b30c.mp3",
+  "text": "Il manque deux fleurs, maintenant !",
+  "sent": "Il manque deux fleurs, maintenant !",
+  "dur": 1.92,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Il manque deux fleurs maintenant",
+  "score": 1
+ },
+ "les motifs sont plus difficiles!": {
+  "file": "3051e898-4674f8.mp3",
+  "text": "Les motifs sont plus difficiles !",
+  "sent": "Les motifs sont plus difficiles !",
+  "dur": 2.08,
+  "cost": 13,
+  "sttCost": 1,
+  "stt": "Les motifs sont plus difficiles",
+  "score": 1
+ },
+ "pousse t'a préparé un jeu!": {
+  "file": "fd4ce783-709ead.mp3",
+  "text": "Pousse t'a préparé un jeu !",
+  "sent": "Pousse t'a préparé un jeu !",
+  "dur": 1.68,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Pousse à préparer un jeu",
+  "score": 0.9
+ },
+ "pousse t'a préparé un jeu.": {
+  "file": "0a4cfbfa-5186fc.mp3",
+  "text": "Pousse t'a préparé un jeu.",
+  "sent": "Pousse t'a préparé un jeu.",
+  "dur": 1.52,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Pousse t'as préparé un jeu",
+  "score": 0.95
+ },
+ "tu as gagné toutes les médailles de pousse!": {
+  "file": "473728d7-bcb05c.mp3",
+  "text": "Tu as gagné toutes les médailles de Pousse !",
+  "sent": "Tu as gagné toutes les médailles de Pousse !",
+  "dur": 2.4,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Tu as gagné toutes les médailles de pouce",
+  "score": 0.94
+ },
+ "luna fait de la magie!": {
+  "file": "25612db9-4d56d3.mp3",
+  "text": "Luna fait de la magie !",
+  "sent": "Luna fait de la magie !",
+  "dur": 1.76,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Luna fait de la magie",
+  "score": 1
+ },
+ "retiens bien les images.": {
+  "file": "9099f2c1-6b02b3.mp3",
+  "text": "Retiens bien les images.",
+  "sent": "Retiens bien les images.",
+  "dur": 1.68,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Retiens bien les images",
+  "score": 1
+ },
+ "encore plus d'images à retenir!": {
+  "file": "006bf481-388935.mp3",
+  "text": "Encore plus d’images à retenir !",
+  "sent": "Encore plus d’images à retenir !",
+  "dur": 2,
+  "cost": 13,
+  "sttCost": 1,
+  "stt": "Encore plus d'images à retenir",
+  "score": 1
+ },
+ "regarde très bien!": {
+  "file": "b162bb76-081026.mp3",
+  "text": "Regarde très bien !",
+  "sent": "Regarde très bien !",
+  "dur": 1.44,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Regarde très bien",
+  "score": 1
+ },
+ "luna t'a préparé un jeu!": {
+  "file": "901a766c-5fa8e2.mp3",
+  "text": "Luna t'a préparé un jeu !",
+  "sent": "Luna t'a préparé un jeu !",
+  "dur": 1.68,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Luna t'a préparé un jeu",
+  "score": 1
+ },
+ "luna t'a préparé un jeu.": {
+  "file": "971a8171-afd73e.mp3",
+  "text": "Luna t'a préparé un jeu.",
+  "sent": "Luna t'a préparé un jeu.",
+  "dur": 1.6,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Luna t'a préparé un jeu",
+  "score": 1
+ },
+ "orageon fait un orage!": {
+  "file": "9da4b3dc-48557e.mp3",
+  "text": "Orageon fait un orage !",
+  "sent": "Orageon fait un orage !",
+  "dur": 1.76,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Orageon fait un orage",
+  "score": 1
+ },
+ "tu as gagné toutes les médailles de luna!": {
+  "file": "86a56b46-df65b2.mp3",
+  "text": "Tu as gagné toutes les médailles de Luna !",
+  "sent": "Tu as gagné toutes les médailles de Luna !",
+  "dur": 2.4,
+  "cost": 17,
+  "sttCost": 1,
+  "stt": "Tu as gagné toutes les médailles de Luna",
+  "score": 1
+ },
+ "compte les coups de tonnerre.": {
+  "file": "53fe7ae7-7f9cbf.mp3",
+  "text": "Compte les coups de tonnerre.",
+  "sent": "Compte les coups de tonnerre.",
+  "dur": 1.6,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Compte les coups de tonnerre",
+  "score": 1
+ },
+ "cette fois, pas d'éclairs!": {
+  "file": "a396c4fb-624a44.mp3",
+  "text": "Cette fois, pas d’éclairs !",
+  "sent": "Cette fois, pas d’éclairs !",
+  "dur": 1.76,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Cette fois, pas d'éclair",
+  "score": 0.95
+ },
+ "encore plus de coups de tonnerre!": {
+  "file": "66e786ef-28e429.mp3",
+  "text": "Encore plus de coups de tonnerre !",
+  "sent": "Encore plus de coups de tonnerre !",
+  "dur": 2.24,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Encore plus de coups de tonnerre",
+  "score": 1
+ },
+ "compte seulement avec tes oreilles!": {
+  "file": "0612e126-13d30a.mp3",
+  "text": "Compte seulement avec tes oreilles !",
+  "sent": "Compte seulement avec tes oreilles !",
+  "dur": 2,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Compte seulement avec tes oreilles",
+  "score": 1
+ },
+ "orageon t'a préparé un jeu.": {
+  "file": "d6c107f4-82f794.mp3",
+  "text": "Orageon t'a préparé un jeu.",
+  "sent": "Orageon t'a préparé un jeu.",
+  "dur": 1.84,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Orageon t'a préparé un jeu",
+  "score": 1
+ },
+ "orageon t'a préparé un jeu!": {
+  "file": "cdc0f9c9-ab3dca.mp3",
+  "text": "Orageon t'a préparé un jeu !",
+  "sent": "Orageon t'a préparé un jeu !",
+  "dur": 1.92,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Orageon t'a préparé un jeu",
+  "score": 1
+ },
+ "tu as gagné toutes les médailles d'orageon!": {
+  "file": "6376e525-9fdcc8.mp3",
+  "text": "Tu as gagné toutes les médailles d'Orageon !",
+  "sent": "Tu as gagné toutes les médailles d'Orageon !",
+  "dur": 2.32,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Tu as gagné toutes les médailles d'or agent",
+  "score": 0.94
+ },
+ "robo range ses pièces!": {
+  "file": "4c04ab1b-c5445a.mp3",
+  "text": "Robo range ses pièces !",
+  "sent": "Robo range ses pièces !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Robot range ses pièces",
+  "score": 0.95
+ },
+ "trouve celle qui est différente.": {
+  "file": "da8850f3-49c4aa.mp3",
+  "text": "Trouve celle qui est différente.",
+  "sent": "Trouve celle qui est différente.",
+  "dur": 1.84,
+  "cost": 13,
+  "sttCost": 0,
+  "stt": "Trouve celle qui est différente",
+  "score": 1
+ },
+ "maintenant, regarde bien les formes!": {
+  "file": "826d84c5-b43a0f.mp3",
+  "text": "Maintenant, regarde bien les formes !",
+  "sent": "Maintenant, regarde bien les formes !",
+  "dur": 2.32,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Maintenant, regarde bien les formes",
+  "score": 1
+ },
+ "robo t'a préparé un jeu!": {
+  "file": "b3b643fa-bcca27.mp3",
+  "text": "Robo t'a préparé un jeu !",
+  "sent": "Robo t'a préparé un jeu !",
+  "dur": 1.76,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Robot a préparé un jeu",
+  "score": 1
+ },
+ "attention, regarde bien les couleurs et les formes!": {
+  "file": "5ae042cb-f657ea.mp3",
+  "text": "Attention, regarde bien les couleurs et les formes !",
+  "sent": "Attention, regarde bien les couleurs et les formes !",
+  "dur": 3.12,
+  "cost": 21,
+  "sttCost": 1,
+  "stt": "Attention, regarde bien les couleurs et les formes",
+  "score": 1
+ },
+ "robo t'a préparé un jeu.": {
+  "file": "a6b62f83-494c5b.mp3",
+  "text": "Robo t'a préparé un jeu.",
+  "sent": "Robo t'a préparé un jeu.",
+  "dur": 1.6,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Robot t'a préparé un jeu",
+  "score": 0.95
+ },
+ "tu as gagné toutes les médailles de robo!": {
+  "file": "0223b9fc-f947b4.mp3",
+  "text": "Tu as gagné toutes les médailles de Robo !",
+  "sent": "Tu as gagné toutes les médailles de Robo !",
+  "dur": 2.32,
+  "cost": 17,
+  "sttCost": 1,
+  "stt": "Tu as gagné toutes les médailles de robot",
+  "score": 0.97
+ },
+ "il fait chaud, les glaçons de glaçon fondent!": {
+  "file": "257fbc96-7bf6be.mp3",
+  "text": "Il fait chaud, les glaçons de Glaçon fondent !",
+  "sent": "Il fait chaud, les glaçons de Glaçon fondent !",
+  "dur": 2.96,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Il fait chaud, les glaçons de glaçons fondent",
+  "score": 0.97
+ },
+ "compte ceux qui restent.": {
+  "file": "c5bb6bce-68d48b.mp3",
+  "text": "Compte ceux qui restent.",
+  "sent": "Compte ceux qui restent.",
+  "dur": 1.44,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Compte ceux qui restent",
+  "score": 1
+ },
+ "encore plus de glaçons qui fondent!": {
+  "file": "3dfb1692-056068.mp3",
+  "text": "Encore plus de glaçons qui fondent !",
+  "sent": "Encore plus de glaçons qui fondent !",
+  "dur": 2.24,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Encore plus de glaçons qui fondent",
+  "score": 1
+ },
+ "les glaçons se cachent sous la neige!": {
+  "file": "0f7829eb-68ef0b.mp3",
+  "text": "Les glaçons se cachent sous la neige !",
+  "sent": "Les glaçons se cachent sous la neige !",
+  "dur": 2.16,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Les glaçons se cachent sous la neige",
+  "score": 1
+ },
+ "retiens bien combien il y en a.": {
+  "file": "5e08802e-de2631.mp3",
+  "text": "Retiens bien combien il y en a.",
+  "sent": "Retiens bien combien il y en a.",
+  "dur": 1.84,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Retiens bien combien il y en a",
+  "score": 1
+ },
+ "glaçon t'a préparé un jeu!": {
+  "file": "01279669-068895.mp3",
+  "text": "Glaçon t'a préparé un jeu !",
+  "sent": "Glaçon t'a préparé un jeu !",
+  "dur": 1.84,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Glaçon t'a préparé un jeu",
+  "score": 1
+ },
+ "glaçon t'a préparé un jeu.": {
+  "file": "0a27a494-8dcf69.mp3",
+  "text": "Glaçon t'a préparé un jeu.",
+  "sent": "Glaçon t'a préparé un jeu.",
+  "dur": 1.84,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Glaçon t'a préparé un jeu",
+  "score": 1
+ },
+ "tu as gagné toutes les médailles de glaçon!": {
+  "file": "ba6bbe55-2eb396.mp3",
+  "text": "Tu as gagné toutes les médailles de Glaçon !",
+  "sent": "Tu as gagné toutes les médailles de Glaçon !",
+  "dur": 2.56,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Tu as gagné toutes les médailles de glaçon",
+  "score": 1
+ },
+ "brume joue à cache-cache!": {
+  "file": "1a31f3e6-1bf404.mp3",
+  "text": "Brume joue à cache-cache !",
+  "sent": "Brume joue à cache-cache !",
+  "dur": 1.52,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Brume joue à cache-cache",
+  "score": 1
+ },
+ "écoute où il faut le cacher.": {
+  "file": "b747037c-01c1ad.mp3",
+  "text": "Écoute où il faut le cacher.",
+  "sent": "Écoute où il faut le cacher.",
+  "dur": 1.92,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Écoute où il faut le cacher",
+  "score": 1
+ },
+ "une nouvelle cachette: à côté de la table!": {
+  "file": "a20db67c-99bcfc.mp3",
+  "text": "Une nouvelle cachette : à côté de la table !",
+  "sent": "Une nouvelle cachette : à côté de la table !",
+  "dur": 2.56,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Une nouvelle cachette à côté de la table",
+  "score": 1
+ },
+ "encore deux cachettes: devant et derrière la table!": {
+  "file": "4f67db3c-c11f49.mp3",
+  "text": "Encore deux cachettes : devant et derrière la table !",
+  "sent": "Encore deux cachettes : devant et derrière la table !",
+  "dur": 3.6,
+  "cost": 21,
+  "sttCost": 1,
+  "stt": "Encore deux cachettes : devant et derrière la table",
+  "score": 1
+ },
+ "brume t'a préparé un jeu!": {
+  "file": "a41bdefd-e4ff35.mp3",
+  "text": "Brume t'a préparé un jeu !",
+  "sent": "Brume t'a préparé un jeu !",
+  "dur": 1.76,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Brume t'a préparé un jeu",
+  "score": 1
+ },
+ "brume t'a préparé un jeu.": {
+  "file": "951bc760-41ec64.mp3",
+  "text": "Brume t'a préparé un jeu.",
+  "sent": "Brume t'a préparé un jeu.",
+  "dur": 1.76,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Brume t'a préparé un jeu",
+  "score": 1
+ },
+ "tu as gagné toutes les médailles de brume!": {
+  "file": "8bec4031-a9daaf.mp3",
+  "text": "Tu as gagné toutes les médailles de Brume !",
+  "sent": "Tu as gagné toutes les médailles de Brume !",
+  "dur": 2.32,
+  "cost": 17,
+  "sttCost": 1,
+  "stt": "Tu as gagné toutes les médailles de brume",
+  "score": 1
+ },
+ "astro part dans l'espace!": {
+  "file": "502ae402-13a249.mp3",
+  "text": "Astro part dans l’espace !",
+  "sent": "Astro part dans l’espace !",
+  "dur": 2.08,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Astro part dans l'espace",
+  "score": 1
+ },
+ "trouve le nombre qui manque dans le compte à rebours.": {
+  "file": "826f7de8-4a27b3.mp3",
+  "text": "Trouve le nombre qui manque dans le compte à rebours.",
+  "sent": "Trouve le nombre qui manque dans le compte à rebours.",
+  "dur": 2.8,
+  "cost": 21,
+  "sttCost": 1,
+  "stt": "Trouve le nombre qui manque dans le compte à rebours",
+  "score": 1
+ },
+ "attention, il manque deux nombres!": {
+  "file": "fb42279e-049b74.mp3",
+  "text": "Attention, il manque deux nombres !",
+  "sent": "Attention, il manque deux nombres !",
+  "dur": 2.16,
+  "cost": 14,
+  "sttCost": 1,
+  "stt": "Attention, il manque deux nombres",
+  "score": 1
+ },
+ "maintenant, on compte à rebours à partir de dix!": {
+  "file": "34ff74b2-2f9249.mp3",
+  "text": "Maintenant, on compte à rebours à partir de dix !",
+  "sent": "Maintenant, on compte à rebours à partir de dix !",
+  "dur": 3.04,
+  "cost": 20,
+  "sttCost": 1,
+  "stt": "Maintenant, on compte à rebours à partir de dix",
+  "score": 1
+ },
+ "astro t'a préparé un jeu!": {
+  "file": "e44d370f-52db33.mp3",
+  "text": "Astro t'a préparé un jeu !",
+  "sent": "Astro t'a préparé un jeu !",
+  "dur": 1.76,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Astro t'a préparé un jeu",
+  "score": 1
+ },
+ "astro t'a préparé un jeu.": {
+  "file": "e94d3eee-ff814a.mp3",
+  "text": "Astro t'a préparé un jeu.",
+  "sent": "Astro t'a préparé un jeu.",
+  "dur": 1.76,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Astro t'a préparé un jeu",
+  "score": 1
+ },
+ "tu as gagné toutes les médailles d'astro!": {
+  "file": "8f4a39db-a60d9a.mp3",
+  "text": "Tu as gagné toutes les médailles d'Astro !",
+  "sent": "Tu as gagné toutes les médailles d'Astro !",
+  "dur": 2.4,
+  "cost": 17,
+  "sttCost": 1,
+  "stt": "Tu as gagné toutes les médailles d'Astro",
+  "score": 1
+ },
+ "cache brume sur la table!": {
+  "file": "0ffbb9d4-e1139f.mp3",
+  "text": "Cache Brume sur la table !",
+  "sent": "Cache Brume sur la table !",
+  "dur": 1.6,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Cache brume sur la table",
+  "score": 1
+ },
+ "ça, c'est sur la table.": {
+  "file": "d18635dd-bf9d35.mp3",
+  "text": "Ça, c'est sur la table.",
+  "sent": "Ça, c'est sur la table.",
+  "dur": 1.68,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Ça, c'est sur la table",
+  "score": 1
+ },
+ "cache brume sous la table!": {
+  "file": "5ff9d454-0f5a91.mp3",
+  "text": "Cache Brume sous la table !",
+  "sent": "Cache Brume sous la table !",
+  "dur": 1.6,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Cache Brume sous la table",
+  "score": 1
+ },
+ "ça, c'est sous la table.": {
+  "file": "21f520ed-255de0.mp3",
+  "text": "Ça, c'est sous la table.",
+  "sent": "Ça, c'est sous la table.",
+  "dur": 1.84,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est sous la table",
+  "score": 1
+ },
+ "cache brume à côté de la table!": {
+  "file": "55c15694-b9199e.mp3",
+  "text": "Cache Brume à côté de la table !",
+  "sent": "Cache Brume à côté de la table !",
+  "dur": 2,
+  "cost": 13,
+  "sttCost": 1,
+  "stt": "Cache brume à côté de la table",
+  "score": 1
+ },
+ "ça, c'est à côté de la table.": {
+  "file": "91d3890d-778d15.mp3",
+  "text": "Ça, c'est à côté de la table.",
+  "sent": "Ça, c'est à côté de la table.",
+  "dur": 1.92,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Ça, c'est à côté de la table",
+  "score": 1
+ },
+ "cache brume devant la table!": {
+  "file": "0b63ebf6-3235e6.mp3",
+  "text": "Cache Brume devant la table !",
+  "sent": "Cache Brume devant la table !",
+  "dur": 1.76,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Cache Brume devant la table",
+  "score": 1
+ },
+ "ça, c'est devant la table.": {
+  "file": "449189f3-abd270.mp3",
+  "text": "Ça, c'est devant la table.",
+  "sent": "Ça, c'est devant la table.",
+  "dur": 1.84,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Ça, c'est devant la table",
+  "score": 1
+ },
+ "cache brume derrière la table!": {
+  "file": "b9e865ee-6602df.mp3",
+  "text": "Cache Brume derrière la table !",
+  "sent": "Cache Brume derrière la table !",
+  "dur": 1.92,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Cache Brume derrière la table",
+  "score": 1
+ },
+ "ça, c'est derrière la table.": {
+  "file": "77011af3-78591b.mp3",
+  "text": "Ça, c'est derrière la table.",
+  "sent": "Ça, c'est derrière la table.",
+  "dur": 1.92,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Ça, c'est derrière la table",
+  "score": 1
+ },
+ "combien de glaçons restent?": {
+  "file": "268f97b9-d33010.mp3",
+  "text": "Combien de glaçons restent ?",
+  "sent": "Combien de glaçons restent ?",
+  "dur": 1.68,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Combien de glaçons restent",
+  "score": 1
+ },
+ "combien de glaçons sous la neige?": {
+  "file": "0c1ef937-6c7a56.mp3",
+  "text": "Combien de glaçons sous la neige ?",
+  "sent": "Combien de glaçons sous la neige ?",
+  "dur": 2,
+  "cost": 14,
+  "sttCost": 0,
+  "stt": "Combien de glaçons sous la neige",
+  "score": 1
  }
 }
