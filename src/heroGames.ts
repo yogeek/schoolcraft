@@ -5,7 +5,7 @@ import { HEROES, type Hero } from './content/heroes';
 import { save, state } from './state';
 
 /** The heroes that have a game, in the order the games open. */
-export const GAME_HEROES = ['kaze', 'flammeche', 'corail'] as const;
+export const GAME_HEROES = ['kaze', 'flammeche', 'corail', 'bulle', 'tao', 'pousse', 'luna', 'orageon', 'robo', 'glacon', 'brume', 'astro'] as const;
 export type GameHero = (typeof GAME_HEROES)[number];
 
 export const MEDALS = 3;

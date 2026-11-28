@@ -3,6 +3,7 @@
 //   Kaze      : attrape la lettre que Pixel dit (reconnaître les lettres)
 //   Flammèche : allume autant de bougies que le nombre (construire une collection)
 //   Corail    : va au trésor avec les flèches (se repérer, gauche / droite, puis coder un chemin)
+// Les neuf autres sont dans heroGames2.ts.
 import { sfx } from '../audio';
 import { NUMBER_WORDS as W } from '../content/counting';
 import { GAME_INTROS, HEROES } from '../content/heroes';
@@ -13,6 +14,7 @@ import { heroSVG } from '../heroArt';
 import { chestSVG } from '../pixel';
 import { pickWeighted } from '../state';
 import { h, rand, reducedMotion, shuffle } from '../ui';
+import { astroGame, brumeGame, bulleGame, glaconGame, lunaGame, orageonGame, pousseGame, roboGame, taoGame } from './heroGames2';
 import { plaque } from './reading';
 
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -35,6 +37,24 @@ export function heroGame(id: GameHero, tier: number): HeroGameSpec {
       return { game: flammecheGame(tier), intro, activity: 'count' };
     case 'corail':
       return { game: corailGame(tier), intro, activity: 'count' };
+    case 'bulle':
+      return { game: bulleGame(tier), intro, activity: 'sounds' };
+    case 'tao':
+      return { game: taoGame(tier), intro, activity: 'sounds' };
+    case 'pousse':
+      return { game: pousseGame(tier), intro, activity: 'count' };
+    case 'luna':
+      return { game: lunaGame(tier), intro, activity: 'sounds' };
+    case 'orageon':
+      return { game: orageonGame(tier), intro, activity: 'count' };
+    case 'robo':
+      return { game: roboGame(tier), intro, activity: 'count' };
+    case 'glacon':
+      return { game: glaconGame(tier), intro, activity: 'count' };
+    case 'brume':
+      return { game: brumeGame(tier), intro, activity: 'count' };
+    case 'astro':
+      return { game: astroGame(tier), intro, activity: 'count' };
   }
 }
 

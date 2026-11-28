@@ -648,6 +648,15 @@ export const GAME_INTROS: Record<string, [string, string, string]> = {
   kaze: ['Kaze lance des lettres ! Attrape celle que je dis.', 'Maintenant, les petites lettres ! Écoute bien.', 'Attention, les lettres se ressemblent !'],
   flammeche: ["C'est la fête de Flammèche ! Allume les bougies du gâteau.", 'Encore plus de bougies sur le gâteau !', 'Regarde le nombre, et allume autant de bougies !'],
   corail: ['Corail cherche son trésor ! Écoute où il faut aller.', 'Maintenant, je dis deux pas à la fois.', 'Prépare tout le chemin avec les flèches, puis touche le bouton vert !'],
+  bulle: ['Bulle fait des bulles ! Éclate celle qui finit comme le mot.', 'Encore plus de bulles ! Écoute bien la fin des mots.', 'Cette fois, je ne dis pas les images. À toi de les nommer dans ta tête !'],
+  tao: ['Tao fait du kung-fu ! Casse une planche pour chaque syllabe.', 'Des mots plus longs, maintenant !', 'Des mots très longs ! Concentre-toi bien.'],
+  pousse: ['Pousse plante des fleurs ! Regarde bien le motif.', 'Les motifs sont plus difficiles !', 'Il manque deux fleurs, maintenant !'],
+  luna: ['Luna fait de la magie ! Retiens bien les images.', 'Encore plus d’images à retenir !', 'Cette fois, je ne dis pas les images. Regarde très bien !'],
+  orageon: ['Orageon fait un orage ! Compte les coups de tonnerre.', 'Encore plus de coups de tonnerre !', 'Cette fois, pas d’éclairs ! Compte seulement avec tes oreilles !'],
+  robo: ['Robo range ses pièces ! Trouve celle qui est différente.', 'Maintenant, regarde bien les formes !', 'Attention, regarde bien les couleurs et les formes !'],
+  glacon: ['Il fait chaud, les glaçons de Glaçon fondent ! Compte ceux qui restent.', 'Encore plus de glaçons qui fondent !', 'Les glaçons se cachent sous la neige ! Retiens bien combien il y en a.'],
+  brume: ['Brume joue à cache-cache ! Écoute où il faut le cacher.', 'Une nouvelle cachette : à côté de la table !', 'Encore deux cachettes : devant et derrière la table !'],
+  astro: ['Astro part dans l’espace ! Trouve le nombre qui manque dans le compte à rebours.', 'Maintenant, on compte à rebours à partir de dix !', 'Attention, il manque deux nombres !'],
 };
 
 /** Heroes from this index on (« saison 2 ») are coloured with additions. */
