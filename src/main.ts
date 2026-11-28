@@ -1,6 +1,7 @@
 import './style.css';
 import { prefetchVoice, sfx, stopSpeech } from './audio';
 import { HEROES } from './content/heroes';
+import { GAME_HEROES } from './heroGames';
 import { heroSVG } from './heroArt';
 import { currentLevel, parentSetLevel, unlockAll } from './levels';
 import { beginScreen } from './nav';
@@ -9,6 +10,7 @@ import { activityScreen } from './screens/activity';
 import { buildScreen } from './screens/build';
 import { chestReady, missionStrip, nextInMission, openChest, restScreen } from './screens/chest';
 import { colorScreen, currentHero, heroesScreen } from './screens/heroes';
+import { heroGameScreen } from './screens/heroGame';
 import { mapScreen } from './screens/map';
 import { askWhoOnce, whoButton } from './screens/profiles';
 import { parentGate, parentsScreen, pauseScreen } from './screens/parents';
@@ -47,6 +49,8 @@ function go(name: ScreenName, activity?: ActivityId): void {
       return pauseScreen(ctx);
     case 'rest':
       return restScreen(ctx);
+    case 'herogame':
+      return heroGameScreen(ctx);
   }
 }
 
@@ -179,7 +183,10 @@ if (exploring) {
   state.settings.grade ??= 'MS';
   state.settings.limitMin = 0;
   unlockAll();
-  document.body.append(h('div', { class: 'explore-banner', role: 'status' }, 'Mode parent : tous les niveaux sont ouverts. Appui long sur le logo pour revenir.'));
+  // every friend awake and every game open, to try them (this save is the parents' own)
+  for (const x of HEROES) if (!state.heroes.done.includes(x.id)) state.heroes.done.push(x.id);
+  for (const id of GAME_HEROES) if (!state.games.open.includes(id)) state.games.open.push(id);
+  document.body.append(h('div', { class: 'explore-banner', role: 'status' }, 'Mode parent : tous les niveaux, les amis et leurs jeux sont ouverts. Appui long sur le logo pour revenir.'));
 }
 // dev only: #play=sounds:7 opens a level directly (for testing; not in production builds)
 const jump = import.meta.env.DEV ? /^#play=(sounds|write|count):(\d+)$/.exec(location.hash) : null;

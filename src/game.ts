@@ -67,6 +67,9 @@ export interface SessionSpec {
   game: Game;
   /** a game from an earlier level, for one review question */
   review?: Game | null;
+  /** a hero's little game (screens/heroGame.ts), not a level: its own top bar and end, no level
+   *  number in the intro, no stars, no blocks, not part of the daily adventure */
+  free?: { top: Node; finish(firstTry: number, rounds: number): void };
 }
 
 export function runSession(ctx: Ctx, spec: SessionSpec): void {
@@ -101,7 +104,7 @@ export function runSession(ctx: Ctx, spec: SessionSpec): void {
   const current = () => plan[index];
 
   screen.append(
-    topBar(() => ctx.go('home'), levelButton(levelNo, () => ctx.go('map', activity))),
+    topBar(() => ctx.go('home'), spec.free?.top ?? levelButton(levelNo, () => ctx.go('map', activity))),
     progress,
     h('div', { class: 'hero small' }, fox, bub, speakerButton(repeat)),
     stage,
@@ -201,6 +204,7 @@ export function runSession(ctx: Ctx, spec: SessionSpec): void {
     if (index >= plan.length) {
       locked = true;
       const rounds = plan.filter((g) => g === game).length;
+      if (spec.free) return spec.free.finish(firstTry, rounds);
       const advanced = logGame(activity);
       // blocks come with the finished game, by its stars: a game that does not beat the level's record brings one
       const before = starsOf(activity, levelNo);
@@ -217,7 +221,7 @@ export function runSession(ctx: Ctx, spec: SessionSpec): void {
   // the first question is visible right away; it is asked once the level is introduced
   setupRound();
   const first = seq;
-  void ctx.say(`Niveau ${levelNo}. ${spec.intro}`).then(async () => {
+  void ctx.say(spec.free ? spec.intro : `Niveau ${levelNo}. ${spec.intro}`).then(async () => {
     if ((await ctx.wait(150)) && first === seq && !locked && misses === 0 && !asked) ask();
   });
 }

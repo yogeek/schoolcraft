@@ -32018,5 +32018,1429 @@
   "sttCost": 0,
   "stt": "Encore une couleur",
   "score": 1
+ },
+ "allume les bougies qui brillent!": {
+  "file": "0f502ee5-f87f03.mp3",
+  "text": "Allume les bougies qui brillent !",
+  "sent": "Allume les bougies qui brillent !",
+  "dur": 1.92,
+  "cost": 13,
+  "sttCost": 0,
+  "stt": "Allume les bougies qui brillent",
+  "score": 1
+ },
+ "allume autant de bougies que ce nombre!": {
+  "file": "ccfb9c68-089a7a.mp3",
+  "text": "Allume autant de bougies que ce nombre !",
+  "sent": "Allume autant de bougies que ce nombre !",
+  "dur": 2.24,
+  "cost": 16,
+  "sttCost": 1,
+  "stt": "Allume autant de bougies que ce nombre",
+  "score": 1
+ },
+ "trouve le chemin du trésor!": {
+  "file": "0f0e41d9-3c92f8.mp3",
+  "text": "Trouve le chemin du trésor !",
+  "sent": "Trouve le chemin du trésor !",
+  "dur": 1.84,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Trouve le chemin du trésor",
+  "score": 1
+ },
+ "le trésor!": {
+  "file": "f036dcef-86365d.mp3",
+  "text": "Le trésor !",
+  "sent": "Le trésor !",
+  "dur": 1.28,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "on recommence!": {
+  "file": "75758561-d39e34.mp3",
+  "text": "On recommence !",
+  "sent": "On recommence !",
+  "dur": 1.04,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "On recommence",
+  "score": 1
+ },
+ "oh non, ce n'est pas le trésor.": {
+  "file": "68a840b9-d60e2d.mp3",
+  "text": "Oh non, ce n'est pas le trésor.",
+  "sent": "Oh non, ce n'est pas le trésor.",
+  "dur": 2.24,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Oh non, ce n'est pas le trésor",
+  "score": 1
+ },
+ "suis les pointillés!": {
+  "file": "ea4b867a-1ddd97.mp3",
+  "text": "Suis les pointillés !",
+  "sent": "Suis les pointillés !",
+  "dur": 1.36,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Suis les pointillés",
+  "score": 1
+ },
+ "et une clé!": {
+  "file": "781f8b78-ee836b.mp3",
+  "text": "Et une clé !",
+  "sent": "Et une clé !",
+  "dur": 1.2,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "va voir tes amis pour jouer!": {
+  "file": "43bdb0f4-9032b6.mp3",
+  "text": "Va voir tes amis pour jouer !",
+  "sent": "Va voir tes amis pour jouer !",
+  "dur": 1.68,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Va voir tes amis pour jouer",
+  "score": 1
+ },
+ "touche son image pour jouer.": {
+  "file": "03871c29-b33034.mp3",
+  "text": "Touche son image pour jouer.",
+  "sent": "Touche son image pour jouer.",
+  "dur": 1.84,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Touche son image pour jouer",
+  "score": 1
+ },
+ "tu as gagné une médaille!": {
+  "file": "2b7def02-7b1bb7.mp3",
+  "text": "Tu as gagné une médaille !",
+  "sent": "Tu as gagné une médaille !",
+  "dur": 1.76,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Tu as gagné une médaille",
+  "score": 1
+ },
+ "la prochaine fois, ce sera un peu plus dur.": {
+  "file": "51bd28c9-a7c9b9.mp3",
+  "text": "La prochaine fois, ce sera un peu plus dur.",
+  "sent": "La prochaine fois, ce sera un peu plus dur.",
+  "dur": 2.4,
+  "cost": 17,
+  "sttCost": 1,
+  "stt": "La prochaine fois, ce sera un peu plus dur",
+  "score": 1
+ },
+ "bravo, quelle belle partie!": {
+  "file": "77e65d95-3da23f.mp3",
+  "text": "Bravo, quelle belle partie !",
+  "sent": "Bravo, quelle belle partie !",
+  "dur": 2.24,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Bravo, quelle belle partie",
+  "score": 1
+ },
+ "encore un peu d'entraînement, et tu gagneras une médaille!": {
+  "file": "2354815a-489cae.mp3",
+  "text": "Encore un peu d'entraînement, et tu gagneras une médaille !",
+  "sent": "Encore un peu d'entraînement, et tu gagneras une médaille !",
+  "dur": 2.96,
+  "cost": 24,
+  "sttCost": 1,
+  "stt": "Encore un peu d'entraînement et tu gagneras une médaille",
+  "score": 1
+ },
+ "kaze lance des lettres!": {
+  "file": "cf75771f-7542b1.mp3",
+  "text": "Kaze lance des lettres !",
+  "sent": "Kaze lance des lettres !",
+  "dur": 1.84,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Casey lance des lettres",
+  "score": 0.85
+ },
+ "attrape celle que je dis.": {
+  "file": "8d14cde5-6f9e38.mp3",
+  "text": "Attrape celle que je dis.",
+  "sent": "Attrape celle que je dis.",
+  "dur": 1.44,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Attrape celle que je dis",
+  "score": 1
+ },
+ "maintenant, les petites lettres!": {
+  "file": "6759048a-62ce77.mp3",
+  "text": "Maintenant, les petites lettres !",
+  "sent": "Maintenant, les petites lettres !",
+  "dur": 1.92,
+  "cost": 13,
+  "sttCost": 0,
+  "stt": "Maintenant, les petites lettres",
+  "score": 1
+ },
+ "écoute bien.": {
+  "file": "6a6d7f8d-11ca21.mp3",
+  "text": "Écoute bien.",
+  "sent": "Écoute bien.",
+  "dur": 0.96,
+  "cost": 5,
+  "sttCost": 0,
+  "stt": "Écoute bien",
+  "score": 1
+ },
+ "attention, les lettres se ressemblent!": {
+  "file": "c309075b-1b12d7.mp3",
+  "text": "Attention, les lettres se ressemblent !",
+  "sent": "Attention, les lettres se ressemblent !",
+  "dur": 2.32,
+  "cost": 16,
+  "sttCost": 1,
+  "stt": "Attention, les lettres se ressemblent",
+  "score": 1
+ },
+ "kaze t'a préparé un jeu!": {
+  "file": "6defca1f-874647.mp3",
+  "text": "Kaze t'a préparé un jeu !",
+  "sent": "Kaze t'a préparé un jeu !",
+  "dur": 1.76,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Casey t'a préparé un jeu",
+  "score": 0.84
+ },
+ "kaze t'a préparé un jeu.": {
+  "file": "72efd1fe-73a0ce.mp3",
+  "text": "Kaze t'a préparé un jeu.",
+  "sent": "Kaze t'a préparé un jeu.",
+  "dur": 1.76,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Casette a préparé un jeu",
+  "score": 0.8
+ },
+ "tu as gagné toutes les médailles de kaze!": {
+  "file": "60ce7c1b-1dea62.mp3",
+  "text": "Tu as gagné toutes les médailles de Kaze !",
+  "sent": "Tu as gagné toutes les médailles de Kaze !",
+  "dur": 2.48,
+  "cost": 17,
+  "sttCost": 1,
+  "stt": "Tu as gagné toutes les médailles de Kazé",
+  "score": 1
+ },
+ "allume les bougies du gâteau.": {
+  "file": "6a0d84cf-7c67d0.mp3",
+  "text": "Allume les bougies du gâteau.",
+  "sent": "Allume les bougies du gâteau.",
+  "dur": 1.76,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Allume les bougies du gâteau",
+  "score": 1
+ },
+ "c'est la fête de flammèche!": {
+  "file": "54ce0042-6fcffc.mp3",
+  "text": "C'est la fête de Flammèche !",
+  "sent": "C'est la fête de Flammèche !",
+  "dur": 1.92,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "C'est la fête de Flammèche",
+  "score": 1
+ },
+ "encore plus de bougies sur le gâteau!": {
+  "file": "34dbeef7-727bd9.mp3",
+  "text": "Encore plus de bougies sur le gâteau !",
+  "sent": "Encore plus de bougies sur le gâteau !",
+  "dur": 2.24,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Encore plus de bougies sur le gâteau",
+  "score": 1
+ },
+ "flammèche t'a préparé un jeu!": {
+  "file": "aa7f3674-e08317.mp3",
+  "text": "Flammèche t'a préparé un jeu !",
+  "sent": "Flammèche t'a préparé un jeu !",
+  "dur": 1.84,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Flamèche t'a préparé un jeu",
+  "score": 0.96
+ },
+ "regarde le nombre, et allume autant de bougies!": {
+  "file": "4238fec7-f1481a.mp3",
+  "text": "Regarde le nombre, et allume autant de bougies !",
+  "sent": "Regarde le nombre, et allume autant de bougies !",
+  "dur": 2.8,
+  "cost": 19,
+  "sttCost": 1,
+  "stt": "Regarde le nombre et allume autant de bougies",
+  "score": 1
+ },
+ "flammèche t'a préparé un jeu.": {
+  "file": "a17f2849-1d558b.mp3",
+  "text": "Flammèche t'a préparé un jeu.",
+  "sent": "Flammèche t'a préparé un jeu.",
+  "dur": 1.84,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Flamèche t'a préparé un jeu",
+  "score": 0.96
+ },
+ "corail cherche son trésor!": {
+  "file": "a09afd1a-7f7387.mp3",
+  "text": "Corail cherche son trésor !",
+  "sent": "Corail cherche son trésor !",
+  "dur": 2.08,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Corail cherche son trésor",
+  "score": 1
+ },
+ "tu as gagné toutes les médailles de flammèche!": {
+  "file": "b77a793e-dc3efc.mp3",
+  "text": "Tu as gagné toutes les médailles de Flammèche !",
+  "sent": "Tu as gagné toutes les médailles de Flammèche !",
+  "dur": 2.48,
+  "cost": 19,
+  "sttCost": 1,
+  "stt": "Tu as gagné toutes les médailles de Flamèche",
+  "score": 0.97
+ },
+ "écoute où il faut aller.": {
+  "file": "8b258317-9685cc.mp3",
+  "text": "Écoute où il faut aller.",
+  "sent": "Écoute où il faut aller.",
+  "dur": 1.52,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Écoute où il faut aller",
+  "score": 1
+ },
+ "maintenant, je dis deux pas à la fois.": {
+  "file": "67f8b294-17e3e5.mp3",
+  "text": "Maintenant, je dis deux pas à la fois.",
+  "sent": "Maintenant, je dis deux pas à la fois.",
+  "dur": 2.56,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Maintenant, je dis deux pas à la fois",
+  "score": 1
+ },
+ "prépare tout le chemin avec les flèches, puis touche le bouton vert!": {
+  "file": "346d4b72-bcf6d0.mp3",
+  "text": "Prépare tout le chemin avec les flèches, puis touche le bouton vert !",
+  "sent": "Prépare tout le chemin avec les flèches, puis touche le bouton vert !",
+  "dur": 3.68,
+  "cost": 28,
+  "sttCost": 1,
+  "stt": "Prépare tout le chemin avec les flèches, puis touche le bouton vert",
+  "score": 1
+ },
+ "corail t'a préparé un jeu!": {
+  "file": "590355d4-425f18.mp3",
+  "text": "Corail t'a préparé un jeu !",
+  "sent": "Corail t'a préparé un jeu !",
+  "dur": 1.84,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Corail t'a préparé un jeu",
+  "score": 1
+ },
+ "corail t'a préparé un jeu.": {
+  "file": "500347a9-7bbd4b.mp3",
+  "text": "Corail t'a préparé un jeu.",
+  "sent": "Corail t'a préparé un jeu.",
+  "dur": 1.84,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Corail t'a préparé un jeu",
+  "score": 1
+ },
+ "tu as gagné toutes les médailles de corail!": {
+  "file": "53ca4d46-332732.mp3",
+  "text": "Tu as gagné toutes les médailles de Corail !",
+  "sent": "Tu as gagné toutes les médailles de Corail !",
+  "dur": 2.56,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Tu as gagné toutes les médailles de corail",
+  "score": 1
+ },
+ "attrape la lettre: a!": {
+  "file": "b58928f1-20391f.mp3",
+  "text": "Attrape la lettre : a !",
+  "sent": "Attrape la lettre : a !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Attrape la lettre A",
+  "score": 1
+ },
+ "ça, c'est la lettre: a.": {
+  "file": "e3368b46-e7f646.mp3",
+  "text": "Ça, c'est la lettre : a.",
+  "sent": "Ça, c'est la lettre : a.",
+  "dur": 1.84,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Ça, c'est la lettre A",
+  "score": 1
+ },
+ "attrape la lettre: b!": {
+  "file": "4d8646a2-d1b00a.mp3",
+  "text": "Attrape la lettre : b !",
+  "sent": "Attrape la lettre : b !",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Attrape la lettre B",
+  "score": 1
+ },
+ "ça, c'est la lettre: b.": {
+  "file": "653e13b1-632216.mp3",
+  "text": "Ça, c'est la lettre : b.",
+  "sent": "Ça, c'est la lettre : b.",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Ça, c'est la lettre B",
+  "score": 1
+ },
+ "attrape la lettre: c!": {
+  "file": "2983cf5f-e2b9ee.mp3",
+  "text": "Attrape la lettre : c !",
+  "sent": "Attrape la lettre : c !",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Attrape la lettre C",
+  "score": 1
+ },
+ "ça, c'est la lettre: c.": {
+  "file": "033b3ad4-6395d4.mp3",
+  "text": "Ça, c'est la lettre : c.",
+  "sent": "Ça, c'est la lettre : c.",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre C",
+  "score": 1
+ },
+ "attrape la lettre: d!": {
+  "file": "4181b690-da350f.mp3",
+  "text": "Attrape la lettre : d !",
+  "sent": "Attrape la lettre : d !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Attrape la lettre D",
+  "score": 1
+ },
+ "ça, c'est la lettre: d.": {
+  "file": "852f3b87-c65523.mp3",
+  "text": "Ça, c'est la lettre : d.",
+  "sent": "Ça, c'est la lettre : d.",
+  "dur": 2.16,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre D",
+  "score": 1
+ },
+ "attrape la lettre: euh!": {
+  "file": "9b5a536e-c56c76.mp3",
+  "text": "Attrape la lettre : euh !",
+  "sent": "Attrape la lettre : /ə/ !",
+  "dur": 1.84,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Attrape la lettre E",
+  "score": 1
+ },
+ "ça, c'est la lettre: euh.": {
+  "file": "7771bdf1-568484.mp3",
+  "text": "Ça, c'est la lettre : euh.",
+  "sent": "Ça, c'est la lettre : /ə/.",
+  "dur": 2.16,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre E",
+  "score": 1
+ },
+ "attrape la lettre: f!": {
+  "file": "b57c5cfe-5e5f93.mp3",
+  "text": "Attrape la lettre : f !",
+  "sent": "Attrape la lettre : f !",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Attrape la lettre F",
+  "score": 1
+ },
+ "attrape la lettre: g!": {
+  "file": "d17a4a7b-114c00.mp3",
+  "text": "Attrape la lettre : g !",
+  "sent": "Attrape la lettre : g !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Attrape la lettre G",
+  "score": 1
+ },
+ "ça, c'est la lettre: f.": {
+  "file": "8533b8b5-db5626.mp3",
+  "text": "Ça, c'est la lettre : f.",
+  "sent": "Ça, c'est la lettre : f.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre F",
+  "score": 1
+ },
+ "ça, c'est la lettre: g.": {
+  "file": "63314498-50255b.mp3",
+  "text": "Ça, c'est la lettre : g.",
+  "sent": "Ça, c'est la lettre : g.",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Ça, c'est la lettre G",
+  "score": 1
+ },
+ "attrape la lettre: hache!": {
+  "file": "0f26de4d-697e3c.mp3",
+  "text": "Attrape la lettre : hache !",
+  "sent": "Attrape la lettre : hache !",
+  "dur": 1.92,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Attrape la lettre H",
+  "score": 0.8
+ },
+ "attrape la lettre: i!": {
+  "file": "4574f0e9-c0c3b8.mp3",
+  "text": "Attrape la lettre : i !",
+  "sent": "Attrape la lettre : i !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Attrape la lettre I",
+  "score": 1
+ },
+ "attrape la lettre: j!": {
+  "file": "5d72d81a-005d48.mp3",
+  "text": "Attrape la lettre : j !",
+  "sent": "Attrape la lettre : j !",
+  "dur": 2,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Attrape la lettre G",
+  "score": 0.94
+ },
+ "ça, c'est la lettre: i.": {
+  "file": "e34a12fe-63333c.mp3",
+  "text": "Ça, c'est la lettre : i.",
+  "sent": "Ça, c'est la lettre : i.",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre I",
+  "score": 1
+ },
+ "attrape la lettre: k!": {
+  "file": "397060d7-eded5a.mp3",
+  "text": "Attrape la lettre : k !",
+  "sent": "Attrape la lettre : /ka/ !",
+  "dur": 1.68,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Attrape la lettre K",
+  "score": 1
+ },
+ "ça, c'est la lettre: j.": {
+  "file": "8551cdc9-413ef8.mp3",
+  "text": "Ça, c'est la lettre : j.",
+  "sent": "Ça, c'est la lettre : j.",
+  "dur": 2.08,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre J",
+  "score": 1
+ },
+ "ça, c'est la lettre: hache.": {
+  "file": "71055446-4bed63.mp3",
+  "text": "Ça, c'est la lettre : hache.",
+  "sent": "Ça, c'est la lettre : hache.",
+  "dur": 2.32,
+  "cost": 33,
+  "sttCost": 3,
+  "stt": "Ça, c'est la lettre H",
+  "score": 0.79
+ },
+ "ça, c'est la lettre: k.": {
+  "file": "634f59ac-245bf9.mp3",
+  "text": "Ça, c'est la lettre : k.",
+  "sent": "Ça, c'est la lettre : /ka/.",
+  "dur": 2.08,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre K",
+  "score": 1
+ },
+ "attrape la lettre: l!": {
+  "file": "d16d7e88-247cf7.mp3",
+  "text": "Attrape la lettre : l !",
+  "sent": "Attrape la lettre : l !",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Attrape la lettre L",
+  "score": 1
+ },
+ "ça, c'est la lettre: l.": {
+  "file": "654290df-4696b9.mp3",
+  "text": "Ça, c'est la lettre : l.",
+  "sent": "Ça, c'est la lettre : l.",
+  "dur": 2.16,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre L",
+  "score": 1
+ },
+ "attrape la lettre: m!": {
+  "file": "ad6b0745-233b41.mp3",
+  "text": "Attrape la lettre : m !",
+  "sent": "Attrape la lettre : m !",
+  "dur": 2,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Attrape la lettre M",
+  "score": 1
+ },
+ "attrape la lettre: n!": {
+  "file": "c568ee76-d10266.mp3",
+  "text": "Attrape la lettre : n !",
+  "sent": "Attrape la lettre : n !",
+  "dur": 1.92,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Attrape la lettre N",
+  "score": 1
+ },
+ "ça, c'est la lettre: m.": {
+  "file": "83408182-da592a.mp3",
+  "text": "Ça, c'est la lettre : m.",
+  "sent": "Ça, c'est la lettre : m.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre M",
+  "score": 1
+ },
+ "ça, c'est la lettre: n.": {
+  "file": "054809ed-4c4186.mp3",
+  "text": "Ça, c'est la lettre : n.",
+  "sent": "Ça, c'est la lettre : n.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre N",
+  "score": 1
+ },
+ "attrape la lettre: o!": {
+  "file": "a1667733-7b4b5e.mp3",
+  "text": "Attrape la lettre : o !",
+  "sent": "Attrape la lettre : o !",
+  "dur": 2,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Attrape la lettre O",
+  "score": 1
+ },
+ "ça, c'est la lettre: o.": {
+  "file": "8344feb0-2ff75c.mp3",
+  "text": "Ça, c'est la lettre : o.",
+  "sent": "Ça, c'est la lettre : o.",
+  "dur": 2.08,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre O",
+  "score": 1
+ },
+ "attrape la lettre: p!": {
+  "file": "39b346c4-c89df8.mp3",
+  "text": "Attrape la lettre : p !",
+  "sent": "Attrape la lettre : p !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Attrape la lettre P",
+  "score": 1
+ },
+ "attrape la lettre: q!": {
+  "file": "d5b06ac1-760797.mp3",
+  "text": "Attrape la lettre : q !",
+  "sent": "Attrape la lettre : /ky/ !",
+  "dur": 1.84,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Attrape la lettre Q",
+  "score": 1
+ },
+ "ça, c'est la lettre: p.": {
+  "file": "6560a5f3-0c8800.mp3",
+  "text": "Ça, c'est la lettre : p.",
+  "sent": "Ça, c'est la lettre : p.",
+  "dur": 2.08,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre P",
+  "score": 1
+ },
+ "attrape la lettre: r!": {
+  "file": "adaded32-1d3584.mp3",
+  "text": "Attrape la lettre : r !",
+  "sent": "Attrape la lettre : r !",
+  "dur": 2,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Attrape la lettre R",
+  "score": 1
+ },
+ "ça, c'est la lettre: q.": {
+  "file": "035dcd16-6f0d0a.mp3",
+  "text": "Ça, c'est la lettre : q.",
+  "sent": "Ça, c'est la lettre : /ky/.",
+  "dur": 2.24,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre Q",
+  "score": 1
+ },
+ "ça, c'est la lettre: r.": {
+  "file": "85655581-26bd2d.mp3",
+  "text": "Ça, c'est la lettre : r.",
+  "sent": "Ça, c'est la lettre : r.",
+  "dur": 2.08,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre R",
+  "score": 1
+ },
+ "attrape la lettre: s!": {
+  "file": "c9abdaaf-8a2ff5.mp3",
+  "text": "Attrape la lettre : s !",
+  "sent": "Attrape la lettre : s !",
+  "dur": 2,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Attrape la lettre S",
+  "score": 1
+ },
+ "attrape la lettre: t!": {
+  "file": "a1a95d20-6f426e.mp3",
+  "text": "Attrape la lettre : t !",
+  "sent": "Attrape la lettre : t !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Attrape la lettre T",
+  "score": 1
+ },
+ "ça, c'est la lettre: s.": {
+  "file": "6362e164-7f841d.mp3",
+  "text": "Ça, c'est la lettre : s.",
+  "sent": "Ça, c'est la lettre : s.",
+  "dur": 2.16,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre S",
+  "score": 1
+ },
+ "ça, c'est la lettre: t.": {
+  "file": "e556e217-41180d.mp3",
+  "text": "Ça, c'est la lettre : t.",
+  "sent": "Ça, c'est la lettre : t.",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre T",
+  "score": 1
+ },
+ "attrape la lettre: u!": {
+  "file": "3da6811d-814f21.mp3",
+  "text": "Attrape la lettre : u !",
+  "sent": "Attrape la lettre : u !",
+  "dur": 1.76,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Attrape la lettre U",
+  "score": 1
+ },
+ "ça, c'est la lettre: u.": {
+  "file": "8354093a-6dd472.mp3",
+  "text": "Ça, c'est la lettre : u.",
+  "sent": "Ça, c'est la lettre : u.",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre U",
+  "score": 1
+ },
+ "attrape la lettre: v!": {
+  "file": "55a4684e-43d6a5.mp3",
+  "text": "Attrape la lettre : v !",
+  "sent": "Attrape la lettre : v !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Attrape la lettre V",
+  "score": 1
+ },
+ "ça, c'est la lettre: v.": {
+  "file": "e55b5f45-c30831.mp3",
+  "text": "Ça, c'est la lettre : v.",
+  "sent": "Ça, c'est la lettre : v.",
+  "dur": 2.16,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre V",
+  "score": 1
+ },
+ "attrape la lettre: x!": {
+  "file": "c99f0ebc-af785f.mp3",
+  "text": "Attrape la lettre : x !",
+  "sent": "Attrape la lettre : x !",
+  "dur": 2.08,
+  "cost": 9,
+  "sttCost": 1,
+  "stt": "Attrape la lettre X",
+  "score": 1
+ },
+ "ça, c'est la lettre: x.": {
+  "file": "65742dab-2f16b8.mp3",
+  "text": "Ça, c'est la lettre : x.",
+  "sent": "Ça, c'est la lettre : x.",
+  "dur": 2.24,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre X",
+  "score": 1
+ },
+ "attrape la lettre: z!": {
+  "file": "bd9a7eaa-913b4f.mp3",
+  "text": "Attrape la lettre : z !",
+  "sent": "Attrape la lettre : /zɛd/ !",
+  "dur": 2,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Attrape la lettre Z",
+  "score": 1
+ },
+ "ça, c'est la lettre: z.": {
+  "file": "e5797459-ac5205.mp3",
+  "text": "Ça, c'est la lettre : z.",
+  "sent": "Ça, c'est la lettre : /zɛd/.",
+  "dur": 2.08,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Ça, c'est la lettre Z",
+  "score": 1
+ },
+ "attrape la lettre: i grec!": {
+  "file": "b775ad66-551779.mp3",
+  "text": "Attrape la lettre : i grec !",
+  "sent": "Attrape la lettre : i grec !",
+  "dur": 2.16,
+  "cost": 33,
+  "sttCost": 3,
+  "stt": "Attrape la lettre Y",
+  "score": 0.75
+ },
+ "ça, c'est la lettre: i grec.": {
+  "file": "d0b282e1-b74d5a.mp3",
+  "text": "Ça, c'est la lettre : i grec.",
+  "sent": "Ça, c'est la lettre : i grec.",
+  "dur": 2.08,
+  "cost": 36,
+  "sttCost": 3,
+  "stt": "Ça, c'est la lettre Y",
+  "score": 0.74
+ },
+ "allume une bougie!": {
+  "file": "5ddca6d7-f85b14.mp3",
+  "text": "Allume une bougie !",
+  "sent": "Allume une bougie !",
+  "dur": 1.12,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Allume une bougie",
+  "score": 1
+ },
+ "il en faut une.": {
+  "file": "03f5303b-593639.mp3",
+  "text": "Il en faut une.",
+  "sent": "Il en faut une.",
+  "dur": 1.28,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Il en faut une",
+  "score": 1
+ },
+ "une bougie allumée!": {
+  "file": "55d7090d-27372f.mp3",
+  "text": "Une bougie allumée !",
+  "sent": "Une bougie allumée !",
+  "dur": 1.52,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Une bougie allumée",
+  "score": 1
+ },
+ "allume deux bougies!": {
+  "file": "7fc635a2-776897.mp3",
+  "text": "Allume deux bougies !",
+  "sent": "Allume deux bougies !",
+  "dur": 1.44,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Allume deux bougies",
+  "score": 1
+ },
+ "deux bougies allumées!": {
+  "file": "74cbede7-c6dec2.mp3",
+  "text": "Deux bougies allumées !",
+  "sent": "Deux bougies allumées !",
+  "dur": 1.68,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Deux bougies allumées",
+  "score": 1
+ },
+ "allume trois bougies!": {
+  "file": "26e45083-28abbb.mp3",
+  "text": "Allume trois bougies !",
+  "sent": "Allume trois bougies !",
+  "dur": 1.52,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Allume trois bougies",
+  "score": 1
+ },
+ "trois bougies allumées!": {
+  "file": "58800576-08340b.mp3",
+  "text": "Trois bougies allumées !",
+  "sent": "Trois bougies allumées !",
+  "dur": 1.68,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Trois bougies allumées",
+  "score": 1
+ },
+ "allume quatre bougies!": {
+  "file": "60326052-052515.mp3",
+  "text": "Allume quatre bougies !",
+  "sent": "Allume quatre bougies !",
+  "dur": 1.44,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Allume quatre bougies",
+  "score": 1
+ },
+ "quatre bougies allumées!": {
+  "file": "a3062e13-95ce5e.mp3",
+  "text": "Quatre bougies allumées !",
+  "sent": "Quatre bougies allumées !",
+  "dur": 1.84,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Quatre bougies allumées",
+  "score": 1
+ },
+ "cinq bougies allumées!": {
+  "file": "bd7a7a9e-080cc9.mp3",
+  "text": "Cinq bougies allumées !",
+  "sent": "Cinq bougies allumées !",
+  "dur": 1.68,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Cinq bougies allumées",
+  "score": 1
+ },
+ "allume cinq bougies!": {
+  "file": "ba3b22ab-809f3a.mp3",
+  "text": "Allume cinq bougies !",
+  "sent": "Allume cinq bougies !",
+  "dur": 1.44,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Allume cinq bougies",
+  "score": 1
+ },
+ "allume six bougies!": {
+  "file": "aa8c556e-aece34.mp3",
+  "text": "Allume six bougies !",
+  "sent": "Allume six bougies !",
+  "dur": 1.44,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Allume six bougies",
+  "score": 1
+ },
+ "six bougies allumées!": {
+  "file": "57a38d1b-aa14d7.mp3",
+  "text": "Six bougies allumées !",
+  "sent": "Six bougies allumées !",
+  "dur": 1.76,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Six bougies allumées",
+  "score": 1
+ },
+ "allume sept bougies!": {
+  "file": "2613bfbc-b062fd.mp3",
+  "text": "Allume sept bougies !",
+  "sent": "Allume sept bougies !",
+  "dur": 1.44,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Allume sept bougies",
+  "score": 1
+ },
+ "sept bougies allumées!": {
+  "file": "caeb6ead-6c9ec4.mp3",
+  "text": "Sept bougies allumées !",
+  "sent": "Sept bougies allumées !",
+  "dur": 1.76,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Sept bougies allumées",
+  "score": 1
+ },
+ "allume huit bougies!": {
+  "file": "9c329fee-dee546.mp3",
+  "text": "Allume huit bougies !",
+  "sent": "Allume huit bougies !",
+  "dur": 1.6,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Allume huit bougies",
+  "score": 1
+ },
+ "il en faut huit.": {
+  "file": "f60ab901-c79b61.mp3",
+  "text": "Il en faut huit.",
+  "sent": "Il en faut huit.",
+  "dur": 1.44,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Il en faut huit",
+  "score": 1
+ },
+ "huit bougies allumées!": {
+  "file": "a6e45b5b-03d7ed.mp3",
+  "text": "Huit bougies allumées !",
+  "sent": "Huit bougies allumées !",
+  "dur": 1.6,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Huit bougies allumées",
+  "score": 1
+ },
+ "allume neuf bougies!": {
+  "file": "63da5462-da1c5d.mp3",
+  "text": "Allume neuf bougies !",
+  "sent": "Allume neuf bougies !",
+  "dur": 1.6,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Allume neuf bougies",
+  "score": 1
+ },
+ "il en faut neuf.": {
+  "file": "60a8608d-4710a2.mp3",
+  "text": "Il en faut neuf.",
+  "sent": "Il en faut neuf.",
+  "dur": 1.12,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Il en faut neuf",
+  "score": 1
+ },
+ "neuf bougies allumées!": {
+  "file": "1a60ba67-be4d0c.mp3",
+  "text": "Neuf bougies allumées !",
+  "sent": "Neuf bougies allumées !",
+  "dur": 1.84,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Neuf bougies allumées",
+  "score": 1
+ },
+ "allume dix bougies!": {
+  "file": "046c0519-de7b3b.mp3",
+  "text": "Allume dix bougies !",
+  "sent": "Allume dix bougies !",
+  "dur": 1.52,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Allume dix bougies",
+  "score": 1
+ },
+ "il en faut dix.": {
+  "file": "23c2c5e2-a7e714.mp3",
+  "text": "Il en faut dix.",
+  "sent": "Il en faut dix.",
+  "dur": 1.36,
+  "cost": 6,
+  "sttCost": 0,
+  "stt": "Il en faut dix",
+  "score": 1
+ },
+ "dix bougies allumées!": {
+  "file": "5c7c9980-68d3f4.mp3",
+  "text": "Dix bougies allumées !",
+  "sent": "Dix bougies allumées !",
+  "dur": 1.52,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Dix bougies allumées",
+  "score": 1
+ },
+ "tu n'as allumé aucune bougie.": {
+  "file": "393ecfea-8ddf66.mp3",
+  "text": "Tu n'as allumé aucune bougie.",
+  "sent": "Tu n'as allumé aucune bougie.",
+  "dur": 2,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Tu n'as allumé aucune bougie",
+  "score": 1
+ },
+ "tu as allumé une bougie.": {
+  "file": "aaefa44c-67d96e.mp3",
+  "text": "Tu as allumé une bougie.",
+  "sent": "Tu as allumé une bougie.",
+  "dur": 1.68,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Tu as allumé une bougie",
+  "score": 1
+ },
+ "tu as allumé deux bougies.": {
+  "file": "98a6aeb1-d04f4c.mp3",
+  "text": "Tu as allumé deux bougies.",
+  "sent": "Tu as allumé deux bougies.",
+  "dur": 1.76,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Tu as allumé deux bougies",
+  "score": 1
+ },
+ "tu as allumé trois bougies.": {
+  "file": "494638e0-a2a95a.mp3",
+  "text": "Tu as allumé trois bougies.",
+  "sent": "Tu as allumé trois bougies.",
+  "dur": 1.76,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Tu as allumé trois bougies",
+  "score": 1
+ },
+ "tu as allumé quatre bougies.": {
+  "file": "233823cd-d48a48.mp3",
+  "text": "Tu as allumé quatre bougies.",
+  "sent": "Tu as allumé quatre bougies.",
+  "dur": 2,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Tu as allumé quatre bougies",
+  "score": 1
+ },
+ "tu as allumé six bougies.": {
+  "file": "441bf855-0356f8.mp3",
+  "text": "Tu as allumé six bougies.",
+  "sent": "Tu as allumé six bougies.",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Tu as allumé six bougies",
+  "score": 1
+ },
+ "tu as allumé cinq bougies.": {
+  "file": "07aed6a8-f779a7.mp3",
+  "text": "Tu as allumé cinq bougies.",
+  "sent": "Tu as allumé cinq bougies.",
+  "dur": 1.84,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Tu as allumé cinq bougies",
+  "score": 1
+ },
+ "tu as allumé sept bougies.": {
+  "file": "66a7f793-8e4b87.mp3",
+  "text": "Tu as allumé sept bougies.",
+  "sent": "Tu as allumé sept bougies.",
+  "dur": 1.84,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Tu as allumé sept bougies",
+  "score": 1
+ },
+ "tu as allumé huit bougies.": {
+  "file": "a625f325-36cf20.mp3",
+  "text": "Tu as allumé huit bougies.",
+  "sent": "Tu as allumé huit bougies.",
+  "dur": 1.84,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Tu as allumé huit bougies",
+  "score": 1
+ },
+ "tu as allumé neuf bougies.": {
+  "file": "d64e4cf1-4fc6ab.mp3",
+  "text": "Tu as allumé neuf bougies.",
+  "sent": "Tu as allumé neuf bougies.",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Tu as allumé neuf bougies",
+  "score": 1
+ },
+ "tu as allumé dix bougies.": {
+  "file": "2bcd8be6-48ff35.mp3",
+  "text": "Tu as allumé dix bougies.",
+  "sent": "Tu as allumé dix bougies.",
+  "dur": 1.84,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Tu as allumé dix bougies",
+  "score": 1
+ },
+ "va à gauche!": {
+  "file": "a7f4af3d-6a6ab1.mp3",
+  "text": "Va à gauche !",
+  "sent": "Va à gauche !",
+  "dur": 1.12,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "va à gauche, puis à gauche!": {
+  "file": "e18818f2-4d77ca.mp3",
+  "text": "Va à gauche, puis à gauche !",
+  "sent": "Va à gauche, puis à gauche !",
+  "dur": 2.24,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Va à gauche, puis à gauche",
+  "score": 1
+ },
+ "va à gauche, puis en haut!": {
+  "file": "83a8912d-0c5f18.mp3",
+  "text": "Va à gauche, puis en haut !",
+  "sent": "Va à gauche, puis en haut !",
+  "dur": 1.92,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Va à gauche puis en haut",
+  "score": 1
+ },
+ "va à gauche, puis en bas!": {
+  "file": "9dc2121d-92bc1c.mp3",
+  "text": "Va à gauche, puis en bas !",
+  "sent": "Va à gauche, puis en bas !",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Va à gauche puis en bas",
+  "score": 1
+ },
+ "va à droite!": {
+  "file": "58fa4f9b-afa128.mp3",
+  "text": "Va à droite !",
+  "sent": "Va à droite !",
+  "dur": 1.2,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "va à droite, puis à droite!": {
+  "file": "a0bb7a7a-c6f499.mp3",
+  "text": "Va à droite, puis à droite !",
+  "sent": "Va à droite, puis à droite !",
+  "dur": 2.16,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Va à droite, puis à droite",
+  "score": 1
+ },
+ "va à droite, puis en haut!": {
+  "file": "72c1b6cb-c7a72d.mp3",
+  "text": "Va à droite, puis en haut !",
+  "sent": "Va à droite, puis en haut !",
+  "dur": 2.08,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Va à droite puis en haut",
+  "score": 1
+ },
+ "va à droite, puis en bas!": {
+  "file": "d48d8797-61f9c1.mp3",
+  "text": "Va à droite, puis en bas !",
+  "sent": "Va à droite, puis en bas !",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Va à droite puis en bas",
+  "score": 1
+ },
+ "va en haut!": {
+  "file": "de5d029a-6dbdc8.mp3",
+  "text": "Va en haut !",
+  "sent": "Va en haut !",
+  "dur": 1.12,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "va en haut, puis à gauche!": {
+  "file": "25e78589-ae3f23.mp3",
+  "text": "Va en haut, puis à gauche !",
+  "sent": "Va en haut, puis à gauche !",
+  "dur": 2,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Va en haut, puis à gauche",
+  "score": 1
+ },
+ "va en haut, puis à droite!": {
+  "file": "40ac566f-e4f253.mp3",
+  "text": "Va en haut, puis à droite !",
+  "sent": "Va en haut, puis à droite !",
+  "dur": 2,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Va en haut, puis à droite",
+  "score": 1
+ },
+ "va en haut, puis en haut!": {
+  "file": "02849c0e-f7c58d.mp3",
+  "text": "Va en haut, puis en haut !",
+  "sent": "Va en haut, puis en haut !",
+  "dur": 2.16,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Va en haut, puis en haut",
+  "score": 1
+ },
+ "va en bas!": {
+  "file": "1c8fa360-20b1aa.mp3",
+  "text": "Va en bas !",
+  "sent": "Va en bas !",
+  "dur": 1.2,
+  "cost": 4,
+  "sttCost": 0,
+  "score": 1
+ },
+ "va en bas, puis à gauche!": {
+  "file": "bae7b167-bcc998.mp3",
+  "text": "Va en bas, puis à gauche !",
+  "sent": "Va en bas, puis à gauche !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Va en bas puis à gauche",
+  "score": 1
+ },
+ "va en bas, puis à droite!": {
+  "file": "755560a5-444e7f.mp3",
+  "text": "Va en bas, puis à droite !",
+  "sent": "Va en bas, puis à droite !",
+  "dur": 2,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Va en bas puis à droite",
+  "score": 1
+ },
+ "va en bas, puis en bas!": {
+  "file": "da1e0996-2b0228.mp3",
+  "text": "Va en bas, puis en bas !",
+  "sent": "Va en bas, puis en bas !",
+  "dur": 2.08,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Va en bas, puis en bas",
+  "score": 1
+ },
+ "ça, c'est la gauche.": {
+  "file": "60862af4-5c033e.mp3",
+  "text": "Ça, c'est la gauche.",
+  "sent": "Ça, c'est la gauche.",
+  "dur": 1.44,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Ça, c'est la gauche",
+  "score": 1
+ },
+ "ça, c'est en haut.": {
+  "file": "05f3f763-bd9aca.mp3",
+  "text": "Ça, c'est en haut.",
+  "sent": "Ça, c'est en haut.",
+  "dur": 1.52,
+  "cost": 7,
+  "sttCost": 0,
+  "stt": "Ça, c'est en haut",
+  "score": 1
+ },
+ "ça, c'est la droite.": {
+  "file": "9097aa8e-e98a86.mp3",
+  "text": "Ça, c'est la droite.",
+  "sent": "Ça, c'est la droite.",
+  "dur": 1.6,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Ça, c'est la droite",
+  "score": 1
+ },
+ "ça, c'est en bas.": {
+  "file": "84781e3d-a2b85e.mp3",
+  "text": "Ça, c'est en bas.",
+  "sent": "Ça, c'est en bas.",
+  "dur": 1.44,
+  "cost": 7,
+  "sttCost": 0,
+  "stt": "Ça, c'est en bas",
+  "score": 1
+ },
+ "quand c'est prêt, touche le bouton vert!": {
+  "file": "3889f2ad-fa5b46.mp3",
+  "text": "Quand c’est prêt, touche le bouton vert !",
+  "sent": "Quand c’est prêt, touche le bouton vert !",
+  "dur": 2.16,
+  "cost": 16,
+  "sttCost": 1,
+  "stt": "Quand c'est prêt, touche le bouton vert",
+  "score": 1
+ },
+ "puis touche le bouton vert!": {
+  "file": "f5474f98-9d0471.mp3",
+  "text": "Puis touche le bouton vert !",
+  "sent": "Puis touche le bouton vert !",
+  "dur": 1.68,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Puis touche le bouton vert",
+  "score": 1
  }
 }

@@ -245,6 +245,34 @@
   "text": "Combien en a-t-il maintenant ?"
  },
  {
+  "key": "quand c'est prêt, touche le bouton vert!",
+  "text": "Quand c’est prêt, touche le bouton vert !"
+ },
+ {
+  "key": "allume les bougies qui brillent!",
+  "text": "Allume les bougies qui brillent !"
+ },
+ {
+  "key": "trouve le chemin du trésor!",
+  "text": "Trouve le chemin du trésor !"
+ },
+ {
+  "key": "le trésor!",
+  "text": "Le trésor !"
+ },
+ {
+  "key": "oh non, ce n'est pas le trésor.",
+  "text": "Oh non, ce n'est pas le trésor."
+ },
+ {
+  "key": "on recommence!",
+  "text": "On recommence !"
+ },
+ {
+  "key": "suis les pointillés!",
+  "text": "Suis les pointillés !"
+ },
+ {
   "key": "lis encore le mot!",
   "text": "Lis encore le mot !"
  },
@@ -533,6 +561,14 @@
   "text": "Et de l'or !"
  },
  {
+  "key": "et une clé!",
+  "text": "Et une clé !"
+ },
+ {
+  "key": "va voir tes amis pour jouer!",
+  "text": "Va voir tes amis pour jouer !"
+ },
+ {
   "key": "touche le coffre pour l'ouvrir!",
   "text": "Touche le coffre pour l'ouvrir !"
  },
@@ -551,6 +587,10 @@
  {
   "key": "celui-là dort encore.",
   "text": "Celui-là dort encore."
+ },
+ {
+  "key": "touche son image pour jouer.",
+  "text": "Touche son image pour jouer."
  },
  {
   "key": "voici tes amis.",
@@ -587,6 +627,22 @@
  {
   "key": "on continue le coloriage!",
   "text": "On continue le coloriage !"
+ },
+ {
+  "key": "tu as gagné une médaille!",
+  "text": "Tu as gagné une médaille !"
+ },
+ {
+  "key": "la prochaine fois, ce sera un peu plus dur.",
+  "text": "La prochaine fois, ce sera un peu plus dur."
+ },
+ {
+  "key": "bravo, quelle belle partie!",
+  "text": "Bravo, quelle belle partie !"
+ },
+ {
+  "key": "encore un peu d'entraînement, et tu gagneras une médaille!",
+  "text": "Encore un peu d'entraînement, et tu gagneras une médaille !"
  },
  {
   "key": "voici la carte!",
@@ -1861,16 +1917,560 @@
   "text": "Touche les cases avec la réponse !"
  },
  {
+  "key": "kaze lance des lettres!",
+  "text": "Kaze lance des lettres !"
+ },
+ {
+  "key": "attrape celle que je dis.",
+  "text": "Attrape celle que je dis."
+ },
+ {
+  "key": "maintenant, les petites lettres!",
+  "text": "Maintenant, les petites lettres !"
+ },
+ {
+  "key": "écoute bien.",
+  "text": "Écoute bien."
+ },
+ {
+  "key": "attention, les lettres se ressemblent!",
+  "text": "Attention, les lettres se ressemblent !"
+ },
+ {
+  "key": "kaze t'a préparé un jeu!",
+  "text": "Kaze t'a préparé un jeu !"
+ },
+ {
+  "key": "kaze t'a préparé un jeu.",
+  "text": "Kaze t'a préparé un jeu."
+ },
+ {
+  "key": "tu as gagné toutes les médailles de kaze!",
+  "text": "Tu as gagné toutes les médailles de Kaze !"
+ },
+ {
+  "key": "c'est la fête de flammèche!",
+  "text": "C'est la fête de Flammèche !"
+ },
+ {
+  "key": "allume les bougies du gâteau.",
+  "text": "Allume les bougies du gâteau."
+ },
+ {
+  "key": "encore plus de bougies sur le gâteau!",
+  "text": "Encore plus de bougies sur le gâteau !"
+ },
+ {
+  "key": "regarde le nombre, et allume autant de bougies!",
+  "text": "Regarde le nombre, et allume autant de bougies !"
+ },
+ {
+  "key": "flammèche t'a préparé un jeu!",
+  "text": "Flammèche t'a préparé un jeu !"
+ },
+ {
+  "key": "flammèche t'a préparé un jeu.",
+  "text": "Flammèche t'a préparé un jeu."
+ },
+ {
+  "key": "tu as gagné toutes les médailles de flammèche!",
+  "text": "Tu as gagné toutes les médailles de Flammèche !"
+ },
+ {
+  "key": "corail cherche son trésor!",
+  "text": "Corail cherche son trésor !"
+ },
+ {
+  "key": "écoute où il faut aller.",
+  "text": "Écoute où il faut aller."
+ },
+ {
+  "key": "maintenant, je dis deux pas à la fois.",
+  "text": "Maintenant, je dis deux pas à la fois."
+ },
+ {
+  "key": "prépare tout le chemin avec les flèches, puis touche le bouton vert!",
+  "text": "Prépare tout le chemin avec les flèches, puis touche le bouton vert !"
+ },
+ {
+  "key": "corail t'a préparé un jeu!",
+  "text": "Corail t'a préparé un jeu !"
+ },
+ {
+  "key": "corail t'a préparé un jeu.",
+  "text": "Corail t'a préparé un jeu."
+ },
+ {
+  "key": "tu as gagné toutes les médailles de corail!",
+  "text": "Tu as gagné toutes les médailles de Corail !"
+ },
+ {
+  "key": "attrape la lettre: a!",
+  "text": "Attrape la lettre : a !"
+ },
+ {
+  "key": "ça, c'est la lettre: a.",
+  "text": "Ça, c'est la lettre : a."
+ },
+ {
+  "key": "attrape la lettre: b!",
+  "text": "Attrape la lettre : b !"
+ },
+ {
+  "key": "ça, c'est la lettre: b.",
+  "text": "Ça, c'est la lettre : b."
+ },
+ {
+  "key": "attrape la lettre: c!",
+  "text": "Attrape la lettre : c !"
+ },
+ {
+  "key": "ça, c'est la lettre: c.",
+  "text": "Ça, c'est la lettre : c."
+ },
+ {
+  "key": "attrape la lettre: d!",
+  "text": "Attrape la lettre : d !"
+ },
+ {
+  "key": "ça, c'est la lettre: d.",
+  "text": "Ça, c'est la lettre : d."
+ },
+ {
+  "key": "attrape la lettre: euh!",
+  "text": "Attrape la lettre : euh !",
+  "say": "Attrape la lettre : /ə/ !"
+ },
+ {
+  "key": "ça, c'est la lettre: euh.",
+  "text": "Ça, c'est la lettre : euh.",
+  "say": "Ça, c'est la lettre : /ə/."
+ },
+ {
+  "key": "attrape la lettre: f!",
+  "text": "Attrape la lettre : f !"
+ },
+ {
+  "key": "ça, c'est la lettre: f.",
+  "text": "Ça, c'est la lettre : f."
+ },
+ {
+  "key": "attrape la lettre: g!",
+  "text": "Attrape la lettre : g !"
+ },
+ {
+  "key": "ça, c'est la lettre: g.",
+  "text": "Ça, c'est la lettre : g."
+ },
+ {
+  "key": "attrape la lettre: hache!",
+  "text": "Attrape la lettre : hache !"
+ },
+ {
+  "key": "ça, c'est la lettre: hache.",
+  "text": "Ça, c'est la lettre : hache."
+ },
+ {
+  "key": "attrape la lettre: i!",
+  "text": "Attrape la lettre : i !"
+ },
+ {
+  "key": "ça, c'est la lettre: i.",
+  "text": "Ça, c'est la lettre : i."
+ },
+ {
+  "key": "attrape la lettre: j!",
+  "text": "Attrape la lettre : j !"
+ },
+ {
+  "key": "ça, c'est la lettre: j.",
+  "text": "Ça, c'est la lettre : j."
+ },
+ {
+  "key": "attrape la lettre: k!",
+  "text": "Attrape la lettre : k !",
+  "say": "Attrape la lettre : /ka/ !"
+ },
+ {
+  "key": "ça, c'est la lettre: k.",
+  "text": "Ça, c'est la lettre : k.",
+  "say": "Ça, c'est la lettre : /ka/."
+ },
+ {
+  "key": "attrape la lettre: l!",
+  "text": "Attrape la lettre : l !"
+ },
+ {
+  "key": "ça, c'est la lettre: l.",
+  "text": "Ça, c'est la lettre : l."
+ },
+ {
+  "key": "attrape la lettre: m!",
+  "text": "Attrape la lettre : m !"
+ },
+ {
+  "key": "ça, c'est la lettre: m.",
+  "text": "Ça, c'est la lettre : m."
+ },
+ {
+  "key": "attrape la lettre: n!",
+  "text": "Attrape la lettre : n !"
+ },
+ {
+  "key": "ça, c'est la lettre: n.",
+  "text": "Ça, c'est la lettre : n."
+ },
+ {
+  "key": "attrape la lettre: o!",
+  "text": "Attrape la lettre : o !"
+ },
+ {
+  "key": "ça, c'est la lettre: o.",
+  "text": "Ça, c'est la lettre : o."
+ },
+ {
+  "key": "attrape la lettre: p!",
+  "text": "Attrape la lettre : p !"
+ },
+ {
+  "key": "ça, c'est la lettre: p.",
+  "text": "Ça, c'est la lettre : p."
+ },
+ {
+  "key": "attrape la lettre: q!",
+  "text": "Attrape la lettre : q !",
+  "say": "Attrape la lettre : /ky/ !"
+ },
+ {
+  "key": "ça, c'est la lettre: q.",
+  "text": "Ça, c'est la lettre : q.",
+  "say": "Ça, c'est la lettre : /ky/."
+ },
+ {
+  "key": "attrape la lettre: r!",
+  "text": "Attrape la lettre : r !"
+ },
+ {
+  "key": "ça, c'est la lettre: r.",
+  "text": "Ça, c'est la lettre : r."
+ },
+ {
+  "key": "attrape la lettre: s!",
+  "text": "Attrape la lettre : s !"
+ },
+ {
+  "key": "ça, c'est la lettre: s.",
+  "text": "Ça, c'est la lettre : s."
+ },
+ {
+  "key": "attrape la lettre: t!",
+  "text": "Attrape la lettre : t !"
+ },
+ {
+  "key": "ça, c'est la lettre: t.",
+  "text": "Ça, c'est la lettre : t."
+ },
+ {
+  "key": "attrape la lettre: u!",
+  "text": "Attrape la lettre : u !"
+ },
+ {
+  "key": "ça, c'est la lettre: u.",
+  "text": "Ça, c'est la lettre : u."
+ },
+ {
+  "key": "attrape la lettre: v!",
+  "text": "Attrape la lettre : v !"
+ },
+ {
+  "key": "ça, c'est la lettre: v.",
+  "text": "Ça, c'est la lettre : v."
+ },
+ {
+  "key": "attrape la lettre: x!",
+  "text": "Attrape la lettre : x !"
+ },
+ {
+  "key": "ça, c'est la lettre: x.",
+  "text": "Ça, c'est la lettre : x."
+ },
+ {
+  "key": "attrape la lettre: i grec!",
+  "text": "Attrape la lettre : i grec !"
+ },
+ {
+  "key": "ça, c'est la lettre: i grec.",
+  "text": "Ça, c'est la lettre : i grec."
+ },
+ {
+  "key": "attrape la lettre: z!",
+  "text": "Attrape la lettre : z !",
+  "say": "Attrape la lettre : /zɛd/ !"
+ },
+ {
+  "key": "ça, c'est la lettre: z.",
+  "text": "Ça, c'est la lettre : z.",
+  "say": "Ça, c'est la lettre : /zɛd/."
+ },
+ {
+  "key": "allume une bougie!",
+  "text": "Allume une bougie !"
+ },
+ {
+  "key": "il en faut une.",
+  "text": "Il en faut une."
+ },
+ {
+  "key": "une bougie allumée!",
+  "text": "Une bougie allumée !"
+ },
+ {
+  "key": "allume deux bougies!",
+  "text": "Allume deux bougies !"
+ },
+ {
+  "key": "il en faut deux.",
+  "text": "Il en faut deux."
+ },
+ {
+  "key": "deux bougies allumées!",
+  "text": "Deux bougies allumées !"
+ },
+ {
+  "key": "allume trois bougies!",
+  "text": "Allume trois bougies !"
+ },
+ {
+  "key": "il en faut trois.",
+  "text": "Il en faut trois."
+ },
+ {
+  "key": "trois bougies allumées!",
+  "text": "Trois bougies allumées !"
+ },
+ {
+  "key": "allume quatre bougies!",
+  "text": "Allume quatre bougies !"
+ },
+ {
+  "key": "il en faut quatre.",
+  "text": "Il en faut quatre."
+ },
+ {
+  "key": "quatre bougies allumées!",
+  "text": "Quatre bougies allumées !"
+ },
+ {
+  "key": "allume cinq bougies!",
+  "text": "Allume cinq bougies !"
+ },
+ {
+  "key": "il en faut cinq.",
+  "text": "Il en faut cinq."
+ },
+ {
+  "key": "cinq bougies allumées!",
+  "text": "Cinq bougies allumées !"
+ },
+ {
+  "key": "allume six bougies!",
+  "text": "Allume six bougies !"
+ },
+ {
+  "key": "il en faut six.",
+  "text": "Il en faut six."
+ },
+ {
+  "key": "six bougies allumées!",
+  "text": "Six bougies allumées !"
+ },
+ {
+  "key": "allume sept bougies!",
+  "text": "Allume sept bougies !"
+ },
+ {
+  "key": "il en faut sept.",
+  "text": "Il en faut sept."
+ },
+ {
+  "key": "sept bougies allumées!",
+  "text": "Sept bougies allumées !"
+ },
+ {
+  "key": "allume huit bougies!",
+  "text": "Allume huit bougies !"
+ },
+ {
+  "key": "il en faut huit.",
+  "text": "Il en faut huit."
+ },
+ {
+  "key": "huit bougies allumées!",
+  "text": "Huit bougies allumées !"
+ },
+ {
+  "key": "allume neuf bougies!",
+  "text": "Allume neuf bougies !"
+ },
+ {
+  "key": "il en faut neuf.",
+  "text": "Il en faut neuf."
+ },
+ {
+  "key": "neuf bougies allumées!",
+  "text": "Neuf bougies allumées !"
+ },
+ {
+  "key": "allume dix bougies!",
+  "text": "Allume dix bougies !"
+ },
+ {
+  "key": "il en faut dix.",
+  "text": "Il en faut dix."
+ },
+ {
+  "key": "dix bougies allumées!",
+  "text": "Dix bougies allumées !"
+ },
+ {
+  "key": "tu n'as allumé aucune bougie.",
+  "text": "Tu n'as allumé aucune bougie."
+ },
+ {
+  "key": "tu as allumé une bougie.",
+  "text": "Tu as allumé une bougie."
+ },
+ {
+  "key": "tu as allumé deux bougies.",
+  "text": "Tu as allumé deux bougies."
+ },
+ {
+  "key": "tu as allumé trois bougies.",
+  "text": "Tu as allumé trois bougies."
+ },
+ {
+  "key": "tu as allumé quatre bougies.",
+  "text": "Tu as allumé quatre bougies."
+ },
+ {
+  "key": "tu as allumé cinq bougies.",
+  "text": "Tu as allumé cinq bougies."
+ },
+ {
+  "key": "tu as allumé six bougies.",
+  "text": "Tu as allumé six bougies."
+ },
+ {
+  "key": "tu as allumé sept bougies.",
+  "text": "Tu as allumé sept bougies."
+ },
+ {
+  "key": "tu as allumé huit bougies.",
+  "text": "Tu as allumé huit bougies."
+ },
+ {
+  "key": "tu as allumé neuf bougies.",
+  "text": "Tu as allumé neuf bougies."
+ },
+ {
+  "key": "tu as allumé dix bougies.",
+  "text": "Tu as allumé dix bougies."
+ },
+ {
+  "key": "allume autant de bougies que ce nombre!",
+  "text": "Allume autant de bougies que ce nombre !"
+ },
+ {
+  "key": "puis touche le bouton vert!",
+  "text": "Puis touche le bouton vert !"
+ },
+ {
+  "key": "va à gauche!",
+  "text": "Va à gauche !"
+ },
+ {
+  "key": "va à gauche, puis à gauche!",
+  "text": "Va à gauche, puis à gauche !"
+ },
+ {
+  "key": "va à gauche, puis en haut!",
+  "text": "Va à gauche, puis en haut !"
+ },
+ {
+  "key": "va à gauche, puis en bas!",
+  "text": "Va à gauche, puis en bas !"
+ },
+ {
+  "key": "va à droite!",
+  "text": "Va à droite !"
+ },
+ {
+  "key": "va à droite, puis à droite!",
+  "text": "Va à droite, puis à droite !"
+ },
+ {
+  "key": "va à droite, puis en haut!",
+  "text": "Va à droite, puis en haut !"
+ },
+ {
+  "key": "va à droite, puis en bas!",
+  "text": "Va à droite, puis en bas !"
+ },
+ {
+  "key": "va en haut!",
+  "text": "Va en haut !"
+ },
+ {
+  "key": "va en haut, puis à gauche!",
+  "text": "Va en haut, puis à gauche !"
+ },
+ {
+  "key": "va en haut, puis à droite!",
+  "text": "Va en haut, puis à droite !"
+ },
+ {
+  "key": "va en haut, puis en haut!",
+  "text": "Va en haut, puis en haut !"
+ },
+ {
+  "key": "va en bas!",
+  "text": "Va en bas !"
+ },
+ {
+  "key": "va en bas, puis à gauche!",
+  "text": "Va en bas, puis à gauche !"
+ },
+ {
+  "key": "va en bas, puis à droite!",
+  "text": "Va en bas, puis à droite !"
+ },
+ {
+  "key": "va en bas, puis en bas!",
+  "text": "Va en bas, puis en bas !"
+ },
+ {
+  "key": "ça, c'est la gauche.",
+  "text": "Ça, c'est la gauche."
+ },
+ {
+  "key": "ça, c'est la droite.",
+  "text": "Ça, c'est la droite."
+ },
+ {
+  "key": "ça, c'est en haut.",
+  "text": "Ça, c'est en haut."
+ },
+ {
+  "key": "ça, c'est en bas.",
+  "text": "Ça, c'est en bas."
+ },
+ {
   "key": "construis une tour de trois blocs!",
   "text": "Construis une tour de trois blocs !"
  },
  {
   "key": "une tour de trois blocs!",
   "text": "Une tour de trois blocs !"
- },
- {
-  "key": "il en faut trois.",
-  "text": "Il en faut trois."
  },
  {
   "key": "construis une tour de quatre blocs!",
@@ -1881,20 +2481,12 @@
   "text": "Une tour de quatre blocs !"
  },
  {
-  "key": "il en faut quatre.",
-  "text": "Il en faut quatre."
- },
- {
   "key": "construis une tour de cinq blocs!",
   "text": "Construis une tour de cinq blocs !"
  },
  {
   "key": "une tour de cinq blocs!",
   "text": "Une tour de cinq blocs !"
- },
- {
-  "key": "il en faut cinq.",
-  "text": "Il en faut cinq."
  },
  {
   "key": "construis une tour de six blocs!",
@@ -1905,20 +2497,12 @@
   "text": "Une tour de six blocs !"
  },
  {
-  "key": "il en faut six.",
-  "text": "Il en faut six."
- },
- {
   "key": "construis une tour de sept blocs!",
   "text": "Construis une tour de sept blocs !"
  },
  {
   "key": "une tour de sept blocs!",
   "text": "Une tour de sept blocs !"
- },
- {
-  "key": "il en faut sept.",
-  "text": "Il en faut sept."
  },
  {
   "key": "ta tour a un bloc.",
@@ -14639,10 +15223,6 @@
  {
   "key": "ce morceau a sept blocs.",
   "text": "Ce morceau a sept blocs."
- },
- {
-  "key": "il en faut deux.",
-  "text": "Il en faut deux."
  },
  {
   "key": "coupe la tour pour garder un seul bloc en bas!",
