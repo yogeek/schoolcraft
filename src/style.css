@@ -3452,3 +3452,13 @@ button span,
 .nt-finger.on {
   opacity: 1;
 }
+
+/* season 2 heroes: each colour carries an addition (« 2+1 ») */
+.swatch.sum span {
+  font-size: 1.05rem;
+  min-width: 0;
+  padding: 0 5px;
+  line-height: 28px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
