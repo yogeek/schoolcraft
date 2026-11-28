@@ -33432,5 +33432,15 @@
   "sttCost": 1,
   "stt": "Quand c'est prêt, touche le bouton vert",
   "score": 1
+ },
+ "puis touche le bouton vert!": {
+  "file": "f5474f98-9d0471.mp3",
+  "text": "Puis touche le bouton vert !",
+  "sent": "Puis touche le bouton vert !",
+  "dur": 1.68,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Puis touche le bouton vert",
+  "score": 1
  }
 }
