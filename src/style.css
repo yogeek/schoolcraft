@@ -1047,7 +1047,7 @@ img.block.mini {
   flex: 1;
 }
 .paint-grid {
-  --cell: clamp(22px, min(calc((100vw - 40px) / var(--cols)), calc((100vh - 300px) / var(--rows, 14))), 40px);
+  --cell: clamp(22px, min(calc((100vw - 40px) / var(--cols)), calc((100vh - 390px) / var(--rows, 14))), 40px);
   display: grid;
   grid-template-columns: repeat(var(--cols), var(--cell));
   grid-auto-rows: var(--cell);
@@ -1057,7 +1057,7 @@ img.block.mini {
 }
 @supports (height: 100dvh) {
   .paint-grid {
-    --cell: clamp(22px, min(calc((100vw - 40px) / var(--cols)), calc((100dvh - 300px) / var(--rows, 14))), 40px);
+    --cell: clamp(22px, min(calc((100vw - 40px) / var(--cols)), calc((100dvh - 390px) / var(--rows, 14))), 40px);
   }
 }
 .px.ink {
@@ -3525,17 +3525,84 @@ button span,
   animation: block-pop 0.5s both;
 }
 
-/* Kaze: the letters float like thrown stars */
+/* Kaze: spinning throwing stars carry the letters and drift around (faster and wider each tier) */
+.choices.kaze {
+  gap: clamp(18px, 5vw, 40px);
+  padding: 10px 0;
+}
 .choices.kaze .choice.shuriken {
+  --amp: 16px;
+  --dur: 5s;
+  display: grid;
+  place-items: center;
+  background: none;
+  border: none;
+  box-shadow: none;
+  animation: kz-drift var(--dur) ease-in-out infinite;
+}
+.choices.kaze .choice.shuriken.tier-1 {
+  --amp: 28px;
+  --dur: 4s;
+}
+.choices.kaze .choice.shuriken.tier-2 {
+  --amp: 40px;
+  --dur: 3.2s;
+}
+.shuriken .star {
+  position: absolute;
+  inset: 0;
+  animation: kz-spin 2.2s linear infinite;
+}
+.shuriken .star svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.shuriken .glyph {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  display: grid;
+  place-items: center;
+  padding: 0;
   border-radius: 50%;
-  overflow: hidden;
-  animation: bob 2.4s ease-in-out infinite;
+  background: var(--paper);
+  border: 4px solid var(--ink);
+  font-size: calc(var(--size) * 0.3);
+  font-weight: 700;
+  line-height: 1;
 }
 .choices.kaze .choice.shuriken.shake {
   animation: shake 0.4s;
 }
 .choices.kaze .choice.shuriken.hint {
+  outline: none;
   animation: pop 1s ease-in-out infinite;
+}
+.choices.kaze .choice.shuriken.hint .glyph {
+  background: var(--gold);
+}
+@keyframes kz-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes kz-drift {
+  25% {
+    transform: translate(var(--amp), calc(var(--amp) * -0.5));
+  }
+  50% {
+    transform: translate(0, calc(var(--amp) * 0.6));
+  }
+  75% {
+    transform: translate(calc(var(--amp) * -1), calc(var(--amp) * -0.3));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .choices.kaze .choice.shuriken,
+  .shuriken .star {
+    animation: none;
+  }
 }
 
 /* Flammèche: candles on a cake */
@@ -3723,4 +3790,54 @@ button span,
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+/* ---------- activity screens, portrait and large screens: the game fills the space between Pixel
+   and the answers (centred, never touching them), and the answers stay above the ground ---------- */
+@media not all and (orientation: landscape) and (max-height: 500px) {
+  .screen.activity {
+    box-sizing: border-box;
+    padding-bottom: 104px;
+  }
+  .screen.activity > .stage {
+    flex: 1 0 auto;
+    align-items: center;
+    margin: 14px 0 22px;
+  }
+  .screen.activity > .choices {
+    margin-bottom: 8px;
+  }
+}
+.stage.cake-stage {
+  flex-direction: column;
+  gap: clamp(16px, 4vh, 36px);
+}
+.ready-btn.nudge {
+  animation: pop 1s ease-in-out infinite;
+}
+
+/* wide screens (computer, tablet held sideways): the five tiles of home on one row, above the ground */
+@media (min-width: 1000px) {
+  .tiles {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    max-width: 1180px;
+  }
+  .tiles .tile,
+  .tiles .t-heroes,
+  .tiles .t-build {
+    grid-column: span 1;
+  }
+}
+/* free screens: what sits at the bottom stays above the ground */
+@media not all and (orientation: landscape) and (max-height: 500px) {
+  .screen.color,
+  .screen.heroes {
+    box-sizing: border-box;
+    padding-bottom: 104px;
+  }
+}
+.stage .thrower svg {
+  display: block;
+  width: clamp(90px, 16vh, 150px);
+  height: auto;
 }

@@ -245,8 +245,8 @@
   "text": "Combien en a-t-il maintenant ?"
  },
  {
-  "key": "allume autant de bougies que ce nombre!",
-  "text": "Allume autant de bougies que ce nombre !"
+  "key": "quand c'est prêt, touche le bouton vert!",
+  "text": "Quand c’est prêt, touche le bouton vert !"
  },
  {
   "key": "allume les bougies qui brillent!",
@@ -585,6 +585,22 @@
   "text": "Pixel va faire une sieste."
  },
  {
+  "key": "tu as gagné une médaille!",
+  "text": "Tu as gagné une médaille !"
+ },
+ {
+  "key": "la prochaine fois, ce sera un peu plus dur.",
+  "text": "La prochaine fois, ce sera un peu plus dur."
+ },
+ {
+  "key": "bravo, quelle belle partie!",
+  "text": "Bravo, quelle belle partie !"
+ },
+ {
+  "key": "encore un peu d'entraînement, et tu gagneras une médaille!",
+  "text": "Encore un peu d'entraînement, et tu gagneras une médaille !"
+ },
+ {
   "key": "celui-là dort encore.",
   "text": "Celui-là dort encore."
  },
@@ -627,22 +643,6 @@
  {
   "key": "on continue le coloriage!",
   "text": "On continue le coloriage !"
- },
- {
-  "key": "tu as gagné une médaille!",
-  "text": "Tu as gagné une médaille !"
- },
- {
-  "key": "la prochaine fois, ce sera un peu plus dur.",
-  "text": "La prochaine fois, ce sera un peu plus dur."
- },
- {
-  "key": "bravo, quelle belle partie!",
-  "text": "Bravo, quelle belle partie !"
- },
- {
-  "key": "encore un peu d'entraînement, et tu gagneras une médaille!",
-  "text": "Encore un peu d'entraînement, et tu gagneras une médaille !"
  },
  {
   "key": "voici la carte!",
@@ -2375,6 +2375,10 @@
  {
   "key": "tu as allumé dix bougies.",
   "text": "Tu as allumé dix bougies."
+ },
+ {
+  "key": "allume autant de bougies que ce nombre!",
+  "text": "Allume autant de bougies que ce nombre !"
  },
  {
   "key": "va à gauche!",

@@ -48,6 +48,10 @@ async function shine(r: Round, el: Element | null | undefined): Promise<void> {
 // ---------------------------------------------------------------- Kaze : les lettres
 /** Letters children mix up, offered together at the last tier */
 const LOOK_ALIKE: Record<string, string> = { b: 'dpq', d: 'bqp', p: 'qbd', q: 'pdb', m: 'nu', n: 'mu', u: 'nv', v: 'uy', f: 't', t: 'fl', l: 'ti', i: 'jl', j: 'i', a: 'o', o: 'ae', e: 'ac', c: 'eo', h: 'n', r: 'n', s: 'z', z: 's', g: 'q', y: 'v', x: 'k', k: 'x' };
+/** a four-pointed throwing star, pixel style, with a hole in the middle for the letter */
+const STAR =
+  '<svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path d="M7 0h2v4h1v1h1v1h4v2h-4v1h-1v1h-1v4h-2v-4h-1v-1h-1v-1h-4v-2h4v-1h1v-1h1z" fill="#8a93a3" stroke="#2b2b2b" stroke-width=".5"/><path d="M8 1v4M8 11v4M1 8h4M11 8h4" stroke="#5b6270" stroke-width="1"/></svg>';
+
 /** said « la lettre : … » (LETTER_SPEECH: the letter itself, « euh », « hache », « i grec »…) */
 export const letterName = (l: string) => LETTER_SPEECH[l].name;
 /** the letters of the game (w is rare in French words: left out) */
@@ -69,12 +73,14 @@ function kazeGame(tier: number): Game {
       while (options.size < count) options.add(rand(KAZE_LETTERS));
       r.choices.classList.add('kaze');
       buttons = shuffle([...options]).map((l, i) => {
-        const b = plaque(shown(l), 'shuriken', `la lettre ${letterName(l)}`);
-        if (!reducedMotion()) b.style.animationDelay = `${-i * 0.7}s`;
+        // a throwing star that spins, the letter upright in its middle; the star drifts around
+        const b = h('button', { class: `choice shuriken tier-${tier}`, 'aria-label': `la lettre ${letterName(l)}` }, h('span', { class: 'star', html: STAR }), h('span', { class: 'glyph' }, shown(l)));
+        if (!reducedMotion()) b.style.animationDelay = `${-i * 1.3}s`;
         b.onclick = () => void pick(r, l, b);
         return b;
       });
       r.choices.append(...buttons);
+      r.stage.append(h('div', { class: 'thrower', html: heroSVG(HEROES.find((x) => x.id === 'kaze')!, 'all', 120, 'idle') }));
       // the first tier shows the letter to find: matching its shape is the first step
       r.bubble(tier === 0 ? shown(target) : '?');
       return `jeu:kaze:${target}`;
@@ -109,12 +115,18 @@ function flammecheGame(tier: number): Game {
   let prev: number | undefined;
   let candles: HTMLButtonElement[] = [];
   let lit: boolean[] = [];
+  let ready: HTMLElement;
+  let touches = 0; // candle taps in this question (a pause after the last one nudges the green button)
+  let nudged = false;
   return {
     rounds: 5,
     setup(r) {
       n = pickWeighted(range(lo, hi), (k) => `jeu:bougies:${k}`, prev);
       prev = n;
       lit = Array(total).fill(false);
+      touches = 0;
+      nudged = false;
+      r.stage.classList.add('cake-stage');
       const cake = h('div', { class: 'cake' });
       candles = lit.map((_, i) => {
         const c = h('button', { class: 'candle', 'aria-label': `bougie ${i + 1}` }, h('span', { class: 'flame', html: FLAME }));
@@ -125,13 +137,13 @@ function flammecheGame(tier: number): Game {
       // the number to reach: written and said (1st tier), only said (2nd), only written (3rd)
       if (tier !== 1) r.stage.append(plaque(String(n), 'target-number', String(n)));
       r.stage.append(cake);
-      const ready = h('button', { class: 'btn big green ready-btn' }, "C'est prêt !");
+      ready = h('button', { class: 'btn big green ready-btn' }, '✔ C’est prêt !');
       ready.onclick = () => void check(r, ready);
       r.choices.append(ready);
       r.bubble(tier === 1 ? 'Écoute bien !' : 'Regarde !');
       return `jeu:bougies:${n}`;
     },
-    ask: (r) => r.say(tier === 2 ? 'Allume autant de bougies que ce nombre !' : candleOrder(n)),
+    ask: (r) => r.say(`${tier === 2 ? 'Allume autant de bougies que ce nombre !' : candleOrder(n)} Puis touche le bouton vert !`),
   };
   function toggle(r: Round, i: number): void {
     if (!r.open()) return;
@@ -141,9 +153,22 @@ function flammecheGame(tier: number): Game {
     // first tier: Pixel counts the candles lit so far
     const c = lit.filter(Boolean).length;
     if (tier === 0 && lit[i]) void r.say(W[c]);
+    // the child stops touching candles but does not check: the green button calls, once per question
+    const my = ++touches;
+    ready.classList.remove('nudge');
+    void r.wait(3500).then((still) => {
+      if (!still || my !== touches || !r.open() || !lit.some(Boolean)) return;
+      ready.classList.add('nudge');
+      if (!nudged) {
+        nudged = true;
+        void r.say('Quand c’est prêt, touche le bouton vert !');
+      }
+    });
   }
   async function check(r: Round, btn: HTMLElement): Promise<void> {
     if (!r.open()) return;
+    ready.classList.remove('nudge');
+    touches++;
     const c = lit.filter(Boolean).length;
     if (c === n) return r.win(btn, () => r.say(candleDone(n)));
     r.miss(btn);
