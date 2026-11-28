@@ -33422,5 +33422,15 @@
   "sttCost": 0,
   "stt": "Ça, c'est en bas",
   "score": 1
+ },
+ "quand c'est prêt, touche le bouton vert!": {
+  "file": "3889f2ad-fa5b46.mp3",
+  "text": "Quand c’est prêt, touche le bouton vert !",
+  "sent": "Quand c’est prêt, touche le bouton vert !",
+  "dur": 2.16,
+  "cost": 16,
+  "sttCost": 1,
+  "stt": "Quand c'est prêt, touche le bouton vert",
+  "score": 1
  }
 }
