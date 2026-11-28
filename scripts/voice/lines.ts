@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { COUNT_LEVELS, NUMBER_WORDS as W, THINGS } from '../../src/content/counting.ts';
-import { HEROES } from '../../src/content/heroes.ts';
+import { GAME_INTROS, HEROES } from '../../src/content/heroes.ts';
 import { DECOY_SYLLABLES, PIC_WORDS, READING_LEVELS, foundLine, ipa, listenLine, soundIpa, spokenParts, spokenSyllables, wordLine, type Item, type PicWord } from '../../src/content/reading.ts';
 import { LETTER_SPEECH, WRITING_LEVELS } from '../../src/content/writing.ts';
 import { BLOCK_NAMES } from '../../src/pixel.ts';
@@ -121,6 +121,48 @@ for (const hero of HEROES) {
 // additions, whose sums reuse the Compter clips (screens/heroes.ts)
 add('Qui est-ce ? Colorie pour le découvrir ! Choisis une couleur en bas, puis touche les cases avec le même chiffre.');
 add('Qui est-ce ? Colorie pour le découvrir ! Chaque couleur a un calcul. Touche les cases avec la réponse !');
+// ---------------------------------------------------------------- the friends' little games
+// (heroGames.ts, games/heroGames.ts, screens/heroGame.ts: templates the scan does not expand)
+const GAME_HEROES = ['kaze', 'flammeche', 'corail'];
+for (const id of GAME_HEROES) {
+  const name = HEROES.find((x) => x.id === id)!.name;
+  for (const t of GAME_INTROS[id]) add(t);
+  add(`${name} t'a préparé un jeu ! Touche son image pour jouer.`);
+  add(`Et une clé ! ${name} t'a préparé un jeu. Va voir tes amis pour jouer !`);
+  add(`Bravo ! Tu as gagné toutes les médailles de ${name} !`);
+}
+add('Bravo ! Tu as gagné une médaille ! La prochaine fois, ce sera un peu plus dur.');
+add('Bravo, quelle belle partie !');
+add("Encore un peu d'entraînement, et tu gagneras une médaille !");
+add('Regarde celui qui brille !');
+// Kaze: the letters (w left out), named as in Écrire (some in IPA)
+const GAME_LETTER_IPA: Record<string, string> = { euh: 'ə', k: 'ka', q: 'ky', z: 'zɛd' };
+for (const [l, { name }] of Object.entries(LETTER_SPEECH)) {
+  if (l === 'w') continue;
+  const x = GAME_LETTER_IPA[name];
+  for (const t of [`Attrape la lettre : NAME !`, `Ça, c'est la lettre : NAME.`]) {
+    if (x) addSay(t.replace('NAME', name), t.replace('NAME', `/${x}/`));
+    else add(t.replace('NAME', name));
+  }
+}
+// Flammèche: the candles
+for (const n of range(1, 10)) {
+  add(n === 1 ? 'Allume une bougie !' : `Allume ${W[n]} bougies !`);
+  add(n === 1 ? 'Il en faut une.' : `Il en faut ${W[n]}.`);
+  add(n === 1 ? 'Une bougie allumée !' : `${cap(W[n])} bougies allumées !`);
+}
+for (const c of range(0, 10)) add(c === 0 ? "Tu n'as allumé aucune bougie." : c === 1 ? 'Tu as allumé une bougie.' : `Tu as allumé ${W[c]} bougies.`);
+add('Allume autant de bougies que ce nombre !');
+add('Allume les bougies qui brillent !');
+// Corail: the directions, one or two at a time (never straight back)
+const DIR_WORDS: Record<string, string> = { left: 'à gauche', right: 'à droite', up: 'en haut', down: 'en bas' };
+const BACK: Record<string, string> = { left: 'right', right: 'left', up: 'down', down: 'up' };
+for (const a of Object.keys(DIR_WORDS)) {
+  add(`Va ${DIR_WORDS[a]} !`);
+  for (const b of Object.keys(DIR_WORDS)) if (b !== BACK[a]) add(`Va ${DIR_WORDS[a]}, puis ${DIR_WORDS[b]} !`);
+}
+for (const s of ["Ça, c'est la gauche.", "Ça, c'est la droite.", "Ça, c'est en haut.", "Ça, c'est en bas.", 'Trouve le chemin du trésor !', 'Le trésor !', "Oh non, ce n'est pas le trésor. On recommence !", 'Suis les pointillés !']) add(s);
+
 // Pixel's building challenges (challenge.ts, screens/build.ts)
 for (const n of ['trois', 'quatre', 'cinq', 'six', 'sept']) {
   add(`Construis une tour de ${n} blocs !`);

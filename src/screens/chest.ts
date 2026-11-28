@@ -3,7 +3,8 @@
 // Pas de série à ne pas casser : un jour sans jeu ne fait rien perdre. Après le coffre, Pixel propose
 // doucement de s'arrêter là (« À demain ? ») : l'enfant peut encore jouer, mais la séance a une fin.
 import { sfx } from '../audio';
-import { burst } from '../heroArt';
+import { burst, heroSVG } from '../heroArt';
+import { openNextGame } from '../heroGames';
 import { ACTIVITY_NAMES } from '../levels';
 import { BLOCK_NAMES, chestSVG, foxSVG } from '../pixel';
 import { ACTIVITIES, mission, save, SPECIAL_BLOCKS, state, type ActivityId, type BlockType } from '../state';
@@ -30,6 +31,8 @@ export function openChest(ctx: Ctx, then: () => void): void {
   m.chest = true;
   state.chests++;
   for (const t of loot) state.inventory[t]++;
+  // and a key: the next friend's little game opens (none when no awake friend has one left)
+  const friend = openNextGame();
   save();
 
   const art = h('button', { class: 'chest-btn', 'aria-label': 'Ouvrir le coffre', html: chestSVG(200, false) });
@@ -55,9 +58,15 @@ export function openChest(ctx: Ctx, then: () => void): void {
       items.append(b);
     });
     bumpCounter();
+    if (friend) {
+      const key = h('span', { class: 'key-loot', html: KEY_SVG });
+      key.style.animationDelay = `${loot.length * 150}ms`;
+      items.append(key, h('span', { class: 'key-friend', html: heroSVG(friend, 'all', 56, 'idle') }));
+    }
     done.hidden = false;
     const names = [...new Set(specials)].map((t) => BLOCK_NAMES[t]);
     await ctx.say(`Des blocs spéciaux pour ta maison : ${names.join(', et ')} ! Et de l'or !`);
+    if (friend && overlay.isConnected && ctx.alive()) await ctx.say(`Et une clé ! ${friend.name} t'a préparé un jeu. Va voir tes amis pour jouer !`);
   };
   art.onclick = () => void open();
   done.onclick = () => {
@@ -69,6 +78,9 @@ export function openChest(ctx: Ctx, then: () => void): void {
     if (overlay.isConnected && ctx.alive()) void open();
   }, 6000);
 }
+
+const KEY_SVG =
+  '<svg viewBox="0 0 12 6" width="64" height="32" shape-rendering="crispEdges" aria-label="Une clé"><path d="M1 1h3v1h1v2h-1v1h-3v-1h-1v-2h1z" fill="#f7c843" stroke="#3b2412" stroke-width=".4"/><rect x="2" y="2" width="1" height="2" fill="#3b2412"/><rect x="5" y="2" width="6" height="2" fill="#f7c843"/><rect x="8" y="4" width="1" height="1" fill="#f7c843"/><rect x="10" y="4" width="1" height="2" fill="#f7c843"/></svg>';
 
 /** After the chest: « À demain ? ». Stopping is offered first; « Encore un peu » goes on (`then`). */
 function softEnd(ctx: Ctx, then: () => void): void {

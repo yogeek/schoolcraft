@@ -6,8 +6,10 @@
 import { sfx } from '../audio';
 import { ADDITION_HEROES_FROM, HEROES, regions, type Hero } from '../content/heroes';
 import { burst, heroSVG, isComplete } from '../heroArt';
+import { gameIsNew, gameOpen, giftFirstGame, medalsOf } from '../heroGames';
 import { totalStars } from '../levels';
-import { save, state } from '../state';
+import { medalRow, playHeroGame } from './heroGame';
+import { exploring, save, state } from '../state';
 import { bubble, setBubble, h, mascot, reducedMotion, topBar } from '../ui';
 import type { Ctx } from './types';
 
@@ -82,6 +84,7 @@ function filledOf(hero: Hero): string[] {
 
 // ---------------------------------------------------------------- album
 export function heroesScreen(ctx: Ctx): void {
+  giftFirstGame();
   const current = currentHero();
   const ready = readyHero();
   const missing = starsToNextHero();
@@ -105,14 +108,16 @@ export function heroesScreen(ctx: Ctx): void {
       art = heroSVG(hero, 'silhouette', 96);
       label = '???';
     }
+    const game = done && gameOpen(hero.id);
     const card = h(
       'button',
       {
-        class: `hero-card${done ? ' done' : ''}${isCurrent && ready ? ' current' : ''}${isCurrent && !ready ? ' next' : ''}${!done && !(isCurrent && ready) ? ' locked' : ''}`,
+        class: `hero-card${done ? ' done' : ''}${game ? ' has-game' : ''}${game && gameIsNew(hero.id) ? ' new-game' : ''}${isCurrent && ready ? ' current' : ''}${isCurrent && !ready ? ' next' : ''}${!done && !(isCurrent && ready) ? ' locked' : ''}`,
         'aria-label': done ? `${hero.name}, ${hero.title}` : isCurrent && !ready ? `Encore ${missing} étoiles` : label,
       },
       h('div', { class: 'hero-art', html: art }),
       isCurrent && !ready ? h('span', { class: 'need' }, `${missing} ★`) : h('span', {}, label),
+      game ? h('span', { class: 'game-badge', 'aria-hidden': 'true' }, '▶') : '',
     );
     card.onclick = () => {
       sfx.unlock();
@@ -131,8 +136,12 @@ export function heroesScreen(ctx: Ctx): void {
 
   const count = state.heroes.done.length;
   const all = count >= HEROES.length;
-  const bubbleText = all ? 'Tu as tous les héros !' : ready ? (count === 0 ? 'Colorie ton premier héros !' : `${count} héros sur ${HEROES.length}`) : `Encore ${missing} ★ !`;
-  const speech = all
+  // a game no one has played yet: its friend calls the child
+  const fresh = HEROES.find((x) => state.heroes.done.includes(x.id) && gameIsNew(x.id));
+  const bubbleText = fresh ? `${fresh.name} a un jeu !` : all ? 'Tu as tous les héros !' : ready ? (count === 0 ? 'Colorie ton premier héros !' : `${count} héros sur ${HEROES.length}`) : `Encore ${missing} ★ !`;
+  const speech = fresh
+    ? `${fresh.name} t'a préparé un jeu ! Touche son image pour jouer.`
+    : all
     ? 'Bravo, tu as réveillé tout le monde ! Touche un ami pour le voir.'
     : ready
       ? count === 0
@@ -151,7 +160,7 @@ export function heroesScreen(ctx: Ctx): void {
     ),
   );
   // with 24 friends, the one waiting is far down the album: bring it into view
-  if (count >= 6) grid.querySelector('.hero-card.current, .hero-card.next')?.scrollIntoView({ block: 'center' });
+  if (count >= 6) grid.querySelector('.hero-card.new-game, .hero-card.current, .hero-card.next')?.scrollIntoView({ block: 'center' });
   void ctx.say(speech);
 }
 
@@ -167,12 +176,30 @@ function showHero(hero: Hero, isNew: boolean, ctx: Ctx): void {
     home.onclick = () => ctx.go('home');
     actions.append(toAlbum, home);
   } else {
+    if (gameOpen(hero.id)) {
+      const play = h('button', { class: 'btn big green' }, '▶ Jouer');
+      play.onclick = () => playHeroGame(ctx, hero.id);
+      actions.append(play);
+    }
+    // parent mode: any friend can be coloured again (season 2: with additions), in the parents' own save
+    if (exploring) {
+      const paint = h('button', { class: 'btn big' }, 'Colorier');
+      paint.onclick = () => {
+        state.heroes.done = state.heroes.done.filter((x) => x !== hero.id);
+        state.heroes.filled[hero.id] = [];
+        save();
+        forced = hero;
+        ctx.go('color');
+      };
+      actions.append(paint);
+    }
     const back = h('button', { class: 'btn' }, 'Fermer');
     back.onclick = close;
     actions.append(back);
   }
   const title = h('div', { class: 'hero-name' }, hero.name, h('small', {}, hero.title));
-  const panel = h('div', { class: 'panel hero-panel', role: 'dialog', 'aria-modal': 'true', 'aria-label': hero.name }, isNew ? h('div', { class: 'new-badge' }, 'Nouveau héros\u00a0!') : '', art, title, actions);
+  const medals = !isNew && gameOpen(hero.id) ? medalRow(medalsOf(hero.id)) : '';
+  const panel = h('div', { class: 'panel hero-panel', role: 'dialog', 'aria-modal': 'true', 'aria-label': hero.name }, isNew ? h('div', { class: 'new-badge' }, 'Nouveau héros\u00a0!') : '', art, title, medals, actions);
   const overlay = h('div', { class: 'overlay hero-overlay' }, panel);
   if (!isNew) overlay.onclick = (e) => e.target === overlay && close();
   document.body.append(overlay);
@@ -202,8 +229,11 @@ function showHero(hero: Hero, isNew: boolean, ctx: Ctx): void {
 }
 
 // ---------------------------------------------------------------- colouring
+/** parent mode: the friend chosen to be coloured again */
+let forced: Hero | null = null;
+
 export function colorScreen(ctx: Ctx): void {
-  const hero = readyHero();
+  const hero = exploring && forced && !state.heroes.done.includes(forced.id) ? forced : readyHero();
   if (!hero) return ctx.go('heroes');
   const zones = regions(hero);
   const filled = filledOf(hero);

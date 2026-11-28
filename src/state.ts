@@ -54,6 +54,9 @@ export interface GameState {
   chests: number;
   /** Pixel's building challenges done in « Ma maison » (challenge.ts: the next one gets harder) */
   challenges: number;
+  /** the heroes' little games (heroGames.ts): `open` = hero ids whose game is open, in order;
+   *  `medals` = medals won per game (0–3; a game played at least once has an entry) */
+  games: { open: string[]; medals: Record<string, number> };
   /** play per day (YYYY-MM-DD), last 60 days */
   history: Record<string, DayLog>;
   settings: {
@@ -219,6 +222,7 @@ function fresh(): GameState {
     mission: { day: '', done: [], chest: false },
     chests: 0,
     challenges: 0,
+    games: { open: [], medals: {} },
     history: {},
     settings: { limitMin: 0, grade: null },
     play: { ms: 0, last: 0 },
@@ -341,6 +345,9 @@ function sanitize(raw: unknown): GameState {
   }
   base.chests = count(s.chests);
   base.challenges = count(s.challenges); // added without a version bump: older saves simply have 0
+  const gm = s.games as { open?: unknown; medals?: Record<string, unknown> } | undefined; // same
+  if (Array.isArray(gm?.open)) base.games.open = [...new Set(gm.open.filter((d): d is string => typeof d === 'string'))];
+  if (gm?.medals && typeof gm.medals === 'object') for (const [id, n] of Object.entries(gm.medals)) base.games.medals[id] = Math.min(3, count(n));
   if (s.history && typeof s.history === 'object') {
     const days = Object.keys(s.history).filter(isDay).sort().slice(-60);
     for (const d of days) {

@@ -643,6 +643,13 @@ export const HEROES: Hero[] = [
   },
 ];
 
+/** What Pixel says when a friend's little game starts, per tier (src/games/heroGames.ts). */
+export const GAME_INTROS: Record<string, [string, string, string]> = {
+  kaze: ['Kaze lance des lettres ! Attrape celle que je dis.', 'Maintenant, les petites lettres ! Écoute bien.', 'Attention, les lettres se ressemblent !'],
+  flammeche: ["C'est la fête de Flammèche ! Allume les bougies du gâteau.", 'Encore plus de bougies sur le gâteau !', 'Regarde le nombre, et allume autant de bougies !'],
+  corail: ['Corail cherche son trésor ! Écoute où il faut aller.', 'Maintenant, je dis deux pas à la fois.', 'Prépare tout le chemin avec les flèches, puis touche le bouton vert !'],
+};
+
 /** Heroes from this index on (« saison 2 ») are coloured with additions. */
 export const ADDITION_HEROES_FROM = 12;
 

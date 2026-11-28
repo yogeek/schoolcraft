@@ -3462,3 +3462,265 @@ button span,
   border-radius: 10px;
   white-space: nowrap;
 }
+
+/* ---------- the friends' little games (screens/heroGame.ts, games/heroGames.ts) ---------- */
+.hero-card {
+  position: relative;
+}
+.hero-card .game-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+  font-size: 0.95rem;
+  color: #fff;
+  background: var(--green);
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+}
+.hero-card.new-game {
+  background: #e3f6d8;
+  outline: 4px solid var(--green);
+  animation: pop 1.6s ease-in-out infinite;
+}
+.game-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.game-hero svg {
+  display: block;
+}
+.medals {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+.medal {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 3px solid var(--ink);
+  background: rgba(255, 255, 255, 0.5);
+}
+.medal.won {
+  background: radial-gradient(circle at 35% 35%, #fff3a0 0 25%, var(--gold) 26%);
+}
+.medals.big .medal {
+  width: 40px;
+  height: 40px;
+}
+.medal.new {
+  animation: pop 0.9s ease-in-out 3;
+}
+.hero-panel .medals {
+  margin: 4px 0 10px;
+}
+.key-loot,
+.key-friend {
+  display: inline-grid;
+  place-items: center;
+  animation: block-pop 0.5s both;
+}
+
+/* Kaze: the letters float like thrown stars */
+.choices.kaze .choice.shuriken {
+  border-radius: 50%;
+  overflow: hidden;
+  animation: bob 2.4s ease-in-out infinite;
+}
+.choices.kaze .choice.shuriken.shake {
+  animation: shake 0.4s;
+}
+.choices.kaze .choice.shuriken.hint {
+  animation: pop 1s ease-in-out infinite;
+}
+
+/* Flammèche: candles on a cake */
+.stage .target-number {
+  --size: clamp(72px, 18vw, 110px);
+  pointer-events: none;
+  margin-bottom: 10px;
+}
+.cake {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.candles {
+  display: flex;
+  gap: clamp(4px, 1.5vw, 10px);
+  justify-content: center;
+  padding: 44px 10px 0;
+}
+.candle {
+  position: relative;
+  width: clamp(24px, 7vw, 40px);
+  height: clamp(64px, 17vw, 96px);
+  padding: 0;
+  border: 3px solid var(--ink);
+  border-bottom: none;
+  background: repeating-linear-gradient(135deg, #fff 0 8px, #f5a3c0 8px 14px);
+  touch-action: none;
+}
+.candle .flame {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  display: block;
+  width: clamp(22px, 6.5vw, 36px);
+  margin-bottom: 6px;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.candle .flame svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.candle.lit .flame {
+  opacity: 1;
+  animation: bob 0.8s ease-in-out infinite;
+}
+.candle::after {
+  /* the wick */
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  width: 3px;
+  height: 8px;
+  background: var(--ink);
+  transform: translateX(-50%);
+}
+.candle.hint:not(.lit) {
+  outline: 4px dashed #fff;
+  animation: pop 1s ease-in-out infinite;
+}
+.cake-body {
+  width: 100%;
+  min-width: 220px;
+  height: clamp(48px, 12vw, 72px);
+  background: linear-gradient(#f7dc6f 0 18%, #a0673a 18%);
+  border: 4px solid var(--ink);
+  box-shadow: 0 6px 0 var(--ink);
+}
+.ready-btn {
+  margin-top: 8px;
+}
+
+/* Corail: the treasure map */
+.sea {
+  display: grid;
+  grid-template-columns: repeat(var(--n), var(--sea-cell));
+  --sea-cell: max(34px, min(15vw, 60px, 6vh));
+  gap: 3px;
+  padding: 6px;
+  background: #3d8fe0;
+  border: 4px solid var(--ink);
+  box-shadow: 0 6px 0 var(--ink);
+}
+.sea-cell {
+  width: var(--sea-cell);
+  height: var(--sea-cell);
+  background: #a8d8f8;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.sea-cell.trail::before {
+  content: '';
+  position: absolute;
+  inset: 30%;
+  border: 3px dashed var(--ink);
+  border-radius: 50%;
+}
+.sea-cell > div {
+  grid-area: 1 / 1;
+  width: 86%;
+  display: grid;
+  place-items: center;
+}
+.sea-cell svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.ship {
+  z-index: 1;
+}
+.treasure.good {
+  animation: pop 0.6s ease-in-out 2;
+}
+.choices.corail {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.arrow-pad {
+  display: grid;
+  grid-template-columns: repeat(3, var(--arrow));
+  grid-template-rows: repeat(3, var(--arrow));
+  --arrow: max(46px, min(17vw, 80px, 7vh));
+  gap: 6px;
+}
+.arrow {
+  font-size: calc(var(--arrow) * 0.55);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+  background: var(--gold);
+  border: 4px solid var(--ink);
+  box-shadow: 0 5px 0 var(--ink);
+  touch-action: none;
+}
+.arrow-up {
+  grid-area: 1 / 2;
+}
+.arrow-left {
+  grid-area: 2 / 1;
+}
+.arrow-right {
+  grid-area: 2 / 3;
+}
+.arrow-down {
+  grid-area: 3 / 2;
+}
+.arrow.hint {
+  outline: 6px solid #fff;
+  animation: pop 1s ease-in-out infinite;
+}
+.program {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  min-height: 48px;
+  min-width: 220px;
+  padding: 6px;
+  background: var(--paper);
+  border: 4px dashed var(--ink);
+}
+.program .step {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  background: var(--gold);
+  border: 3px solid var(--ink);
+}
+.program-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.program-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
