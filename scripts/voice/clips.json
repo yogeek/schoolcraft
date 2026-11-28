@@ -864,16 +864,6 @@
   "stt": "Colorie d'abord le personnage qui t'attend",
   "score": 1
  },
- "encore une couleur!": {
-  "file": "d68df901-a1d921.mp3",
-  "text": "Encore une couleur !",
-  "sent": "Encore une couleur !",
-  "dur": 1.6,
-  "cost": 8,
-  "sttCost": 0,
-  "stt": "Encore une couleur",
-  "score": 1
- },
  "on continue le coloriage!": {
   "file": "321d4224-0af685.mp3",
   "text": "On continue le coloriage !",
@@ -31599,6 +31589,434 @@
   "cost": 18,
   "sttCost": 1,
   "stt": "Coupe la tour pour garder sept blocs en bas",
+  "score": 1
+ },
+ "je creuse des tunnels sous la terre!": {
+  "file": "73948cba-67528b.mp3",
+  "text": "Je creuse des tunnels sous la terre !",
+  "sent": "Je creuse des tunnels sous la terre !",
+  "dur": 2.24,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Je creuse des tunnels sous la terre",
+  "score": 1
+ },
+ "taupi, la petite taupe!": {
+  "file": "95d2379c-4342c5.mp3",
+  "text": "Taupi, la petite taupe !",
+  "sent": "Taupi, la petite taupe !",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Topi, la petite taupe",
+  "score": 0.89
+ },
+ "tu as réveillé taupi, la petite taupe!": {
+  "file": "99ceb21b-e060a6.mp3",
+  "text": "Tu as réveillé Taupi, la petite taupe !",
+  "sent": "Tu as réveillé Taupi, la petite taupe !",
+  "dur": 2.48,
+  "cost": 16,
+  "sttCost": 1,
+  "stt": "Tu as réveillé Topi, la petite taupe",
+  "score": 0.93
+ },
+ "champi, le champignon!": {
+  "file": "fe5e001d-13d690.mp3",
+  "text": "Champi, le champignon !",
+  "sent": "Champi, le champignon !",
+  "dur": 1.76,
+  "cost": 9,
+  "sttCost": 0,
+  "stt": "Chanty, le champignon",
+  "score": 0.83
+ },
+ "tu as réveillé champi, le champignon!": {
+  "file": "0a8f5b3c-59871a.mp3",
+  "text": "Tu as réveillé Champi, le champignon !",
+  "sent": "Tu as réveillé Champi, le champignon !",
+  "dur": 2.48,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Tu as réveillé Champi, le champignon",
+  "score": 1
+ },
+ "moi, je pousse après la pluie!": {
+  "file": "d1e0ae68-8ab339.mp3",
+  "text": "Moi, je pousse après la pluie !",
+  "sent": "Moi, je pousse après la pluie !",
+  "dur": 2.16,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Moi, je pousse après la pluie",
+  "score": 1
+ },
+ "je connais toutes les lettres!": {
+  "file": "5863917f-bc1a2a.mp3",
+  "text": "Je connais toutes les lettres !",
+  "sent": "Je connais toutes les lettres !",
+  "dur": 1.76,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Je connais toutes les lettres",
+  "score": 1
+ },
+ "plume, la chouette savante!": {
+  "file": "50a35c43-ba76cf.mp3",
+  "text": "Plume, la chouette savante !",
+  "sent": "Plume, la chouette savante !",
+  "dur": 2.24,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Plume, la chouette savante",
+  "score": 1
+ },
+ "tu as réveillé plume, la chouette savante!": {
+  "file": "9bd9643c-4f0f62.mp3",
+  "text": "Tu as réveillé Plume, la chouette savante !",
+  "sent": "Tu as réveillé Plume, la chouette savante !",
+  "dur": 2.72,
+  "cost": 17,
+  "sttCost": 1,
+  "stt": "Tu as réveillé Plume, la chouette savante",
+  "score": 1
+ },
+ "vaillant, le petit chevalier!": {
+  "file": "abb6ff63-3c3797.mp3",
+  "text": "Vaillant, le petit chevalier !",
+  "sent": "Vaillant, le petit chevalier !",
+  "dur": 1.84,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Vaillant le petit chevalier",
+  "score": 1
+ },
+ "je protège tous mes amis!": {
+  "file": "4888d225-e9ad31.mp3",
+  "text": "Je protège tous mes amis !",
+  "sent": "Je protège tous mes amis !",
+  "dur": 1.92,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Je protège tous mes amis",
+  "score": 1
+ },
+ "tu as réveillé vaillant, le petit chevalier!": {
+  "file": "7c881468-e74a01.mp3",
+  "text": "Tu as réveillé Vaillant, le petit chevalier !",
+  "sent": "Tu as réveillé Vaillant, le petit chevalier !",
+  "dur": 2.8,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Tu as réveillé Vaillant, le petit chevalier",
+  "score": 1
+ },
+ "bzz!": {
+  "file": "8e1b365c-acc545.mp3",
+  "text": "Bzz !",
+  "sent": "Bzz !",
+  "dur": 1.12,
+  "cost": 2,
+  "sttCost": 0,
+  "score": 1
+ },
+ "miel, l'abeille!": {
+  "file": "e8fdee80-330422.mp3",
+  "text": "Miel, l'abeille !",
+  "sent": "Miel, l'abeille !",
+  "dur": 1.68,
+  "cost": 7,
+  "sttCost": 0,
+  "stt": "Miel, l'abeille",
+  "score": 1
+ },
+ "tu as réveillé miel, l'abeille!": {
+  "file": "4e5685dd-c755fb.mp3",
+  "text": "Tu as réveillé Miel, l'abeille !",
+  "sent": "Tu as réveillé Miel, l'abeille !",
+  "dur": 2.24,
+  "cost": 13,
+  "sttCost": 1,
+  "stt": "Tu as réveillé Miel, l'abeille",
+  "score": 1
+ },
+ "je fais du miel pour mes amis!": {
+  "file": "9ee87d2d-53e204.mp3",
+  "text": "Je fais du miel pour mes amis !",
+  "sent": "Je fais du miel pour mes amis !",
+  "dur": 1.84,
+  "cost": 12,
+  "sttCost": 0,
+  "stt": "Je fais du miel pour mes amis",
+  "score": 1
+ },
+ "galet, le géant de pierre!": {
+  "file": "92f80fe4-ac15b7.mp3",
+  "text": "Galet, le géant de pierre !",
+  "sent": "Galet, le géant de pierre !",
+  "dur": 2.16,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Galet, le géant de pierre",
+  "score": 1
+ },
+ "tu as réveillé galet, le géant de pierre!": {
+  "file": "25900c63-872f39.mp3",
+  "text": "Tu as réveillé Galet, le géant de pierre !",
+  "sent": "Tu as réveillé Galet, le géant de pierre !",
+  "dur": 2.96,
+  "cost": 17,
+  "sttCost": 1,
+  "stt": "Tu as réveillé Gallet, le géant de pierre",
+  "score": 0.97
+ },
+ "je suis très fort, et très doux!": {
+  "file": "7e2cf44f-dc6b52.mp3",
+  "text": "Je suis très fort, et très doux !",
+  "sent": "Je suis très fort, et très doux !",
+  "dur": 2.48,
+  "cost": 13,
+  "sttCost": 1,
+  "stt": "Je suis très fort et très doux",
+  "score": 1
+ },
+ "pirouette, la petite acrobate!": {
+  "file": "3fa8d790-a3a2e0.mp3",
+  "text": "Pirouette, la petite acrobate !",
+  "sent": "Pirouette, la petite acrobate !",
+  "dur": 2.24,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Pirouette, la petite acrobate",
+  "score": 1
+ },
+ "tu as réveillé pirouette, la petite acrobate!": {
+  "file": "55af11a9-9a13b7.mp3",
+  "text": "Tu as réveillé Pirouette, la petite acrobate !",
+  "sent": "Tu as réveillé Pirouette, la petite acrobate !",
+  "dur": 2.8,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Tu as réveillé Pirouette, la petite acrobate",
+  "score": 1
+ },
+ "regarde, je fais la roue!": {
+  "file": "70bfcfd4-73d24d.mp3",
+  "text": "Regarde, je fais la roue !",
+  "sent": "Regarde, je fais la roue !",
+  "dur": 1.76,
+  "cost": 10,
+  "sttCost": 0,
+  "stt": "Regarde, je fais la roue",
+  "score": 1
+ },
+ "tu as réveillé ronce, le petit hérisson!": {
+  "file": "9f31c725-893a3c.mp3",
+  "text": "Tu as réveillé Ronce, le petit hérisson !",
+  "sent": "Tu as réveillé Ronce, le petit hérisson !",
+  "dur": 2.56,
+  "cost": 16,
+  "sttCost": 1,
+  "stt": "Tu as réveillé Ronce, le petit hérisson",
+  "score": 1
+ },
+ "ronce, le petit hérisson!": {
+  "file": "c1e6d688-15d3e1.mp3",
+  "text": "Ronce, le petit hérisson !",
+  "sent": "Ronce, le petit hérisson !",
+  "dur": 2.08,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Ronce, le petit hérisson",
+  "score": 1
+ },
+ "mes piquants sont tout doux pour toi!": {
+  "file": "b169cd04-46dd1e.mp3",
+  "text": "Mes piquants sont tout doux pour toi !",
+  "sent": "Mes piquants sont tout doux pour toi !",
+  "dur": 2.08,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Mes piquants sont tout doux pour toi",
+  "score": 1
+ },
+ "tu as réveillé luciole, la petite lumière!": {
+  "file": "7b5848bd-b11383.mp3",
+  "text": "Tu as réveillé Luciole, la petite lumière !",
+  "sent": "Tu as réveillé Luciole, la petite lumière !",
+  "dur": 2.8,
+  "cost": 17,
+  "sttCost": 1,
+  "stt": "Tu as réveillé Luciole, la petite lumière",
+  "score": 1
+ },
+ "luciole, la petite lumière!": {
+  "file": "60d34538-96d6ed.mp3",
+  "text": "Luciole, la petite lumière !",
+  "sent": "Luciole, la petite lumière !",
+  "dur": 2.32,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Luciole, la petite lumière",
+  "score": 1
+ },
+ "la nuit, je brille pour toi!": {
+  "file": "3528b78e-e9c2bb.mp3",
+  "text": "La nuit, je brille pour toi !",
+  "sent": "La nuit, je brille pour toi !",
+  "dur": 2.24,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "La nuit, je brille pour toi",
+  "score": 1
+ },
+ "pistache, le petit dragon!": {
+  "file": "d66c8cf7-faeff6.mp3",
+  "text": "Pistache, le petit dragon !",
+  "sent": "Pistache, le petit dragon !",
+  "dur": 2.16,
+  "cost": 11,
+  "sttCost": 1,
+  "stt": "Pistache, le petit dragon",
+  "score": 1
+ },
+ "tu as réveillé pistache, le petit dragon!": {
+  "file": "8f28e476-5454ee.mp3",
+  "text": "Tu as réveillé Pistache, le petit dragon !",
+  "sent": "Tu as réveillé Pistache, le petit dragon !",
+  "dur": 2.64,
+  "cost": 17,
+  "sttCost": 1,
+  "stt": "Tu as réveillé Pistache, le petit dragon",
+  "score": 1
+ },
+ "moi, je crache des bulles, pas du feu!": {
+  "file": "eb6997e4-998bde.mp3",
+  "text": "Moi, je crache des bulles, pas du feu !",
+  "sent": "Moi, je crache des bulles, pas du feu !",
+  "dur": 2.64,
+  "cost": 16,
+  "sttCost": 1,
+  "stt": "Moi, je crache des bulles, pas du feu",
+  "score": 1
+ },
+ "tu as réveillé comète, l'étoile filante!": {
+  "file": "5d9e6553-1fba7f.mp3",
+  "text": "Tu as réveillé Comète, l'étoile filante !",
+  "sent": "Tu as réveillé Comète, l'étoile filante !",
+  "dur": 2.56,
+  "cost": 16,
+  "sttCost": 1,
+  "stt": "Tu as réveillé Comète, l'étoile filante",
+  "score": 1
+ },
+ "comète, l'étoile filante!": {
+  "file": "8bab0940-5c2e5d.mp3",
+  "text": "Comète, l'étoile filante !",
+  "sent": "Comète, l'étoile filante !",
+  "dur": 2.08,
+  "cost": 10,
+  "sttCost": 1,
+  "stt": "Comète, l'étoile filante",
+  "score": 1
+ },
+ "fais un vœu, et je file dans le ciel!": {
+  "file": "4b6b0d5f-020a73.mp3",
+  "text": "Fais un vœu, et je file dans le ciel !",
+  "sent": "Fais un vœu, et je file dans le ciel !",
+  "dur": 2.48,
+  "cost": 15,
+  "sttCost": 1,
+  "stt": "Fais un vœu et je file dans le ciel",
+  "score": 1
+ },
+ "tu as réveillé coquille, l'escargot voyageur!": {
+  "file": "cf62a4b6-1a508f.mp3",
+  "text": "Tu as réveillé Coquille, l'escargot voyageur !",
+  "sent": "Tu as réveillé Coquille, l'escargot voyageur !",
+  "dur": 3.04,
+  "cost": 18,
+  "sttCost": 1,
+  "stt": "Tu as réveillé Coquille, l'escargot voyageur",
+  "score": 1
+ },
+ "coquille, l'escargot voyageur!": {
+  "file": "e5bee25f-723d8e.mp3",
+  "text": "Coquille, l'escargot voyageur !",
+  "sent": "Coquille, l'escargot voyageur !",
+  "dur": 2.4,
+  "cost": 12,
+  "sttCost": 1,
+  "stt": "Coquille, l'escargot voyageur",
+  "score": 1
+ },
+ "qui est-ce?": {
+  "file": "5c779b26-f16dfb.mp3",
+  "text": "Qui est-ce ?",
+  "sent": "Qui est-ce ?",
+  "dur": 0.96,
+  "cost": 5,
+  "sttCost": 0,
+  "score": 1
+ },
+ "colorie pour le découvrir!": {
+  "file": "7698636e-e289e1.mp3",
+  "text": "Colorie pour le découvrir !",
+  "sent": "Colorie pour le découvrir !",
+  "dur": 1.68,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Colorie pour le découvrir",
+  "score": 1
+ },
+ "je vais lentement, mais j'arrive toujours!": {
+  "file": "78f7037d-d5763c.mp3",
+  "text": "Je vais lentement, mais j'arrive toujours !",
+  "sent": "Je vais lentement, mais j'arrive toujours !",
+  "dur": 2.64,
+  "cost": 17,
+  "sttCost": 1,
+  "stt": "Je vais lentement, mais j'arrive toujours",
+  "score": 1
+ },
+ "touche les cases avec la réponse!": {
+  "file": "603b385e-e48ec2.mp3",
+  "text": "Touche les cases avec la réponse !",
+  "sent": "Touche les cases avec la réponse !",
+  "dur": 1.92,
+  "cost": 14,
+  "sttCost": 0,
+  "stt": "Touche les cases avec la réponse",
+  "score": 1
+ },
+ "choisis une couleur en bas, puis touche les cases avec le même chiffre.": {
+  "file": "a37970de-93c306.mp3",
+  "text": "Choisis une couleur en bas, puis touche les cases avec le même chiffre.",
+  "sent": "Choisis une couleur en bas, puis touche les cases avec le même chiffre.",
+  "dur": 4,
+  "cost": 28,
+  "sttCost": 1,
+  "stt": "Choisis une couleur en bas, puis touche les cases avec le même chiffre",
+  "score": 1
+ },
+ "chaque couleur a un calcul.": {
+  "file": "8635872d-fe0f91.mp3",
+  "text": "Chaque couleur a un calcul.",
+  "sent": "Chaque couleur a un calcul.",
+  "dur": 1.84,
+  "cost": 11,
+  "sttCost": 0,
+  "stt": "Chaque couleur a un calcul",
+  "score": 1
+ },
+ "encore une couleur!": {
+  "file": "d68df901-a1d921.mp3",
+  "text": "Encore une couleur !",
+  "sent": "Encore une couleur !",
+  "dur": 1.6,
+  "cost": 8,
+  "sttCost": 0,
+  "stt": "Encore une couleur",
   "score": 1
  }
 }
